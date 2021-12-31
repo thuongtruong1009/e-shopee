@@ -1,0 +1,30 @@
+/******************************** 
+# featured section
+********************************/
+
+.featured-init {
+  .product-thumbnail {
+    img {
+      max-width: 120px;
+    }
+  }
+
+  .product-desc {
+    padding: 15px 0px 0px;
+  }
+}
+
+.featured-init2 {
+  .product-thumbnail {
+    img {
+      max-width: 120px;
+      @include max-screen(480, 767) {
+        max-width: 100px;
+      }
+    }
+  }
+}
+
+/******************************** 
+# featured section End
+********************************/

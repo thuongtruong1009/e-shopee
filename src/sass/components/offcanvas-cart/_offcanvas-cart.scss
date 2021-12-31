@@ -1,0 +1,206 @@
+/******************************** 
+ offcanvas cart style
+ ********************************/
+.offcanvas {
+  .inner {
+    .head {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid $border-color2;
+      .offcanvas-close {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        text-indent: -9999px;
+        border: 0;
+        background-color: transparent;
+      }
+    }
+
+    .sub-total {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-top: 1px solid $border-color2;
+      margin: 30px 0;
+      border-bottom: 1px solid $border-color2;
+      strong {
+        font-family: $gilroyMedium;
+        color: $color-dark;
+      }
+
+      .amount {
+        font-weight: fontweight(bold);
+        font-family: $gilroyBold;
+      }
+    }
+
+    .minicart-message {
+      margin-top: 15px;
+      color: $color-dark;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.minicart-product-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $border-color;
+    .image {
+      flex: 1 0 0px;
+      img {
+        max-width: 100%;
+        border: 1px solid $border-color;
+      }
+      @include max-screen(575) {
+        flex: 1 0 50px;
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+    .content {
+      position: relative;
+      flex: 1 0 calc(100% - 150px);
+      padding-left: 15px;
+      .title {
+        color: $color-dark;
+        line-height: 18px;
+        margin-bottom: 10px;
+        font-size: 15px;
+        text-transform: capitalize;
+        font-family: $gilroyBold;
+      }
+      .quantity-price {
+        font-size: 14px;
+        display: block;
+        margin-top: 10px;
+        .amount {
+          color: $color-dark;
+          font-family: $gilroyMedium;
+          font-weight: 500;
+        }
+      }
+      .remove {
+        line-height: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 3px;
+        color: $color-dark;
+        font-size: 18px;
+      }
+      @include max-screen(575) {
+        flex: 1 0 calc(100% - 75px);
+      }
+    }
+  }
+}
+// theme1
+
+.theme1 {
+  .inner {
+    .sub-total {
+      .amount {
+        color: $theme-color;
+      }
+    }
+  }
+}
+
+// theme2
+.theme2 {
+  .inner {
+    .sub-total {
+      .amount {
+        color: $theme-color2;
+      }
+    }
+  }
+}
+
+// theme3
+.theme3 {
+  .inner {
+    .sub-total {
+      .amount {
+        color: $theme-color3;
+      }
+    }
+  }
+}
+
+// theme1
+.theme1 {
+  .minicart-product-list {
+    li {
+      .content {
+        .title {
+          &:hover {
+            color: $theme-color;
+          }
+        }
+
+        .remove {
+          &:hover {
+            color: $theme-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// theme2
+.theme2 {
+  .minicart-product-list {
+    li {
+      .content {
+        .title {
+          &:hover {
+            color: $theme-color2;
+          }
+        }
+
+        .remove {
+          &:hover {
+            color: $theme-color2;
+          }
+        }
+      }
+    }
+  }
+}
+
+// theme3
+.theme3 {
+  .minicart-product-list {
+    li {
+      .content {
+        .title {
+          &:hover {
+            color: $theme-color3;
+          }
+        }
+
+        .remove {
+          &:hover {
+            color: $theme-color3;
+          }
+        }
+      }
+    }
+  }
+}
+
+/******************************** 
+ offcanvas cart style ENd
+ ********************************/

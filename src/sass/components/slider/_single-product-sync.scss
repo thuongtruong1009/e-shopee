@@ -1,0 +1,98 @@
+/******************************** 
+    product-ctry-init
+ ********************************/
+.product-ctry-init {
+  .product-desc {
+    .title {
+      font-size: 18px;
+      line-height: 20px;
+      @include max-screen(576) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .product-price {
+    .del {
+      font-size: 19px;
+    }
+    .onsale {
+      font-size: 24px;
+    }
+  }
+}
+.availability {
+  p {
+    font-size: 14px;
+    text-transform: capitalize;
+    color: $instock;
+  }
+  span {
+    &.in-stock {
+      font-family: $gilroyRegular;
+      font-weight: fontweight(regular);
+      color: $theme-color3;
+    }
+  }
+}
+
+.hot-deal {
+  .title {
+    font-family: $gilroyMedium;
+    font-weight: fontweight(medium);
+    font-size: 30px;
+  }
+}
+
+/* clockdiv css */
+
+.clockdiv {
+  .title {
+    font-size: 14px;
+    color: $body-color;
+    line-height: 18px;
+    max-width: 100px;
+    margin-right: 15px;
+    @include max-screen(767) {
+      max-width: 100%;
+      margin: 0 auto 15px;
+      text-align: center;
+    }
+  }
+  line-height: 1;
+  margin-top: 20px;
+  span {
+    display: inline-block;
+    padding: 0 10px;
+    text-align: center;
+    color: $color-dark;
+    position: relative;
+    font-weight: fontweight(bold);
+    font-size: 22px;
+    @include max-screen(768, 991) {
+      font-size: 18px;
+    }
+    &::after {
+      position: absolute;
+      top: 0;
+      left: -4px;
+      content: ":";
+    }
+    &:first-child {
+      &::after {
+        display: none;
+      }
+    }
+    p {
+      font-size: 12px;
+      margin: 5px 0 0;
+      color: $color-dark;
+      font-family: $gilroyRegular;
+      font-weight: fontweight(regular);
+    }
+  }
+}
+
+/******************************** 
+    product-ctry-init ENd
+ ********************************/

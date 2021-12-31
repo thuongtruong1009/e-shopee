@@ -1,0 +1,93 @@
+/*******************************
+    badge style 
+ *******************************/
+
+.badge {
+  position: absolute;
+  text-align: center;
+  padding: 5px;
+  line-height: 1;
+  font-size: 12px;
+  z-index: 2;
+  font-weight: fontweight(bold);
+  text-transform: capitalize;
+}
+// theme1
+.theme1 {
+  .badge-danger {
+    color: $color-white;
+    background-color: $theme-color !important;
+  }
+}
+.badge-success {
+  color: $color-white;
+  background-color: $theme-color3 !important;
+}
+// theme2
+.theme2 .badge-danger {
+  color: $color-white;
+  background-color: $theme-color2 !important;
+}
+// theme3
+.theme3 .badge-danger {
+  color: $color-white;
+  background-color: $theme-color3 !important;
+}
+
+// theme3
+.theme3 .badge-success {
+  color: $color-white;
+  background-color: $theme-color !important;
+}
+.cbdg1 {
+  width: 20px;
+  height: 20px;
+  bottom: 2px;
+  left: 17px;
+  @include border-radius(50%);
+}
+
+// theme1
+.theme1 {
+  .cbdg1 {
+    color: $color-white;
+    background-color: $theme-color !important;
+  }
+}
+
+// theme2
+.theme2 {
+  .cbdg1 {
+    color: $color-dark;
+    background-color: $color-white !important;
+  }
+}
+// theme3
+.theme3 {
+  .cbdg1 {
+    color: $color-white;
+    background-color: $theme-color3 !important;
+  }
+}
+
+.cb6 {
+  display: inline-block;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+}
+// badge position
+
+.top-left {
+  top: 10px;
+  left: 10px;
+}
+.top-right {
+  @extend.top-left;
+  left: auto;
+  right: 10px;
+}
+
+/*******************************
+    badge style  END
+ *******************************/

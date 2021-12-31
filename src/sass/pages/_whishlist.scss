@@ -1,0 +1,57 @@
+/*------------------*
+# Whishlist Page
+*------------------*/
+
+@media (max-width: 991px) {
+  .whish-list-section .table {
+    min-width: 1000px;
+  }
+}
+
+.whish-list-section .title {
+  font-family: $gilroyBold;
+  font-weight: fontweight(bold);
+  color: $color-dark;
+  font-size: 20px;
+  border-bottom: 1px solid $border-color;
+}
+
+.whish-list-section .table .thead-light th {
+  background-color: $theme-color;
+  border-color: transparent;
+  text-transform: capitalize;
+  font-family: $gilroyBold;
+  font-weight: fontweight(bold);
+  color: $color-white;
+  font-size: 16px;
+}
+
+.whish-list-section .table td,
+.whish-list-section .table th {
+  vertical-align: middle;
+}
+
+.whish-list-section img {
+  max-width: 200px;
+}
+
+.whish-title {
+  color: $color-dark;
+  font-size: 15px;
+}
+.whish-list-price {
+  color: $color-dark;
+  font-size: 15px;
+}
+select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: $feature
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAPklEQVR4Ae3TwREAEBQD0V/6do4SXPZg7EsBhsQ8IEmSMOsiuEfg3gL3oXC7wK0bd1G4o8X9F4yIkyQfSrIByQBjp7QuND8AAAAASUVORK5CYII=)
+    no-repeat scroll right 0.5rem center/1.25rem 1.25rem;
+}
+
+/* ***************
+  whishlist End
+ ******************/

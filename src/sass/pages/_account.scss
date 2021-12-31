@@ -1,0 +1,152 @@
+/*------------------*
+# Account Page
+*------------------*/
+
+.my-account .title {
+  color: $color-dark;
+  border-bottom: 1px solid $border-color;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 34px;
+}
+.register {
+  .title {
+    color: $color-dark;
+    border-bottom: 1px solid $border-color;
+    font-family: $gilroyMedium;
+    font-weight: fontweight(medium);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-size: 34px;
+  }
+}
+.myaccount-tab-menu {
+  flex-direction: column;
+  background-color: $color-white;
+}
+.myaccount-tab-menu a {
+  border: 1px solid $border-color;
+  border-bottom: 0;
+  color: $color-dark;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+  display: block;
+  padding: 15px 15px 13px;
+  line-height: 30px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.myaccount-tab-menu a:last-child {
+  border-bottom: 1px solid $border-color;
+}
+.myaccount-tab-menu a:hover,
+.myaccount-tab-menu a.active {
+  background-color: $theme-color;
+  color: $color-white;
+}
+.myaccount-tab-menu a i {
+  font-size: 14px;
+  text-align: center;
+  width: 25px;
+}
+.myaccount-content {
+  background-color: $color-white;
+  font-size: 14px;
+  border: 1px solid $border-color;
+  padding: 30px;
+}
+@media only screen and (max-width: 575px) {
+  .myaccount-content {
+    padding: 20px 15px;
+  }
+}
+.myaccount-content h3 {
+  color: $color-dark;
+  border-bottom: 1px solid $border-color;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+.myaccount-content .welcome a {
+  color: $color-dark;
+}
+.myaccount-content .welcome a:hover {
+  color: $theme-color;
+}
+.myaccount-content .welcome strong {
+  font-weight: 600;
+}
+.myaccount-content a.edit-address-btn {
+  border-color: #333;
+}
+.myaccount-content a.edit-address-btn i {
+  padding-right: 5px;
+}
+.myaccount-content a.edit-address-btn:hover {
+  color: $theme-color;
+}
+.myaccount-table {
+  white-space: nowrap;
+  font-size: 15px;
+}
+.myaccount-table table th,
+.myaccount-table .table th {
+  padding: 10px;
+  font-weight: 600;
+}
+.myaccount-table table td,
+.myaccount-table .table td {
+  padding: 20px 10px;
+  vertical-align: middle;
+}
+.myaccount-table table td a:hover,
+.myaccount-table .table td a:hover {
+  color: $color-white;
+}
+.saved-message {
+  font-weight: 600;
+  font-size: 13px;
+  padding: 20px;
+}
+.account-details-form h4 {
+  text-transform: capitalize;
+  margin: 0;
+  color: $color-dark;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+  font-size: 18px;
+}
+
+.table .thead-light th {
+  color: #495057;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.account-details-form {
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"],
+  input[type="tel"] {
+    width: 100%;
+    background-color: $color-white;
+    border: 1px solid $border-color;
+    font-size: 14px;
+    color: $body-color;
+    padding: 0.8rem 1.6rem;
+    height: 38px;
+    line-height: 1.25;
+    @include border-radius(0px);
+  }
+}
+
+/* ***************
+  my-account End
+ ******************/

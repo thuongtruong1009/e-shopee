@@ -1,0 +1,134 @@
+/*******************************
+    hero-side-category style 
+ *******************************/
+.hero-side-category {
+  width: 100%;
+  position: relative;
+  .category-toggle {
+    padding: 10px 20px;
+    background-color: $color-white;
+    color: $color-dark;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: fontweight(bold);
+    line-height: 24px;
+    width: 100%;
+    text-align: left;
+    border: 2px solid $border-color2;
+    border-radius: 5px;
+    position: relative;
+    font-family: $gilroyBold;
+    i {
+      display: inline-block;
+      margin-right: 10px;
+      text-align: center;
+      font-size: 18px;
+      @include transform(translate(0, 2px));
+    }
+  }
+
+  .category-menu {
+    background-color: $color-white;
+    width: 100%;
+    left: 0;
+    top: 110%;
+    border: 1px solid $border-color;
+    position: absolute;
+    display: none;
+    z-index: 2;
+    height: 500px;
+    overflow-x: auto;
+    @include border-radius(5px);
+  }
+
+  .category-menu {
+    li {
+      a {
+        display: block;
+        padding: 10px 25px;
+        line-height: 30px;
+        font-size: 14px;
+        color: $focus-color;
+        font-weight: fontweight(regular);
+        position: relative;
+        border-bottom: 1px solid $border-color;
+        i {
+          position: absolute;
+          right: 30px;
+        }
+      }
+      .category-mega-menu {
+        display: none;
+        a {
+          padding: 10px 25px 10px 35px;
+          line-height: 30px;
+          font-size: 14px;
+          font-weight: fontweight(regular);
+          color: $focus-color;
+          position: relative;
+          margin: 0;
+          text-transform: inherit;
+        }
+      }
+    }
+  }
+}
+
+.hero-side-category {
+  .category-menu {
+    li {
+      #more-btn {
+        font-weight: fontweight(bold);
+        padding-left: 45px;
+        i {
+          right: auto;
+          left: 30px;
+        }
+      }
+    }
+  }
+}
+// category-menu
+// theme1
+.theme1 {
+  .category-menu {
+    li {
+      &:hover > {
+        a {
+          color: $theme-color;
+        }
+      }
+    }
+  }
+}
+// category-menu
+// theme2
+.theme2 {
+  .category-menu {
+    li {
+      &:hover > {
+        a {
+          color: $theme-color2;
+        }
+      }
+    }
+  }
+}
+
+// category-menu
+// theme3
+.theme3 {
+  .category-menu {
+    li {
+      &:hover > {
+        a {
+          color: $theme-color3;
+        }
+      }
+    }
+  }
+}
+
+/***********************************
+    hero-side-category style  END
+ ***********************************/

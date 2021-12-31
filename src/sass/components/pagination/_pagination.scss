@@ -1,0 +1,37 @@
+/******************************** 
+   pagination
+ ********************************/
+
+.page-item {
+  margin: 0 2px;
+  .page-link {
+    font-family: $gilroyRegular;
+    display: block;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-weight: fontweight(regular);
+    color: $color-dark !important;
+    background: $color-grey-light !important;
+    font-size: 18px;
+    text-align: center;
+    border: 0 !important;
+    @include border-radius(50% !important);
+    i {
+      font-size: 13px;
+      position: relative;
+      top: -2px;
+    }
+  }
+}
+
+.page-item.active .page-link,
+.page-link:hover {
+  color: $color-white !important;
+  background: $theme-color !important;
+}
+
+/******************************** 
+   pagination END
+ ********************************/

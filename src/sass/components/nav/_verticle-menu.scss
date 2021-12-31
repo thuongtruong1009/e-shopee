@@ -1,0 +1,189 @@
+/*------------------*
+# vertical-menu
+*------------------*/
+.vertical-menu {
+  position: relative;
+  z-index: 2;
+  .menu-btn {
+    max-width: 270px;
+    min-width: 220px;
+    background: $theme-color3;
+    color: $color-white;
+    font-size: 14px;
+    font-family: $gilroyBold;
+    font-weight: fontweight(bold);
+    text-transform: uppercase;
+    line-height: 26px;
+    padding: 10px 20px;
+
+    @include border-radius(5px);
+    span.ion-android-menu {
+      display: inline-block;
+      font-size: 24px;
+      margin-right: 10px;
+      vertical-align: -3px;
+    }
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .vmenu-content {
+    width: 100%;
+    max-width: 360px;
+    min-width: 270px;
+    background: $color-white;
+    border: 1px solid $border-color;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 270px;
+    box-shadow: 0 0 3.76px 0.24px rgba(0, 0, 0, 0.15);
+
+    &.display-block {
+      min-width: inherit;
+    }
+
+    li {
+      a {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        line-height: 24px;
+        text-transform: capitalize;
+        word-wrap: break-word;
+        background: $color-white;
+        color: $body-color;
+        padding: 8px 20px;
+        font-size: 14px;
+        font-weight: fontweight(regular);
+        @include transition(0.3s linear);
+        i {
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          @include transform(translateY(-50%));
+        }
+
+        strong {
+          font-family: $gilroyBold;
+          color: $color-dark;
+          text-transform: uppercase;
+          &:hover {
+            color: $theme-color3;
+          }
+        }
+      }
+
+      .verticale-mega-menu,
+      .verticale-sub-menu {
+        position: absolute;
+        z-index: 99;
+        text-align: left;
+        top: 0;
+        left: 100%;
+        background: $color-white;
+        padding: 20px 10px;
+        width: 590px;
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        border: 1px solid $border-color;
+        box-shadow: 0 0 3.76px 0.24px rgba(0, 0, 0, 0.15);
+        transform-origin: center center;
+        @include transform(translateY(20px));
+      }
+
+      .verticale-mega-menu {
+        li {
+          width: 50%;
+          a {
+            margin: 5px 0px 5px 0px;
+            &:hover {
+              background: $color-white;
+            }
+          }
+          ul {
+            li {
+              width: 100%;
+              a {
+                padding: 2px 20px 2px 20px;
+                &:hover {
+                  padding-left: 30px;
+                  background: $color-white;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .verticale-sub-menu {
+        padding: 0;
+        width: 240px;
+        border: 1px solid $border-color;
+        background: $color-white;
+        li {
+          width: 100%;
+          padding: 0;
+          line-height: 20px;
+          border-bottom: 1px solid $border-color;
+          position: relative;
+          display: block;
+          &:last-child {
+            border: 0;
+          }
+          a {
+            padding: 10px 20px;
+          }
+
+          &:hover {
+            > a {
+              padding: 10px 20px 10px 25px;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .verticale-mega-menu,
+        .verticale-sub-menu {
+          opacity: 1;
+          visibility: visible;
+          @include transform(translateY(0px));
+          @include transition(0.3s);
+          a {
+            background: $color-white;
+          }
+        }
+      }
+      display: block;
+      position: relative;
+      &.expand {
+        a {
+          padding-left: 45px;
+          font-weight: fontweight(bold);
+          i {
+            right: auto;
+            left: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.theme3 {
+  .vertical-menu {
+    li {
+      &:hover > a {
+        color: $theme-color3;
+        background: $color-grey-light2;
+      }
+    }
+  }
+}
+/*------------------*
+# vertical-menu END
+*------------------*/

@@ -1,0 +1,40 @@
+/* *******************
+ counter style
+**********************/
+
+.product-count {
+  &.style {
+    input {
+      color: $color-dark;
+      background-color: $color-white;
+      height: 54px;
+      padding: 10px 30px 10px 10px;
+      width: 80px;
+      border: 1px solid $border-color;
+      display: block;
+      text-align: center;
+      -moz-appearance: textfield;
+    }
+    .count-btn {
+      background-color: transparent;
+      border: 0px;
+      border-left: 1px solid $border-color;
+      display: block;
+      width: 20px;
+      height: 27px;
+      padding: 0px;
+      text-align: center;
+      color: $color-dark;
+      font-size: 10px;
+      @include transform(translateX(-100%));
+      user-select: none;
+    }
+    .increment {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+}
+
+/* *******************
+ counter style End
+**********************/

@@ -1,0 +1,136 @@
+/*------------------*
+# Blog Pages
+*------------------*/
+
+/* 10. Blog Section CSS */
+
+.blog-title {
+  margin-bottom: 30px;
+  .title {
+    color: $color-dark;
+    font-size: 34px;
+    font-family: $gilroyMedium;
+    font-weight: fontweight(medium);
+    line-height: 1;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    display: block;
+    border-bottom: 1px solid $border-color;
+    text-transform: capitalize;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 60px;
+      height: 2px;
+      background: $theme-color;
+    }
+  }
+}
+
+/* blog left sidebar */
+
+.sidebar-widget .post-title {
+  font-size: 20px;
+  line-height: 1;
+  color: $color-dark;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+  position: relative;
+  display: block;
+  border-bottom: 1px solid $border-color;
+  text-transform: capitalize;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 60px;
+    height: 2px;
+    background: $theme-color;
+  }
+}
+
+.blog-search-form .form-control {
+  height: 46px;
+  border: 2px solid $theme-color;
+  font-size: 14px;
+}
+
+.blog-media-list .sub-title {
+  font-size: 14px;
+  color: $color-dark;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+}
+
+.post-thumb img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.object-fit-none {
+  object-fit: none;
+}
+
+.font-style-normal {
+  font-style: normal !important;
+}
+
+.comment-section {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid $border-color;
+}
+
+.comment-section .title {
+  text-transform: capitalize;
+  color: $color-dark;
+  line-height: 24px;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.comment-section .sub-title {
+  text-transform: capitalize;
+  color: $color-dark;
+  line-height: 24px;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.comment-section span {
+  display: block;
+  text-transform: capitalize;
+}
+
+.comment-section p {
+  margin: 30px 0;
+  font-size: 14px;
+}
+
+.reply {
+  color: $color-dark;
+}
+
+.reply:hover {
+  color: $theme-color;
+}
+
+.avatar {
+  margin: 20px 0;
+}
+
+/******************************** 
+    Blog Section End
+ ********************************/

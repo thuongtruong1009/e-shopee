@@ -1,0 +1,213 @@
+/*------------------*
+# Top Nave
+*------------------*/
+
+.static-info {
+  p {
+    font-size: 14px;
+    line-height: 14px;
+    @include max-screen(767){
+      line-height: 25px;
+    }
+  }
+}
+
+.navbar-top {
+  li {
+    position: relative;
+    img {
+      margin-right: 5px;
+    }
+    a {
+      font-weight: fontweight(regular);
+      text-transform: capitalize;
+      padding: 0 15px;
+      line-height: 14px;
+      font-size: 14px;
+    }
+
+    &.english .topnav-submenu {
+      right: 0 !important;
+      left: auto !important;
+    }
+  }
+}
+
+// navbar-top
+// theme1
+.theme1 {
+  .navbar-top {
+    ul {
+      li {
+        a {
+          color: $color-white;
+          &:hover {
+            color: $theme-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// theme2
+.theme2 {
+  .navbar-top {
+    ul {
+      li {
+        a {
+          color: $color-white;
+          &:hover {
+            color: $theme-color2;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* topnav-submenu */
+
+.topnav-submenu {
+  top: 50px !important;
+  right: 15px !important;
+  left: auto !important;
+  min-width: 130px;
+  overflow: hidden;
+  padding: 0 15px;
+  background: $color-white;
+  z-index: 3;
+  border-radius: 0;
+  transform: translate3d(0px, 0px, 0px) !important;
+  margin: 0;
+  border: 0;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition: ease-in 0.3s;
+  -webkit-transition: ease-in 0.3s;
+  -moz-transition: ease-in 0.3s;
+  -ms-transition: ease-in 0.3s;
+  -o-transition: ease-in 0.3s;
+  box-shadow: 0 0 3.76px 0.24px rgba(0, 0, 0, 0.15);
+  &.show {
+    top: 40px !important;
+    opacity: 1;
+    visibility: visible;
+    @include max-screen(767) {
+      top: 30px !important;
+    }
+  }
+
+  @include max-screen(991) {
+    right: auto !important;
+    left: 0 !important;
+  }
+
+  li {
+    a {
+      display: block;
+      padding: 10px;
+      line-height: 25px;
+      font-size: 13px;
+      border-bottom: 1px solid $border-color;
+    }
+    &:last-child a {
+      border-bottom: 0px;
+    }
+  }
+}
+// topnav-submenu
+// theme1
+.theme1 {
+  .topnav-submenu {
+    li {
+      a {
+        color: $color-dark !important;
+        &:hover {
+          color: $theme-color !important;
+        }
+      }
+      &.active a {
+        color: $theme-color !important;
+      }
+    }
+  }
+}
+
+// theme2
+.theme2 {
+  .topnav-submenu {
+    li {
+      a {
+        color: $color-dark !important;
+        &:hover {
+          color: $theme-color2 !important;
+        }
+      }
+      &.active a {
+        color: $theme-color2 !important;
+      }
+    }
+  }
+}
+
+// theme3
+.theme3 {
+  .topnav-submenu {
+    li {
+      a {
+        color: $color-dark !important;
+        &:hover {
+          color: $theme-color3 !important;
+        }
+      }
+      &.active a {
+        color: $theme-color3 !important;
+      }
+    }
+  }
+}
+// offcanvas-top-nav
+
+// theme2
+.theme2 {
+  .offcanvas-top-nav {
+    ul {
+      li {
+        a {
+          color: $color-dark !important;
+          &:hover {
+            color: $theme-color2 !important;
+          }
+        }
+        &.active a {
+          color: $theme-color2 !important;
+        }
+      }
+    }
+  }
+}
+
+// theme3
+.theme3 {
+  .offcanvas-top-nav {
+    ul {
+      li {
+        a {
+          color: $color-dark !important;
+          &:hover {
+            color: $theme-color3 !important;
+          }
+        }
+        &.active a {
+          color: $theme-color3 !important;
+        }
+      }
+    }
+  }
+}
+
+/*------------------*
+# Top Nave ENd
+*------------------*/

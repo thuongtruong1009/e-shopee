@@ -1,0 +1,209 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Junno – Multipurpose eCommerce HTML Template
+    Template URL:
+    Description: Junno - Multipurpose eCommerce Bootstrap5 HTML5 Template
+    Author: Hastech
+    Author URL: 
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+    CSS INDEX
+    ===================
+
+   [ 01. Theme default CSS ]
+   [ 02. header CSS ]
+   [ 02.1 header sticky CSS ]
+   [ 02.2 search-form CSS ]
+   [ 02.3 cart-links CSS ]
+   [ 02.4 offcanvas-menu-toggler CSS ]
+   [ 02.5 offcanvas CSS ]
+   [ 02.6 offcanvas-cart CSS ]
+   [ 02.7 all-ctry-menu CSS ]
+   [ 03. main-slider CSS ]
+   [ 03.1 banner CSS ]
+   [ 03.2 bread-crumbs CSS ]
+   [ 04. tabs-slider CSS ]
+   [ 05. product-slider CSS ]
+   [ 06. popular-slider CSS ]
+   [ 07. featured-slider CSS ]
+   [ 08. single-product-sync CSS ]
+   [ 09. single-product-sync-nav CSS ]
+   [ 09.1 single-product CSS ]
+   [ 10. blog-slider CSS ]
+   [ 11. brand-slider CSS ]
+   [ 12. slick arrow dots CSS ]
+   [ 13. product-tags CSS ]
+   [ 14. counter CSS ]
+   [ 15. check-box CSS ]
+   [ 16. static-media CSS ]
+   [ 17. media CSS ]
+   [ 18. pagination CSS ]
+   [ 19. modal CSS ]
+   [ 20. Footer CSS ]
+   [ 21. footer CSS ]
+   [ 22. scroll-up CSS ]
+   [ 23. pages ]
+   [ 23.1 blogPages ]
+   [ 23.2 shopPages ]
+   [ 23.3 about-us ]
+   [ 23.4 whishlist ]
+   [ 23.5 contact-us ]
+   [ 23.6 account ]
+   [ 23.7 check-out ]
+   [ 23.8 compare ]
+   [ 23.9 map ]
+
+
+-----------------------------------------------------------------------------------*/
+
+// Base variables
+@import "./base/variables";
+//mixins
+@import "./base/mixins";
+//functions
+@import "./base/functions";
+//base
+/**************************** 
+[ 01. Theme default CSS ]
+*****************************/
+@import "./base/base";
+//typography
+@import "./base/typography";
+//placeholder
+@import "./base/placeholder";
+//overlay
+@import "./base/overlay";
+//background-&-colors
+@import "./base/background-&-colors";
+//spacer
+@import "./base/spacer";
+//buttons Components
+@import "./components/buttons/buttons";
+//title-section
+@import "./components/title-section/title-section";
+// badge
+@import "./components/badge/badge";
+// header
+/**************************** 
+[ 02. header CSS ]
+*****************************/
+@import "./layout/header/header";
+//sticky
+/**************************** 
+[ 02.1 header sticky CSS ]
+*****************************/
+@import "./components/sticky-header/sticky-header";
+// search form
+/**************************** 
+[ 02.2 search-form CSS ]
+*****************************/
+@import "./components/forms/search-form/search-form";
+//cart-links
+/**************************** 
+[ 02.3 cart-links CSS ]
+*****************************/
+@import "./components/cart-links/cart-links";
+// offcanvas-menu-toggler
+/*********************************** 
+[ 02.4 offcanvas-menu-toggler CSS ]
+************************************/
+@import "./components/offcanvas-menu-toggler/offcanvas-menu-toggler";
+//offcanvas
+/**************************** 
+[ 02.5 offcanvas CSS ]
+*****************************/
+@import "./components/offcanvas/offcanvas";
+//offcanvas-cart
+/**************************** 
+[ 02.6 offcanvas-cart CSS ]
+*****************************/
+@import "./components/offcanvas-cart/offcanvas-cart";
+// all-ctry-menu
+/**************************** 
+[ 02.7 all-ctry-menu CSS ]
+*****************************/
+@import "./components/all-ctry-menu/all-ctry-menu";
+
+//main-content
+
+@import "./layout/main-content/main-content";
+
+/************************************ 
+
+[ 09.1 single-product CSS ]
+
+*************************************/
+@import "./pages/single-product";
+/**************************** 
+[ 21. footer CSS ]
+*****************************/
+//footer
+@import "./layout/footer/footer";
+
+/**************************** 
+[ 22. scroll-up CSS ]
+*****************************/
+
+@import "./components/scroll-up/scroll-up";
+
+/**************************** 
+[ 23. pages ]
+*****************************/
+
+/**************************** 
+[ 23.1 blogPages ]
+*****************************/
+
+@import "./pages/blogPages/blog";
+
+/**************************** 
+[ 23.2 shopPages ]
+*****************************/
+@import "./pages/shopPages/shop";
+
+/**************************** 
+[ 23.3 about-us ]
+*****************************/
+
+@import "./pages/about-us";
+
+/**************************** 
+[ 23.4 whishlist ]
+*****************************/
+
+@import "./pages/whishlist";
+
+/**************************** 
+[ 23.5 contact-us ]
+*****************************/
+
+@import "./pages/contact-us";
+
+/**************************** 
+[ 23.6 account ]
+*****************************/
+
+@import "./pages/account";
+
+/**************************** 
+[ 23.7 check-out ]
+
+*****************************/
+
+@import "./pages/check-out";
+
+/**************************** 
+[ 23.8 compare ]
+
+*****************************/
+
+@import "./pages/compare";
+
+/**************************** 
+[ 23.9 map ]
+
+*****************************/
+
+@import "./pages/map";

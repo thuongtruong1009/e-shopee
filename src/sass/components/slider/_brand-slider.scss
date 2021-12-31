@@ -1,0 +1,32 @@
+/******************************** 
+     brand section 
+  ********************************/
+.brand-init {
+  &.border-top {
+    border-color: $border-color !important;
+  }
+
+  .slick-list {
+    margin: 0 -15px;
+    .slick-slide {
+      padding: 0 15px;
+    }
+  }
+}
+
+.single-brand {
+  a {
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    &:hover img {
+      @include transform(scale(1.045) rotate(0.05deg));
+    }
+  }
+}
+
+/******************************** 
+     brand section End
+  ********************************/

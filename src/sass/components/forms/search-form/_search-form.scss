@@ -1,0 +1,59 @@
+/* ***************
+ search-form
+******************/
+
+.search-form {
+  .form-control {
+    padding: 10px 70px 10px 20px;
+    width: 100%;
+    height: 46px;
+    font-size: 14px;
+    background: $color-white;
+    color: $color-dark;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    &:focus {
+      box-shadow: none;
+    }
+
+    &.theme1-border {
+      border-color: $border-color2;
+    }
+    &.theme2-border {
+      border-color: $focus-color;
+    }
+    &.theme3 {
+      padding: 10px 20px 10px 54px;
+      @include max-screen(991) {
+        border-color: $border-color2;
+      }
+    }
+  }
+}
+
+.search-body {
+  position: absolute;
+  width: 600px;
+  top: 40px;
+  right: 255px;
+  @include max-screen(1500) {
+    right: 220px;
+  }
+  @include max-screen(1100) {
+    right: 205px;
+  }
+  display: none;
+  z-index: 2;
+}
+
+.width-calc-from-left {
+  width: calc(100% - 220px);
+  @include max-screen(991) {
+    width: calc(100%);
+    padding-left: 0px;
+  }
+}
+
+/* ***************
+ search-form End
+******************/

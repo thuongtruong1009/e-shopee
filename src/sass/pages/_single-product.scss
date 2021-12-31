@@ -1,0 +1,227 @@
+/************************
+   single-product start
+ ************************/
+
+.single-product-info {
+  .product-body {
+    .product-price {
+      .del {
+        font-family: $gilroyRegular;
+        font-weight: fontweight(regular);
+        line-height: 20px;
+        color: $del;
+        margin-right: 10px;
+        font-size: 22px;
+      }
+
+      .onsale {
+        font-weight: fontweight(bold);
+        line-height: 30px;
+        color: $color-dark;
+        font-size: 26px;
+      }
+    }
+    .badge {
+      font-family: $gilroyRegular;
+      font-weight: fontweight(regular);
+      font-size: 14px;
+      line-height: 25px;
+      padding: 0 10px 0 10px;
+    }
+  }
+}
+.single-product-head {
+  .title {
+    font-family: $gilroyRegular;
+    line-height: 1;
+    font-weight: fontweight(regular);
+    color: $body-color;
+    font-size: 24px;
+    text-transform: capitalize;
+  }
+
+  .star-content {
+    .star-on {
+      margin: 0 1px 0 0;
+      color: $color-warning;
+      font-weight: fontweight(regular);
+      line-height: 1;
+      font-size: 18px;
+    }
+    a {
+      font-size: 15px;
+      font-weight: fontweight(regular);
+      line-height: 1;
+
+      span {
+        margin-right: 6px;
+      }
+    }
+  }
+}
+// theme3
+.theme3 {
+  .star-content {
+    a {
+      &:hover {
+        color: $theme-color3;
+      }
+    }
+  }
+}
+
+// product-tab-menu single-product
+
+.product-tab-menu {
+  &.single-product {
+    .nav-item {
+      .nav-link {
+        text-transform: capitalize;
+        color: $body-color;
+        line-height: 1;
+        padding: 0 0 15px 0;
+        margin: 0 30px;
+        font-size: 26px;
+        font-family: $gilroyRegular;
+        font-weight: fontweight(regular);
+        border: 0px;
+        @include border-radius(0px);
+        border-bottom: 2px solid transparent;
+        &:hover {
+          color: $color-dark;
+          border-color: $theme-color3;
+        }
+        &.active {
+          color: $color-dark;
+          border-color: $theme-color3;
+        }
+      }
+    }
+  }
+}
+
+.single-product-desc {
+  background: $color-white;
+  padding: 30px;
+  border: 1px solid $border-color;
+  ul {
+    font-size: 15px;
+    line-height: 24px;
+    text-align: left;
+  }
+}
+
+.studio-thumb {
+  img {
+    border: 1px solid $border-color;
+  }
+  h3 {
+    font-family: $gilroyMedium;
+    text-transform: capitalize;
+    font-weight: fontweight(medium);
+    color: $color-dark;
+    line-height: 24px;
+    font-size: 0.9375rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  h6 {
+    font-family: $gilroyBold;
+    font-size: 1rem;
+    color: $color-dark;
+    font-weight: fontweight(bold);
+    small {
+      font-family: $gilroyRegular;
+      font-weight: fontweight(regular);
+      font-size: 14px;
+      color: $body-color;
+    }
+  }
+}
+
+.product-features {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    li {
+      flex: 1 0 40%;
+      font-family: $gilroyRegular;
+      font-weight: fontweight(regular);
+      background: $feature;
+      padding: 0.625rem;
+      margin-right: 0.625rem;
+      min-height: 2.5rem;
+      word-break: normal;
+      text-transform: capitalize;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.grade-content {
+  .grade {
+    font-family: $gilroyBold;
+    font-weight: fontweight(bold);
+    text-transform: capitalize;
+    font-size: 14px;
+    color: $instock;
+    margin-right: 10px;
+  }
+  .star-on {
+    color: $color-warning;
+    font-family: $gilroyRegular;
+    font-weight: fontweight(regular);
+    font-size: 18px;
+  }
+
+  .title {
+    font-family: $gilroyBold;
+    font-weight: fontweight(bold);
+    text-transform: capitalize;
+    font-size: 14px;
+    color: $instock;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .sub-title {
+    color: $color-dark;
+    margin-bottom: 10px;
+    font-family: $gilroyBold;
+    font-weight: fontweight(bold);
+    line-height: 18px;
+    font-size: 14px;
+    padding-top: 9px;
+    margin-bottom: 10px;
+  }
+  p {
+    line-height: 18px;
+    font-size: 14px;
+    color: $grey-soft;
+  }
+}
+
+.group-img {
+  img {
+    max-width: 80px;
+  }
+}
+
+.product-grouped {
+  .title {
+    margin-bottom: 0.8rem;
+    color: $color-dark;
+    font-size: 15px;
+    text-transform: capitalize;
+  }
+  span {
+    font-size: 14px;
+    color: $body-color;
+    line-height: 1;
+  }
+}
+
+/************************
+   single-product End
+ ************************/

@@ -1,0 +1,38 @@
+@mixin transition($time) {
+  transition: all $time;
+}
+
+@mixin transform($value) {
+  transform: $value;
+}
+@mixin border-radius($value) {
+  border-radius: $value;
+}
+
+// Placeholder Mixins
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+}
+
+// media queries
+$units: 1px !default;
+
+@mixin max-screen($res-first, $res-last: $res-first) {
+  @if $res-first == $res-last {
+    @media screen and (max-width: if(unitless($res-first), $res-first*$units, $res-first)) {
+      @content;
+    }
+  } @else if $res-first < $res-last {
+    @media screen and (min-width: if(unitless($res-first), $res-first*$units, $res-first)) and (max-width: if(unitless($res-last), $res-last*$units, $res-last)) {
+      @content;
+    }
+  }
+}
+
+@mixin min-screen($res) {
+  @media screen and (min-width: if(unitless($res), $res*$units, $res)) {
+    @content;
+  }
+}
