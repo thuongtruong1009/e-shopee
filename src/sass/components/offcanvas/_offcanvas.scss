@@ -1,0 +1,311 @@
+/******************************** 
+ offcanvas menu style
+ ********************************/
+body {
+  &.offcanvas-open {
+    overflow-y: hidden;
+    padding-right: 17px;
+    @include max-screen(991) {
+      padding-right: 0px;
+    }
+  }
+}
+
+.offcanvas-overlay {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background-color: $overlay-color;
+}
+
+// offcanvas
+.offcanvas {
+  &.offcanvas-open {
+    @include transform(translateX(0));
+  }
+  &.offcanvas-mobile-menu {
+    right: auto;
+    left: 0;
+    transform: translateX(-100%);
+    &.offcanvas-open {
+      transform: translateX(0);
+    }
+  }
+  font-size: 14px;
+  font-weight: fontweight(regular);
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: auto;
+  display: block;
+  overflow: hidden;
+  width: 400px;
+  @include max-screen(480) {
+    width: 300px;
+  }
+  height: 100vh;
+  @include transform(translateX(100%));
+  background-color: $color-white;
+  box-shadow: none;
+  @include transition(0.5s ease-in-out);
+
+  .inner {
+    padding: 20px;
+    @include max-screen(991) {
+      overflow-y: scroll;
+      height: 660px;
+    }
+    @include max-screen(767) {
+      height: calc(100% - 30px);
+    }
+
+    @include max-screen(480) {
+      padding: 10px;
+    }
+  }
+
+  .title {
+    color: $color-dark;
+    font-weight: fontweight(bold);
+  }
+  .offcanvas-close {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    border: 0;
+    background-color: transparent;
+    &::after {
+      position: absolute;
+      top: calc(50% - 1px);
+      left: 0;
+      width: 20px;
+      height: 2px;
+      content: "";
+      @include transition(0.5s ease-in-out);
+      @include transform(rotate(-45deg));
+      background-color: $color-dark;
+    }
+    &:hover:after {
+      @include transform(rotate(0deg));
+    }
+    &::before {
+      position: absolute;
+      top: calc(50% - 1px);
+      left: 0;
+      width: 20px;
+      height: 2px;
+      content: "";
+      @include transition(0.5s ease-in-out);
+      @include transform(rotate(45deg));
+      background-color: $color-dark;
+    }
+    &:hover:before {
+      @include transform(rotate(180deg));
+    }
+  }
+
+  .offcanvas-menu ul {
+    li {
+      position: relative;
+      display: block;
+      line-height: 28px;
+      a {
+        // color: $color-dark;
+        display: block;
+        position: relative;
+        padding: 8px 20px;
+        text-transform: capitalize;
+        border-top: 1px solid $border-color2;
+        font-size: 14px;
+        font-family: $gilroyBold;
+        font-weight: fontweight(bold);
+        line-height: 30px;
+      }
+      .offcanvas-submenu {
+        position: static;
+        top: auto;
+        display: none;
+        visibility: visible;
+        width: 100%;
+        min-width: auto;
+        transition: none;
+        opacity: 1;
+        box-shadow: none;
+        li {
+          line-height: inherit;
+          position: relative;
+          a {
+            font-family: $gilroyRegular;
+            font-weight: fontweight(regular);
+            padding-left: 40px;
+          }
+          ul a {
+            padding-left: 60px;
+          }
+        }
+      }
+
+      .menu-expand {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        width: 24px;
+        height: 44px;
+        cursor: pointer;
+        background-color: transparent;
+        &::before,
+        &::after {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 14px;
+          height: 2px;
+          content: "";
+          @include transition(0.5s ease-in-out);
+          background-color: $color-dark;
+        }
+
+        &::after {
+          @include transform(rotate(90deg));
+        }
+      }
+      &.active > .menu-expand {
+        &::after {
+          @include transform(rotate(0) scale(0.75));
+        }
+      }
+    }
+  }
+
+  .offcanvas-social {
+    li {
+      display: inline-block;
+      margin: 0 10px 10px 0;
+      line-height: 40px;
+      padding: 0;
+      a {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 16px;
+        line-height: 40px;
+        width: 40px;
+        height: 40px;
+        @include border-radius(50%);
+        text-align: center;
+        border: 2px solid transparent;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+// offcanvas-menu
+// theme1
+.theme1 {
+  .offcanvas-menu {
+    li > {
+      &:hover .menu-expand:after {
+        background: $theme-color;
+      }
+      &:hover .menu-expand:before {
+        background: $theme-color;
+      }
+    }
+  }
+}
+
+// offcanvas-menu
+// theme2
+.theme2 {
+  .offcanvas-menu {
+    li > {
+      a {
+        &:hover {
+          color: $theme-color2;
+        }
+      }
+      &:hover .menu-expand:after {
+        background: $theme-color2;
+      }
+      &:hover .menu-expand:before {
+        background: $theme-color2;
+      }
+    }
+  }
+}
+
+// offcanvas-menu
+// theme3
+.theme3 {
+  .offcanvas-menu {
+    li > {
+      a {
+        &:hover {
+          color: $theme-color3;
+        }
+      }
+      &:hover .menu-expand:after {
+        background: $theme-color3;
+      }
+      &:hover .menu-expand:before {
+        background: $theme-color3;
+      }
+    }
+  }
+}
+
+// offcanvas-social
+.theme1 {
+  .offcanvas-social {
+    a {
+      color: $color-white;
+      background: $theme-color;
+      &:hover {
+        background: transparent;
+        color: $theme-color;
+        border-color: $theme-color;
+      }
+    }
+  }
+}
+
+// offcanvas-social
+.theme2 {
+  .offcanvas-social {
+    a {
+      color: $color-white;
+      background: $theme-color2;
+      &:hover {
+        background: transparent;
+        color: $theme-color2;
+        border-color: $theme-color2;
+      }
+    }
+  }
+}
+
+// offcanvas-social
+.theme3 {
+  .offcanvas-social {
+    a {
+      color: $color-white;
+      background: $theme-color3;
+      &:hover {
+        background: transparent;
+        color: $theme-color3;
+        border-color: $theme-color3;
+      }
+    }
+  }
+}
+/******************************** 
+ offcanvas menu style ENd
+ ********************************/

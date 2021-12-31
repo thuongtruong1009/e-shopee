@@ -1,0 +1,62 @@
+/******************************** 
+    product tab menu style
+ ********************************/
+.product-tab-menu {
+  .nav-item {
+    margin: 0px 2px;
+    @include max-screen(560) {
+      margin: 0px 2px 5px;
+    }
+    .nav-link {
+      font-family: $gilroyBold;
+      font-weight: fontweight(bold);
+      line-height: 1;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      color: $tab-menu-color;
+      border: 2px solid transparent;
+      @include border-radius(6px);
+    }
+  }
+}
+
+// theme1
+.theme1 {
+  .nav-link {
+    &.active,
+    &:hover {
+      color: $theme-color;
+      background: transparent;
+      border-color: $theme-color;
+    }
+  }
+}
+
+// theme2
+.theme2 {
+  .nav-link {
+    &.active,
+    &:hover {
+      color: $theme-color2;
+      background: transparent;
+      border-color: $theme-color2;
+    }
+  }
+}
+
+// theme3
+.theme3 {
+  .nav-link {
+    &.active,
+    &:hover {
+      color: $theme-color3;
+      background: transparent;
+      border-color: $theme-color3;
+    }
+  }
+}
+
+/******************************** 
+    product tab menu style END
+ ********************************/

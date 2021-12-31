@@ -1,0 +1,43 @@
+/*************************************
+ media CSS 
+*************************************/
+
+.static-media {
+  &.mr-50 {
+    @include max-screen(1200, 1399) {
+      margin-right: 25px;
+    }
+    @include max-screen(992, 1199) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.phone {
+  line-height: 1;
+  a {
+    font-weight: fontweight(bold);
+    font-family: $gilroyBold;
+    font-size: 16px;
+    &:hover {
+      color: $theme-color !important;
+    }
+  }
+
+  span {
+    font-family: $gilroyRegular;
+    line-height: 1;
+    font-size: 14px;
+  }
+  strong {
+    line-height: 1;
+  }
+
+  .email {
+    line-height: 2rem;
+  }
+}
+
+/*************************************
+ media CSS  ENd
+*************************************/

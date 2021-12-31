@@ -1,0 +1,99 @@
+/******************************** 
+    countdown-sync-nav Slider
+ ********************************/
+
+.countdown-sync-nav {
+  max-width: 80%;
+  margin: auto;
+}
+
+// theme1
+.theme1 {
+  .product-sync-nav {
+    max-width: 85%;
+    margin: 0 auto;
+    .slick-slide {
+      padding: 0 5px;
+      .product-thumb {
+        border: 1px solid transparent;
+        &:hover {
+          border-color: $theme-color;
+        }
+      }
+      &.slick-current {
+        .product-thumb {
+          border-color: $theme-color;
+        }
+      }
+    }
+  }
+}
+
+// theme2
+.theme2 {
+  .product-sync-nav {
+    max-width: 85%;
+    margin: 0 auto;
+    .slick-slide {
+      padding: 0 5px;
+      .product-thumb {
+        border: 1px solid transparent;
+        &:hover {
+          border-color: $theme-color2;
+        }
+      }
+      &.slick-current {
+        .product-thumb {
+          border-color: $theme-color2;
+        }
+      }
+    }
+  }
+}
+
+// theme3
+.theme3 {
+  .product-sync-nav {
+    max-width: 85%;
+    margin: 0 auto;
+    .slick-slide {
+      padding: 0 5px;
+      .product-thumb {
+        border: 1px solid transparent;
+        &:hover {
+          border-color: $theme-color3;
+        }
+      }
+      &.slick-current {
+        .product-thumb {
+          border-color: $theme-color3;
+        }
+      }
+    }
+
+    &.single-product {
+      .slick-slide {
+        .product-thumb {
+          max-width: 105px;
+        }
+      }
+    }
+  }
+}
+
+.has-opacity {
+  .slick-slide {
+    img {
+      opacity: 0.3;
+    }
+    &.slick-current.slick-active {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/******************************** 
+    countdown-sync-nav Slider End
+ ********************************/

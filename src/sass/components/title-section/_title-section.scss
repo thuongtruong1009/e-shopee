@@ -1,0 +1,28 @@
+/*******************************
+ section-title style 
+ *******************************/
+
+.section-title {
+  .title {
+    font-size: 30px;
+    font-weight: fontweight(medium);
+    font-family: $gilroyMedium;
+    @include max-screen(480) {
+      font-size: 30px;
+    }
+  }
+  .text {
+    color: $grey-soft;
+    line-height: 18px;
+    font-size: 16px;
+    font-weight: fontweight(medium);
+    font-family: $gilroyMedium;
+    @include max-screen(767){
+      line-height: 25px;
+    }
+  }
+}
+
+/*******************************
+ section-title style  End
+ *******************************/

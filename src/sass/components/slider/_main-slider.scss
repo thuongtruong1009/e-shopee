@@ -1,0 +1,125 @@
+/******************************** 
+    Main Slider
+ ********************************/
+
+.slick-slider {
+  background: transparent;
+}
+
+.slider-height {
+  height: 605px;
+  @include max-screen(1200, 1400) {
+    height: 500px;
+  }
+  @include max-screen(992, 1199) {
+    height: 450px;
+  }
+  @include max-screen(768, 991) {
+    height: 400px;
+  }
+  @include max-screen(767) {
+    height: 300px;
+  }
+  @include max-screen(576, 767) {
+    height: 350px;
+  }
+}
+.slider-height2 {
+  height: 714px;
+  @include max-screen(1200, 1400) {
+    height: 600px;
+  }
+  @include max-screen(992, 1199) {
+    height: 480px;
+  }
+  @include max-screen(768, 991) {
+    height: 400px;
+  }
+  @include max-screen(767) {
+    height: 300px;
+  }
+  @include max-screen(576, 767) {
+    height: 350px;
+  }
+}
+
+.slider-content-width {
+  max-width: 52%;
+  @include max-screen(768, 1500) {
+    max-width: 52%;
+  }
+  @include max-screen(576) {
+    max-width: 100%;
+  }
+}
+
+.slider-content {
+  .title {
+    font-weight: 400;
+    font-size: 65px;
+    line-height: 1;
+    opacity: 0;
+    font-family: $gilroyRegular;
+    @include max-screen(1200, 1600) {
+      font-size: 50px;
+    }
+    @include max-screen(992, 1199) {
+      font-size: 45px;
+    }
+    @include max-screen(768, 991) {
+      font-size: 35px;
+    }
+    @include max-screen(767) {
+      font-size: 25px;
+    }
+  }
+
+  .sub-title {
+    font-weight: fontweight(bold);
+    font-size: 65px;
+    line-height: 1;
+    opacity: 0;
+    @include max-screen(1200, 1600) {
+      font-size: 50px;
+    }
+    @include max-screen(992, 1199) {
+      font-size: 45px;
+    }
+    @include max-screen(768, 991) {
+      font-size: 35px;
+    }
+    @include max-screen(767) {
+      font-size: 25px;
+    }
+  }
+  .text {
+    font-size: 20px;
+    font-weight: fontweight(regular);
+    line-height: 1;
+    opacity: 0;
+    @include max-screen(768, 991) {
+      font-size: 16px;
+    }
+    @include max-screen(767) {
+      font-size: 15px;
+    }
+
+    &.mb-25 {
+      @include max-screen(767) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .btn {
+    opacity: 0;
+    &.mt-45 {
+      @include max-screen(767) {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+/******************************** 
+# main slider End
+********************************/

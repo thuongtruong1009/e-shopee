@@ -1,0 +1,119 @@
+/*-------------------------
+ background images 
+ -------------------------*/
+
+.bg-img {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.bg-img1 {
+  background-image: url("../img/slider/slide1.jpg");
+}
+
+.bg-img2 {
+  background-image: url("../img/slider/slide2.jpg");
+}
+
+.bg-img3 {
+  background-image: url("../img/slider/slide3.jpg");
+}
+
+.bg-img4 {
+  background-image: url("../img/slider/slide4.jpg");
+}
+
+.bg-img5 {
+  background-image: url("../img/slider/slide5.jpg");
+}
+
+.bg-img6 {
+  background-image: url("../img/slider/slide6.jpg");
+}
+
+.bg-img7 {
+  background-image: url("../img/slider/slide7.jpg");
+}
+
+.bg-img8 {
+  background-image: url("../img/slider/slide8.jpg");
+}
+
+@media (max-width: 991px) {
+  .bg-img {
+    background-position: 0% bottom;
+  }
+
+  .bg-img.bg-img3 {
+    background-position: 75% bottom;
+  }
+
+  .bg-img.bg-img4 {
+    background-position: 25% bottom;
+  }
+
+  .wraped .bg-img {
+    background-position: 40% bottom;
+  }
+}
+
+/*------------------------
+  background colors 
+  ------------------------*/
+
+.theme-bg {
+  background-color: $theme-color !important;
+}
+
+.theme-bg2 {
+  background-color: $theme-color2 !important;
+}
+
+.theme-bg3 {
+  background-color: $theme-color3 !important;
+}
+
+.bg-light {
+  background-color: $color-grey-dark !important;
+}
+
+.bg-lighten {
+  background-color: $color-grey !important;
+}
+
+.bg-lighten2 {
+  background-color: $color-grey-light;
+}
+
+.bg-dark {
+  background-color: $color-dark !important;
+}
+
+/*-------------------
+  text-color 
+ -------------------*/
+
+.theme-color {
+  color: $theme-color;
+}
+
+.theme-color2 {
+  color: $theme-color2;
+}
+
+.theme-color3 {
+  color: $theme-color3;
+}
+
+.text-warning {
+  color: $color-warning !important;
+}
+
+.text-dark {
+  color: $color-dark !important;
+}
+
+.text-muted {
+  color: $body-color !important;
+}

@@ -1,0 +1,60 @@
+/****************************
+#Common Banner
+****************************/
+.banner-thumb {
+  img {
+    width: 100%;
+    @include max-screen(767) {
+      width: 100%;
+    }
+  }
+}
+
+/* hover-animation */
+
+.hover-animation {
+  a {
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      right: 51%;
+      bottom: 0;
+      content: "";
+      background: rgba(255, 255, 255, 0.2);
+      opacity: 1;
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 50%;
+      content: "";
+      background: rgba(255, 255, 255, 0.2);
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    a {
+      &::before {
+        left: 0;
+        right: 0;
+        opacity: 0;
+        @include transition(0.9s linear);
+      }
+      &::after {
+        top: 0;
+        bottom: 0;
+        opacity: 0;
+        @include transition(0.9s linear);
+      }
+    }
+  }
+}
+
+/******************************** 
+#common-banner End
+********************************/

@@ -1,0 +1,112 @@
+/*-----------------------
+# Margin & Padding
+-------------------------*/
+
+// padding x and y
+@for $i from 1 through 12 {
+  .py-#{5 * $i} {
+    padding-top: 5px * $i;
+    padding-bottom: 5px * $i;
+  }
+}
+
+@for $i from 1 through 10 {
+  .px-#{5 * $i} {
+    padding-left: 5px * $i;
+    padding-right: 5px * $i;
+  }
+}
+
+/*------------------
+ # Margin Top
+------------------*/
+
+@for $i from 1 through 26 {
+  .mt-#{5 * $i} {
+    margin-top: 5px * $i;
+  }
+}
+
+/*------------------
+ # Margin Bottom
+------------------*/
+
+@for $i from 1 through 26 {
+  .mb-#{5 * $i} {
+    margin-bottom: 5px * $i;
+  }
+}
+
+/*------------------
+ # Margin Left
+------------------*/
+
+@for $i from 1 through 10 {
+  .ml-#{5 * $i} {
+    margin-left: 5px * $i;
+  }
+}
+
+/*------------------
+ # Margin Right
+------------------*/
+
+@for $i from 1 through 10 {
+  .mr-#{5 * $i} {
+    margin-right: 5px * $i;
+  }
+}
+
+/*------------------
+ # Padding Top
+------------------*/
+
+@for $i from 1 through 26 {
+  .pt-#{5 * $i} {
+    padding-top: 5px * $i;
+  }
+}
+
+/*------------------
+ # Padding Bottom
+------------------*/
+
+@for $i from 1 through 26 {
+  .pb-#{5 * $i} {
+    padding-bottom: 5px * $i;
+  }
+}
+
+/*---------------
+ # Padding Left
+---------------*/
+
+@for $i from 1 through 10 {
+  .pl-#{5 * $i} {
+    padding-left: 5px * $i;
+  }
+}
+
+/*---------------
+ # Padding Right
+---------------*/
+
+@for $i from 1 through 10 {
+  .pr-#{5 * $i} {
+    padding-right: 5px * $i;
+  }
+}
+
+.px-xl-90 {
+  @include min-screen(1920) {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+}
+
+.mr-pr-0 {
+  @include max-screen(991) {
+    margin-right: 0px;
+    padding-right: 0px;
+  }
+}

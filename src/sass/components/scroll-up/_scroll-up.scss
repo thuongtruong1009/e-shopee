@@ -1,0 +1,53 @@
+/******************************** 
+    scrollUp style
+ ********************************/
+
+#scrollUp {
+  &.theme4 {
+    background: $theme-color3;
+    width: 40px;
+    height: 40px;
+    bottom: 50px;
+    right: 50px;
+    border-radius: 100%;
+    color: $color-white;
+    text-align: center;
+    font-size: 22px;
+    line-height: 40px;
+    font-weight: fontweight(bold);
+    &:hover {
+      background: $focus-color;
+      color: $color-white;
+      box-shadow: 0 0 20px $color-white;
+    }
+  }
+}
+
+.theme-default {
+  background: $theme-color;
+  width: 40px;
+  height: 40px;
+  bottom: 50px;
+  right: 50px;
+  border-radius: 100%;
+  color: $color-white;
+  text-align: center;
+  font-size: 22px;
+  line-height: 40px;
+  font-weight: fontweight(bold);
+  &.theme2 {
+    background: $theme-color2;
+  }
+  &:focus {
+    color: $color-white;
+  }
+  &:hover {
+    background: $focus-color;
+    color: $color-white;
+    box-shadow: 0 0 20px $color-white;
+  }
+}
+
+/******************************** 
+    scrollUp style End
+ ********************************/

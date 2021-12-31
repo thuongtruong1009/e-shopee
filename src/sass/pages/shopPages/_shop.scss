@@ -1,0 +1,112 @@
+/*------------------*
+# Shop Pages
+*------------------*/
+.tab-content .tab-pane.active .grid-view .product-card {
+  animation: zoomIn 0.5s ease;
+  animation-duration: 1s;
+}
+.tab-content .tab-pane.active .grid-view-list .product-card {
+  animation: fadeInRight 0.5s ease;
+  animation-duration: 1s;
+}
+
+.grid-nav-wraper {
+  padding: 10px 30px;
+  @include max-screen(991) {
+    padding: 10px 15px;
+  }
+}
+
+.shop-grid-nav .nav .nav-item {
+  margin-right: 15px;
+  line-height: 1;
+}
+
+.total-products {
+  font-family: $gilroyRegular;
+  font-weight: fontweight(regular);
+  margin-left: 50px;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 5px;
+  color: $color-dark;
+  @include max-screen(991) {
+    margin-left: 20px;
+  }
+}
+
+.shop-grid-nav .nav .nav-link {
+  color: $color-dark;
+  padding: 0;
+  background: transparent;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.shop-grid-nav .nav .nav-link.active,
+.shop-grid-nav .nav .nav-link:hover {
+  color: $theme-color;
+}
+
+.shop-grid-button button {
+  width: 100%;
+  border: 1px solid $border-color;
+  background: $color-white;
+  padding: 2px 15px;
+  line-height: 24px;
+  font-size: 14px;
+  color: $color-dark;
+  text-align: left;
+  box-shadow: none;
+  border-radius: 30px;
+}
+
+.shop-grid-button button span {
+  font-size: 20px;
+}
+
+.shop-grid-menu {
+  background: $color-white;
+  width: calc(100% - 145px);
+  border: 1px solid $border-color;
+}
+
+.shop-grid-menu .dropdown-item {
+  font-family: $gilroyRegular;
+  font-weight: fontweight(regular);
+  line-height: 24px;
+  font-size: 14px;
+  padding: 3px 15px;
+  color: $color-dark;
+}
+
+.shop-grid-menu .dropdown-item:hover {
+  background: $theme-color;
+  color: $color-white;
+}
+
+.sort-by {
+  min-width: 70px;
+  font-family: $gilroyRegular;
+  font-weight: fontweight(regular);
+  line-height: 20px;
+  font-size: 14px;
+  padding: 5px;
+  color: $color-dark;
+  margin-left: 50px;
+  @include max-screen(991) {
+    margin-left: 0px;
+  }
+}
+
+.product-list-des {
+  padding: 30px 0;
+}
+
+.availability-list p span {
+  color: $theme-color3;
+}
+
+/*------------------*
+# Shop Pages End
+*------------------*/

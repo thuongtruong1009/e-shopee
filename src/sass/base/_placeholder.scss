@@ -1,0 +1,83 @@
+/*-----------------------
+# selection colors
+-------------------------*/
+
+*::-moz-selection {
+  background: $theme-color3;
+  color: $color-white;
+  text-shadow: none;
+}
+
+::selection {
+  background: $theme-color3;
+  color: $color-white;
+  text-shadow: none;
+}
+
+/*-----------------------
+# Input Placeholder
+-------------------------*/
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: $placeholder-color !important;
+  opacity: 1;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: $placeholder-color !important;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: $placeholder-color !important;
+  opacity: 1;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: $placeholder-color !important;
+  opacity: 1;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: $placeholder-color !important;
+  opacity: 1;
+}
+
+/*-------------------------- 
+input active placeholder 
+--------------------------*/
+
+input:active::-webkit-input-placeholder,
+textarea:active::-webkit-input-placeholder {
+  color: $placeholder-color !important;
+  opacity: 1;
+}
+
+input:active::-moz-placeholder,
+textarea:active::-moz-placeholder {
+  color: $placeholder-color !important;
+  opacity: 1;
+}
+
+input:active:-ms-input-placeholder,
+textarea:active:-ms-input-placeholder {
+  color: $placeholder-color !important;
+  opacity: 1;
+}
+
+input:active::-ms-input-placeholder,
+textarea:active::-ms-input-placeholder {
+  color: $placeholder-color !important;
+  opacity: 1;
+}
+
+input:active::placeholder,
+textarea:active::placeholder {
+  color: $placeholder-color !important;
+  opacity: 1;
+}

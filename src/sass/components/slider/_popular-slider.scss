@@ -1,0 +1,121 @@
+/******************************** 
+    popular Slider
+ ********************************/
+
+.popular-section {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  &.popular-bg1 {
+    background-image: url("../img/popular/popular-bg.jpg");
+  }
+}
+
+.popular-slider-init {
+  .slick-list {
+    margin: 0 -15px;
+    .slick-slide {
+      padding: 0 15px;
+    }
+  }
+}
+
+.popular-card {
+  text-align: center;
+  background: $color-white;
+  border: 0;
+  .card-body {
+    padding: 15px;
+    @include border-radius(5px);
+    .popular-title {
+      padding: 25px 0 10px 0;
+      a {
+        color: $color-dark;
+        font-weight: fontweight(bold);
+        font-family: $gilroyBold;
+        text-transform: capitalize;
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+// popular-card-bg
+.popular-card-bg {
+  position: relative;
+  .card-body {
+    position: relative;
+    z-index: 1;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 30px;
+    &:hover {
+      .shop-now-btn {
+        @include transform(translateY(30px));
+      }
+    }
+  }
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(63% + 1px);
+    content: "";
+    z-index: 1;
+    background: $grayCardBg;
+  }
+}
+
+// theme1
+.theme1 {
+  .popular-card {
+    text-align: center;
+    .card-body {
+      .popular-title {
+        a {
+          &:hover {
+            color: $theme-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// theme2
+.theme2 {
+  .popular-card {
+    text-align: center;
+    .card-body {
+      .popular-title {
+        a {
+          &:hover {
+            color: $theme-color2;
+          }
+        }
+      }
+    }
+  }
+}
+
+// theme3
+.theme3 {
+  .popular-card {
+    text-align: center;
+    .card-body {
+      .popular-title {
+        a {
+          &:hover {
+            color: $theme-color3;
+          }
+        }
+      }
+    }
+  }
+}
+
+/******************************** 
+    popular Slider ENd
+ ********************************/

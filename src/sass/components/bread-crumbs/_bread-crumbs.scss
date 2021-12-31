@@ -1,0 +1,73 @@
+/****************************
+breadcrumb-section
+ ****************************/
+.breadcrumb-section {
+  @include max-screen(767) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include max-screen(1200) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+.breadcrumb-item {
+  text-transform: capitalize;
+  line-height: 1;
+  padding: 0px !important;
+  @include max-screen(450) {
+    margin: 5px 0px;
+  }
+  a {
+    display: inline-block;
+    position: relative;
+    color: $body-color !important;
+    line-height: 1;
+  }
+}
+
+.breadcrumb-item + .breadcrumb-item {
+  &::before {
+    content: "\f3d3";
+    color: $body-color !important;
+    margin: 0 10px;
+    content: "\f3d3";
+    font-family: "Ionicons";
+    padding: 0px !important;
+    position: relative;
+    top: 2px;
+    font-size: 14px;
+  }
+}
+// theme1
+.theme1 {
+  .breadcrumb-item {
+    a {
+      &:hover {
+        color: $theme-color !important;
+      }
+    }
+    &.active {
+      color: $theme-color;
+    }
+  }
+}
+
+// theme3
+.theme3 {
+  .breadcrumb-item {
+    a {
+      &:hover {
+        color: $theme-color3 !important;
+      }
+    }
+    &.active {
+      color: $theme-color3;
+    }
+  }
+}
+
+/****************************
+breadcrumb-section END
+ ****************************/

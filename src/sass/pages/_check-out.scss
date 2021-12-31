@@ -1,0 +1,301 @@
+/*------------------*
+# Check out Page
+*------------------*/
+
+.form-group {
+  margin-bottom: 1rem;
+  align-items: center;
+}
+.checkout-inner {
+  border: 1px solid $border-color;
+}
+
+.checkout-header .title {
+  font-size: 15px;
+  text-transform: capitalize;
+  color: $color-dark;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+}
+
+.checkout-address .title {
+  font-size: 15px;
+  text-transform: capitalize;
+  color: $color-dark;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+}
+
+.checkout-address .title span {
+  padding: 0.625rem;
+}
+
+.checkout-address p {
+  padding: 0.9375rem;
+  font-size: 14px;
+  color: $black-soft;
+}
+
+.check-out-content {
+  padding: 0.9375rem;
+}
+
+.check-out-content form {
+  padding: 0 2.313rem;
+}
+
+.check-out-content .form-group label {
+  font-size: 14px;
+  color: $color-dark;
+  padding-top: 0.625rem;
+}
+
+.check-out-content .form-group label.checkout {
+  font-size: 14px;
+  color: $color-dark;
+}
+
+.check-out-content .form-control {
+  background-color: $color-white;
+  border: 1px solid $border-color;
+  color: $color-dark;
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  line-height: 1.25;
+  border-radius: 0px;
+}
+
+.optional {
+  color: $black-soft;
+}
+
+select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-group span {
+  font-size: 14px;
+  color: $black-soft;
+}
+
+.checkout-step {
+  padding: 2rem 2rem;
+  border-top: 1px solid $border-color;
+}
+
+.checkout-step .title {
+  font-size: 15px;
+  text-transform: capitalize;
+  color: $color-dark;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+}
+
+/* list-group-item */
+
+.delivery-info {
+  border-top: 1px solid $border-color;
+  padding-top: 30px;
+}
+.cart-summary .list-group-item {
+  padding: 1.25rem;
+}
+
+ul.items li {
+  text-transform: capitalize;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+  font-size: 14px;
+  color: $color-dark;
+}
+
+ul.amount li {
+  color: $color-dark;
+  font-family: $gilroyBold;
+  font-weight: fontweight(bold);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.delivery-info ul li {
+  font-family: $gilroyRegular;
+  font-weight: fontweight(regular);
+  font-size: 14px;
+  text-transform: capitalize;
+  color: $color-dark;
+  line-height: 24px;
+  margin-bottom: 25px;
+}
+
+.delivery-info ul li img {
+  margin-right: 10px;
+}
+
+#accordion .card {
+  margin-bottom: 1rem;
+  @include border-radius(0px);
+}
+
+#accordion .card .card-header {
+  border: 0;
+  padding: 0.9375rem;
+  background-color: $color-white;
+  @include border-radius(0px);
+}
+
+#accordion .card .card-header .btn-link {
+  font-family: $gilroyBold;
+  font-weight: fontweight(bold);
+  text-transform: capitalize;
+  color: $color-dark;
+  line-height: 24px;
+  font-size: 1.125rem;
+  padding: 0px;
+}
+
+.custom-radio input[type="radio"]:checked,
+.custom-radio input[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.custom-radio input[type="radio"]:checked + label,
+.custom-radio input[type="radio"]:not(:checked) + label {
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  line-height: 15px;
+  display: inline-block;
+  color: $tab-menu-color;
+  margin-bottom: 0;
+  margin-right: 15px;
+}
+
+.custom-radio input[type="radio"]:checked + label:before,
+.custom-radio input[type="radio"]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid $border-color;
+  background: $color-white;
+  @include border-radius(50%);
+}
+
+.custom-radio input[type="radio"]:checked + label:after,
+.custom-radio input[type="radio"]:not(:checked) + label:after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: $theme-color;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  @include transition(0.3s);
+  @include border-radius(50%);
+}
+
+.custom-radio-modify {
+  .custom-radio input[type="radio"]:checked + label:before,
+  .custom-radio input[type="radio"]:not(:checked) + label:before {
+    left: 15px;
+    top: -12px;
+  }
+
+  .custom-radio input[type="radio"]:checked + label:after,
+  .custom-radio input[type="radio"]:not(:checked) + label:after {
+    top: -8px;
+    left: 19px;
+  }
+}
+
+.custom-radio input[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  @include transform(scale(0));
+}
+
+.custom-radio input[type="radio"]:checked + label:after {
+  opacity: 1;
+  @include transform(scale(1));
+}
+
+.order-asguest {
+  color: $color-dark;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+}
+.order-asguest a {
+  color: $color-dark;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+}
+.order-asguest .separator {
+  color: $separator-color;
+  margin: 0 8px;
+  line-height: 1;
+  font-size: 1.3rem;
+  width: 1px;
+  height: 12px;
+  background: $color-dark;
+  position: relative;
+  top: 2px;
+}
+.order-asguest .gray {
+  color: $black-soft;
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+}
+
+.personal-information .form-group .col-form-label {
+  font-size: 14px;
+  color: $color-dark;
+  padding-top: 0.625rem;
+  text-transform: capitalize;
+}
+.personal-information .form-group .form-control {
+  background-color: $color-white;
+  color: $color-dark;
+  border: 1px solid $border-color;
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  @include border-radius(0px !important);
+}
+
+.delivery-option {
+  background: $color-grey-light;
+  padding: 1.5rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.carrier-name {
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+  text-transform: capitalize;
+  color: $color-dark;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.carrier-delay {
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+  color: $color-dark;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.carrier-price {
+  font-family: $gilroyMedium;
+  font-weight: fontweight(medium);
+  color: $color-dark;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+/* ***************
+  checkout End
+ ******************/

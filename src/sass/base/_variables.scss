@@ -1,0 +1,61 @@
+// Variables
+
+//# Base font family
+
+$gilroyLight: "Gilroy-Light ☞";
+$gilroyRegular: "Gilroy-Regular ☞";
+$gilroyMedium: "Gilroy-Medium ☞";
+$gilroyBold: "Gilroy-Bold ☞";
+$gilroyHeavy: "Gilroy-Heavy ☞";
+// font-weght
+
+$fontWeights: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semi-bold": 600,
+  "bold": 700,
+  "black": 800,
+  "heavy": 900,
+);
+
+// # Paragraph spacing
+$paragraph-spacing: 0px;
+//# Base line height
+$base-line-height: 24px;
+// theme colors
+$theme-color: #f33535;
+$theme-color2: #ff7519;
+$theme-color3: #10a341;
+// text colors
+$black: #000;
+$color-white: #ffffff;
+$color-dark: #1d1d1d;
+$color-dark2: #292929;
+$color-grey: #f5f5f5;
+$color-grey-dark: #efefef;
+$color-grey-light: #f6f6f6;
+$color-grey-light2: #f9f9f9;
+$body-color: #707070;
+$color-warning: #fdd835;
+$star-deselect: #d0d0d0;
+$del: #9b9b9b;
+$focus-color: #253237;
+$placeholder-color: #999;
+$instock: #777;
+$feature: #f1f1f1;
+$camel: #c19a6b;
+// Soft color
+$black-soft: #7e7e7e;
+$grey-soft: #9d9d9d;
+$overlay-color: rgba(0, 0, 0, 0.5);
+$progress-color: rgba(49, 56, 72, 0.298);
+// separator color
+$separator-color: #bfbfbf;
+$deselect: #e0e0e0;
+$border-color: #ebebeb;
+$border-color2: #eee;
+$tab-menu-color: #666;
+// theme dots color
+$themedot2: #d6d6d6;
+$grayCardBg: #f7f7f7;

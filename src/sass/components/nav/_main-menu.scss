@@ -1,0 +1,83 @@
+/*------------------*
+# Main-menu
+*------------------*/
+.main-menu {
+  li {
+    margin: 0 1px;
+    position: relative;
+    a {
+      font-family: $gilroyBold;
+      font-weight: fontweight(bold);
+      display: block;
+      padding: 15px 20px;
+      font-size: 14px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 14px;
+      text-transform: uppercase;
+      i {
+        font-size: 16px;
+        position: relative;
+        top: 1px;
+      }
+    }
+  }
+}
+// theme1
+.theme1 {
+  li {
+    a {
+      color: $color-dark;
+    }
+    &:hover > a {
+      color: $theme-color;
+    }
+
+    &.active > a {
+      color: $theme-color;
+    }
+  }
+}
+
+// theme2
+.theme2 {
+  li {
+    a {
+      color: $color-dark;
+      @include min-screen(992) {
+        color: $color-white;
+      }
+      line-height: 1.2;
+    }
+    &:hover > a {
+      color: $theme-color2;
+    }
+
+    &.active > a {
+      color: $theme-color2;
+    }
+  }
+}
+// theme3
+.theme3 {
+  li {
+    a {
+      color: $color-dark;
+      line-height: 1.2;
+      @include min-screen(992) {
+        color: $color-white;
+      }
+    }
+    &:hover > a {
+      color: $theme-color3;
+    }
+
+    &.active > a {
+      color: $theme-color3;
+    }
+  }
+}
+
+/*------------------*
+# Main-menu END
+*------------------*/

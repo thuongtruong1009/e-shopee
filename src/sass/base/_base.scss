@@ -1,0 +1,272 @@
+/* local fonts */
+
+@font-face {
+  font-family: "Gilroy-Bold ☞";
+  font-style: normal;
+  font-weight: fontweight(bold);
+  src: local("Gilroy-Bold ☞"), url("../fonts/Gilroy-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy-Heavy ☞";
+  font-style: normal;
+  font-weight: fontweight(heavy);
+  src: local("Gilroy-Heavy ☞"), url("../fonts/Gilroy-Heavy.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy-Light ☞";
+  font-style: normal;
+  font-weight: fontweight(light);
+  src: local("Gilroy-Light ☞"), url("../fonts/Gilroy-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy-Medium ☞";
+  font-style: normal;
+  font-weight: fontweight(medium);
+  src: local("Gilroy-Medium ☞"),
+    url("../fonts/Gilroy-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy-Regular ☞";
+  font-style: normal;
+  font-weight: fontweight(regular);
+  src: local("Gilroy-Regular ☞"),
+    url("../fonts/Gilroy-Regular.woff") format("woff");
+}
+
+/*---------------------------*
+ #Template default CSS
+*----------------------------*/
+
+body {
+  background: $color-white;
+  font-family: $gilroyRegular;
+  font-weight: fontweight(regular);
+  font-size: 14px;
+  color: $body-color;
+  line-height: $base-line-height;
+  visibility: visible;
+  overflow-x: hidden;
+}
+
+.container,
+.container-lg,
+.container-md,
+.container-sm {
+  @include min-screen(1200) {
+    max-width: 1440px;
+  }
+  @include max-screen(576, 1199) {
+    max-width: 100%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $gilroyMedium;
+  line-height: 1;
+  margin: 0;
+}
+
+p {
+  margin: $paragraph-spacing;
+}
+
+a,
+button {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  outline: 0;
+}
+
+a,
+button,
+img,
+input {
+  @include transition(0.3s);
+}
+
+a {
+  &:focus {
+    text-decoration: none;
+    outline: 0;
+  }
+  &:hover {
+    text-decoration: none;
+    color: $theme-color;
+  }
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+  outline: 0 !important;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus {
+  outline: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+span {
+  display: inline-block;
+}
+span {
+  &.separator {
+    color: $separator-color;
+    margin: 0 8px;
+    line-height: 1;
+    font-size: 14px;
+  }
+}
+.zoom-in img {
+  @include transition(0.3s linear);
+}
+
+.zoom-in:hover img {
+  @include transform(scale(1.045) rotate(0.05deg));
+}
+
+.theme-border {
+  border: 2px solid $theme-color !important;
+}
+.theme-border2 {
+  border: 2px solid $theme-color2 !important;
+}
+
+.position-xl-relative {
+  @include min-screen(1200) {
+    position: relative;
+  }
+}
+
+.custom-column {
+  .row > {
+    .col-xl-5 {
+      max-width: 100%;
+      @include min-screen(1920) {
+        width: 50%;
+      }
+      @include max-screen(1919) {
+        width: 60%;
+      }
+      @include max-screen(1200) {
+        width: 72%;
+      }
+      @include max-screen(991) {
+        width: 40%;
+      }
+      @include max-screen(575) {
+        width: 100%;
+      }
+    }
+
+    .col-xl-4 {
+      max-width: 100%;
+      @include min-screen(1920) {
+        width: 36%;
+      }
+
+      @include max-screen(992, 1919) {
+        width: auto;
+        display: none;
+      }
+
+      @include max-screen(991) {
+        width: 100%;
+        display: block;
+      }
+    }
+    .col-xl-3 {
+      max-width: 100%;
+      @include min-screen(1920) {
+        width: 14%;
+      }
+
+      @include max-screen(1919) {
+        width: 40%;
+      }
+
+      @include max-screen(1200) {
+        width: 28%;
+      }
+
+      @include max-screen(991) {
+        width: 60%;
+      }
+      @include max-screen(575) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.none-in-xxl {
+  @include min-screen(1920) {
+    display: none;
+  }
+
+  @include max-screen(991) {
+    display: none;
+  }
+}
+
+.position-lg-static {
+  @include max-screen(1200) {
+    position: static !important;
+  }
+}
+
+.zIndex-3 {
+  z-index: 3;
+}
+
+hr.hr {
+  background-color: $border-color;
+  opacity: 1;
+}
+
+span.required {
+  color: $theme-color;
+}
+
+.theme1 {
+  .hover-color {
+    &:hover {
+      color: $theme-color !important;
+    }
+  }
+}
+
+.w-md-50 {
+  width: 100%;
+  max-width: 100%;
+  @include min-screen(768) {
+    max-width: 50%;
+  }
+}

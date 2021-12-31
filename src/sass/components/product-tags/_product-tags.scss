@@ -1,0 +1,92 @@
+/******************************** 
+   product-tags style
+ ********************************/
+
+.product-size {
+  .title {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: fontweight(bold);
+    color: $color-dark;
+    line-height: 24px;
+    font-family: $gilroyBold;
+  }
+  select {
+    background-color: $color-white;
+    padding: 0 30px 0 10px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 40px;
+    font-weight: fontweight(regular);
+    font-size: 14px;
+    color: $color-dark;
+    border: 1px solid $border-color;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAPklEQVR4Ae3TwREAEBQD0V/6do4SXPZg7EsBhsQ8IEmSMOsiuEfg3gL3oXC7wK0bd1G4o8X9F4yIkyQfSrIByQBjp7QuND8AAAAASUVORK5CYII=)
+      no-repeat scroll right 0.5rem center/1.25rem 1.25rem;
+    option {
+      font-weight: fontweight(regular);
+    }
+  }
+}
+
+.select-arrow-down {
+  position: absolute;
+  left: calc(100% - 85px);
+}
+
+/* product-widget  */
+
+.product-widget {
+  .title {
+    font-family: $gilroyMedium;
+    font-weight: fontweight(medium);
+    font-size: 20px;
+    line-height: 1;
+    color: $color-dark;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+    display: block;
+    border-bottom: 1px solid $border-color;
+    text-transform: capitalize;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 60px;
+      height: 2px;
+      background: $theme-color;
+    }
+  }
+}
+.product-tag {
+  li {
+    a {
+      font-family: $gilroyRegular;
+      font-weight: fontweight(regular);
+      text-transform: capitalize;
+      display: block;
+      padding: 10px 25px;
+      font-size: 14px;
+      line-height: 20px;
+      color: $color-dark;
+      border: 1px solid $border-color;
+      background: $color-white;
+      margin: 4px;
+      margin-left: 4px;
+      border-radius: 30px;
+      &:hover {
+        color: $color-white;
+        background: $theme-color;
+        border-color: $theme-color;
+      }
+    }
+  }
+}
+
+/******************************** 
+   product-tags style END
+ ********************************/

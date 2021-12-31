@@ -1,0 +1,468 @@
+/*************************************
+ common modal CSS 
+*************************************/
+
+/* modal style1 */
+
+.modal {
+  &.style1 {
+    .modal-dialog {
+      max-width: 1020px;
+    }
+    .modal-header {
+      border: none;
+      padding: 6px 0.625rem;
+      height: 30px;
+      .close {
+        font-size: 2.4rem;
+        font-weight: fontweight(bold);
+        line-height: 1;
+        color: $black;
+        text-shadow: 0 1px 0 $color-white;
+        opacity: 0.2;
+        position: absolute;
+        top: 25px;
+        right: 30px;
+        padding: 0;
+      }
+    }
+    .modal-body {
+      padding: 30px 30px 90px;
+    }
+    .product-head {
+      .title {
+        font-weight: fontweight(regular);
+        text-transform: capitalize;
+        color: $body-color;
+        font-size: 24px;
+        font-family: $gilroyRegular;
+        margin: 0 0 20px 0;
+      }
+      .sub-title {
+        font-size: 14px;
+        color: $color-dark;
+        margin: 0 0 10px 0;
+      }
+
+      .star-content {
+        .star-on {
+          color: $color-warning;
+          font-size: 12px;
+        }
+        .de-selected {
+          color: $deselect;
+        }
+      }
+    }
+    .product-body {
+      color: $instock;
+      font-size: 14px;
+      font-weight: fontweight(regular);
+      line-height: 24px;
+    }
+    .new-price {
+      text-transform: capitalize;
+      font-weight: fontweight(bold);
+      line-height: 30px;
+      color: $color-dark;
+      font-size: 26px;
+      font-family: $gilroyBold;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .modal.style1 .product-head .title {
+    margin: 0 0 2rem 0;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
+
+.check-box .title {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: fontweight(bold);
+  color: $color-dark;
+  line-height: 24px;
+  font-family: $gilroyBold;
+}
+
+.pro-social-links {
+  ul {
+    li {
+      margin-right: 15px;
+      &.share {
+        line-height: 30px;
+        font-weight: fontweight(bold);
+        color: $color-dark;
+        font-size: 14px;
+        font-family: $gilroyBold;
+      }
+      a {
+        display: block;
+        width: 20px;
+        text-align: center;
+        color: $grey-soft;
+        font-size: 18px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+// theme1
+.theme1 {
+  .pro-social-links {
+    ul {
+      li {
+        a {
+          &:hover {
+            color: $theme-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// theme2
+.theme2 {
+  .pro-social-links {
+    ul {
+      li {
+        a {
+          &:hover {
+            color: $theme-color2;
+          }
+        }
+      }
+    }
+  }
+}
+
+.addto-whish-list {
+  a {
+    display: inline-block;
+    line-height: 30px;
+    padding: 0;
+    border: none;
+    color: $tab-menu-color;
+    font-size: 14px;
+    margin-right: 15px;
+  }
+}
+// theme1
+.theme1 {
+  .addto-whish-list {
+    a {
+      &:hover {
+        color: $theme-color;
+      }
+    }
+  }
+}
+
+// theme2
+.theme2 {
+  .addto-whish-list {
+    a {
+      &:hover {
+        color: $theme-color2;
+      }
+    }
+  }
+}
+// theme3
+.theme3 {
+  .addto-whish-list {
+    a {
+      &:hover {
+        color: $theme-color3;
+      }
+    }
+  }
+}
+
+.product-discount {
+  margin: 15px 0px 0px;
+}
+
+.regular-price {
+  font-weight: fontweight(bold);
+  line-height: 30px;
+  color: $color-dark;
+  font-size: 26px;
+  font-family: $gilroyBold;
+}
+
+/* modal style2 */
+
+.modal {
+  &.style2 {
+    .modal-dialog {
+      max-width: 300px;
+    }
+    .modal-header {
+      border: 0;
+      padding: 0;
+      .close {
+        font-size: 2.4rem;
+        font-weight: fontweight(bold);
+        line-height: 1;
+        color: $black;
+        text-shadow: 0 1px 0 $color-white;
+        opacity: 0.2;
+        position: absolute;
+        top: 25px;
+        right: 30px;
+        padding: 0;
+        z-index: 999;
+      }
+    }
+    .title {
+      padding: 45px 25px;
+      text-align: center;
+      font-size: 14px;
+      color: $body-color;
+      i {
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+/* modal style3 */
+
+.modal {
+  &.style3 {
+    .modal-dialog {
+      max-width: 1140px;
+    }
+
+    .modal-header {
+      padding: 15px;
+      border-bottom: 1px solid $color-grey;
+      .close {
+        opacity: 1;
+        position: absolute;
+        top: 25px;
+        right: 30px;
+        padding: 0;
+        z-index: 999;
+        color: $color-white;
+        font-size: 1.5rem;
+        font-weight: fontweight(bold);
+        line-height: 1;
+        text-shadow: 0 1px 0 $color-white;
+        font-family: $gilroyBold;
+        &:hover {
+          opacity: 1 !important;
+          color: $focus-color !important;
+          color: $color-white !important;
+        }
+      }
+    }
+
+    .modal-title {
+      text-align: center;
+      padding-right: 20px;
+      color: $color-white;
+      font-size: 1.125rem;
+      line-height: 24px;
+      line-height: 1;
+      font-family: $gilroyMedium;
+      font-weight: fontweight(medium);
+      span {
+        font-size: 15px;
+        margin-right: 15px;
+      }
+    }
+
+    .modal-body {
+      padding: 3.125rem 1.875rem;
+    }
+
+    .product-name {
+      line-height: 24px;
+      font-weight: fontweight(medium);
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: $color-dark;
+    }
+
+    .price {
+      line-height: 1.4;
+      color: $color-dark;
+      font-size: 14px;
+      font-weight: fontweight(bold);
+      font-family: $gilroyBold;
+    }
+    .color {
+      line-height: 2.5;
+      color: $color-dark;
+      font-size: 14px;
+      font-weight: fontweight(bold);
+      font-family: $gilroyBold;
+    }
+
+    .quantity {
+      color: $color-dark;
+      font-size: 14px;
+      font-weight: fontweight(bold);
+      font-family: $gilroyBold;
+    }
+  }
+}
+
+.modal-cart-content {
+  padding-left: 2.5rem;
+  strong {
+    font-weight: fontweight(bold);
+    font-family: $gilroyBold;
+    color: $color-dark;
+    font-size: 14px;
+  }
+  p {
+    color: $color-dark;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-cart-content {
+    padding-left: 0px;
+  }
+}
+
+.divide-right {
+  border-right: 1px solid $border-color;
+}
+.dmc {
+  font-size: 14px !important;
+  font-weight: fontweight(regular);
+  font-family: $gilroyRegular;
+}
+@media (max-width: 767px) {
+  .divide-right {
+    border-right: 1px solid transparent;
+  }
+}
+
+@media (max-width: 991px) {
+  .modal.style3 img {
+    display: block;
+    max-width: 180px;
+    margin: 0 auto 1.5rem;
+  }
+}
+
+.cart-content-btn i {
+  font-size: 15px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+/* modal 4 style */
+
+.style4 {
+  .modal-dialog {
+    max-width: 600px;
+  }
+  .modal-title {
+    font-weight: fontweight(regular);
+    font-family: $gilroyRegular;
+    padding: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    background: $color-dark !important;
+  }
+  .modal-header {
+    padding: 30px 30px 0px;
+    margin-bottom: 10px;
+    border: 0px;
+  }
+  .modal-body {
+    padding: 15px 30px 30px;
+  }
+  .modal-form {
+    > .title {
+      font-family: $gilroyMedium;
+      font-weight: fontweight(medium);
+      color: $color-dark;
+      line-height: 24px;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+    label {
+      &.title {
+        border-top: 1px solid $border-color;
+        padding-top: 15px;
+        font-family: $gilroyBold;
+        font-weight: fontweight(bold);
+        color: $color-dark;
+        font-size: 14px;
+      }
+      margin: 12px 0 4px 0;
+      text-align: right;
+      display: block;
+      font-family: $gilroyBold;
+      font-weight: fontweight(bold);
+      color: $color-dark;
+      font-size: 14px;
+    }
+
+    .form-control {
+      padding: 0 5px;
+      min-height: 28px;
+      height: 28px;
+      border: 1px solid $border-color;
+      border-radius: 0;
+      box-shadow: none;
+      &.textarea {
+        height: 80px;
+      }
+    }
+  }
+  .modal-thumb {
+    img {
+      border: 1px solid $border-color;
+    }
+    .title {
+      padding: 10px 0 5px;
+      font-size: 13px;
+      font-family: $gilroyBold;
+      font-weight: fontweight(bold);
+      color: $color-dark;
+      line-height: 18px;
+    }
+  }
+  .star-content {
+    span {
+      color: $color-warning;
+      font-size: 18px;
+      &.quality {
+        font-family: $gilroyBold;
+        font-weight: fontweight(bold);
+        color: $color-dark;
+        font-size: 14px;
+      }
+    }
+  }
+  .required {
+    font-size: 12px;
+    color: $color-dark;
+    margin-bottom: 10px;
+  }
+}
+
+.or {
+  font-size: 12px;
+  color: $color-dark;
+}
+
+/*************************************
+ common modal CSS  ENd
+*************************************/

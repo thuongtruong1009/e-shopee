@@ -1,0 +1,66 @@
+/*******************************
+ sticky header
+ *******************************/
+
+#sticky.is-isticky {
+
+  @include min-screen(992) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    @include transition(0.3s);
+    animation: ease-in-out 0.5s fadeInDown;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.4);
+  }
+}
+
+// theme1
+.theme1 {
+  &.is-isticky {
+    background: rgba(255, 255, 255, 0.8);
+
+    &:hover {
+      background: $color-white;
+    }
+  }
+}
+
+// theme2
+.theme2 {
+  &.is-isticky {
+    background: rgba(29, 29, 29, 0.8) !important;
+
+    &:hover {
+      background: $color-dark !important;
+    }
+  }
+}
+
+// theme3
+.theme3 {
+  &.is-isticky {
+    background: rgba(29, 29, 29, 0.8) !important;
+
+    &:hover {
+      background: $color-dark !important;
+    }
+  }
+}
+
+#sticky.custom-sticky.is-isticky {
+
+  @include min-screen(992) {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  @include max-screen(991) {
+    position: static !important;
+  }
+}
+
+/*******************************
+ sticky header End
+ *******************************/
