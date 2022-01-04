@@ -1,7 +1,13 @@
 <template>
-  <main class="px-4 py-10 text-center text-gray-700 dark:text-gray-200">
+  <main class="text-center text-gray-700 dark:text-gray-200">
+    <div class="flex justify-between items-center bg-black">
+      <LMenu />
+      <div class="flex justify-center items-center text-white">
+        <RMenu />
+        <Footer class="mx-2.75" />
+      </div>
+    </div>
     <router-view />
-    <Footer />
     <div class="mt-5 mx-auto text-center opacity-25 text-sm">
       [Home Layout]
     </div>
