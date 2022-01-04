@@ -12,3 +12,15 @@ intro:
   aka: Also known as
   whats-your-name: What's your name?
 not-found: Not found
+header:
+  home: Home
+  shop: Shop
+  pages: Pages
+  blog: Blog
+  contact us: Contact us
+  setting: Setting
+  usd: USD
+  euro: Euro
+  my ccount: My Account
+  checkout: Checkout
+  sign out: Sign out

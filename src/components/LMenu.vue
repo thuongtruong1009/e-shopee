@@ -1,38 +1,16 @@
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
 <template>
-  <div class="container">
+  <div class="container dark:text-white">
     <div class="dropdown">
       <div class="dropdown__select">
-        <span class="dropdown__selected">Home</span>
+        <span class="dropdown__selected">{{ t('header.home') }}</span>
       </div>
     </div>
-    <div class="dropdown">
+    <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
-        <span class="dropdown__selected">Shop <i class="fas fa-chevron-down" /></span>
-      </div>
-      <ul class="dropdown__list">
-        <li class="dropdown__item">
-          <span class="dropdown__text">About Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Checkout Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Compare Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Login  Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Account Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Wishlist Page</span>
-        </li>
-      </ul>
-    </div>
-    <div class="dropdown">
-      <div class="dropdown__select">
-        <span class="dropdown__selected">Pages <i class="fas fa-chevron-down" /></span>
+        <span class="dropdown__selected">{{ t('header.shop') }} <i class="fas fa-chevron-down" /></span>
       </div>
       <ul class="dropdown__list">
         <li class="dropdown__item">
@@ -55,9 +33,9 @@
         </li>
       </ul>
     </div>
-    <div class="dropdown">
+    <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
-        <span class="dropdown__selected">Blog <i class="fas fa-chevron-down" /></span>
+        <span class="dropdown__selected">{{ t('header.pages') }} <i class="fas fa-chevron-down" /></span>
       </div>
       <ul class="dropdown__list">
         <li class="dropdown__item">
@@ -80,16 +58,40 @@
         </li>
       </ul>
     </div>
-    <div class="dropdown">
+    <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
-        <span class="dropdown__selected">Contact us </span>
+        <span class="dropdown__selected">{{ t('header.blog') }} <i class="fas fa-chevron-down" /></span>
+      </div>
+      <ul class="dropdown__list">
+        <li class="dropdown__item">
+          <span class="dropdown__text">About Page</span>
+        </li>
+        <li class="dropdown__item">
+          <span class="dropdown__text">Checkout Page</span>
+        </li>
+        <li class="dropdown__item">
+          <span class="dropdown__text">Compare Page</span>
+        </li>
+        <li class="dropdown__item">
+          <span class="dropdown__text">Login  Page</span>
+        </li>
+        <li class="dropdown__item">
+          <span class="dropdown__text">Account Page</span>
+        </li>
+        <li class="dropdown__item">
+          <span class="dropdown__text">Wishlist Page</span>
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown dark:bg-black">
+      <div class="dropdown__select">
+        <span class="dropdown__selected">{{ t('header.contact us') }} </span>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* You can remove these code below*/
   /* :root {
     --primary: #08aeea;
     --secondary: #13D2B8;
@@ -100,8 +102,7 @@
     --font: "Poppins", sans-serif;
     --gradient: linear-gradient(40deg, #ff6ec4, #7873f5);
     --shadow: 0 0 15px 0 rgba(0,0,0,0.05);
-  }*{box-sizing:border-box;}input,button,textarea{border:0;outline:none;} */
-  /* Main code */
+  }*/
 .container{
     display: flex;
     justify-content: space-around;

@@ -1,20 +1,21 @@
 <script setup lang="ts">
-window.addEventListener('load', () => {
-  const menuToggle = document.querySelector('.menu-toggle')
-  const menuChild = document.querySelectorAll('.has-child > a')
-  menuChild?.forEach(el =>
-    el.addEventListener('click', (e) => {
-      e.preventDefault()
-      const subMenu = e.target?.nextElementSibling?.classList.toggle(
-        'show',
-      )
-    }),
-  )
-  menuToggle?.addEventListener('click', () => {
-    const menu = document.querySelector('.menu')
-    menu.classList.toggle('show')
-  })
-})
+const { t } = useI18n()
+// window.addEventListener('load', () => {
+//   const menuToggle = document.querySelector('.menu-toggle')
+//   const menuChild = document.querySelectorAll('.has-child > a')
+//   menuChild?.forEach(el =>
+//     el.addEventListener('click', (e) => {
+//       e.preventDefault()
+//       const subMenu = e.target?.nextElementSibling?.classList.toggle(
+//         'show',
+//       )
+//     }),
+//   )
+//   menuToggle?.addEventListener('click', () => {
+//     const menu = document.querySelector('.menu')
+//     menu.classList.toggle('show')
+//   })
+// })
 </script>
 
 <template>
@@ -23,46 +24,39 @@ window.addEventListener('load', () => {
     <ul class="menu">
       <li class="menu-item has-child">
         <a href="#" class="menu-link">
-          Setting <i class="fas fa-chevron-down" />
+          {{ t('header.setting') }} <i class="fas fa-chevron-down" />
         </a>
         <ul class="menu-child">
           <li class="menu-child-item has-child">
             <a href="#" class="menu-child-link">
-              My Account
-            </a>
-            <!-- <ul class="menu-child menu-child1">
-              <li class="menu-child-item">
-                <a href="#" class="menu-child-link">
-                  CodingUI
-                </a>
-              </li>
-            </ul> -->
-          </li>
-          <li class="menu-child-item">
-            <a href="#" class="menu-child-link">
-              Checkout
+              {{ t('header.my ccount') }}
             </a>
           </li>
           <li class="menu-child-item">
             <a href="#" class="menu-child-link">
-              Sign out
+              {{ t('header.checkout') }}
+            </a>
+          </li>
+          <li class="menu-child-item">
+            <a href="#" class="menu-child-link">
+              {{ t('header.sign out') }}
             </a>
           </li>
         </ul>
       </li>
       <li class="menu-item has-child">
         <a href="#" class="menu-link">
-          USD $ <i class="fas fa-chevron-down" />
+          {{ t('header.usd') }} $ <i class="fas fa-chevron-down" />
         </a>
         <ul class="menu-child">
           <li class="menu-child-item has-child">
             <a href="#" class="menu-child-link">
-              Euro €
+              {{ t('header.euro') }} €
             </a>
           </li>
           <li class="menu-child-item">
             <a href="#" class="menu-child-link">
-              USD $
+              {{ t('header.usd') }} $
             </a>
           </li>
         </ul>
