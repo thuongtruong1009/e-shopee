@@ -26,6 +26,7 @@ specifiers:
   pinia: ^2.0.9
   pnpm: ^6.24.3
   prism-theme-vars: ^0.2.2
+  swiper: ^7.4.1
   typescript: ^4.5.4
   unplugin-auto-import: ^0.5.4
   unplugin-icons: ^0.13.0
@@ -40,6 +41,7 @@ specifiers:
   vite-ssg: ^0.17.2
   vitest: ^0.0.113
   vue: ^3.2.26
+  vue-awesome-swiper: ^4.1.1
   vue-demi: ^0.12.1
   vue-i18n: ^9.1.9
   vue-router: ^4.0.12
@@ -51,7 +53,9 @@ dependencies:
   nprogress: 0.2.0
   pinia: 2.0.9_typescript@4.5.4+vue@3.2.26
   prism-theme-vars: 0.2.2
+  swiper: 7.4.1
   vue: 3.2.26
+  vue-awesome-swiper: 4.1.1_swiper@7.4.1+vue@3.2.26
   vue-demi: 0.12.1_vue@3.2.26
   vue-i18n: 9.1.9_vue@3.2.26
   vue-router: 4.0.12_vue@3.2.26
@@ -3053,6 +3057,12 @@ packages:
       domhandler: 4.2.2
       entities: 2.2.0
     dev: true
+
+  /dom7/4.0.2:
+    resolution: {integrity: sha512-Ji4t3Y/vNQg6Q9bR+Syx6Td8qiq8116LE9h4OzbPuxdxK7DyyX7i8EXkYgBX6+EiX6+oYXDTH5BSN29G/n4jug==}
+    dependencies:
+      ssr-window: 4.0.2
+    dev: false
 
   /domelementtype/2.2.0:
     resolution: {integrity: sha512-DtBMo82pv1dFtUmHyr48beiuq792Sxohr+8Hm9zoxklYPfa6n0Z3Byjj2IV7bmr2IyqClnqEQhfgHJJ5QF0R5A==}
@@ -6299,6 +6309,10 @@ packages:
       tweetnacl: 0.14.5
     dev: true
 
+  /ssr-window/4.0.2:
+    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==}
+    dev: false
+
   /statuses/1.5.0:
     resolution: {integrity: sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=}
     engines: {node: '>= 0.6'}
@@ -6429,6 +6443,15 @@ packages:
     dependencies:
       has-flag: 4.0.0
     dev: true
+
+  /swiper/7.4.1:
+    resolution: {integrity: sha512-dhbL4tpYFvHug1J7GnKElfTi6EYhlZy/vNZRhHkWFyUsWZ1Vovipxj3la5gqllMogygXJMe3zvVv+f6eppvWiA==}
+    engines: {node: '>= 4.7.0'}
+    requiresBuild: true
+    dependencies:
+      dom7: 4.0.2
+      ssr-window: 4.0.2
+    dev: false
 
   /symbol-tree/3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
@@ -7175,6 +7198,17 @@ packages:
       vscode-pug-languageservice: 0.30.0
       vscode-typescript-languageservice: 0.30.0
     dev: true
+
+  /vue-awesome-swiper/4.1.1_swiper@7.4.1+vue@3.2.26:
+    resolution: {integrity: sha512-50um10t6N+lJaORkpwSi1wWuMmBI1sgFc9Znsi5oUykw2cO5DzLaBHcO2JNX21R+Ue4TGoIJDhhxjBHtkFrTEQ==}
+    engines: {node: '>=8'}
+    peerDependencies:
+      swiper: ^5.2.0
+      vue: 2.x
+    dependencies:
+      swiper: 7.4.1
+      vue: 3.2.26
+    dev: false
 
   /vue-demi/0.12.1_vue@3.2.26:
     resolution: {integrity: sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw==}
