@@ -4,7 +4,7 @@
       <LMenu />
       <div class="flex justify-center items-center text-white">
         <RMenu />
-        <Footer class="mx-2.75" />
+        <CExtension class="mx-2.75" />
       </div>
     </div>
     <CHead />
