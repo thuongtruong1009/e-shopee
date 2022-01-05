@@ -1,12 +1,12 @@
 <template>
-  <div class="min-w-screen-lg h-screen-sm">
+  <div class="min-w-screen-lg h-150">
     <transition-group name="fade" tag="div">
       <div v-for="i in [currentIndex]" :key="i">
         <img :src="currentImg">
       </div>
     </transition-group>
-    <a class="prev" href="#" @click="prev">&#10094; Previous</a>
-    <a class="next" href="#" @click="next">&#10095; Next</a>
+    <a class="prev" href="#" @click="prev">&#10094;</a>
+    <a class="next" href="#" @click="next">&#10095;</a>
   </div>
 </template>
 <script>
@@ -81,24 +81,27 @@ img {
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   font-weight: bold;
   font-size: 18px;
   transition: 0.7s ease;
-  border-radius: 0 4px 4px 0;
+  border-radius: 50%;
   text-decoration: none;
   user-select: none;
 }
 
 .next {
-  right: 0;
+  right: 1rem;
 }
 
 .prev {
-  left: 0;
+  left: 1rem;
 }
 
 .prev:hover, .next:hover {
