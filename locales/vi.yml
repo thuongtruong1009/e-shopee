@@ -11,3 +11,15 @@ intro:
   hi: Hi, {name}!
   whats-your-name: Tên bạn là gì?
 not-found: Không tìm thấy
+header:
+  home: Trang chủ
+  shop: Cửa hàng
+  pages: Giao diện
+  blog: Bài viết
+  contact us: Liên hệ
+  setting: Cài đặt
+  usd: Đô la
+  euro: Ơ rô
+  my ccount: Tài khoản
+  checkout: Kiểm tra
+  sign out: Thoát

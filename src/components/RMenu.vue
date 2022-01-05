@@ -150,16 +150,18 @@ const { t } = useI18n()
               background-color: transparent;
               transform: translateY(-100%);
             }
-            /* .menu-child {
-              top: 0;
-              left: 100%;
-              margin-top: 0;
-            } */
             .menu-item.has-child:hover > .menu-child {
               display: block;
+              animation: popdown-animate 0.3s linear;
             }
-            .menu-child-item.has-child:hover > .menu-child {
-              display: block;
+            @keyframes popdown-animate{
+              0%{
+                opacity: 0;
+                margin-top: 1.5rem;
+              }
+              100%{
+                opacity: 1;
+              }
             }
           }
           @media screen and (max-width: 1023px) {
