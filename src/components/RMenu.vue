@@ -153,6 +153,7 @@ const { t } = useI18n()
             .menu-item.has-child:hover > .menu-child {
               display: block;
               animation: popdown-animate 0.3s linear;
+              z-index: 2;
             }
             @keyframes popdown-animate{
               0%{
