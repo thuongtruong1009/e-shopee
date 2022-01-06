@@ -32,7 +32,7 @@ export default {
   },
 
   methods: {
-    startSlide() {
+    getStatus() {
       setTimeout(() => {
         this.isSliding = !this.isSliding
       }, 3000)
