@@ -15,7 +15,7 @@ export default {
       ],
       timer: null,
       currentIndex: 1,
-      isSliding: false,
+      isSliding: true,
     }
   },
   mounted() {
@@ -70,12 +70,36 @@ export default {
         </ul>
       </div>
     </div>
-    <div class="card-product w-full h-100 grid grid-cols-7 mt-0 px-12">
-      <div v-for="i in images.length-2" :key="i" class="flex justify-around items-center">
-        <img :src="images[i]" :style="[isSliding ? {transform: 'translate(-12rem, 0)'} : {transform: 'translate(12rem, 0)'}]">
+    <div class="card-product w-full max-h-100 flex justify-center items-center">
+      <div class="grid justify-around items-center w-11/12 h-full overflow-x-scroll gap-5" :class="[`grid-cols-${images.length-2}`]">
+        <div v-for="i in images.length-2" :key="i" class="card grid row-span-1 bg-pink-300" :class="[`col-start-${i} col-end-${i+2}`]" :style="[isSliding ? {transform: 'translateX(-12rem)'} : {transform: 'translateX(12rem)'}]">
+          <div class="card-type flex justify-between">
+            <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">new</span>
+            <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
+          </div>
+          <div class="card-img max-w-full max-h-7/12">
+            <a href="single-product.html">
+              <img class="first-img" src="/img/product/13.jpg" alt="thumbnail">
+            </a>
+          </div>
+          <div class="product-description">
+            <p class="title">
+              New Luxury Men's Slim Fit Shirt Short Sleeve...
+            </p>
+            <div class="star-rating flex justify-start">
+              <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-5 max-h-5">
+            </div>
+            <div class="flex items-center justify-between">
+              <h6 class="card-price">
+                $11.90
+              </h6>
+              <img src="https://img.icons8.com/small/50/000000/shopping-cart.png" class="max-w-9 max-h-9 p-2 rounded-full bg-gray-200">
+            </div>
+          </div>
+        </div>
+        <a class="prev" @click="prev">&#10094;</a>
+        <a class="next" @click="next">&#10095;</a>
       </div>
-      <a class="prev" @click="prev">&#10094;</a>
-      <a class="next" @click="next">&#10095;</a>
     </div>
   </div>
 </template>
@@ -88,20 +112,21 @@ border-radius: 5px;
 text-transform: uppercase;
 color: rgb(114, 114, 114);
 font-size: 0.9rem;
+border: 2px solid transparent;
+transition: 0.2s;
 }
 .nav-item:hover{
     color: rgb(255, 102, 0);
-    border: 2px solid rgb(255, 102, 0);
+    border-color:rgb(255, 102, 0);
 }
-img{
-  width: 12rem;
-  height: 4rem;
-  transition: 3s linear;
+.card{
+  transition: 1.5s linear;
 }
+
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 200%;
+  top: 210%;
   width: 2.75rem;
   height: 2.75rem;
   color: rgb(114, 114, 114);
@@ -113,7 +138,7 @@ img{
   justify-content: center;
   align-items: center;
   border: 1px solid rgb(230, 230, 230);
-  background: transparent;
+  background: white;
   opacity: 0;
   transition: 0.3s linear;
 }
@@ -133,8 +158,12 @@ color: white;
 .card-product:hover .prev{
 transform: translateX(3rem);
 opacity: 1;
-}.card-product:hover .next {
+}
+.card-product:hover .next {
 transform: translateX(-3rem);
 opacity: 1;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
 }
 </style>
