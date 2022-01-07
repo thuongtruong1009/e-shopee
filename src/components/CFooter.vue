@@ -1,169 +1,114 @@
 <template>
-  <footer class="bg-light theme2 position-relative">
-    <!-- footer bottom start -->
-    <div class="footer-bottom pt-80 pb-30">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-4 mb-30">
-            <div class="footer-widget mx-w-400">
-              <div class="footer-logo mb-35">
-                <a href="index.html">
-                  <img src="assets/img/logo/logo-dark.jpg" alt="footer logo">
-                </a>
-              </div>
-              <p class="text mb-30">
-                We are a team of designers and developers that create high quality
-                Magento, Prestashop, Opencart.
-              </p>
-              <div class="address-widget mb-30">
-                <div class="media">
-                  <span class="address-icon mr-3">
-                    <img src="assets/img/icon/phone2.png" alt="phone">
-                  </span>
-                  <div class="media-body">
-                    <p class="help-text text-uppercase">
-                      NEED HELP?
-                    </p>
-                    <h4 class="title text-dark">
-                      <a href="tel:+1(123)8889999">(+800) 345 678</a>
-                    </h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="social-network">
-                <ul class="d-flex">
-                  <li>
-                    <a href="https://www.facebook.com/" target="_blank"><span
-                      class="icon-social-facebook"
-                    /></a>
-                  </li>
-                  <li>
-                    <a href="https://twitter.com/" target="_blank"><span
-                      class="icon-social-twitter"
-                    /></a>
-                  </li>
-                  <li>
-                    <a href="https://www.youtube.com/" target="_blank"><span
-                      class="icon-social-youtube"
-                    /></a>
-                  </li>
-                  <li class="mr-0">
-                    <a href="https://www.instagram.com/" target="_blank"><span
-                      class="icon-social-instagram"
-                    /></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-2 mb-30">
-            <div class="footer-widget">
-              <div class="border-bottom cbb1 mb-25">
-                <div class="section-title pb-20">
-                  <h2 class="title text-dark text-uppercase">
-                    Information
-                  </h2>
-                </div>
-              </div>
-              <!-- footer-menu start -->
-              <ul class="footer-menu">
-                <li><a href="#">Delivery</a></li>
-                <li><a href="about-us.html">About us</a></li>
-                <li><a href="#">Secure payment</a></li>
-                <li><a href="contact.html">Contact us</a></li>
-                <li><a href="#">Sitemap</a></li>
-                <li><a href="#">Stores</a></li>
-              </ul>
-              <!-- footer-menu end -->
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-2 mb-30">
-            <div class="footer-widget">
-              <div class="border-bottom cbb1 mb-25">
-                <div class="section-title pb-20">
-                  <h2 class="title text-dark text-uppercase">
-                    Custom Links
-                  </h2>
-                </div>
-              </div>
-              <!-- footer-menu start -->
-              <ul class="footer-menu">
-                <li><a href="#">Legal Notice</a></li>
-                <li><a href="#">Prices drop</a></li>
-
-                <li><a href="#">New products</a></li>
-
-                <li><a href="#">Best sales</a></li>
-
-                <li><a href="login.html">Login</a></li>
-
-                <li><a href="myaccount.html">My account</a></li>
-              </ul>
-              <!-- footer-menu end -->
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4 mb-30">
-            <div class="footer-widget">
-              <div class="border-bottom cbb1 mb-25">
-                <div class="section-title pb-20">
-                  <h2 class="title text-dark text-uppercase">
-                    Newsletter
-                  </h2>
-                </div>
-              </div>
-              <p class="text mb-20">
-                You may unsubscribe at any moment. For that purpose, please find our
-                contact info in the legal notice.
-              </p>
-              <div class="nletter-form mb-35">
-                <form
-                  class="form-inline position-relative"
-                  action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef"
-                  target="_blank" method="post"
-                >
-                  <input class="form-control" type="text" placeholder="Your email address">
-                  <button class="btn nletter-btn text-capitalize" type="submit">
-                    Sign
-                    up
-                  </button>
-                </form>
-              </div>
-
-              <div class="store d-flex">
-                <a href="https://www.apple.com/" class="d-inline-block mr-3"><img
-                  src="assets/img/icon/apple.png" alt="apple icon"
-                > </a>
-                <a href="https://play.google.com/store/" class="d-inline-block"><img
-                  src="assets/img/icon/play.png" alt="apple icon"
-                > </a>
-              </div>
-            </div>
-          </div>
+  <div class="footer flex">
+    <div class="left w-1/3 p-15 text-left bg-gray-100">
+      <CBrand class="text-black py-4" />
+      <p class="py-4">
+        We are always committed to serving you with the best services. Connect to receive more offers immediately.
+      </p>
+      <div class="contact flex py-4">
+        <span><a href="tel:(+84)917085937"><img src="/img/icon/phone2.png" alt=""></a></span>
+        <div class="phone pl-4">
+          <p>NEED HELP?</p>
+          <a href="tel:(+84)917085937"><h4 class="font-semibold text-black">(+84) 917 085 937</h4></a>
         </div>
       </div>
-    </div>
-    <!-- footer bottom end -->
-    <!-- coppy-right start -->
-    <div class="coppy-right pb-80">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="text-left">
-              <p class="mb-3 mb-md-0">
-                Copyright &copy; <a href="https://hasthemes.com/">HasThemes</a>. All
-                Rights Reserved
-              </p>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-8">
-            <div class="text-left">
-              <img src="assets/img/payment/1.png" alt="img">
-            </div>
-          </div>
-        </div>
+      <div class="social flex justify-start py-4">
+        <span><img src="https://img.icons8.com/ios/50/000000/facebook-new.png"></span>
+        <span><img src="https://img.icons8.com/ios/50/000000/github--v2.png"></span>
+        <span><img src="https://img.icons8.com/ios/50/000000/twitter--v1.png"></span>
+        <span><img src="https://img.icons8.com/ios/50/000000/youtube-play.png"></span>
+      </div>
+      <div class="copyright py-4">
+        <p>Copyright © <a href="">galaxy</a>. All Rights Reserved</p>
       </div>
     </div>
-    <!-- coppy-right end -->
-  </footer>
+    <div class="right grid grid-cols-4 w-2/3 p-8 text-left">
+      <div class="information col-span-1">
+        <h3>INFORMATION</h3>
+        <span class="absolute bg-orange-500 w-15 h-0.5" />
+        <ul>
+          <li>Delivery</li>
+          <li>About Us</li>
+          <li>Secure Payment</li>
+          <li>Contact Us</li>
+          <li>Sitemap</li>
+          <li>Stores</li>
+        </ul>
+      </div>
+      <div class="custom col-span-1">
+        <h3>CUSTOM LINKS</h3>
+        <span class="absolute bg-orange-500 w-15 h-0.5" />
+        <ul>
+          <li>Legal Notice</li>
+          <li>Prices Drop</li>
+          <li>New Products</li>
+          <li>Best Sales</li>
+          <li>Login</li>
+          <li>My Account</li>
+        </ul>
+      </div>
+      <div class="news col-span-2">
+        <h3>NEWSLETTER</h3>
+        <span class="absolute bg-orange-500 w-15 h-0.5" />
+        <div class="py-4">
+          <p>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
+        </div>
+        <form action="/POST" class="py-4">
+          <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6">
+          <button type="submit" class="bg-orange-500 text-white rounded-r-3xl px-3 py-2.5">
+            Sign up
+          </button>
+        </form>
+        <div class="find-on py-4 flex justify-start gap-3">
+          <a href=""><img src="/img/icon/apple.png" alt=""></a>
+          <a href=""><img src="/img/icon/play.png" alt=""></a>
+        </div>
+      </div>
+      <div class="payment">
+        <a href="https://paypal.me/thuongtruong1009"><img src="/img/payment/1.png" alt="payment" class="max-w-70"></a>
+      </div>
+    </div>
+  </div>
 </template>
+
+<style scoped>
+.footer{
+  color: #707070;
+}
+.right{
+  background: #EFEFEF;
+}
+.social > span{
+  padding: 0.5rem;
+  margin-right: 1rem;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.social > span:hover{
+  background: rgb(255, 145, 0);
+}
+.social > span > img{
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+}
+h3{
+  font-weight: bold;
+  color: black;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+ul{
+  padding: 1rem 0;
+}
+ul > li{
+  transition: 0.2s linear;
+  cursor: pointer;
+  padding: 2px 0;
+}
+ul > li:hover{
+  transform: translateX(0.75rem);
+  color: orange;
+}
+</style>
