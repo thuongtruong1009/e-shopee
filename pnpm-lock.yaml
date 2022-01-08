@@ -44,6 +44,7 @@ specifiers:
   vue-i18n: ^9.1.9
   vue-router: ^4.0.12
   vue-tsc: ^0.30.0
+  vue3-carousel: ^0.1.35
 
 dependencies:
   '@vueuse/core': 7.5.1_vue@3.2.26
@@ -55,6 +56,7 @@ dependencies:
   vue-demi: 0.12.1_vue@3.2.26
   vue-i18n: 9.1.9_vue@3.2.26
   vue-router: 4.0.12_vue@3.2.26
+  vue3-carousel: 0.1.35_vue@3.2.26
 
 devDependencies:
   '@antfu/eslint-config': 0.14.2_eslint@8.6.0+typescript@4.5.4
@@ -7185,6 +7187,14 @@ packages:
       '@vue/runtime-dom': 3.2.26
       '@vue/server-renderer': 3.2.26_vue@3.2.26
       '@vue/shared': 3.2.26
+    dev: false
+
+  /vue3-carousel/0.1.35_vue@3.2.26:
+    resolution: {integrity: sha512-a2mfbjRJDk5Pa6Vxt0NJnxZBdI2SZzwWRUr/KEBzk+CZk/bT4uXsY2+bDr/A3JHwGgfZRwTTY/Mt1GlPjIncrw==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: 3.2.26
     dev: false
 
   /w3c-hr-time/1.0.2:

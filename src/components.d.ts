@@ -11,6 +11,7 @@ declare module 'vue' {
     CarbonSun: typeof import('~icons/carbon/sun')['default']
     CBanner: typeof import('./components/CBanner.vue')['default']
     CBrand: typeof import('./components/CBrand.vue')['default']
+    CCategory: typeof import('./components/CCategory.vue')['default']
     CDemo1: typeof import('./components/CDemo1.vue')['default']
     CDemo2: typeof import('./components/CDemo2.vue')['default']
     CExtension: typeof import('./components/CExtension.vue')['default']
