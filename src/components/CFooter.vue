@@ -1,6 +1,6 @@
 <template>
   <div class="footer flex">
-    <div class="left w-1/3 p-15 text-left bg-gray-100">
+    <div class="left w-1/3 p-16 text-left bg-gray-100">
       <CBrand class="text-black py-4" />
       <p class="py-4">
         We are always committed to serving you with the best services. Connect to receive more offers immediately.
@@ -22,7 +22,7 @@
         <p>Copyright © <a href="">galaxy</a>. All Rights Reserved</p>
       </div>
     </div>
-    <div class="right grid grid-cols-4 w-2/3 p-8 text-left">
+    <div class="right grid grid-cols-4 w-2/3 py-15 px-8 text-left">
       <div class="information col-span-1">
         <h3>INFORMATION</h3>
         <span class="absolute bg-orange-500 w-15 h-0.5" />

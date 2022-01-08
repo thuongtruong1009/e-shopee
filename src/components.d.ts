@@ -19,6 +19,7 @@ declare module 'vue' {
     Counter: typeof import('./components/Counter.vue')['default']
     CProduct: typeof import('./components/CProduct.vue')['default']
     CSearch: typeof import('./components/CSearch.vue')['default']
+    CService: typeof import('./components/CService.vue')['default']
     CSwipper: typeof import('./components/CSwipper.vue')['default']
     LMenu: typeof import('./components/LMenu.vue')['default']
     README: typeof import('./components/README.md')['default']
