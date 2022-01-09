@@ -1,5 +1,5 @@
 <template>
-  <Carousel :items-to-show="3" :wrap-around="true" :settings="settings" :breakpoints="breakpoints" :autoplay="20000">
+  <Carousel :items-to-show="3" :wrap-around="true" :settings="settings" :breakpoints="breakpoints" autoplay>
     <Slide v-for="slide in 9" :key="slide">
       <div class="carousel__item">
         <img :src="`/img/brand/${slide}.jpg`">
