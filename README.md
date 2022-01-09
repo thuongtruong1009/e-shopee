@@ -15,6 +15,8 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 <br>
 
 ## Features
+  slick: https://antoniandre.github.io/vueper-slides/?ref=madewithvuejs.com
+  carousel: https://ismail9k.github.io/vue3-carousel/getting-started.html
 
 - ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
 
