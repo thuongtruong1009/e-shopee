@@ -9,7 +9,7 @@
         <span><a href="tel:(+84)917085937"><img src="/img/icon/phone2.png" alt=""></a></span>
         <div class="phone pl-4">
           <p>NEED HELP?</p>
-          <a href="tel:(+84)917085937"><h4 class="font-semibold text-black">(+84) 917 085 937</h4></a>
+          <a href="tel:(+84)917085937"><h4 class="font-semibold text-black hover:text-red-500 duration-300">(+84) 917 085 937</h4></a>
         </div>
       </div>
       <div class="social flex justify-start py-4">
