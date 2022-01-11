@@ -1,32 +1,47 @@
 <template>
   <div class="nav-container grid grid-rows-7 max-w-xs">
     <div>
-      <a href="#dashboad" data-toggle="tab"><i class="fas fa-tachometer-alt" />
-        Dashboard</a>
+      <router-link to="/account/dashboard" :title="dashboard">
+        <i class="fas fa-tachometer-alt" />
+        Dashboard
+      </router-link>
     </div>
     <div>
-      <a href="#orders" data-toggle="tab"><i class="fa fa-cart-arrow-down" />
-        Orders</a>
+      <router-link to="/account/orders" :title="orders">
+        <i class="fa fa-cart-arrow-down" />
+        Orders
+      </router-link>
     </div>
     <div>
-      <a href="#download" data-toggle="tab"><i class="fas fa-cloud-download-alt" />
-        Download</a>
+      <router-link to="/account/download" :title="download">
+        <i class="fas fa-cloud-download-alt" />
+        Download
+      </router-link>
     </div>
     <div>
-      <a href="#payment-method" data-toggle="tab"><i class="fa fa-credit-card" />
-        Payment
-        Method</a>
+      <router-link to="/account/payment" :title="payment">
+        <i class="fa fa-credit-card" />
+        Payment Method
+      </router-link>
     </div>
     <div>
-      <a href="#address-edit" data-toggle="tab"><i class="fa fa-map-marker" />
-        address</a>
+      <router-link to="/account/address" :title="address">
+        <i class="fa fa-map-marker" />
+        Address
+      </router-link>
     </div>
     <div>
-      <a href="#account-info" data-toggle="tab" class="active"><i class="fa fa-user" /> Account
-        Details</a>
+      <router-link to="/account/details" :title="details" class="active">
+        <i class="fa fa-user" /> Account
+        Details
+      </router-link>
     </div>
 
-    <div><a href="login.html"><i class="fa fa-sign-out" /> Logout</a></div>
+    <div>
+      <router-link href="login.html">
+        <i class="fa fa-sign-out" /> Logout
+      </router-link>
+    </div>
   </div>
 </template>
 
