@@ -42,7 +42,7 @@
       </div>
     </router-link>
 
-    <router-link to="/" :title="logout">
+    <router-link to="/login" :title="logout">
       <div class="items">
         <i class="fa fa-sign-out" /> Logout
       </div>

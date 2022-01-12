@@ -4,7 +4,7 @@ meta:
 </route>
 
 <template>
-  <div class="myaccount-content border-solid border-1 border-light-700">
+  <div class="myaccount-content">
     <h3>Dashboard</h3>
 
     <div class="welcome mb-20">

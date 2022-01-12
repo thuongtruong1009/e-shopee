@@ -1,6 +1,6 @@
 <template>
-  <div class="footer flex">
-    <div class="left w-1/3 p-16 text-left bg-gray-100">
+  <div class="footer flex dark:text-gray-200">
+    <div class="left w-1/3 p-16 text-left bg-gray-100 dark:bg-black">
       <CBrand class="text-black py-4" />
       <p class="py-4">
         We are always committed to serving you with the best services. Connect to receive more offers immediately.
@@ -9,7 +9,7 @@
         <span><a href="tel:(+84)917085937"><img src="/img/icon/phone2.png" alt=""></a></span>
         <div class="phone pl-4">
           <p>NEED HELP?</p>
-          <a href="tel:(+84)917085937"><h4 class="font-semibold text-black hover:text-red-500 duration-300">(+84) 917 085 937</h4></a>
+          <a href="tel:(+84)917085937"><h4 class="font-semibold text-black dark:text-gray-100 hover:text-red-500 duration-300">(+84) 917 085 937</h4></a>
         </div>
       </div>
       <div class="social flex justify-start py-4">
@@ -22,7 +22,7 @@
         <p>Copyright © <a href="">galaxy</a>. All Rights Reserved</p>
       </div>
     </div>
-    <div class="right grid grid-cols-4 w-2/3 py-15 px-8 text-left">
+    <div class="right grid grid-cols-4 w-2/3 py-15 px-8 text-left bg-light-200 dark:bg-black">
       <div class="information col-span-1">
         <h3>INFORMATION</h3>
         <span class="absolute bg-orange-500 w-15 h-0.5" />
@@ -75,9 +75,6 @@
 .footer{
   color: #707070;
 }
-.right{
-  background: #EFEFEF;
-}
 .social > span{
   padding: 0.5rem;
   margin-right: 1rem;
@@ -95,7 +92,6 @@
 }
 h3{
   font-weight: bold;
-  color: black;
   padding: 1rem 0;
   border-bottom: 1px solid rgb(224, 224, 224);
 }
