@@ -1,65 +1,72 @@
 <template>
-  <div class="nav-container grid grid-rows-7 max-w-xs">
-    <div>
-      <router-link to="/account/dashboard" :title="dashboard">
+  <div class="nav-container grid grid-rows-7 max-w-xs text-black dark:text-gray-300">
+    <router-link to="/account/dashboard" :title="dashboard">
+      <div class="items">
         <i class="fas fa-tachometer-alt" />
         Dashboard
-      </router-link>
-    </div>
-    <div>
-      <router-link to="/account/orders" :title="orders">
+      </div>
+    </router-link>
+
+    <router-link to="/account/orders" :title="orders">
+      <div class="items">
         <i class="fa fa-cart-arrow-down" />
         Orders
-      </router-link>
-    </div>
-    <div>
-      <router-link to="/account/download" :title="download">
+      </div>
+    </router-link>
+
+    <router-link to="/account/download" :title="download">
+      <div class="items">
         <i class="fas fa-cloud-download-alt" />
         Download
-      </router-link>
-    </div>
-    <div>
-      <router-link to="/account/payment" :title="payment">
+      </div>
+    </router-link>
+
+    <router-link to="/account/payment" :title="payment">
+      <div class="items">
         <i class="fa fa-credit-card" />
         Payment Method
-      </router-link>
-    </div>
-    <div>
-      <router-link to="/account/address" :title="address">
+      </div>
+    </router-link>
+
+    <router-link to="/account/address" :title="address">
+      <div class="items">
         <i class="fa fa-map-marker" />
         Address
-      </router-link>
-    </div>
-    <div>
-      <router-link to="/account/details" :title="details" class="active">
+      </div>
+    </router-link>
+
+    <router-link to="/account/details" :title="details" class="active">
+      <div class="items">
         <i class="fa fa-user" /> Account
         Details
-      </router-link>
-    </div>
+      </div>
+    </router-link>
 
-    <div>
-      <router-link href="login.html">
+    <router-link to="/" :title="logout">
+      <div class="items">
         <i class="fa fa-sign-out" /> Logout
-      </router-link>
-    </div>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <style scoped>
-.nav-container > div{
-    display: inline-flex;
+.items{
+    display: flex;
     justify-content: start;
     align-items: center;
     padding:1rem;
-    color: black;
     cursor:pointer;
     font-weight: 500;
     text-transform: uppercase;
     border: 1px solid rgb(239, 239, 239);
 }
-.nav-container > div:hover{
+.items:hover{
 background: #F33535;
 transition: 0.2s linear;
 color: white;
+}
+i{
+  margin-right: 1rem;
 }
 </style>

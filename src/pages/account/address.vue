@@ -1,5 +1,5 @@
 <template>
-  <div class="myaccount-content">
+  <div class="myaccount-content border-solid border-1 border-light-700">
     <h3>Billing Address</h3>
 
     <address>
@@ -16,3 +16,8 @@
     />Edit Address</a>
   </div>
 </template>
+
+<route lang="yaml">
+meta:
+  layout: LAddress
+</route>

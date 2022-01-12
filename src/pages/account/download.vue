@@ -1,5 +1,10 @@
+<route lang="yaml">
+meta:
+  layout: LDownload
+</route>
+
 <template>
-  <div class="myaccount-content">
+  <div class="myaccount-content border-solid border-1 border-light-700">
     <h3>Downloads</h3>
 
     <div class="myaccount-table table-responsive text-center">

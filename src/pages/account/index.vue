@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: account
+  layout: LAccount
 </route>
 
 <template>

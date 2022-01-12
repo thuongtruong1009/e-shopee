@@ -1,10 +1,10 @@
 <route lang="yaml">
 meta:
-  layout: account
+  layout: LDetails
 </route>
 
 <template>
-  <div class="myaccount-content">
+  <div class="myaccount-content border-solid border-1 border-light-700">
     <h3>Account Details</h3>
 
     <div class="account-details-form">
