@@ -4,11 +4,13 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    CAccount: typeof import('./components/CAccount.vue')['default']
     CarbonCampsite: typeof import('~icons/carbon/campsite')['default']
     CarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
     CarbonLanguage: typeof import('~icons/carbon/language')['default']
     CarbonMoon: typeof import('~icons/carbon/moon')['default']
     CarbonSun: typeof import('~icons/carbon/sun')['default']
+    CarbonWarning: typeof import('~icons/carbon/warning')['default']
     CBanner: typeof import('./components/CBanner.vue')['default']
     CBrand: typeof import('./components/CBrand.vue')['default']
     CCategory: typeof import('./components/CCategory.vue')['default']
@@ -23,7 +25,6 @@ declare module 'vue' {
     CSearch: typeof import('./components/CSearch.vue')['default']
     CService: typeof import('./components/CService.vue')['default']
     CSlick: typeof import('./components/CSlick.vue')['default']
-    CSlides: typeof import('./components/CSlides.vue')['default']
     CSwipper: typeof import('./components/CSwipper.vue')['default']
     ICart: typeof import('./components/ICart.vue')['default']
     ICompare: typeof import('./components/ICompare.vue')['default']

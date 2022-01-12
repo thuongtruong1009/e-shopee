@@ -28,7 +28,7 @@ const { t } = useI18n()
         </a>
         <ul class="menu-child">
           <li class="menu-child-item has-child">
-            <a href="#" class="menu-child-link">
+            <a href="/account" class="menu-child-link">
               {{ t('header.my ccount') }}
             </a>
           </li>
