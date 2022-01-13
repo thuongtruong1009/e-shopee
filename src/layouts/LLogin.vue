@@ -8,13 +8,12 @@
       </div>
     </div>
     <CHead />
-    <div class="header divide-y divide-gray-200 divide-solid px-15">
+    <div class="header divide-y divide-gray-500 divide-solid px-30 pb-10 bg-light-800 dark:bg-black">
       <h1 class="capitalize text-3xl font-semibold pt-15 pb-5">
-        Settings
+        Check your account
       </h1>
-      <div class="grid grid-cols-4 pt-5 pb-20">
-        <CAccount class="col-span-1" />
-        <router-view class="col-span-3 border-solid border-1 border-light-700" />
+      <div class="pt-5 pb-20">
+        <router-view />
       </div>
     </div>
     <CFooter />
