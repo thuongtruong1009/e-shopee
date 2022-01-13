@@ -1,7 +1,7 @@
 <template>
   <div class="footer flex dark:text-gray-200">
     <div class="left w-1/3 p-16 text-left bg-gray-100 dark:bg-black">
-      <CBrand class="text-black py-4" />
+      <CBrand class="py-4" />
       <p class="py-4">
         We are always committed to serving you with the best services. Connect to receive more offers immediately.
       </p>
