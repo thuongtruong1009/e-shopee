@@ -43,8 +43,8 @@
           <li>Prices Drop</li>
           <li>New Products</li>
           <li>Best Sales</li>
-          <li>Login</li>
-          <li>My Account</li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/account">Login</a>My Account</li>
         </ul>
       </div>
       <div class="news col-span-2">

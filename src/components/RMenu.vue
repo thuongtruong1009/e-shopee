@@ -38,7 +38,7 @@ const { t } = useI18n()
             </a>
           </li>
           <li class="menu-child-item">
-            <a href="#" class="menu-child-link">
+            <a href="/login" class="menu-child-link">
               {{ t('header.sign out') }}
             </a>
           </li>
