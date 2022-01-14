@@ -10,7 +10,7 @@ meta:
         <h3>
           Contact Us
         </h3>
-        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas human.</p>
+        <p>Tell us about your issue so we can help you more quickly.</p>
       </div>
       <div class="single-contact-block">
         <h4><i class="fa fa-fax" /> Address</h4>
@@ -49,7 +49,7 @@ meta:
         </div>
         <div>
           <label for="fmessage">Your Message</label><br>
-          <input type="text" name="fmessage">
+          <textarea v-model="message" placeholder="write somethings..." class="h-30" />
         </div>
         <button type="submit" value="submit" class="bg-black text-white font-semibold py-2 px-7 rounded-md hover:bg-[#E14641] duration-200 uppercase tracking-widest cursor-pointer">
           Submit
@@ -73,6 +73,7 @@ h4{
 lable{
     display: inline-block;
 }
+textarea,
 input{
     border: 1px solid rgb(209, 209, 209);
     outline: none;

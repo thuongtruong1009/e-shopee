@@ -94,6 +94,12 @@ const { t } = useI18n()
 </template>
 
 <style scoped>
+.dropdown__select{
+  transition: 1s linear;
+}
+.dropdown__select:hover i{
+transform: rotate(180deg);
+}
 .container{
     display: flex;
     justify-content: space-around;

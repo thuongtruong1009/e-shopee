@@ -94,6 +94,10 @@ const { t } = useI18n()
           }
           .menu-item {
             position: relative;
+            transition: 1s linear;
+          }
+          .menu-link:hover i{
+          transform: rotate(180deg);
           }
 
           .menu-child-link {
