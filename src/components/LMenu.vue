@@ -85,7 +85,9 @@ const { t } = useI18n()
     </div>
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
-        <span class="dropdown__selected">{{ t('header.contact us') }} </span>
+        <router-link to="/contact">
+          <span class="dropdown__selected">{{ t('header.contact us') }} </span>
+        </router-link>
       </div>
     </div>
   </div>

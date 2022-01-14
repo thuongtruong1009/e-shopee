@@ -54,7 +54,7 @@
           <p>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
         </div>
         <form action="/POST" class="py-4">
-          <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6">
+          <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6" autofocus>
           <button type="submit" class="bg-orange-500 text-white rounded-r-3xl px-3 py-2.5">
             Sign up
           </button>
