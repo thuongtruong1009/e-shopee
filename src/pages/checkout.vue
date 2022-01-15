@@ -255,17 +255,17 @@ export default {
         </div>
       </div>
       <div class="commit-checkout row-span-1">
-        <div class="flex justify-around items-center tracking-tighter py-2">
+        <div class="flex justify-around items-center tracking-tight py-2 text-sm">
           <i class="fas fa-shield-alt" />
-          <p>Security Policy (Edit With Customer Reassurance Module)</p>
+          <p>Security Policy (commit by Reassurance Module)</p>
         </div>
-        <div class="flex justify-around items-center tracking-tighter py-2">
+        <div class="flex justify-around items-center tracking-tight py-2 text-sm">
           <i class="fas fa-truck" />
-          <p>Delivery Policy (Edit With Customer Reassurance Module)</p>
+          <p>Delivery Policy (commit by Reassurance Module)</p>
         </div>
-        <div class="flex justify-around items-center tracking-tighter py-2">
+        <div class="flex justify-around items-center tracking-tight py-2 text-sm">
           <i class="fas fa-exchange-alt" />
-          <p>Return Policy (Edit With Customer Reassurance Module)</p>
+          <p>Return Policy (commit by Reassurance Module)</p>
         </div>
       </div>
     </div>
