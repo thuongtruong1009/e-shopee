@@ -52,6 +52,7 @@
         <span class="absolute bg-orange-500 w-15 h-0.5" />
         <div class="py-4">
           <p>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
+          <p><em>Be the First to Know. Sign up for newsletter today!</em></p>
         </div>
         <form action="/POST" class="py-4">
           <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6" autofocus>

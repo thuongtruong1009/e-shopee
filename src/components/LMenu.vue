@@ -42,7 +42,9 @@ const { t } = useI18n()
           <span class="dropdown__text">About Page</span>
         </li>
         <li class="dropdown__item">
-          <span class="dropdown__text">Checkout Page</span>
+          <router-link to="/checkout">
+            <span class="dropdown__text">Checkout Page</span>
+          </router-link>
         </li>
         <li class="dropdown__item">
           <span class="dropdown__text">Compare Page</span>
