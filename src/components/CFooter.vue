@@ -36,7 +36,7 @@
         </ul>
       </div>
       <div class="custom col-span-1">
-        <h3>CUSTOM LINKS</h3>
+        <h3>LINKS</h3>
         <span class="absolute bg-orange-500 w-15 h-0.5" />
         <ul>
           <li>Legal Notice</li>
@@ -44,7 +44,7 @@
           <li>New Products</li>
           <li>Best Sales</li>
           <li><a href="/login">Login</a></li>
-          <li><a href="/account">Login</a>My Account</li>
+          <li><a href="/account">My Account</a></li>
         </ul>
       </div>
       <div class="news col-span-2">
@@ -54,7 +54,7 @@
           <p>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
           <p><em>Be the First to Know. Sign up for newsletter today!</em></p>
         </div>
-        <form action="/POST" class="py-4">
+        <form action="/POST" class="py-4 whitespace-nowrap">
           <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6" autofocus>
           <button type="submit" class="bg-orange-500 text-white rounded-r-3xl px-3 py-2.5">
             Sign up

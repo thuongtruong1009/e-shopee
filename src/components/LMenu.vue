@@ -50,10 +50,14 @@ const { t } = useI18n()
           <span class="dropdown__text">Compare Page</span>
         </li>
         <li class="dropdown__item">
-          <span class="dropdown__text">Login  Page</span>
+          <router-link to="/login">
+            <span class="dropdown__text">Login  Page</span>
+          </router-link>
         </li>
         <li class="dropdown__item">
-          <span class="dropdown__text">Account Page</span>
+          <router-link to="/account">
+            <span class="dropdown__text">Account Page</span>
+          </router-link>
         </li>
         <li class="dropdown__item">
           <span class="dropdown__text">Wishlist Page</span>
