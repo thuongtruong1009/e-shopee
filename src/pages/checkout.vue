@@ -7,7 +7,7 @@ meta:
 export default {
   data() {
     return {
-      isPersonal: false,
+      isPersonal: true,
       isAddress: false,
       isShipping: false,
       isPayment: false,
@@ -47,7 +47,7 @@ export default {
     <div class="left col-span-2 text-left">
       <div class="address">
         <h5 @click="showPersonal">
-          1 Personal Information
+          <i class="fas fa-user-shield" /> Personal Information
         </h5>
         <div v-if="isPersonal === true" class="hide-content">
           <form action="src/php/mail.php">
@@ -114,7 +114,7 @@ export default {
       </div>
       <div class="address">
         <h5 @click="showAddress">
-          2 Address
+          <i class="fas fa-map-marker-alt" /> Address
         </h5>
         <div v-if="isAddress === true" class="hide-content">
           <form action="src/php/mail.php">
@@ -171,7 +171,7 @@ export default {
       </div>
       <div class="shipping">
         <h5 @click="showShipping">
-          3 Shipping method
+          <i class="fas fa-shipping-fast" /> Shipping method
         </h5>
         <div v-if="isShipping === true" class="hide-content">
           <form action="src/php/mail.php">
@@ -208,7 +208,7 @@ export default {
       </div>
       <div class="payment">
         <h5 @click="showPayment">
-          4 Payment
+          <i class="far fa-credit-card" /> Payment
         </h5>
         <div v-if="isPayment === true" class="hide-content">
           <form action="src/php/mail.php">
@@ -221,7 +221,7 @@ export default {
               <label for="payment-wire">Pay by bank wire</label>
             </div>
             <div>
-              <input id="payment-cash" type="radio" name="payment-radio">
+              <input id="payment-cash" type="radio" name="payment-radio" checked>
               <label for="payment-cash">Pay by Cash on delivery</label>
             </div>
             <div class="justify-center">
