@@ -7,13 +7,18 @@ meta:
 export default {
   data() {
     return {
-      isShowing: false,
+      isPersonal: false,
+      isAddress: false,
     }
   },
   methods: {
-    showMore() {
-      if (this.isShowing === false) this.isShowing = true
-      else if (this.isShowing === true) this.isShowing = false
+    showPersonal() {
+      if (this.isPersonal === false) this.isPersonal = true
+      else if (this.isPersonal === true) this.isPersonal = false
+    },
+    showAddress() {
+      if (this.isAddress === false) this.isAddress = true
+      else if (this.isAddress === true) this.isAddress = false
     },
     showPass() {
       const x = document.getElementById('Password')
@@ -31,10 +36,10 @@ export default {
   <div class="checkout-container grid grid-cols-3 gap-5 p-15 dark:text-white">
     <div class="left col-span-2 text-left">
       <div class="address">
-        <h5 @click="showMore">
+        <h5 @click="showPersonal">
           1 Personal Information
         </h5>
-        <div v-if="isShowing === true" class="hide-content">
+        <div v-if="isPersonal === true" class="hide-content">
           <form action="src/php/mail.php">
             <div class="order-asguest mt-2 mb-4">
               <p>Order as a guest &thinsp; &verbar; &thinsp;</p>
@@ -59,8 +64,8 @@ export default {
             </div>
 
             <div>
-              <label for="lastname">Name *</label>
-              <input id="lastname" type="text" required>
+              <label for="name">Name *</label>
+              <input id="name" type="text" required>
             </div>
             <div>
               <label for="email">Email *</label>
@@ -77,7 +82,7 @@ export default {
 
             <div>
               <label for="birthdate">Birthdate</label>
-              <input id="birthdate" type="text" placeholder="MM/DD/YYYY">
+              <input type="date" placeholder="MM/DD/YYYY">
             </div>
 
             <div>
@@ -98,7 +103,61 @@ export default {
         </div>
       </div>
       <div class="address">
-        <h5>2 Address</h5>
+        <h5 @click="showAddress">
+          2 Address
+        </h5>
+        <div v-if="isAddress === true" class="hide-content">
+          <form action="src/php/mail.php">
+            <div class="order-asguest mt-2 mb-4">
+              <p>The selected address will be help we to delivery for you more easlier and faster.</p>
+            </div>
+
+            <div>
+              <label for="address">Address *</label>
+              <input id="address" type="text" required>
+            </div>
+
+            <div>
+              <label for="city">City *</label>
+              <input id="city" type="text" required>
+            </div>
+
+            <div>
+              <label for="birthdate">Zip/Postal Code</label>
+              <input type="text">
+            </div>
+
+            <div>
+              <label for="country">Country</label>
+              <select id="country" type="text" name="country" placeholder="--country--">
+                <option value="vn">
+                  VietNam
+                </option>
+                <option value="en">
+                  England
+                </option>
+                <option value="us">
+                  United-Stated
+                </option>
+                <option value="fr">
+                  France
+                </option>
+                <option class="italic font-thin text-xs">
+                  Don't to find my country.
+                </option>
+              </select>
+            </div>
+
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" type="text">
+            </div>
+
+            <div class="justify-end">
+              <a href="#" class="btn">Continue</a>
+            </div>
+          </form>
+        </div>
       </div>
       <div class="shipping">
         <h5>3 Shipping method</h5>
@@ -133,7 +192,7 @@ h5{
 }
 form > div {
   display: flex;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
 }
 label{
   width: 30%;
@@ -144,18 +203,22 @@ input[type="checkbox"]{
 }
 input[type="text"],
 input[type="email"],
-input[type="password"]{
+input[type="password"],
+input[type="date"],
+select[type="text"]{
     border: 1px solid rgb(209, 209, 209);
     outline: none;
     border-radius: 0.25rem;
     width: 35%;
     padding: 0.25rem 1rem;
-    transition: 0.2s;
+    transition: 0.2s linear;
     margin-top: 0.25rem;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
-input[type="password"]:focus{
+input[type="password"]:focus,
+input[type="date"]:focus,
+select[type="text"]:focus{
     box-shadow: 1px 1px 3px rgb(59, 175, 252);
 }
 </style>
