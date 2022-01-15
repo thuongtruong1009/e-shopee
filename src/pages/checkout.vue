@@ -9,6 +9,8 @@ export default {
     return {
       isPersonal: false,
       isAddress: false,
+      isShipping: false,
+      isPayment: false,
     }
   },
   methods: {
@@ -19,6 +21,14 @@ export default {
     showAddress() {
       if (this.isAddress === false) this.isAddress = true
       else if (this.isAddress === true) this.isAddress = false
+    },
+    showShipping() {
+      if (this.isShipping === false) this.isShipping = true
+      else if (this.isShipping === true) this.isShipping = false
+    },
+    showPayment() {
+      if (this.isPayment === false) this.isPayment = true
+      else if (this.isPayment === true) this.isPayment = false
     },
     showPass() {
       const x = document.getElementById('Password')
@@ -160,10 +170,65 @@ export default {
         </div>
       </div>
       <div class="shipping">
-        <h5>3 Shipping method</h5>
+        <h5 @click="showShipping">
+          3 Shipping method
+        </h5>
+        <div v-if="isShipping === true" class="hide-content">
+          <form action="src/php/mail.php">
+            <div class="bg-[#F6F6F6] justify-around mt-3">
+              <div class="flex justify-center items-center">
+                <input id="delivery" type="radio" name="delivery-radio" required>
+              </div>
+              <div class="flex justify-around items-center">
+                <img src="/img/icon/10.jpg" alt="My carrier" class="mr-5">
+                <span>Ninja J&T</span>
+              </div>
+              <div class="flex justify-center items-center">
+                <span class="carrier-delay">Delivery next
+                  day!</span>
+              </div>
+              <div class="flex justify-center items-center">
+                <span class="carrier-price">$7.00 tax excl.</span>
+              </div>
+            </div>
+
+            <div class="order-asguest mt-2 mb-4">
+              <p>If you would like to add a note about your order, please write it in the field below..</p>
+            </div>
+
+            <div>
+              <textarea v-model="message" placeholder="write your note..." class="h-20 min-w-full" />
+            </div>
+
+            <div class="justify-end">
+              <a href="#" class="btn">Continue</a>
+            </div>
+          </form>
+        </div>
       </div>
       <div class="payment">
-        <h5>4 Payment</h5>
+        <h5 @click="showPayment">
+          4 Payment
+        </h5>
+        <div v-if="isPayment === true" class="hide-content">
+          <form action="src/php/mail.php">
+            <div>
+              <input id="payment-check" type="radio" name="payment-radio">
+              <label for="payment-check">Pay by check</label>
+            </div>
+            <div>
+              <input id="payment-wire" type="radio" name="payment-radio">
+              <label for="payment-wire">Pay by bank wire</label>
+            </div>
+            <div>
+              <input id="payment-cash" type="radio" name="payment-radio">
+              <label for="payment-cash">Pay by Cash on delivery</label>
+            </div>
+            <div class="justify-center">
+              <a href="#" class="btn">Continue</a>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <div class="right col-span-1">
@@ -193,6 +258,7 @@ h5{
 form > div {
   display: flex;
   padding: 0.5rem 1rem;
+  align-items: center;
 }
 label{
   width: 30%;
@@ -205,7 +271,8 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="date"],
-select[type="text"]{
+select[type="text"],
+textarea{
     border: 1px solid rgb(209, 209, 209);
     outline: none;
     border-radius: 0.25rem;
@@ -218,7 +285,8 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="date"]:focus,
-select[type="text"]:focus{
+select[type="text"]:focus,
+textarea:focus{
     box-shadow: 1px 1px 3px rgb(59, 175, 252);
 }
 </style>
