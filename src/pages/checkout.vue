@@ -30,14 +30,6 @@ export default {
       if (this.isPayment === false) this.isPayment = true
       else if (this.isPayment === true) this.isPayment = false
     },
-    showPass() {
-      const x = document.getElementById('Password')
-      if (x.type === 'password')
-        x.type = 'text'
-
-      else
-        x.type = 'password'
-    },
   },
 }
 </script>
@@ -231,18 +223,59 @@ export default {
         </div>
       </div>
     </div>
+
     <div class="right col-span-1">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
-      <button id="myBtn" @click="myFunction">
-        Read more
-      </button>
+      <div class="table-checkout row-span-1 grid grid-rows-3 divide-light-700 divide-y">
+        <div class="items-checkout row-span-1 grid grid-rows-2 py-3">
+          <div class="item row-span-1 flex justify-between items-center">
+            <p>1 item</p>
+            <p>$11.90</p>
+          </div>
+          <div class="shipping row-span-1 flex justify-between items-center">
+            <p>Shipping</p>
+            <p>$7.00</p>
+          </div>
+        </div>
+
+        <div class="total-checkout row-span-1 grid grid-rows-2 py-3">
+          <div class="item row-span-1 flex justify-between items-center">
+            <p>Total (Tax Excl.)</p>
+            <p>$18.90</p>
+          </div>
+          <div class="shipping row-span-1 flex justify-between items-center">
+            <p>Taxes</p>
+            <p>$0</p>
+          </div>
+        </div>
+
+        <div class="process flex justify-center items-center">
+          <button type="submit" value="submit" class="bg-black text-white font-semibold py-2 px-7 rounded-md hover:bg-[#E14641] duration-200 uppercase tracking-normal cursor-pointer">
+            Proceed to checkout
+          </button>
+        </div>
+      </div>
+      <div class="commit-checkout row-span-1">
+        <div class="flex justify-around items-center tracking-tighter py-2">
+          <i class="fas fa-shield-alt" />
+          <p>Security Policy (Edit With Customer Reassurance Module)</p>
+        </div>
+        <div class="flex justify-around items-center tracking-tighter py-2">
+          <i class="fas fa-truck" />
+          <p>Delivery Policy (Edit With Customer Reassurance Module)</p>
+        </div>
+        <div class="flex justify-around items-center tracking-tighter py-2">
+          <i class="fas fa-exchange-alt" />
+          <p>Return Policy (Edit With Customer Reassurance Module)</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
 #more {display: none;}
-.left > div{
+.left > div,
+.right > div{
   padding: 1rem;
   margin: 1rem 0;
   border: 1px solid rgb(212, 212, 212);
