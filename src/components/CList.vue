@@ -47,8 +47,8 @@ export default {
       <!-- <div v-for="i in 3" :key="i" class="flex justify-between items-center p-5">
         <img src="/img/product/1.jpg" alt="Cart product Image" class="max-w-2 max-h-2">
       </div> -->
-      <ul class="minicart-product-list divide-light-700 divide-y h-1/2">
-        <li v-for="i in 6" :key="i" class="flex justify-between items-start p-5">
+      <ul class="minicart-product-list divide-light-700 divide-y max-h-1/2 overflow-y-scroll">
+        <li v-for="i in 6" :key="i" class="flex justify-between items-start p-5 inline-block">
           <div class="flex">
             <a><img
               src="/img/product/1.png" alt="Cart product Image" class="max-w-25 max-h-25 border-light-600 border-solid border-1 rounded-md mr-3"

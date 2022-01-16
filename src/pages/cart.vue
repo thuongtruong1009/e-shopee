@@ -44,7 +44,7 @@ meta:
           </td>
           <td>
             <div class="count flex justify-center">
-              <input type="number" min="1" max="10" step="1" value="1">
+              <input type="number" min="1" max="10" step="1" value="1" class="dark:bg-black">
               <!-- <div class="button-group none lg:block">
                 <button class="count-btn increment">
                   <i
