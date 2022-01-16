@@ -13,6 +13,16 @@ html.dark {
   background: #121212;
   transition: 0.3s;
 }
+/* .modal{
+  -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+    filter: url("https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur".svg#blur);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+    pointer-events: none;
+} */
 
 #nprogress {
   pointer-events: none;

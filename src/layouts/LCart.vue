@@ -8,6 +8,8 @@
       </div>
     </div>
     <CHead />
+    <!-- //blur ground
+    <div class="modal absolute bg-gray-900 opacity-60 top-0 left-0 w-screen h-screen -z-1" /> -->
     <div class="p-15">
       <h2 class="py-5 font-semibold text-3xl">
         Your cart items

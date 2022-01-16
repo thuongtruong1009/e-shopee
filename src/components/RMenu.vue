@@ -33,7 +33,7 @@ const { t } = useI18n()
             </a>
           </li>
           <li class="menu-child-item">
-            <a href="#" class="menu-child-link">
+            <a href="/checkout" class="menu-child-link">
               {{ t('header.checkout') }}
             </a>
           </li>

@@ -5,6 +5,8 @@ export default {
       document.getElementById('mySidenav').style.width = '25rem'
       const body = document.body
       body.style.overflowY = 'hidden'
+      // const app = document.getElementById('app')
+      // body.classList.add('modal')
     },
     closeNav() {
       document.getElementById('mySidenav').style.width = '0'
@@ -36,17 +38,13 @@ export default {
       </h1>
     </div>
 
-    <div id="mySidenav" class="sidenav w-0 h-full fixed top-12 right-0 bg-white duration-500 overflow-x-hidden z-1 text-left text-black dark:(text-gray-200 bg-black) divide-light-700 divide-y">
-      <!-- <a href="javascript:void(0)" class="closebtn absolute top-0 right-1.5" @click="closeNav">&times;</a> -->
+    <div id="mySidenav" class="sidenav w-0 h-screen fixed top-12 right-0 bg-white duration-500 z-1 overflow-x-hidden text-left text-black dark:(text-gray-200 bg-black) divide-light-700 divide-y border-1 border-dotted border-gray-700 shadow-2xl shadow-gray-500">
       <div class="flex justify-between items-center p-5">
         <p class="font-semibold">
           Cart
         </p>
         <span class="cursor-pointer text-4xl" @click="closeNav">&times;</span>
       </div>
-      <!-- <div v-for="i in 3" :key="i" class="flex justify-between items-center p-5">
-        <img src="/img/product/1.jpg" alt="Cart product Image" class="max-w-2 max-h-2">
-      </div> -->
       <ul class="minicart-product-list divide-light-700 divide-y max-h-1/2 overflow-y-scroll">
         <li v-for="i in 6" :key="i" class="flex justify-between items-start p-5 inline-block">
           <div class="flex">
@@ -54,7 +52,9 @@ export default {
               src="/img/product/1.png" alt="Cart product Image" class="max-w-25 max-h-25 border-light-600 border-solid border-1 rounded-md mr-3"
             ></a>
             <div>
-              <a href="" class="title">Walnut Cutting Board</a>
+              <h5 class="title hover:text-[#E14641] cursor-pointer">
+                Walnut Cutting Board
+              </h5>
               <span class="quantity-price">1 x <span class="price">$100.00</span></span>
             </div>
           </div>
