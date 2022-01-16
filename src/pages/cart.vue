@@ -45,7 +45,7 @@ meta:
           <td>
             <div class="count flex justify-center">
               <input type="number" min="1" max="10" step="1" value="1">
-              <div class="button-group none lg:block">
+              <!-- <div class="button-group none lg:block">
                 <button class="count-btn increment">
                   <i
                     class="fas fa-chevron-up"
@@ -56,7 +56,7 @@ meta:
                     class="fas fa-chevron-down"
                   />
                 </button>
-              </div>
+              </div> -->
             </div>
           </td>
           <td>
