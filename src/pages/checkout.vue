@@ -30,6 +30,13 @@ export default {
       if (this.isPayment === false) this.isPayment = true
       else if (this.isPayment === true) this.isPayment = false
     },
+    showPass() {
+      const x = document.getElementById('Password')
+      if (x.type === 'password')
+        x.type = 'text'
+      else
+        x.type = 'password'
+    },
   },
 }
 </script>
@@ -78,9 +85,9 @@ export default {
               <label for="Password">Password</label>
               <div class="flex items-center w-76 <xl:w-61 <lg:w-46">
                 <input id="Password" type="password" class="w-10/12 outline-none rounded-sm border-1 border-solid border-gray-300 py-1 px-4 duration-200 ease-linear">
-                <button class="cursor-pointer px-2 mt-1 ml-0.5 text-white bg-black h-8 rounded-sm" @click="showPass">
+                <div class="cursor-pointer px-2 mt-1 ml-0.5 text-white bg-black h-8 rounded-sm" @click="showPass">
                   show
-                </button>
+                </div>
               </div>
             </div>
 
