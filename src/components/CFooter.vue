@@ -1,6 +1,6 @@
 <template>
   <div class="footer flex dark:text-gray-200">
-    <div class="left w-1/3 p-16 text-left bg-gray-100 dark:bg-black">
+    <div class="left md:(w-1/3 p-16 bg-gray-100) text-left dark:bg-black <md:(w-1/2 p-7 bg-light-200)">
       <CBrand class="py-4" />
       <p class="py-4">
         We are always committed to serving you with the best services. Connect to receive more offers immediately.
@@ -22,7 +22,7 @@
         <p>Copyright © <a href="">galaxy</a>. All Rights Reserved</p>
       </div>
     </div>
-    <div class="right grid grid-cols-4 w-2/3 py-15 px-8 text-left bg-light-200 dark:bg-black">
+    <div class="right grid w-2/3 py-15 px-8 grid-cols-4 text-left bg-light-200 dark:bg-black">
       <div class="information col-span-1">
         <h3>INFORMATION</h3>
         <span class="absolute bg-orange-500 w-15 h-0.5" />
@@ -107,5 +107,22 @@ ul > li{
 ul > li:hover{
   transform: translateX(0.75rem);
   color: orange;
+}
+@media (max-width: 767.9px){
+  .right{
+    grid-template-columns: 50% 50%;
+    padding: 1rem;
+    width: 50%;
+  }
+}
+@media (max-width: 639.9px){
+  .footer{
+    display: grid;
+  }
+  .left, .right{
+    width: 100%;
+    padding-top: 0.5rem;
+padding-bottom: 0.25rem;
+  }
 }
 </style>

@@ -71,6 +71,22 @@
     justify-content: start;
     align-items: center;
     margin-left: 1.5rem;
-    white-space: nowrap;
+}
+@media (max-width: 767.9px){
+  .service-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .shipping, .return, .support, .secure{
+    padding: 1rem;
+  }
+}
+@media (max-width: 379px){
+  .service-container{
+    grid-template-columns: 100%;
+  }
+.shipping, .return, .support, .secure{
+    padding: 0.25rem;
+  }
 }
 </style>
