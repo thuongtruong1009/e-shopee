@@ -37,7 +37,7 @@ export default {
 <template>
   <div class="checkout-container grid grid-cols-3 gap-5 p-15 dark:text-white">
     <div class="left col-span-2 text-left">
-      <div class="address">
+      <div class="personal">
         <h5 @click="showPersonal">
           <i class="fas fa-user-shield" /> Personal Information
         </h5>
@@ -74,11 +74,13 @@ export default {
               <input id="email" type="email" required>
             </div>
 
-            <div>
+            <div class="password-personal">
               <label for="Password">Password</label>
-              <input id="Password" type="password" class="max-w-7/24">
-              <div class="cursor-pointer flex items-center px-2 mt-1 ml-0.5 text-white bg-black h-8 rounded-sm" @click="showPass">
-                show
+              <div class="flex items-center w-76 <xl:w-61 <lg:w-46">
+                <input id="Password" type="password" class="w-10/12 outline-none rounded-sm border-1 border-solid border-gray-300 py-1 px-4 duration-200 ease-linear">
+                <button class="cursor-pointer px-2 mt-1 ml-0.5 text-white bg-black h-8 rounded-sm" @click="showPass">
+                  show
+                </button>
               </div>
             </div>
 
@@ -87,7 +89,7 @@ export default {
               <input type="date" placeholder="MM/DD/YYYY">
             </div>
 
-            <div>
+            <div class="check-personal">
               <div class="mr-5">
                 <input id="20820" type="checkbox">
                 <label for="20820">Receive offers from our partners</label>
@@ -167,12 +169,12 @@ export default {
         </h5>
         <div v-if="isShipping === true" class="hide-content">
           <form action="src/php/mail.php">
-            <div class="bg-[#F6F6F6] justify-around mt-3">
+            <div class="bg-[#F6F6F6] justify-around mt-3 grid grid-cols-3">
               <div class="flex justify-center items-center">
                 <input id="delivery" type="radio" name="delivery-radio" required>
               </div>
               <div class="flex justify-around items-center">
-                <img src="/img/icon/10.jpg" alt="My carrier" class="mr-5">
+                <img src="/img/icon/10.jpg" alt="My carrier">
                 <span>Ninja J&T</span>
               </div>
               <div class="flex justify-center items-center">
@@ -229,22 +231,30 @@ export default {
         <div class="items-checkout row-span-1 grid grid-rows-2 py-3">
           <div class="item row-span-1 flex justify-between items-center">
             <p>1 item</p>
-            <p>$11.90</p>
+            <p class="font-bold tracking-tighter">
+              $11.90
+            </p>
           </div>
           <div class="shipping row-span-1 flex justify-between items-center">
             <p>Shipping</p>
-            <p>$7.00</p>
+            <p class="font-bold tracking-tighter">
+              $7.00
+            </p>
           </div>
         </div>
 
         <div class="total-checkout row-span-1 grid grid-rows-2 py-3">
           <div class="item row-span-1 flex justify-between items-center">
             <p>Total (Tax Excl.)</p>
-            <p>$18.90</p>
+            <p class="font-bold tracking-tighter">
+              $18.90
+            </p>
           </div>
           <div class="shipping row-span-1 flex justify-between items-center">
             <p>Taxes</p>
-            <p>$0</p>
+            <p class="font-bold tracking-tighter">
+              $0
+            </p>
           </div>
         </div>
 
@@ -257,15 +267,15 @@ export default {
       <div class="commit-checkout row-span-1">
         <div class="flex justify-around items-center tracking-tight py-2 text-sm">
           <i class="fas fa-shield-alt" />
-          <p>Security Policy (commit by Reassurance Module)</p>
+          <p>Security Policy (commit by Reassurance)</p>
         </div>
         <div class="flex justify-around items-center tracking-tight py-2 text-sm">
           <i class="fas fa-truck" />
-          <p>Delivery Policy (commit by Reassurance Module)</p>
+          <p>Delivery Policy (commit by Reassurance)</p>
         </div>
         <div class="flex justify-around items-center tracking-tight py-2 text-sm">
           <i class="fas fa-exchange-alt" />
-          <p>Return Policy (commit by Reassurance Module)</p>
+          <p>Return Policy (commit by Reassurance)</p>
         </div>
       </div>
     </div>
@@ -302,7 +312,6 @@ input[type="checkbox"]{
 }
 input[type="text"],
 input[type="email"],
-input[type="password"],
 input[type="date"],
 select[type="text"],
 textarea{
@@ -321,5 +330,65 @@ input[type="date"]:focus,
 select[type="text"]:focus,
 textarea:focus{
     box-shadow: 1px 1px 3px rgb(59, 175, 252);
+}
+@media (max-width: 991px){
+  .checkout-container{
+    grid-template-columns: 100%;
+    padding: 4rem 2rem;
+  }
+  .commit-checkout > div{
+    justify-content: space-evenly;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  select[type="text"],
+  textarea{
+    width: 50%;
+  }
+  .password-personal > div > input{
+    width: 100rem;
+  }
+}
+@media (max-width: 640px){
+  .checkout-container{
+    padding: 4rem 0.5rem;
+  }
+  .left{
+    margin-right: 1rem;
+  }
+  .check-personal{
+    display: grid;
+  }
+  .password-personal > div > input{
+    max-width: 100%;
+  }
+}
+@media (max-width: 537px){
+  .personal > div > form > div:nth-child(2),
+  .personal > div > form > div:nth-child(3),
+  .personal > div > form > div:nth-child(4),
+  .personal > div > form > div:nth-child(5),
+  .personal > div > form > div:nth-child(6){
+    display: grid;
+  }
+  .checkout-container{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+@media (max-width: 379px){
+  .password-personal > div > input{
+    max-width: 100%;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  select[type="text"],
+  textarea{
+    width: 62%;
+  }
 }
 </style>

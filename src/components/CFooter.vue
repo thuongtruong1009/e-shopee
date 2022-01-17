@@ -60,7 +60,7 @@
             Sign up
           </button>
         </form>
-        <div class="find-on py-4 flex justify-start gap-3">
+        <div class="product-store find-on py-4 flex justify-start gap-3">
           <a href=""><img src="/img/icon/apple.png" alt=""></a>
           <a href=""><img src="/img/icon/play.png" alt=""></a>
         </div>
@@ -121,8 +121,10 @@ ul > li:hover{
   }
   .left, .right{
     width: 100%;
-    padding-top: 0.5rem;
-padding-bottom: 0.25rem;
+    padding: 0.5rem 0;
+  }
+  .payment{
+    padding-left: 2rem
   }
 }
 </style>
