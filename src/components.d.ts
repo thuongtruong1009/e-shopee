@@ -28,10 +28,14 @@ declare module 'vue' {
     CSwipper: typeof import('./components/CSwipper.vue')['default']
     ICart: typeof import('./components/ICart.vue')['default']
     ICompare: typeof import('./components/ICompare.vue')['default']
+    IFacebook: typeof import('./components/IFacebook.vue')['default']
     IHeart: typeof import('./components/IHeart.vue')['default']
+    IInstagram: typeof import('./components/IInstagram.vue')['default']
+    IShopee: typeof import('./components/IShopee.vue')['default']
     LMenu: typeof import('./components/LMenu.vue')['default']
     README: typeof import('./components/README.md')['default']
     RMenu: typeof import('./components/RMenu.vue')['default']
+    SHead: typeof import('./components/SHead.vue')['default']
   }
 }
 
