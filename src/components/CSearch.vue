@@ -1,5 +1,5 @@
 <template>
-  <div class="search-container w-2xl">
+  <div class="search-container w-lg <lg:w-xl">
     <input type="text" placeholder="Enter your search key...">
     <button><img src="https://img.icons8.com/ios/50/ffffff/search--v1.png"></button>
   </div>
@@ -30,11 +30,17 @@
             padding: 10px 15px;
             color: white;
             flex-shrink: 0;
+            display: flex;
+            align-items: center;
             background-color: black;
           }
           .search-container button > img {
             width: 2rem;
             height: 2rem;
-
+          }
+          @media (max-width: 992px){
+            .search-container{
+              width: 100%;
+            }
           }
 </style>

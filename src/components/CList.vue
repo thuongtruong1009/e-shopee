@@ -2,7 +2,7 @@
 export default {
   methods: {
     openNav() {
-      document.getElementById('mySidenav').style.width = '25rem'
+      document.getElementById('mySidenav').style.width = '22rem'
       const body = document.body
       body.style.overflowY = 'hidden'
       // const app = document.getElementById('app')
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-  <div class="container flex justify-center items-center w-xs text-white dark:text-black">
+  <div class="container flex justify-center items-center lg:w-xs text-white dark:text-black">
     <div>
       <!-- <img src="https://img.icons8.com/fluency-systems-regular/32/ffffff/swap-paths.png"> -->
       <!-- <span class="iconify" data-icon="ic:outline-compare-arrows" /> -->
@@ -113,5 +113,10 @@ export default {
 }
 ::-webkit-scrollbar-thumb {
   background: rgb(155, 155, 155);
+}
+@media (max-width:768px){
+  .container > div:not(:last-child) {
+    margin: 0 0.5rem;
+}
 }
 </style>

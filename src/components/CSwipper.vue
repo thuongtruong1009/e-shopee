@@ -1,5 +1,5 @@
 <template>
-  <div class="min-w-screen-md h-150">
+  <div class="swipper-container min-w-screen-md h-150">
     <transition-group name="fade" tag="div">
       <div v-for="i in [currentIndex]" :key="i">
         <img :src="currentImg">
@@ -106,5 +106,10 @@ img {
 
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.9);
+}
+@media (max-width: 1024px){
+  transition-group{
+    height: 30rem;
+  }
 }
 </style>
