@@ -52,7 +52,7 @@
           100% Payment Secure
         </h4>
         <p class="">
-          Your payment are safe with us.
+          Your payment are safe.
         </p>
       </div>
     </div>
@@ -72,6 +72,19 @@
     align-items: center;
     margin-left: 1.5rem;
 }
+@media (max-width: 1280px){
+  .shipping, .return, .support, .secure{
+    padding: 1rem;
+  }
+}
+@media (max-width: 1024px){
+  .shipping, .return, .support, .secure{
+    display: grid;
+  }
+  img{
+    margin-left: 3rem;
+  }
+}
 @media (max-width: 767.9px){
   .service-container{
     display: grid;
@@ -86,7 +99,8 @@
     grid-template-columns: 100%;
   }
 .shipping, .return, .support, .secure{
-    padding: 0.25rem;
+    display: flex;
+    justify-content: space-around;
   }
 }
 </style>
