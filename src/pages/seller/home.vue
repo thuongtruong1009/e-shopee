@@ -4,7 +4,7 @@ meta:
 </route>
 
 <template>
-  <div>
+  <div class="">
     home
   </div>
 </template>

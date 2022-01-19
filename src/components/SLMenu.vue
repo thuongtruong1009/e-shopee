@@ -1,42 +1,54 @@
-<script>
-export default {
-  data() {
-    return {
-      isOrderSpaning: true,
-      isProdSpaning: true,
-    }
-  },
-  methods: {
-    onOpenOrder() {
-      if (this.isOrderSpaning === false) this.isOrderSpaning = true
-      else if (this.isOrderSpaning === true) this.isOrderSpaning = false
-    },
-    onOpenProd() {
-      if (this.isProdSpaning === false) this.isProdSpaning = true
-      else if (this.isProdSpaning === true) this.isProdSpaning = false
-    },
-  },
+<script setup>
+import IOrder from '~/components/IOrder.vue'
+import IProd from '~/components/IProd.vue'
+
+const isOrder = ref(true)
+const isProd = ref(true)
+
+const onOpenOrder = () => {
+  if (isOrder.value === false) isOrder.value = true
+  else if (isOrder.value === true) isOrder.value = false
 }
+const onOpenProd = () => {
+  if (isProd.value === false) isProd.value = true
+  else if (isProd.value === true) isProd.value = false
+}
+
 </script>
 
 <template>
   <div class="seller-lmenu-container">
-    <div class="sidenav h-full bg-white dark:bg-black overflow-x-hidden w-52 pt-5">
-      <button class="dropdown-btn" @click="onOpenOrder">
-        Order Management
-        <i class="fa fa-caret-down" :class="{active: isOrderSpaning}" />
-      </button>
-      <div v-if="isOrderSpaning === true" class="dropdown-container pl-2">
-        <a href="seller/order/all">All order</a>
-        <a href="#">Order cancel</a>
+    <div class="sidenav h-full bg-white dark:bg-black overflow-x-hidden w-60 pt-5">
+      <div class="dropdown flex items-center w-full px-1 cursor-pointer" @click="onOpenOrder">
+        <IOrder class="mr-1" />
+        <div class="dropdown-item flex justify-between items-center w-full">
+          <p>Order Management</p>
+          <i class="fa fa-caret-down" :class="{active: isOrder}" />
+        </div>
       </div>
-      <button class="dropdown-btn" @click="onOpenProd">
-        Production Management
-        <i class="fa fa-caret-down" :class="{active: isProdSpaning}" />
-      </button>
-      <div v-if="isProdSpaning === true" class="dropdown-container pl-2">
-        <a href="#">All products</a>
-        <a href="#">Add products</a>
+      <div v-if="isOrder === true" class="grid pl-10">
+        <router-link to="/seller/orders/all" href="seller/order/all">
+          All order
+        </router-link>
+        <router-link to="/seller/orders/all" href="#">
+          Order cancel
+        </router-link>
+      </div>
+      <div class="dropdown flex items-center px-1 cursor-pointer" @click="onOpenProd">
+        <IProd class="mr-1" />
+        <div class="dropdown-item flex justify-between items-center w-full">
+          <p>Production Management</p>
+          <i class="fa fa-caret-down" :class="{active: isProd}" />
+        </div>
+      </div>
+
+      <div v-if="isProd === true" class="grid pl-10">
+        <router-link to="/seller/orders/all" href="#">
+          All products
+        </router-link>
+        <router-link to="/seller/orders/all" href="#">
+          Add products
+        </router-link>
       </div>
     </div>
   </div>
@@ -46,30 +58,20 @@ export default {
 .sidenav {
   font-family: "Lato", sans-serif;
 }
-
-.sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 12px;
-  color: #111;
-  display: block;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
+router-link{
+  font-size: 0.9rem;
+}
+p{
+  font-size: 1.1rem;
+  opacity: 0.8;
 }
 
 .fa-caret-down {
-  float: right;
-  padding-right: 8px;
   transform: rotate(90deg);
   transition: 0.2s;
-  transform-style:preserve-3d;
 }
 .fa-caret-down.active{
-    transform: rotate(0deg) translateY(-5px) translateX(5px);
+    transform: rotate(0deg);
 }
 
 @media screen and (max-height: 450px) {

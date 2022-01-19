@@ -32,6 +32,8 @@ declare module 'vue' {
     IFacebook: typeof import('./components/IFacebook.vue')['default']
     IHeart: typeof import('./components/IHeart.vue')['default']
     IInstagram: typeof import('./components/IInstagram.vue')['default']
+    IOrder: typeof import('./components/IOrder.vue')['default']
+    IProd: typeof import('./components/IProd.vue')['default']
     IShopee: typeof import('./components/IShopee.vue')['default']
     LMenu: typeof import('./components/LMenu.vue')['default']
     README: typeof import('./components/README.md')['default']
