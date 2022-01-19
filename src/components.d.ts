@@ -10,6 +10,7 @@ declare module 'vue' {
     CarbonLanguage: typeof import('~icons/carbon/language')['default']
     CarbonMoon: typeof import('~icons/carbon/moon')['default']
     CarbonSun: typeof import('~icons/carbon/sun')['default']
+    CarbonWarning: typeof import('~icons/carbon/warning')['default']
     CBanner: typeof import('./components/CBanner.vue')['default']
     CBrand: typeof import('./components/CBrand.vue')['default']
     CCategory: typeof import('./components/CCategory.vue')['default']
@@ -31,11 +32,14 @@ declare module 'vue' {
     IFacebook: typeof import('./components/IFacebook.vue')['default']
     IHeart: typeof import('./components/IHeart.vue')['default']
     IInstagram: typeof import('./components/IInstagram.vue')['default']
+    IOrder: typeof import('./components/IOrder.vue')['default']
+    IProd: typeof import('./components/IProd.vue')['default']
     IShopee: typeof import('./components/IShopee.vue')['default']
     LMenu: typeof import('./components/LMenu.vue')['default']
     README: typeof import('./components/README.md')['default']
     RMenu: typeof import('./components/RMenu.vue')['default']
     SHead: typeof import('./components/SHead.vue')['default']
+    SLMenu: typeof import('./components/SLMenu.vue')['default']
   }
 }
 
