@@ -10,6 +10,7 @@ declare module 'vue' {
     CarbonLanguage: typeof import('~icons/carbon/language')['default']
     CarbonMoon: typeof import('~icons/carbon/moon')['default']
     CarbonSun: typeof import('~icons/carbon/sun')['default']
+    CarbonWarning: typeof import('~icons/carbon/warning')['default']
     CBanner: typeof import('./components/CBanner.vue')['default']
     CBrand: typeof import('./components/CBrand.vue')['default']
     CCategory: typeof import('./components/CCategory.vue')['default']
@@ -36,6 +37,7 @@ declare module 'vue' {
     README: typeof import('./components/README.md')['default']
     RMenu: typeof import('./components/RMenu.vue')['default']
     SHead: typeof import('./components/SHead.vue')['default']
+    SLMenu: typeof import('./components/SLMenu.vue')['default']
   }
 }
 

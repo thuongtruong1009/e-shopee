@@ -35,9 +35,12 @@ meta:
               Forgot password?
             </p>
           </div>
-          <div class="bg-red-500 text-center text-white rounded-md">
-            <button>Login</button>
-          </div>
+          <router-link to="/seller/home">
+            <div class="bg-red-500 text-center text-white rounded-md py-2 my-1.5">
+              <button>Login</button>
+            </div>
+          </router-link>
+
           <div class="grid gap-5">
             <div class="flex justify-between text-xs pt-5">
               <p class="opacity-60">
