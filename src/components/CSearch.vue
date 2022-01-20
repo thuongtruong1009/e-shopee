@@ -11,14 +11,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 7px;
+            border-radius: 23px;
             overflow: hidden;
             box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.05);
           }
           .search-container > input {
             width: 100%;
             height: 100%;
-            padding: 10px;
+            padding: 10px 20px;
             background-color: white;
             -webkit-appearance: none;
             font-size: 14px;

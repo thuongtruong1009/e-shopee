@@ -4,6 +4,7 @@ import IProd from '~/components/IProd.vue'
 
 const isOrder = ref(true)
 const isProd = ref(true)
+const isClick = ref({ zero: false, one: false, two: false, three: false })
 
 const onOpenOrder = () => {
   if (isOrder.value === false) isOrder.value = true
@@ -12,6 +13,21 @@ const onOpenOrder = () => {
 const onOpenProd = () => {
   if (isProd.value === false) isProd.value = true
   else if (isProd.value === true) isProd.value = false
+}
+
+const onClick = (index) => {
+  // isClick.forEach(element => isClick.value[element] = false)
+
+  if (isClick.value[index] === false)
+    isClick.value[index] = true
+
+  else if (isClick.value[isClick.value[index]] === true)
+    isClick.value[index] = false
+
+  // for (const i of isClick.value) {
+  //   if (i === index)
+  //     isClick.value[i] = true
+  // }
 }
 
 </script>
@@ -23,31 +39,31 @@ const onOpenProd = () => {
         <IOrder class="mr-1" />
         <div class="dropdown-item flex justify-between items-center w-full">
           <p>Order Management</p>
-          <i class="fa fa-caret-down" :class="{active: isOrder}" />
+          <i class="fas fa-angle-down" :class="{active: isOrder}" />
         </div>
       </div>
       <div v-if="isOrder === true" class="grid pl-10">
-        <router-link to="/seller/orders/all" href="seller/order/all">
-          All order
+        <router-link to="/seller/orders/all" href="seller/order/all" :style="isClick.zero ? {'color': 'red'} : {'color': 'black'}" @click="onClick('zero')">
+          <span class="text-xl">•</span> All order
         </router-link>
-        <router-link to="/seller/orders/all" href="#">
-          Order cancel
+        <router-link to="/seller/orders/all" href="#" :style="isClick.one ? {'color': 'red'} : {'color': 'black'}" @click="onClick('one')">
+          <span class="text-xl">•</span> Order cancel
         </router-link>
       </div>
       <div class="dropdown flex items-center px-1 cursor-pointer" @click="onOpenProd">
         <IProd class="mr-1" />
         <div class="dropdown-item flex justify-between items-center w-full">
           <p>Production Management</p>
-          <i class="fa fa-caret-down" :class="{active: isProd}" />
+          <i class="fas fa-angle-down" :class="{active: isProd}" />
         </div>
       </div>
 
       <div v-if="isProd === true" class="grid pl-10">
-        <router-link to="/seller/orders/all" href="#">
-          All products
+        <router-link to="/seller/orders/all" href="#" :style="isClick.two ? {'color': 'red'} : {'color': 'black'}" @click="onClick('two')">
+          <span class="text-xl">•</span> All products
         </router-link>
-        <router-link to="/seller/orders/all" href="#">
-          Add products
+        <router-link to="/seller/orders/all" href="#" :style="isClick.three ? {'color': 'red'} : {'color': 'black'}" @click="onClick('three')">
+          <span class="text-xl">•</span> Add products
         </router-link>
       </div>
     </div>
@@ -66,11 +82,11 @@ p{
   opacity: 0.8;
 }
 
-.fa-caret-down {
+.fa-angle-down {
   transform: rotate(90deg);
   transition: 0.2s;
 }
-.fa-caret-down.active{
+.fa-angle-down.active{
     transform: rotate(0deg);
 }
 
