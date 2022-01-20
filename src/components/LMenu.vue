@@ -10,31 +10,6 @@ const { t } = useI18n()
     </div>
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
-        <span class="dropdown__selected">{{ t('header.shop') }} <i class="fas fa-chevron-down" /></span>
-      </div>
-      <ul class="dropdown__list">
-        <li class="dropdown__item">
-          <span class="dropdown__text">About Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Checkout Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Compare Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Login  Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Account Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Wishlist Page</span>
-        </li>
-      </ul>
-    </div>
-    <div class="dropdown dark:bg-black">
-      <div class="dropdown__select">
         <span class="dropdown__selected">{{ t('header.pages') }} <i class="fas fa-chevron-down" /></span>
       </div>
       <ul class="dropdown__list">
@@ -98,6 +73,13 @@ const { t } = useI18n()
       <div class="dropdown__select">
         <router-link to="/contact">
           <span class="dropdown__selected">{{ t('header.contact us') }} </span>
+        </router-link>
+      </div>
+    </div>
+    <div class="dropdown dark:bg-black">
+      <div class="dropdown__select">
+        <router-link to="/seller/login">
+          <span class="dropdown__selected">Become Seller</span>
         </router-link>
       </div>
     </div>
@@ -193,7 +175,7 @@ transform: rotate(180deg);
             color: orange;
           }
           .dropdown__item:hover{
-            color: orange;
+            color: #EE4D2D;
             padding-left: 1.5rem;
             padding-right: 0.5rem;
           }

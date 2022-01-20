@@ -1,7 +1,7 @@
 <template>
   <div class="footer flex dark:text-gray-200">
     <div class="left md:(w-1/3 p-16 bg-gray-100) text-left dark:bg-black <md:(w-1/2 p-7 bg-light-200)">
-      <CBrand class="py-4" />
+      <IBrand class="py-4" />
       <p class="py-4">
         We are always committed to serving you with the best services. Connect to receive more offers immediately.
       </p>
@@ -19,13 +19,13 @@
         <span><img src="https://img.icons8.com/ios/50/000000/youtube-play.png"></span>
       </div>
       <div class="copyright py-4">
-        <p>Copyright © <a href="">galaxy</a>. All Rights Reserved</p>
+        <p>Copyright © <a href="">shopee</a>. All Rights Reserved</p>
       </div>
     </div>
     <div class="right grid w-2/3 py-15 px-8 grid-cols-4 text-left bg-light-200 dark:bg-black">
       <div class="information col-span-1">
         <h3>INFORMATION</h3>
-        <span class="absolute bg-orange-500 w-15 h-0.5" />
+        <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <ul>
           <li>Delivery</li>
           <li>About Us</li>
@@ -37,7 +37,7 @@
       </div>
       <div class="custom col-span-1">
         <h3>LINKS</h3>
-        <span class="absolute bg-orange-500 w-15 h-0.5" />
+        <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <ul>
           <li>Legal Notice</li>
           <li>Prices Drop</li>
@@ -49,14 +49,14 @@
       </div>
       <div class="news col-span-2">
         <h3>NEWSLETTER</h3>
-        <span class="absolute bg-orange-500 w-15 h-0.5" />
+        <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <div class="py-4">
           <p>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
           <p><em>Be the First to Know. Sign up for newsletter today!</em></p>
         </div>
         <form action="/POST" class="py-4 whitespace-nowrap">
           <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6" autofocus>
-          <button type="submit" class="bg-orange-500 text-white rounded-r-3xl px-3 py-2.5">
+          <button type="submit" class="bg-[#EE4D2D] text-white rounded-r-3xl px-3 py-2.5">
             Sign up
           </button>
         </form>
@@ -85,7 +85,7 @@
   transition: 0.3s linear;
 }
 .social > span:hover{
-  background: rgb(255, 145, 0);
+  background: orange;
 }
 .social > span > img{
   max-width: 1.5rem;
@@ -106,7 +106,7 @@ ul > li{
 }
 ul > li:hover{
   transform: translateX(0.75rem);
-  color: orange;
+  color: #EE4D2D;
 }
 @media (max-width: 767.9px){
   .right{

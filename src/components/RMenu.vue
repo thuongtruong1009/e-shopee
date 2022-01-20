@@ -112,7 +112,7 @@ const { t } = useI18n()
             position: relative;
           }
           .menu-child-link:hover {
-            color: orange;
+            color: #EE4D2D;
           }
 
           .menu-toggle {
