@@ -43,7 +43,7 @@ const onClick = (index) => {
         </div>
       </div>
       <div v-if="isOrder === true" class="grid pl-10">
-        <router-link to="/seller/orders/all" href="seller/order/all" :style="isClick.zero ? {'color': 'red'} : {'color': 'black'}" @click="onClick('zero')">
+        <router-link to="/seller/orders/all" href="seller/orders/all" :style="isClick.zero ? {'color': 'red'} : {'color': 'black'}" @click="onClick('zero')">
           <span class="text-xl">•</span> All order
         </router-link>
         <router-link to="/seller/orders/all" href="#" :style="isClick.one ? {'color': 'red'} : {'color': 'black'}" @click="onClick('one')">
@@ -59,10 +59,10 @@ const onClick = (index) => {
       </div>
 
       <div v-if="isProd === true" class="grid pl-10">
-        <router-link to="/seller/orders/all" href="#" :style="isClick.two ? {'color': 'red'} : {'color': 'black'}" @click="onClick('two')">
+        <router-link to="/seller/prods/all" href="#" :style="isClick.two ? {'color': 'red'} : {'color': 'black'}" @click="onClick('two')">
           <span class="text-xl">•</span> All products
         </router-link>
-        <router-link to="/seller/orders/all" href="#" :style="isClick.three ? {'color': 'red'} : {'color': 'black'}" @click="onClick('three')">
+        <router-link to="/seller/prods/all" href="#" :style="isClick.three ? {'color': 'red'} : {'color': 'black'}" @click="onClick('three')">
           <span class="text-xl">•</span> Add products
         </router-link>
       </div>
