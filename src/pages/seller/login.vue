@@ -24,7 +24,7 @@ meta:
             <input type="text" class="outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4 w-full focus:bg-[#E8F0FE] duration-200" placeholder="username or email...">
           </div>
           <div>
-            <input type="text" class="outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4 w-full focus:bg-[#E8F0FE] duration-200" placeholder="password...">
+            <input type="password" class="outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4 w-full focus:bg-[#E8F0FE] duration-200" placeholder="password...">
           </div>
           <div class="flex justify-between text-xs">
             <div>
@@ -46,7 +46,7 @@ meta:
               <p class="opacity-60">
                 Don't have a Shopee account yet?
               </p>
-              <p class="text-blue-600 hover:text-blue-800 font-medium">
+              <p class="text-blue-600 hover:text-blue-800 font-medium cursor-pointer">
                 Create account
               </p>
             </div>
@@ -54,7 +54,7 @@ meta:
               <span>_____________________  OR  _____________________</span>
             </div>
             <!-- <span>OR</span> -->
-            <div class="text-center outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4">
+            <div class="text-center outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4 cursor-pointer">
               <p>Login with Primary/Secondary account</p>
             </div>
           </div>

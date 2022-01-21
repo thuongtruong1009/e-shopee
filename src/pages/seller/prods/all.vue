@@ -4,32 +4,28 @@ meta:
 </route>
 
 <script setup>
+import IQuestion from '~/components/IQuestion.vue'
+
+const queryType = ref('all')
 
 function clearForm() {
   document.getElementById('myForm').reset()
 }
 
-// function listView() {
-//   const elements = document.getElementsByClassName('column')
-//   for (let i = 0; i < elements.length; i++)
-//     elements[i].style.width = '100%'
+function onQueryType(type) {
+  queryType.value = type
+}
+// https://stackoverflow.com/questions/33571382/check-all-checkboxes-vuejs
+
+// document.getElementById('btn2').onclick = function() {
+//   const checkboxes = document.getElementsByName('name[]')
+
+//   for (let i = 0; i < checkboxes.length; i++)
+//     checkboxes[i].checked = false
 // }
 
-// function gridView() {
-//   const elements = document.getElementsByClassName('column')
-//   for (let i = 0; i < elements.length; i++)
-//     elements[i].style.width = '50%'
-// }
-// function toggleView() {
-//   const container = document.getElementById('btnContainer')
-//   const btns = container.getElementsByClassName('btn')
-//   for (let i = 0; i < btns.length; i++) {
-//     btns[i].addEventListener('click', function() {
-//       const current = document.getElementsByClassName('active')
-//       current[0].className = current[0].className.replace(' active', '')
-//       this.className += ' active'
-//     })
-//   }
+// function unCheckAll() {
+//   document.querySelectorAll('#product-check').checked = false
 // }
 
 </script>
@@ -74,7 +70,7 @@ function clearForm() {
       </div>
 
       <div>
-        <button type="submit" class="text-white font-md py-1 px-5 rounded-md bg-[#E14641] duration-200 capitalize tracking-normal cursor-pointer mr-3">
+        <button type="submit" class="text-white font-md py-1 px-5 rounded-md bg-[#E54A2B] duration-200 capitalize tracking-normal cursor-pointer mr-3">
           Find
         </button>
         <button class="font-md py-1 px-3 text-md rounded-md bg-white duration-200 capitalize tracking-normal cursor-pointer border-1 border-solid border-gray-200" @click="clearForm">
@@ -84,42 +80,53 @@ function clearForm() {
     </form>
 
     <div class="bottom-container p-5 my-5 bg-white shadow-sm shadow-gray-500/50 rounded-md divide-light-800 divide-y devide-solid">
-      <div class="tabs7 mb-5">
-        <div class="tab-item active focus:bg-white">
+      <div class="tabs7 mb-5 flex bg-[#eee] p-1.25 rounded-lg">
+        <div class="tab-item focus:bg-white" :class="{active : queryType === 'all'}" @click="onQueryType('all')">
           All
         </div>
-        <div class="tab-item focus:bg-white">
+        <div class="tab-item focus:bg-white" :class="{active : queryType === 'online'}" @click="onQueryType('online')">
           Online
         </div>
-        <div class="tab-item">
+        <div class="tab-item" :class="{active : queryType === 'outStock'}" @click="onQueryType('outStock')">
           Out of stock
         </div>
-        <div class="tab-item">
+        <div class="tab-item" :class="{active : queryType === 'violet'}" @click="onQueryType('violet')">
           Violate
         </div>
-        <div class="tab-item">
+        <div class="tab-item" :class="{active : queryType === 'hidden'}" @click="onQueryType('hidden')">
           Hidden
         </div>
       </div>
       <div class="grid grid-cols-5 py-3 my-1">
         <div class="col-span-2">
-          <h3 class="font-semibold text-xl">
+          <h3 class="font-semibold text-lg">
             0 Product
           </h3>
-          <p class="opacity-70 text-sm">
-            can post 1000 more products  !
+          <p class="opacity-70 text-xs flex items-center">
+            can post 1000 more products <IQuestion />
           </p>
         </div>
-        <div class="col-span-3 flex justify-between items-end">
-          <p class="text-blue-500 cursor-pointer">
+        <div class="col-span-3 flex justify-end items-end gap-2">
+          <p v-if="queryType !== 'outStock' && queryType !== 'violet' && queryType !== 'hidden'" class="text-blue-500 cursor-pointer text-sm">
             product optimization
           </p>
-          <button class="text-white font-md py-1 px-5 rounded-md bg-[#E14641] duration-200 capitalize tracking-normal cursor-pointer">
+          <button v-if="queryType === 'all'" class="text-white font-md py-0.75 px-3 rounded-md bg-[#E54A2B] duration-200 capitalize tracking-normal cursor-pointer">
             + Add new a product
           </button>
-          <button class="font-md py-1 px-3 text-md rounded-md bg-white duration-200 capitalize tracking-normal cursor-pointer border-1 border-solid border-gray-200">
-            batch processing tool
-          </button>
+          <select class="font-md px-1 text-md rounded-md bg-white duration-200 capitalize tracking-normal cursor-pointer border-1 border-solid border-gray-200">
+            <option>
+              batch processing tool
+            </option>
+            <option value="mass-posting">
+              Mass posting
+            </option>
+            <option value="mass-updating">
+              Mass updating
+            </option>
+            <option value="attribute-update">
+              Attribute update
+            </option>
+          </select>
           <div id="btnContainer flex">
             <button class="toggle active" onclick="listView()">
               <i class="fa fa-bars" />
@@ -133,7 +140,7 @@ function clearForm() {
       <div class="all-table border-1 border-gray-300 border-solid rounded-md my-1">
         <div class="all-head-table grid grid-cols-16 bg-light-400 p-3">
           <div class="opacity-70 flex justify-center items-center">
-            <input type="checkbox">
+            <input id="product-checkall" type="checkbox">
           </div>
           <div class="col-span-3 opacity-70">
             <h2>Product name</h2>
@@ -170,7 +177,7 @@ function clearForm() {
         <div class="all-body-table overflow-y-scroll h-100">
           <div v-for="i in 10" :key="i" class="all-body-item grid grid-cols-16 p-3">
             <div class="opacity-70 flex justify-center items-center">
-              <input type="checkbox">
+              <input id="product-check" type="checkbox">
             </div>
             <div class="col-span-3 opacity-70">
               <h2>Name {{ i }}</h2>
@@ -214,14 +221,8 @@ select{
   border-bottom-right-radius: 0;
 }
 
-.tabs7 {
-  display: flex;
-  background-color: #eee;
-  border-radius: 8px;
-  padding: 5px;
-}
 .tabs7 .tab-item.active {
-  color: #6a5af9;
+  color: red;
   background-color: white;
 }
 .tabs7 .tab-item {
@@ -234,18 +235,7 @@ select{
   align-items: center;
   justify-content: center;
   border-radius: inherit;
-  transition: 0.5s linear;
-}
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+  transition: 0.2s linear;
 }
 .toggle {
   border: none;
