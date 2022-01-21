@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: SOrderAll
+  layout: SProdAll
 </route>
 
 <script setup>
@@ -106,6 +106,7 @@ function onQueryType(type) {
             can post 1000 more products <IQuestion />
           </p>
         </div>
+        <!-- <li v-for="item in Names" v-if="!!item.FullName> -->
         <div class="col-span-3 flex justify-end items-end gap-2">
           <p v-if="queryType !== 'outStock' && queryType !== 'violet' && queryType !== 'hidden'" class="text-blue-500 cursor-pointer text-sm">
             product optimization
