@@ -39,6 +39,7 @@ declare module 'vue' {
     ISearch: typeof import('./components/ISearch.vue')['default']
     IShopee: typeof import('./components/IShopee.vue')['default']
     LMenu: typeof import('./components/LMenu.vue')['default']
+    PNotFound: typeof import('./components/partterns/PNotFound.vue')['default']
     README: typeof import('./components/README.md')['default']
     RMenu: typeof import('./components/RMenu.vue')['default']
     SHead: typeof import('./components/SHead.vue')['default']
