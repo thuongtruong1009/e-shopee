@@ -31,7 +31,7 @@ function onQueryType(type) {
 </script>
 
 <template>
-  <div class="seller-order-container w-full px-24 py-2">
+  <div class="seller-prods-container w-full px-24 py-2">
     <form id="myForm" class="top-container grid grid-cols-2 gap-3 p-5 bg-white shadow-sm shadow-gray-500/50 rounded-md">
       <div class="flex items-center">
         <select id="country" type="text" name="country">
