@@ -62,7 +62,7 @@ const onClick = (index) => {
         <router-link to="/seller/prods/all" href="#" :style="isClick.two ? {'color': 'red'} : {'color': 'black'}" @click="onClick('two')">
           <span class="text-xl">•</span> All products
         </router-link>
-        <router-link to="/seller/prods/all" href="#" :style="isClick.three ? {'color': 'red'} : {'color': 'black'}" @click="onClick('three')">
+        <router-link to="/seller/prods/add" href="#" :style="isClick.three ? {'color': 'red'} : {'color': 'black'}" @click="onClick('three')">
           <span class="text-xl">•</span> Add products
         </router-link>
       </div>
