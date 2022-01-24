@@ -153,22 +153,13 @@ function onQueryType(type) {
             <h2>Category</h2>
           </div>
           <div class="col-span-2 flex items-center opacity-70">
-            <h2>Prices</h2>
-            <div class="grid">
-              <i class="fas fa-caret-up" /><i class="fa fa-caret-down" />
-            </div>
+            <h2>Prices <i class="fas fa-sort" /></h2>
           </div>
           <div class="col-span-2 flex items-center opacity-70">
-            <h2>Warehouse</h2>
-            <div class="grid">
-              <i class="fas fa-caret-up" /><i class="fa fa-caret-down" />
-            </div>
+            <h2>Warehouse <i class="fas fa-sort" /></h2>
           </div>
           <div class="col-span-2 flex items-center opacity-70">
-            <h2>Sales</h2>
-            <div class="grid">
-              <i class="fas fa-caret-up" /><i class="fa fa-caret-down" />
-            </div>
+            <h2>Sales <i class="fas fa-sort" /></h2>
           </div>
           <div class="col-span-2 opacity-70">
             <h2>Edit infor</h2>
@@ -253,10 +244,6 @@ select{
 .toggle.active {
   background-color: #ddd;
   color: red;
-}
-.fa-caret-up, .fa-caret-down{
-  transform: scale(0.8);
-  margin-left: 0.25rem;
 }
 ::-webkit-scrollbar-thumb {
   background: #ddd;
