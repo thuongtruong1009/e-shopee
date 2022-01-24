@@ -29,7 +29,7 @@ const numberShopDescription = ref('')
           </p>
         </div>
       </div>
-      <div class="grid grid-cols-5 p-5 gap-5">
+      <div class="grid grid-cols-5 p-5 gap-8">
         <div class="profile-left col-span-2 rounded-md border-1 border-solid border-gray-300">
           <div class="profile-cover h-40 grid grid-cols-3 bg-gray-300 rounded-md text-white p-4">
             <div class="col-span-1 flex justify-center items-center">
@@ -47,7 +47,7 @@ const numberShopDescription = ref('')
               </p>
             </div>
           </div>
-          <div class="bg-gray-500 text-center text-white cursor-pointer">
+          <div class="bg-[#6B6361] text-center text-white cursor-pointer">
             <p>
               Edit cover photo
             </p>
@@ -121,7 +121,7 @@ const numberShopDescription = ref('')
           </div>
           <div>
             <label for="shop-disciption">Shop description</label>
-            <textarea id="shop-disciption" v-model="numberShopDescription" name="shop-disciption" class="w-full h-25 border-1 border-solid border-gray-300 outline-none rounded-md my-2 py-1 px-3 text-sm" placeholder="Enter description or information about your shop here...">dd3</textarea>
+            <textarea id="shop-disciption" v-model="numberShopDescription" name="shop-disciption" class="w-[85%] h-25 border-1 border-solid border-gray-300 outline-none rounded-md my-2 py-1 px-3 text-sm" placeholder="Enter description or information about your shop here...">dd3</textarea>
             <p class="text-right text-xs px-2 text-gray-400">
               {{ numberShopDescription.length }}/500
             </p>
