@@ -7,5 +7,6 @@ svg{
     width: 0.9rem;
     height: 0.9rem;
     margin: 0 0.25rem;
+    opacity: 0.6;
 }
 </style>

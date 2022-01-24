@@ -11,6 +11,7 @@ import IStar from '~/components/icons/IStar.vue'
 import IChat from '~/components/icons/IChat.vue'
 import INote from '~/components/icons/INote.vue'
 import IPlus from '~/components/icons/IPlus.vue'
+import IQuestion from '~/components/IQuestion.vue'
 const numberShopName = ref('Lamborghini Aventador S')
 const numberShopDescription = ref('')
 </script>
@@ -30,15 +31,23 @@ const numberShopDescription = ref('')
       </div>
       <div class="grid grid-cols-5 p-5 gap-5">
         <div class="profile-left col-span-2 rounded-md border-1 border-solid border-gray-300">
-          <div class="profile-cover h-40 grid grid-cols-3 bg-gray-200 text-white">
+          <div class="profile-cover h-40 grid grid-cols-3 bg-gray-300 rounded-md text-white p-4">
             <div class="col-span-1 flex justify-center items-center">
-              Avatar
+              <img src="/img/seller/shop/sample_avatar.png" alt="sample_avatar" class="max-w-25 max-h-25 rounded-full">
             </div>
-            <div class="col-span-2 flex justify-center items-center">
-              Bio
+            <div class="col-span-2 grid justify-center p-5">
+              <p class="text-lg font-medium">
+                {{ numberShopName }}
+              </p>
+              <p class="text-sm">
+                Join at 01/01/2020
+              </p>
+              <p class="text-sm">
+                Follower: 99
+              </p>
             </div>
           </div>
-          <div class="bg-gray-500 text-center text-white">
+          <div class="bg-gray-500 text-center text-white cursor-pointer">
             <p>
               Edit cover photo
             </p>
@@ -104,8 +113,8 @@ const numberShopDescription = ref('')
             </div>
           </div>
           <div class="">
-            <label for="shop-preview">Some preview pictures or video</label>
-            <div class="grid justify-center text-center items-center border-1 border-solid border-gray-300 outline-none rounded-md w-45 h-45 opacity-60 my-2 p-5">
+            <label for="shop-preview" class="flex items-center">Some preview pictures or video <IQuestion /></label>
+            <div class="grid justify-center text-center items-center border-1 border-solid border-gray-300 outline-none rounded-md w-45 h-45 opacity-60 my-2 p-5 cursor-pointer">
               <IPlus class="justify-self-center" />
               <p>Add photos and videos (0/5)</p>
             </div>
@@ -136,5 +145,9 @@ const numberShopDescription = ref('')
 }
 .profile-field > div > div:nth-child(2){
   color:#EE4D2D;
+  cursor: pointer;
+}
+label{
+  font-weight: 500;
 }
 </style>
