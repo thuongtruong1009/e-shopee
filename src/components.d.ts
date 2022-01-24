@@ -37,6 +37,7 @@ declare module 'vue' {
     IInstagram: typeof import('./components/IInstagram.vue')['default']
     INote: typeof import('./components/icons/INote.vue')['default']
     IOrder: typeof import('./components/IOrder.vue')['default']
+    IPlus: typeof import('./components/icons/IPlus.vue')['default']
     IProd: typeof import('./components/IProd.vue')['default']
     IQuestion: typeof import('./components/IQuestion.vue')['default']
     ISearch: typeof import('./components/ISearch.vue')['default']

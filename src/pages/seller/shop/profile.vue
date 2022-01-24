@@ -10,6 +10,9 @@ import ITime from '~/components/icons/ITime.vue'
 import IStar from '~/components/icons/IStar.vue'
 import IChat from '~/components/icons/IChat.vue'
 import INote from '~/components/icons/INote.vue'
+import IPlus from '~/components/icons/IPlus.vue'
+const numberShopName = ref('Lamborghini Aventador S')
+const numberShopDescription = ref('')
 </script>
 
 <template>
@@ -90,8 +93,30 @@ import INote from '~/components/icons/INote.vue'
             </div>
           </div>
         </div>
-        <div class="profile-left col-span-3">
-          <h1>Right</h1>
+        <div class="profile-right col-span-3">
+          <div>
+            <label for="shop-name">Shop Name</label>
+            <div class="w-[85%] border-1 border-solid border-gray-300 flex items-center my-2 py-1 rounded-md divide-x divide-solid divide-3 divide-gray-300">
+              <input id="shop-name" v-model="numberShopName" type="text" name="shop-name" class="w-full outline-none px-2 text-sm text-gray-500" placeholder="Input shop name..." pattern="[A-Za-z0-9]{120}" required>
+              <p class="flex justify-around opacity-60 text-xs px-2">
+                {{ numberShopName.length }}/30
+              </p>
+            </div>
+          </div>
+          <div class="">
+            <label for="shop-preview">Some preview pictures or video</label>
+            <div class="grid justify-center text-center items-center border-1 border-solid border-gray-300 outline-none rounded-md w-45 h-45 opacity-60 my-2 p-5">
+              <IPlus class="justify-self-center" />
+              <p>Add photos and videos (0/5)</p>
+            </div>
+          </div>
+          <div>
+            <label for="shop-disciption">Shop description</label>
+            <textarea id="shop-disciption" v-model="numberShopDescription" name="shop-disciption" class="w-full h-25 border-1 border-solid border-gray-300 outline-none rounded-md my-2 py-1 px-3 text-sm" placeholder="Enter description or information about your shop here...">dd3</textarea>
+            <p class="text-right text-xs px-2 text-gray-400">
+              {{ numberShopDescription.length }}/500
+            </p>
+          </div>
         </div>
         <div class="col-span-5 flex justify-center items-center">
           <button class="bg-[#E54A2B] text-white rounded-md px-10 py-1.5 my-5">
@@ -99,11 +124,6 @@ import INote from '~/components/icons/INote.vue'
           </button>
         </div>
       </div>
-      <!-- <div class="flex justify-center items-center">
-        <button class="bg-[#E54A2B] text-white rounded-md px-10 py-1.5 my-5">
-          Save
-        </button>
-      </div> -->
     </div>
   </div>
 </template>
