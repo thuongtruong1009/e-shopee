@@ -1,3 +1,0 @@
-@function fontweight($fontweight-name) {
-  @return (map-get($fontWeights, $fontweight-name));
-}
