@@ -46,31 +46,6 @@ const { t } = useI18n()
     </div>
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
-        <span class="dropdown__selected">{{ t('header.blog') }} <i class="fas fa-chevron-down" /></span>
-      </div>
-      <ul class="dropdown__list">
-        <li class="dropdown__item">
-          <span class="dropdown__text">About Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Checkout Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Compare Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Login  Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Account Page</span>
-        </li>
-        <li class="dropdown__item">
-          <span class="dropdown__text">Wishlist Page</span>
-        </li>
-      </ul>
-    </div>
-    <div class="dropdown dark:bg-black">
-      <div class="dropdown__select">
         <router-link to="/contact">
           <span class="dropdown__selected">{{ t('header.contact us') }} </span>
         </router-link>

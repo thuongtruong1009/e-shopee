@@ -1,8 +1,18 @@
+<script setup>
+import CMenuItem from '~/components/CMenuItem.vue'
+</script>
+
 <template>
-  <div class="head-container bg-orange-500 flex justify-around items-center h-28">
-    <CBrand class="item3" />
-    <CSearch class="item5" />
-    <CList class="item4" />
+  <div class="head-container bg-orange-500">
+    <div class="flex justify-around items-center h-28">
+      <CBrand class="item3" />
+      <CSearch class="item5" />
+      <CList class="item4" />
+    </div>
+    <div class="px-25">
+      <CMenuItem />
+    </div>
+
     <!-- <span class="w-full h-1 bg-gray-600 absolute mt-29 left-0" /> -->
   </div>
 </template>
