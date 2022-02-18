@@ -5,6 +5,9 @@
 
 - 🎃 [icon](https://icon-sets.iconify.design/)
 
+- [Vue e-chart](https://www.npmjs.com/package/vue-echarts)
+- [Vue 3 e-chart example](https://codesandbox.io/s/2y6m6?file=/src/App.vue)
+
 - ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
 
 - 🗂 [File based routing](./src/pages)
