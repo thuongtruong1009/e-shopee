@@ -11,7 +11,7 @@ meta:
       </h2>
     </div>
     <div class="grid grid-cols-4 gap-5 my-5">
-      <div class="bg-[#00C689] flex justify-around items-center rounded-2xl py-3">
+      <div class="bg-[#00C689] flex justify-around items-center rounded-2xl py-3 cursor-pointer shadow-md shadow-gray-500/50">
         <div class="p-3 bg-white rounded-full text-[#00C689]">
           <ITotalSale />
         </div>
@@ -25,44 +25,44 @@ meta:
           </div>
         </div>
       </div>
-      <div class="bg-[#3DA5F4] flex justify-around items-center rounded-2xl py-3">
+      <div class="bg-[#3DA5F4] flex justify-around items-center rounded-2xl py-3 cursor-pointer shadow-md shadow-gray-500/50">
         <div class="p-3 bg-white rounded-full text-[#3DA5F4]">
           <IBasket />
         </div>
         <div class="text-white tracking-tight">
           <p class="font-medium">
-            Total Sales
+            Total Purchases
           </p>
           <div class="flex items-center">
-            <span class="mr-3 font-bold text-xl">$508</span>
+            <span class="mr-3 font-bold text-xl">$387</span>
             <p>This month</p>
           </div>
         </div>
       </div>
-      <div class="bg-[#F1536E] flex justify-around items-center rounded-2xl py-3">
+      <div class="bg-[#F1536E] flex justify-around items-center rounded-2xl py-3 cursor-pointer shadow-md shadow-gray-500/50">
         <div class="p-3 bg-white rounded-full text-[#F1536E]">
           <IDonut />
         </div>
         <div class="text-white tracking-tight">
           <p class="font-medium">
-            Total Sales
+            Total Orders
           </p>
           <div class="flex items-center">
-            <span class="mr-3 font-bold text-xl">$508</span>
+            <span class="mr-3 font-bold text-xl">$161</span>
             <p>This month</p>
           </div>
         </div>
       </div>
-      <div class="bg-[#FDA006] flex justify-around items-center rounded-2xl py-3">
+      <div class="bg-[#FDA006] flex justify-around items-center rounded-2xl py-3 cursor-pointer shadow-md shadow-gray-500/50">
         <div class="p-3 bg-white rounded-full text-[#FDA006]">
           <IMultiline />
         </div>
         <div class="text-white tracking-tight">
           <p class="font-medium">
-            Total Sales
+            Total Growth
           </p>
           <div class="flex items-center">
-            <span class="mr-3 font-bold text-xl">$508</span>
+            <span class="mr-3 font-bold text-xl">$231</span>
             <p>This month</p>
           </div>
         </div>
@@ -70,8 +70,8 @@ meta:
     </div>
 
     <div class="flex justify-around">
-      <VChart class="chart w-sm h-sm bg-white" :option="option" />
-      <AreaChart class="bg-white" />
+      <VChart class="chart w-sm h-sm bg-white border-1 border-solid border-gray-200" :option="option" />
+      <AreaChart class="bg-white border-1 border-solid border-gray-200" />
     </div>
   </div>
 </template>
@@ -113,7 +113,7 @@ export default defineComponent({
   setup() {
     const option = ref({
       title: {
-        text: 'Traffic Sources',
+        text: 'Total types sold',
         left: 'center',
       },
       tooltip: {
@@ -123,20 +123,20 @@ export default defineComponent({
       legend: {
         orient: 'vertical',
         left: 'left',
-        data: ['Direct', 'Email', 'Ad Networks', 'Video Ads', 'Search Engines'],
+        data: ['Electronic', 'Jewels', 'Watch', 'Houseware', 'Iphone'],
       },
       series: [
         {
-          name: 'Traffic Sources',
+          name: 'Shopee Sources',
           type: 'pie',
           radius: '55%',
-          center: ['50%', '60%'],
+          center: ['50%', '65%'],
           data: [
-            { value: 335, name: 'Direct' },
-            { value: 310, name: 'Email' },
-            { value: 234, name: 'Ad Networks' },
-            { value: 135, name: 'Video Ads' },
-            { value: 1548, name: 'Search Engines' },
+            { value: 335, name: 'Electronic' },
+            { value: 310, name: 'Jewels' },
+            { value: 234, name: 'Watch' },
+            { value: 135, name: 'Houseware' },
+            { value: 1548, name: 'Iphone' },
           ],
           emphasis: {
             itemStyle: {
