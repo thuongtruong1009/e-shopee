@@ -3,12 +3,12 @@
     <div class="split-wrap flex items-center p-8">
       <div class="split third">
         <div class="cover">
-          <img src="img/banner/13.jpg">
+          <img src="/img/banner/13.jpg">
         </div>
       </div>
       <div class="split third">
         <div class="cover">
-          <img src="img/banner/14.jpg">
+          <img src="/img/banner/14.jpg">
         </div>
       </div>
     </div>
