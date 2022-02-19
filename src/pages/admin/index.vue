@@ -68,7 +68,11 @@ meta:
         </div>
       </div>
     </div>
-    <v-chart class="chart w-sm h-sm" :option="option" />
+
+    <div class="flex justify-around">
+      <VChart class="chart w-sm h-sm bg-white" :option="option" />
+      <AreaChart class="bg-white" />
+    </div>
   </div>
 </template>
 
@@ -88,6 +92,7 @@ import ITotalSale from '~/components/icons/ITotalSale.vue'
 import IBasket from '~/components/icons/IBasket.vue'
 import IDonut from '~/components/icons/IDonut.vue'
 import IMultiline from '~/components/icons/IMultiline.vue'
+import AreaChart from '~/components/AreaChart.vue'
 
 use([
   CanvasRenderer,
