@@ -70,8 +70,9 @@ meta:
     </div>
 
     <div class="flex justify-around">
-      <VChart class="chart w-sm h-sm bg-white" :option="option" />
+      <v-chart class="chart w-sm h-sm bg-white" :option="option" />
       <AreaChart class="bg-white" />
+      <FrappeChart />
     </div>
   </div>
 </template>
@@ -93,6 +94,8 @@ import IBasket from '~/components/icons/IBasket.vue'
 import IDonut from '~/components/icons/IDonut.vue'
 import IMultiline from '~/components/icons/IMultiline.vue'
 import AreaChart from '~/components/AreaChart.vue'
+
+import FrappeChart from '~/components/FrappeChart.vue'
 
 use([
   CanvasRenderer,

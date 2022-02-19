@@ -21,6 +21,7 @@ specifiers:
   echarts: ^5.3.0
   eslint: ^8.6.0
   eslint-plugin-cypress: ^2.12.1
+  frappe-charts: ^1.6.2
   https-localhost: ^4.7.0
   markdown-it-link-attributes: ^4.0.0
   markdown-it-prism: ^2.2.2
@@ -56,6 +57,7 @@ dependencies:
   '@vueuse/core': 7.5.3_vue@3.2.26
   '@vueuse/head': 0.7.4_vue@3.2.26
   echarts: 5.3.0
+  frappe-charts: 1.6.2
   nprogress: 0.2.0
   pinia: 2.0.9_typescript@4.5.4+vue@3.2.26
   prism-theme-vars: 0.2.2
@@ -4058,6 +4060,10 @@ packages:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
     dev: true
+
+  /frappe-charts/1.6.2:
+    resolution: {integrity: sha512-9TC3/+YVUi84yYoEbxFiSqu+1FQ5If/ydUNj6i8FRpwynd08t6a7RkS+IRJozAk6NfdL8/LVTTE1DUOjjKZZxg==}
+    dev: false
 
   /fresh/0.5.2:
     resolution: {integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=}

@@ -28,6 +28,7 @@ declare module 'vue' {
     CService: typeof import('./components/CService.vue')['default']
     CSlick: typeof import('./components/CSlick.vue')['default']
     CSwipper: typeof import('./components/CSwipper.vue')['default']
+    FrappeChart: typeof import('./components/FrappeChart.vue')['default']
     IBasket: typeof import('./components/icons/IBasket.vue')['default']
     IBrand: typeof import('./components/IBrand.vue')['default']
     ICake: typeof import('./components/icons/ICake.vue')['default']
