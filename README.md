@@ -5,9 +5,9 @@
 
 - 🎃 [icon](https://icon-sets.iconify.design/)
 
-- [Pie-chart](https://www.npmjs.com/package/vue-echarts) - [example](https://codesandbox.io/s/2y6m6?file=/src/App.vue)
+- 📈 [Pie-chart](https://www.npmjs.com/package/vue-echarts) - [example](https://codesandbox.io/s/2y6m6?file=/src/App.vue)
 
-- [Area chart](https://www.vuescript.com/svg-based-charting-library/) - [docs](https://vue3charts.org/docs/getting-started)
+- 🚧 [Area chart](https://www.vuescript.com/svg-based-charting-library/) - [docs](https://vue3charts.org/docs/getting-started)
 
 - ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
 
@@ -95,11 +95,11 @@
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/thuongtruong1009/e-commerce/generate).
+[Create a repo from this template on GitHub](https://github.com/thuongtruong1009/e-shopee/generate).
 
 ### Clone to local
 ```bash
-git clone https://github.com/thuongtruong1009/e-commerce
+git clone https://github.com/thuongtruong1009/e-shopee
 cd my-vitesse-app
 pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 ```
@@ -116,7 +116,7 @@ And, enjoy :)
 
 ## Usage
 #### Development
-- Just run and visit http://localhost:3333
+- Just run and auto open at http://localhost:3333
 ```bash
 pnpm dev
 ```
@@ -129,7 +129,36 @@ pnpm build
 ```bash
 pnpm test
 ```
+#### Preview your production
+```bash
+pnpm preview
+```
 
 ### Deploy on Netlify
-
 - Go to [Netlify](https://app.netlify.com/start) and select your clone, `OK` along the way, and your App will be live in a minute.
+
+## Reference
+- Relax with [bee-music sound](https://github.com/thuongtruong1009/bee-music)
+- Learning front-end web full course at [Front-end course](https://github.com/thuongtruong1009/challenge-resposive-web-design).
+- Learn Snake Game tutorial at [Snake-Game-OOP](https://github.com/thuongtruong1009/Snake-Game-OOP)
+- Learn Java for new beginner at [Java training](https://github.com/thuongtruong1009/java-oop-training)
+- Make flip card game at [flip-card](https://github.com/thuongtruong1009/flip-cards)
+- Learn computer architecture at [architecture](https://github.com/thuongtruong1009/computer-architecture)
+- Pratice UI/UX at [league-fo-legend](https://github.com/thuongtruong1009/league-of-legends-clone)
+
+## ❤️ [Support me](https://www.paypal.me/thuongtruong1009)
+
+> We are looking for sponsors to join us to have better community reach and impact.
+
+[![MOMO](https://img.shields.io/badge/-MOMO-red?style=flat&labelColor=RED&logo=MOMO&logoColor=black)](https://nhantien.momo.vn/0917085937)
+<a href="https://www.paypal.me/thuongtruong1009">
+<img height="25" marginTop="10" src="https://www.paypalobjects.com/digitalassets/c/website/marketing/apac/C2/logos-buttons/optimize/26_Blue_PayPal_Pill_Button.png">
+</a>
+<a href='https://ko-fi.com/thuongtruong1009' target='_blank'>
+<img height='25' style='border:0px;height:28px;color:blue' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+</a>
+
+## 📰 [License](LICENSE)
+
+- ##### This project is distributed under the [MIT License](LICENSE).
+- ##### Copyright of [@thuongtruong1009](https://github.com/thuongtruong1009), 2022.
