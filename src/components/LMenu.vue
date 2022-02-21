@@ -10,6 +10,13 @@ const { t } = useI18n()
     </div>
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
+        <router-link to="/admin">
+          <span class="dropdown__selected">Admin</span>
+        </router-link>
+      </div>
+    </div>
+    <div class="dropdown dark:bg-black">
+      <div class="dropdown__select">
         <span class="dropdown__selected">{{ t('header.pages') }} <i class="fas fa-chevron-down" /></span>
       </div>
       <ul class="dropdown__list">
@@ -58,6 +65,7 @@ const { t } = useI18n()
         </router-link>
       </div>
     </div>
+    
   </div>
 </template>
 

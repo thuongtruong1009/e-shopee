@@ -6,6 +6,11 @@ declare module 'vue' {
   export interface GlobalComponents {
     AreaChart: typeof import('./components/AreaChart.vue')['default']
     CAccount: typeof import('./components/CAccount.vue')['default']
+    CarbonCampsite: typeof import('~icons/carbon/campsite')['default']
+    CarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
+    CarbonLanguage: typeof import('~icons/carbon/language')['default']
+    CarbonMoon: typeof import('~icons/carbon/moon')['default']
+    CarbonSun: typeof import('~icons/carbon/sun')['default']
     CBanner: typeof import('./components/CBanner.vue')['default']
     CBrand: typeof import('./components/CBrand.vue')['default']
     CCategory: typeof import('./components/CCategory.vue')['default']
