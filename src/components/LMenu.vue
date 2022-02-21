@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import IAbout from '~/components/icons/IAbout.vue'
+import ICart from '~/components/icons/ICart.vue'
+import ICheckout from '~/components/icons/ICheckout.vue'
+import ICompare from '~/components/icons/ICompare.vue'
+import ILogin from '~/components/icons/ILogin.vue'
+import IAccount from '~/components/icons/IAccount.vue'
+import IWishList from '~/components/icons/IWishList.vue'
 const { t } = useI18n()
 </script>
 <template>
@@ -21,33 +28,33 @@ const { t } = useI18n()
       </div>
       <ul class="dropdown__list">
         <li class="dropdown__item">
-          <span class="dropdown__text">About Page</span>
+          <span class="dropdown__text">About Page <IAbout /></span>
         </li>
         <li class="dropdown__item">
           <router-link to="/cart">
-            <span class="dropdown__text">Cart Page</span>
+            <span class="dropdown__text">Cart Page <ICart /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
           <router-link to="/checkout">
-            <span class="dropdown__text">Checkout Page</span>
+            <span class="dropdown__text">Checkout Page <ICheckout /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
-          <span class="dropdown__text">Compare Page</span>
+          <span class="dropdown__text">Compare Page <ICompare /></span>
         </li>
         <li class="dropdown__item">
           <router-link to="/login">
-            <span class="dropdown__text">Login  Page</span>
+            <span class="dropdown__text">Login  Page <ILogin /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
           <router-link to="/account">
-            <span class="dropdown__text">Account Page</span>
+            <span class="dropdown__text">Account Page <IAccount /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
-          <span class="dropdown__text">Wishlist Page</span>
+          <span class="dropdown__text">Wishlist Page <IWishList /></span>
         </li>
       </ul>
     </div>
@@ -65,7 +72,6 @@ const { t } = useI18n()
         </router-link>
       </div>
     </div>
-    
   </div>
 </template>
 
@@ -120,6 +126,11 @@ transform: rotate(180deg);
             display: block;
             animation: drop-animate 0.3s linear;
             transform-origin: top;
+          }
+          .dropdown__text{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
           }
           @keyframes drop-animate{
             0%{

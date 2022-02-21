@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const { t } = useI18n()
 // window.addEventListener('load', () => {
 //   const menuToggle = document.querySelector('.menu-toggle')
 //   const menuChild = document.querySelectorAll('.has-child > a')
@@ -16,6 +15,10 @@ const { t } = useI18n()
 //     menu.classList.toggle('show')
 //   })
 // })
+import IAccount from '~/components/icons/IAccount.vue'
+import ICheckout from '~/components/icons/ICheckout.vue'
+import ILogout from '~/components/icons/ILogout.vue'
+const { t } = useI18n()
 </script>
 
 <template>
@@ -29,17 +32,17 @@ const { t } = useI18n()
         <ul class="menu-child">
           <li class="menu-child-item has-child">
             <a href="/account" class="menu-child-link">
-              {{ t('header.my ccount') }}
+              {{ t('header.my ccount') }} <IAccount />
             </a>
           </li>
           <li class="menu-child-item">
             <a href="/checkout" class="menu-child-link">
-              {{ t('header.checkout') }}
+              {{ t('header.checkout') }} <ICheckout />
             </a>
           </li>
           <li class="menu-child-item">
             <a href="/login" class="menu-child-link">
-              {{ t('header.sign out') }}
+              {{ t('header.sign out') }} <ILogout />
             </a>
           </li>
         </ul>
@@ -78,7 +81,6 @@ const { t } = useI18n()
     --gradient: linear-gradient(40deg, #ff6ec4, #7873f5);
     --shadow: 0 0 15px 0 rgba(0,0,0,0.05);
   }*{box-sizing:border-box;}input,button,textarea{border:0;outline:none;}
-  /* Main code */
 
           .menu {
             display: flex;
@@ -102,6 +104,7 @@ const { t } = useI18n()
 
           .menu-child-link {
             display: flex;
+            width: 10rem;
             align-items: center;
             justify-content: space-between;
             padding: 0.5rem 0.75rem;
