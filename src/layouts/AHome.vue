@@ -43,3 +43,9 @@ const adminAvatar = ref('/img/admin/avatar_sample.png')
     </div>
   </main>
 </template>
+
+<style scoped>
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+</style>
