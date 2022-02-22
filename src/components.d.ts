@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ACalendar: typeof import('./components/ACalendar.vue')['default']
     AreaChart: typeof import('./components/AreaChart.vue')['default']
     CAccount: typeof import('./components/CAccount.vue')['default']
     CarbonCampsite: typeof import('~icons/carbon/campsite')['default']

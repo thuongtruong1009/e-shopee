@@ -1,6 +1,7 @@
 <script setup>
 import IEdit from '~/components/icons/IEdit.vue'
 import ILogout from '~/components/icons/ILogout.vue'
+import ACalendar from '~/components/ACalendar.vue'
 const adminName = ref('Thuong Truong')
 const adminAvatar = ref('/img/admin/avatar_sample.png')
 
@@ -22,6 +23,7 @@ const adminAvatar = ref('/img/admin/avatar_sample.png')
             Hi, {{ adminName }}!
           </h2>
         </div>
+        <ACalendar />
         <div class="grid grid-cols-4 items-center gap-2">
           <div class="text-white flex justify-around items-center border-1 border-solid border-gray rounded-lg col-span-3 cursor-pointer py-2 bg-[#00C689] hover:(bg-transparent text-gray-500) duration-200">
             <img :src="adminAvatar" alt="avatar" width="40" height="40" class="rounded-full shadow-light-800 shadow-md">
