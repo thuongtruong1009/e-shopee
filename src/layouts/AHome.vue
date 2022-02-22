@@ -1,7 +1,6 @@
 <script setup>
 import IEdit from '~/components/icons/IEdit.vue'
 import ILogout from '~/components/icons/ILogout.vue'
-import ACalendar from '~/components/ACalendar.vue'
 const adminName = ref('Thuong Truong')
 const adminAvatar = ref('/img/admin/avatar_sample.png')
 
@@ -10,8 +9,8 @@ const adminAvatar = ref('/img/admin/avatar_sample.png')
 <template>
   <main class="text-gray-700 dark:text-gray-200 overflow-x-hidden">
     <SHead />
-    <div class="h-screen w-screen bg-[#F6F6F6] flex dark:bg-black">
-      <div class="w-100 h-full bg-white px-3">
+    <div class="w-screen bg-[#F6F6F6] flex dark:bg-black">
+      <div class="w-100 bg-white px-3">
         <div class="flex justify-end text-gray-400 hover:text-black cursor-pointer py-1">
           <IEdit />
         </div>
@@ -23,9 +22,8 @@ const adminAvatar = ref('/img/admin/avatar_sample.png')
             Hi, {{ adminName }}!
           </h2>
         </div>
-        <ACalendar />
         <div class="grid grid-cols-4 items-center gap-2">
-          <div class="text-white flex justify-around items-center border-1 border-solid border-gray rounded-lg col-span-3 cursor-pointer py-2 bg-[#00C689] hover:(bg-transparent text-gray-500) duration-200">
+          <div class="text-white flex justify-around items-center border-1 border-solid border-gray rounded-lg col-span-3 cursor-pointer py-2 bg-[#00C689] hover:(bg-transparent text-gray-500) duration-200 shadow-md shadow-gray-200">
             <img :src="adminAvatar" alt="avatar" width="40" height="40" class="rounded-full shadow-light-800 shadow-md">
             <div>
               <h4>{{ adminName }}</h4>
@@ -34,7 +32,7 @@ const adminAvatar = ref('/img/admin/avatar_sample.png')
               </p>
             </div>
           </div>
-          <div class="text-gray-400 text-xl font-bold flex justify-center items-center border-2 border-solid border-gray rounded-lg col-span-1 h-full cursor-pointer hover:(bg-[#00C689] text-white) duration-200">
+          <div class="text-gray-400 text-xl font-bold flex justify-center items-center border-2 border-solid border-gray rounded-lg col-span-1 h-full cursor-pointer hover:(bg-[#00C689] text-white) duration-200 shadow-md shadow-gray-200">
             <ILogout />
           </div>
         </div>
@@ -43,9 +41,3 @@ const adminAvatar = ref('/img/admin/avatar_sample.png')
     </div>
   </main>
 </template>
-
-<style scoped>
-::-webkit-scrollbar-thumb {
-  background: transparent;
-}
-</style>

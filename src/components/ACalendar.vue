@@ -1,12 +1,14 @@
 <template>
-  <div class="calendar light">
+  <div class="calendar">
     <div class="calendar_plan">
       <div class="cl_plan">
-        <div class="cl_title">
-          Today
-        </div>
-        <div class="cl_copy">
-          22nd  April  2018
+        <div>
+          <p class="cl_title">
+            Today
+          </p>
+          <p class="cl_copy">
+            22<sup>nd</sup>  April  2018
+          </p>
         </div>
         <div class="cl_add">
           <i class="fas fa-plus" />
@@ -66,64 +68,57 @@
   </div>
 </template>
 <style scoped>
- .light {
-    background-color: #fff;
-    border-radius: 1rem;
-}
-.calendar {
-    width: 20rem;
-    box-shadow: 0px 0px 35px -16px rgba(0, 0, 0, 0.75);
+ .calendar {
+    box-shadow: 0px 0px 30px -16px rgba(0, 0, 0, 0.75);
     font-family: 'Roboto', sans-serif;
-    padding: 20px 30px;
+    padding: 1rem;
     color: #363b41;
     display: inline-block;
+    background-color: #fff;
+    border-radius: 1rem;
 }
 .header_copy {
     color: #a39d9e;
     font-size: 20px;
 }
 .calendar_plan {
-    margin: 10px 0 20px;
+    margin-bottom: 0.75rem;
 }
 .cl_plan {
     width: 100%;
-    height: 5rem;
+    height: 4.5rem;
     background-image: linear-gradient(-222deg, #ff8494, #ffa9b7);
     box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
     padding: 5px;
     color: #fff;
-    border-radius: 1rem;
-}
-.cl_copy {
-    font-size: 20px;
-    margin: 20px 0;
-    display: inline-block;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .cl_add {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     background-color: #fff;
     cursor: pointer;
-    margin: 0 0 0 65px;
     color: #c2c2c2;
-    padding: 11px 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .calendar_events {
     color: #a39d9e;
 }
-.ce_title {
-    font-size: 14px;
-}
 .event_item {
-    margin: 18px 0;
+    margin: 0.5rem 0;
     padding: 5px;
     cursor: pointer;
 }
 .event_item:hover {
     background-image: linear-gradient(-222deg, #ff8494, #ffa9b7);
     box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+    border-radius: 0.5rem;
 }
 .event_item:hover .ei_Dot {
     background-color: #fff;
