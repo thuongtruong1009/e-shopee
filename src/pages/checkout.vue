@@ -3,41 +3,30 @@ meta:
   layout: LCheckout
 </route>
 
-<script>
-export default {
-  data() {
-    return {
-      isPersonal: true,
-      isAddress: false,
-      isShipping: false,
-      isPayment: false,
-    }
-  },
-  methods: {
-    showPersonal() {
-      if (this.isPersonal === false) this.isPersonal = true
-      else if (this.isPersonal === true) this.isPersonal = false
-    },
-    showAddress() {
-      if (this.isAddress === false) this.isAddress = true
-      else if (this.isAddress === true) this.isAddress = false
-    },
-    showShipping() {
-      if (this.isShipping === false) this.isShipping = true
-      else if (this.isShipping === true) this.isShipping = false
-    },
-    showPayment() {
-      if (this.isPayment === false) this.isPayment = true
-      else if (this.isPayment === true) this.isPayment = false
-    },
-    showPass() {
-      const x = document.getElementById('Password')
-      if (x.type === 'password')
-        x.type = 'text'
-      else
-        x.type = 'password'
-    },
-  },
+<script setup>
+const isPersonal = ref(true)
+const isAddress = ref(false)
+const isShipping = ref(false)
+const isPayment = ref(false)
+
+const showPersonal = () => {
+  isPersonal.value = !isPersonal.value
+}
+const showAddress = () => {
+  isAddress.value = !isAddress.value
+}
+const showShipping = () => {
+  isShipping.value = !isShipping.value
+}
+const showPayment = () => {
+  isPayment.value = !isPayment.value
+}
+const showPass = () => {
+  const x = document.getElementById('Password')
+  if (x.type === 'password')
+    x.type = 'text'
+  else
+    x.type = 'password'
 }
 </script>
 
