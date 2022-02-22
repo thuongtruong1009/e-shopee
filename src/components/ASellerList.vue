@@ -20,7 +20,7 @@ const sellerList = reactive([{
   name: 'Wayne Murphy',
   email: 'headadmin3@gmail.com',
   total: 162,
-  sold: 115,
+  sold: 135,
   status: 'Not found',
 },
 {
@@ -40,28 +40,38 @@ const sellerList = reactive([{
   status: 'In progress',
 }])
 
+const statusColor = ref('#34B1AA')
 const percent = (sold, total) => {
-  return parseFloat(sold * 100 / total).toFixed(2)
+  const result = parseFloat(sold * 100 / total).toFixed(2)
+  if (result <= 70) {
+    statusColor.value = '#FFAF00'
+    if (result < 40)
+      statusColor.value = '#F95F53'
+  }
+  else {
+    statusColor.value = '#34B1AA'
+  }
+  return result
 }
 </script>
 
 <template>
-  <div class="seller-list bg-white border-1 border-solid border-gray-200 rounded-lg p-3 shadow-md shadow-gray-300">
-    <div class="flex justify-between items-start">
+  <div class="seller-list bg-white border-1 border-solid border-gray-200 rounded-lg p-5 shadow-md shadow-gray-300">
+    <div class="flex justify-between items-start py-2">
       <div>
         <h6>Pending Requests</h6>
         <p>You have 50+ new requests</p>
       </div>
       <div>
-        <button class="btn">
-          Add new member
+        <button class="btn py-2 px-3 rounded-md">
+          <i class="fas fa-user-plus" /> Add new member
         </button>
       </div>
     </div>
-    <div class="seller-table">
-      <div class="seller-head grid grid-cols-6">
+    <div class="seller-table divide-y divide-solid divide-1 divide-gray-300">
+      <div class="seller-head grid grid-cols-6 py-5">
         <p class="col-span-3 text-center">
-          CUSTOMER
+          SELLERS
         </p>
         <p class="col-span-2">
           PROGRESS
@@ -70,17 +80,28 @@ const percent = (sold, total) => {
           STATUS
         </p>
       </div>
-      <div v-for="(seller, i) in sellerList" :key="i" class="seller-body grid grid-cols-6">
-        <div class="flex justify-evenly items-center col-span-3">
-          <img :src="seller.avatar" alt="avatar" class="rounded-full">
-          <div>
-            <p>{{ seller.name }}</p>
-            <p>{{ seller.email }}</p>
+      <div v-for="(seller, i) in sellerList" :key="i" class="seller-body grid grid-cols-6 py-2">
+        <div class="flex justify-around items-center col-span-3">
+          <input id="delete_checkbox" type="checkbox" name="delete_checkbox" class="w-4 h-4 cursor-pointer outline-none">
+          <div class="flex">
+            <img :src="seller.avatar" alt="avatar" class="rounded-full mr-2">
+            <div>
+              <p class="font-medium">
+                {{ seller.name }}
+              </p>
+              <p class="text-xs text-gray-400">
+                {{ seller.email }}
+              </p>
+            </div>
           </div>
         </div>
-        <div class="col-span-2">
-          <div class="w-2/3 bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
-            <div class="bg-[#34B1AA] h-1.5 rounded-full" :style="`width: ${percent(seller.sold, seller.total)}%`" />
+        <div class="col-span-2 grid items-center">
+          <div class="flex justify-between text-xs text-gray-400 w-3/4">
+            <p>{{ percent(seller.sold, seller.total) }}%</p>
+            <p>{{ seller.sold }}/{{ seller.total }}</p>
+          </div>
+          <div class="w-3/4 bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+            <div class="h-1.5 rounded-full" :style="`width: ${percent(seller.sold, seller.total)}% ; background: ${statusColor}`" />
           </div>
         </div>
         <div class="flex justify-start items-center">

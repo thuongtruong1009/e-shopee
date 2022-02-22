@@ -73,9 +73,9 @@ meta:
       <VChart class="col-span-1 chart w-sm h-sm bg-white border-1 border-solid border-gray-200 rounded-lg pt-2 shadow-md shadow-gray-300" :option="option" />
       <AreaChart class="col-span-2 bg-white border-1 border-solid border-gray-200 rounded-lg p-2 shadow-md shadow-gray-300" />
     </div>
-    <div class="my-3 grid grid-cols-4 justify-between gap-5">
+    <div class="my-3 grid grid-cols-3 justify-between gap-5">
       <ACalendar class="col-span-1" />
-      <ASellerList class="col-span-3" />
+      <ASellerList class="col-span-2" />
     </div>
   </div>
 </template>
