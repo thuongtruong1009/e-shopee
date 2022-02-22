@@ -5,9 +5,9 @@ meta:
 
 <template>
   <div class="container h-full p-4">
-    <div class="bg-white border-1 border-solid border-grey py-3 px-5">
+    <div id="modalPopup" class="bg-white border-1 border-solid border-grey py-3 px-5 rounded-md duration-3000">
       <h2 class="text-xl font-bold">
-        Hi! Welcome back!
+        Welcome back!
       </h2>
     </div>
     <div class="grid grid-cols-4 gap-5 my-5">
@@ -31,7 +31,7 @@ meta:
         </div>
         <div class="text-white tracking-tight">
           <p class="font-medium">
-            Total Purchases
+            Total Orders
           </p>
           <div class="flex items-center">
             <span class="mr-3 font-bold text-xl">$387</span>
@@ -45,11 +45,11 @@ meta:
         </div>
         <div class="text-white tracking-tight">
           <p class="font-medium">
-            Total Orders
+            Total Users
           </p>
           <div class="flex items-center">
             <span class="mr-3 font-bold text-xl">$161</span>
-            <p>This month</p>
+            <p>Overtime</p>
           </div>
         </div>
       </div>
@@ -70,8 +70,8 @@ meta:
     </div>
 
     <div class="flex justify-around">
-      <VChart class="chart w-sm h-sm bg-white border-1 border-solid border-gray-200" :option="option" />
-      <AreaChart class="bg-white border-1 border-solid border-gray-200" />
+      <VChart class="chart w-sm h-sm bg-white border-1 border-solid border-gray-200 rounded-lg pt-2" :option="option" />
+      <AreaChart class="bg-white border-1 border-solid border-gray-200 rounded-lg p-2" />
     </div>
   </div>
 </template>
@@ -113,7 +113,7 @@ export default defineComponent({
   setup() {
     const option = ref({
       title: {
-        text: 'Total types sold',
+        text: 'Top sales',
         left: 'center',
       },
       tooltip: {
@@ -148,8 +148,16 @@ export default defineComponent({
         },
       ],
     })
+    const myTimeout = setTimeout(() => {
+      const modalCongrate = document.getElementById('modalPopup')
+      modalCongrate.style.transform = 'translateX(20rem)'
+      const myTimeout = setTimeout(() => {
+        modalCongrate.style.opacity = 0
+        modalCongrate.style.display = 'none'
+      }, 1000)
+    }, 5000)
 
-    return { option }
+    return { option, myTimeout }
   },
 })
 </script>

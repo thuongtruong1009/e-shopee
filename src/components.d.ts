@@ -39,6 +39,7 @@ declare module 'vue' {
     ICheckout: typeof import('./components/icons/ICheckout.vue')['default']
     ICompare: typeof import('./components/ICompare.vue')['default']
     IDonut: typeof import('./components/icons/IDonut.vue')['default']
+    IEdit: typeof import('./components/icons/IEdit.vue')['default']
     IFacebook: typeof import('./components/IFacebook.vue')['default']
     IHeart: typeof import('./components/IHeart.vue')['default']
     IInstagram: typeof import('./components/IInstagram.vue')['default']
