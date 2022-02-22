@@ -1,3 +1,7 @@
+<script setup>
+const { t } = useI18n()
+</script>
+
 <template>
   <div class="service-container text-white bg-black grid grid-cols-4 justify-around items-center text-left">
     <div class="shipping">
@@ -7,10 +11,10 @@
       >
       <div class="">
         <h4 class="">
-          Free Shipping
+          {{ t('service.free shipping') }}
         </h4>
         <p class="">
-          On all orders over $75.00
+          {{ t('service.freeship') }} $75.00
         </p>
       </div>
     </div>
@@ -21,10 +25,10 @@
       >
       <div class="">
         <h4 class="">
-          Free Returns
+          {{ t('service.free return') }}
         </h4>
         <p class="">
-          Returns are free within 9 days
+          {{ t('service.return periods') }}
         </p>
       </div>
     </div>
@@ -35,10 +39,10 @@
       >
       <div class="">
         <h4 class="">
-          Support 24/7
+          {{ t('service.support') }} 24/7
         </h4>
         <p class="">
-          Contact us 24 hours a day
+          {{t('service.contact time')}}
         </p>
       </div>
     </div>
@@ -49,10 +53,10 @@
       >
       <div class="">
         <h4 class="">
-          100% Payment Secure
+          100% {{t('service.payment secure')}}
         </h4>
         <p class="">
-          Your payment are safe.
+          {{t('service.payment safe')}}
         </p>
       </div>
     </div>

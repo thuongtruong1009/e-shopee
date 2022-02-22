@@ -1,14 +1,18 @@
+<script setup>
+const { t } = useI18n()
+</script>
+
 <template>
   <div class="footer flex dark:text-gray-200">
     <div class="left md:(w-1/3 p-16 bg-gray-100) text-left dark:bg-black <md:(w-1/2 p-7 bg-light-200)">
       <IBrand class="py-4" />
       <p class="py-4">
-        We are always committed to serving you with the best services. Connect to receive more offers immediately.
+        {{ t('footer.commit') }}
       </p>
       <div class="contact flex py-4">
         <span><a href="tel:(+84)917085937"><img src="/img/icon/phone2.png" alt=""></a></span>
         <div class="phone pl-4">
-          <p>NEED HELP?</p>
+          <p>{{ t('footer.help') }}</p>
           <a href="tel:(+84)917085937"><h4 class="font-semibold text-black dark:text-gray-100 hover:text-red-500 duration-300">(+84) 917 085 937</h4></a>
         </div>
       </div>
@@ -19,45 +23,45 @@
         <span><img src="https://img.icons8.com/ios/50/000000/youtube-play.png"></span>
       </div>
       <div class="copyright py-4">
-        <p>Copyright © <a href="">shopee</a>. All Rights Reserved</p>
+        <p>{{ t('footer.copyright') }} © <a href="">shopee</a>. {{ t('footer.all rights reserved') }}</p>
       </div>
     </div>
     <div class="right grid w-2/3 py-15 px-8 grid-cols-4 text-left bg-light-200 dark:bg-black">
       <div class="information col-span-1">
-        <h3>INFORMATION</h3>
+        <h3>{{ t('footer.information') }}</h3>
         <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <ul>
-          <li>Delivery</li>
-          <li>About Us</li>
-          <li>Secure Payment</li>
-          <li>Contact Us</li>
-          <li>Sitemap</li>
-          <li>Stores</li>
+          <li>{{ t('footer.delivery') }}</li>
+          <li>{{ t('footer.about us') }}</li>
+          <li>{{ t('footer.secure payment') }}</li>
+          <li>{{ t('footer.contact us') }}</li>
+          <li>{{ t('footer.sitemap') }}</li>
+          <li>{{ t('footer.stores') }}</li>
         </ul>
       </div>
       <div class="custom col-span-1">
-        <h3>LINKS</h3>
+        <h3>{{ t('footer.link') }}</h3>
         <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <ul>
-          <li>Legal Notice</li>
-          <li>Prices Drop</li>
-          <li>New Products</li>
-          <li>Best Sales</li>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/account">My Account</a></li>
+          <li>{{ t('footer.legal notice') }}</li>
+          <li>{{ t('footer.prices drop') }}</li>
+          <li>{{ t('footer.new products') }}</li>
+          <li>{{ t('footer.best sales') }}</li>
+          <li><a href="/login">{{ t('footer.login') }}</a></li>
+          <li><a href="/account">{{ t('footer.my account') }}</a></li>
         </ul>
       </div>
       <div class="news col-span-2">
-        <h3>NEWSLETTER</h3>
+        <h3>{{ t('footer.newsletter') }}</h3>
         <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <div class="py-4">
-          <p>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
-          <p><em>Be the First to Know. Sign up for newsletter today!</em></p>
+          <p>{{ t('footer.subscribe') }}</p>
+          <p><em>{{ t('footer.sign up today') }}</em></p>
         </div>
         <form action="/POST" class="py-4 whitespace-nowrap">
           <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6" autofocus>
           <button type="submit" class="bg-[#EE4D2D] text-white rounded-r-3xl px-3 py-2.5">
-            Sign up
+            {{ t('footer.sign up') }}
           </button>
         </form>
         <div class="product-store find-on py-4 flex justify-start gap-3">

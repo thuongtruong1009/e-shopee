@@ -9,6 +9,7 @@ intro:
   desc: Ý kiến cá nhân Vite Template để bắt đầu
   dynamic-route: Bản giới thiệu về dynamic route
   hi: Hi, {name}!
+  aka: Được gọi là
   whats-your-name: Tên bạn là gì?
 not-found: Không tìm thấy
 header:
@@ -23,3 +24,38 @@ header:
   my ccount: Tài khoản
   checkout: Kiểm tra
   sign out: Thoát
+  menu product items: Danh sách sản phẩm
+  placeholder search: Tìm kiếm theo từ khóa...
+footer:
+  commit: Chúng tôi cam kết dịch vụ tốt nhất cho bạn. Kết nối ngay để nhận nhiều ưu đãi.
+  help: CẦN GIÚP ĐỠ?
+  copyright: Bản quyền
+  all rights reserved: Tất cả được bảo tồn
+  information: THÔNG TIN
+  delivery: Vận chuyển
+  about us: Về chúng tôi
+  secure payment: Phương thức bảo mật
+  contact us: Liên hệ
+  sitemap: Bản đồ
+  stores: Cửa hàng
+  link: LIÊN KẾT
+  legal notice: Giấy phép
+  prices drop: Giảm giá
+  new products: Sản phẩm mới
+  best sales: Doanh số
+  login: Đăng nhập
+  my account: Tài khoản
+  newsletter: TIN TỨC
+  subscribe: Có thể hủy đăng kí bất cứ lúc nào. Hãy liên hệ chúng tôi hợp pháp.
+  sign up today: hãy là người đầu tiên. Nhận thông báo ngay hôm nay!
+  sign up: Đăng kí
+service:
+  free shipping: Miễn phí vận chuyển
+  freeship: Những đơn trên
+  free return: Đổi trả
+  return periods: Đổi trả trong vòng 9 ngày
+  support: Hỗ trợ
+  contact time: Contact us 24 hours a day
+  payment secure: Thanh toán bảo mật
+  payment safe: Thanh toán an toàn cho bạn.
+

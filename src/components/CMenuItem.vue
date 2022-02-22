@@ -1,5 +1,6 @@
 <script setup>
 import ICaretRight from '~/components/ICaretRight.vue'
+const { t } = useI18n()
 const lists = reactive([
   {
     'men fashion': [{
@@ -70,7 +71,7 @@ const onAppearMenu = () => {
       <ul class="menu flex justify-between">
         <li class="menu-item relative" @click="onAppearMenu">
           <a href="#" class="menu-link text-white block text-base text-white bg-[#1D71AB] py-2 px-5 rounded-t-lg">
-            <i class="fas fa-list-ul" /> Menu product items
+            <i class="fas fa-list-ul" /> {{ t('header.menu product items') }}
           </a>
           <ul v-if="isAppearMenu === true" class="menu-child absolute z-90 bg-white rounded-b-md divide-1 divide-y divide-solid divide-gray-200">
             <li v-for="(item, i) in Object.keys(lists[0])" :key="i" class="relative">

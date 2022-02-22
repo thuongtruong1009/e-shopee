@@ -24,3 +24,37 @@ header:
   my ccount: My Account
   checkout: Checkout
   sign out: Sign out
+  menu product items: Menu product items
+  placeholder search: Enter your search key...
+footer:
+  commit: We are always committed to serving you with the best services. Connect to receive more offers immediately.
+  help: NEED HELP?
+  copyright: Copyright
+  all rights reserved: All Rights Reserved
+  information: INFORMATION
+  delivery: Delivery
+  about us: About Us
+  secure payment: Secure Payment
+  contact us: Contact Us
+  sitemap: Sitemap
+  stores: Stores
+  link: LINKS
+  legal notice: Legal Notice
+  prices drop: Prices Drop
+  new products: New Products
+  best sales: Best Sales
+  login: Login
+  my account: My Account
+  newsletter: NEWSLETTER
+  subscribe: You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.
+  sign up today: Be the First to Know. Sign up for newsletter today!
+  sign up: Sign up
+service:
+  free shipping: Free Shipping
+  freeship: On all orders over
+  free return: Free Returns
+  return periods: Returns are free within 9 days
+  support: Support
+  contact time: Contact us 24 hours a day
+  payment secure: Payment Secure
+  payment safe: Your payment are safe.

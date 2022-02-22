@@ -1,6 +1,10 @@
+<script setup>
+const { t } = useI18n()
+</script>
+
 <template>
   <div class="search-container w-lg <lg:w-xl">
-    <input type="text" placeholder="Enter your search key...">
+    <input type="text" :placeholder="t('header.placeholder search')">
     <button><img src="https://img.icons8.com/ios/50/ffffff/search--v1.png"></button>
   </div>
 </template>
