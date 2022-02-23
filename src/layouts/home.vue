@@ -11,14 +11,14 @@
     <CSwipper />
     <CBanner />
     <CDemo1 />
-    <CProduct />
+    <CArrivals />
+    <CDemo3 />
     <router-view />
     <div class="mt-5 mx-auto text-center opacity-25 text-sm">
       [Home Layout]
     </div>
     <CSlick />
     <CCategory />
-    <CArrivals />
     <CDemo2 />
     <CService />
     <CFooter />

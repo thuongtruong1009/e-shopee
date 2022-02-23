@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="service-container text-white bg-black grid grid-cols-4 justify-around items-center text-left">
+  <div class="service-container text-white bg-[#F33535] grid grid-cols-4 justify-around items-center text-left">
     <div class="shipping">
       <img
         class="" src="/img/icon/2.png"
