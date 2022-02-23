@@ -29,9 +29,11 @@ meta:
           <label for="forgot_password" class="cursor-pointer hover:text-[#6DB846] duration-200">Fogot Password?</label>
         </div>
         <div class="flex justify-center">
-          <button type="submit" class="rounded-3xl bg-[#57B846] hover:bg-[#333333] py-2 px-10 text-white text-lg">
-            Login
-          </button>
+          <router-link to="/admin">
+            <button type="submit" class="rounded-3xl bg-[#57B846] hover:bg-[#333333] py-2 px-10 text-white text-lg">
+              Login
+            </button>
+          </router-link>
         </div>
       </form>
     </div>

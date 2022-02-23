@@ -60,15 +60,15 @@ const percent = (sold, total) => {
     <div class="flex justify-between items-start py-2">
       <div>
         <h6 class="font-semibold text-md">
-          Pending Requests
+          Seller list requests
         </h6>
         <p class="text-xs text-gray-500">
-          You have 50+ new requests
+          Total 50+ new requests in this month
         </p>
       </div>
       <div>
         <button class="btn py-2 px-3 rounded-md">
-          <i class="fas fa-user-plus" /> Add new member
+          <i class="fas fa-user-plus" /> Add new seller
         </button>
       </div>
     </div>
