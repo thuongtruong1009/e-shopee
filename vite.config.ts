@@ -26,7 +26,8 @@ export default defineConfig({
   },
   plugins: [
     Vue({
-      include: [/\.vue$/, /\.md$/], template: { transformAssetUrls },
+      include: [/\.vue$/, /\.md$/],
+      template: { transformAssetUrls },
     }),
     quasar({
       sassVariables: 'src/quasar-variables.sass',

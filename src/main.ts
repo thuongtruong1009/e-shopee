@@ -2,7 +2,6 @@
 import { ViteSSG } from 'vite-ssg'
 import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
-import { Quasar } from 'quasar'
 import App from './App.vue'
 
 // Import icon libraries
