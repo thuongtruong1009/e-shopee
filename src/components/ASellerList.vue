@@ -59,8 +59,12 @@ const percent = (sold, total) => {
   <div class="seller-list bg-white border-1 border-solid border-gray-200 rounded-lg p-5 shadow-md shadow-gray-300">
     <div class="flex justify-between items-start py-2">
       <div>
-        <h6>Pending Requests</h6>
-        <p>You have 50+ new requests</p>
+        <h6 class="font-semibold text-md">
+          Pending Requests
+        </h6>
+        <p class="text-xs text-gray-500">
+          You have 50+ new requests
+        </p>
       </div>
       <div>
         <button class="btn py-2 px-3 rounded-md">
@@ -69,7 +73,10 @@ const percent = (sold, total) => {
       </div>
     </div>
     <div class="seller-table divide-y divide-solid divide-1 divide-gray-300">
-      <div class="seller-head grid grid-cols-6 py-5">
+      <div class="seller-head grid grid-cols-7 py-5">
+        <p class="col-span-1 text-center">
+          DELETE
+        </p>
         <p class="col-span-3 text-center">
           SELLERS
         </p>
