@@ -104,6 +104,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'safari-pinned-tab.svg'],
+      workbox: {
+        cleanupOutdatedCaches: true,
+      },
       manifest: {
         name: 'e-shopee',
         short_name: 'e-shopee',
