@@ -18,6 +18,7 @@
     </div>
     <CSlick />
     <CCategory />
+    <CArrivals />
     <CDemo2 />
     <CService />
     <CFooter />
