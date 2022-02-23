@@ -5,7 +5,7 @@ meta:
 
 <template>
   <div class="container h-full p-4">
-    <div id="modalPopup" class="bg-white border-1 border-solid border-grey py-3 px-5 rounded-md duration-3000">
+    <div id="modalPopup" class="bg-white border-1 border-solid border-bg-red-500 py-3 px-5 rounded-md duration-3000">
       <h2 class="text-xl font-bold">
         Welcome back!
       </h2>
