@@ -8,7 +8,8 @@
 - 📈 [Pie-chart](https://www.npmjs.com/package/vue-echarts) - [example](https://codesandbox.io/s/2y6m6?file=/src/App.vue)
 
 - 🚧 [Area chart](https://www.vuescript.com/svg-based-charting-library/) - [docs](https://vue3charts.org/docs/getting-started)
-- [Admin template](https://adminlte.io/themes/v3/#)
+- [Admin template 1](https://adminlte.io/themes/v3/#)
+- [Admin template 2](https://technext.github.io/star-admin2-free-admin-template/#)
 
 - ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
 
