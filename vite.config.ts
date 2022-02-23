@@ -14,6 +14,7 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
+import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -25,7 +26,10 @@ export default defineConfig({
   },
   plugins: [
     Vue({
-      include: [/\.vue$/, /\.md$/],
+      include: [/\.vue$/, /\.md$/], template: { transformAssetUrls },
+    }),
+    quasar({
+      sassVariables: 'src/quasar-variables.sass',
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
@@ -105,8 +109,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Vitesse',
-        short_name: 'Vitesse',
+        name: 'e-shopee',
+        short_name: 'e-shopee',
         theme_color: '#ffffff',
         icons: [
           {
