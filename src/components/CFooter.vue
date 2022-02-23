@@ -33,8 +33,8 @@ const { t } = useI18n()
         <ul>
           <li>{{ t('footer.delivery') }}</li>
           <li>{{ t('footer.about us') }}</li>
-          <li>{{ t('footer.secure payment') }}</li>
-          <li>{{ t('footer.contact us') }}</li>
+          <li><a href="/about">{{ t('footer.secure payment') }}</a></li>
+          <li><a href="/contact">{{ t('footer.contact us') }}</a></li>
           <li>{{ t('footer.sitemap') }}</li>
           <li>{{ t('footer.stores') }}</li>
         </ul>
