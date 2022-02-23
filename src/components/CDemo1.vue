@@ -1,19 +1,19 @@
 <template>
   <div class="demo2-container">
     <div class="split-wrap flex items-center p-8">
-      <div class="split third">
+      <div class="split third rounded-lg">
         <div class="cover">
-          <img src="/img/banner/10.jpg">
+          <img src="/img/banner/10.webp">
         </div>
       </div>
-      <div class="split third">
+      <div class="split third rounded-lg">
         <div class="cover">
-          <img src="/img/banner/11.jpg">
+          <img src="/img/banner/11.webp">
         </div>
       </div>
-      <div class="split third">
+      <div class="split third rounded-lg">
         <div class="cover">
-          <img src="/img/banner/12.jpg">
+          <img src="/img/banner/12.webp">
         </div>
       </div>
     </div>
