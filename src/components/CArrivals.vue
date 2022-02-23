@@ -79,4 +79,7 @@ const images = reactive([
 #content {
   width: max-content;
 }
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
 </style>
