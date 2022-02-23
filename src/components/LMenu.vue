@@ -17,7 +17,7 @@ const { t } = useI18n()
     </div>
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
-        <router-link to="/admin">
+        <router-link to="/admin/login">
           <span class="dropdown__selected">Admin</span>
         </router-link>
       </div>
