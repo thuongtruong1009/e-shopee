@@ -5,7 +5,7 @@ import IInstagram from '~/components/IInstagram.vue'
 </script>
 
 <template>
-  <div class="seller-header-container h-13 flex justify-between items-center border-3 border-solid border-gray-200 border-opacity-60">
+  <div class="seller-header-container h-13 flex justify-between items-center border-3 border-solid border-gray-200 border-opacity-60 bg-white">
     <router-link to="/seller/home">
       <div class="seller-header-left flex justify-around items-center text-xl tracking-tighter capitalize w-65 cursor-pointer">
         <IShopee />

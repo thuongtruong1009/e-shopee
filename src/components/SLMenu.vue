@@ -3,6 +3,10 @@ import IOrder from '~/components/IOrder.vue'
 import IProd from '~/components/IProd.vue'
 import IShop from '~/components/IShop.vue'
 
+const sellerName = ref('Thuong Truong')
+const sellerAvatar = ref('/img/admin/avatar_sample.png')
+const notifyTotal = ref(102)
+
 const isOrder = ref(true)
 const isProd = ref(true)
 const isShop = ref(true)
@@ -87,6 +91,28 @@ const onClick = (index) => {
         <router-link to="/seller/login" :style="isClick.five ? {'color': 'red'} : {'color': 'black'}" @click="onClick('five')">
           <span class="text-xl">•</span> Shop address
         </router-link>
+        <router-link to="/seller/login" :style="isClick.five ? {'color': 'red'} : {'color': 'black'}" @click="onClick('five')">
+          <span class="text-xl">•</span> Logout
+        </router-link>
+      </div>
+      <div class="grid grid-cols-4 items-center gap-1">
+        <div class="account-item text-white flex justify-around items-center border-1 border-solid border-gray rounded-r-lg col-span-3 cursor-pointer py-2 bg-[#00C689] hover:(bg-transparent text-gray-500) duration-200 shadow-md shadow-gray-200">
+          <img :src="sellerAvatar" alt="avatar" width="40" height="40" class="rounded-full shadow-light-800 shadow-md">
+          <div>
+            <h4>{{ sellerName }}</h4>
+            <p class="text-xs opacity-60 flex items-center gap-1">
+              login succesfully! <ITick class="tick" />
+            </p>
+          </div>
+        </div>
+        <div class="text-gray-400 text-xl font-bold flex justify-center items-center border-2 border-solid border-gray rounded-lg col-span-1 h-full cursor-pointer hover:(bg-[#00C689] text-white) duration-200 shadow-md shadow-gray-200">
+          <router-link to="/seller/login">
+            <a href="/seller/login" class="notification relative inline-block flex items-center">
+              <span><INotify class="text-gray-500 hover:text-white" /></span>
+              <span class="badge absolute bg-red-500 text-white text-xs font-thin rounded-full">{{ notifyTotal }}</span>
+            </a>
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -106,7 +132,7 @@ const onClick = (index) => {
 router-link{
   font-size: 0.9rem;
 }
-p{
+.dropdown-item > p{
   font-size: 1.1rem;
   opacity: 0.8;
 }
@@ -116,9 +142,17 @@ p{
   transition: 0.2s;
 }
 .fa-angle-down.active{
-    transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.account-item:hover .tick{
+  color: #00C689;
 }
 
+.notification .badge {
+  top: -0.9rem;
+  right: -0.9rem;
+  padding: 0 0.25rem;
+}
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}

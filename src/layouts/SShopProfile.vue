@@ -1,7 +1,7 @@
 <template>
-  <main class="text-gray-700 dark:text-gray-200 overflow-x-hidden">
+  <main class="text-gray-700 dark:text-gray-200 overflow-x-hidden bg-[#F6F6F6] h-screen">
     <SHead />
-    <div class="h-full w-screen bg-[#F6F6F6] dark:bg-black flex">
+    <div class="w-screen bg-[#F6F6F6] dark:bg-black flex">
       <SLMenu />
       <router-view />
     </div>

@@ -74,6 +74,7 @@ declare module 'vue' {
     IStar: typeof import('./components/icons/IStar.vue')['default']
     ITeam: typeof import('./components/icons/ITeam.vue')['default']
     ITestimonial: typeof import('./components/icons/ITestimonial.vue')['default']
+    ITick: typeof import('./components/icons/ITick.vue')['default']
     ITime: typeof import('./components/icons/ITime.vue')['default']
     ITotalSale: typeof import('./components/icons/ITotalSale.vue')['default']
     IWishList: typeof import('./components/icons/IWishList.vue')['default']
