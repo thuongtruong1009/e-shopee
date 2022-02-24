@@ -96,15 +96,17 @@ const onClick = (index) => {
         </router-link>
       </div>
       <div class="grid grid-cols-4 items-center gap-1">
-        <div class="account-item text-white flex justify-around items-center border-1 border-solid border-gray rounded-r-lg col-span-3 cursor-pointer py-2 bg-[#00C689] hover:(bg-transparent text-gray-500) duration-200 shadow-md shadow-gray-200">
-          <img :src="sellerAvatar" alt="avatar" width="40" height="40" class="rounded-full shadow-light-800 shadow-md">
-          <div>
-            <h4>{{ sellerName }}</h4>
-            <p class="text-xs opacity-60 flex items-center gap-1">
-              login succesfully! <ITick class="tick" />
-            </p>
+        <a href="/seller/shop/profile" class="col-span-3">
+          <div class="account-item text-white flex justify-around items-center border-1 border-solid border-gray rounded-r-lg cursor-pointer py-2 bg-[#00C689] hover:(bg-transparent text-gray-500) duration-200 shadow-md shadow-gray-200">
+            <img :src="sellerAvatar" alt="avatar" width="40" height="40" class="rounded-full shadow-light-800 shadow-md">
+            <div>
+              <h4>{{ sellerName }}</h4>
+              <p class="text-xs opacity-60 flex items-center gap-1">
+                login succesfully! <ITick class="tick" />
+              </p>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="text-gray-400 text-xl font-bold flex justify-center items-center border-2 border-solid border-gray rounded-lg col-span-1 h-full cursor-pointer hover:(bg-[#00C689] text-white) duration-200 shadow-md shadow-gray-200">
           <router-link to="/seller/notifications">
             <a href="/seller/notifications" class="notification relative inline-block flex items-center">
