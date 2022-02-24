@@ -106,8 +106,8 @@ const onClick = (index) => {
           </div>
         </div>
         <div class="text-gray-400 text-xl font-bold flex justify-center items-center border-2 border-solid border-gray rounded-lg col-span-1 h-full cursor-pointer hover:(bg-[#00C689] text-white) duration-200 shadow-md shadow-gray-200">
-          <router-link to="/seller/login">
-            <a href="/seller/login" class="notification relative inline-block flex items-center">
+          <router-link to="/seller/notifications">
+            <a href="/seller/notifications" class="notification relative inline-block flex items-center">
               <span><INotify class="text-gray-500 hover:text-white" /></span>
               <span class="badge absolute bg-red-500 text-white text-xs font-thin rounded-full">{{ notifyTotal }}</span>
             </a>

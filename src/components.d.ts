@@ -57,6 +57,7 @@ declare module 'vue' {
     ILink: typeof import('./components/icons/ILink.vue')['default']
     ILogin: typeof import('./components/icons/ILogin.vue')['default']
     ILogout: typeof import('./components/icons/ILogout.vue')['default']
+    IMark: typeof import('./components/icons/IMark.vue')['default']
     IMultiline: typeof import('./components/icons/IMultiline.vue')['default']
     INote: typeof import('./components/icons/INote.vue')['default']
     INotify: typeof import('./components/icons/INotify.vue')['default']
