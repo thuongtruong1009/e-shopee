@@ -25,7 +25,7 @@ const toggleLocales = () => {
       <carbon-language />
     </a>
 
-    <router-link class="icon-btn mx-2.25" to="/about" :title="t('button.about')">
+    <router-link class="icon-btn mx-2.25" to="/infor" :title="t('button.about')">
       <carbon-dicom-overlay />
     </router-link>
 
