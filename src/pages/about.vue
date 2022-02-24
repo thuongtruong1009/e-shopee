@@ -4,21 +4,24 @@ meta:
 </route>
 
 <script setup>
+import IBook from '~/components/icons/IBook.vue'
+import IShakeHand from '~/components/icons/IShakeHand.vue'
 import ICompany from '~/components/icons/ICompany.vue'
 import ITeam from '~/components/icons/ITeam.vue'
 import Itestimonial from '~/components/icons/ITestimonial.vue'
 </script>
 
-
 <template>
   <div class="about-container pb-10">
-    <header class="py-20 bg-[#F6F6F6] font-medium text-3xl dark:bg-gray-800 dark:text-gray-200">
-      <h1>About Us</h1>
+    <header class="py-20 bg-[#F6F6F6] font-medium text-3xl dark:bg-gray-800 dark:text-gray-200 flex justify-center">
+      <h1 class="flex items-center gap-3">
+        <IBook />About Us
+      </h1>
     </header>
     <div class="grid grid-cols-2 px-10 gap-5 py-15">
       <div class="text-left">
         <h1 class="font-medium text-3xl">
-          Welcome to e-shopee!
+          <IShakeHand /> Welcome to e-shopee!
         </h1>
         <p class="my-5 dark:text-gray-400">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore aperiam fugit consequuntur voluptatibus ex sint iure in, distinctio sed dolorem aspernatur veritatis repellendus dolorum voluptate, animi libero officiis eveniet accusamus recusandae. Temporibus amet ducimus sapiente voluptatibus autem dolorem magnam quas, officiis eveniet accusamus animi libero officiis eveniet accusamus recusandae. Temporibus
@@ -34,15 +37,21 @@ import Itestimonial from '~/components/icons/ITestimonial.vue'
     <div class="grid grid-cols-3 text-left p-10">
       <div>
         <h2><ICompany /> Our Company</h2>
-        <p class="dark:text-gray-400">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</p>
+        <p class="dark:text-gray-400">
+          Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
+        </p>
       </div>
       <div>
         <h2><ITeam /> Our Team</h2>
-        <p class="dark:text-gray-400">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</p>
+        <p class="dark:text-gray-400">
+          Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
+        </p>
       </div>
       <div>
         <h2><Itestimonial /> Testimonial</h2>
-        <p class="dark:text-gray-400">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</p>
+        <p class="dark:text-gray-400">
+          Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
+        </p>
       </div>
     </div>
   </div>

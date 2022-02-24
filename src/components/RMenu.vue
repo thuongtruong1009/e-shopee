@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 // window.addEventListener('load', () => {
 //   const menuToggle = document.querySelector('.menu-toggle')
 //   const menuChild = document.querySelectorAll('.has-child > a')
@@ -15,6 +15,8 @@
 //     menu.classList.toggle('show')
 //   })
 // })
+import ISetting from '~/components/icons/ISetting.vue'
+import IDollar from '~/components/icons/IDollar.vue'
 import IAccount from '~/components/icons/IAccount.vue'
 import ICheckout from '~/components/icons/ICheckout.vue'
 import ILogout from '~/components/icons/ILogout.vue'
@@ -25,7 +27,8 @@ const { t } = useI18n()
   <nav class="nav">
     <i class="fal fa-bars menu-toggle" />
     <ul class="menu">
-      <li class="menu-item has-child">
+      <li class="menu-item has-child flex item-center gap-1">
+        <ISetting />
         <a href="#" class="menu-link">
           {{ t('header.setting') }} <i class="fas fa-chevron-down" />
         </a>
@@ -47,9 +50,10 @@ const { t } = useI18n()
           </li>
         </ul>
       </li>
-      <li class="menu-item has-child">
+      <li class="menu-item has-child flex items-center gap-1">
+        <IDollar />
         <a href="#" class="menu-link">
-          {{ t('header.usd') }} $ <i class="fas fa-chevron-down" />
+          {{ t('header.usd') }} <i class="fas fa-chevron-down" />
         </a>
         <ul class="menu-child">
           <li class="menu-child-item has-child">
@@ -87,16 +91,19 @@ const { t } = useI18n()
           }
           .menu-link {
             font-size: 0.9rem;
-            color: white;
+            /* color: white; */
             display: block;
             transition: 0.2s linear;
           }
-          .menu-link:hover {
+          /* .menu-link:hover {
             color: orange;
-          }
+          } */
           .menu-item {
             position: relative;
-            transition: 1s linear;
+          }
+          .menu-item:hover{
+            color: orange;
+            cursor: pointer;
           }
           .menu-link:hover i{
           transform: rotate(180deg);

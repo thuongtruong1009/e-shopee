@@ -1,5 +1,8 @@
 <script setup>
 import { isDark } from '~/composables'
+import IInfor from '~/components/icons/IInfor.vue'
+import ILink from '~/components/icons/ILink.vue'
+import INotify from '~/components/icons/INotify.vue'
 const { t } = useI18n()
 </script>
 
@@ -29,8 +32,8 @@ const { t } = useI18n()
     </div>
     <div class="right grid w-2/3 py-15 px-8 grid-cols-4 text-left bg-light-200 dark:bg-black">
       <div class="information col-span-1">
-        <h3 :class="{dark : isDark}">
-          {{ t('footer.information') }}
+        <h3 :class="{dark : isDark}" class="flex gap-2 items-center">
+          <IInfor /> {{ t('footer.information') }}
         </h3>
         <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <ul>
@@ -43,8 +46,8 @@ const { t } = useI18n()
         </ul>
       </div>
       <div class="custom col-span-1">
-        <h3 :class="{dark : isDark}">
-          {{ t('footer.link') }}
+        <h3 :class="{dark : isDark}" class="flex items-center gap-2">
+          <ILink /> {{ t('footer.link') }}
         </h3>
         <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <ul>
@@ -57,8 +60,8 @@ const { t } = useI18n()
         </ul>
       </div>
       <div class="news col-span-2">
-        <h3 :class="{dark : isDark}">
-          {{ t('footer.newsletter') }}
+        <h3 :class="{dark : isDark}" class="flex items-center gap-2">
+          <INotify /> {{ t('footer.newsletter') }}
         </h3>
         <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <div class="py-4">
