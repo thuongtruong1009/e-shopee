@@ -1,4 +1,9 @@
-<script setup lang="ts">
+<script setup>
+import IHome from '~/components/icons/IHome.vue'
+import IAdmin from '~/components/icons/IAdmin.vue'
+import IPage from '~/components/icons/IPage.vue'
+import IContact from '~/components/icons/IContact.vue'
+import ISell from '~/components/icons/ISell.vue'
 import IAbout from '~/components/icons/IAbout.vue'
 import ICart from '~/components/icons/ICart.vue'
 import ICheckout from '~/components/icons/ICheckout.vue'
@@ -12,19 +17,19 @@ const { t } = useI18n()
   <div class="container dark:text-white">
     <div class="dropdown">
       <div class="dropdown__select">
-        <span class="dropdown__selected">{{ t('header.home') }}</span>
+        <span class="dropdown__selected flex items-center gap-1"><IHome />{{ t('header.home') }}</span>
       </div>
     </div>
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
         <router-link to="/admin/login">
-          <span class="dropdown__selected">Admin</span>
+          <span class="dropdown__selected flex items-center gap-1"><IAdmin />Admin</span>
         </router-link>
       </div>
     </div>
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
-        <span class="dropdown__selected">{{ t('header.pages') }} <i class="fas fa-chevron-down" /></span>
+        <span class="dropdown__selected flex items-center gap-1"><IPage />{{ t('header.pages') }} <i class="fas fa-chevron-down" /></span>
       </div>
       <ul class="dropdown__list">
         <li class="dropdown__item">
@@ -61,14 +66,14 @@ const { t } = useI18n()
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
         <router-link to="/contact">
-          <span class="dropdown__selected">{{ t('header.contact us') }} </span>
+          <span class="dropdown__selected flex items-center gap-1"><IContact />{{ t('header.contact us') }} </span>
         </router-link>
       </div>
     </div>
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
         <router-link to="/seller/login">
-          <span class="dropdown__selected">Become Seller</span>
+          <span class="dropdown__selected flex items-center gap-1"><ISell />Become Seller</span>
         </router-link>
       </div>
     </div>
