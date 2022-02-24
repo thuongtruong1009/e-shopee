@@ -17,7 +17,7 @@ const { t } = useI18n()
   <div class="container dark:text-white">
     <div class="dropdown">
       <div class="dropdown__select">
-        <span class="dropdown__selected flex items-center gap-1"><IHome />{{ t('header.home') }}</span>
+        <a href="/"><span class="dropdown__selected flex items-center gap-1"><IHome />{{ t('header.home') }}</span></a>
       </div>
     </div>
     <div class="dropdown dark:bg-black">
@@ -33,7 +33,7 @@ const { t } = useI18n()
       </div>
       <ul class="dropdown__list">
         <li class="dropdown__item">
-          <span class="dropdown__text">About Page <IAbout /></span>
+          <a href="/about"><span class="dropdown__text">About Page <IAbout /></span></a>
         </li>
         <li class="dropdown__item">
           <router-link to="/cart">
@@ -66,7 +66,7 @@ const { t } = useI18n()
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
         <router-link to="/contact">
-          <span class="dropdown__selected flex items-center gap-1"><IContact />{{ t('header.contact us') }} </span>
+          <span class="dropdown__selected flex items-center gap-1"><IContact />{{ t('header.contact') }} </span>
         </router-link>
       </div>
     </div>

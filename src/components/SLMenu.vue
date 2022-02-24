@@ -41,7 +41,7 @@ const onClick = (index) => {
 <template>
   <div class="seller-lmenu-container">
     <div class="sidenav h-full bg-white dark:bg-black overflow-x-hidden w-60 pt-5">
-      <div class="dropdown flex items-center w-full px-1 cursor-pointer" @click="onOpenOrder">
+      <div class="dropdown flex items-center px-1 cursor-pointer" @click="onOpenOrder">
         <IOrder class="mr-1" />
         <div class="dropdown-item flex justify-between items-center w-full">
           <p>Order Management</p>
@@ -93,6 +93,13 @@ const onClick = (index) => {
 </template>
 
 <style scoped>
+.dropdown{
+  box-shadow: 1px 1px 5px gray;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  margin-right: 0.25rem;
+  background: linear-gradient(90deg, #7ec49a, #fbd786, #f7797d);
+}
 .sidenav {
   font-family: "Lato", sans-serif;
 }
