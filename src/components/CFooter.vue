@@ -1,4 +1,5 @@
 <script setup>
+import { isDark } from '~/composables'
 const { t } = useI18n()
 </script>
 
@@ -28,7 +29,9 @@ const { t } = useI18n()
     </div>
     <div class="right grid w-2/3 py-15 px-8 grid-cols-4 text-left bg-light-200 dark:bg-black">
       <div class="information col-span-1">
-        <h3>{{ t('footer.information') }}</h3>
+        <h3 :class="{dark : isDark}">
+          {{ t('footer.information') }}
+        </h3>
         <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <ul>
           <li>{{ t('footer.delivery') }}</li>
@@ -40,7 +43,9 @@ const { t } = useI18n()
         </ul>
       </div>
       <div class="custom col-span-1">
-        <h3>{{ t('footer.link') }}</h3>
+        <h3 :class="{dark : isDark}">
+          {{ t('footer.link') }}
+        </h3>
         <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <ul>
           <li>{{ t('footer.legal notice') }}</li>
@@ -52,14 +57,16 @@ const { t } = useI18n()
         </ul>
       </div>
       <div class="news col-span-2">
-        <h3>{{ t('footer.newsletter') }}</h3>
+        <h3 :class="{dark : isDark}">
+          {{ t('footer.newsletter') }}
+        </h3>
         <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <div class="py-4">
           <p>{{ t('footer.subscribe') }}</p>
           <p><em>{{ t('footer.sign up today') }}</em></p>
         </div>
         <form action="/POST" class="py-4 whitespace-nowrap">
-          <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6" autofocus>
+          <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6 border-solid border-1 border-orange-400" autofocus>
           <button type="submit" class="bg-[#EE4D2D] text-white rounded-r-3xl px-3 py-2.5">
             {{ t('footer.sign up') }}
           </button>
@@ -99,6 +106,9 @@ h3{
   font-weight: bold;
   padding: 1rem 0;
   border-bottom: 1px solid rgb(224, 224, 224);
+}
+h3.dark{
+  border-color: transparent;
 }
 ul{
   padding: 1rem 0;

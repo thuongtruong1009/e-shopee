@@ -158,6 +158,7 @@ color: rgb(114, 114, 114);
 font-size: 0.9rem;
 border: 2px solid transparent;
 transition: 0.2s;
+cursor: pointer;
 }
 .nav-item:hover, .nav-item.active{
     color: rgb(255, 102, 0);

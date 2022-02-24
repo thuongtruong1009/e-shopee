@@ -3,6 +3,13 @@ meta:
   layout: LAbout
 </route>
 
+<script setup>
+import ICompany from '~/components/icons/ICompany.vue'
+import ITeam from '~/components/icons/ITeam.vue'
+import Itestimonial from '~/components/icons/ITestimonial.vue'
+</script>
+
+
 <template>
   <div class="about-container pb-10">
     <header class="py-20 bg-[#F6F6F6] font-medium text-3xl dark:bg-gray-800 dark:text-gray-200">
@@ -26,15 +33,15 @@ meta:
     </div>
     <div class="grid grid-cols-3 text-left p-10">
       <div>
-        <h2>Our Company</h2>
+        <h2><ICompany /> Our Company</h2>
         <p class="dark:text-gray-400">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</p>
       </div>
       <div>
-        <h2>Our Team</h2>
+        <h2><ITeam /> Our Team</h2>
         <p class="dark:text-gray-400">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</p>
       </div>
       <div>
-        <h2>Testimonial</h2>
+        <h2><Itestimonial /> Testimonial</h2>
         <p class="dark:text-gray-400">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</p>
       </div>
     </div>
@@ -45,5 +52,8 @@ meta:
 h2{
   font-weight: 600;
   font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 </style>

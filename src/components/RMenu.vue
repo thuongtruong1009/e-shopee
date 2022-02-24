@@ -146,6 +146,7 @@ const { t } = useI18n()
               background: white;
               box-shadow: var(--shadow);
               display: none;
+              border-radius: 0.5rem;
             }
             .menu-child:before {
               content: "";
