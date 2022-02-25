@@ -1,3 +1,22 @@
+[![Dev.to](https://img.shields.io/twitter/url?color=green&label=Dev.to&logo=dev.to&logoColor=yellow&style=for-the-badge&url=https%3A%2F%2Fdev.to%2Fthuongtruong1009)](https://dev.to/thuongtruong1009)
+[![Github](https://img.shields.io/twitter/url?color=green&label=Github&logo=github&logoColor=white&style=for-the-badge&url=https%3A%2F%2Fdev.to%2Fthuongtruong1009)](https://github.com/thuongtruong1009/e-shopee)
+[![Email](https://img.shields.io/twitter/url?color=green&label=Email&logo=gmail&logoColor=red&style=for-the-badge&url=https%3A%2F%2Fdev.to%2Fthuongtruong1009)](mailto:ititiu19228@student.hcmiu.edu.vn)
+
+<div align="center">
+  <h1>e-shopee</h1>
+</div>
+
+## Preview
+
+- [Demo](https://e-shopee.vercel.app/)
+
+![preview home 1](/public/preview//home_1.jpg)
+![preview home 2](/public/preview/home_2.jpg)
+![preview home 3](/public/preview/home_3.jpg)
+![preview home 4](/public/preview/home_4.jpg)
+![preview home 5](/public/preview/home_5.jpg)
+![preview home 6](/public/preview/home_6.jpg)
+
 ## Feature
 - 🧩 [slick](https://antoniandre.github.io/vueper-slides/?ref=madewithvuejs.com)
 
@@ -8,8 +27,8 @@
 - 📈 [Pie-chart](https://www.npmjs.com/package/vue-echarts) - [example](https://codesandbox.io/s/2y6m6?file=/src/App.vue)
 
 - 🚧 [Area chart](https://www.vuescript.com/svg-based-charting-library/) - [docs](https://vue3charts.org/docs/getting-started)
-- [Admin template 1](https://adminlte.io/themes/v3/#)
-- [Admin template 2](https://technext.github.io/star-admin2-free-admin-template/#)
+
+- 🔗 [Admin template 1](https://adminlte.io/themes/v3/#) - [Admin template 2](https://technext.github.io/star-admin2-free-admin-template/#)
 
 - ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
 
@@ -141,6 +160,7 @@ pnpm preview
 
 ## Reference
 - Relax with [bee-music sound](https://github.com/thuongtruong1009/bee-music)
+- Enhance front-end skills through [twitter-meta](https://github.com/thuongtruong1009/twitter-meta)
 - Learning front-end web full course at [Front-end course](https://github.com/thuongtruong1009/challenge-resposive-web-design).
 - Learn Snake Game tutorial at [Snake-Game-OOP](https://github.com/thuongtruong1009/Snake-Game-OOP)
 - Learn Java for new beginner at [Java training](https://github.com/thuongtruong1009/java-oop-training)
