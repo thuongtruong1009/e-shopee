@@ -1,19 +1,16 @@
-<script>
-export default {
-  methods: {
-    openNav() {
-      document.getElementById('mySidenav').style.width = '22rem'
-      const body = document.body
-      body.style.overflowY = 'hidden'
-      // const app = document.getElementById('app')
-      // body.classList.add('modal')
-    },
-    closeNav() {
-      document.getElementById('mySidenav').style.width = '0'
-      const body = document.body
-      body.style.overflowY = ''
-    },
-  },
+<script setup>
+const isBlurBgModal = ref(false)
+const openNav = () => {
+  document.getElementById('mySidenav').style.width = '22rem'
+  const body = document.body
+  body.style.overflowY = 'hidden'
+  isBlurBgModal.value = true
+}
+const closeNav = () => {
+  document.getElementById('mySidenav').style.width = '0'
+  const body = document.body
+  body.style.overflowY = ''
+  isBlurBgModal.value = false
 }
 </script>
 
@@ -31,8 +28,8 @@ export default {
         $90.00
       </h1>
     </div>
-
-    <div id="mySidenav" class="sidenav w-0 h-screen fixed top-12 right-0 bg-white duration-500 z-1 overflow-x-hidden text-left text-black dark:(text-gray-200 bg-black) divide-light-700 divide-y border-1 border-dotted border-gray-700 shadow-2xl shadow-gray-500">
+    <div v-if="isBlurBgModal" class="blur-bg w-screen h-screen absolute top-0 -left-10 bg-black bg-opacity-30 z-1" @click="closeNav" />
+    <div id="mySidenav" class="sidenav w-0 h-screen fixed top-12 right-0 bg-white duration-500 z-2 overflow-x-hidden text-left text-black dark:(text-gray-200 bg-black) divide-light-700 divide-y border-1 border-dotted border-gray-700 shadow-2xl shadow-gray-500">
       <div class="flex justify-between items-center p-5">
         <p class="font-semibold">
           Cart
