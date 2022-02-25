@@ -3,6 +3,12 @@ meta:
   layout: ALogin
 </route>
 
+<script setup lang="ts">
+useHead({
+  title: 'admin | login',
+})
+</script>
+
 <template>
   <div class="login-container grid grid-rows-5">
     <div class="login-banner row-span-2 flex justify-center items-center relative">

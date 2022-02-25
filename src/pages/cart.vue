@@ -3,6 +3,12 @@ meta:
   layout: LCart
 </route>
 
+<script setup>
+useHead({
+  title: 'e-shopee | cart',
+})
+</script>
+
 <template>
   <div class="cart-container text-center">
     <table class="table w-full">

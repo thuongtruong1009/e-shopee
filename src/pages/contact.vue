@@ -3,6 +3,12 @@ meta:
   layout: LContact
 </route>
 
+<script setup>
+useHead({
+  title: 'e-shopee | contact',
+})
+</script>
+
 <template>
   <div class="contact-container grid grid-cols-2 gap-15 text-left p-15">
     <div class="left divide-light-700 divide-y">

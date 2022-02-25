@@ -5,6 +5,9 @@ meta:
 
 <script setup>
 import IQuestion from '~/components/IQuestion.vue'
+useHead({
+  title: 'seller | all-productions',
+})
 
 const queryType = ref('all')
 

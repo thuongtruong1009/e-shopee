@@ -4,6 +4,9 @@ meta:
 </route>
 
 <script setup>
+useHead({
+  title: 'seller | notifications',
+})
 const notifications = reactive([{
   img: 'https://cf.shopee.vn/file/dc275ef5663eaf4ef26ba0e9f50e737e',
   title: 'Shopee Xu sắp hết hạn!!',

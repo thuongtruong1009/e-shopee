@@ -5,6 +5,9 @@ meta:
 
 <script setup>
 import PNotFound from '~/components/partterns/PNotFound.vue'
+useHead({
+  title: 'seller | all-orders',
+})
 const queryType = ref('code orders')
 const navActive = ref('all')
 

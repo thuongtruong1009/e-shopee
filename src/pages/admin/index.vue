@@ -117,6 +117,9 @@ export default defineComponent({
     [THEME_KEY]: 'light',
   },
   setup() {
+    useHead({
+      title: 'admin | home',
+    })
     const option = ref({
       title: {
         text: 'Top sales',

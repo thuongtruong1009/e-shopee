@@ -19,7 +19,7 @@ const { t } = useI18n()
       <carbon-campsite class="inline-block" />
     </p>
     <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
+      <a rel="noreferrer" href="https://github.com/thuongtruong1009/e-shopee" target="_blank">
         Vitesse
       </a>
     </p>

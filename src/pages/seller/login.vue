@@ -3,6 +3,13 @@ meta:
   layout: SLogin
 </route>
 
+<script setup>
+useHead({
+  title: 'seller | login',
+})
+</script>
+
+
 <template>
   <div class="seller-login-container grid grid-cols-2">
     <div class="seller-login-container-left grid pt-10">
