@@ -3,48 +3,32 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="search-container w-lg <lg:w-xl">
-    <input type="text" :placeholder="t('header.placeholder search')">
-    <button><img src="https://img.icons8.com/ios/50/ffffff/search--v1.png"></button>
+  <div class="search-container w-lg <lg:w-xl shadow-md shadow-gray-500/50 flex justify-center items-center rounded-3xl">
+    <input type="text" :placeholder="t('header.placeholder search')" class="outline-none w-full h-full bg-white">
+    <button class="text-white flex items-center bg-black h-full">
+      <IFind />
+    </button>
   </div>
 </template>
 
 <style scoped>
-          .search-container {
-            height: 2.9rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 23px;
-            overflow: hidden;
-            box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.05);
-          }
-          .search-container > input {
-            width: 100%;
-            height: 100%;
-            padding: 10px 20px;
-            background-color: white;
-            -webkit-appearance: none;
-            font-size: 14px;
-            font-weight: 400;
-            outline: none;
-          }
-          .search-container > button {
-            height: 100%;
-            padding: 10px 15px;
-            color: white;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            background-color: black;
-          }
-          .search-container button > img {
-            width: 2rem;
-            height: 2rem;
-          }
-          @media (max-width: 992px){
-            .search-container{
-              width: 100%;
-            }
-          }
+  .search-container {
+    height: 2.7rem;
+    overflow: hidden;
+  }
+  .search-container > input {
+    padding: 10px 20px;
+    -webkit-appearance: none;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .search-container > button {
+    padding: 10px 15px;
+    flex-shrink: 0;
+  }
+  @media (max-width: 992px){
+    .search-container{
+      width: 100%;
+    }
+  }
 </style>

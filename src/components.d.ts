@@ -51,6 +51,7 @@ declare module 'vue' {
     IDonut: typeof import('./components/icons/IDonut.vue')['default']
     IEdit: typeof import('./components/icons/IEdit.vue')['default']
     IFacebook: typeof import('./components/icons/IFacebook.vue')['default']
+    IFind: typeof import('./components/icons/IFind.vue')['default']
     IHeart: typeof import('./components/IHeart.vue')['default']
     IHome: typeof import('./components/icons/IHome.vue')['default']
     IInfor: typeof import('./components/icons/IInfor.vue')['default']

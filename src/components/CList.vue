@@ -20,18 +20,12 @@ export default {
 <template>
   <div class="container flex justify-center items-center lg:w-xs text-white dark:text-black">
     <div>
-      <!-- <img src="https://img.icons8.com/fluency-systems-regular/32/ffffff/swap-paths.png"> -->
-      <!-- <span class="iconify" data-icon="ic:outline-compare-arrows" /> -->
       <ICompare />
     </div>
     <div>
-      <!-- <img src="https://img.icons8.com/windows/32/ffffff/like--v1.png"> -->
-      <!-- <span class="iconify" data-icon="cil:heart" /> -->
       <IHeart />
     </div>
     <div class="flex items-end" @click="openNav">
-      <!-- <img src="https://img.icons8.com/material-outlined/32/ffffff/shopping-cart.png"> -->
-      <!-- <span class="iconify" data-icon="clarity:shopping-cart-line" /> -->
       <ICart />
       <h1 class="font-semibold ml-3">
         $90.00

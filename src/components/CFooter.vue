@@ -69,7 +69,7 @@ const { t } = useI18n()
           <p><em>{{ t('footer.sign up today') }}</em></p>
         </div>
         <form action="/POST" class="py-4 whitespace-nowrap">
-          <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6 border-solid border-1 border-orange-400" autofocus>
+          <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6 border-solid border-1 border-transparent" autofocus>
           <button type="submit" class="bg-[#EE4D2D] text-white rounded-r-3xl px-3 py-2.5">
             {{ t('footer.sign up') }}
           </button>
@@ -87,6 +87,9 @@ const { t } = useI18n()
 </template>
 
 <style scoped>
+input:focus{
+  border: 1px solid orange;
+}
 .footer{
   color: #707070;
 }
