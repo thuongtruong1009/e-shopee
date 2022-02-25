@@ -9,6 +9,9 @@ import IShakeHand from '~/components/icons/IShakeHand.vue'
 import ICompany from '~/components/icons/ICompany.vue'
 import ITeam from '~/components/icons/ITeam.vue'
 import Itestimonial from '~/components/icons/ITestimonial.vue'
+useHead({
+  title: 'e-shopee | about',
+})
 </script>
 
 <template>

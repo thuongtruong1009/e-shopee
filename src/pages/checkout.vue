@@ -4,6 +4,9 @@ meta:
 </route>
 
 <script setup>
+useHead({
+  title: 'e-shopee | checkout',
+})
 const isPersonal = ref(true)
 const isAddress = ref(false)
 const isShipping = ref(false)

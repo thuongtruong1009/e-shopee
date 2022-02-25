@@ -14,6 +14,10 @@ import IPlus from '~/components/icons/IPlus.vue'
 import IQuestion from '~/components/IQuestion.vue'
 const numberShopName = ref('Lamborghini Aventador S')
 const numberShopDescription = ref('')
+
+useHead({
+  title: 'seller | profile',
+})
 </script>
 
 <template>

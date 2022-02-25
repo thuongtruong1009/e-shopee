@@ -5,7 +5,9 @@ meta:
 
 <script setup>
 import CMap from '~/components/CMap.vue'
-
+useHead({
+  title: 'e-shopee | sitemap',
+})
 </script>
 
 <template>
