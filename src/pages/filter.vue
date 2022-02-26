@@ -3,6 +3,13 @@ meta:
   layout: LFilter
 </route>
 
+<script setup>
+const priceValue = ref(200)
+const priceMin = ref(200)
+const priceMax = ref(1000)
+const newValue = ref(12)
+</script>
+
 <template>
   <div class="filter-container bg-white grid grid-cols-4 py-20 px-10 gap-3">
     <aside class="left-sidebar theme1 text-left col-span-1 px-2">
@@ -73,91 +80,67 @@ meta:
             Price
           </h4>
           <div class="filter-check-box">
-            <input id="test9" type="checkbox">
-            <label for="test9">s <span>(2)</span></label>
+            $0 - ${{ priceValue }}
           </div>
-          <div class="filter-check-box">
-            <input id="test10" type="checkbox">
-            <label for="test10">m <span>(2)</span></label>
-          </div>
-          <div class="filter-check-box">
-            <input id="test11" type="checkbox">
-            <label for="test11">l <span>(2)</span></label>
-          </div>
-          <div class="filter-check-box">
-            <input id="test12" type="checkbox">
-            <label for="test12">xl <span>(2)</span></label>
+          <div class="range-wrap">
+            <div class="range-value">
+              <span :style="`left: calc(${Number((priceValue - priceMin) * 100 / (priceMax - priceMin))}% + (${10 + (Number((priceValue - priceMin) * 100 / (priceMax - priceMin)) * 3.2)}px))`">{{ priceValue }}</span>
+            </div>
+            <input v-model="priceValue" type="range" :min="priceMin" :max="priceMax" step="1">
           </div>
 
-          <!-- check-box-inner -->
-          <div class="check-box-inner mt-10">
-            <div class="price-filter mt-10">
-              <div class="price-slider-amount">
-                <input
-                  id="amount" type="text" name="price" readonly
-                  placeholder="Add Your Price"
-                >
-              </div>
-              <div id="slider-range" />
-            </div>
+          <h4 class="sub-title">
+            color
+          </h4>
+          <div class="filter-check-box color-grey">
+            <input id="20826" type="checkbox">
+            <label for="20826">grey <span>(4)</span></label>
           </div>
-          <!-- check-box-inner -->
-          <div class="check-box-inner mt-10">
-            <h4 class="sub-title">
-              color
-            </h4>
-            <div class="filter-check-box color-grey">
-              <input id="20826" type="checkbox">
-              <label for="20826">grey <span>(4)</span></label>
-            </div>
-            <div class="filter-check-box color-white">
-              <input id="20827" type="checkbox">
-              <label for="20827">white <span>(3)</span></label>
-            </div>
-            <div class="filter-check-box color-black">
-              <input id="20828" type="checkbox">
-              <label for="20828">black <span>(6)</span></label>
-            </div>
-            <div class="filter-check-box color-camel">
-              <input id="20829" type="checkbox">
-              <label for="20829">camel <span>(2)</span></label>
-            </div>
+          <div class="filter-check-box color-white">
+            <input id="20827" type="checkbox">
+            <label for="20827">white <span>(3)</span></label>
           </div>
-          <!-- check-box-inner -->
-          <div class="check-box-inner mt-10">
-            <h4 class="sub-title">
-              Brand
-            </h4>
-            <div class="filter-check-box">
-              <input id="20824" type="checkbox">
-              <label for="20824">Graphic Corner<span>(5)</span></label>
-            </div>
-            <div class="filter-check-box">
-              <input id="20825" type="checkbox">
-              <label for="20825">Studio Design<span>(8)</span></label>
-            </div>
+          <div class="filter-check-box color-black">
+            <input id="20828" type="checkbox">
+            <label for="20828">black <span>(6)</span></label>
+          </div>
+          <div class="filter-check-box color-camel">
+            <input id="20829" type="checkbox">
+            <label for="20829">camel <span>(2)</span></label>
+          </div>
+
+          <h4 class="sub-title">
+            Brand
+          </h4>
+          <div class="filter-check-box">
+            <input id="20824" type="checkbox">
+            <label for="20824">Graphic Corner<span>(5)</span></label>
+          </div>
+          <div class="filter-check-box">
+            <input id="20825" type="checkbox">
+            <label for="20825">Studio Design<span>(8)</span></label>
           </div>
         </form>
       </div>
 
-      <div class="product-widget mb-60 mt-30">
-        <h3 class="title">
+      <div class="search-filter">
+        <h4 class="title">
           Product Tags
-        </h3>
-        <ul class="product-tag d-flex flex-wrap">
-          <li><a href="#">shopping</a></li>
-          <li><a href="#">New products</a></li>
-          <li><a href="#">Accessories</a></li>
-          <li><a href="#">sale</a></li>
-        </ul>
+        </h4>
       </div>
-      <!--second banner start-->
-      <div class="banner hover-animation position-relative overflow-hidden">
-        <a href="shop-grid-4-column.html" class="d-block">
-          <img src="assets/img/banner/2.jpg" alt="img">
+      <ul class="product-tag flex justify-start items-center mb-10 mt-5 flex-wrap ">
+        <li><a href="#">shopping</a></li>
+        <li><a href="#">New products</a></li>
+        <li><a href="#">Accessories</a></li>
+        <li><a href="#">sale</a></li>
+      </ul>
+      <div class="banner hover-animation relative overflow-hidden">
+        <a href="shop-grid-4-column.html" class="block">
+          <img src="/img/banner/2.jpg" alt="img">
         </a>
       </div>
     </aside>
+    <!-- ************************************ -->
     <div class="product-tab col-span-3">
       <div class="container">
         <div class="row">
@@ -2335,7 +2318,7 @@ meta:
 <style scoped>
 @font-face {
     font-family: "Gilroy-Medium";
-    src: url("/public/fonts/Gilroy-Medium.woff");
+    src: url("/fonts/Gilroy-Medium.woff");
 }
 .search-filter{
   font-family: "Gilroy-Medium";
@@ -2377,7 +2360,7 @@ meta:
   display: block;
   color: #707070;
 }
-form > h4{
+ h4{
     font-weight: 500;
     padding-top: 0.5rem;
 }
@@ -2386,5 +2369,79 @@ input[type="checkbox"]{
 }
 .filter-check-box{
     padding: 0.25rem 0;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 20px 0;
+  width: 100%;
+  cursor: grab;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: grab;
+  animation: 0.2s;
+  background: #03a9f4;
+  border-radius: 25px;
+
+}
+input[type=range]::-webkit-slider-thumb {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 4px 0 rgba(0,0,0, 1);
+  cursor: grab;
+  -webkit-appearance: none;
+  margin-top: -8px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #03a9f4;
+}
+.range-wrap{
+  width: 100%;
+  position: relative;
+}
+.range-value{
+  position: absolute;
+}
+
+.range-value span{
+  width: 1.8rem;
+  height: 1.3rem;
+  line-height: 24px;
+  text-align: center;
+  background: #03a9f4;
+  color: #fff;
+  font-size: 0.7rem;
+  display: block;
+  position: absolute;
+  top: -1em;
+  left: -50%;
+  transform: translate(-50%, 0);
+  border-radius: 6px;
+  cursor: grab;
+}
+.range-value span:before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #03a9f4;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -1px;
+}
+.product-tag > li{
+  border: 1px solid rgb(223, 223, 223);
+  padding: 0.3rem 1.2rem;
+  margin: 0.25rem;
+  border-radius: 2rem;
 }
 </style>
