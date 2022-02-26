@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "build": "vite-ssg build",
+        "build": "vite-ssg build --output public",
         "dev": "vite --port 3333 --open",
         "lint": "eslint \"**/*.{vue,ts,js}\"",
         "preview": "vite preview",
