@@ -43,6 +43,7 @@ declare module 'vue' {
     ICaretRight: typeof import('./components/ICaretRight.vue')['default']
     ICart: typeof import('./components/ICart.vue')['default']
     IChat: typeof import('./components/icons/IChat.vue')['default']
+    ICheck: typeof import('./components/icons/ICheck.vue')['default']
     ICheckout: typeof import('./components/icons/ICheckout.vue')['default']
     ICompany: typeof import('./components/icons/ICompany.vue')['default']
     ICompare: typeof import('./components/ICompare.vue')['default']
