@@ -10,100 +10,161 @@ const priceMax = ref(1000)
 
 const tags = reactive(['shopping', 'new_products', 'accessories', 'sales'])
 const totalProducts = ref(13)
-const images = reactive([{
+const regime = ref('grid')
+const onChangeRegime = (type) => {
+  regime.value = String(type)
+}
+const products = reactive([{
   img: '/img/arrival/1.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/arrival/2.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 5.99,
 },
 {
   img: '/img/arrival/3.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/arrival/4.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/arrival/5.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/arrival/6.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/arrival/7.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/arrival/8.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/arrival/9.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/arrival/10.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/product/shoes/1.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/product/shoes/2.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/product/shoes/3.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/product/shoes/5.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/product/shoes/6.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/product/shoes/7.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/product/shoes/8.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/product/shoes/9.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 },
 {
   img: '/img/product/shoes/12.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  infor: 'Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.',
+  quantity: 1200,
   price: 11.90,
+  discountPrice: 11.90,
 }])
 </script>
 
@@ -228,10 +289,6 @@ const images = reactive([{
         </h4>
       </div>
       <ul class="product-tag flex justify-start items-center mb-10 mt-5 flex-wrap ">
-        <!-- <li><a href="#">shopping</a></li>
-        <li><a href="#">New products</a></li>
-        <li><a href="#">Accessories</a></li>
-        <li><a href="#">sale</a></li> -->
         <li v-for="i in tags.length" :key="i">
           <a href="#">{{ tags[i-1] }}</a>
         </li>
@@ -246,20 +303,11 @@ const images = reactive([{
     <div class="grid-products-filter col-span-3">
       <div class="flex justify-between items-center bg-gray-100 rounded-lg py-2 px-5">
         <ul id="pills-tab" class="nav-pills flex items-center">
-          <li class="nav-item text-lg hover:text-red-500">
-            <a
-              id="pills-home-tab" class="nav-link active"
-              href="#pills-home"
-            >
-              <i class="fa fa-th" />
-
-            </a>
+          <li class="nav-item text-lg hover:text-red-500 cursor-pointer" :style="[regime === 'grid' ? {color:'red'} : {color:'gray'}]" @click="onChangeRegime('grid')">
+            <i class="fa fa-th" />
           </li>
-          <li class="nav-item ml-3 mr-7 text-lg hover:text-red-500">
-            <a
-              id="pills-profile-tab" class="nav-link"
-              href="#pills-profile"
-            ><i class="fa fa-list" /></a>
+          <li class="nav-item ml-3 mr-7 text-lg hover:text-red-500 cursor-pointer" :style="[regime === 'flow' ? {color:'red'} : {color:'gray'}]" @click="onChangeRegime('flow')">
+            <i class="fa fa-list" />
           </li>
           <li><span class="total-products text-sm">There are {{ totalProducts }} products.</span></li>
         </ul>
@@ -284,29 +332,78 @@ const images = reactive([{
           </select>
         </div>
       </div>
-      <div class="grid-products-list flex flex-wrap gap-5 py-10">
-        <div v-for="(image, i) in images" :key="i" class="card duration-200 ease-linear relative rounded-lg w-60 hover:shadow-md hover:shadow-gray-400/50 pb-0">
+      <div v-if="regime === 'grid'" class="grid-products-list flex flex-wrap gap-5 py-10">
+        <div v-for="(prod, i) in products" :key="i" class="card duration-200 ease-linear relative rounded-lg w-60 hover:shadow-md hover:shadow-gray-400/50 pb-0">
           <div class="card-type flex justify-between absolute w-full p-2">
             <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
             <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">new</span>
           </div>
           <div class="card-img max-w-full max-h-7/12">
             <a href="single-product.html">
-              <img class="first-img rounded-t-lg" :src="image.img" alt="thumbnail">
+              <img class="first-img rounded-t-lg" :src="prod.img" alt="thumbnail">
             </a>
           </div>
           <div class="product-description text-left p-2">
             <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]">
-              {{ image.desc }}
+              {{ prod.desc }}
             </p>
             <div class="star-rating flex justify-start">
               <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
             </div>
             <div class="flex items-center justify-between">
               <h6 class="card-price font-bold tracking-tighter">
-                ${{ image.price }}
+                ${{ prod.price }}
               </h6>
               <ICart class="cart w-9 h-9 p-2 rounded-full bg-gray-100 cursor-pointer duration-200 ease-linear text-gray-500 hover:bg-[#FF9900] hover:text-white" />
+            </div>
+            <div class="product-infor">
+              <p>{{}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-if="regime === 'flow'" class="grid-products-list grid gap-3 py-10">
+        <div v-for="(prod, i) in products" :key="i" class="card duration-200 ease-linear rounded-lg w-full hover:shadow-md hover:shadow-gray-400/50 pb-0 flex">
+          <div class="relative">
+            <div class="card-type flex justify-between absolute w-full p-5">
+              <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
+              <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">new</span>
+            </div>
+            <div class="card-img max-w-full max-h-7/12">
+              <a href="single-product.html">
+                <img class="first-img rounded-t-lg" :src="prod.img" alt="thumbnail">
+              </a>
+            </div>
+          </div>
+          <div class="product-description text-left p-2">
+            <div class="px-2">
+              <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]">
+                {{ prod.desc }}
+              </p>
+              <div class="star-rating flex justify-start py-2">
+                <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
+              </div>
+              <div class="flex items-center justify-start">
+                <h6 class="card-price font-bold tracking-tighter mr-2" :style="[prod.price == prod.discountPrice ? {color: 'black'} : {color: '#9B9B9B','text-decoration': 'line-through'}]">
+                  ${{ prod.price }}
+                </h6>
+                <h6 v-if="prod.price !== prod.discountPrice" class="font-bold tracking-tighter text-red-500">
+                  ${{ prod.discountPrice }}
+                </h6>
+              </div>
+            </div>
+            <div class="product-infor py-5 text-sm leading-6">
+              <p v-for="(line, index) in prod.infor.split('.')" :key="index">
+                {{ line }}
+              </p>
+            </div>
+            <div class="product-quantity">
+              <p>Availability: <span class="text-[#10A391]">{{ prod.quantity }} In Stock</span></p>
+            </div>
+            <div class="py-5 flex justify-start">
+              <h3 class="uppercase py-2.5 px-10 rounded-md bg-black text-white font-medium text-sm cursor-pointer hover:bg-[#F33535] duration-200">
+                Add to cart
+              </h3>
             </div>
           </div>
         </div>
@@ -319,6 +416,10 @@ const images = reactive([{
 @font-face {
     font-family: "Gilroy-Medium";
     src: url("/fonts/Gilroy-Medium.woff");
+}
+@font-face {
+    font-family: "Gilroy-Light";
+    src: url("/fonts/Gilroy-Light.woff");
 }
 .search-filter{
   font-family: "Gilroy-Medium";
@@ -364,6 +465,7 @@ const images = reactive([{
     font-weight: 500;
     padding-top: 0.5rem;
 }
+/* ********************************** COLOR CHECKBOX *************************** */
 input[type="checkbox"]{
     margin-right: 1rem;
 }
@@ -378,6 +480,10 @@ input[type="checkbox"]{
   cursor: pointer;
   font-size: 0.9rem;
   text-transform: capitalize;
+  transition: 0.2s;
+}
+.checkbox-container:hover{
+  color: #F33535;
 }
 
 /* Hide the browser's default checkbox */
@@ -430,6 +536,7 @@ input[type="checkbox"]{
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+/* ************************ SLIDER RANGE ************************ */
 input[type=range] {
   -webkit-appearance: none;
   margin: 20px 0;
@@ -441,10 +548,10 @@ input[type=range]:focus {
 }
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 3px;
+  height: 5px;
   cursor: grab;
   animation: 0.2s;
-  background: #03a9f4;
+  background: #F33535;
   border-radius: 25px;
 
 }
@@ -459,7 +566,7 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -8px;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #03a9f4;
+  background: #F33535;
 }
 .range-wrap{
   width: 100%;
@@ -498,6 +605,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   margin-left: -5px;
   margin-top: -1px;
 }
+/* ***************************** TAGS ******************************** */
 .product-tag > li{
   border: 1px solid rgb(223, 223, 223);
   padding: 0.3rem 1.2rem;
@@ -511,5 +619,8 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 .product-tag > li:hover{
   background: #F33535;
   color: white;
+}
+.product-infor{
+ font-family: "Gilroy-Light";
 }
 </style>
