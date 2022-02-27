@@ -10,6 +10,101 @@ const priceMax = ref(1000)
 
 const tags = reactive(['shopping', 'new_products', 'accessories', 'sales'])
 const totalProducts = ref(13)
+const images = reactive([{
+  img: '/img/arrival/1.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/arrival/2.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/arrival/3.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/arrival/4.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/arrival/5.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/arrival/6.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/arrival/7.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/arrival/8.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/arrival/9.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/arrival/10.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/product/shoes/1.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/product/shoes/2.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/product/shoes/3.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/product/shoes/5.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/product/shoes/6.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/product/shoes/7.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/product/shoes/8.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/product/shoes/9.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+},
+{
+  img: '/img/product/shoes/12.webp',
+  desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
+  price: 11.90,
+}])
 </script>
 
 <template>
@@ -141,7 +236,7 @@ const totalProducts = ref(13)
       </ul>
       <div class="banner hover-animation relative overflow-hidden">
         <a href="shop-grid-4-column.html" class="block">
-          <img src="/img/banner/2.jpg" alt="img">
+          <img src="/img/banner/2.webp" alt="img" class="rounded-md">
         </a>
       </div>
     </aside>
@@ -185,6 +280,33 @@ const totalProducts = ref(13)
               Price, high to low
             </option>
           </select>
+        </div>
+      </div>
+      <div class="grid-products-list flex flex-wrap gap-5 py-10">
+        <div v-for="(image, i) in images" :key="i" class="card duration-200 ease-linear relative rounded-lg w-60 hover:shadow-md hover:shadow-gray-400/50 pb-0">
+          <div class="card-type flex justify-between absolute w-full p-2">
+            <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
+            <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">new</span>
+          </div>
+          <div class="card-img max-w-full max-h-7/12">
+            <a href="single-product.html">
+              <img class="first-img rounded-t-lg" :src="image.img" alt="thumbnail">
+            </a>
+          </div>
+          <div class="product-description text-left p-2">
+            <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]">
+              {{ image.desc }}
+            </p>
+            <div class="star-rating flex justify-start">
+              <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
+            </div>
+            <div class="flex items-center justify-between">
+              <h6 class="card-price font-bold tracking-tighter">
+                ${{ image.price }}
+              </h6>
+              <ICart class="cart w-9 h-9 p-2 rounded-full bg-gray-100 cursor-pointer duration-200 ease-linear text-gray-500 hover:bg-[#FF9900] hover:text-white" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
