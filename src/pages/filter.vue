@@ -14,6 +14,19 @@ const regime = ref('grid')
 const onChangeRegime = (type) => {
   regime.value = String(type)
 }
+
+const isPopup = ref(false)
+const onOpenPopup = () => {
+  const body = document.body
+  body.style.overflowY = 'hidden'
+  isPopup.value = true
+}
+const onClosePopup = () => {
+  const body = document.body
+  body.style.overflowY = ''
+  isPopup.value = false
+}
+
 const products = reactive([{
   img: '/img/arrival/1.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
@@ -356,9 +369,6 @@ const products = reactive([{
               </h6>
               <ICart class="cart w-9 h-9 p-2 rounded-full bg-gray-100 cursor-pointer duration-200 ease-linear text-gray-500 hover:bg-[#FF9900] hover:text-white" />
             </div>
-            <div class="product-infor">
-              <p>{{}}</p>
-            </div>
           </div>
         </div>
       </div>
@@ -401,9 +411,59 @@ const products = reactive([{
               <p>Availability: <span class="text-[#10A391]">{{ prod.quantity }} In Stock</span></p>
             </div>
             <div class="py-5 flex justify-start">
-              <h3 class="uppercase py-2.5 px-10 rounded-md bg-black text-white font-medium text-sm cursor-pointer hover:bg-[#F33535] duration-200">
+              <h3 class="uppercase py-2.5 px-10 rounded-md bg-black text-white font-medium text-sm cursor-pointer hover:bg-[#F33535] duration-200" @click="onOpenPopup">
                 Add to cart
               </h3>
+            </div>
+            <div v-if="isPopup === true" class="popup-modal fixed w-screen h-screen top-0 left-0 flex justify-center items-center duration-700 ease-linear">
+              <div class="bg-white w-284 z-20 rounded-lg">
+                <div class="text-white flex justify-center items-center bg-black rounded-t-lg gap-2 relative py-2">
+                  <ICheck />
+                  <h5 class="text-lg" style="font-family: 'Gilroy-Medium'">
+                    Product successfully added to your shopping cart
+                  </h5>
+                  <span class="cursor-pointer text-4xl absolute right-3 -top-1" @click="onClosePopup">&times;</span>
+                </div>
+                <div class="grid grid-cols-7 px-10 pt-10 pb-5 divide-1 divide-solid divide-gray-200 divide-x">
+                  <div class="flex col-span-3 gap-2">
+                    <img src="/img/product/shoes/3.webp" alt="new_product" class="max-w-50 max-h-50">
+                    <div class="text-md font-semibold">
+                      <h6 class="pb-3">
+                        New Balance Running Arishi trainers in triple
+                      </h6>
+                      <p>$29.00</p>
+                      <p>Dimension: <span class="text-sm font-normal">40x60cm</span></p>
+                      <p>Quantity: 1</p>
+                    </div>
+                  </div>
+                  <div class="col-span-4 px-10 text-sm font-semibold">
+                    <p class="py-0.5 font-normal">
+                      There is 1 item in your cart.
+                    </p>
+                    <p class="py-0.5">
+                      Total products: <span class="font-normal">$123.72</span>
+                    </p>
+                    <p class="py-0.5">
+                      Total shipping: <span class="font-normal">$7.00</span>
+                    </p>
+                    <p class="py-0.5">
+                      Taxes <span class="font-normal">$0.00</span>
+                    </p>
+                    <p class="py-0.5">
+                      Total: <span class="font-normal">$130.72 (tax excl.)</span>
+                    </p>
+                    <div class="uppercase flex text-white font-medium text-sm py-5">
+                      <h6 class="bg-black rounded-md py-2 px-6 mr-2 hover:bg-red-500 cursor-pointer duration-200">
+                        continue shopping
+                      </h6>
+                      <h6 class="bg-black rounded-md py-2 px-6 hover:bg-red-500 cursor-pointer duration-200 flex gap-2 items-center">
+                        <ICheck />proceed to checkout
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div v-if="isPopup === true" class="fixed z-10 w-screen h-screen bg-black opacity-5 top-0 left-0" @click="onClosePopup" />
             </div>
           </div>
         </div>
@@ -622,5 +682,19 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 .product-infor{
  font-family: "Gilroy-Light";
+}
+/* ************************ POPUP MODAL **************************** */
+.popup-modal{
+  animation: popup-animate 0.1s linear;
+}
+@keyframes popup-animate {
+  0%{
+    align-items: start;
+    opacity: 0;
+  }
+  100%{
+    align-items: center;
+    opacity: 1;
+  }
 }
 </style>
