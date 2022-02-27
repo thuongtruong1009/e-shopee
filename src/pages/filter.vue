@@ -189,21 +189,23 @@ const images = reactive([{
           <h4 class="sub-title">
             color
           </h4>
-          <div class="filter-check-box color-grey">
-            <input id="20826" type="checkbox">
-            <label for="20826">grey <span>(4)</span></label>
-          </div>
-          <div class="filter-check-box color-white">
-            <input id="20827" type="checkbox">
-            <label for="20827">white <span>(3)</span></label>
-          </div>
-          <div class="filter-check-box color-black">
-            <input id="20828" type="checkbox">
-            <label for="20828">black <span>(6)</span></label>
-          </div>
-          <div class="filter-check-box color-camel">
-            <input id="20829" type="checkbox">
-            <label for="20829">camel <span>(2)</span></label>
+          <div class="pt-2">
+            <label class="checkbox-container" for="20826">grey (4)
+              <input id="20826" type="checkbox">
+              <span class="checkmark bg-[#7e7e7e]" />
+            </label>
+            <label class="checkbox-container" for="20827">white (3)
+              <input id="20827" type="checkbox" checked="checked">
+              <span class="checkmark bg-white" />
+            </label>
+            <label class="checkbox-container" for="20828">black (6)
+              <input id="20828" type="checkbox">
+              <span class="checkmark bg-black" />
+            </label>
+            <label class="checkbox-container" for="20829">camel (2)
+              <input id="20829" type="checkbox" checked="checked">
+              <span class="checkmark bg-[#C19A6B]" />
+            </label>
           </div>
 
           <h4 class="sub-title">
@@ -368,6 +370,66 @@ input[type="checkbox"]{
 .filter-check-box{
     padding: 0.25rem 0;
 }
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 0.2rem;
+  box-shadow: 1px 1px 3px gray;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 5px;
+  top: 0;
+  width: 6px;
+  height: 14px;
+  border: solid #F33535;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 input[type=range] {
   -webkit-appearance: none;
   margin: 20px 0;
@@ -379,7 +441,7 @@ input[type=range]:focus {
 }
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 4px;
+  height: 3px;
   cursor: grab;
   animation: 0.2s;
   background: #03a9f4;
@@ -391,7 +453,7 @@ input[type=range]::-webkit-slider-thumb {
   width: 1rem;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 0 4px 0 rgba(0,0,0, 1);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.7);
   cursor: grab;
   -webkit-appearance: none;
   margin-top: -8px;
