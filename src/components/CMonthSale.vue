@@ -14,7 +14,7 @@ const onClosePopupQR = () => {
 
 <template>
   <div class="month-sale-container grid justify-center gap-3 px-8 relative">
-    <img src="/img/month_sale/2.png" alt="" class="rounded-lg w-screen cursor-pointer" @click="onOpenPopupQR">
+    <img src="/img/month_sale/2.png" alt="" class="rounded-lg w-screen cursor-pointer my-5" @click="onOpenPopupQR">
     <img src="/img/month_sale/1.png" alt="" class="w-full rounded-lg">
     <div v-if="isPopupQR === true" class="popup-qr fixed z-1 w-screen h-screen top-0 left-0 flex justify-center items-center">
       <div class="bg-black opacity-30 absolute top-0 left-0 w-full h-full" @click="onClosePopupQR" />
