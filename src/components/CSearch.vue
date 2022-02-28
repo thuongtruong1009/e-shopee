@@ -5,7 +5,7 @@ const { t } = useI18n()
 <template>
   <div class="search-container w-lg <lg:w-xl shadow-md shadow-gray-500/50 flex justify-center items-center rounded-3xl">
     <input type="text" :placeholder="t('header.placeholder search')" class="outline-none w-full h-full bg-white">
-    <button class="text-white flex items-center bg-black h-full">
+    <button class="text-white flex items-center bg-black hover:bg-opacity-70 h-full">
       <router-link to="/filter">
         <IFind />
       </router-link>
