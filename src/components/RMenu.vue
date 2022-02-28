@@ -28,6 +28,26 @@ const { t } = useI18n()
     <i class="fal fa-bars menu-toggle" />
     <ul class="menu">
       <li class="menu-item has-child flex item-center gap-1">
+        <INotify class="mt-0.5" />
+        <a href="#" class="menu-link">
+          notifications
+        </a>
+        <ul class="menu-child">
+          <li class="menu-child-item has-child p-10 grid justify-center">
+            <img src="/img/home/notify_notfound.png" alt="no_notifications" class="w-25 h-25">
+            <p class="text-xs text-opacity-60 text-gray-500">Login to see your notifications</p>
+          </li>
+          <li class="menu-child-item flex justify-center text-white rounded-b-md">
+            <a href="/login" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">
+              Register
+            </a>
+            <a href="/login" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">
+              Login
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item has-child flex item-center gap-1">
         <ISetting />
         <a href="#" class="menu-link">
           {{ t('header.setting') }} <i class="fas fa-chevron-down" />
