@@ -1,5 +1,5 @@
 <template>
-  <main class="text-center text-gray-700 dark:text-gray-200 overflow-x-hidden">
+  <main class="text-center text-gray-700 dark:text-gray-200 overflow-x-hidden bg-[#F5F5F5] dark:bg-black">
     <div class="header-home flex justify-between items-center bg-black">
       <LMenu />
       <div class="flex justify-center items-center text-white">
@@ -14,6 +14,7 @@
     <CArrivals />
     <CMonthSale />
     <CDemo3 />
+    <CToday />
     <router-view />
     <div class="mt-5 mx-auto text-center opacity-25 text-sm">
       [Home Layout]

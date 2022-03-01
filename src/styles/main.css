@@ -67,5 +67,5 @@ html.dark {
 }
 ::-webkit-scrollbar-thumb {
   background: #EE7600;
-  /* border-radius: 300px; */
+  border-radius: 300px;
 }

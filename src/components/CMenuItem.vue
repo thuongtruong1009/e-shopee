@@ -90,7 +90,7 @@ const onAppearMenu = () => {
         </li>
         <li>
           <ul class="float-menu flex text-sm text-gray-500">
-            <li v-for="(item, i) in Object.keys(lists[0])" :key="i" class="cursor-pointer py-1 px-3 text-white border-1 border-solid border-transparent hover:border-white rounded-md duration-150">
+            <li v-for="(item, i) in Object.keys(lists[0])" :key="i" class="cursor-pointer py-1 px-3 text-white dark:text-black border-1 border-solid border-transparent hover:border-white rounded-md duration-150">
               {{ item }}
             </li>
           </ul>

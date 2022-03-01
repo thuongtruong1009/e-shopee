@@ -32,6 +32,7 @@ declare module 'vue' {
     CService: typeof import('./components/CService.vue')['default']
     CSlick: typeof import('./components/CSlick.vue')['default']
     CSwipper: typeof import('./components/CSwipper.vue')['default']
+    CToday: typeof import('./components/CToday.vue')['default']
     IAbout: typeof import('./components/icons/IAbout.vue')['default']
     IAccount: typeof import('./components/icons/IAccount.vue')['default']
     IAdmin: typeof import('./components/icons/IAdmin.vue')['default']
