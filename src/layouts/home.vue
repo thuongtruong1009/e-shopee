@@ -14,7 +14,9 @@
     <CArrivals />
     <CMonthSale />
     <CDemo3 />
-    <CToday />
+    <div class="flex justify-center">
+      <CToday />
+    </div>
     <router-view />
     <div class="mt-5 mx-auto text-center opacity-25 text-sm">
       [Home Layout]

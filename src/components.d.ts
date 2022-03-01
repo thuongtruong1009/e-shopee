@@ -51,6 +51,7 @@ declare module 'vue' {
     ICompare: typeof import('./components/ICompare.vue')['default']
     IContact: typeof import('./components/icons/IContact.vue')['default']
     ICross: typeof import('./components/icons/ICross.vue')['default']
+    IDiscount: typeof import('./components/icons/IDiscount.vue')['default']
     IDollar: typeof import('./components/icons/IDollar.vue')['default']
     IDonut: typeof import('./components/icons/IDonut.vue')['default']
     IEdit: typeof import('./components/icons/IEdit.vue')['default']
