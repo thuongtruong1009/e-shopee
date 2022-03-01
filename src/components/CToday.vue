@@ -1,0 +1,163 @@
+<script setup>
+const hintList = reactive([{
+  img: '/img/today/1.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/2.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: true,
+},
+{
+  img: '/img/today/3.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/4.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/5.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/6.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/7.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: true,
+},
+{
+  img: '/img/today/8.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/9.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/10.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: true,
+},
+{
+  img: '/img/today/11.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/12.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/1.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/2.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/3.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+}])
+</script>
+
+<template>
+  <div class="hint-today-container max-w-349 my-10">
+    <div class="bg-white flex justify-start rounded-lg">
+      <h2 class="text-red-500 border-b-4 border-b-solid border-b-red-500 text-lg rounded-l-lg text-left inline-block py-2 px-10 uppercase font-medium">
+        Hint today
+      </h2>
+    </div>
+    <div class="flex flex-wrap gap-3 py-3">
+      <div v-for="(hint, i) in hintList" :key="i" class="w-47 rounded-md bg-white shadow-sm shadow-gray-400 border-1 border-solid border-transparent hover:border-red-500 cursor-pointer relative">
+        <img v-if="hint.extra === true" src="/img/today/extra.png" alt="extra" class="absolute top-0 left-0 w-full">
+        <!-- <div class="discount-label absolute top-0 right-0 w-20">
+          <p>ok</p>
+        </div> -->
+        <img src="/img/today/discount.svg" alt="discount" class="absolute -top-2 -right-5 w-20">
+        <div class="absolute top-1 -right-4 w-20 text-xs">
+          <p class="text-red-500">
+            30%
+          </p>
+          <p class="text-white">
+            GIẢM
+          </p>
+        </div>
+        <img :src="hint.img" alt="" class="w-full h-47 rounded-t-md">
+        <p class="text-left text-xs p-1">
+          {{ hint.desc }}
+        </p>
+        <div class="flex justify-between items-center px-1 py-2">
+          <p class="text-red-500">
+            <span class="text-xs font-light">đ</span>{{ hint.price }}
+          </p>
+          <p class="text-xs">
+            Đã bán {{ hint.soldQuatity }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <p class="bg-white border-1 border-solid border-gray-200 py-2 px-10 rounded-md cursor-pointer hover:bg-[#F5F5F5] hover:border-gray-300">
+        Xem thêm
+      </p>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.hint-today-container > div:nth-child(2) > div{
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 16.8px;
+    padding: 10px;
+}
+
+</style>
