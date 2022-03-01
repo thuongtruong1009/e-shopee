@@ -132,7 +132,7 @@ useHead({
           </div>
         </div>
         <div class="col-span-5 flex justify-center items-center">
-          <button class="bg-[#E54A2B] text-white rounded-md px-10 py-1.5 my-5">
+          <button class="bg-[#E54A2B] text-white rounded-md px-10 py-1.5 my-5 shadow-md shadow-gray-300">
             Save
           </button>
         </div>

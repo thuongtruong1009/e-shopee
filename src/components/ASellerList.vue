@@ -67,7 +67,7 @@ const percent = (sold, total) => {
         </p>
       </div>
       <div>
-        <button class="btn py-2 px-3 rounded-md">
+        <button class="btn py-2 px-3 rounded-md shadow-md shadow-gray-300">
           <i class="fas fa-user-plus" /> Add new seller
         </button>
       </div>

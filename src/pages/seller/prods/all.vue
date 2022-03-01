@@ -73,7 +73,7 @@ function onQueryType(type) {
       </div>
 
       <div>
-        <button type="submit" class="text-white font-md py-1 px-5 rounded-md bg-[#E54A2B] duration-200 capitalize tracking-normal cursor-pointer mr-3">
+        <button type="submit" class="text-white font-md py-1 px-5 rounded-md bg-[#E54A2B] duration-200 capitalize tracking-normal cursor-pointer mr-3 shadow-md shadow-gray-300">
           Find
         </button>
         <button class="font-md py-1 px-3 text-md rounded-md bg-white duration-200 capitalize tracking-normal cursor-pointer border-1 border-solid border-gray-200" @click="clearForm">
@@ -114,7 +114,7 @@ function onQueryType(type) {
           <p v-if="queryType !== 'outStock' && queryType !== 'violet' && queryType !== 'hidden'" class="text-blue-500 cursor-pointer text-sm">
             product optimization
           </p>
-          <button v-if="queryType === 'all'" class="text-white font-md py-0.75 px-3 rounded-md bg-[#E54A2B] duration-200 capitalize tracking-normal cursor-pointer">
+          <button v-if="queryType === 'all'" class="text-white font-md py-0.75 px-3 rounded-md bg-[#E54A2B] duration-200 capitalize tracking-normal cursor-pointer shadow-md shadow-gray-300">
             + Add new a product
           </button>
           <select class="font-md px-1 text-md rounded-md bg-white duration-200 capitalize tracking-normal cursor-pointer border-1 border-solid border-gray-200">

@@ -17,7 +17,7 @@ useHead({
       </h1>
       <span class="bg-blue-900 w-full h-full absolute opacity-30 z-10 rounded-t-2xl" />
     </div>
-    <div class="row-span-3 px-20 py-15 bg-white rounded-b-2xl">
+    <div class="row-span-3 px-20 py-15 bg-white rounded-b-2xl shadow-md shadow-gray-300">
       <form action="" method="post">
         <div>
           <label for="user_name">Username</label>
@@ -36,7 +36,7 @@ useHead({
         </div>
         <div class="flex justify-center">
           <router-link to="/admin">
-            <button type="submit" class="rounded-3xl bg-[#57B846] hover:bg-[#333333] py-2 px-10 text-white text-lg">
+            <button type="submit" class="rounded-3xl bg-[#57B846] hover:bg-[#333333] py-2 px-10 text-white text-lg shadow-md shadow-gray-300">
               Login
             </button>
           </router-link>
