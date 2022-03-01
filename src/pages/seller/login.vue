@@ -9,7 +9,6 @@ useHead({
 })
 </script>
 
-
 <template>
   <div class="seller-login-container grid grid-cols-2">
     <div class="seller-login-container-left grid pt-10">
@@ -43,7 +42,7 @@ useHead({
             </p>
           </div>
           <router-link to="/seller/home">
-            <div class="bg-red-500 text-center text-white rounded-md py-2 my-1.5">
+            <div class="bg-red-500 text-center text-white rounded-md py-2 my-1.5 shadow-md shadow-gray-300">
               <button>Login</button>
             </div>
           </router-link>
