@@ -77,7 +77,7 @@ function clearForm() {
                 <input id="search-query" type="text" name="search-query" :placeholder="`Input ${queryType}...`" class="outline-none border-none w-xl">
                 <i class="fas fa-search opacity-50 ml-2" />
               </div>
-              <button type="submit" class="text-white font-md py-1 px-5 rounded-md bg-[#E54A2B] duration-200 capitalize tracking-normal cursor-pointer">
+              <button type="submit" class="text-white font-md py-1 px-5 rounded-md bg-[#E54A2B] duration-200 capitalize tracking-normal cursor-pointer shadow-md shadow-gray-300">
                 Search
               </button>
               <button class="font-md py-1 px-3 text-md rounded-md bg-white duration-200 capitalize tracking-normal cursor-pointer border-1 border-solid border-gray-200" @click="clearForm">
@@ -94,7 +94,7 @@ function clearForm() {
             <button class="font-md py-2 px-5 text-md rounded-md bg-white duration-200 capitalize tracking-normal cursor-pointer border-1 border-solid border-gray-200" @click="clearForm">
               <i class="fas fa-sort-amount-down opacity-70" /> Sorted by
             </button>
-            <button type="submit" class="text-white font-semibold ml-5 py-2 px-5 rounded-md bg-[#E54A2B] duration-200 capitalize tracking-normal cursor-pointer">
+            <button type="submit" class="text-white font-semibold ml-5 py-2 px-5 rounded-md bg-[#E54A2B] duration-200 capitalize tracking-normal cursor-pointer shadow-md shadow-gray-300">
               <i class="fas fa-wallet" /> Mass Delivery
             </button>
           </div>

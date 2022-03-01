@@ -69,8 +69,8 @@ const { t } = useI18n()
           <p><em>{{ t('footer.sign up today') }}</em></p>
         </div>
         <form action="/POST" class="py-4 whitespace-nowrap">
-          <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6 border-solid border-1 border-transparent" autofocus>
-          <button type="submit" class="bg-[#EE4D2D] text-white rounded-r-3xl px-3 py-2.5">
+          <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6 border-solid border-1 border-transparent shadow-md shadow-gray-300" autofocus>
+          <button type="submit" class="bg-[#EE4D2D] text-white rounded-r-3xl px-3 py-2.5 shadow-md shadow-gray-400">
             {{ t('footer.sign up') }}
           </button>
         </form>
@@ -87,9 +87,6 @@ const { t } = useI18n()
 </template>
 
 <style scoped>
-input:focus{
-  border: 1px solid orange;
-}
 .footer{
   color: #707070;
 }
@@ -100,6 +97,11 @@ input:focus{
   border-radius: 50%;
   cursor: pointer;
   transition: 0.3s linear;
+  --tw-shadow-color: 209, 213, 219;
+  --tw-shadow-color: 0, 0, 0;
+  --tw-shadow: 0 4px 6px -1px rgba(var(--tw-shadow-color), 0.1), 0 2px 4px -1px rgba(var(--tw-shadow-color), 0.06);
+  -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .social > span:hover{
   background: orange;

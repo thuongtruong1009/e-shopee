@@ -1,5 +1,11 @@
 <script setup>
 import IShopee from '~/components/IShopee.vue'
+
+// const getURL = window.location.href
+// const splitURL = getURL.split('/')
+// splitURL.shift()
+// const currentURL = splitURL.toString()
+
 </script>
 
 <template>
@@ -8,6 +14,7 @@ import IShopee from '~/components/IShopee.vue'
       <div class="seller-header-left flex justify-around items-center text-xl tracking-tighter capitalize w-65 cursor-pointer">
         <IShopee />
         <h2>Seller channel</h2>
+        <!-- <p>{{ currentURL }}</p> -->
       </div>
     </router-link>
     <div class="seller-header-right flex  justify-around items-center w-79 cursor-pointer">
