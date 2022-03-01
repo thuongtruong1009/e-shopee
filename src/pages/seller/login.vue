@@ -21,7 +21,7 @@ useHead({
       <img src="/img/seller/login/background.png" class="bg-contain w-md h-[13rem] mt-5">
     </div>
     <div class="seller-login-container-right flex justify-end">
-      <div class="w-[75%] bg-white grid justify-center p-5">
+      <div class="w-[75%] bg-white grid justify-center p-5 rounded-2xl shadow-md shadow-gray-300">
         <h2 class="text-3xl font-semibold tracking-tight mb-5">
           Login to Seller channel
         </h2>
