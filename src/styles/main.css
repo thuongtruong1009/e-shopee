@@ -1,5 +1,51 @@
 @import './markdown.css';
 
+/*-----------------------------------------------------------------------------------
+
+    Project Name: e-shopee
+    Project URL: https://github.com/thuongtruong1009/e-shopee
+    Description: Online shopping application and e-commerce trading platform.
+    Author: thuongtruong1009
+    Author URL: https://github.com/thuongtruong1009
+    Version: 2.1
+
+-----------------------------------------------------------------------------------*/
+
+/* @font-face {
+  font-family: "Gilroy-Bold ☞";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Gilroy-Bold ☞"), url("../fonts/Gilroy-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy-Heavy ☞";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Gilroy-Heavy ☞"), url("../fonts/Gilroy-Heavy.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy-Light ☞";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Gilroy-Light ☞"), url("../fonts/Gilroy-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy-Medium ☞";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Gilroy-Medium ☞"), url("../fonts/Gilroy-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy-Regular ☞";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Gilroy-Regular ☞"), url("../fonts/Gilroy-Regular.woff") format("woff");
+} */
+
 html,
 body,
 #app {
@@ -17,16 +63,6 @@ html.dark {
   background: #121212;
   transition: 0.3s;
 }
-/* .modal{
-  -webkit-filter: blur(4px);
-    -moz-filter: blur(4px);
-    -o-filter: blur(4px);
-    -ms-filter: blur(4px);
-    filter: blur(4px);
-    filter: url("https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur".svg#blur);
-    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
-    pointer-events: none;
-} */
 
 #nprogress {
   pointer-events: none;

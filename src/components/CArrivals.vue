@@ -148,7 +148,7 @@ const onActiveNav = (item) => {
 ::-webkit-scrollbar-thumb {
   background: transparent;
 }
-/* **************************** Head NAV ************************** */
+/* **************************** HEAD NAV ************************** */
 .nav-item {
 margin: 2rem 0.25rem;
 padding: 0.25rem 0.75rem;
