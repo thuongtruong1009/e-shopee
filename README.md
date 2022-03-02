@@ -3,17 +3,20 @@
 [![Email](https://img.shields.io/twitter/url?color=green&label=Email&logo=gmail&logoColor=red&style=for-the-badge&url=https%3A%2F%2Fdev.to%2Fthuongtruong1009)](mailto:ititiu19228@student.hcmiu.edu.vn)
 
 <div align="center">
-  <h1>e-shopee</h1>
+  <h1><img width="30" height="28" src="/public/readme_icon.png" />e-shopee</h1>
 </div>
 
 ## Preview
 
 - [Demo](https://e-shopee.vercel.app/)
 
-![preview home 1](/public/preview//home_1.jpg)
+![preview home 1](/public/preview/home_1.jpg)
+![preview home 2](/public/preview/home_9.jpg)
 ![preview home 2](/public/preview/home_2.jpg)
 ![preview home 3](/public/preview/home_3.jpg)
+![preview home 4](/public/preview/home_8.jpg)
 ![preview home 4](/public/preview/home_4.jpg)
+![preview home 4](/public/preview/home_7.jpg)
 ![preview home 5](/public/preview/home_5.jpg)
 ![preview home 6](/public/preview/home_6.jpg)
 
