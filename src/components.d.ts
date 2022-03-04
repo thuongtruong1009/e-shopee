@@ -61,6 +61,7 @@ declare module 'vue' {
     IInfor: typeof import('./components/icons/IInfor.vue')['default']
     IInstagram: typeof import('./components/icons/IInstagram.vue')['default']
     ILink: typeof import('./components/icons/ILink.vue')['default']
+    ILocation: typeof import('./components/icons/ILocation.vue')['default']
     ILogin: typeof import('./components/icons/ILogin.vue')['default']
     ILogout: typeof import('./components/icons/ILogout.vue')['default']
     IMark: typeof import('./components/icons/IMark.vue')['default']
