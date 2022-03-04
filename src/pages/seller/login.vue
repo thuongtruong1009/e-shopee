@@ -42,7 +42,7 @@ useHead({
             </p>
           </div>
           <router-link to="/seller/home">
-            <div class="bg-red-500 text-center text-white rounded-md py-2 my-1.5 shadow-md shadow-gray-300">
+            <div class="bg-red-500 hover:bg-red-600 text-center text-white rounded-md py-2 my-1.5 shadow-md shadow-gray-300">
               <button>Login</button>
             </div>
           </router-link>

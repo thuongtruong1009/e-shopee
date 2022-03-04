@@ -415,7 +415,7 @@ const products = reactive([{
                 Add to cart
               </h3>
             </div>
-            <div v-if="isPopup === true" class="popup-modal fixed w-screen h-screen top-0 left-0 flex justify-center items-center duration-700 ease-linear">
+            <div v-if="isPopup === true" class="popup-modal fixed w-screen h-screen top-0 left-0 flex justify-center items-center ease-linear">
               <div class="bg-white w-284 z-20 rounded-lg">
                 <div class="text-white flex justify-center items-center bg-black rounded-t-lg gap-2 relative py-2">
                   <ICheck />
@@ -689,11 +689,11 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 @keyframes popup-animate {
   0%{
-    align-items: start;
+    transform: scale(1.3);
     opacity: 0;
   }
   100%{
-    align-items: center;
+    transform: scale(1);
     opacity: 1;
   }
 }
