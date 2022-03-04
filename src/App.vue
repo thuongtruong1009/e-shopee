@@ -8,6 +8,12 @@ useHead({
     { name: 'description', content: 'Online shopping application and e-commerce trading platform.' }, { name: 'author', content: 'https://github.com/thuongtruong1009/e-shopee' },
   ],
 })
+const isScroll = ref(true)
+// if (document.body.scrollTop < 5 || document.documentElement.scrollTop < 5)
+//   isScroll.value = false
+// else
+//   isScroll.value = true
+
 const scrollToTop = () => {
   document.body.scrollTop = 0 // For Safari
   document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
@@ -15,7 +21,7 @@ const scrollToTop = () => {
 </script>
 
 <template>
-  <div class="fixed z-30 w-13 h-13 bottom-5 right-5 bg-orange-500 border-3 border-solid border-green-600 text-white rounded-full border shadow-md shadow-gray-400 flex justify-center items-center cursor-pointer hover:bg-orange-600" @click="scrollToTop">
+  <div v-if="isScroll === true" class="fixed z-30 w-13 h-13 bottom-5 right-5 bg-orange-500 border-3 border-solid border-green-600 text-white rounded-full border shadow-md shadow-gray-400 flex justify-center items-center cursor-pointer hover:bg-orange-600" @click="scrollToTop">
     <ITop />
   </div>
   <router-view />
