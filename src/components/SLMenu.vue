@@ -88,7 +88,7 @@ const onClick = (index) => {
         <router-link to="/seller/shop/profile" :style="isClick.four ? {'color': 'red'} : {'color': 'black'}" @click="onClick('four')">
           <span class="text-xl">•</span> Shop profile
         </router-link>
-        <router-link to="/seller/login" :style="isClick.five ? {'color': 'red'} : {'color': 'black'}" @click="onClick('five')">
+        <router-link to="/seller/shop/address" :style="isClick.five ? {'color': 'red'} : {'color': 'black'}" @click="onClick('five')">
           <span class="text-xl">•</span> Shop address
         </router-link>
         <router-link to="/seller/login" :style="isClick.five ? {'color': 'red'} : {'color': 'black'}" @click="onClick('five')">
