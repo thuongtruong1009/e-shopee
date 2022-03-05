@@ -7,6 +7,7 @@ meta:
 useHead({
   title: 'seller | login',
 })
+const isMode = ref('signup')
 </script>
 
 <template>
@@ -21,7 +22,7 @@ useHead({
       <img src="/img/seller/login/background.png" class="bg-contain w-md h-[13rem] mt-5">
     </div>
     <div class="seller-login-container-right flex justify-end">
-      <div class="w-[75%] bg-white grid justify-center p-5 rounded-2xl shadow-md shadow-gray-300">
+      <div v-if="isMode === 'login'" class="w-[75%] bg-white grid justify-center p-5 rounded-2xl shadow-md shadow-gray-300">
         <h2 class="text-3xl font-semibold tracking-tight mb-5">
           Login to Seller channel
         </h2>
@@ -66,6 +67,31 @@ useHead({
           </div>
         </form>
       </div>
+      <div v-if="isMode === 'signup'" class="seller-signup-container-right">
+        <form class="box bg-white rounded-lg shadow-md shadow-gray-300 p-7.5 text-center w-125">
+          <div class="form__control">
+            <input id="fullname" type="text" placeholder="Your Name">
+          </div>
+
+          <div class="form__control">
+            <input id="username" type="text" placeholder="User Name" required>
+          </div>
+
+          <div class="form__control">
+            <input id="email" type="email" placeholder="Email Address" required>
+          </div>
+
+          <div class="form__control">
+            <input id="password" type="password" placeholder="Password" required>
+          </div>
+          <button class="rounded-lg uppercase w-full outline-none font-medium cursor-pointer text-white tracking-normal py-4 text-md shadow-md shadow-gray-300 bg-[#38cc8c]">
+            Register to become seller
+          </button>
+
+          <small class="pt-5 block font-medium text-xs text-[#bbb]">By clicking the button, you are agreeing to our
+            <a href="#" class="text-[#ff7a7a]">Terms and Services</a></small>
+        </form>
+      </div>
     </div>
   </div>
 </template>
@@ -74,5 +100,38 @@ useHead({
 form > div{
   padding: 0.5rem 0;
   margin: 0.3rem 0;
+}
+
+.form__control input:focus {
+  border-color: hsl(0, 100%, 74%);
+  color: hsl(0, 100%, 74%);
+}
+
+.form__control input::placeholder:focus {
+  color: hsl(0, 100%, 74%);
+}
+
+input {
+  border: 1.3px solid hsl(246, 25%, 77%);
+  border-radius: 5px;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+input:focus {
+  border: 1.3px solid hsl(248, 32%, 49%);
+  outline: none;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+}
+button:active {
+  box-shadow: 0 0 hsl(154, 59%, 45%);
+  transform: translateY(2px);
 }
 </style>
