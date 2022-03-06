@@ -31,7 +31,7 @@ export default {
       <p class="user_unregistered-text font-light text-sm">
         Join us to become a member and start shopping in your style.
       </p>
-      <button id="signup-button" class="user_unregistered-signup uppercase mt-10 py-1 px-7 border-1 border-solid rounded-sm border-light-200 hover:bg-gray-300 hover:text-black duration-200 tracking-widest animate-bounce" @click="onSignUp">
+      <button id="signup-button" class="user_unregistered-signup uppercase mt-10 py-1 px-7 border-1 border-solid rounded-md border-light-200 hover:bg-gray-300 hover:text-black duration-200 tracking-widest animate-bounce" @click="onSignUp">
         Sign up
       </button>
     </div>
@@ -43,7 +43,7 @@ export default {
       <p class="user_registered-text font-light text-sm">
         Sign in to experience many attractive offers and services.
       </p>
-      <button id="login-button" class="user_registered-login uppercase mt-10 py-1 px-7 border-1 border-solid rounded-sm border-light-200 hover:bg-gray-300 hover:text-black duration-200 tracking-widest animate-bounce" @click="onLogin">
+      <button id="login-button" class="user_registered-login uppercase mt-10 py-1 px-7 border-1 border-solid rounded-md border-light-200 hover:bg-gray-300 hover:text-black duration-200 tracking-widest animate-bounce" @click="onLogin">
         Login
       </button>
     </div>
@@ -65,7 +65,7 @@ export default {
             <button type="button" class="forms_buttons-forgot text-gray-300 hover:text-gray-400 duration-200 underline">
               Forgot password?
             </button>
-            <input type="submit" value="Log In" class="forms_buttons-action bg-[#E8716D] hover:bg-[#E14641] duration-200 uppercase text-white py-1.5 px-7 rounded-sm tracking-widest cursor-pointer">
+            <input type="submit" value="Log In" class="forms_buttons-action bg-[#E8716D] hover:bg-[#E14641] duration-200 uppercase text-white py-1.5 px-7 rounded-md tracking-widest cursor-pointer">
           </div>
         </form>
       </div>
@@ -87,7 +87,7 @@ export default {
             </div>
           </fieldset>
           <div class="forms_buttons flex justify-end">
-            <input type="submit" value="Sign up" class="forms_buttons-action bg-[#E8716D] hover:bg-[#E14641] duration-200 uppercase text-white py-1.5 px-7 rounded-sm tracking-widest cursor-pointer">
+            <input type="submit" value="Sign up" class="forms_buttons-action bg-[#E8716D] hover:bg-[#E14641] duration-200 uppercase text-white py-1.5 px-7 rounded-md tracking-widest cursor-pointer">
           </div>
         </form>
       </div>
