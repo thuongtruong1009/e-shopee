@@ -23,7 +23,7 @@ useHead({
     </header>
     <div class="grid grid-cols-2 px-10 gap-5 py-15">
       <div class="text-left">
-        <h1 class="font-medium text-3xl">
+        <h1 class="font-medium text-3xl flex items-center gap-2">
           <IShakeHand /> Welcome to e-shopee!
         </h1>
         <p class="my-5 dark:text-gray-400">
