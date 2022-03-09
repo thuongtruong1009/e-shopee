@@ -17,7 +17,9 @@ const closeNav = () => {
 <template>
   <div class="container flex justify-center items-center lg:w-xs text-white dark:text-black">
     <div>
-      <ICompare />
+      <router-link to="/wishlist">
+        <ICompare />
+      </router-link>
     </div>
     <div>
       <IHeart />
