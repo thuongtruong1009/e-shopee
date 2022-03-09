@@ -33,7 +33,7 @@
 
 - 🔗 [Admin template 1](https://adminlte.io/themes/v3/#) - [Admin template 2](https://technext.github.io/star-admin2-free-admin-template/#)
 
-- ✨ [useful idea](https://hongo.themezaa.com/documentation/how-to-setup-product-wishlist-page/)
+- ✨ [useful idea](https://www.oberlo.com/blog/ecommerce-website-design-examples)
 
 - ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
 
