@@ -33,7 +33,7 @@
 
 - 🔗 [Admin template 1](https://adminlte.io/themes/v3/#) - [Admin template 2](https://technext.github.io/star-admin2-free-admin-template/#)
 
-- ✨ [useful idea](https://www.oberlo.com/blog/ecommerce-website-design-examples)
+- ✨ [template idea 1](https://www.oberlo.com/blog/ecommerce-website-design-examples) - [template idea 2](https://shopee.vn/web)
 
 - ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
 
@@ -114,6 +114,7 @@
 - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally) - All in one i18n support
 - [Windi CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense) - IDE support for Windi CSS
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Docker](https://viblo.asia/p/vuejs-huong-dan-deploy-vuejs-bang-docker-gAm5yDGOldb) - [ENV](https://viblo.asia/p/vuejs-trong-docker-nhu-the-nao-oOVlYpmQZ8W)
 
 ## Try it now!
 

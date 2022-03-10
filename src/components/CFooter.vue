@@ -75,8 +75,8 @@ const { t } = useI18n()
           </button>
         </form>
         <div class="product-store find-on py-4 flex justify-start gap-3">
-          <a href=""><img src="/img/icon/apple.png" alt=""></a>
-          <a href=""><img src="/img/icon/play.png" alt=""></a>
+          <a href="https://apps.apple.com/vn/app/id959841449" target="_blank"><img src="/img/icon/apple.png" alt=""></a>
+          <a href="https://play.google.com/store/apps/details?id=com.shopee.vn&referrer=af_tranid%3Drsx9V4J79OX3NH5LwyqLcw%26pid%3DOrganicA%26c%3Dlp_home_and1" target="_blank"><img src="/img/icon/play.png" alt=""></a>
         </div>
       </div>
       <div class="payment">

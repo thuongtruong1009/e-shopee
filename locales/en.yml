@@ -19,10 +19,17 @@ header:
   blog: Blog
   contact: Contact
   setting: Setting
+  vnd: VND
+  rub: RUB
+  pound: Pound
   usd: USD
   euro: Euro
+  jp: JP
+  rup: Rupee
+  rmb: RMB
   my ccount: My Account
   checkout: Checkout
+  download: Download
   sign out: Sign out
   menu product items: Menu product items
   placeholder search: Enter your search key...
