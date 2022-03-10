@@ -4,14 +4,14 @@ meta:
 </route>
 
 <template>
-  <div class="orders-container">
+  <div class="orders-container border-1 border-solid border-light-700 rounded-md p-5">
     <div class="border-b-1 border-b-solid border-b-light-700 py-3 text-2xl font-medium">
       <h3>Orders</h3>
     </div>
 
     <div class="orders-table text-center py-3">
-      <table class="table table-bordered w-full border-1 border-solid border-light-700">
-        <thead class="thead-light">
+      <table class="w-full border-1 border-solid border-light-700">
+        <thead>
           <tr>
             <th>No</th>
             <th>Name</th>
