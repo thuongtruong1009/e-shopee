@@ -223,6 +223,7 @@ const { t } = useI18n()
     display: block;
     animation: popdown-animate 0.3s linear;
     z-index: 2;
+    border: 1px solid rgb(229, 229, 229);
   }
   @keyframes popdown-animate{
     0%{
