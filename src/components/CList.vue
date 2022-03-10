@@ -22,7 +22,9 @@ const closeNav = () => {
       </router-link>
     </div>
     <div>
-      <IHeart />
+      <router-link to="/favourite">
+        <IHeart />
+      </router-link>
     </div>
     <div class="flex items-end" @click="openNav">
       <ICart />
@@ -82,10 +84,6 @@ const closeNav = () => {
     margin: 0 1rem;
     cursor: pointer;
 }
-/* data-icon{
-  width: 15rem;
-  height: 15rem;
-} */
 .sidenav {
   font-family: "Lato", sans-serif;
 }

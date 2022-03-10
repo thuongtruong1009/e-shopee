@@ -84,9 +84,11 @@ const isMode = ref('signup')
           <div class="form__control">
             <input id="password" type="password" placeholder="Password" required>
           </div>
-          <button class="rounded-lg uppercase w-full outline-none font-medium cursor-pointer text-white tracking-normal py-4 text-md shadow-md shadow-gray-300 bg-[#38cc8c]">
-            Register to become seller
-          </button>
+          <router-link to="/seller/home">
+            <button class="rounded-lg uppercase w-full outline-none font-medium cursor-pointer text-white tracking-normal py-4 text-md shadow-md shadow-gray-300 bg-[#38cc8c]">
+              Register to become seller
+            </button>
+          </router-link>
 
           <small class="pt-5 block font-medium text-xs text-[#bbb]">By clicking the button, you are agreeing to our
             <a href="#" class="text-[#ff7a7a]">Terms and Services</a></small>
