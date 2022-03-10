@@ -10,11 +10,11 @@
     <CHead />
     <div class="header divide-y divide-gray-200 divide-solid px-15">
       <h1 class="capitalize text-3xl font-semibold pt-15 pb-5">
-        Settings
+        My Account
       </h1>
       <div class="grid grid-cols-4 pt-5 pb-20">
         <CAccount class="col-span-1" />
-        <router-view class="col-span-3 border-solid border-1 border-light-700" />
+        <router-view class="col-span-3" />
       </div>
     </div>
     <CFooter />
