@@ -1,17 +1,22 @@
 <template>
-  <div class="myaccount-content">
-    <h3>Billing Address</h3>
+  <div class="myaccount-content border-1 border-solid border-light-700 rounded-md p-5">
+    <div class="border-b-1 border-b-solid border-b-light-700 py-3 text-2xl font-medium">
+      <h3>Billing Address</h3>
+    </div>
 
-    <address>
-      <p><strong>Alex Tuntuni</strong></p>
-      <p>
-        1355 Market St, Suite 900 <br>
-        San Francisco, CA 94103
+    <div class="py-5">
+      <p class="font-medium text-gray-500 text-md">
+        Thuong Truong
       </p>
-      <p>Mobile: (123) 456-7890</p>
-    </address>
+      <p class="text-sm">
+        6 quater, Linh Trung ward, Thu Duc dist, HoChiMinh city, VietNam
+      </p>
+      <p class="text-sm">
+        Mobile: (+84) 917-085-937
+      </p>
+    </div>
 
-    <a href="#" class="ht-btn black-btn d-inline-block edit-address-btn"><i
+    <a href="#" class="edit-address-btn text-sm text-blue-700 gap-1 flex items-center"><i
       class="fa fa-edit"
     />Edit Address</a>
   </div>

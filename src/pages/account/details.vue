@@ -4,52 +4,63 @@ meta:
 </route>
 
 <template>
-  <div class="myaccount-content">
-    <h3>Account Details</h3>
+  <div class="myaccount-content border-1 border-solid border-light-700 rounded-md p-5">
+    <div class="border-b-1 border-b-solid border-b-light-700 py-3 text-2xl font-medium">
+      <h3>Account Details</h3>
+    </div>
 
     <div class="account-details-form">
-      <form action="#">
-        <div class="row">
-          <div class="col-lg-6 col-12 mb-30">
-            <input id="first-name" placeholder="First Name" type="text">
-          </div>
+      <form action="">
+        <div class="">
+          <input id="full-name" placeholder="Full Name" type="text">
+          <input id="user-name" placeholder="User Name" type="text" required>
+        </div>
 
-          <div class="col-lg-6 col-12 mb-30">
-            <input id="last-name" placeholder="Last Name" type="text">
-          </div>
+        <div class="">
+          <input id="email" placeholder="Email Address" type="email" required>
+        </div>
 
-          <div class="col-12 mb-30">
-            <input id="display-name" placeholder="Display Name" type="text">
-          </div>
+        <div class="text-md font-medium">
+          <h4>Password change</h4>
+        </div>
 
-          <div class="col-12 mb-30">
-            <input id="email" placeholder="Email Address" type="email">
-          </div>
+        <div class="">
+          <input id="current-pwd" placeholder="Current Password" type="password" required>
+        </div>
 
-          <div class="col-12 mb-30">
-            <h4>Password change</h4>
-          </div>
+        <div class="">
+          <input id="new-password" placeholder="New Password" type="password" required>
+          <input id="confirm-password" placeholder="Confirm Password" type="password" required>
+        </div>
 
-          <div class="col-12 mb-30">
-            <input id="current-pwd" placeholder="Current Password" type="password">
-          </div>
-
-          <div class="col-lg-6 col-12 mb-30">
-            <input id="new-pwd" placeholder="New Password" type="password">
-          </div>
-
-          <div class="col-lg-6 col-12 mb-30">
-            <input id="confirm-pwd" placeholder="Confirm Password" type="password">
-          </div>
-
-          <div class="col-12">
-            <button class="btn theme-btn--dark1 btn--md">
-              Save
-              Changes
-            </button>
-          </div>
+        <div class="pt-5">
+          <button class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium">
+            <ISave />Save Changes
+          </button>
         </div>
       </form>
     </div>
   </div>
 </template>
+
+<style scoped>
+input{
+  width: 100%;
+  outline: none;
+  border: 1px solid rgba(233, 236, 239);
+  border-radius: 0.3rem;
+  padding: 0.3rem 1rem;
+  transition: 0.2s linear;
+  font-size: 0.9rem;
+}
+input:focus{
+    box-shadow: 2px 2px 4px rgba(59, 175, 252, 0.8);
+}
+form > div{
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+</style>
