@@ -4,7 +4,7 @@ meta:
 </route>
 
 <script setup>
-const favouriteList = reacttive([{
+const favouriteList = reactive([{
   img: '/img/today/1.jfif',
   name: 'Bright Idea Moisturizer',
   desc: 'Vitamin C + Tri-Peptide Collagen Protecting & Brightening Moisturizer',
