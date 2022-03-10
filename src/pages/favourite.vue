@@ -5,7 +5,7 @@ meta:
 <template>
   <div class="favourite-container flex flex-row justify-center gap-5 flex-wrap">
     <div v-for="i in 9" :key="i" class="grid justify-center items-center gap-3 rounded-lg shadow-md shadow-gray-400 bg-[#8CD0E3] p-2 w-65">
-      <img src="/img/today/1.jfif" alt="favourite_img" class="rounded-full w-60 h-60 justify-self-center">
+      <img src="/public/img/today/1.jfif" alt="favourite_img" class="rounded-full w-60 h-60 justify-self-center">
       <h6 class="text-sm font-medium">
         Bright Idea Moisturizer
       </h6>
