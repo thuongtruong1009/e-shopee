@@ -18,15 +18,16 @@ const closeNav = () => {
   <div class="container flex justify-center items-center lg:w-xs text-white dark:text-black">
     <div>
       <router-link to="/wishlist">
-        <ICompare />
+        <ICompare class="hover:text-[#adff2f] dark:text-[#adff2f]" />
       </router-link>
     </div>
     <div>
       <router-link to="/favourite">
-        <IHeart />
+        <IHeart class="hover:text-[#adff2f] dark:text-[#adff2f]" />
       </router-link>
     </div>
-    <div class="flex items-end" @click="openNav">
+    <div class="flex items-end hover:text-[#adff2f] dark:text-[#adff2f] relative" @click="openNav">
+      <span class="total-notifications absolute -top-2 left-5 bg-green-500 w-5 h-5 text-white rounded-full flex justify-center items-center pr-0.5 text-xs font-medium">10</span>
       <ICart />
       <h1 class="font-semibold ml-3">
         $90.00
@@ -93,7 +94,6 @@ const closeNav = () => {
   display: block;
   transition: 0.3s;
 }
-
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
