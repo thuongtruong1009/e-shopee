@@ -169,12 +169,15 @@ const { t } = useI18n()
   padding: 0.5rem 0.75rem;
   color: #918eae;
   border-bottom: 1px dotted rgba(179, 179, 179, 0.3);
+  transition: 0.2s linear;
 }
 .menu-child-item {
   position: relative;
 }
 .menu-child-link:hover, .menu-child-link:focus {
   color: #EE4D2D;
+  padding-left: 1rem;
+  padding-right: 0.4rem;
 }
 .menu-toggle {
   display: none;

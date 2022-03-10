@@ -57,6 +57,9 @@ body,
   -moz-user-select: none;
   -ms-user-select: none;
   scroll-behavior: smooth;
+  -webkit-user-scroll-behavior: smooth;
+  -moz-user-scroll-behavior: smooth;
+  -ms-user-scroll-behavior: smooth;
 }
 
 html.dark {
