@@ -13,6 +13,7 @@
     <CDemo1 />
     <CArrivals />
     <CMonthSale />
+    <CTrending />
     <CDemo3 />
     <div class="flex justify-center">
       <CToday />
