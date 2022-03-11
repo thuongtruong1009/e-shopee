@@ -64,7 +64,7 @@ const onActiveNav = (item) => {
 </script>
 
 <template>
-  <div class="relative pl-2">
+  <div class="relative mx-8">
     <div>
       <div class="title">
         <h2 class="text-3xl capitalize">
@@ -91,7 +91,7 @@ const onActiveNav = (item) => {
       </div>
     </div>
     <div id="container" class="pb-5">
-      <div id="content" class="flex items-center gap-5">
+      <div id="content" class="flex items-center gap-5 px-1">
         <div v-for="(image, i) in images" :key="i" class="card duration-300 ease-linear relative rounded-lg w-65">
           <div class="card-type flex justify-between absolute w-full p-2">
             <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
