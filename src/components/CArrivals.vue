@@ -1,17 +1,10 @@
 <script setup>
-import ICart from '~/components/icons/ICart.vue'
-const onCarousel = () => {
-  const buttonLeft = document.getElementById('slide-left')
-  const buttonRight = document.getElementById('slide-right')
-
-  buttonLeft.onclick = function() {
-    document.getElementById('container').scrollLeft -= 260
-  }
-  buttonRight.onclick = function() {
-    document.getElementById('container').scrollLeft += 260
-  }
+const onLeftScroll = () => {
+  document.getElementById('container').scrollLeft -= 260
 }
-
+const onRightScroll = () => {
+  document.getElementById('container').scrollLeft += 260
+}
 const images = reactive([{
   img: '/img/arrival/1.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
@@ -126,10 +119,10 @@ const onActiveNav = (item) => {
         </div>
       </div>
     </div>
-    <button id="slide-left" @click="onCarousel">
+    <button id="slide-left" @click="onLeftScroll">
       &#10094;
     </button>
-    <button id="slide-right" @click="onCarousel">
+    <button id="slide-right" @click="onRightScroll">
       &#10095;
     </button>
   </div>

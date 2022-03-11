@@ -1,9 +1,7 @@
 <script setup>
 const loadMore = () => {
   const loadButton = document.getElementById('load-more')
-  loadButton.onclick = function() {
-    document.getElementById('top-trending-loader').scrollLeft += 60 * 6 * 16 // 6 cell in pixels
-  }
+  document.getElementById('top-trending-loader').scrollLeft += 60 * 6 * 16 // 6 cell in pixels
 }
 const trendList = reactive([{
   img: '/img/product/shoes/1.webp',
@@ -58,12 +56,12 @@ const trendList = reactive([{
 </script>
 
 <template>
-  <div class="top-trending-container bg-white pt-5 px-5 border-1 border-radius border-light-700 shadow-md shadow-gray-300/50 mx-8 rounded-lg">
+  <div class="top-trending-container bg-white pt-5 px-5 border-1 border-radius border-light-700 shadow-md shadow-gray-300/50 m-8 rounded-lg">
     <div class="border-b-1 border-b-solid border-b-light-700 text-left py-3 flex justify-between">
       <h1 class="uppercase text-lg text-gray-500">
-        SEARCH TRENDS FOR US
+        top search trending for us
       </h1>
-      <p id="load-more" class="flex items-center gap-1 text-red-400 cursor-pointer" @click="loadMore">
+      <p class="flex items-center gap-1 text-red-400 cursor-pointer" @click="loadMore">
         <ILoading />See more
       </p>
     </div>
