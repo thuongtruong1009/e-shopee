@@ -67,3 +67,18 @@ service:
   payment-secure-desc: Easy and convenient.
   chat-title: Live chat
   chat-desc: Share exchange with seller
+cart:
+  preview: Preview
+  name: Name
+  status: Status
+  quantity: Quantily
+  price: Price
+  action: Action
+  checkout: Checkout
+  buy-now: Buy now
+  promo-code: Have A Promo Code
+  subtotal: Subtotal
+  shipping: Shipping
+  tax: Tax
+  total: Total
+  save-changes: Save changes

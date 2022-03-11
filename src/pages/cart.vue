@@ -7,6 +7,8 @@ meta:
 useHead({
   title: 'e-shopee | cart',
 })
+const { t } = useI18n()
+
 const cartList = reactive([{
   img: '/img/product/shoes/1.webp',
   name: 'Water and Wind Resistant',
@@ -75,25 +77,25 @@ const cartList = reactive([{
       <thead class="bg-[#F33535] text-white">
         <tr>
           <th class="flex justify-center items-center gap-1">
-            <IPreview />Preview
+            👁 {{ t('cart.preview') }}
           </th>
           <th>
-            Name
+            🏷 {{ t('cart.name') }}
           </th>
           <th class="flex justify-center items-center gap-1">
-            <IStatus />Status
+            🎀{{ t('cart.status') }}
           </th>
           <th>
-            Quantily
+            ⏳ {{ t('cart.quantity') }}
           </th>
           <th>
-            Price
+            📈 {{ t('cart.price') }}
           </th>
           <th>
-            Action
+            🚀 {{ t('cart.action') }}
           </th>
           <th class="flex justify-center items-center gap-1">
-            <ICheckout class="text-xs" />Checkout
+            🛒 {{ t('cart.checkout') }}
           </th>
         </tr>
       </thead>
@@ -123,38 +125,38 @@ const cartList = reactive([{
             <a href="#"><span class="trash flex justify-center"><ITrash /></span></a>
           </td>
           <td>
-            <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-2 font-semibold">Buy now</a>
+            <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-2 font-semibold">{{ t('cart.buy-now') }}</a>
           </td>
         </tr>
       </tbody>
     </table>
     <div class="flex justify-evenly pt-2">
       <div class="promoCode">
-        <label for="promo">Have A Promo Code?</label><input type="text" name="promo" placholder="Enter Code">
+        <label for="promo">{{ t('cart.promo-code') }}?</label><input type="text" name="promo" placholder="Enter Code">
         <a href="#" class="btn flex justify-center font-semibold"><ICaretRight /></a>
       </div>
       <div class="subtotal">
         <ul>
           <li class="totalRow">
-            <span class="label">Subtotal</span><span class="value">$35.00</span>
+            <span class="label">{{ t('cart.subtotal') }}</span><span class="value">$35.00</span>
           </li>
 
           <li class="totalRow">
-            <span class="label">Shipping</span><span class="value">$5.00</span>
+            <span class="label">{{ t('cart.shipping') }}</span><span class="value">$5.00</span>
           </li>
 
           <li class="totalRow">
-            <span class="label">Tax</span><span class="value">$4.00</span>
+            <span class="label">{{ t('cart.tax') }}</span><span class="value">$4.00</span>
           </li>
           <li class="totalRow final">
-            <span class="label">Total</span><span class="value">$44.00</span>
+            <span class="label">{{ t('cart.total') }}</span><span class="value">$44.00</span>
           </li>
         </ul>
       </div>
     </div>
     <div class="flex justify-center pt-10">
       <button class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-3xl text-white py-2 shadow-md shadow-gray-300 px-5 flex justify-end items-center gap-1">
-        <ISave />Save changes
+        <ISave />{{ t('cart.save-changes') }}
       </button>
     </div>
   </div>
