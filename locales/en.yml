@@ -57,11 +57,13 @@ footer:
   sign up today: Be the First to Know. Sign up for newsletter today!
   sign up: Sign up
 service:
-  free shipping: Free Shipping
-  freeship: On all orders over
-  free return: Free Returns
-  return periods: Returns are free within 9 days
-  support: Support
-  contact time: Contact us 24 hours a day
-  payment secure: Payment Secure
-  payment safe: Your payment are safe.
+  shipping-title: Shipping support
+  shipping-desc: Always update status
+  return-title: Free returns
+  return-desc: Free within 9 days
+  contact-title: Support
+  contact-desc: Ready to contact anywhen
+  payment-secure-title: Payment Secure
+  payment-secure-desc: Easy and convenient.
+  chat-title: Live chat
+  chat-desc: Share exchange with seller

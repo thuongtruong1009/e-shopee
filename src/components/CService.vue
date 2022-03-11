@@ -3,60 +3,59 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="service-container text-white bg-[#EE4D2D] grid grid-cols-4 justify-around items-center text-left">
+  <div class="service-container text-white bg-[#EE4D2D] grid grid-cols-5 items-center text-left">
     <div class="shipping">
-      <img
-        class="" src="/img/icon/2.png"
-        alt="icon"
-      >
-      <div class="">
-        <h4 class="">
-          {{ t('service.free shipping') }}
+      <ISShipping class="services-icon" />
+      <div>
+        <h4>
+          {{ t('service.shipping-title') }}
         </h4>
-        <p class="">
-          {{ t('service.freeship') }} $75.00
+        <p>
+          {{ t('service.shipping-desc') }}
         </p>
       </div>
     </div>
     <div class="return">
-      <img
-        class="" src="/img/icon/3.png"
-        alt="icon"
-      >
-      <div class="">
-        <h4 class="">
-          {{ t('service.free return') }}
+      <ISReturn class="services-icon" />
+      <div>
+        <h4>
+          {{ t('service.return-title') }}
         </h4>
-        <p class="">
-          {{ t('service.return periods') }}
+        <p>
+          {{ t('service.return-desc') }}
         </p>
       </div>
     </div>
-    <div class="support">
-      <img
-        class="" src="/img/icon/5.png"
-        alt="icon"
-      >
-      <div class="">
-        <h4 class="">
-          {{ t('service.support') }} 24/7
+    <div class="contact">
+      <ISSupport class="services-icon" />
+      <div>
+        <h4>
+          {{ t('service.contact-title') }} 24/7
         </h4>
-        <p class="">
-          {{t('service.contact time')}}
+        <p>
+          {{ t('service.contact-desc') }}
         </p>
       </div>
     </div>
     <div class="secure">
-      <img
-        class="" src="/img/icon/4.png"
-        alt="icon"
-      >
-      <div class="">
-        <h4 class="">
-          100% {{t('service.payment secure')}}
+      <ISSecure class="services-icon" />
+      <div>
+        <h4>
+          {{ t('service.payment-secure-title') }} 100%
         </h4>
-        <p class="">
-          {{t('service.payment safe')}}
+        <p>
+          {{ t('service.payment-secure-desc') }}
+        </p>
+      </div>
+    </div>
+    <div class="chat">
+      <ISChat class="services-icon" />
+      <div>
+        <h4>
+          {{ t('service.chat-title') }}
+        </h4>
+        <p>
+          {{ t('service.chat-desc') }}
         </p>
       </div>
     </div>
@@ -64,47 +63,57 @@ const { t } = useI18n()
 </template>
 
 <style scoped>
-.shipping, .return, .support, .secure{
+.service-container{
+  padding: 4rem 0rem;
+}
+.shipping, .return, .contact, .secure, .chat{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem;
 }
-.shipping > div, .return > div, .support > div, .secure > div{
+.shipping > div, .return > div, .contact > div, .secure > div, .chat > div{
     display: grid;
     justify-content: start;
     align-items: center;
-    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.services-icon{
+    font-size: 2.7rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
 }
 @media (max-width: 1280px){
-  .shipping, .return, .support, .secure{
-    padding: 1rem;
+  .shipping, .return, .contact, .secure, .chat{
+    flex-direction: column;
   }
 }
-@media (max-width: 1024px){
-  .shipping, .return, .support, .secure{
+@media (max-width: 950px){
+  .service-container{
     display: grid;
-  }
-  img{
-    margin-left: 3rem;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-between;
   }
 }
-@media (max-width: 767.9px){
+@media (max-width: 500px){
   .service-container{
     display: grid;
     grid-template-columns: 50% 50%;
+    justify-content: space-between;
   }
-  .shipping, .return, .support, .secure{
-    padding: 1rem;
+  .shipping, .return, .contact, .secure, .chat{
+    padding: 0.5rem 0;
   }
 }
 @media (max-width: 379px){
   .service-container{
+    display: grid;
     grid-template-columns: 100%;
+    justify-content: space-between;
+    padding: 1rem 0;
   }
-.shipping, .return, .support, .secure{
-    display: flex;
-    justify-content: space-around;
+  .shipping, .return, .contact, .secure, .chat{
+    padding: 1rem 0;
+    text-align: center;
   }
 }
 </style>
