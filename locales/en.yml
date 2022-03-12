@@ -127,3 +127,22 @@ checkout:
   secure-policy: Security Policy (commit by Reassurance)
   delivery-policy: Delivery Policy (commit by Reassurance)
   return-policy: Return Policy (commit by Reassurance)
+contact:
+  contact-us: Contact Us
+  tell-us-desc: Tell us about your issue so we can help you more quickly
+  address: Address
+  sub-adddress: Quater 6, Linh Trung ward, Thu Duc district, Ho Chi Minh city
+  country: VietNam
+  phone: Phone
+  mobile: Mobile
+  mobile-number: (+84) 917 085 937
+  hotline: Hotline
+  hotline-number: 1009 678 456
+  email: Email
+  email-address: ititiu19228@student.hcmiu.edu.vn
+  tell-us-message: Tell Us Your Message
+  your-name: Your name
+  your-email: Your Email
+  subject: Subject
+  your-message: Your Message
+  submit: Submit
