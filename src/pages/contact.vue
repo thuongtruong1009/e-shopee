@@ -8,6 +8,8 @@ useHead({
   title: 'e-shopee | contact',
 })
 const { t } = useI18n()
+
+const message = ref('')
 </script>
 
 <template>
@@ -18,6 +20,7 @@ const { t } = useI18n()
           {{ t('contact.contact-us') }}
         </h3>
         <p>{{ t('contact.tell-us-desc') }}.</p>
+        <p>{{ t('contact.tell-us-support') }}.</p>
       </div>
       <div class="single-contact-block">
         <h4><i class="fa fa-fax" /> {{ t('contact.address') }}</h4>
@@ -26,21 +29,21 @@ const { t } = useI18n()
       <div class="single-contact-block">
         <h4><i class="fa fa-phone" /> {{ t('contact.phone') }}</h4>
         <p>
-          <a href="tel:0917085937">{{ t('contact.mobile') }}: {{ t('contact.mobile-number') }}</a>
+          <a href="tel:0917085937">{{ t('contact.mobile') }}: (+84) 917 085 937</a>
         </p>
-        <p><a href="tel:0917085937">{{ t('contact.hotline') }}: {{ t('contact.hotline-number') }}</a></p>
+        <p><a href="tel:0917085937">{{ t('contact.hotline') }}: 1009 678 456</a></p>
       </div>
       <div class="single-contact-block">
         <h4><i class="fas fa-envelope" /> {{ t('contact.email') }}</h4>
         <p>
-          <a href="mailto:ititiu19228@student.hcmiu.edu.vn">{{ t('contact.email-address') }}</a>
+          <a href="mailto:ititiu19228@student.hcmiu.edu.vn">ititiu19228@student.hcmiu.edu.vn</a>
         </p>
       </div>
     </div>
     <div class="right">
       <form action="src/php/mail.php" method="post">
         <h3>
-          {{ t('contact.tell-us-message') }}
+          {{ t('contact.tell-us-your-message') }}
         </h3>
         <div>
           <label for="fname">{{ t('contact.your-name') }} *</label><br>
@@ -55,7 +58,7 @@ const { t } = useI18n()
           <input type="text" name="fsubject">
         </div>
         <div>
-          <label for="fmessage">{{ t('contact.your-message') }}</label><br>
+          <label for="fmessage">{{ t('contact.note') }}</label><br>
           <textarea v-model="message" placeholder="write somethings..." class="h-30" />
         </div>
         <button type="submit" value="submit" class="bg-black text-white font-semibold py-2 px-7 rounded-md hover:bg-[#E14641] duration-200 uppercase tracking-widest cursor-pointer">
@@ -90,7 +93,7 @@ input{
     transition: 0.2s;
     margin-top: 0.25rem;
 }
-input:focus{
+input:focus, textarea:focus{
     box-shadow: 1px 1px 3px rgb(59, 175, 252);
 }
 .left > div:not(:first-child){
