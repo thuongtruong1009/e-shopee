@@ -67,3 +67,120 @@ service:
   payment-secure-desc: Easy and convenient.
   chat-title: Live chat
   chat-desc: Share exchange with seller
+cart:
+  preview: Preview
+  name: Name
+  status: Status
+  quantity: Quantily
+  price: Price
+  action: Action
+  checkout: Checkout
+  buy-now: Buy now
+  promo-code: Have A Promo Code
+  subtotal: Subtotal
+  shipping: Shipping
+  tax: Tax
+  total: Total
+  save-changes: Save changes
+checkout:
+  personal-information: Personal Information
+  order-as-guest: Order as a guest
+  login: Login
+  pronoun: Pronoun
+  mr: Mr
+  mrs: Mrs
+  name: Name
+  email: Email
+  password: Password
+  show: show
+  birthdate: Birthdate
+  receive offers: Receive offers from our partners
+  signup-newsletter: Sign up for our newsletter
+  continue: Continue
+  address: Address
+  address-desc: The selected address will be help we to delivery for you more easlier and faster
+  city: City
+  zip: Zip/Postal Code
+  country: Country
+  vietnam: VietNam
+  russia: Russia
+  england: England
+  united-states: United-States
+  japan: Japan
+  france: France
+  india: India
+  china: China
+  not-have-country: Don't to find my country
+  phone: Phone
+  shipping-method: Shipping method
+  delivery-next-day: Delivery next day
+  note-field: If you would like to add a note about your order, please write it in the field below
+  payment: Payment
+  pay-by-check: Pay by check
+  pay-by-wire: Pay by bank wire
+  pay-by-cash: Pay by Cash on delivery
+  item: item
+  shipping: Shipping
+  total: Total
+  taxes: Taxes
+  process-checkout: Proceed to checkout
+  secure-policy: Security Policy (commit by Reassurance)
+  delivery-policy: Delivery Policy (commit by Reassurance)
+  return-policy: Return Policy (commit by Reassurance)
+contact:
+  contact-us: Contact Us
+  tell-us-desc: Tell us about your issue so we can help you more quickly
+  tell-us-support: We always ready to support for your questions 24/7
+  address: Address
+  sub-adddress: Quater 6, Linh Trung ward, Thu Duc district, Ho Chi Minh city
+  country: VietNam
+  phone: Phone
+  mobile: Mobile
+  hotline: Hotline
+  email: Email
+  tell-us-your-message: Tell Us Your Message
+  your-name: Your name
+  your-email: Your Email
+  subject: Subject
+  note: Your Message
+  submit: Submit
+sitemap:
+  sitemap: sitemap
+favourite:
+  add-to-cart: Add to cart
+wishlist:
+  filter-by: Filter By
+  categories: Categories
+  price: Price
+  color: Color
+  brand: Brand
+  tags: Product Tags
+  there-are: There are
+  products: products
+  sort-by: Sort by
+  relevance: Relevance
+  name: Name
+  availability: Availability
+  add-to-cart: Add to cart
+  add-success-message: Product successfully added to your shopping cart
+  dimension: Dimension
+  quantity: Quantity
+  total-products: Total products
+  total-shipping: Total shipping
+  taxes: Taxes
+  total: Total
+  continue-shopping: continue shopping
+  proceed-checkout: proceed to checkout
+  there-is: There is
+  item-in-your-cart: item in your cart
+about:
+  about-us: About Us
+  welcome: Welcome to
+  desc-one: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore aperiam fugit consequuntur voluptatibus ex sint iure in, distinctio sed dolorem aspernatur veritatis repellendus dolorum voluptate, animi libero officiis eveniet accusamus recusandae. Temporibus amet ducimus sapiente voluptatibus autem dolorem magnam quas, officiis eveniet accusamus animi libero officiis eveniet accusamus recusandae. Temporibus
+  desc-two: Sint voluptatum beatae necessitatibus quos mollitia vero, optio asperiores aut tempora iusto eum rerum, possimus, minus quidem ut saepe laboriosam. Praesentium aperiam accusantium minus repellendus accusamus neque iusto pariatur laudantium provident quod
+  our-company: Our Company
+  company-desc: Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit
+  our-team: Our Team
+  team-desc: Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit
+  testimonial: Testimonial
+  testimonial-desc: Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit

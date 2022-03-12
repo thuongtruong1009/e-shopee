@@ -7,6 +7,8 @@ meta:
 useHead({
   title: 'e-shopee | checkout',
 })
+const { t } = useI18n()
+
 const isPersonal = ref(true)
 const isAddress = ref(false)
 const isShipping = ref(false)
@@ -38,133 +40,145 @@ const showPass = () => {
     <div class="left col-span-2 text-left">
       <div class="personal">
         <h5 @click="showPersonal">
-          <i class="fas fa-user-shield" /> Personal Information
+          <i class="fas fa-user-shield" /> {{ t('checkout.personal-information') }}
         </h5>
         <div v-if="isPersonal === true" class="hide-content">
           <form action="src/php/mail.php">
             <div class="order-asguest mt-2 mb-4">
-              <p>Order as a guest &thinsp; &verbar; &thinsp;</p>
+              <p>{{ t('checkout.order-as-guest') }} &thinsp; &verbar; &thinsp;</p>
               <router-link to="/login" class="hover:text-red-500 hover:opacity-100 opacity-60 duration-200">
-                Login
+                {{ t('checkout.login') }}
               </router-link>
             </div>
             <div>
               <label>
-                Pronoun
+                {{ t('checkout.pronoun') }}
               </label>
               <div class="flex">
                 <div class="custom-radio mr-10">
                   <input id="test1" type="radio" name="pronoun-radio">
-                  <label for="test1">Mr</label>
+                  <label for="test1">{{ t('checkout.mr') }}</label>
                 </div>
                 <div class="custom-radio">
                   <input id="test2" type="radio" name="pronoun-radio">
-                  <label for="test2">Mrs</label>
+                  <label for="test2">{{ t('checkout.mrs') }}</label>
                 </div>
               </div>
             </div>
 
             <div>
-              <label for="name">Name *</label>
+              <label for="name">{{ t('checkout.name') }} *</label>
               <input id="name" type="text" required>
             </div>
             <div>
-              <label for="email">Email *</label>
+              <label for="email">{{ t('checkout.email') }} *</label>
               <input id="email" type="email" required>
             </div>
 
             <div class="password-personal">
-              <label for="Password">Password</label>
+              <label for="Password">{{ t('checkout.password') }}</label>
               <div class="flex items-center w-76 <xl:w-61 <lg:w-46">
                 <input id="Password" type="password" class="w-10/12 outline-none rounded-sm border-1 border-solid border-gray-300 py-1 px-4 duration-200 ease-linear">
                 <div class="cursor-pointer px-2 mt-1 ml-0.5 text-white bg-black h-8 rounded-sm" @click="showPass">
-                  show
+                  {{ t('checkout.show') }}
                 </div>
               </div>
             </div>
 
             <div>
-              <label for="birthdate">Birthdate</label>
+              <label for="birthdate">{{ t('checkout.birthdate') }}</label>
               <input type="date" placeholder="MM/DD/YYYY">
             </div>
 
             <div class="check-personal">
               <div class="mr-5">
                 <input id="20820" type="checkbox">
-                <label for="20820">Receive offers from our partners</label>
+                <label for="20820">{{ t('checkout.receive offers') }}</label>
               </div>
               <div>
                 <input id="20821" type="checkbox">
-                <label for="20821">Sign up for our newsletter</label>
+                <label for="20821">{{ t('checkout.signup-newsletter') }}</label>
               </div>
             </div>
 
             <div class="justify-end">
-              <a href="#" class="btn">Continue</a>
+              <a href="#" class="btn">{{ t('checkout.continue') }}</a>
             </div>
           </form>
         </div>
       </div>
       <div class="address">
         <h5 @click="showAddress">
-          <i class="fas fa-map-marker-alt" /> Address
+          <i class="fas fa-map-marker-alt" /> {{ t('checkout.address') }}
         </h5>
         <div v-if="isAddress === true" class="hide-content">
           <form action="src/php/mail.php">
             <div class="order-asguest mt-2 mb-4">
-              <p>The selected address will be help we to delivery for you more easlier and faster.</p>
+              <p>{{ t('checkout.address-desc') }}.</p>
             </div>
 
             <div>
-              <label for="address">Address *</label>
+              <label for="address">{{ t('checkout.address') }} *</label>
               <input id="address" type="text" required>
             </div>
 
             <div>
-              <label for="city">City *</label>
+              <label for="city">{{ t('checkout.city') }} *</label>
               <input id="city" type="text" required>
             </div>
 
             <div>
-              <label for="birthdate">Zip/Postal Code</label>
+              <label for="birthdate">{{ t('checkout.zip') }}</label>
               <input type="text">
             </div>
 
             <div>
-              <label for="country">Country</label>
+              <label for="country">{{ t('checkout.country') }}</label>
               <select id="country" type="text" name="country" placeholder="--country--">
                 <option value="vn">
-                  VietNam
+                  {{ t('checkout.vietnam') }}
+                </option>
+                <option value="ru">
+                  {{ t('checkout.russia') }}
                 </option>
                 <option value="en">
-                  England
+                  {{ t('checkout.england') }}
                 </option>
                 <option value="us">
-                  United-Stated
+                  {{ t('checkout.united-states') }}
+                </option>
+                <option value="ja">
+                  {{ t('checkout.japan') }}
                 </option>
                 <option value="fr">
-                  France
+                  {{ t('checkout.france') }}
+                </option>
+                <option value="in">
+                  {{ t('checkout.india') }}
+                </option>
+                <option value="ch">
+                  {{ t('checkout.china') }}
                 </option>
                 <option class="italic font-thin text-xs">
-                  Don't to find my country.
+                  {{ t('checkout.not-have-country') }}.
                 </option>
               </select>
             </div>
 
             <div>
-              <label for="phone">Phone</label>
+              <label for="phone">{{ t('checkout.phone') }}</label>
               <input id="phone" type="text">
             </div>
 
             <div class="justify-end">
-              <a href="#" class="btn">Continue</a>
+              <a href="#" class="btn">{{ t('checkout.continue') }}</a>
             </div>
           </form>
         </div>
       </div>
       <div class="shipping">
         <h5 @click="showShipping">
-          <i class="fas fa-shipping-fast" /> Shipping method
+          <i class="fas fa-shipping-fast" /> {{ t('checkout.shipping-method') }}
         </h5>
         <div v-if="isShipping === true" class="hide-content">
           <form action="src/php/mail.php">
@@ -177,8 +191,7 @@ const showPass = () => {
                 <span>Ninja J&T</span>
               </div>
               <div class="flex justify-center items-center">
-                <span class="carrier-delay">Delivery next
-                  day!</span>
+                <span class="carrier-delay">{{ t('checkout.delivery-next-day') }}!</span>
               </div>
               <div class="flex justify-center items-center">
                 <span class="carrier-price">$7.00 tax excl.</span>
@@ -186,7 +199,7 @@ const showPass = () => {
             </div>
 
             <div class="order-asguest mt-2 mb-4">
-              <p>If you would like to add a note about your order, please write it in the field below..</p>
+              <p>{{ t('checkout.note-field') }}..</p>
             </div>
 
             <div>
@@ -194,31 +207,31 @@ const showPass = () => {
             </div>
 
             <div class="justify-end">
-              <a href="#" class="btn">Continue</a>
+              <a href="#" class="btn">{{ t('checkout.continue') }}</a>
             </div>
           </form>
         </div>
       </div>
       <div class="payment">
         <h5 @click="showPayment">
-          <i class="far fa-credit-card" /> Payment
+          <i class="far fa-credit-card" /> {{ t('checkout.payment') }}
         </h5>
         <div v-if="isPayment === true" class="hide-content">
           <form action="src/php/mail.php">
             <div>
               <input id="payment-check" type="radio" name="payment-radio">
-              <label for="payment-check">Pay by check</label>
+              <label for="payment-check">{{ t('checkout.pay-by-check') }}</label>
             </div>
             <div>
               <input id="payment-wire" type="radio" name="payment-radio">
-              <label for="payment-wire">Pay by bank wire</label>
+              <label for="payment-wire">{{ t('checkout.pay-by-wire') }}</label>
             </div>
             <div>
               <input id="payment-cash" type="radio" name="payment-radio" checked>
-              <label for="payment-cash">Pay by Cash on delivery</label>
+              <label for="payment-cash">{{ t('checkout.pay-by-cash') }}</label>
             </div>
             <div class="justify-center">
-              <a href="#" class="btn">Continue</a>
+              <a href="#" class="btn">{{ t('checkout.continue') }}</a>
             </div>
           </form>
         </div>
@@ -229,13 +242,13 @@ const showPass = () => {
       <div class="table-checkout row-span-1 grid grid-rows-3 divide-light-700 divide-y">
         <div class="items-checkout row-span-1 grid grid-rows-2 py-3">
           <div class="item row-span-1 flex justify-between items-center">
-            <p>1 item</p>
+            <p>1 {{ t('checkout.item') }}</p>
             <p class="font-bold tracking-tighter">
               $11.90
             </p>
           </div>
           <div class="shipping row-span-1 flex justify-between items-center">
-            <p>Shipping</p>
+            <p>{{ t('checkout.shipping') }}</p>
             <p class="font-bold tracking-tighter">
               $7.00
             </p>
@@ -244,13 +257,13 @@ const showPass = () => {
 
         <div class="total-checkout row-span-1 grid grid-rows-2 py-3">
           <div class="item row-span-1 flex justify-between items-center">
-            <p>Total (Tax Excl.)</p>
+            <p>{{ t('checkout.total') }} (Tax Excl.)</p>
             <p class="font-bold tracking-tighter">
               $18.90
             </p>
           </div>
           <div class="shipping row-span-1 flex justify-between items-center">
-            <p>Taxes</p>
+            <p>{{ t('checkout.taxes') }}</p>
             <p class="font-bold tracking-tighter">
               $0
             </p>
@@ -259,22 +272,22 @@ const showPass = () => {
 
         <div class="process flex justify-center items-center">
           <button type="submit" value="submit" class="bg-black text-white font-semibold py-2 px-7 rounded-md hover:bg-[#E14641] duration-200 uppercase tracking-normal cursor-pointer">
-            Proceed to checkout
+            {{ t('checkout.process-checkout') }}
           </button>
         </div>
       </div>
       <div class="commit-checkout row-span-1">
         <div class="flex justify-around items-center tracking-tight py-2 text-sm">
           <i class="fas fa-shield-alt" />
-          <p>Security Policy (commit by Reassurance)</p>
+          <p>{{ t('checkout.secure-policy') }}</p>
         </div>
         <div class="flex justify-around items-center tracking-tight py-2 text-sm">
           <i class="fas fa-truck" />
-          <p>Delivery Policy (commit by Reassurance)</p>
+          <p>{{ t('checkout.delivery-policy') }}</p>
         </div>
         <div class="flex justify-around items-center tracking-tight py-2 text-sm">
           <i class="fas fa-exchange-alt" />
-          <p>Return Policy (commit by Reassurance)</p>
+          <p>{{ t('checkout.return-policy') }}</p>
         </div>
       </div>
     </div>

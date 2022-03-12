@@ -59,7 +59,9 @@ const { t } = useI18n()
           </router-link>
         </li>
         <li class="dropdown__item">
-          <span class="dropdown__text">Wishlist Page <IWishList /></span>
+          <router-link to="/wishlist">
+            <span class="dropdown__text">Wishlist Page <IWishList /></span>
+          </router-link>
         </li>
       </ul>
     </div>

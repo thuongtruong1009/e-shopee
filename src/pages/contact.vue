@@ -7,6 +7,9 @@ meta:
 useHead({
   title: 'e-shopee | contact',
 })
+const { t } = useI18n()
+
+const message = ref('')
 </script>
 
 <template>
@@ -14,23 +17,24 @@ useHead({
     <div class="left divide-light-700 divide-y">
       <div>
         <h3>
-          Contact Us
+          {{ t('contact.contact-us') }}
         </h3>
-        <p>Tell us about your issue so we can help you more quickly.</p>
+        <p>{{ t('contact.tell-us-desc') }}.</p>
+        <p>{{ t('contact.tell-us-support') }}.</p>
       </div>
       <div class="single-contact-block">
-        <h4><i class="fa fa-fax" /> Address</h4>
-        <p>6 Linh Trung, Thu Duc, Ho Chi Minh city – VietNam</p>
+        <h4><i class="fa fa-fax" /> {{ t('contact.address') }}</h4>
+        <p>{{ t('contact.sub-adddress') }} – {{ t('contact.country') }}</p>
       </div>
       <div class="single-contact-block">
-        <h4><i class="fa fa-phone" /> Phone</h4>
+        <h4><i class="fa fa-phone" /> {{ t('contact.phone') }}</h4>
         <p>
-          <a href="tel:0917085937">Mobile: (+84) 917 085 937</a>
+          <a href="tel:0917085937">{{ t('contact.mobile') }}: (+84) 917 085 937</a>
         </p>
-        <p><a href="tel:0917085937">Hotline: 1009 678 456</a></p>
+        <p><a href="tel:0917085937">{{ t('contact.hotline') }}: 1009 678 456</a></p>
       </div>
       <div class="single-contact-block">
-        <h4><i class="fas fa-envelope" /> Email</h4>
+        <h4><i class="fas fa-envelope" /> {{ t('contact.email') }}</h4>
         <p>
           <a href="mailto:ititiu19228@student.hcmiu.edu.vn">ititiu19228@student.hcmiu.edu.vn</a>
         </p>
@@ -39,26 +43,26 @@ useHead({
     <div class="right">
       <form action="src/php/mail.php" method="post">
         <h3>
-          Tell Us Your Message
+          {{ t('contact.tell-us-your-message') }}
         </h3>
         <div>
-          <label for="fname">Your name *</label><br>
+          <label for="fname">{{ t('contact.your-name') }} *</label><br>
           <input type="text" name="fname" required>
         </div>
         <div>
-          <label for="fmail">Your Email *</label><br>
+          <label for="fmail">{{ t('contact.your-email') }} *</label><br>
           <input type="text" name="fmail" required>
         </div>
         <div>
-          <label for="fsubject">Subject</label><br>
+          <label for="fsubject">{{ t('contact.subject') }}</label><br>
           <input type="text" name="fsubject">
         </div>
         <div>
-          <label for="fmessage">Your Message</label><br>
+          <label for="fmessage">{{ t('contact.note') }}</label><br>
           <textarea v-model="message" placeholder="write somethings..." class="h-30" />
         </div>
         <button type="submit" value="submit" class="bg-black text-white font-semibold py-2 px-7 rounded-md hover:bg-[#E14641] duration-200 uppercase tracking-widest cursor-pointer">
-          Submit
+          {{ t('contact.submit') }}
         </button>
       </form>
     </div>
@@ -89,7 +93,7 @@ input{
     transition: 0.2s;
     margin-top: 0.25rem;
 }
-input:focus{
+input:focus, textarea:focus{
     box-shadow: 1px 1px 3px rgb(59, 175, 252);
 }
 .left > div:not(:first-child){
