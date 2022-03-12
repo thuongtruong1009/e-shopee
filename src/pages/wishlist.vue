@@ -4,6 +4,9 @@ meta:
 </route>
 
 <script setup>
+useHead({
+  title: 'e-shopee | wishlist',
+})
 const priceValue = ref(200)
 const priceMin = ref(200)
 const priceMax = ref(1000)
@@ -182,7 +185,7 @@ const products = reactive([{
 </script>
 
 <template>
-  <div class="filter-container bg-white grid grid-cols-4 py-20 px-10 gap-3">
+  <div class="filter-container bg-white grid grid-cols-4 py-20 px-10 gap-3 dark:bg-black">
     <aside class="left-sidebar theme1 text-left col-span-1 px-2">
       <div class="search-filter">
         <h4 class="title">

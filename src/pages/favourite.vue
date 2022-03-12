@@ -4,6 +4,7 @@ meta:
 </route>
 
 <script setup>
+const { t } = useI18n()
 const favouriteList = reactive([{
   img: '/img/today/1.jfif',
   name: 'Bright Idea Moisturizer',
@@ -73,7 +74,7 @@ const favouriteList = reactive([{
       <div class="flex justify-center gap-2">
         <button><IHeart /></button>
         <button class="flex items-center gap-2 btn bg-[#948AD3] rounded-md shadow-md shadow-gray-400">
-          Add to cart<span>${{ favourite.price }}</span>
+          {{ t('favourite.add-to-cart') }}<span>${{ favourite.price }}</span>
         </button>
       </div>
     </div>

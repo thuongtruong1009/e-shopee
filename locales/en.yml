@@ -144,3 +144,7 @@ contact:
   subject: Subject
   note: Your Message
   submit: Submit
+sitemap:
+  sitemap: sitemap
+favourite:
+  add-to-cart: Add to cart
