@@ -148,3 +148,28 @@ sitemap:
   sitemap: sitemap
 favourite:
   add-to-cart: Add to cart
+wishlist:
+  filter-by: Filter By
+  categories: Categories
+  price: Price
+  color: Color
+  brand: Brand
+  tags: Product Tags
+  there-are: There are
+  products: products
+  sort-by: Sort by
+  relevance: Relevance
+  name: Name
+  availability: Availability
+  add-to-cart: Add to cart
+  add-success-message: Product successfully added to your shopping cart
+  dimension: Dimension
+  quantity: Quantity
+  total-products: Total products
+  total-shipping: Total shipping
+  taxes: Taxes
+  total: Total
+  continue-shopping: continue shopping
+  proceed-checkout: proceed to checkout
+  there-is: There is
+  item-in-your-cart: item in your cart
