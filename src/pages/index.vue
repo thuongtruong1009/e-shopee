@@ -144,6 +144,48 @@ meta:
         </div>
       </div>
     </section>
+    <section class="index-guys py-7">
+      <div class="text-center text-3xl font-medium p-10">
+        <h2>What do users say about s-shopee?</h2>
+      </div>
+      <div class="guys-opinion flex justify-evenly">
+        <div class="rounded-md shadow-lg shadow-gray-400/50 w-153 h-69 p-2">
+          <div class="flex w-full h-[85%]">
+            <div>
+              <img src="/img/index/quote.png" alt="quote_mark_img" class="min-w-14 h-13">
+            </div>
+            <div class="content text-white flex justify-center items-center w-7/10 text-xl">
+              <p>I always look forward to Shopee to hunt for deals and always get surprisingly good deals. Not to mention every deal hunting is fun, the last deal hunt is the most fun in my 2 years of e-shopee addiction.</p>
+            </div>
+            <div class="infor flex items-end text-xl">
+              <p>Diem My</p>
+            </div>
+          </div>
+          <div class="flex justify-end text-sm text-gray-500">
+            <p>joined at 12/2018</p>
+          </div>
+        </div>
+        <div class="rounded-md shadow-md shadow-gray-300 w-153 h-69 p-2">
+          <div class="flex w-full h-[85%]">
+            <div>
+              <img src="/img/index/quote.png" alt="quote_mark_img" class="min-w-14 h-13">
+            </div>
+            <div class="content text-white flex justify-center items-center w-7/10 text-xl">
+              <p>Every time I go to e-shopee, I have great results, dozens of items keep picking up until I receive the goods, I don't even know when I ordered this or that. So addicted to e-shopee</p>
+            </div>
+            <div class="infor flex items-end text-xl">
+              <p>Nhung Wo</p>
+            </div>
+          </div>
+          <div class="flex justify-end text-sm text-gray-500">
+            <p>Joined at 12/2018</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="text-center text-gray-400 py-3">
+      <p>Copyright @2022 e-shopee. All rights reserved.</p>
+    </footer>
   </div>
 </template>
 
@@ -191,5 +233,17 @@ li{
 }
 .index-eshoppe > div h5{
     font-size: 1.5em;
+}
+.guys-opinion > div:nth-child(1){
+    background-image: url("/img/index/guy_1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.guys-opinion > div:nth-child(2){
+    background-image: url("/img/index/guy_2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 </style>
