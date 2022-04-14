@@ -167,7 +167,7 @@ pnpm preview
 ## Reference
 - Relax with [bee-music sound](https://github.com/thuongtruong1009/bee-music)
 - Enhance front-end skills through [twitter-meta](https://github.com/thuongtruong1009/twitter-meta)
-- Learning front-end web full course at [Front-end course](https://github.com/thuongtruong1009/challenge-resposive-web-design).
+- Learning front-end web full course at [Front-end course](https://github.com/thuongtruong1009/frontend-master).
 - Learn Snake Game tutorial at [Snake-Game-OOP](https://github.com/thuongtruong1009/Snake-Game-OOP)
 - Learn Java for new beginner at [Java training](https://github.com/thuongtruong1009/java-oop-training)
 - Make flip card game at [flip-card](https://github.com/thuongtruong1009/flip-cards)

@@ -8,7 +8,7 @@ const name = ref(user.savedName)
 const router = useRouter()
 const go = () => {
   if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
+    router.push(`/categories/${encodeURIComponent(name.value)}`)
 }
 </script>
 
