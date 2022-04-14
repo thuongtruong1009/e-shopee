@@ -7,6 +7,7 @@ meta:
 useHead({
   title: 'e-shopee',
 })
+const { t } = useI18n()
 </script>
 
 <template>
@@ -16,17 +17,17 @@ useHead({
         <IShopee />
         <router-link to="/admin/login">
           <h2 class="text-sm flex items-center gap-1">
-            <IAdmin />Admin chanel
+            <IAdmin />{{ t('index.admin-chanel') }}
           </h2>
         </router-link>
         <router-link to="/seller/home">
           <h2 class="text-sm flex items-center gap-1">
-            <ISell />Seller chanel
+            <ISell />{{ t('index.seller-chanel') }}
           </h2>
         </router-link>
         <router-link to="/buyer/home">
           <h2 class="text-sm flex items-center gap-1">
-            <IHome />Buying chanel
+            <IHome />{{ t('index.buying-chanel') }}
           </h2>
         </router-link>
       </div>
@@ -46,15 +47,15 @@ useHead({
       <div class="grid content-center gap-5">
         <div>
           <h1 class="text-6xl font-semibold">
-            Exploring e-shopee!
+            {{ t('index.exploring') }} e-shopee!
           </h1>
           <h3 class="text-3xl font-medium my-3">
-            The top world's leading shopping app.
+            {{ t('index.banner-desc') }}.
           </h3>
         </div>
         <ul>
           <li class="text-2xl font-medium">
-            Download the app now
+            {{ t('index.download-now') }}
           </li>
           <li>
             <a href="https://apps.apple.com/vn/app/id959841449" target="_blank">
@@ -80,42 +81,42 @@ useHead({
     <section class="index-services p-5">
       <div class="services-title p-10 break-words text-center">
         <h1 class="text-4xl font-medium my-3">
-          Shopping anytime, anywhere!
+          {{ t('index.service-title') }}!
         </h1>
         <h3 class="text-2xl">
-          Enjoy attractive promotions, super savings from the most prestigious stores.
+          {{ t('index.service-desc') }}.
         </h3>
       </div>
       <div class="services-lists flex flex-wrap gap-5 p-5">
         <div>
           <img src="/img/index/shipping_service.png" alt="shipping_service">
-          <h3>Transfer Support</h3>
-          <p>Your order status is always updated in detail since you place your order</p>
+          <h3>{{ t('index.transfer-support') }}</h3>
+          <p>{{ t('index.transfer-desc') }}</p>
         </div>
         <div>
           <img src="/img/index/customer_service.png" alt="customer_service">
-          <h3>Customer support</h3>
-          <p>Customer Care Department is always ready to support you 24/7</p>
+          <h3>{{ t('index.customer-support') }}</h3>
+          <p>{{ t('index.customer-desc') }}</p>
         </div>
         <div>
           <img src="/img/index/hint_service.png" alt="hint_service">
-          <h3>Today's Suggestions</h3>
-          <p>Choose the right products for you in Today's Suggestions</p>
+          <h3>{{ t('index.today-suggestion') }}</h3>
+          <p>{{ t('index.today-suggestion-desc') }}</p>
         </div>
         <div>
           <img src="/img/index/payment_service.png" alt="payment_service">
-          <h3>Safe payment method</h3>
-          <p>Thanh toán dễ dàng và thuận tiện: Thanh toán khi nhận hàng hoặc Thanh toán trước bằng Thẻ Tín dụng/Ghi nợ.</p>
+          <h3>{{ t('index.safe-payment') }}</h3>
+          <p>{{ t('index.safe-payment-desc') }}.</p>
         </div>
         <div>
           <img src="/img/index/chat_service.png" alt="chat_service">
-          <h3>"Chat" feature</h3>
-          <p>Chat directly with the seller for more product advice. You can also negotiate the desired price with the Seller through the "Chat" section</p>
+          <h3>"{{ t('index.chat') }}" {{ t('index.chat-feature') }}</h3>
+          <p>{{ t('index.chat-desc') }}</p>
         </div>
         <div>
           <img src="/img/index/insurance_service.png" alt="insurance_service">
-          <h3>Guarantee Privacy</h3>
-          <p>Shopee commits that the amount you pay will be transferred to the seller after you receive the goods. We always protect you!</p>
+          <h3>{{ t('index.guarantee-privacy') }}</h3>
+          <p>{{ t('index.commit') }}!</p>
         </div>
       </div>
     </section>
@@ -126,14 +127,14 @@ useHead({
         </div>
         <div class="grid content-center">
           <h1>e-shoppe</h1>
-          <h5>e-shopee! The place to own all the products you love.</h5>
+          <h5>e-shopee! {{ t('index.advertisement-1-desc') }}.</h5>
         </div>
       </div>
 
       <div class="bg-[#FEEFD0]">
         <div class="grid content-center">
-          <h1>e-shoppe</h1>
-          <h5>e-shopee! The place to own all the products you love.</h5>
+          <h1>{{ t('index.advertisement-2-title') }}</h1>
+          <h5>{{ t('index.advertisement-2-desc') }}.</h5>
         </div>
         <div>
           <img src="/img/index/mobile_2.png" alt="mobile_2_img">
@@ -145,14 +146,14 @@ useHead({
           <img src="/img/index/mobile_3.png" alt="mobile_3_img">
         </div>
         <div class="grid content-center">
-          <h1>gifts for new customers</h1>
-          <h5>Exclusive and attractive gifts for new customers at e-shopee</h5>
+          <h1>{{ t('index.advertisement-3-title') }}</h1>
+          <h5>{{ t('index.advertisement-3-desc') }}</h5>
         </div>
       </div>
     </section>
     <section class="index-guys py-7">
       <div class="text-center text-3xl font-medium p-10">
-        <h2>What do users say about e-shopee?</h2>
+        <h2>{{ t('index.customer-opinion-title') }}?</h2>
       </div>
       <div class="guys-opinion flex justify-center flex-wrap gap-5 px-5">
         <div class="rounded-lg shadow-lg shadow-gray-400/50 w-153 h-69 p-2">
@@ -161,14 +162,14 @@ useHead({
               <img src="/img/index/quote.png" alt="quote_mark_img" class="min-w-14 h-13">
             </div>
             <div class="content text-white flex justify-center items-center w-7/10 text-xl">
-              <p>I always look forward to Shopee to hunt for deals and always get surprisingly good deals. Not to mention every deal hunting is fun, the last deal hunt is the most fun in my 2 years of e-shopee addiction.</p>
+              <p>{{ t('index.opinion-1') }}.</p>
             </div>
             <div class="infor flex items-end text-xl">
               <p>Diem My</p>
             </div>
           </div>
           <div class="flex justify-end text-sm text-gray-500">
-            <p>joined at 12/2018</p>
+            <p>{{ t('index.joined-at') }} 12/2018</p>
           </div>
         </div>
         <div class="rounded-lg shadow-md shadow-gray-300 w-153 h-69 p-2">
@@ -177,20 +178,20 @@ useHead({
               <img src="/img/index/quote.png" alt="quote_mark_img" class="min-w-14 h-13">
             </div>
             <div class="content text-white flex justify-center items-center w-7/10 text-xl">
-              <p>Every time I go to e-shopee, I have great results, dozens of items keep picking up until I receive the goods, I don't even know when I ordered this or that. So addicted to e-shopee</p>
+              <p>{{ t('index.opinion-2') }}</p>
             </div>
             <div class="infor flex items-end text-xl">
               <p>Nhung Wo</p>
             </div>
           </div>
           <div class="flex justify-end text-sm text-gray-500">
-            <p>Joined at 12/2018</p>
+            <p>{{ t('index.joined-at') }} 12/2018</p>
           </div>
         </div>
       </div>
     </section>
     <footer class="text-center text-gray-400 py-3">
-      <p>Copyright @2022 e-shopee. All rights reserved.</p>
+      <p>{{ t('index.copyright') }} @2022 e-shopee. {{ t('index.all-rights-reserved') }}.</p>
     </footer>
   </div>
 </template>
