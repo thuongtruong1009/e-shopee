@@ -12,6 +12,16 @@ intro:
   aka: Also known as
   whats-your-name: What's your name?
 not-found: Not found
+menu:
+  admin: Admin
+  about-page: About Page
+  cart-page: Cart Page
+  checkout-page: Checkout Page
+  compare-page: Compare Page
+  login-page: Login Page
+  account-page: Account Page
+  wishlist-page: Wishlist Page
+  become-seller: Become Seller
 header:
   home: Home
   shop: Shop
