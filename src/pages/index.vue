@@ -71,7 +71,7 @@ meta:
         <img src="/img/index/hand_phone.png" alt="app_mobile">
       </div>
     </main>
-    <section class="index-services">
+    <section class="index-services p-5">
       <div class="services-title p-10 break-words text-center">
         <h1 class="text-4xl font-medium my-3">
           Shopping anytime, anywhere!
@@ -113,7 +113,7 @@ meta:
         </div>
       </div>
     </section>
-    <section class="index-eshoppe">
+    <section class="index-eshoppe pt-10">
       <div class="bg-[#F9F9F9]">
         <div>
           <img src="/img/index/mobile_1.png" alt="mobile_1_img">
@@ -176,5 +176,20 @@ li{
 .index-eshoppe > div{
     display: flex;
     justify-content: space-around;
+    padding-top: 2.5rem;
+    word-wrap: break-word;
+    flex-wrap: wrap;
+}
+.index-eshoppe > div > div{
+    flex: 50%;
+    display: grid;
+    justify-content: center;
+}
+.index-eshoppe > div h1{
+    color: #FC7D50;
+    font-size: 2.5em;
+}
+.index-eshoppe > div h5{
+    font-size: 1.5em;
 }
 </style>
