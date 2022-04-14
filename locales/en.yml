@@ -22,6 +22,10 @@ menu:
   account-page: Account Page
   wishlist-page: Wishlist Page
   become-seller: Become Seller
+  notifications: notifications
+  notifications-warn: Login to see your notifications
+  register: Register
+  login: Login
 header:
   home: Home
   shop: Shop

@@ -9,21 +9,21 @@ const { t } = useI18n()
       <li class="menu-item has-child flex item-center gap-1">
         <INotify class="mt-0.5" />
         <a href="#" class="menu-link">
-          notifications
+          {{ t('menu.notifications') }}
         </a>
         <ul class="menu-child">
           <li class="menu-child-item has-child p-10 grid justify-center">
             <img src="/img/home/notify_notfound.png" alt="no_notifications" class="w-25 h-25">
             <p class="text-xs text-opacity-60 text-gray-500">
-              Login to see your notifications
+              {{ t('menu.notifications-warn') }}
             </p>
           </li>
           <li class="menu-child-item flex justify-center text-white rounded-b-md">
             <a href="/buyer/login" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">
-              Register
+              {{ t('menu.register') }}
             </a>
             <a href="/buyer/login" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">
-              Login
+              {{ t('menu.login') }}
             </a>
           </li>
         </ul>
