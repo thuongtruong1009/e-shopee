@@ -123,6 +123,7 @@ login:
   sign-in: Login
   forgot-password: Forgot password
 cart:
+  cart: Cart
   preview: Preview
   name: Name
   status: Status
@@ -136,6 +137,8 @@ cart:
   shipping: Shipping
   tax: Tax
   total: Total
+  view-cart: view cart
+  free-ship: Free Shipping on All Orders Over
 checkout:
   personal-information: Personal Information
   order-as-guest: Order as a guest
