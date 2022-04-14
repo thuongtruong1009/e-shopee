@@ -100,6 +100,14 @@ index:
   joined-at: Joined at
   copyright: Copyright
   all-rights-reserved: All rights reserved
+login:
+  no-account: Don't have an account
+  sign-up-invite: Join us to become a member and start shopping in your style
+  sign-up: Sign up
+  have-account: Have an account
+  sign-in-invite: Sign in to experience many attractive offers and services
+  sign-in: Login
+  forgot-password: Forgot password
 cart:
   preview: Preview
   name: Name
