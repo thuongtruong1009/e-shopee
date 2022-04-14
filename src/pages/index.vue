@@ -4,7 +4,7 @@ meta:
 </route>
 
 <template>
-  <div class="index-view">
+  <div class="index-view overflow-x-hidden">
     <div class="index-header flex justify-between py-4 px-20 border-b-1 border-b-solid">
       <div class="flex items-end gap-7">
         <IShopee />
@@ -113,7 +113,7 @@ meta:
         </div>
       </div>
     </section>
-    <section class="index-eshoppe pt-10">
+    <section class="index-eshoppe pt-10 bg-[#F9F9F9]">
       <div class="bg-[#F9F9F9]">
         <div>
           <img src="/img/index/mobile_1.png" alt="mobile_1_img">
@@ -149,7 +149,7 @@ meta:
         <h2>What do users say about s-shopee?</h2>
       </div>
       <div class="guys-opinion flex justify-evenly">
-        <div class="rounded-md shadow-lg shadow-gray-400/50 w-153 h-69 p-2">
+        <div class="rounded-lg shadow-lg shadow-gray-400/50 w-153 h-69 p-2">
           <div class="flex w-full h-[85%]">
             <div>
               <img src="/img/index/quote.png" alt="quote_mark_img" class="min-w-14 h-13">
@@ -165,7 +165,7 @@ meta:
             <p>joined at 12/2018</p>
           </div>
         </div>
-        <div class="rounded-md shadow-md shadow-gray-300 w-153 h-69 p-2">
+        <div class="rounded-lg shadow-md shadow-gray-300 w-153 h-69 p-2">
           <div class="flex w-full h-[85%]">
             <div>
               <img src="/img/index/quote.png" alt="quote_mark_img" class="min-w-14 h-13">
@@ -215,10 +215,25 @@ li{
     font-size: 1.6em;
     font-weight: 500;
 }
+.index-eshoppe > div:nth-child(1):after {
+  content: "";
+  display: block;
+  margin-top: -20vh;
+  border-top: 12vw solid transparent;
+  border-bottom: 0px solid transparent;
+  border-right: 100vw solid #FEEFD0;
+}
+.index-eshoppe > div:nth-child(2):after {
+  content: "";
+  display: block;
+  margin-top: -20vh;
+  border-top: 12vw solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 100vw solid #F9F9F9;
+}
 .index-eshoppe > div{
     display: flex;
     justify-content: space-around;
-    padding-top: 2.5rem;
     word-wrap: break-word;
     flex-wrap: wrap;
 }
