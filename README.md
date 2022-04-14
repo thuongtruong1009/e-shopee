@@ -165,14 +165,16 @@ pnpm preview
 - Go to [Netlify](https://app.netlify.com/start) and select your clone, `OK` along the way, and your App will be live in a minute.
 
 ## Reference
-- Relax with [bee-music sound](https://github.com/thuongtruong1009/bee-music)
+- Relax with [bee-music](https://github.com/thuongtruong1009/bee-music)
 - Enhance front-end skills through [twitter-meta](https://github.com/thuongtruong1009/twitter-meta)
-- Learning front-end web full course at [Front-end course](https://github.com/thuongtruong1009/frontend-master).
-- Learn Snake Game tutorial at [Snake-Game-OOP](https://github.com/thuongtruong1009/Snake-Game-OOP)
-- Learn Java for new beginner at [Java training](https://github.com/thuongtruong1009/java-oop-training)
-- Make flip card game at [flip-card](https://github.com/thuongtruong1009/flip-cards)
-- Learn computer architecture at [architecture](https://github.com/thuongtruong1009/computer-architecture)
+- Generate your GitHub informations by [gitbox](https://github.com/thuongtruong1009/gitbox)
+- Begining Vue through [notedev](https://github.com/thuongtruong1009/notedev)
+- Learning front-end web full course at [frontend-master](https://github.com/thuongtruong1009/frontend-master)
+- Learn Object-Oriented-Programming tutorial at [Snake-Game-OOP](https://github.com/thuongtruong1009/Snake-Game-OOP)
+- Become Java master for new beginner at [Java-training](https://github.com/thuongtruong1009/java-oop-training)
 - Pratice UI/UX at [league-fo-legend](https://github.com/thuongtruong1009/league-of-legends-clone)
+- Make flip card game at [flip-card](https://github.com/thuongtruong1009/flip-cards)
+- Learn computer architecture at [computer-architecture](https://github.com/thuongtruong1009/computer-architecture)
 
 ## ❤️ [Support me](https://www.paypal.me/thuongtruong1009)
 
