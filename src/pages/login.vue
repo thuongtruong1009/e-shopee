@@ -3,21 +3,18 @@ meta:
   layout: LLogin
 </route>
 
-<script>
-export default {
-  data() {
-    return {
-      isClicking: false,
-    }
-  },
-  methods: {
-    onLogin() {
-      this.isClicking = false
-    },
-    onSignUp() {
-      this.isClicking = true
-    },
-  },
+<script setup>
+useHead({
+  title: 'e-shopee | buyer checkout',
+})
+
+const isClicking = ref(false),
+
+const onLogin = () => {
+  isClicking.value = false
+}
+const onSignUp = () => {
+  isClicking.value = true
 }
 
 </script>

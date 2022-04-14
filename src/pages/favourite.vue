@@ -5,6 +5,9 @@ meta:
 
 <script setup>
 const { t } = useI18n()
+useHead({
+  title: 'e-shopee | buyer favourite',
+})
 const favouriteList = reactive([{
   img: '/img/today/1.jfif',
   name: 'Bright Idea Moisturizer',

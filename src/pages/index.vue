@@ -3,6 +3,12 @@ meta:
   layout: LIndex
 </route>
 
+<script setup lang="ts">
+useHead({
+  title: 'e-shopee',
+})
+</script>
+
 <template>
   <div class="index-view overflow-x-hidden">
     <div class="index-header flex justify-between py-4 px-20 border-b-1 border-b-solid">

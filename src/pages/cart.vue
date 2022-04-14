@@ -5,7 +5,7 @@ meta:
 
 <script setup>
 useHead({
-  title: 'e-shopee | cart',
+  title: 'e-shopee | buyer cart',
 })
 const { t } = useI18n()
 
