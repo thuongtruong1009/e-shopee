@@ -182,9 +182,9 @@ const showPass = () => {
         </h5>
         <div v-if="isShipping === true" class="hide-content">
           <form action="src/php/mail.php">
-            <div class="bg-[#F6F6F6] justify-around mt-3 grid grid-cols-3">
+            <div class="bg-[#F6F6F6] justify-around mt-3 grid grid-cols-3 rounded-md">
               <div class="flex justify-center items-center">
-                <input id="delivery" type="radio" name="delivery-radio" required>
+                <input id="delivery" type="radio" name="delivery-radio" required checked>
               </div>
               <div class="flex justify-around items-center">
                 <img src="/img/icon/10.jpg" alt="My carrier">
@@ -230,7 +230,11 @@ const showPass = () => {
               <input id="payment-cash" type="radio" name="payment-radio" checked>
               <label for="payment-cash">{{ t('checkout.pay-by-cash') }}</label>
             </div>
-            <div class="justify-center">
+            <div>
+              <input id="payment-momo" type="radio" name="payment-radio">
+              <label for="payment-momo">{{ t('checkout.pay-by-momo') }}</label>
+            </div>
+            <div class="justify-end">
               <a href="#" class="btn">{{ t('checkout.continue') }}</a>
             </div>
           </form>
@@ -271,8 +275,8 @@ const showPass = () => {
         </div>
 
         <div class="process flex justify-center items-center">
-          <button type="submit" value="submit" class="bg-black text-white font-semibold py-2 px-7 rounded-md hover:bg-[#E14641] duration-200 uppercase tracking-normal cursor-pointer">
-            {{ t('checkout.process-checkout') }}
+          <button type="submit" value="submit" class="bg-black text-white font-semibold py-2 px-7 rounded-md hover:bg-[#E14641] duration-200 uppercase tracking-normal cursor-pointer flex items-center gap-1">
+            <ISave />{{ t('checkout.process-checkout') }}
           </button>
         </div>
       </div>
@@ -317,6 +321,7 @@ form > div {
 }
 label{
   width: 30%;
+  cursor: pointer;
 }
 input[type="radio"],
 input[type="checkbox"]{

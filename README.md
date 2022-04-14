@@ -12,13 +12,13 @@
 
 ![preview home 1](/public/preview/home_1.jpg)
 ![preview home 2](/public/preview/home_9.jpg)
-![preview home 2](/public/preview/home_2.jpg)
-![preview home 3](/public/preview/home_3.jpg)
-![preview home 4](/public/preview/home_8.jpg)
-![preview home 4](/public/preview/home_4.jpg)
-![preview home 4](/public/preview/home_7.jpg)
-![preview home 5](/public/preview/home_5.jpg)
-![preview home 6](/public/preview/home_6.jpg)
+![preview home 3](/public/preview/home_2.jpg)
+![preview home 4](/public/preview/home_3.jpg)
+![preview home 5](/public/preview/home_8.jpg)
+![preview home 6](/public/preview/home_4.jpg)
+![preview home 7](/public/preview/home_7.jpg)
+![preview home 8](/public/preview/home_5.jpg)
+![preview home 9](/public/preview/home_6.jpg)
 
 ## Feature
 - 🧩 [slick](https://antoniandre.github.io/vueper-slides/?ref=madewithvuejs.com)

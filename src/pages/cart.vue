@@ -125,7 +125,7 @@ const cartList = reactive([{
             <a href="#"><span class="trash flex justify-center"><ITrash /></span></a>
           </td>
           <td>
-            <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-2 font-semibold">{{ t('cart.buy-now') }}</a>
+            <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-2 font-semibold">{{ t('cart.update') }}</a>
           </td>
         </tr>
       </tbody>
@@ -155,9 +155,11 @@ const cartList = reactive([{
       </div>
     </div>
     <div class="flex justify-center pt-10">
-      <button class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-3xl text-white py-2 shadow-md shadow-gray-300 px-5 flex justify-end items-center gap-1">
-        <ISave />{{ t('cart.save-changes') }}
-      </button>
+      <router-link to="/checkout">
+        <button class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-3xl text-white py-2 shadow-md shadow-gray-300 px-5 flex justify-end items-center gap-1">
+          <ISave />{{ t('cart.checkout') }}
+        </button>
+      </router-link>
     </div>
   </div>
 </template>
