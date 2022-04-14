@@ -8,7 +8,7 @@ const name = ref(user.savedName)
 const router = useRouter()
 const go = () => {
   if (name.value)
-    router.push(`/categories/${encodeURIComponent(name.value)}`)
+    router.push(`/buyer/categories/${encodeURIComponent(name.value)}`)
 }
 </script>
 
@@ -16,9 +16,7 @@ const go = () => {
   <div class="search-container w-lg <lg:w-xl shadow-md shadow-gray-500/50 flex justify-center items-center rounded-3xl">
     <input v-model="name" type="text" :placeholder="t('header.placeholder search')" :aria-label="t('header.placeholder search')" class="outline-none w-full h-full bg-white" @keydown.enter="go">
     <button class="text-white flex items-center bg-black hover:bg-opacity-70 h-full" :disabled="!name" @click="go">
-      <router-link to="/wishlist">
-        <IFind />
-      </router-link>
+      <IFind />
     </button>
   </div>
 </template>

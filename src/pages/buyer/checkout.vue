@@ -43,10 +43,10 @@ const showPass = () => {
           <i class="fas fa-user-shield" /> {{ t('checkout.personal-information') }}
         </h5>
         <div v-if="isPersonal === true" class="hide-content">
-          <form action="src/php/mail.php">
+          <form action="" method="post">
             <div class="order-asguest mt-2 mb-4">
               <p>{{ t('checkout.order-as-guest') }} &thinsp; &verbar; &thinsp;</p>
-              <router-link to="/login" class="hover:text-red-500 hover:opacity-100 opacity-60 duration-200">
+              <router-link to="/buyer/login" class="hover:text-red-500 hover:opacity-100 opacity-60 duration-200">
                 {{ t('checkout.login') }}
               </router-link>
             </div>
@@ -112,7 +112,7 @@ const showPass = () => {
           <i class="fas fa-map-marker-alt" /> {{ t('checkout.address') }}
         </h5>
         <div v-if="isAddress === true" class="hide-content">
-          <form action="src/php/mail.php">
+          <form action="" method="post">
             <div class="order-asguest mt-2 mb-4">
               <p>{{ t('checkout.address-desc') }}.</p>
             </div>
@@ -181,7 +181,7 @@ const showPass = () => {
           <i class="fas fa-shipping-fast" /> {{ t('checkout.shipping-method') }}
         </h5>
         <div v-if="isShipping === true" class="hide-content">
-          <form action="src/php/mail.php">
+          <form action="" method="post">
             <div class="bg-[#F6F6F6] justify-around mt-3 grid grid-cols-3 rounded-md">
               <div class="flex justify-center items-center">
                 <input id="delivery" type="radio" name="delivery-radio" required checked>
@@ -217,7 +217,7 @@ const showPass = () => {
           <i class="far fa-credit-card" /> {{ t('checkout.payment') }}
         </h5>
         <div v-if="isPayment === true" class="hide-content">
-          <form action="src/php/mail.php">
+          <form action="" method="post">
             <div>
               <input id="payment-check" type="radio" name="payment-radio">
               <label for="payment-check">{{ t('checkout.pay-by-check') }}</label>

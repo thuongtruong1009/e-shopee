@@ -17,7 +17,7 @@ const { t } = useI18n()
   <div class="container dark:text-white">
     <div class="dropdown">
       <div class="dropdown__select">
-        <a href="/"><span class="dropdown__selected flex items-center gap-1"><IHome />{{ t('header.home') }}</span></a>
+        <a href="/buyer/home"><span class="dropdown__selected flex items-center gap-1"><IHome />{{ t('header.home') }}</span></a>
       </div>
     </div>
     <div class="dropdown dark:bg-black">
@@ -36,12 +36,12 @@ const { t } = useI18n()
           <a href="/about"><span class="dropdown__text">About Page <IAbout /></span></a>
         </li>
         <li class="dropdown__item">
-          <router-link to="/cart">
+          <router-link to="/buyer/cart">
             <span class="dropdown__text">Cart Page <ICart /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
-          <router-link to="/checkout">
+          <router-link to="/buyer/checkout">
             <span class="dropdown__text">Checkout Page <ICheckout /></span>
           </router-link>
         </li>
@@ -49,17 +49,17 @@ const { t } = useI18n()
           <span class="dropdown__text">Compare Page <ICompare /></span>
         </li>
         <li class="dropdown__item">
-          <router-link to="/login">
+          <router-link to="/buyer/login">
             <span class="dropdown__text">Login  Page <ILogin /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
-          <router-link to="/account">
+          <router-link to="/buyer/account/dashboard">
             <span class="dropdown__text">Account Page <IAccount /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
-          <router-link to="/wishlist">
+          <router-link to="/buyer/wishlist">
             <span class="dropdown__text">Wishlist Page <IWishList /></span>
           </router-link>
         </li>

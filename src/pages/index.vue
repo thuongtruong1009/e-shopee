@@ -14,17 +14,17 @@ useHead({
     <div class="index-header flex justify-between py-4 px-20 border-b-1 border-b-solid">
       <div class="flex items-end gap-7">
         <IShopee />
-        <router-link to="/home/admin">
+        <router-link to="/admin/login">
           <h2 class="text-sm flex items-center gap-1">
             <IAdmin />Admin chanel
           </h2>
         </router-link>
-        <router-link to="/home/seller">
+        <router-link to="/seller/home">
           <h2 class="text-sm flex items-center gap-1">
             <ISell />Seller chanel
           </h2>
         </router-link>
-        <router-link to="/home">
+        <router-link to="/buyer/home">
           <h2 class="text-sm flex items-center gap-1">
             <IHome />Buying chanel
           </h2>

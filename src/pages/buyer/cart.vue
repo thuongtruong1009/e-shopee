@@ -155,7 +155,7 @@ const cartList = reactive([{
       </div>
     </div>
     <div class="flex justify-center pt-10">
-      <router-link to="/checkout">
+      <router-link to="/buyer/checkout">
         <button class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-3xl text-white py-2 shadow-md shadow-gray-300 px-5 flex justify-end items-center gap-1">
           <ISave />{{ t('cart.checkout') }}
         </button>

@@ -26,7 +26,7 @@ for (let i = 0; i < sliceURL.length; i++)
     </div>
 
     <div class="seller-header-right flex  justify-around items-center w-79 cursor-pointer">
-      <router-link to="/">
+      <router-link to="/buyer/home">
         <h2 class="hover:underline text-sm font-medium flex items-center gap-2">
           <IHome />Trang chủ Shopee
         </h2>

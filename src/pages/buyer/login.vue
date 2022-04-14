@@ -8,7 +8,7 @@ useHead({
   title: 'e-shopee | buyer checkout',
 })
 
-const isClicking = ref(false),
+const isClicking = ref(false)
 
 const onLogin = () => {
   isClicking.value = false
