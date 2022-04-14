@@ -1,11 +1,21 @@
 <script setup>
+import { useUserStore } from '~/stores/user'
 const { t } = useI18n()
+
+const user = useUserStore()
+const name = ref(user.savedName)
+
+const router = useRouter()
+const go = () => {
+  if (name.value)
+    router.push(`/hi/${encodeURIComponent(name.value)}`)
+}
 </script>
 
 <template>
   <div class="search-container w-lg <lg:w-xl shadow-md shadow-gray-500/50 flex justify-center items-center rounded-3xl">
-    <input type="text" :placeholder="t('header.placeholder search')" class="outline-none w-full h-full bg-white">
-    <button class="text-white flex items-center bg-black hover:bg-opacity-70 h-full">
+    <input v-model="name" type="text" :placeholder="t('header.placeholder search')" :aria-label="t('header.placeholder search')" class="outline-none w-full h-full bg-white" @keydown.enter="go">
+    <button class="text-white flex items-center bg-black hover:bg-opacity-70 h-full" :disabled="!name" @click="go">
       <router-link to="/wishlist">
         <IFind />
       </router-link>
