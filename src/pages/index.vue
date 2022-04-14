@@ -146,9 +146,9 @@ meta:
     </section>
     <section class="index-guys py-7">
       <div class="text-center text-3xl font-medium p-10">
-        <h2>What do users say about s-shopee?</h2>
+        <h2>What do users say about e-shopee?</h2>
       </div>
-      <div class="guys-opinion flex justify-evenly">
+      <div class="guys-opinion flex justify-center flex-wrap gap-5 px-5">
         <div class="rounded-lg shadow-lg shadow-gray-400/50 w-153 h-69 p-2">
           <div class="flex w-full h-[85%]">
             <div>
