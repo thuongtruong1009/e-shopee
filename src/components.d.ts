@@ -8,7 +8,6 @@ declare module 'vue' {
     AreaChart: typeof import('./components/AreaChart.vue')['default']
     ASellerList: typeof import('./components/ASellerList.vue')['default']
     CAccount: typeof import('./components/CAccount.vue')['default']
-    CarbonCampsite: typeof import('~icons/carbon/campsite')['default']
     CarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
     CarbonLanguage: typeof import('~icons/carbon/language')['default']
     CarbonMoon: typeof import('~icons/carbon/moon')['default']
