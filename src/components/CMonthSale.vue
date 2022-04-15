@@ -1,4 +1,5 @@
 <script setup>
+const { t } = useI18n()
 const isPopupQR = ref(false)
 const onOpenPopupQR = () => {
   isPopupQR.value = true
@@ -23,10 +24,12 @@ const onClosePopupQR = () => {
         <span class="absolute rounded-full bg-gray-600 w-7 h-7 border-3 border-solid border-white -top-2 -right-2 text-white flex justify-center items-center cursor-pointer" @click="onClosePopupQR"><ICross /></span>
         <div class="col-span-2 p-5 text-left">
           <h2 class="text-xl font-bold">
-            Tải ứng dụng Shopee để nhận ngay Quà Tặng từ chúng tớ nhé!
+            <!-- Tải ứng dụng Shopee để nhận ngay Quà Tặng từ chúng tớ nhé! -->
+            {{ t('cmonthsale.download') }}!
           </h2>
           <h5 class="py-2 text-lg font-normal">
-            Nhận quà tặng và các deal độc quyền ngay bây giờ.
+            <!-- Nhận quà tặng và các deal độc quyền ngay bây giờ. -->
+            {{ t('cmonthsale.get-gift') }}.
           </h5>
           <div class="grid grid-cols-2 gap-2 justify-between items-center pt-2">
             <img src="/img/month_sale/app_store.png" alt="app_store">

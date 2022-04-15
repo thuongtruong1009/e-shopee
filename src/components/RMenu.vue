@@ -1,25 +1,4 @@
 <script setup>
-// window.addEventListener('load', () => {
-//   const menuToggle = document.querySelector('.menu-toggle')
-//   const menuChild = document.querySelectorAll('.has-child > a')
-//   menuChild?.forEach(el =>
-//     el.addEventListener('click', (e) => {
-//       e.preventDefault()
-//       const subMenu = e.target?.nextElementSibling?.classList.toggle(
-//         'show',
-//       )
-//     }),
-//   )
-//   menuToggle?.addEventListener('click', () => {
-//     const menu = document.querySelector('.menu')
-//     menu.classList.toggle('show')
-//   })
-// })
-import ISetting from '~/components/icons/ISetting.vue'
-import IDollar from '~/components/icons/IDollar.vue'
-import IAccount from '~/components/icons/IAccount.vue'
-import ICheckout from '~/components/icons/ICheckout.vue'
-import ILogout from '~/components/icons/ILogout.vue'
 const { t } = useI18n()
 </script>
 
@@ -30,21 +9,21 @@ const { t } = useI18n()
       <li class="menu-item has-child flex item-center gap-1">
         <INotify class="mt-0.5" />
         <a href="#" class="menu-link">
-          notifications
+          {{ t('menu.notifications') }}
         </a>
         <ul class="menu-child">
           <li class="menu-child-item has-child p-10 grid justify-center">
             <img src="/img/home/notify_notfound.png" alt="no_notifications" class="w-25 h-25">
             <p class="text-xs text-opacity-60 text-gray-500">
-              Login to see your notifications
+              {{ t('menu.notifications-warn') }}
             </p>
           </li>
           <li class="menu-child-item flex justify-center text-white rounded-b-md">
-            <a href="/login" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">
-              Register
+            <a href="/buyer/login" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">
+              {{ t('menu.register') }}
             </a>
-            <a href="/login" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">
-              Login
+            <a href="/buyer/login" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">
+              {{ t('menu.login') }}
             </a>
           </li>
         </ul>
@@ -56,22 +35,22 @@ const { t } = useI18n()
         </a>
         <ul class="menu-child">
           <li class="menu-child-item has-child">
-            <a href="/account" class="menu-child-link">
+            <a href="/buyer/account/dashboard" class="menu-child-link">
               {{ t('header.my ccount') }} <IAccount />
             </a>
           </li>
           <li class="menu-child-item">
-            <a href="/checkout" class="menu-child-link">
+            <a href="/buyer/checkout" class="menu-child-link">
               {{ t('header.checkout') }} <ICheckout />
             </a>
           </li>
           <li class="menu-child-item">
-            <a href="/checkout" class="menu-child-link">
+            <a href="/buyer/checkout" class="menu-child-link">
               {{ t('header.download') }} <IDownload />
             </a>
           </li>
           <li class="menu-child-item">
-            <a href="/login" class="menu-child-link">
+            <a href="/buyer/login" class="menu-child-link">
               {{ t('header.sign out') }} <ILogout />
             </a>
           </li>

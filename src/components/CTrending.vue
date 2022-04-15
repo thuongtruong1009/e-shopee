@@ -1,4 +1,5 @@
 <script setup>
+const { t } = useI18n()
 const loadMore = () => {
   const loadButton = document.getElementById('load-more')
   document.getElementById('top-trending-loader').scrollLeft += 60 * 6 * 16 // 6 cell in pixels
@@ -59,10 +60,10 @@ const trendList = reactive([{
   <div class="top-trending-container bg-white pt-5 px-5 border-1 border-radius border-light-700 shadow-md shadow-gray-300/50 m-8 rounded-lg">
     <div class="border-b-1 border-b-solid border-b-light-700 text-left py-3 flex justify-between">
       <h1 class="uppercase text-lg text-gray-500">
-        top search trending for us
+        {{ t('ctrending.top-seearch') }}
       </h1>
       <p class="flex items-center gap-1 text-red-400 cursor-pointer" @click="loadMore">
-        <ILoading />See more
+        <ILoading />{{ t('ctrending.see-more') }}
       </p>
     </div>
     <div id="top-trending-loader" class="divide-x divide-1 divide-solid divide-light-700 flex overflow-x-scroll">
@@ -72,7 +73,7 @@ const trendList = reactive([{
             {{ trend.name }}
           </h6>
           <p class="text-xs text-bg-gray-500">
-            {{ trend.quantity }}k+ products
+            {{ trend.quantity }}k+ {{ t('ctrending.products') }}
           </p>
         </div>
         <img :src="trend.img" alt="trend_products_img" class="w-25 h-25">

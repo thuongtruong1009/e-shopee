@@ -1,4 +1,5 @@
 <script setup>
+const { t } = useI18n()
 const hintList = reactive([{
   img: '/img/today/1.jfif',
   desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
@@ -110,7 +111,7 @@ const hintList = reactive([{
   <div class="hint-today-container max-w-349 my-10">
     <div class="bg-white flex justify-start rounded-lg">
       <h2 class="text-red-500 border-b-4 border-b-solid border-b-red-500 text-lg rounded-l-lg text-left inline-block py-2 px-10 uppercase font-medium">
-        Hint today
+        {{ t('ctoday.hint') }}
       </h2>
     </div>
     <div class="flex flex-wrap gap-3 py-3">
@@ -125,7 +126,7 @@ const hintList = reactive([{
             30%
           </p>
           <p class="text-white">
-            GIẢM
+            {{ t('ctoday.decrease') }}
           </p>
         </div>
         <img :src="hint.img" alt="" class="w-full h-47 rounded-t-md">
@@ -134,17 +135,17 @@ const hintList = reactive([{
         </p>
         <div class="flex justify-between items-center px-1 py-2">
           <p class="text-red-500">
-            <span class="text-xs font-light">đ</span>{{ hint.price }}
+            <span class="text-xs font-light">$</span>{{ hint.price }}
           </p>
           <p class="text-xs">
-            Đã bán {{ hint.soldQuatity }}
+            {{ t('ctoday.sold') }} {{ hint.soldQuatity }}
           </p>
         </div>
       </div>
     </div>
     <div class="flex justify-center">
       <p class="bg-white border-1 border-solid border-gray-200 py-2 px-10 rounded-md cursor-pointer hover:bg-[#F5F5F5] hover:border-gray-300">
-        Xem thêm
+        {{ t('ctoday.see-more') }}
       </p>
     </div>
   </div>

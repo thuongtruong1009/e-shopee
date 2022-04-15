@@ -12,6 +12,44 @@ intro:
   aka: Also known as
   whats-your-name: What's your name?
 not-found: Not found
+ctrending:
+  top-seearch: top search trending for us
+  see-more: See more
+  products: products
+ctoday:
+  hint: Hint today
+  sold: Solded
+  see-more: See more
+  decrease: DECREASE
+cmonthsale:
+  download: Download e-shopee app to immediately receive gifts from us
+  get-gift: Get gifts and exclusive deals now
+carrival:
+  our-products: Our Products
+  add-our-product: Add our products to weekly line up
+  new: new
+caccount: 
+  dashboard: Dashboard
+  orders: Orders
+  download: Download
+  payment-method: Payment Method
+  address: Address
+  account-details: Account Details
+  Logout: Logout
+menu:
+  admin: Admin
+  about-page: About Page
+  cart-page: Cart Page
+  checkout-page: Checkout Page
+  compare-page: Compare Page
+  login-page: Login Page
+  account-page: Account Page
+  wishlist-page: Wishlist Page
+  become-seller: Become Seller
+  notifications: notifications
+  notifications-warn: Login to see your notifications
+  register: Register
+  login: Login
 header:
   home: Home
   shop: Shop
@@ -46,9 +84,9 @@ footer:
   sitemap: Sitemap
   stores: Stores
   link: LINKS
-  legal notice: Legal Notice
-  prices drop: Prices Drop
-  new products: New Products
+  privacy policy: Privacy Policy
+  term of service: Term of Service
+  service requirement: Service Requirement
   best sales: Best Sales
   login: Login
   my account: My Account
@@ -67,7 +105,49 @@ service:
   payment-secure-desc: Easy and convenient.
   chat-title: Live chat
   chat-desc: Share exchange with seller
+index:
+  admin-chanel: Admin chanel
+  seller-chanel: Seller chanel
+  buying-chanel: Buying chanel
+  exploring: Exploring
+  banner-desc: The top world's leading shopping app
+  download-now: Download the app now
+  service-title: Shopping anytime, anywhere
+  service-desc: Enjoy attractive promotions, super savings from the most prestigious stores
+  transfer-support: Transfer Support
+  transfer-desc: Your order status is always updated in detail since you place your order
+  customer-support: Customer support
+  customer-desc: Customer Care Department is always ready to support you 24/7
+  today-suggestion: Today's Suggestions
+  today-suggestion-desc: Choose the right products for you in Today's Suggestions
+  safe-payment: Safe payment method
+  safe-payment-desc: Easy and convenient payment. Pay on Delivery or Prepay by Credit/Debit Card
+  chat: Chat
+  chat-feature: feature
+  chat-desc: Chat directly with the seller for more product advice. You can also negotiate the desired price with the Seller through the "Chat" section
+  guarantee-privacy: Guarantee Privacy
+  commit: Shopee commits that the amount you pay will be transferred to the seller after you receive the goods. We always protect you
+  advertisement-1-desc: The place to own all the products you love
+  advertisement-2-title: Buy and sell online
+  advertisement-2-desc: Enjoy shopping and doing business on a reputable e-commerce exchange
+  advertisement-3-title: gifts for new customers
+  advertisement-3-desc: Exclusive and attractive gifts for new customers at e-shopee
+  customer-opinion-title: What do users say about e-shopee
+  opinion-1: I always look forward to Shopee to hunt for deals and always get surprisingly good deals. Not to mention every deal hunting is fun, the last deal hunt is the most fun in my 2 years of e-shopee addiction
+  opinion-2: Every time I go to e-shopee, I have great results, dozens of items keep picking up until I receive the goods, I don't even know when I ordered this or that. So addicted to e-shopee
+  joined-at: Joined at
+  copyright: Copyright
+  all-rights-reserved: All rights reserved
+login:
+  no-account: Don't have an account
+  sign-up-invite: Join us to become a member and start shopping in your style
+  sign-up: Sign up
+  have-account: Have an account
+  sign-in-invite: Sign in to experience many attractive offers and services
+  sign-in: Login
+  forgot-password: Forgot password
 cart:
+  cart: Cart
   preview: Preview
   name: Name
   status: Status
@@ -81,6 +161,8 @@ cart:
   shipping: Shipping
   tax: Tax
   total: Total
+  view-cart: view cart
+  free-ship: Free Shipping on All Orders Over
 checkout:
   personal-information: Personal Information
   order-as-guest: Order as a guest

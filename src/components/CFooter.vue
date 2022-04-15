@@ -1,8 +1,5 @@
 <script setup>
 import { isDark } from '~/composables'
-import IInfor from '~/components/icons/IInfor.vue'
-import ILink from '~/components/icons/ILink.vue'
-import INotify from '~/components/icons/INotify.vue'
 const { t } = useI18n()
 </script>
 
@@ -39,7 +36,7 @@ const { t } = useI18n()
         <ul>
           <li>{{ t('footer.delivery') }}</li>
           <li><a href="/about">{{ t('footer.about us') }}</a></li>
-          <li><a href="/about">{{ t('footer.secure payment') }}</a></li>
+          <li><a href="/buyer/account/payment">{{ t('footer.secure payment') }}</a></li>
           <li><a href="/contact">{{ t('footer.contact us') }}</a></li>
           <li><a href="/sitemap">{{ t('footer.sitemap') }}</a></li>
           <li>{{ t('footer.stores') }}</li>
@@ -51,12 +48,12 @@ const { t } = useI18n()
         </h3>
         <span class="absolute bg-[#EE4D2D] w-15 h-0.5" />
         <ul>
-          <li>{{ t('footer.legal notice') }}</li>
-          <li>{{ t('footer.prices drop') }}</li>
-          <li>{{ t('footer.new products') }}</li>
-          <li>{{ t('footer.best sales') }}</li>
-          <li><a href="/login">{{ t('footer.login') }}</a></li>
-          <li><a href="/account">{{ t('footer.my account') }}</a></li>
+          <li><a href="/juridicals/privacy_policy">{{ t('footer.privacy policy') }}</a></li>
+          <li><a href="/juridicals/term_of_service">{{ t('footer.term of service') }}</a></li>
+          <li><a href="/juridicals/service_requirement">{{ t('footer.service requirement') }}</a></li>
+          <li><a href="">{{ t('footer.best sales') }}</a></li>
+          <li><a href="/buyer/login">{{ t('footer.login') }}</a></li>
+          <li><a href="/buyer/account">{{ t('footer.my account') }}</a></li>
         </ul>
       </div>
       <div class="news col-span-2">
@@ -68,7 +65,7 @@ const { t } = useI18n()
           <p>{{ t('footer.subscribe') }}</p>
           <p><em>{{ t('footer.sign up today') }}</em></p>
         </div>
-        <form action="/POST" class="py-4 whitespace-nowrap">
+        <form action="" method="post" class="py-4 whitespace-nowrap">
           <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6 border-solid border-1 border-transparent shadow-md shadow-gray-300" autofocus>
           <button type="submit" class="bg-[#EE4D2D] text-white rounded-r-3xl px-3 py-2.5 shadow-md shadow-gray-400">
             {{ t('footer.sign up') }}

@@ -1,4 +1,5 @@
 <script setup>
+const { t } = useI18n()
 const isBlurBgModal = ref(false)
 const openNav = () => {
   document.getElementById('mySidenav').style.width = '22rem'
@@ -37,7 +38,7 @@ const closeNav = () => {
     <div id="mySidenav" class="sidenav w-0 h-screen fixed top-12 right-0 bg-white duration-500 z-2 overflow-x-hidden text-left text-black dark:(text-gray-200 bg-black) divide-light-700 divide-y border-1 border-dotted border-gray-700 shadow-2xl shadow-gray-500">
       <div class="flex justify-between items-center p-5">
         <p class="font-semibold">
-          Cart
+          {{ t('cart.cart') }}
         </p>
         <span class="cursor-pointer text-4xl" @click="closeNav">&times;</span>
       </div>
@@ -58,23 +59,23 @@ const closeNav = () => {
         </li>
       </ul>
       <div class="flex flex-wrap justify-between p-5">
-        <strong>Subtotal :</strong>
+        <strong>{{ t('cart.subtotal') }} :</strong>
         <span class="amount font-semibold">$144.00</span>
       </div>
       <div class="flex justify-around items-center p-5">
         <router-link to="/cart">
           <button type="submit" value="submit" class="btn text-white font-semibold text-xs py-3 px-7 rounded-md duration-200 uppercase cursor-pointer">
-            view cart
+            {{ t('cart.view-cart') }}
           </button>
         </router-link>
         <router-link to="/checkout">
           <button type="submit" value="submit" class="bg-black text-white font-semibold text-xs py-3 px-7 rounded-md hover:bg-[#E14641] duration-200 uppercase cursor-pointer">
-            checkout
+            {{ t('cart.checkout') }}
           </button>
         </router-link>
       </div>
       <p class="minicart-message p-5 text-xs">
-        Free Shipping on All Orders Over $100!
+        {{ t('cart.free-ship') }} $100!
       </p>
     </div>
   </div>

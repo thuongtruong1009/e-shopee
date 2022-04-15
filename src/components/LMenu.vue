@@ -1,29 +1,18 @@
 <script setup>
-import IHome from '~/components/icons/IHome.vue'
-import IAdmin from '~/components/icons/IAdmin.vue'
-import IPage from '~/components/icons/IPage.vue'
-import IContact from '~/components/icons/IContact.vue'
-import ISell from '~/components/icons/ISell.vue'
-import IAbout from '~/components/icons/IAbout.vue'
-import ICart from '~/components/icons/ICart.vue'
-import ICheckout from '~/components/icons/ICheckout.vue'
-import ICompare from '~/components/icons/ICompare.vue'
-import ILogin from '~/components/icons/ILogin.vue'
-import IAccount from '~/components/icons/IAccount.vue'
-import IWishList from '~/components/icons/IWishList.vue'
 const { t } = useI18n()
 </script>
+
 <template>
   <div class="container dark:text-white">
     <div class="dropdown">
       <div class="dropdown__select">
-        <a href="/"><span class="dropdown__selected flex items-center gap-1"><IHome />{{ t('header.home') }}</span></a>
+        <a href="/buyer/home"><span class="dropdown__selected flex items-center gap-1"><IHome />{{ t('header.home') }}</span></a>
       </div>
     </div>
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
         <router-link to="/admin/login">
-          <span class="dropdown__selected flex items-center gap-1"><IAdmin />Admin</span>
+          <span class="dropdown__selected flex items-center gap-1"><IAdmin />{{ t('menu.admin') }}</span>
         </router-link>
       </div>
     </div>
@@ -33,34 +22,34 @@ const { t } = useI18n()
       </div>
       <ul class="dropdown__list">
         <li class="dropdown__item">
-          <a href="/about"><span class="dropdown__text">About Page <IAbout /></span></a>
+          <a href="/about"><span class="dropdown__text">{{ t('menu.about-page') }} <IAbout /></span></a>
         </li>
         <li class="dropdown__item">
-          <router-link to="/cart">
-            <span class="dropdown__text">Cart Page <ICart /></span>
+          <router-link to="/buyer/cart">
+            <span class="dropdown__text">{{ t('menu.cart-page') }} <ICart /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
-          <router-link to="/checkout">
-            <span class="dropdown__text">Checkout Page <ICheckout /></span>
+          <router-link to="/buyer/checkout">
+            <span class="dropdown__text">{{ t('menu.checkout-page') }} <ICheckout /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
-          <span class="dropdown__text">Compare Page <ICompare /></span>
+          <span class="dropdown__text">{{ t('menu.compare-page') }} <ICompare /></span>
         </li>
         <li class="dropdown__item">
-          <router-link to="/login">
-            <span class="dropdown__text">Login  Page <ILogin /></span>
+          <router-link to="/buyer/login">
+            <span class="dropdown__text">{{ t('menu.login-page') }} <ILogin /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
-          <router-link to="/account">
-            <span class="dropdown__text">Account Page <IAccount /></span>
+          <router-link to="/buyer/account/dashboard">
+            <span class="dropdown__text">{{ t('menu.account-page') }} <IAccount /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
-          <router-link to="/wishlist">
-            <span class="dropdown__text">Wishlist Page <IWishList /></span>
+          <router-link to="/buyer/wishlist">
+            <span class="dropdown__text">{{ t('menu.wishlist-page') }} <IWishList /></span>
           </router-link>
         </li>
       </ul>
@@ -75,7 +64,7 @@ const { t } = useI18n()
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
         <router-link to="/seller/login">
-          <span class="dropdown__selected flex items-center gap-1"><ISell />Become Seller</span>
+          <span class="dropdown__selected flex items-center gap-1"><ISell />{{ t('menu.become-seller') }}</span>
         </router-link>
       </div>
     </div>

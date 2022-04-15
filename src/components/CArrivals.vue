@@ -1,4 +1,5 @@
 <script setup>
+const { t } = useI18n()
 const onLeftScroll = () => {
   document.getElementById('container').scrollLeft -= 260
 }
@@ -60,7 +61,6 @@ const activeNav = ref(1)
 const onActiveNav = (item) => {
   activeNav.value = item
 }
-
 </script>
 
 <template>
@@ -68,10 +68,10 @@ const onActiveNav = (item) => {
     <div>
       <div class="title">
         <h2 class="text-3xl capitalize">
-          Our Products
+          {{ t('carrival.our-products') }}
         </h2>
         <p class="opacity-60">
-          Add our products to weekly line up
+          {{ t('carrival.add-our-product') }}
         </p>
       </div>
       <div class="tab-menu">
@@ -95,7 +95,7 @@ const onActiveNav = (item) => {
         <div v-for="(image, i) in images" :key="i" class="card duration-300 ease-linear relative rounded-lg w-65">
           <div class="card-type flex justify-between absolute w-full p-2">
             <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
-            <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">new</span>
+            <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('carrival.new') }}</span>
           </div>
           <div class="card-img max-w-full max-h-7/12">
             <a href="single-product.html">
