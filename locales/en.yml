@@ -28,6 +28,14 @@ carrival:
   our-products: Our Products
   add-our-product: Add our products to weekly line up
   new: new
+caccount: 
+  dashboard: Dashboard
+  orders: Orders
+  download: Download
+  payment-method: Payment Method
+  address: Address
+  account-details: Account Details
+  Logout: Logout
 menu:
   admin: Admin
   about-page: About Page

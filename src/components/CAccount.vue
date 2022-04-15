@@ -1,50 +1,53 @@
+<script setup>
+const { t } = useI18n()
+</script>
+
 <template>
   <div class="nav-container grid grid-rows-7 max-w-xs text-black dark:text-gray-300">
     <router-link to="/account/dashboard" :title="dashboard">
       <div class="items">
         <i class="fas fa-tachometer-alt" />
-        Dashboard
+        {{ t('caccount.dashboard') }}
       </div>
     </router-link>
 
     <router-link to="/account/orders" :title="orders">
       <div class="items">
         <i class="fa fa-cart-arrow-down" />
-        Orders
+        {{ t('caccount.orders') }}
       </div>
     </router-link>
 
     <router-link to="/account/download" :title="download">
       <div class="items">
         <i class="fas fa-cloud-download-alt" />
-        Download
+        {{ t('caccount.download') }}
       </div>
     </router-link>
 
     <router-link to="/account/payment" :title="payment">
       <div class="items">
         <i class="fa fa-credit-card" />
-        Payment Method
+        {{ t('caccount.payment-method') }}
       </div>
     </router-link>
 
     <router-link to="/account/address" :title="address">
       <div class="items">
         <i class="fa fa-map-marker" />
-        Address
+        {{ t('caccount.address') }}
       </div>
     </router-link>
 
     <router-link to="/account/details" :title="details" class="active">
       <div class="items">
-        <i class="fa fa-user" /> Account
-        Details
+        <i class="fa fa-user" /> {{ t('caccount.account-details') }}
       </div>
     </router-link>
 
     <router-link to="/login" :title="logout">
       <div class="items">
-        <i class="fa fa-sign-out" /> Logout
+        <i class="fa fa-sign-out" /> {{ t('caccount.Logout') }}
       </div>
     </router-link>
   </div>
