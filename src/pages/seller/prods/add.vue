@@ -4,8 +4,6 @@ meta:
 </route>
 
 <script setup>
-import ISearch from '~/components/ISearch.vue'
-import ICaretRight from '~/components/ICaretRight.vue'
 useHead({
   title: 'seller | add-productions',
 })

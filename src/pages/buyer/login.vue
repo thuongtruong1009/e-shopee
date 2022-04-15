@@ -5,112 +5,106 @@ meta:
 
 <script setup>
 useHead({
-  title: 'e-shopee | buyer checkout',
+  title: 'e-shopee | buyer login',
 })
-const { t } = useI18n()
-
-const isClicking = ref(false)
-
-const onLogin = () => {
-  isClicking.value = false
-}
-const onSignUp = () => {
-  isClicking.value = true
-}
 
 </script>
 
 <template>
-  <div class="login-container max-w-full max-h-full grid grid-cols-2 bg-true-gray-700 text-white text-left mt-15 relative rounded-md">
-    <div class="user_options-unregistered col-span-1 py-20 px-10">
-      <h2 class="user_unregistered-title text-2xl font-bold">
-        {{ t('login.no-account') }}?
+  <div class="buyer-login-container h-screen-sm grid justify-center items-center">
+    <div>
+      <h1 class="capitalize text-3xl font-semibold pt-15 pb-5">
+        Welcome back!
+      </h1>
+    </div>
+    <form class="flex justify-center items-center flex-col p-5 relative" method="POST" action="">
+      <div class="ballon__circle absolute" />
+      <div class="ballon__circle ballon__circle--t absolute" />
+      <h2 class="form_title fs-1 fw-bold pb-5">
+        Create Account
       </h2>
-      <p class="user_unregistered-text font-light text-sm">
-        {{ t('login.sign-up-invite') }}.
-      </p>
-      <button id="signup-button" class="user_unregistered-signup uppercase mt-10 py-1 px-7 border-1 border-solid rounded-md border-light-200 hover:bg-gray-300 hover:text-black duration-200 tracking-widest animate-bounce" @click="onSignUp">
-        {{ t('login.sign-up') }}
-      </button>
-    </div>
-
-    <div class="user_options-registered col-span-1 py-20 px-10">
-      <h2 class="user_registered-title text-2xl font-bold">
-        {{ t('login.have-account') }}?
-      </h2>
-      <p class="user_registered-text font-light text-sm">
-        {{ t('login.sign-in-invite') }}.
-      </p>
-      <button id="login-button" class="user_registered-login uppercase mt-10 py-1 px-7 border-1 border-solid rounded-md border-light-200 hover:bg-gray-300 hover:text-black duration-200 tracking-widest animate-bounce" @click="onLogin">
-        {{ t('login.sign-in') }}
-      </button>
-    </div>
-    <div class="popup absolute bg-white w-xl h-sm px-10 py-15 -mt-10 rounded-md shadow-md shadow-gray-500 dark:bg-[#663399]" :style="[isClicking ? {left: '2.5rem'} : {right: '2.5rem'}]">
-      <div v-if="isClicking === false" class="user_forms-login">
-        <h2 class="forms_title text-[#E14641] text-4xl font-semibold">
-          {{ t('login.sign-in') }}
-        </h2>
-        <form class="forms_form">
-          <fieldset class="forms_fieldset border-solid border-2 border-gray-400 my-10 rounded-md">
-            <div class="forms_field">
-              <input type="email" placeholder="Email" class="forms_field-input dark:bg-[#663399] dark:text-gray-200 text-black" required autofocus>
-            </div>
-            <div class="forms_field">
-              <input type="password" placeholder="Password" class="forms_field-input dark:bg-[#663399] dark:text-gray-200 text-black" required>
-            </div>
-          </fieldset>
-          <div class="forms_buttons flex justify-between">
-            <button type="button" class="forms_buttons-forgot text-gray-300 hover:text-gray-400 duration-200 underline">
-              {{ t('login.forgot-password') }}?
-            </button>
-            <input type="submit" value="Log In" class="forms_buttons-action bg-[#E8716D] hover:bg-[#E14641] duration-200 uppercase text-white py-1.5 px-7 rounded-md tracking-widest cursor-pointer">
-          </div>
-        </form>
+      <div class="form__icons">
+        <img class="form__icon" src="./public/icons/facebook.svg" alt="">
+        <img class="form__icon" src="./public/icons/twitter.svg">
+        <img class="form__icon" src="./public/icons/linkedin.svg">
       </div>
-
-      <div v-if="isClicking === true" class="user_forms-login">
-        <h2 class="forms_title text-[#E14641] text-4xl font-semibold">
-          {{ t('login.sign-up') }}
-        </h2>
-        <form class="forms_form">
-          <fieldset class="forms_fieldset border-solid border-2 border-gray-400 my-10 rounded-md">
-            <div class="forms_field">
-              <input type="text" placeholder="Full Name" class="forms_field-input dark:bg-[#663399] dark:text-gray-200 text-black" required>
-            </div>
-            <div class="forms_field">
-              <input type="email" placeholder="Email" class="forms_field-input dark:bg-[#663399] dark:text-gray-200 text-black" required autofocus>
-            </div>
-            <div class="forms_field">
-              <input type="password" placeholder="Password" class="forms_field-input dark:bg-[#663399] dark:text-gray-200 text-black" required>
-            </div>
-          </fieldset>
-          <div class="forms_buttons flex justify-end">
-            <input type="submit" value="Sign up" class="forms_buttons-action bg-[#E8716D] hover:bg-[#E14641] duration-200 uppercase text-white py-1.5 px-7 rounded-md tracking-widest cursor-pointer">
-          </div>
-        </form>
-      </div>
-    </div>
+      <span class="form__span mt-4 mb-1 fs-6 fw-light text-muted">or use email for registration</span>
+      <input class="form__input" type="text" placeholder="Name">
+      <input class="form__input" type="text" placeholder="Email">
+      <input class="form__input" type="password" placeholder="Password">
+      <button class="form__button button mt-5 fw-bold flex justify-center items-center gap-2">
+        <img src="./public/icons/unlock.svg" alt="signup">SIGN UP
+      </button>
+    </form>
   </div>
 </template>
 
 <style scoped>
-input[type="text"],
-input[type="email"],
-input[type="password"]{
-  outline: none;
-  border-bottom: 1px solid rgb(230, 230, 230);
-  width: 30%;
-  margin: 0.5rem;
-  transition: 0.3s linear;
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+.buyer-login-container {
+    font-family: "Montserrat", sans-serif;
+    background: #ecf0f3;
 }
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus{
-  border-bottom: 1px solid rgb(190, 190, 190);
-  width: 90%;
+.buyer-login-container > form{
+    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+    border-radius: 1rem;
 }
-input[type="submit"]{
-  outline: none;
-  color: white;
+.form__icon {
+    object-fit: contain;
+    width: 30px;
+    margin: 0 5px;
+    opacity: 0.5;
+    transition: 0.15s;
+}
+.form__icon:hover {
+    opacity: 1;
+    transition: 0.15s;
+    cursor: pointer;
+}
+.form__input {
+    width: 350px;
+    height: 40px;
+    margin: 4px 0;
+    padding-left: 25px;
+    font-size: 13px;
+    letter-spacing: 0.15px;
+    border: none;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+    background-color: #ecf0f3;
+    transition: 0.25s ease;
+    border-radius: 8px;
+    box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+}
+.form__input:focus {
+    box-shadow: inset 4px 4px 4px #d1d9e6, inset -4px -4px 4px #f9f9f9;
+}
+.form__button {
+    width: 180px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 14px;
+    letter-spacing: 1.15px;
+    background-color: #ff003d;
+    color: #f9f9f9;
+    box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #f9f9f9;
+}
+.form__button:hover{
+    border: 3px solid pink;
+}
+.ballon__circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #ecf0f3;
+    box-shadow: inset 8px 8px 12px #d1d9e6, inset -8px -8px 12px #f9f9f9;
+    top: -40%;
+    left: 70%;
+}
+.ballon__circle--t{
+    width: 100px;
+    height: 100px;
+    top: 75%;
+    left: -15%;
 }
 </style>

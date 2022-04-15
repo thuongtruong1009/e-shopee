@@ -18,12 +18,12 @@ const closeNav = () => {
 <template>
   <div class="container flex justify-center items-center lg:w-xs text-white dark:text-black">
     <div>
-      <router-link to="/wishlist">
+      <router-link to="/buyer/wishlist">
         <ICompare class="hover:text-[#adff2f] dark:text-[#adff2f]" />
       </router-link>
     </div>
     <div>
-      <router-link to="/favourite">
+      <router-link to="/buyer/favourite">
         <IHeart class="hover:text-[#adff2f] dark:text-[#adff2f]" />
       </router-link>
     </div>
@@ -63,12 +63,12 @@ const closeNav = () => {
         <span class="amount font-semibold">$144.00</span>
       </div>
       <div class="flex justify-around items-center p-5">
-        <router-link to="/cart">
+        <router-link to="/buyer/cart">
           <button type="submit" value="submit" class="btn text-white font-semibold text-xs py-3 px-7 rounded-md duration-200 uppercase cursor-pointer">
             {{ t('cart.view-cart') }}
           </button>
         </router-link>
-        <router-link to="/checkout">
+        <router-link to="/buyer/checkout">
           <button type="submit" value="submit" class="bg-black text-white font-semibold text-xs py-3 px-7 rounded-md hover:bg-[#E14641] duration-200 uppercase cursor-pointer">
             {{ t('cart.checkout') }}
           </button>

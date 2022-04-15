@@ -4,14 +4,6 @@ meta:
 </route>
 
 <script setup>
-import ICaretRight from '~/components/ICaretRight.vue'
-import ICake from '~/components/icons/ICake.vue'
-import ITime from '~/components/icons/ITime.vue'
-import IStar from '~/components/icons/IStar.vue'
-import IChat from '~/components/icons/IChat.vue'
-import INote from '~/components/icons/INote.vue'
-import IPlus from '~/components/icons/IPlus.vue'
-import IQuestion from '~/components/IQuestion.vue'
 const numberShopName = ref('Lamborghini Aventador S')
 const numberShopDescription = ref('')
 
