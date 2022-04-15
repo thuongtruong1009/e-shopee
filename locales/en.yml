@@ -24,6 +24,10 @@ ctoday:
 cmonthsale:
   download: Download e-shopee app to immediately receive gifts from us
   get-gift: Get gifts and exclusive deals now
+carrival:
+  our-products: Our Products
+  add-our-product: Add our products to weekly line up
+  new: new
 menu:
   admin: Admin
   about-page: About Page
