@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: LLogin
+  layout: buyer/LBLogin
 </route>
 
 <script setup>
@@ -29,12 +29,15 @@ useHead({
       <span class="form__span mt-4">or use email for login</span>
       <input class="form__input" name="usernameOrEmail" type="text" placeholder="Email" required>
       <input class="form__input" name="password" type="password" placeholder="Password" required>
-      <div class="text-xs text-gray-500 flex justify-end w-full">
+      <div class="text-xs text-gray-500/50 flex justify-between w-full">
+        <a href="/buyer/register">
+          Don't have account?
+        </a>
         <a href="/buyer/password/reset">
           Forgot password?
         </a>
       </div>
-      <button type="submit" class="form__button flex justify-center items-center gap-2 font-semibold uppercase my-2">
+      <button type="submit" class="form__button flex justify-center items-center gap-2 font-semibold uppercase mt-5">
         <IBUnlock />SIGN IN
       </button>
     </form>
