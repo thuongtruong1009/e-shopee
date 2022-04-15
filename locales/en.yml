@@ -12,6 +12,15 @@ intro:
   aka: Also known as
   whats-your-name: What's your name?
 not-found: Not found
+ctrending:
+  top-seearch: top search trending for us
+  see-more: See more
+  products: products
+ctoday:
+  hint: Hint today
+  sold: Solded
+  see-more: See more
+  decrease: DECREASE
 menu:
   admin: Admin
   about-page: About Page
