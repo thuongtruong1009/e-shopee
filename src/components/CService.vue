@@ -5,7 +5,7 @@ const { t } = useI18n()
 <template>
   <div class="service-container text-white bg-[#EE4D2D] grid grid-cols-5 items-center text-left">
     <div class="shipping">
-      <ISShipping class="services-icon" />
+      <IBShipping class="services-icon" />
       <div>
         <h4>
           {{ t('service.shipping-title') }}
@@ -16,7 +16,7 @@ const { t } = useI18n()
       </div>
     </div>
     <div class="return">
-      <ISReturn class="services-icon" />
+      <IBReturn class="services-icon" />
       <div>
         <h4>
           {{ t('service.return-title') }}
@@ -27,7 +27,7 @@ const { t } = useI18n()
       </div>
     </div>
     <div class="contact">
-      <ISSupport class="services-icon" />
+      <IBSupport class="services-icon" />
       <div>
         <h4>
           {{ t('service.contact-title') }} 24/7
@@ -38,7 +38,7 @@ const { t } = useI18n()
       </div>
     </div>
     <div class="secure">
-      <ISSecure class="services-icon" />
+      <IBSecure class="services-icon" />
       <div>
         <h4>
           {{ t('service.payment-secure-title') }} 100%
@@ -49,7 +49,7 @@ const { t } = useI18n()
       </div>
     </div>
     <div class="chat">
-      <ISChat class="services-icon" />
+      <IBChat class="services-icon" />
       <div>
         <h4>
           {{ t('service.chat-title') }}

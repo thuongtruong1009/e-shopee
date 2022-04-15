@@ -11,31 +11,37 @@ useHead({
 </script>
 
 <template>
-  <div class="buyer-login-container h-screen-sm grid justify-center items-center">
-    <div>
-      <h1 class="capitalize text-3xl font-semibold pt-15 pb-5">
+  <div class="buyer-login-container grid justify-center items-center mt-20 relative">
+    <div class="my-10 z-10">
+      <h1 class="capitalize text-3xl font-semibold">
         Welcome back!
       </h1>
     </div>
-    <form class="flex justify-center items-center flex-col p-5 relative" method="POST" action="">
-      <div class="ballon__circle absolute" />
-      <div class="ballon__circle ballon__circle--t absolute" />
+    <form class="flex justify-center items-center flex-col p-5 rounded-2xl z-10 bg-[#ecf0f3]" method="POST" action="">
       <h2 class="form_title fs-1 fw-bold pb-5">
-        Create Account
+        Login by third factor
       </h2>
-      <div class="form__icons">
-        <img class="form__icon" src="./public/icons/facebook.svg" alt="">
-        <img class="form__icon" src="./public/icons/twitter.svg">
-        <img class="form__icon" src="./public/icons/linkedin.svg">
+      <div class="flex justify-evenly w-full">
+        <IBFacebook class="form__icon" />
+        <IBGoogle class="form__icon" />
+        <IBGithub class="form__icon" />
       </div>
-      <span class="form__span mt-4 mb-1 fs-6 fw-light text-muted">or use email for registration</span>
-      <input class="form__input" type="text" placeholder="Name">
-      <input class="form__input" type="text" placeholder="Email">
-      <input class="form__input" type="password" placeholder="Password">
-      <button class="form__button button mt-5 fw-bold flex justify-center items-center gap-2">
-        <img src="./public/icons/unlock.svg" alt="signup">SIGN UP
+      <span class="form__span mt-4">or use email for login</span>
+      <input class="form__input" name="usernameOrEmail" type="text" placeholder="Email" required>
+      <input class="form__input" name="password" type="password" placeholder="Password" required>
+      <div class="text-xs text-gray-500 flex justify-end w-full">
+        <a href="/buyer/password/reset">
+          Forgot password?
+        </a>
+      </div>
+      <button type="submit" class="form__button flex justify-center items-center gap-2 font-semibold uppercase my-2">
+        <IBUnlock />SIGN IN
       </button>
     </form>
+    <!-- ballon decoration -->
+    <div class="ballon__circle ballon__circle--t0 absolute" />
+    <div class="ballon__circle ballon__circle--t1 absolute" />
+    <div class="ballon__circle ballon__circle--t2 absolute" />
   </div>
 </template>
 
@@ -43,28 +49,22 @@ useHead({
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 .buyer-login-container {
     font-family: "Montserrat", sans-serif;
-    background: #ecf0f3;
 }
 .buyer-login-container > form{
     box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
-    border-radius: 1rem;
 }
 .form__icon {
-    object-fit: contain;
-    width: 30px;
-    margin: 0 5px;
-    opacity: 0.5;
-    transition: 0.15s;
+    opacity: 0.8;
+    transition: 0.15s linear;
 }
 .form__icon:hover {
     opacity: 1;
-    transition: 0.15s;
     cursor: pointer;
 }
 .form__input {
-    width: 350px;
-    height: 40px;
-    margin: 4px 0;
+    width: 22rem;
+    height: 2.5rem;
+    margin: 0.75rem 0;
     padding-left: 25px;
     font-size: 13px;
     letter-spacing: 0.15px;
@@ -93,18 +93,27 @@ useHead({
     border: 3px solid pink;
 }
 .ballon__circle {
-    width: 300px;
-    height: 300px;
     border-radius: 50%;
     background-color: #ecf0f3;
     box-shadow: inset 8px 8px 12px #d1d9e6, inset -8px -8px 12px #f9f9f9;
-    top: -40%;
-    left: 70%;
+    z-index: 0;
 }
-.ballon__circle--t{
-    width: 100px;
-    height: 100px;
+.ballon__circle--t0{
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+}
+.ballon__circle--t1{
     top: 75%;
-    left: -15%;
+    left: 15%;
+    width: 130px;
+    height: 130px;
+}
+.ballon__circle--t2{
+    bottom: -30%;
+    left: 60%;
+    width: 80px;
+    height: 80px;
 }
 </style>
