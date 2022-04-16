@@ -66,6 +66,9 @@ html.dark {
   background: #121212;
   transition: 0.3s;
 }
+input{
+  outline: none;
+}
 
 #nprogress {
   pointer-events: none;

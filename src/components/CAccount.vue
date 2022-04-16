@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="nav-container grid grid-rows-7 max-w-xs text-black dark:text-gray-300">
+  <div class="nav-container grid grid-rows-7 max-w-xs text-black dark:text-gray-300 h-min">
     <router-link to="/buyer/account/dashboard" :title="dashboard">
       <div class="items rounded-t-lg">
         <i class="fas fa-tachometer-alt" />
