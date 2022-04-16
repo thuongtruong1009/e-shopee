@@ -49,7 +49,6 @@ meta:
 <style scoped>
 input{
   width: 100%;
-  outline: none;
   border: 1px solid rgba(233, 236, 239);
   border-radius: 0.3rem;
   padding: 0.3rem 1rem;
