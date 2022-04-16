@@ -88,7 +88,7 @@ const categories2 = reactive([{
 </script>
 
 <template>
-  <div class="grid grid-rows-2 h-100 w-screen p-10">
+  <div class="grid grid-rows-2 h-100 w-screen px-10 my-5">
     <swiper
       :slides-per-view="10"
       :space-between="10" class="w-full py-2"
