@@ -18,6 +18,7 @@
         "nprogress": "^0.2.0",
         "pinia": "^2.0.13",
         "prism-theme-vars": "^0.2.2",
+        "swiper": "^8.1.1",
         "vue": "^3.2.32",
         "vue-demi": "^0.12.5",
         "vue-echarts": "^6.0.2",

@@ -3,9 +3,11 @@ useHead({
   title: 'e-shopee | buyer home',
 })
 </script>
+
 <template>
   <div>
     <CSwipper />
+    <CBCategory />
     <CBanner />
     <CDemo1 />
     <CArrivals />
@@ -16,7 +18,6 @@ useHead({
       <CToday />
     </div>
     <!-- <CSlick /> -->
-    <CCategory />
     <CDemo2 />
     <CService />
   </div>

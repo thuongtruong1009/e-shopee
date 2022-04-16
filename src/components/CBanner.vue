@@ -1,5 +1,5 @@
 <template>
-  <div class="slider-container w-full h-40 mt-0 flex justify-center items-center">
+  <div class="slider-container w-full h-40 mt-0 flex justify-center items-center relative">
     <div class="grid grid-cols-7 h-full w-11/12 overflow-x-scroll">
       <div v-for="i in images.length-2" :key="i" class="flex justify-around items-center">
         <img :src="images[i]" :style="[isSliding ? {transform: 'translate(-12rem, 0)'} : {transform: 'translate(12rem, 0)'}]">
@@ -60,7 +60,7 @@ img{
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 107%;
+  top: 40%;
   width: 2.75rem;
   height: 2.75rem;
   color: white;

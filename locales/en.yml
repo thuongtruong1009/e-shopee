@@ -36,6 +36,33 @@ caccount:
   address: Address
   account-details: Account Details
   Logout: Logout
+ccategory:
+  men-fashion: Men's Fashion
+  women-fashion: Women's Fashion
+  phones-accessories: Phones & Accessories
+  mother-baby: Mother & Baby
+  electronic-device: Electronic device
+  home-life: Home & Life
+  computers-laptops: Computers & Laptops
+  beauty: Beauty
+  camera-camcorder: Camera Camcorder
+  health: Health
+  watch: Watch
+  women-shoes: Women's shoes
+  men-shoes: Men's shoes
+  women-purse-bags: Women's Purse Bags
+  household-electrical-appliances: Household electrical appliances
+  women-accessories-jewelry: Women's Accessories & Jewelry
+  sports-travel: Sports & Travel
+  online-store: Online Store
+  cars-motorcycles-bicycles: Cars & Motorcycles & Bicycles
+  online-bookstore: Online Bookstore
+  men-backpacks-wallets: Men's Backpacks & Wallets
+  child-fashion: Child fashion
+  toy: Toy
+  laundry-home-care: Laundry & Home Care
+  take-care-of-the-pet: Take care of the pet
+  vouchers-services: Vouchers & Services
 menu:
   admin: Admin
   about-page: About Page
