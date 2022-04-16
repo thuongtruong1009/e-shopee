@@ -14,23 +14,32 @@ useHead({
   <div class="buyer-register-container flex justify-center pt-20">
     <div class="register-inner border-4 border-solid border-white rounded-2xl flex w-4xl relative flex shadow-2xl shadow-gray-400">
       <form action="" method="post" class="bg-white w-1/2 p-5 rounded-xl">
-        <div class="capitalize text-2xl font-bold justify-center">
+        <div class="capitalize text-2xl font-bold flex justify-center items-center">
+          <IBRegister />
           <h1>Create Account</h1>
         </div>
         <div>
-          <IBUsername />
+          <div class="icon">
+            <IBUsername />
+          </div>
           <input type="text" name="username" placeholder="Username" required>
         </div>
         <div>
-          <IBUsername />
+          <div class="icon">
+            <IBEmail />
+          </div>
           <input type="email" name="email " placeholder="Email address" required>
         </div>
         <div>
-          <IBUsername />
+          <div class="icon">
+            <IBPassword />
+          </div>
           <input type="password" name="password" placeholder="Password" required>
         </div>
         <div>
-          <IBUsername />
+          <div class="icon">
+            <IBRepeat />
+          </div>
           <input type="password" name="password_confirmation" placeholder="Password confirmation" required>
         </div>
         <div>
@@ -63,9 +72,16 @@ form input{
     outline: none;
     padding-bottom: 0.25rem;
     width: 100%;
+    font-weight: 500;
 }
 form input::placeholder{
     color: rgba(149, 149, 149, 0.6);
     font-weight: 500;
+}
+form .icon{
+  background: #5ABBC1;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 </style>
