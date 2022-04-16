@@ -53,7 +53,7 @@ const { t } = useI18n()
           <li><a href="/juridicals/service_requirement">{{ t('footer.service requirement') }}</a></li>
           <li><a href="">{{ t('footer.best sales') }}</a></li>
           <li><a href="/buyer/login">{{ t('footer.login') }}</a></li>
-          <li><a href="/buyer/account">{{ t('footer.my account') }}</a></li>
+          <li><a href="/buyer/account/dashboard">{{ t('footer.my account') }}</a></li>
         </ul>
       </div>
       <div class="news col-span-2">

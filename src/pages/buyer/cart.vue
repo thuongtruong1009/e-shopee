@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: LCart
+  layout: buyer/LBCart
 </route>
 
 <script setup>

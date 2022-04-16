@@ -19,7 +19,7 @@ const { t } = useI18n()
             </p>
           </li>
           <li class="menu-child-item flex justify-center text-white rounded-b-md">
-            <a href="/buyer/login" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">
+            <a href="/buyer/register" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">
               {{ t('menu.register') }}
             </a>
             <a href="/buyer/login" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">

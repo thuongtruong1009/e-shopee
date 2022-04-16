@@ -1,12 +1,15 @@
 <route lang="yaml">
 meta:
-  layout: LOrders
+  layout: buyer/account/LBOrders
 </route>
 
 <template>
-  <div class="orders-container border-1 border-solid border-light-700 rounded-md p-5">
-    <div class="border-b-1 border-b-solid border-b-light-700 py-3 text-2xl font-medium">
-      <h3>Orders</h3>
+  <div class="orders-container border-1 border-solid border-light-700 rounded-lg p-5 bg-[#EBF6FC]">
+    <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
+      <IBOrder />
+      <h3 class="text-2xl">
+        Your orders lists
+      </h3>
     </div>
 
     <div class="orders-table text-center py-3">

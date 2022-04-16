@@ -129,23 +129,26 @@ index:
   commit: Shopee commits that the amount you pay will be transferred to the seller after you receive the goods. We always protect you
   advertisement-1-desc: The place to own all the products you love
   advertisement-2-title: Buy and sell online
-  advertisement-2-desc: Enjoy shopping and doing business on a reputable e-commerce exchange
+  advertisement-2-desc: Enjoy shopping and doing business with prestige
   advertisement-3-title: gifts for new customers
   advertisement-3-desc: Exclusive and attractive gifts for new customers at e-shopee
   customer-opinion-title: What do users say about e-shopee
-  opinion-1: I always look forward to Shopee to hunt for deals and always get surprisingly good deals. Not to mention every deal hunting is fun, the last deal hunt is the most fun in my 2 years of e-shopee addiction
+  opinion-1: I always look forward to e-shopee to hunt for deals and always get surprisingly good deals. Not to mention every deal hunting is fun, the last deal hunt is the most fun in my 2 years of e-shopee addiction
   opinion-2: Every time I go to e-shopee, I have great results, dozens of items keep picking up until I receive the goods, I don't even know when I ordered this or that. So addicted to e-shopee
   joined-at: Joined at
   copyright: Copyright
   all-rights-reserved: All rights reserved
-login:
-  no-account: Don't have an account
-  sign-up-invite: Join us to become a member and start shopping in your style
-  sign-up: Sign up
-  have-account: Have an account
-  sign-in-invite: Sign in to experience many attractive offers and services
-  sign-in: Login
-  forgot-password: Forgot password
+auth:
+  b-forgot-title: You forgot you password
+  b-forgot-invite: It's easy to reset a new password in a snap
+  b-forgot: Forgot
+  b-forgot-form-title: Forgot password
+  b-forgot-form-desc: Please enter your username or email address. You will received a link to create a new password via email
+  b-forgot-form-button: Get New Password
+  b-reset-title: Reset your new password
+  b-reset-invite: Check the confirmation code sent from your registered email
+  b-reset: Reset
+  b-reset-form-button: Reset password
 cart:
   cart: Cart
   preview: Preview

@@ -41,7 +41,7 @@ const message = ref('')
       </div>
     </div>
     <div class="right">
-      <form action="src/php/mail.php" method="post">
+      <form action="" method="post">
         <h3>
           {{ t('contact.tell-us-your-message') }}
         </h3>
@@ -61,7 +61,7 @@ const message = ref('')
           <label for="fmessage">{{ t('contact.note') }}</label><br>
           <textarea v-model="message" placeholder="write somethings..." class="h-30" />
         </div>
-        <button type="submit" value="submit" class="bg-black text-white font-semibold py-2 px-7 rounded-md hover:bg-[#E14641] duration-200 uppercase tracking-widest cursor-pointer">
+        <button type="submit" value="submit" class="bg-black text-white font-semibold py-2 px-7 rounded-md hover:bg-[#E14641] dark:bg-[#E14641] duration-200 uppercase tracking-widest cursor-pointer">
           {{ t('contact.submit') }}
         </button>
       </form>

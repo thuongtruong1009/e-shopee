@@ -1,11 +1,9 @@
 <route lang="yaml">
 meta:
-  layout: SProdAdd
+  layout: seller/prod/LSProdAdd
 </route>
 
 <script setup>
-import ISearch from '~/components/ISearch.vue'
-import ICaretRight from '~/components/ICaretRight.vue'
 useHead({
   title: 'seller | add-productions',
 })

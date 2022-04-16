@@ -1,10 +1,9 @@
 <route lang="yaml">
 meta:
-  layout: SProdAll
+  layout: seller/prod/LSProdAll
 </route>
 
 <script setup>
-import IQuestion from '~/components/IQuestion.vue'
 useHead({
   title: 'seller | all-productions',
 })

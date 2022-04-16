@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: LFavourite
+  layout: buyer/LBFavourite
 </route>
 
 <script setup>

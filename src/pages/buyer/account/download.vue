@@ -1,12 +1,15 @@
 <route lang="yaml">
 meta:
-  layout: LDownload
+  layout: buyer/account/LBDownload
 </route>
 
 <template>
-  <div class="download-container border-1 border-solid border-light-700 rounded-md p-5">
-    <div class="border-b-1 border-b-solid border-b-light-700 py-3 text-2xl font-medium">
-      <h3>Downloads</h3>
+  <div class="download-container border-1 border-solid border-light-700 rounded-md p-5 bg-[#EBF6FC]">
+    <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
+      <IBDownload />
+      <h3 class="text-2xl">
+        Downloads
+      </h3>
     </div>
 
     <div class="download-table text-center py-3">

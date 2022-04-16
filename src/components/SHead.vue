@@ -1,5 +1,4 @@
 <script setup>
-import IShopee from '~/components/IShopee.vue'
 
 const getURL = window.location.href
 const splitURL = getURL.split('/')

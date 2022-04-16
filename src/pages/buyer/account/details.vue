@@ -1,12 +1,15 @@
 <route lang="yaml">
 meta:
-  layout: LDetails
+  layout: buyer/account/LBDetails
 </route>
 
 <template>
-  <div class="myaccount-content border-1 border-solid border-light-700 rounded-md p-5">
-    <div class="border-b-1 border-b-solid border-b-light-700 py-3 text-2xl font-medium">
-      <h3>Account Details</h3>
+  <div class="myaccount-content border-1 border-solid border-light-700 rounded-md p-5 bg-[#EBF6FC]">
+    <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
+      <IBAccount />
+      <h3 class="text-2xl">
+        Account details
+      </h3>
     </div>
 
     <div class="account-details-form">
@@ -46,7 +49,6 @@ meta:
 <style scoped>
 input{
   width: 100%;
-  outline: none;
   border: 1px solid rgba(233, 236, 239);
   border-radius: 0.3rem;
   padding: 0.3rem 1rem;

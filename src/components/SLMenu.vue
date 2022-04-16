@@ -1,8 +1,4 @@
 <script setup>
-import IOrder from '~/components/IOrder.vue'
-import IProd from '~/components/IProd.vue'
-import IShop from '~/components/IShop.vue'
-
 const sellerName = ref('Thuong Truong')
 const sellerAvatar = ref('/img/admin/avatar_sample.png')
 const notifyTotal = ref(102)
