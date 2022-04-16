@@ -33,24 +33,27 @@ const { t } = useI18n()
         <img src="/img/about/about_img.webp" alt="about_img" class="rounded-lg">
       </div>
     </div>
-    <div class="grid grid-cols-3 text-left p-10">
-      <div>
+    <div class="flex justify-between flex-wrap text-left p-10">
+      <div class="max-w-115">
         <h2><ICompany /> {{ t('about.our-company') }}</h2>
         <p class="dark:text-gray-400">
           {{ t('about.company-desc') }}.
         </p>
+        <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="company_img" class="bg-contain rounded-lg mt-5">
       </div>
-      <div>
+      <div class="max-w-115">
         <h2><ITeam /> {{ t('about.our-team') }}</h2>
         <p class="dark:text-gray-400">
           {{ t('about.team-desc') }}.
         </p>
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="team_img" class="bg-contain rounded-lg mt-5">
       </div>
-      <div>
+      <div class="max-w-115">
         <h2><ITestimonial /> {{ t('about.testimonial') }}</h2>
         <p class="dark:text-gray-400">
           {{ t('about.testimonial-desc') }}.
         </p>
+        <img src="https://images.unsplash.com/photo-1572884267966-02340ebc90ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="testimonial_img" class="bg-contain rounded-lg mt-5">
       </div>
     </div>
   </div>

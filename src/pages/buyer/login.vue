@@ -37,9 +37,11 @@ useHead({
           Forgot password?
         </a>
       </div>
-      <button type="submit" class="form__button flex justify-center items-center gap-2 font-semibold uppercase mt-5">
-        <IBUnlock />SIGN IN
-      </button>
+      <a href="/buyer/home">
+        <button type="submit" class="form__button flex justify-center items-center gap-2 font-semibold uppercase mt-5">
+          <IBUnlock />SIGN IN
+        </button>
+      </a>
     </form>
     <!-- ballon decoration -->
     <div class="ballon__circle ballon__circle--t0 absolute" />
