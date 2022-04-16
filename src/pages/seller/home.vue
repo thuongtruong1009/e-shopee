@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: SHome
+  layout: seller/LSHome
 </route>
 
 <script setup>

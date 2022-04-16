@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: LDownload
+  layout: buyer/account/LBDownload
 </route>
 
 <template>

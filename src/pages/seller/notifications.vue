@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: SNotifications
+  layout: seller/LSNotifications
 </route>
 
 <script setup>

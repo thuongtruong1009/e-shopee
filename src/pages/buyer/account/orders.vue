@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: LOrders
+  layout: buyer/account/LBOrders
 </route>
 
 <template>

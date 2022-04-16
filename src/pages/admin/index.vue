@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: AHome
+  layout: admin/LAHome
 </route>
 
 <template>

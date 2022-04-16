@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: LPayment
+  layout: buyer/account/LBPayment
 </route>
 
 <template>

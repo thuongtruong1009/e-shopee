@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: SLogin
+  layout: seller/LSLogin
 </route>
 
 <script setup>

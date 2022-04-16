@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: ALogin
+  layout: admin/LALogin
 </route>
 
 <script setup lang="ts">

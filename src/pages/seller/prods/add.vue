@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: SProdAdd
+  layout: seller/prod/LSProdAdd
 </route>
 
 <script setup>

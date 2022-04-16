@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: SShopAddress
+  layout: seller/shop/LSShopAddress
 </route>
 
 <script setup>

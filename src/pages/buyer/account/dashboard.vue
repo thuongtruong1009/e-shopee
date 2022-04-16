@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: LDashboard
+  layout: buyer/account/LBDashboard
 </route>
 
 <template>

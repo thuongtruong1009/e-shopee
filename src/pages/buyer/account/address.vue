@@ -24,5 +24,5 @@
 
 <route lang="yaml">
 meta:
-  layout: LAddress
+  layout: buyer/account/LBAddress
 </route>

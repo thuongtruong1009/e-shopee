@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: SOrderAll
+  layout: seller/order/LSOrderAll
 </route>
 
 <script setup>

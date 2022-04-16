@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: LFilter
+  layout: buyer/LBFilter
 </route>
 
 <script setup>

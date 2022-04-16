@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: LDetails
+  layout: buyer/account/LBDetails
 </route>
 
 <template>

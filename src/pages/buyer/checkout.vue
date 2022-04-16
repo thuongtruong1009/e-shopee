@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: LCheckout
+  layout: buyer/LBCheckout
 </route>
 
 <script setup>
