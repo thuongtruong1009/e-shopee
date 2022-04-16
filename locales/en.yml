@@ -139,15 +139,16 @@ index:
   copyright: Copyright
   all-rights-reserved: All rights reserved
 auth:
-  no-account: Don't have an account
-  sign-up-invite: Join us to become a member and start shopping in your style
-  sign-up: Sign up
   b-forgot-title: You forgot you password
   b-forgot-invite: It's easy to reset a new password in a snap
   b-forgot: Forgot
   b-forgot-form-title: Forgot password
   b-forgot-form-desc: Please enter your username or email address. You will received a link to create a new password via email
   b-forgot-form-button: Get New Password
+  b-reset-title: Reset your new password
+  b-reset-invite: Check the confirmation code sent from your registered email
+  b-reset: Reset
+  b-reset-form-button: Reset password
 cart:
   cart: Cart
   preview: Preview

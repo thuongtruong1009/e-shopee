@@ -24,13 +24,13 @@ const onSignUp = () => {
   <div class="login-container max-w-full max-h-full grid grid-cols-2 bg-true-gray-700 text-white text-left mt-15 relative rounded-md">
     <div class="user_options-unregistered col-span-1 py-20 px-10">
       <h2 class="user_unregistered-title text-2xl font-bold">
-        {{ t('auth.no-account') }}?
+        {{ t('auth.b-reset-title') }}?
       </h2>
       <p class="user_unregistered-text font-light text-sm">
-        {{ t('auth.sign-up-invite') }}.
+        {{ t('auth.b-reset-invite') }}.
       </p>
       <button id="signup-button" class="user_unregistered-signup uppercase mt-10 py-1 px-7 border-1 border-solid rounded-md border-light-200 hover:bg-gray-300 hover:text-black duration-200 tracking-widest animate-bounce" @click="onSignUp">
-        {{ t('auth.sign-up') }}
+        {{ t('auth.b-reset') }}
       </button>
     </div>
 
@@ -54,7 +54,7 @@ const onSignUp = () => {
           <p class="text-gray-500 dark:text-light-300 mt-5">
             {{ t('auth.b-forgot-form-desc') }}.
           </p>
-          <form class="forms_form">
+          <form class="forms_form" method="post" action="">
             <fieldset class="forms_fieldset border-solid border-2 border-gray-400 my-10 rounded-md">
               <div class="forms_field pt-2">
                 <input type="email" placeholder="Username or Email address" name="usernameOrEmail" class="forms_field-input dark:bg-[#663399] dark:text-gray-200 text-black" required autofocus>
@@ -72,23 +72,26 @@ const onSignUp = () => {
       <Transition name="slide-fade">
         <div v-if="isClicking === true" class="user_forms-reset">
           <h2 class="forms_title text-[#E14641] text-4xl font-semibold">
-            {{ t('auth.sign-up') }}
+            New password
           </h2>
-          <form class="forms_form">
+          <form class="forms_form" method="post" action="">
             <fieldset class="forms_fieldset border-solid border-2 border-gray-400 my-10 rounded-md">
               <div class="forms_field">
-                <input type="text" placeholder="Full Name" name="username" class="forms_field-input dark:bg-[#663399] dark:text-gray-200 text-black" required autofocus>
+                <input type="text" placeholder="Verification code" name="token" class="forms_field-input dark:bg-[#663399] dark:text-gray-200 text-black" required autofocus>
               </div>
               <div class="forms_field">
                 <input type="email" placeholder="Email" name="email" class="forms_field-input dark:bg-[#663399] dark:text-gray-200 text-black" required>
               </div>
               <div class="forms_field">
-                <input type="password" placeholder="Password" name="password" class="forms_field-input dark:bg-[#663399] dark:text-gray-200 text-black" required>
+                <input type="password" placeholder="New password" name="password" class="forms_field-input dark:bg-[#663399] dark:text-gray-200 text-black" required>
+              </div>
+              <div class="forms_field">
+                <input type="password" placeholder="Password confirmation" name="passsword_confirmation" class="forms_field-input dark:bg-[#663399] dark:text-gray-200 text-black" required>
               </div>
             </fieldset>
             <div class="forms_buttons flex justify-end">
               <button type="submit" value="Sign up" class="forms_buttons-action bg-[#E8716D] hover:bg-[#E14641] duration-200 uppercase text-white py-1.5 px-7 rounded-md tracking-widest cursor-pointer">
-                Sign up
+                {{ t('auth.b-reset-form-button') }}
               </button>
             </div>
           </form>
