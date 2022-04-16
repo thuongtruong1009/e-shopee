@@ -18,6 +18,9 @@ useHead({
           <IBRegister />
           <h1>Create Account</h1>
         </div>
+        <p class="text-sm text-gray-400 font-medium">
+          Join us and start shopping in your style
+        </p>
         <div>
           <div class="icon">
             <IBUsername />

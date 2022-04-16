@@ -19,7 +19,7 @@ useHead({
     </div>
     <form class="flex justify-center items-center flex-col p-5 rounded-2xl z-10 bg-[#ecf0f3]" method="POST" action="">
       <h2 class="form_title fs-1 fw-bold pb-5">
-        Login by third factor
+        Experience many attractive offers and services
       </h2>
       <div class="flex justify-evenly w-full">
         <IBFacebook class="form__icon" />
