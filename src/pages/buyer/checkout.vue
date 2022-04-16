@@ -42,203 +42,211 @@ const showPass = () => {
         <h5 @click="showPersonal">
           <i class="fas fa-user-shield" /> {{ t('checkout.personal-information') }}
         </h5>
-        <div v-if="isPersonal === true" class="hide-content">
-          <form action="" method="post">
-            <div class="order-asguest mt-2 mb-4">
-              <p>{{ t('checkout.order-as-guest') }} &thinsp; &verbar; &thinsp;</p>
-              <router-link to="/buyer/login" class="hover:text-red-500 hover:opacity-100 opacity-60 duration-200">
-                {{ t('checkout.login') }}
-              </router-link>
-            </div>
-            <div>
-              <label>
-                {{ t('checkout.pronoun') }}
-              </label>
-              <div class="flex">
-                <div class="custom-radio mr-10">
-                  <input id="test1" type="radio" name="pronoun-radio">
-                  <label for="test1">{{ t('checkout.mr') }}</label>
-                </div>
-                <div class="custom-radio">
-                  <input id="test2" type="radio" name="pronoun-radio">
-                  <label for="test2">{{ t('checkout.mrs') }}</label>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <label for="name">{{ t('checkout.name') }} *</label>
-              <input id="name" type="text" required>
-            </div>
-            <div>
-              <label for="email">{{ t('checkout.email') }} *</label>
-              <input id="email" type="email" required>
-            </div>
-
-            <div class="password-personal">
-              <label for="Password">{{ t('checkout.password') }}</label>
-              <div class="flex items-center w-76 <xl:w-61 <lg:w-46">
-                <input id="Password" type="password" class="w-10/12 outline-none rounded-sm border-1 border-solid border-gray-300 py-1 px-4 duration-200 ease-linear">
-                <div class="cursor-pointer px-2 mt-1 ml-0.5 text-white bg-black h-8 rounded-sm" @click="showPass">
-                  {{ t('checkout.show') }}
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <label for="birthdate">{{ t('checkout.birthdate') }}</label>
-              <input type="date" placeholder="MM/DD/YYYY">
-            </div>
-
-            <div class="check-personal">
-              <div class="mr-5">
-                <input id="20820" type="checkbox">
-                <label for="20820">{{ t('checkout.receive offers') }}</label>
+        <Transition duration="550" name="nested">
+          <div v-if="isPersonal === true" class="hide-content">
+            <form action="" method="post">
+              <div class="order-asguest mt-2 mb-4">
+                <p>{{ t('checkout.order-as-guest') }} &thinsp; &verbar; &thinsp;</p>
+                <router-link to="/buyer/login" class="hover:text-red-500 hover:opacity-100 opacity-60 duration-200">
+                  {{ t('checkout.login') }}
+                </router-link>
               </div>
               <div>
-                <input id="20821" type="checkbox">
-                <label for="20821">{{ t('checkout.signup-newsletter') }}</label>
+                <label>
+                  {{ t('checkout.pronoun') }}
+                </label>
+                <div class="flex">
+                  <div class="custom-radio mr-10">
+                    <input id="test1" type="radio" name="pronoun-radio">
+                    <label for="test1">{{ t('checkout.mr') }}</label>
+                  </div>
+                  <div class="custom-radio">
+                    <input id="test2" type="radio" name="pronoun-radio">
+                    <label for="test2">{{ t('checkout.mrs') }}</label>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div class="justify-end">
-              <a href="#" class="btn">{{ t('checkout.continue') }}</a>
-            </div>
-          </form>
-        </div>
+              <div>
+                <label for="name">{{ t('checkout.name') }} *</label>
+                <input id="name" type="text" required>
+              </div>
+              <div>
+                <label for="email">{{ t('checkout.email') }} *</label>
+                <input id="email" type="email" required>
+              </div>
+
+              <div class="password-personal">
+                <label for="Password">{{ t('checkout.password') }}</label>
+                <div class="flex items-center w-76 <xl:w-61 <lg:w-46">
+                  <input id="Password" type="password" class="w-10/12 outline-none rounded-sm border-1 border-solid border-gray-300 py-1 px-4 duration-200 ease-linear">
+                  <div class="cursor-pointer px-2 mt-1 ml-0.5 text-white bg-black h-8 rounded-sm" @click="showPass">
+                    {{ t('checkout.show') }}
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label for="birthdate">{{ t('checkout.birthdate') }}</label>
+                <input type="date" placeholder="MM/DD/YYYY">
+              </div>
+
+              <div class="check-personal">
+                <div class="mr-5">
+                  <input id="20820" type="checkbox">
+                  <label for="20820">{{ t('checkout.receive offers') }}</label>
+                </div>
+                <div>
+                  <input id="20821" type="checkbox">
+                  <label for="20821">{{ t('checkout.signup-newsletter') }}</label>
+                </div>
+              </div>
+
+              <div class="justify-end">
+                <a href="#" class="btn">{{ t('checkout.continue') }}</a>
+              </div>
+            </form>
+          </div>
+        </Transition>
       </div>
       <div class="address">
         <h5 @click="showAddress">
           <i class="fas fa-map-marker-alt" /> {{ t('checkout.address') }}
         </h5>
-        <div v-if="isAddress === true" class="hide-content">
-          <form action="" method="post">
-            <div class="order-asguest mt-2 mb-4">
-              <p>{{ t('checkout.address-desc') }}.</p>
-            </div>
+        <Transition duration="550" name="nested">
+          <div v-if="isAddress === true" class="hide-content">
+            <form action="" method="post">
+              <div class="order-asguest mt-2 mb-4">
+                <p>{{ t('checkout.address-desc') }}.</p>
+              </div>
 
-            <div>
-              <label for="address">{{ t('checkout.address') }} *</label>
-              <input id="address" type="text" required>
-            </div>
+              <div>
+                <label for="address">{{ t('checkout.address') }} *</label>
+                <input id="address" type="text" required>
+              </div>
 
-            <div>
-              <label for="city">{{ t('checkout.city') }} *</label>
-              <input id="city" type="text" required>
-            </div>
+              <div>
+                <label for="city">{{ t('checkout.city') }} *</label>
+                <input id="city" type="text" required>
+              </div>
 
-            <div>
-              <label for="birthdate">{{ t('checkout.zip') }}</label>
-              <input type="text">
-            </div>
+              <div>
+                <label for="birthdate">{{ t('checkout.zip') }}</label>
+                <input type="text">
+              </div>
 
-            <div>
-              <label for="country">{{ t('checkout.country') }}</label>
-              <select id="country" type="text" name="country" placeholder="--country--">
-                <option value="vn">
-                  {{ t('checkout.vietnam') }}
-                </option>
-                <option value="ru">
-                  {{ t('checkout.russia') }}
-                </option>
-                <option value="en">
-                  {{ t('checkout.england') }}
-                </option>
-                <option value="us">
-                  {{ t('checkout.united-states') }}
-                </option>
-                <option value="ja">
-                  {{ t('checkout.japan') }}
-                </option>
-                <option value="fr">
-                  {{ t('checkout.france') }}
-                </option>
-                <option value="in">
-                  {{ t('checkout.india') }}
-                </option>
-                <option value="ch">
-                  {{ t('checkout.china') }}
-                </option>
-                <option class="italic font-thin text-xs">
-                  {{ t('checkout.not-have-country') }}.
-                </option>
-              </select>
-            </div>
+              <div>
+                <label for="country">{{ t('checkout.country') }}</label>
+                <select id="country" type="text" name="country" placeholder="--country--">
+                  <option value="vn">
+                    {{ t('checkout.vietnam') }}
+                  </option>
+                  <option value="ru">
+                    {{ t('checkout.russia') }}
+                  </option>
+                  <option value="en">
+                    {{ t('checkout.england') }}
+                  </option>
+                  <option value="us">
+                    {{ t('checkout.united-states') }}
+                  </option>
+                  <option value="ja">
+                    {{ t('checkout.japan') }}
+                  </option>
+                  <option value="fr">
+                    {{ t('checkout.france') }}
+                  </option>
+                  <option value="in">
+                    {{ t('checkout.india') }}
+                  </option>
+                  <option value="ch">
+                    {{ t('checkout.china') }}
+                  </option>
+                  <option class="italic font-thin text-xs">
+                    {{ t('checkout.not-have-country') }}.
+                  </option>
+                </select>
+              </div>
 
-            <div>
-              <label for="phone">{{ t('checkout.phone') }}</label>
-              <input id="phone" type="text">
-            </div>
+              <div>
+                <label for="phone">{{ t('checkout.phone') }}</label>
+                <input id="phone" type="text">
+              </div>
 
-            <div class="justify-end">
-              <a href="#" class="btn">{{ t('checkout.continue') }}</a>
-            </div>
-          </form>
-        </div>
+              <div class="justify-end">
+                <a href="#" class="btn">{{ t('checkout.continue') }}</a>
+              </div>
+            </form>
+          </div>
+        </Transition>
       </div>
       <div class="shipping">
         <h5 @click="showShipping">
           <i class="fas fa-shipping-fast" /> {{ t('checkout.shipping-method') }}
         </h5>
-        <div v-if="isShipping === true" class="hide-content">
-          <form action="" method="post">
-            <div class="bg-[#F6F6F6] justify-around mt-3 grid grid-cols-3 rounded-md">
-              <div class="flex justify-center items-center">
-                <input id="delivery" type="radio" name="delivery-radio" required checked>
+        <Transition duration="550" name="nested">
+          <div v-if="isShipping === true" class="hide-content">
+            <form action="" method="post">
+              <div class="bg-[#F6F6F6] justify-around mt-3 grid grid-cols-3 rounded-md">
+                <div class="flex justify-center items-center">
+                  <input id="delivery" type="radio" name="delivery-radio" required checked>
+                </div>
+                <div class="flex justify-around items-center">
+                  <img src="/img/icon/10.jpg" alt="My carrier">
+                  <span>Ninja J&T</span>
+                </div>
+                <div class="flex justify-center items-center">
+                  <span class="carrier-delay">{{ t('checkout.delivery-next-day') }}!</span>
+                </div>
+                <div class="flex justify-center items-center">
+                  <span class="carrier-price">$7.00 tax excl.</span>
+                </div>
               </div>
-              <div class="flex justify-around items-center">
-                <img src="/img/icon/10.jpg" alt="My carrier">
-                <span>Ninja J&T</span>
-              </div>
-              <div class="flex justify-center items-center">
-                <span class="carrier-delay">{{ t('checkout.delivery-next-day') }}!</span>
-              </div>
-              <div class="flex justify-center items-center">
-                <span class="carrier-price">$7.00 tax excl.</span>
-              </div>
-            </div>
 
-            <div class="order-asguest mt-2 mb-4">
-              <p>{{ t('checkout.note-field') }}..</p>
-            </div>
+              <div class="order-asguest mt-2 mb-4">
+                <p>{{ t('checkout.note-field') }}..</p>
+              </div>
 
-            <div>
-              <textarea v-model="message" placeholder="write your note..." class="h-20 min-w-full" />
-            </div>
+              <div>
+                <textarea v-model="message" placeholder="write your note..." class="h-20 min-w-full" />
+              </div>
 
-            <div class="justify-end">
-              <a href="#" class="btn">{{ t('checkout.continue') }}</a>
-            </div>
-          </form>
-        </div>
+              <div class="justify-end">
+                <a href="#" class="btn">{{ t('checkout.continue') }}</a>
+              </div>
+            </form>
+          </div>
+        </Transition>
       </div>
       <div class="payment">
         <h5 @click="showPayment">
           <i class="far fa-credit-card" /> {{ t('checkout.payment') }}
         </h5>
-        <div v-if="isPayment === true" class="hide-content">
-          <form action="" method="post">
-            <div>
-              <input id="payment-check" type="radio" name="payment-radio">
-              <label for="payment-check">{{ t('checkout.pay-by-check') }}</label>
-            </div>
-            <div>
-              <input id="payment-wire" type="radio" name="payment-radio">
-              <label for="payment-wire">{{ t('checkout.pay-by-wire') }}</label>
-            </div>
-            <div>
-              <input id="payment-cash" type="radio" name="payment-radio" checked>
-              <label for="payment-cash">{{ t('checkout.pay-by-cash') }}</label>
-            </div>
-            <div>
-              <input id="payment-momo" type="radio" name="payment-radio">
-              <label for="payment-momo">{{ t('checkout.pay-by-momo') }}</label>
-            </div>
-            <div class="justify-end">
-              <a href="#" class="btn">{{ t('checkout.continue') }}</a>
-            </div>
-          </form>
-        </div>
+        <Transition duration="550" name="nested">
+          <div v-if="isPayment === true" class="hide-content">
+            <form action="" method="post">
+              <div>
+                <input id="payment-check" type="radio" name="payment-radio">
+                <label for="payment-check">{{ t('checkout.pay-by-check') }}</label>
+              </div>
+              <div>
+                <input id="payment-wire" type="radio" name="payment-radio">
+                <label for="payment-wire">{{ t('checkout.pay-by-wire') }}</label>
+              </div>
+              <div>
+                <input id="payment-cash" type="radio" name="payment-radio" checked>
+                <label for="payment-cash">{{ t('checkout.pay-by-cash') }}</label>
+              </div>
+              <div>
+                <input id="payment-momo" type="radio" name="payment-radio">
+                <label for="payment-momo">{{ t('checkout.pay-by-momo') }}</label>
+              </div>
+              <div class="justify-end">
+                <a href="#" class="btn">{{ t('checkout.continue') }}</a>
+              </div>
+            </form>
+          </div>
+        </Transition>
       </div>
     </div>
 
@@ -347,6 +355,19 @@ input[type="date"]:focus,
 select[type="text"]:focus,
 textarea:focus{
     box-shadow: 1px 1px 3px rgb(59, 175, 252);
+}
+/* **************** TRANSITiON ******************* */
+.nested-enter-active,
+.nested-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+.nested-leave-active {
+  transition-delay: 0.1s;
+}
+.nested-enter-from,
+.nested-leave-to {
+  transform: translateY(30px);
+  opacity: 0;
 }
 @media (max-width: 991px){
   .checkout-container{
