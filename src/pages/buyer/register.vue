@@ -12,7 +12,7 @@ useHead({
 
 <template>
   <div class="buyer-register-container flex justify-center pt-20">
-    <div class="register-inner border-4 border-solid border-white rounded-2xl flex w-4xl relative flex shadow-2xl shadow-gray-400">
+    <div class="register-inner border-4 border-solid border-white rounded-2xl flex w-4xl relative flex shadow-2xl shadow-gray-400 bg-[#B0D9DB]">
       <form action="" method="post" class="bg-white w-1/2 p-5 rounded-xl">
         <div class="capitalize text-2xl font-bold flex justify-center items-center">
           <IBRegister />
@@ -43,15 +43,17 @@ useHead({
           <input type="password" name="password_confirmation" placeholder="Password confirmation" required>
         </div>
         <div>
-          <button type="submit" class="capitalize bg-[#5ABBC1] font-semibold text-white text-md rounded-md py-1.75 w-full">
-            Create Account
-          </button>
+          <a href="/buyer/login">
+            <button type="submit" class="capitalize bg-[#5ABBC1] font-semibold text-white text-md rounded-md py-1.75 w-full">
+              Create Account
+            </button>
+          </a>
           <p class="text-left text-gray-400 text-sm mt-3">
             Already have account? <a href="/buyer/login" class="text-[#5ABBC1]">Login</a>
           </p>
         </div>
       </form>
-      <div class="bg-[#B0D9DB]">
+      <div class="h-full w-1/2">
         <img src="/parttern/block.png" alt="block_pattern" class="absolute -top-5 -right-5 w-lg">
       </div>
     </div>
