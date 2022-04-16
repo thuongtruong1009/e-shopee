@@ -4,9 +4,12 @@ meta:
 </route>
 
 <template>
-  <div class="myaccount-content border-1 border-solid border-light-700 p-6 text-left">
-    <div class="border-b-1 border-b-solid border-b-light-700 py-3 text-2xl font-medium">
-      <h3>Dashboard</h3>
+  <div class="myaccount-content border-1 border-solid border-light-700 p-6 text-left rounded-lg">
+    <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
+      <IBDashboard />
+      <h3 class="text-2xl">
+        Dashboard
+      </h3>
     </div>
     <div class="welcome py-5">
       <p>

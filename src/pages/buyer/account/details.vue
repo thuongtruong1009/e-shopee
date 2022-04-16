@@ -5,8 +5,11 @@ meta:
 
 <template>
   <div class="myaccount-content border-1 border-solid border-light-700 rounded-md p-5">
-    <div class="border-b-1 border-b-solid border-b-light-700 py-3 text-2xl font-medium">
-      <h3>Account Details</h3>
+    <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
+      <IBAccount />
+      <h3 class="text-2xl">
+        Account details
+      </h3>
     </div>
 
     <div class="account-details-form">

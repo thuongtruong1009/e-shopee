@@ -4,49 +4,49 @@ const { t } = useI18n()
 
 <template>
   <div class="nav-container grid grid-rows-7 max-w-xs text-black dark:text-gray-300">
-    <router-link to="/account/dashboard" :title="dashboard">
-      <div class="items">
+    <router-link to="/buyer/account/dashboard" :title="dashboard">
+      <div class="items rounded-t-lg">
         <i class="fas fa-tachometer-alt" />
         {{ t('caccount.dashboard') }}
       </div>
     </router-link>
 
-    <router-link to="/account/orders" :title="orders">
+    <router-link to="/buyer/account/orders" :title="orders">
       <div class="items">
         <i class="fa fa-cart-arrow-down" />
         {{ t('caccount.orders') }}
       </div>
     </router-link>
 
-    <router-link to="/account/download" :title="download">
+    <router-link to="/buyer/account/download" :title="download">
       <div class="items">
         <i class="fas fa-cloud-download-alt" />
         {{ t('caccount.download') }}
       </div>
     </router-link>
 
-    <router-link to="/account/payment" :title="payment">
+    <router-link to="/buyer/account/payment" :title="payment">
       <div class="items">
         <i class="fa fa-credit-card" />
         {{ t('caccount.payment-method') }}
       </div>
     </router-link>
 
-    <router-link to="/account/address" :title="address">
+    <router-link to="/buyer/account/address" :title="address">
       <div class="items">
         <i class="fa fa-map-marker" />
         {{ t('caccount.address') }}
       </div>
     </router-link>
 
-    <router-link to="/account/details" :title="details" class="active">
+    <router-link to="/buyer/account/details" :title="details" class="active">
       <div class="items">
         <i class="fa fa-user" /> {{ t('caccount.account-details') }}
       </div>
     </router-link>
 
-    <router-link to="/login" :title="logout">
-      <div class="items">
+    <router-link to="/buyer/login" :title="logout">
+      <div class="items rounded-b-lg">
         <i class="fa fa-sign-out" /> {{ t('caccount.Logout') }}
       </div>
     </router-link>

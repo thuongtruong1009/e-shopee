@@ -3,7 +3,7 @@ meta:
   layout: LIndex
 </route>
 
-<script setup lang="ts">
+<script setup>
 useHead({
   title: 'e-shopee',
 })
@@ -20,7 +20,7 @@ const { t } = useI18n()
             <IAdmin />{{ t('index.admin-chanel') }}
           </h2>
         </router-link>
-        <router-link to="/seller/home">
+        <router-link to="/seller/login">
           <h2 class="text-sm flex items-center gap-1">
             <ISell />{{ t('index.seller-chanel') }}
           </h2>
