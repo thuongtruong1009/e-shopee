@@ -111,6 +111,7 @@ declare module 'vue' {
     IShop: typeof import('./components/icons/IShop.vue')['default']
     IShopee: typeof import('./components/icons/IShopee.vue')['default']
     IStar: typeof import('./components/icons/IStar.vue')['default']
+    IStars: typeof import('./components/icons/IStars.vue')['default']
     IStatus: typeof import('./components/icons/IStatus.vue')['default']
     ITeam: typeof import('./components/icons/about/ITeam.vue')['default']
     ITestimonial: typeof import('./components/icons/about/ITestimonial.vue')['default']
