@@ -94,7 +94,7 @@ const categories2 = reactive([{
       :space-between="10" class="w-full py-2"
     >
       <swiper-slide v-for="(category1, i) in categories1" :key="i" class="grid">
-        <div class="border-1 border-solid border-[#e9e9e9] rounded-md shadow-sm shadow-gray-300 text-xs my-2 cursor-pointer">
+        <div class="border-1 border-solid border-[#e9e9e9] rounded-md shadow-sm shadow-gray-300 hover:shadow-md text-xs my-2 cursor-pointer">
           <div class="flex justify-center mb-2">
             <img :src="category1.img" alt="category_img" class="max-w-30">
           </div>
@@ -107,7 +107,7 @@ const categories2 = reactive([{
       :space-between="10" class="w-full py-2"
     >
       <swiper-slide v-for="(category2, i) in categories2" :key="i" class="grid">
-        <div class="border-1 border-solid border-[#e9e9e9] rounded-md shadow-sm shadow-gray-300 text-xs my-2 cursor-pointer">
+        <div class="border-1 border-solid border-[#e9e9e9] rounded-md shadow-sm shadow-gray-300 hover:shadow-md text-xs my-2 cursor-pointer">
           <div class="flex justify-center mb-2">
             <img :src="category2.img" alt="category_img" class="max-w-30">
           </div>

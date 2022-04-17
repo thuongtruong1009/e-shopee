@@ -1,5 +1,4 @@
 <script setup>
-import ICaretRight from '~/components/ICaretRight.vue'
 const { t } = useI18n()
 const lists = reactive([
   {
@@ -71,22 +70,24 @@ const onAppearMenu = () => {
       <ul class="menu flex justify-between">
         <li class="menu-item relative" @click="onAppearMenu">
           <a href="#" class="menu-link text-white block text-base text-white bg-[#1D71AB] hover:bg-[#38689A] duration-200 py-1.5 px-5 rounded-t-lg">
-            <i class="fas fa-list-ul" /> {{ t('header.menu product items') }}
+            <i class="fas fa-list-ul" /> {{ t('header.categories') }}
           </a>
-          <ul v-if="isAppearMenu === true" class="menu-child absolute z-90 bg-white rounded-b-md divide-1 divide-y divide-solid divide-gray-200">
-            <li v-for="(item, i) in Object.keys(lists[0])" :key="i" class="relative">
-              <a href="#" class="flex justify-between items-center p-2 text-black hover:text-orange-600">
-                {{ item }} <ICaretRight />
-              </a>
-              <ul class="menu-child-1 absolute bg-white left-40 top-0 rounded-md">
-                <li class="">
-                  <a href="#" class="flex justify-between items-center p-6 text-[#918eae]">
-                    {{ lists[0][String(item)] }}
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <Transition duration="550" name="nested">
+            <ul v-if="isAppearMenu === true" class="menu-child absolute z-90 bg-white rounded-md divide-1 divide-y divide-solid divide-gray-200">
+              <li v-for="(item, i) in Object.keys(lists[0])" :key="i" class="relative">
+                <a href="#" class="flex justify-between items-center p-2 text-black hover:text-orange-600">
+                  {{ item }} <ICaretRight class="caret_sign" />
+                </a>
+                <ul class="menu-child-1 absolute bg-white left-40 top-0 rounded-md">
+                  <li>
+                    <a href="#" class="flex justify-between items-center p-6 text-[#918eae]">
+                      {{ lists[0][String(item)] }}
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </Transition>
         </li>
         <li>
           <ul class="float-menu flex text-sm text-gray-500">
@@ -108,8 +109,15 @@ const onAppearMenu = () => {
         width: fit-content;
         display: none;
     }
+    .caret_sign{
+      opacity: 0;
+      transition: 0.3s;
+    }
     .menu-item > ul > li:hover .menu-child-1{
         display: block;
+    }
+    .menu-item > ul > li:hover .caret_sign{
+      opacity: 1;
     }
     /* .menu-item > li:not(:first-child){
         background:rgba(255, 255, 255, 0.9);
@@ -122,4 +130,17 @@ const onAppearMenu = () => {
         background: #F97316;
         color: white;
     } */
+  /* **************** TRANSITiON ******************* */
+  .nested-enter-active,
+  .nested-leave-active {
+    transition: all 0.3s ease-in-out;
+  }
+  .nested-leave-active {
+    transition-delay: 0.1s;
+  }
+  .nested-enter-from,
+  .nested-leave-to {
+    transform: translateY(30px);
+    opacity: 0;
+  }
 </style>

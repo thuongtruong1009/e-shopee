@@ -369,6 +369,7 @@ textarea:focus{
   transform: translateY(30px);
   opacity: 0;
 }
+/* ******************************************* */
 @media (max-width: 991px){
   .checkout-container{
     grid-template-columns: 100%;
