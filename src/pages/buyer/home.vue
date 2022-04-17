@@ -1,28 +1,29 @@
+<route lang="yaml">
+meta:
+  layout: buyer/LBHome
+</route>
+
 <script setup lang="ts">
 useHead({
   title: 'e-shopee | buyer home',
 })
 </script>
+
 <template>
   <div>
-    <CSwipper />
-    <CBanner />
-    <CDemo1 />
-    <CArrivals />
-    <CMonthSale />
-    <CTrending />
-    <CDemo3 />
+    <CBSwipper />
+    <CBCategory />
+    <CBBanner />
+    <CBDemo1 />
+    <CBArrivals />
+    <CBMonthSale />
+    <CBTrending />
+    <CBDemo3 />
     <div class="flex justify-center">
-      <CToday />
+      <CBToday />
     </div>
     <!-- <CSlick /> -->
-    <CCategory />
-    <CDemo2 />
-    <CService />
+    <CBDemo2 />
+    <CBService />
   </div>
 </template>
-
-<route lang="yaml">
-meta:
-  layout: LHome
-</route>

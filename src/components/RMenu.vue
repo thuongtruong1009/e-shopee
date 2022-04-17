@@ -45,8 +45,13 @@ const { t } = useI18n()
             </a>
           </li>
           <li class="menu-child-item">
-            <a href="/buyer/checkout" class="menu-child-link">
+            <a href="/" class="menu-child-link">
               {{ t('header.download') }} <IDownload />
+            </a>
+          </li>
+          <li class="menu-child-item">
+            <a href="/buyer/login" class="menu-child-link">
+              {{ t('header.login') }} <ILogin />
             </a>
           </li>
           <li class="menu-child-item">

@@ -64,7 +64,7 @@ const { t } = useI18n()
 
 <style scoped>
 .service-container{
-  padding: 4rem 0rem;
+  padding: 3.7rem 0rem;
 }
 .shipping, .return, .contact, .secure, .chat{
     display: flex;

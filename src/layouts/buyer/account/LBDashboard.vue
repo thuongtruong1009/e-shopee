@@ -7,7 +7,7 @@
         <CExtension class="mx-2.75" />
       </div>
     </div>
-    <CHead />
+    <CBHead />
     <div class="header divide-y divide-gray-200 divide-solid px-15">
       <div class="capitalize text-3xl font-semibold pt-15 pb-5 flex justify-center items-center">
         <IAccount />

@@ -8,7 +8,7 @@ button:
 intro:
   desc: Opinionated Vite Starter Template
   dynamic-route: Demo of dynamic route
-  hi: Hi, {name}!
+  hi: The result for, {name}!
   aka: Also known as
   whats-your-name: What's your name?
 not-found: Not found
@@ -36,6 +36,33 @@ caccount:
   address: Address
   account-details: Account Details
   Logout: Logout
+ccategory:
+  men-fashion: Men's Fashion
+  women-fashion: Women's Fashion
+  phones-accessories: Phones & Accessories
+  mother-baby: Mother & Baby
+  electronic-device: Electronic device
+  home-life: Home & Life
+  computers-laptops: Computers & Laptops
+  beauty: Beauty
+  camera-camcorder: Camera Camcorder
+  health: Health
+  watch: Watch
+  women-shoes: Women's shoes
+  men-shoes: Men's shoes
+  women-purse-bags: Women's Purse Bags
+  household-electrical-appliances: Household electrical appliances
+  women-accessories-jewelry: Women's Accessories & Jewelry
+  sports-travel: Sports & Travel
+  online-store: Online Store
+  cars-motorcycles-bicycles: Cars & Motorcycles & Bicycles
+  online-bookstore: Online Bookstore
+  men-backpacks-wallets: Men's Backpacks & Wallets
+  child-fashion: Child fashion
+  toy: Toy
+  laundry-home-care: Laundry & Home Care
+  take-care-of-the-pet: Take care of the pet
+  vouchers-services: Vouchers & Services
 menu:
   admin: Admin
   about-page: About Page
@@ -68,8 +95,9 @@ header:
   my ccount: My Account
   checkout: Checkout
   download: Download
+  login: Login
   sign out: Sign out
-  menu product items: Menu product items
+  categories: Categories
   placeholder search: Enter your search key...
 footer:
   commit: We are always committed to serving you with the best services. Connect to receive more offers immediately.

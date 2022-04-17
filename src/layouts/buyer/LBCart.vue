@@ -7,7 +7,7 @@
         <CExtension class="mx-2.75" />
       </div>
     </div>
-    <CHead />
+    <CBHead />
     <!-- //blur ground
     <div class="modal absolute bg-gray-900 opacity-60 top-0 left-0 w-screen h-screen -z-1" /> -->
     <div class="p-15">
