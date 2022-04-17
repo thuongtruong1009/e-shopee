@@ -85,26 +85,170 @@ const hintList = reactive([{
   extra: false,
 },
 {
-  img: '/img/today/1.jfif',
+  img: '/img/today/13.jfif',
   desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
   price: 1.065,
   soldQuatity: '2K',
   extra: false,
 },
 {
-  img: '/img/today/2.jfif',
+  img: '/img/today/14.jfif',
   desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
   price: 1.065,
   soldQuatity: '2K',
   extra: false,
 },
 {
-  img: '/img/today/3.jfif',
+  img: '/img/today/15.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/16.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/17.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/18.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/19.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/20.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/21.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/22.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/23.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/24.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/25.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/26.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/27.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/28.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/29.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/30.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/31.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/32.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/33.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/34.jfif',
+  desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
+  price: 1.065,
+  soldQuatity: '2K',
+  extra: false,
+},
+{
+  img: '/img/today/35.jfif',
   desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
   price: 1.065,
   soldQuatity: '2K',
   extra: false,
 }])
+
+const hintListInit = ref(14)
+const stepVisible = ref(7)
+const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
 </script>
 
 <template>
@@ -115,7 +259,7 @@ const hintList = reactive([{
       </h2>
     </div>
     <div class="flex flex-wrap gap-3 py-3">
-      <div v-for="(hint, i) in hintList" :key="i" class="w-47 rounded-md bg-white shadow-sm shadow-gray-400 border-1 border-solid border-transparent hover:border-red-500 cursor-pointer relative">
+      <div v-for="(hint, i) in hintListComputed" :key="i" class="w-47 rounded-md bg-white shadow-sm shadow-gray-400 border-1 border-solid border-transparent hover:border-red-500 cursor-pointer relative">
         <img v-if="hint.extra === true" src="/img/today/extra.png" alt="extra" class="absolute top-0 left-0 w-full">
         <!-- <div class="discount-label absolute top-0 right-0 w-20">
           <p>ok</p>
@@ -144,7 +288,7 @@ const hintList = reactive([{
       </div>
     </div>
     <div class="flex justify-center">
-      <p class="bg-white border-1 border-solid border-gray-200 py-2 px-10 rounded-md cursor-pointer hover:bg-[#F5F5F5] hover:border-gray-300">
+      <p v-if="hintListInit < hintList.length" class="bg-white border-1 border-solid border-gray-200 py-2 px-10 rounded-md cursor-pointer hover:bg-[#F5F5F5] hover:border-gray-300" @click="hintListInit += stepVisible">
         {{ t('ctoday.see-more') }}
       </p>
     </div>
