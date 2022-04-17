@@ -7,7 +7,7 @@
         <CExtension class="mx-2.75" />
       </div>
     </div>
-    <CHead />
+    <CBHead />
     <router-view />
     <CFooter />
   </main>

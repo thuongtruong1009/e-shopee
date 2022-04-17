@@ -30,7 +30,7 @@
   position:relative;
   overflow:hidden;
 }
-.photobanner {
+.photobanner  {
   position:absolute;
   width: 100%;
   top:0px;
@@ -40,13 +40,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  animation: bannermove 10s linear infinite;
 }
 .photobanner img {
   margin: 0 0.5em;
   max-height: 5rem;
 }
-
+.photobanner {
+  animation: bannermove 10s linear infinite;
+}
 @keyframes bannermove {
   0% {
       transform: translate(100%, 0);
