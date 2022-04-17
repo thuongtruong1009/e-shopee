@@ -19,17 +19,43 @@
     <!-- <script type="module" src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script> -->
     <script>
         (function() {
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-            const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
-            if (setting === 'dark' || (prefersDark && setting !== 'light'))
-                document.documentElement.classList.toggle('dark', true)
+          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+          const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+          if (setting === 'dark' || (prefersDark && setting !== 'light'))
+            document.documentElement.classList.toggle('dark', true)
         })()
     </script>
 </head>
 
 <body>
     <div id="app"></div>
+        
     <script type="module" src="/src/main.ts"></script>
+
+    <!-- Your Plugin chat code -->
+  <div id="fb-customer-chat" class="fb-customerchat absolute z-30 w-13 h-13 bottom-5 left-5" />
+  <script>
+    const chatbox = document.getElementById('fb-customer-chat')
+chatbox.setAttribute('page_id', '102131138728984')
+chatbox.setAttribute('attribution', 'biz_inbox')
+  </script>
+    <!-- Your SDK code -->
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml: true,
+            version: 'v13.0',
+  })
+};
+
+        (function(d, s, id) {
+          let js; const fjs = d.getElementsByTagName(s)[0]
+  if (d.getElementById(id)) return
+  js = d.createElement(s); js.id = id
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js'
+  fjs.parentNode.insertBefore(js, fjs)
+}(document, 'script', 'facebook-jssdk'))
+      </script>
 </body>
 
 </html>
