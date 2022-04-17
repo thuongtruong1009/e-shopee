@@ -57,90 +57,14 @@ const lists = reactive([
     'bike': '',
   },
 ])
-const isAppearMenu = ref(false)
-const onAppearMenu = () => {
-  isAppearMenu.value = !isAppearMenu.value
-}
 </script>
 
 <template>
-  <div class="menu-item-container">
-    <nav class="nav relative">
-      <i class="fal fa-bars hidden" />
-      <ul class="menu flex justify-between">
-        <li class="menu-item relative" @click="onAppearMenu">
-          <a href="#" class="menu-link text-white block text-base text-white bg-[#1D71AB] hover:bg-[#38689A] duration-200 py-1.5 px-5 rounded-t-lg">
-            <i class="fas fa-list-ul" /> {{ t('header.categories') }}
-          </a>
-          <Transition duration="550" name="nested">
-            <ul v-if="isAppearMenu === true" class="menu-child absolute z-90 bg-white rounded-md divide-1 divide-y divide-solid divide-gray-200">
-              <li v-for="(item, i) in Object.keys(lists[0])" :key="i" class="relative">
-                <a href="#" class="flex justify-between items-center p-2 text-black hover:text-orange-600">
-                  {{ item }} <ICaretRight class="caret_sign" />
-                </a>
-                <ul class="menu-child-1 absolute bg-white left-40 top-0 rounded-md">
-                  <li>
-                    <a href="#" class="flex justify-between items-center p-6 text-[#918eae]">
-                      {{ lists[0][String(item)] }}
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </Transition>
-        </li>
-        <li>
-          <ul class="float-menu flex text-sm text-gray-500">
-            <li v-for="(item, i) in Object.keys(lists[0])" :key="i" class="cursor-pointer py-1 px-3 text-white dark:text-black border-1 border-solid border-transparent hover:border-white rounded-md duration-150">
-              {{ item }}
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+  <div class="buyer-menu-item-container flex justify-center">
+    <ul class="float-menu flex text-sm text-gray-500 overflow-x-scroll max-w-screen-lg whitespace-nowrap">
+      <li v-for="(item, i) in Object.keys(lists[0])" :key="i" class="cursor-pointer py-1 px-3 text-white dark:text-black border-1 border-solid border-transparent hover:border-white rounded-md duration-150">
+        {{ item }}
+      </li>
+    </ul>
   </div>
 </template>
-
-<style scoped>
-  :root {
-    --shadow: 0 0 15px 0 rgba(0,0,0,0.05);
-  }
-    .menu-child-1{
-        width: fit-content;
-        display: none;
-    }
-    .caret_sign{
-      opacity: 0;
-      transition: 0.3s;
-    }
-    .menu-item > ul > li:hover .menu-child-1{
-        display: block;
-    }
-    .menu-item > ul > li:hover .caret_sign{
-      opacity: 1;
-    }
-    /* .menu-item > li:not(:first-child){
-        background:rgba(255, 255, 255, 0.9);
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
-        display: flex;
-        align-items: center;
-    } */
-    /* .float-menu > li:hover{
-        background: #F97316;
-        color: white;
-    } */
-  /* **************** TRANSITiON ******************* */
-  .nested-enter-active,
-  .nested-leave-active {
-    transition: all 0.3s ease-in-out;
-  }
-  .nested-leave-active {
-    transition-delay: 0.1s;
-  }
-  .nested-enter-from,
-  .nested-leave-to {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-</style>

@@ -13,29 +13,20 @@ const go = () => {
 </script>
 
 <template>
-  <div class="search-container w-lg <lg:w-xl shadow-md shadow-gray-500/50 flex justify-center items-center rounded-3xl">
-    <input v-model="name" type="text" :placeholder="t('header.placeholder search')" :aria-label="t('header.placeholder search')" class="outline-none w-full h-full bg-white" @keydown.enter="go">
-    <button class="text-white flex items-center bg-black hover:bg-opacity-70 h-full" :disabled="!name" @click="go">
-      <IFind />
-    </button>
+  <div class="flex rounded-3xl shadow-lg shadow-gray-500/50 h-10">
+    <div class="bg-[#fbeee6] hover:bg-[#ddddda] flex justify-center items-center rounded-l-3xl">
+      <CBMenuCategories />
+    </div>
+    <div class="search-container w-lg <lg:w-xl flex justify-center items-center overflow-hidden">
+      <input v-model="name" type="text" :placeholder="t('header.placeholder search')" :aria-label="t('header.placeholder search')" class="outline-none w-full h-full text-md px-5" @keydown.enter="go">
+      <button class="text-white flex items-center bg-black hover:bg-opacity-70 rounded-r-3xl h-full px-4" :disabled="!name" @click="go">
+        <IFind />
+      </button>
+    </div>
   </div>
 </template>
 
 <style scoped>
-  .search-container {
-    height: 2.7rem;
-    overflow: hidden;
-  }
-  .search-container > input {
-    padding: 10px 20px;
-    -webkit-appearance: none;
-    font-size: 14px;
-    font-weight: 400;
-  }
-  .search-container > button {
-    padding: 10px 15px;
-    flex-shrink: 0;
-  }
   @media (max-width: 992px){
     .search-container{
       width: 100%;

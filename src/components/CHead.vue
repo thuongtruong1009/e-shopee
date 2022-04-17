@@ -3,23 +3,21 @@ import CMenuItem from '~/components/CMenuItem.vue'
 </script>
 
 <template>
-  <div class="head-container bg-orange-500">
+  <div class="head-container bg-orange-500 relative">
     <div class="flex justify-around items-center h-28">
       <CBrand class="item3" />
       <CSearch class="item5" />
       <CList class="item4" />
     </div>
-    <div class="px-25">
-      <CMenuItem />
-    </div>
+    <CMenuItem />
 
-    <!-- <span class="w-full h-1 bg-gray-600 absolute mt-29 left-0" /> -->
+    <!-- <span class="w-full h-0.25 bg-gray-600 absolute bottom-0 left-0" /> -->
   </div>
 </template>
 
 <style scoped>
 span{
-  animation: timeshow-animate 4s linear infinite;
+  animation: timeshow-animate 3.8s linear infinite;
   transform-origin: left;
 }
 @keyframes timeshow-animate {
