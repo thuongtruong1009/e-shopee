@@ -6,7 +6,6 @@
       <CBList class="item4" />
     </div>
     <CBMenuItem />
-
     <!-- <span class="w-full h-0.25 bg-gray-600 absolute bottom-0 left-0" /> -->
   </div>
 </template>

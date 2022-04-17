@@ -11,19 +11,19 @@ useHead({
 
 <template>
   <div>
-    <CSwipper />
+    <CBSwipper />
     <CBCategory />
     <CBBanner />
-    <CDemo1 />
-    <CArrivals />
-    <CMonthSale />
-    <CTrending />
-    <CDemo3 />
+    <CBDemo1 />
+    <CBArrivals />
+    <CBMonthSale />
+    <CBTrending />
+    <CBDemo3 />
     <div class="flex justify-center">
-      <CToday />
+      <CBToday />
     </div>
     <!-- <CSlick /> -->
-    <CDemo2 />
-    <CService />
+    <CBDemo2 />
+    <CBService />
   </div>
 </template>
