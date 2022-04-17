@@ -65,7 +65,7 @@ const { t } = useI18n()
           <p>{{ t('footer.subscribe') }}</p>
           <p><em>{{ t('footer.sign up today') }}</em></p>
         </div>
-        <form action="" method="post" class="py-4 whitespace-nowrap">
+        <form action="" method="post" class="py-4 whitespace-nowrap relative">
           <input type="text" placeholder="Your email address..." class="outline-none rounded-l-3xl px-3 py-2.5 w-4/6 border-solid border-1 border-transparent shadow-md shadow-gray-300" autofocus>
           <button type="submit" class="bg-[#EE4D2D] text-white rounded-r-3xl px-3 py-2.5 shadow-md shadow-gray-400">
             {{ t('footer.sign up') }}
@@ -126,6 +126,12 @@ ul > li{
 ul > li:hover{
   transform: translateX(0.75rem);
   color: #EE4D2D;
+}
+form::after{
+  content: url("https://patch.com/img/cdn/assets/layout/subscribe/planeAndTrails.svg");
+  position: absolute;
+  top: -4rem;
+  right: 0rem;
 }
 @media (max-width: 767.9px){
   .right{

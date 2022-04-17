@@ -13,7 +13,7 @@ const scrollToTop = () => {
 const scrollFunction = () => {
   // Get the current scroll value
   const y = window.scrollY
-  if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25)
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
     isScroll.value = true
 
   else

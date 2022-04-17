@@ -6,7 +6,7 @@ const onLeftScroll = () => {
 const onRightScroll = () => {
   document.getElementById('container').scrollLeft += 260
 }
-const images = reactive([{
+const tabList1 = reactive([{
   img: '/img/arrival/1.webp',
   desc: 'New Luxury Men\'s Slim Fit Shirt Short Sleeve...',
   price: 11.90,
@@ -57,6 +57,9 @@ const images = reactive([{
   price: 11.90,
 }])
 
+const tabList2 = tabList1.slice()
+const tabList3 = tabList1.slice()
+
 const activeNav = ref(1)
 const onActiveNav = (item) => {
   activeNav.value = item
@@ -91,8 +94,10 @@ const onActiveNav = (item) => {
       </div>
     </div>
     <div id="container" class="pb-5">
+      <Transition duration="550" name="nested">
+      <div v-if="activeNav === 1">
       <div id="content" class="flex items-center gap-5 px-1">
-        <div v-for="(image, i) in images" :key="i" class="card duration-300 ease-linear relative rounded-lg w-65">
+          <div v-for="(image, i) in tabList1" :key="i" class="card duration-300 ease-linear relative rounded-lg w-65">
           <div class="card-type flex justify-between absolute w-full p-2">
             <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
             <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('carrival.new') }}</span>
@@ -117,7 +122,73 @@ const onActiveNav = (item) => {
             </div>
           </div>
         </div>
+        </div>
       </div>
+      </Transition>
+
+<Transition duration="550" name="nested">
+      <div v-if="activeNav === 2">
+      <div id="content" class="flex items-center gap-5 px-1">
+          <div v-for="(image, i) in tabList2" :key="i" class="card duration-300 ease-linear relative rounded-lg w-65">
+          <div class="card-type flex justify-between absolute w-full p-2">
+            <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
+            <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('carrival.new') }}</span>
+          </div>
+          <div class="card-img max-w-full max-h-7/12">
+            <a href="single-product.html">
+              <img class="first-img rounded-t-lg" :src="image.img" alt="thumbnail">
+            </a>
+          </div>
+          <div class="product-description text-left p-2">
+            <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]">
+              {{ image.desc }}
+            </p>
+            <div class="star-rating flex justify-start">
+              <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
+            </div>
+            <div class="flex items-center justify-between">
+              <h6 class="card-price font-bold tracking-tighter">
+                ${{ image.price }}
+              </h6>
+              <ICart class="cart w-9 h-9 p-2 rounded-full bg-gray-100 cursor-pointer duration-200 ease-linear text-gray-500 hover:bg-[#FF9900] hover:text-white" />
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </Transition>
+
+<Transition duration="550" name="nested">
+      <div v-if="activeNav === 3">
+      <div id="content" class="flex items-center gap-5 px-1">
+          <div v-for="(image, i) in tabList3" :key="i" class="card duration-300 ease-linear relative rounded-lg w-65">
+          <div class="card-type flex justify-between absolute w-full p-2">
+            <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
+            <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('carrival.new') }}</span>
+          </div>
+          <div class="card-img max-w-full max-h-7/12">
+            <a href="single-product.html">
+              <img class="first-img rounded-t-lg" :src="image.img" alt="thumbnail">
+            </a>
+          </div>
+          <div class="product-description text-left p-2">
+            <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]">
+              {{ image.desc }}
+            </p>
+            <div class="star-rating flex justify-start">
+              <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
+            </div>
+            <div class="flex items-center justify-between">
+              <h6 class="card-price font-bold tracking-tighter">
+                ${{ image.price }}
+              </h6>
+              <ICart class="cart w-9 h-9 p-2 rounded-full bg-gray-100 cursor-pointer duration-200 ease-linear text-gray-500 hover:bg-[#FF9900] hover:text-white" />
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </Transition>
     </div>
     <button id="slide-left" @click="onLeftScroll">
       &#10094;
@@ -203,5 +274,16 @@ button{
 .relative:hover #slide-right{
   transform: translateX(-1rem);
 }
-/* ********************************************* */
+/* **************** TRANSITION ******************* */
+.nested-enter-active,
+.nested-leave-active {
+  transition: all 0.4s ease-in-out;
+}
+.nested-enter-from{
+  transform: translateY(2rem);
+  opacity: 0;
+}
+.nested-leave-to {
+  display: none;
+}
 </style>

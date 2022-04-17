@@ -17,7 +17,7 @@ const go = () => {
     <div class="bg-[#fbeee6] hover:bg-[#ddddda] flex justify-center items-center rounded-l-3xl">
       <CBMenuCategories />
     </div>
-    <div class="search-container w-lg <lg:w-xl flex justify-center items-center overflow-hidden">
+    <div class="search-container w-md <lg:w-xl flex justify-center items-center overflow-hidden">
       <input v-model="name" type="text" :placeholder="t('header.placeholder search')" :aria-label="t('header.placeholder search')" class="outline-none w-full h-full text-md px-5" @keydown.enter="go">
       <button class="text-white flex items-center bg-black hover:bg-opacity-70 rounded-r-3xl h-full px-4" :disabled="!name" @click="go">
         <IFind />
