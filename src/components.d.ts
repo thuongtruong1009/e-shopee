@@ -49,6 +49,7 @@ declare module 'vue' {
     IBFacebook: typeof import('./components/icons/auth/IBFacebook.vue')['default']
     IBGithub: typeof import('./components/icons/auth/IBGithub.vue')['default']
     IBGoogle: typeof import('./components/icons/auth/IBGoogle.vue')['default']
+    IBLiked: typeof import('./components/icons/IBLiked.vue')['default']
     IBook: typeof import('./components/icons/about/IBook.vue')['default']
     IBOrder: typeof import('./components/icons/account/IBOrder.vue')['default']
     IBPassword: typeof import('./components/icons/auth/IBPassword.vue')['default']
