@@ -10,15 +10,25 @@
   </div> -->
   <div class="brand-container">
     <div class="photobanner">
-      <img src="/img/brand/1.jpg" alt="">
-      <img src="/img/brand/2.jpg" alt="">
-      <img src="/img/brand/3.jpg" alt="">
-      <img src="/img/brand/4.jpg" alt="">
-      <img src="/img/brand/5.jpg" alt="">
-      <img src="/img/brand/6.jpg" alt="">
-      <img src="/img/brand/7.jpg" alt="">
-      <img src="/img/brand/8.jpg" alt="">
-      <img src="/img/brand/9.jpg" alt="">
+      <img src="/img/brand/1.jpg" alt="brand_1_img">
+      <img src="/img/brand/2.jpg" alt="brand_2_img">
+      <img src="/img/brand/3.jpg" alt="brand_3_img">
+      <img src="/img/brand/4.jpg" alt="brand_4_img">
+      <img src="/img/brand/5.jpg" alt="brand_5_img">
+      <img src="/img/brand/6.jpg" alt="brand_6_img">
+      <img src="/img/brand/7.jpg" alt="brand_7_img">
+      <img src="/img/brand/8.jpg" alt="brand_8_img">
+      <img src="/img/brand/9.jpg" alt="brand_9_img">
+      <img src="/img/brand/10.png" alt="brand_10_img">
+      <img src="/img/brand/11.png" alt="brand_11_img">
+      <img src="/img/brand/12.png" alt="brand_12_img">
+      <img src="/img/brand/13.png" alt="brand_13_img">
+      <img src="/img/brand/14.png" alt="brand_14_img">
+      <img src="/img/brand/15.png" alt="brand_15_img">
+      <img src="/img/brand/16.png" alt="brand_16_img">
+      <img src="/img/brand/17.png" alt="brand_17_img">
+      <img src="/img/brand/18.png" alt="brand_18_img">
+      <img src="/img/brand/19.png" alt="brand_19_img">
     </div>
   </div>
 </template>
@@ -26,9 +36,10 @@
 <style scoped>
 .brand-container {
   height:8rem;
-  width: 100vw;
+  width: 230vw;
   position:relative;
   overflow:hidden;
+  margin-top: 2rem;
 }
 .photobanner  {
   position:absolute;
@@ -46,11 +57,11 @@
   max-height: 5rem;
 }
 .photobanner {
-  animation: bannermove 10s linear infinite;
+  animation: bannermove 30s linear infinite;
 }
 @keyframes bannermove {
   0% {
-      transform: translate(100%, 0);
+      transform: translate(40%, 0);
   }
   100% {
       transform: translate(-100%, 0);
