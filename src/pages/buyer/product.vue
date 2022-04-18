@@ -9,7 +9,7 @@ import provinceNames from '~/shared/provinces'
 </script>
 
 <template>
-  <div class="buyer-product-details-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-3 mx-2">
+  <div class="product-summary-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-3 mx-2">
     <div class="main-content flex gap-10">
       <div>
         <img src="https://cf.shopee.vn/file/f0ef79bb6556880ebb85baab0e64c8d6" alt="product_img" class="max-w-112 max-h-112 rounded-lg shadow-lg shadow-gray-300">
@@ -84,11 +84,11 @@ import provinceNames from '~/shared/provinces'
             <IBShipping /> Vận chuyển tới
           </p>
           <div>
-            <select name="province" class="cursor-pointer">
+            <select name="province" class="cursor-pointer dark:bg-gray-700 rounded-md pl-2">
               <div>
                 <input type="text" placeholder="search">
               </div>
-              <option v-for="(province, i) in provinceNames" :key="i" :value="province" class="mt-5 bg-[#FFF5F1]">
+              <option v-for="(province, i) in provinceNames" :key="i" :value="province" class="mt-5 bg-[#FFF5F1] dark:bg-gray-700">
                 {{ province }}
               </option>
             </select>
@@ -130,12 +130,18 @@ import provinceNames from '~/shared/provinces'
         </div>
         <div class="infor">
           <label>Quantities</label>
-          <div class="uppercase flex gap-2">
-            <p>-</p>
-            <p>1</p>
-            <p>+</p>
+          <div class="uppercase flex items-center rounded-md border-1 border-solid border-gray-300 text-sm">
+            <p class="px-2 cursor-pointer hover:bg-[#FAFAFA]">
+              <IBMinus />
+            </p>
+            <p class="border-l-1 border-l-solid border-l-gray-300 border-r-1 border-r-solid border-r-gray-300 font-medium px-5 py-1">
+              1
+            </p>
+            <p class="px-2 cursor-pointer hover:bg-[#FAFAFA]">
+              <IBPlus />
+            </p>
           </div>
-          <p class="lowercase">
+          <p class="lowercase text-gray-500">
             14984 available products
           </p>
         </div>
@@ -151,7 +157,7 @@ import provinceNames from '~/shared/provinces'
     </div>
     <div class="flex flex-wrap gap-10 py-5">
       <div class="min-w-112 flex justify-center items-center gap-2 cursor-pointer">
-        <IBLiked />
+        <IBLove />
         <p>Total liked: (934)</p>
       </div>
       <div class="flex justify-center items-center gap-5">
@@ -165,6 +171,7 @@ import provinceNames from '~/shared/provinces'
       </div>
     </div>
   </div>
+
   <div class="shop-product-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2 divide-x divide-1 divide-solid divide-gray-300 flex flex-wrap">
     <div class="flex">
       <img src="https://cf.shopee.vn/file/7ebd612d6fddcf7f4114bf2d97da382a_tn" alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
@@ -218,6 +225,86 @@ import provinceNames from '~/shared/provinces'
       </div>
     </div>
   </div>
+
+  <div class="product-details max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2">
+    <div class="bg-[#FAFAFA] dark:bg-gray-700 p-3 rounded-lg">
+      <h2 class="uppercase text-xl">
+        Product describes
+      </h2>
+    </div>
+    <div>
+      <label>Category</label>
+      <p class="text-[#0055BD] cursor-pointer">
+        e-shopee > men's shoes > sandal > other
+      </p>
+    </div>
+    <div>
+      <label>Organization</label>
+      <p>Updating...</p>
+    </div>
+    <div>
+      <label>Origin</label>
+      <p>VietNam</p>
+    </div>
+    <div>
+      <label>Address</label>
+      <p>Updating...</p>
+    </div>
+    <div>
+      <label>Warehouse</label>
+      <p>14984</p>
+    </div>
+    <div>
+      <label>Ship from</label>
+      <p>Huyện Tân Kỳ, Nghệ An</p>
+    </div>
+    <div>
+      <p>🔥Thanh toán khi nhận hàng liên hệ trước với shop nếu muốn xem hàng trước khi thanh toán</p>
+      <p>Hotline: 0842610686</p>
+      <p>🔥 Đổi trả miễn phí trong 15 ngày lỗi do nhà sản xuất</p>
+      <p>🔥Bảo Hành: 6 tháng</p>
+      <p>🔥Xuất Xứ: Shop chuyên hàng nhập thái và VNXK nói không với hàng chợ kém chất lượng</p>
+      <p>🔥Size: 38 – 43</p>
+      <p>🔥 Đế dép được thiết kế chịu ma sát tốt,  ôm chân, thon gọn, thoải mái di chuyển mà không lo đau chân Sử dụng trong mọi thời tiết và địa hình. Thiết kế tinh tế, phù hợp xu hướng thời trang hiện đại, trẻ trung, năng động. Thích hợp với nhiều trang phục của phái mạnh khi đi làm, đi chơi,...</p>
+      <p>⚡ Kiểu dáng hottrend của năm 2021.</p>
+      <p>⚡ Giày đẹp, nhẹ, bền. Có thể làm giày cặp, giày nhóm. Thích hợp đi chơi, chạy bộ, gym, đi học, đi làm...</p>
+      <p>⚡ Có thể kết hợp Đồ, jeans, sooc, Ngố vv…. Đều phù hợp</p>
+      <p>🔥Shop chuyên sỉ và lẻ toàn quốc với giá tốt nhất đến tay khách hàng</p>
+      <p>🍀 Zalo; 0879614176</p>
+      <p>🍀 Số Lượng Có Hạn , Nhanh Tay Đặt Hàng Nhé</p>
+      <p>🍀 Cảm Ơn Khách Hàng Luôn Tin Tưởng Và Ủng Hộ Shop ☘️</p>
+      <p>
+        <span v-for="i in 20" :key="i" class="mr-3 text-[#0055BD] cursor-pointer">#dép nam</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="product-evalutions max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2">
+    <div class="text-xl uppercase">
+      <h2>Product evalutions</h2>
+    </div>
+    <div class="divide-y divide-1 divide-solid divide-gray-200">
+      <div v-for="i in 3" :key="i" class="flex py-3">
+        <div class="px-3">
+          <img src="https://cf.shopee.vn/file/3922ddaf7b5dde58c3193c6689e7aaca_tn" alt="customer_avatar_img" class="max-w-10 max-h-10 rounded-full">
+        </div>
+        <div class="customer-cmt">
+          <p class="customer-username text-xs text-gray-600">
+            yen050619
+          </p>
+          <p class="flex gap-0.25">
+            <IStars v-for="i in 5" :key="i" />
+          </p>
+          <p class="text-gray-500 text-sm">
+            Very good! I like it.
+          </p>
+          <p class="flex items-center gap-2 text-sm cursor-pointer text-gray-500">
+            <IBLike /> 11
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -245,6 +332,25 @@ import provinceNames from '~/shared/provinces'
 }
 .shop-product-container span{
   color: #EE4D2D;
+}
+.product-details > div:not(:first-child):not(:last-child) {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+}
+
+.product-details label{
+  min-width: 8.5rem;
+  color: rgb(156, 163, 175);
+}
+.product-details > div:last-child > p:not(:last-child){
+  margin: 0.5rem 0 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+.product-evalutions .customer-cmt p{
+  margin: 0 0.5rem 0.5rem 0;
 }
 @media (max-width: 1000px){
   .main-content{
