@@ -8,7 +8,7 @@
       </div>
     </div>
     <CBHead />
-    <div class="flex justify-center m-5">
+    <div class="grid justify-center m-5 gap-3">
       <router-view />
     </div>
     <CFooter />

@@ -9,7 +9,7 @@ import provinceNames from '~/shared/provinces'
 </script>
 
 <template>
-  <div class="buyer-product-details-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400 p-3 mx-2">
+  <div class="buyer-product-details-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-3 mx-2">
     <div class="main-content flex gap-10">
       <div>
         <img src="https://cf.shopee.vn/file/f0ef79bb6556880ebb85baab0e64c8d6" alt="product_img" class="max-w-112 max-h-112 rounded-lg shadow-lg shadow-gray-300">
@@ -165,6 +165,59 @@ import provinceNames from '~/shared/provinces'
       </div>
     </div>
   </div>
+  <div class="shop-product-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2 divide-x divide-1 divide-solid divide-gray-300 flex flex-wrap">
+    <div class="flex">
+      <img src="https://cf.shopee.vn/file/7ebd612d6fddcf7f4114bf2d97da382a_tn" alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
+      <div class="min-w-85">
+        <p class="font-medium text-md">
+          deplenamcaocap
+        </p>
+        <p class="text-gray-500 text-xs">
+          Online 13 hours ago
+        </p>
+        <div class="flex gap-2 text-sm mt-2">
+          <button class="px-3 py-0.5 rounded-md bg-[#FFEEE8] hover:bg-[#FFF5F1] border-1 border-solid border-[#EE4D2D] text-[#EE4D2D] capitalize flex items-center gap-1">
+            <IChat />Chat now
+          </button>
+          <button class="px-3 py-1 rounded-md hover:bg-[#FAFAFA] border-2 border-solid border-gray-300 text-[#EE4D2D] capitalize flex items-center gap-1">
+            <IShop />Visit shop
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-around items-center w-3/5 text-sm text-gray-400">
+      <div>
+        <div class="flex gap-2 min-w-27">
+          <p>Evalute</p>
+          <span>171</span>
+        </div>
+        <div class="flex gap-2 min-w-27">
+          <p>Productions</p>
+          <span>43</span>
+        </div>
+      </div>
+      <div>
+        <div class="flex gap-2 min-w-27">
+          <p>Response ratio</p>
+          <span>11%</span>
+        </div>
+        <div class="flex gap-2 min-w-27">
+          <p>Response time</p>
+          <span>in some hours</span>
+        </div>
+      </div>
+      <div>
+        <div class="flex gap-2 min-w-27">
+          <p>Joined</p>
+          <span>13 months ago</span>
+        </div>
+        <div class="flex gap-2 whitespace-nowrap">
+          <p>Follower</p>
+          <span>9.4k</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -189,6 +242,9 @@ import provinceNames from '~/shared/provinces'
   color: #EE4D2D;
   border-color: #EE4D2D;
   background: #FFF5F1;
+}
+.shop-product-container span{
+  color: #EE4D2D;
 }
 @media (max-width: 1000px){
   .main-content{
