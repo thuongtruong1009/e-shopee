@@ -10,15 +10,83 @@
 
 - [Demo](https://e-shopee.vercel.app/)
 
-![preview home 1](/public/preview/home_1.jpg)
-![preview home 2](/public/preview/home_9.jpg)
-![preview home 3](/public/preview/home_2.jpg)
-![preview home 4](/public/preview/home_3.jpg)
-![preview home 5](/public/preview/home_8.jpg)
-![preview home 6](/public/preview/home_4.jpg)
-![preview home 7](/public/preview/home_7.jpg)
-![preview home 8](/public/preview/home_5.jpg)
-![preview home 9](/public/preview/home_6.jpg)
+<table>
+  <tr>
+    <td align="center">
+      <details open><summary>e-shopee Home page</summary>
+        <img alt="" width="400" src="./public/preview/home_light.png">
+      </details>
+      <details open><summary>Buyer Register page</summary>
+      <img alt="" width="400" src="./public/preview/buyer_register.png">
+      </details>
+      <details open><summary>Buyer Login page</summary>
+        <img alt="" width="400" src="./public/preview/buyer_login.png">
+      </details>
+      <details open><summary>Buyer Contact page</summary>
+        <img alt="" width="400" src="./public/preview/buyer_contact1.png">
+        <img alt="" width="400" src="./public/preview/buyer_contact2.png">
+      </details>
+      <details open><summary>Buyer About page</summary>
+        <img alt="" width="400" src="./public/preview/buyer_about1.png">
+        <img alt="" width="400" src="./public/preview/buyer_about2.png">
+      </details>
+      <details open><summary>Buyer Checkout page</summary>
+        <img alt="" width="400" src="./public/preview/buyer_checkout1.png">
+        <img alt="" width="400" src="./public/preview/buyer_checkout2.png">
+        <img alt="" width="400" src="./public/preview/buyer_checkout3.png">
+      </details>
+      <details open><summary>Buyer Cart page</summary>
+        <img alt="" width="400" src="./public/preview/buyer_cart.png">
+      </details>
+      <details open><summary>Buyer Account page</summary>
+        <img alt="" width="400" src="./public/preview/buyer_account_dashboard.png">
+        <img alt="" width="400" src="./public/preview/buyer_account_orders.png">
+        <img alt="" width="400" src="./public/preview/buyer_account_payment.png">
+        <img alt="" width="400" src="./public/preview/buyer_account_address.png">
+        <img alt="" width="400" src="./public/preview/buyer_account_details.png">
+      </details>
+      <img width="900" height="1" alt="">
+    </td>
+    <td align="center">
+      <details open><summary>Buyer Home page</summary>
+        <img alt="" width="400" src="./public/preview/buyer_home1.png">
+        <img alt="" width="400" src="./public/preview/buyer_home2.png">
+        <img alt="" width="400" src="./public/preview/buyer_home3.png">
+        <img alt="" width="400" src="./public/preview/buyer_home4.png">
+        <img alt="" width="400" src="./public/preview/buyer_home5.png">
+        <img alt="" width="400" src="./public/preview/buyer_home6.png">
+        <img alt="" width="400" src="./public/preview/buyer_home7.png">
+        <img alt="" width="400" src="./public/preview/buyer_home8.png">
+        <img alt="" width="400" src="./public/preview/buyer_home9.png">
+      </details>
+      <details open><summary>Buyer Filter page</summary>
+        <img alt="" width="400" src="./public/preview/buyer_filter_grid.png">
+        <img alt="" width="400" src="./public/preview/buyer_filter_flow.png">
+      </details>
+      <details open><summary>Buyer Product details page</summary>
+        <img alt="" width="400" src="./public/preview/buyer_product_details.png">
+      </details>
+      <details open><summary>Buyer Sidebar Menu page</summary>
+        <img alt="" width="400" src="./public/preview/buyer_sidebar_menu.png">
+      </details>
+      <details open><summary>Author page</summary>
+        <img alt="" width="400" src="./public/preview/author.png">
+      </details>
+      <img width="900" height="1" alt="">
+    </td>
+  </tr>
+</table>
+
+## Descriptions and requirements
+* Authenticate multi users
+* **Three-roles** interface (Buyer-Seller-Admin). Reference with [shopee website](https://shopee.vn)
+* Connect databases through **API** fetches
+* Multi language locales web (VietNamese, English, Russian, Chinese, Indian, Korean, Japanese, Spanish, Brazil, France...)
+* Dark/Light modes web
+* Friendly with **SEO** and **Google Analys**
+* Auto reponsive on all media sizes
+* Site map diagram
+* Deploying online to server by [Vercel](https://vercel.com)
 
 ## Feature
 - 🧩 [slick](https://antoniandre.github.io/vueper-slides/?ref=madewithvuejs.com)
