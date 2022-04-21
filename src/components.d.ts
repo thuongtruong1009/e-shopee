@@ -12,6 +12,7 @@ declare module 'vue' {
     CarbonLanguage: typeof import('~icons/carbon/language')['default']
     CarbonMoon: typeof import('~icons/carbon/moon')['default']
     CarbonSun: typeof import('~icons/carbon/sun')['default']
+    CarbonWarning: typeof import('~icons/carbon/warning')['default']
     CBArrivals: typeof import('./components/home/CBArrivals.vue')['default']
     CBBanner: typeof import('./components/home/CBBanner.vue')['default']
     CBBrand: typeof import('./components/header/CBBrand.vue')['default']
