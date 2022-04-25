@@ -1,18 +1,23 @@
 <script setup>
+watchEffect(() => {
+  window.onload = () => {
+    document.body.scrollTop = document.documentElement.scrollTop = 0
+  }
+})
+
 useHead({
   title: 'e-shopee',
   meta: [
-    { name: 'description', content: 'Online shopping application and e-commerce trading platform.' }, { name: 'author', content: 'https://github.com/thuongtruong1009/e-shopee' },
+    { name: 'description', content: 'Online shopping application and e-commerce trading platform real-time.' }, { name: 'author', content: 'https://github.com/thuongtruong1009/e-shopee' },
   ],
 })
 const isScroll = ref(false)
 const scrollToTop = () => {
-  document.body.scrollTop = 0 // For Safari
-  document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
+  document.body.scrollTop = 0
+  document.documentElement.scrollTop = 0
 }
 const scrollFunction = () => {
-  // Get the current scroll value
-  const y = window.scrollY
+  // const y = window.scrollY
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
     isScroll.value = true
 

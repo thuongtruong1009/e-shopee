@@ -3,7 +3,7 @@
     <CBHeaderTop />
     <CBHead />
     <router-view />
-    <CFooter />
+    <CBFooter />
   </main>
 </template>
 

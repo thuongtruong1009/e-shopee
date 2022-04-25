@@ -5,7 +5,7 @@
     <div class="grid justify-center m-5 gap-5">
       <router-view />
     </div>
-    <CFooter />
+    <CBFooter />
   </main>
 </template>
 

@@ -9,6 +9,6 @@
         <router-view />
       </div>
     </div>
-    <CFooter />
+    <CBFooter />
   </main>
 </template>

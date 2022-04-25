@@ -11,10 +11,10 @@
       </div>
 
       <div class="grid grid-cols-4 pt-5 pb-20">
-        <CAccount class="col-span-1" />
+        <CBAccount class="col-span-1" />
         <router-view class="col-span-3" />
       </div>
     </div>
-    <CFooter />
+    <CBFooter />
   </main>
 </template>

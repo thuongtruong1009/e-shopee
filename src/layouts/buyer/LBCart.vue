@@ -8,6 +8,6 @@
       </h2>
       <router-view />
     </div>
-    <CFooter />
+    <CBFooter />
   </main>
 </template>

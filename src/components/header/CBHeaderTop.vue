@@ -4,13 +4,13 @@ import { ref } from 'vue'
 const isScroll = ref(false)
 const scrollFunction = () => {
   const header = document.getElementById('header')
-  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
     header.style.padding = '0 2rem'
     header.classList.add('sticky')
   }
   else {
     header.classList.remove('sticky')
-    header.style.padding = '0'
+    header.style.padding = '0.25rem 0'
   }
 }
 window.addEventListener('scroll', scrollFunction)
