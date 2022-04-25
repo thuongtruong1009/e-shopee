@@ -163,7 +163,7 @@ const cartList = reactive([{
             <p class="w-full italic mb-2">{{ t('cart.promo-code') }}?</p>
             <form action="" method="post" class="flex">
               <input type="text" name="promo" placholder="Enter Code" class="p-2 w-4/5 border-1 border-[#dadada]">
-              <button type="submit" class="flex justify-center font-semibold border-1 border-solid border-[#82CA9C] bg-[#82CA9C] hover:border-[#f69679] hover:bg-[#f69679] py-3 border-r-xl w-1/5">
+              <button type="submit" class="flex justify-center font-semibold border-1 border-solid border-[#82CA9C] bg-[#82CA9C] hover:border-[#f69679] hover:bg-[#f69679] py-3 rounded-r-3xl w-1/5">
                 <ICaretRight />
               </button>
             </form>

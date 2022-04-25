@@ -80,14 +80,11 @@ import provinceNames from '~/shared/provinces'
         </div>
         <div class="infor">
           <label>Shipping</label>
-          <p class="text-sm flex gap-1 items-center">
+          <p class="text-sm flex gap-2 items-center">
             <IBShipping /> Vận chuyển tới
           </p>
           <div>
-            <select name="province" class="cursor-pointer dark:bg-gray-700 rounded-md pl-2">
-              <div>
-                <input type="text" placeholder="search">
-              </div>
+            <select name="province" class="cursor-pointer dark:bg-gray-700 rounded-md pl-2 appearance-none pl-2 border-1 border-dashed border-gray-300">
               <option v-for="(province, i) in provinceNames" :key="i" :value="province" class="mt-5 bg-[#FFF5F1] dark:bg-gray-700">
                 {{ province }}
               </option>
@@ -284,23 +281,28 @@ import provinceNames from '~/shared/provinces'
       <h2>Product evalutions</h2>
     </div>
     <div class="divide-y divide-1 divide-solid divide-gray-200">
-      <div v-for="i in 3" :key="i" class="flex py-3">
-        <div class="px-3">
-          <img src="https://cf.shopee.vn/file/3922ddaf7b5dde58c3193c6689e7aaca_tn" alt="customer_avatar_img" class="max-w-10 max-h-10 rounded-full">
+      <div v-for="i in 3" :key="i" class="flex justify-between items-start py-3">
+        <div class="flex">
+          <div class="px-3">
+            <img src="https://cf.shopee.vn/file/3922ddaf7b5dde58c3193c6689e7aaca_tn" alt="customer_avatar_img" class="max-w-10 max-h-10 rounded-full">
+          </div>
+          <div class="customer-cmt">
+            <p class="customer-username text-xs text-gray-600">
+              yen050619
+            </p>
+            <p class="flex gap-0.25">
+              <IStars v-for="i in 5" :key="i" />
+            </p>
+            <p class="text-gray-500 text-sm">
+              Very good! I like it.
+            </p>
+            <p class="flex items-center gap-2 text-sm cursor-pointer text-gray-500">
+              <IBLike /> 11
+            </p>
+          </div>
         </div>
-        <div class="customer-cmt">
-          <p class="customer-username text-xs text-gray-600">
-            yen050619
-          </p>
-          <p class="flex gap-0.25">
-            <IStars v-for="i in 5" :key="i" />
-          </p>
-          <p class="text-gray-500 text-sm">
-            Very good! I like it.
-          </p>
-          <p class="flex items-center gap-2 text-sm cursor-pointer text-gray-500">
-            <IBLike /> 11
-          </p>
+        <div class="cursor-pointer hover:opacity-60">
+          <IBThreeDot />
         </div>
       </div>
     </div>

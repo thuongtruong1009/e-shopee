@@ -25,7 +25,7 @@ window.addEventListener('scroll', scrollFunction)
 
 <template>
   <Transition name="bounce">
-    <div v-if="isScroll" id="fcircle" class="fixed z-30 w-13 h-13 bottom-5 right-5 bg-orange-500 border-3 border-solid border-green-600 text-white rounded-full border shadow-md shadow-gray-400 flex justify-center items-center cursor-pointer hover:bg-orange-600" @click="scrollToTop">
+    <div v-if="isScroll" id="fcircle" class="fixed z-30 w-13 h-13 bottom-5 right-5 bg-orange-500 border-3 border-solid border-green-600 text-white rounded-full border shadow-lg shadow-gray-500/50 flex justify-center items-center cursor-pointer hover:bg-orange-600" @click="scrollToTop">
       <ITop />
     </div>
   </Transition>

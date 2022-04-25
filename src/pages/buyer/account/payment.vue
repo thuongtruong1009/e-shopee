@@ -4,7 +4,7 @@ meta:
 </route>
 
 <template>
-  <div class="payment-container border-1 border-solid border-light-700 rounded-md p-5 bg-[#EBF6FC]">
+  <div class="payment-container border-1 border-solid border-light-700 rounded-md p-5 bg-[#EBF6FC] dark:bg-cool-gray-800">
     <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
       <IBPayment />
       <h3 class="text-2xl">

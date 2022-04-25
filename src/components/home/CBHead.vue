@@ -1,5 +1,5 @@
 <template>
-  <div class="head-container bg-orange-500 relative">
+  <div class="head-container bg-gradient-to-b from-[#F53F2D] to-orange-400 relative">
     <div class="flex justify-around items-center h-28">
       <CBBrand class="item3" />
       <CBSearch class="item5" />

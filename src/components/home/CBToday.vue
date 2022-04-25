@@ -1,5 +1,13 @@
 <script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
 const { t } = useI18n()
+
+const openProduct = () => {
+  router.push('/buyer/product')
+}
+
 const hintList = reactive([{
   img: '/img/today/1.jfif',
   desc: 'Áo Hoodie nam, nữ form rộng. Áo khoác bomber nam...',
@@ -259,7 +267,7 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
       </h2>
     </div>
     <div class="flex flex-wrap gap-3 py-3">
-      <div v-for="(hint, i) in hintListComputed" :key="i" class="w-47 rounded-md bg-white shadow-sm shadow-gray-400 border-1 border-solid border-transparent hover:border-red-500 cursor-pointer relative">
+      <div v-for="(hint, i) in hintListComputed" :key="i" class="w-47 rounded-md bg-white shadow-sm shadow-gray-400 border-1 border-solid border-transparent hover:border-red-500 cursor-pointer relative" @click="openProduct">
         <img v-if="hint.extra === true" src="/img/today/extra.png" alt="extra" class="absolute top-0 left-0 w-full">
         <!-- <div class="discount-label absolute top-0 right-0 w-20">
           <p>ok</p>

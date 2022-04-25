@@ -1,12 +1,6 @@
 <template>
   <main class="text-center text-gray-700 dark:text-gray-200 overflow-hidden dark:bg-black min-h-screen">
-    <div class="flex justify-between items-center bg-black shadow-md shadow-gray-500">
-      <LMenu />
-      <div class="flex justify-center items-center text-white">
-        <RMenu />
-        <CExtension class="mx-2.75" />
-      </div>
-    </div>
+    <CBHeaderTop />
     <router-view />
   </main>
 </template>
