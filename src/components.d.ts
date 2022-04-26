@@ -11,6 +11,7 @@ declare module 'vue' {
     CarbonLanguage: typeof import('~icons/carbon/language')['default']
     CarbonMoon: typeof import('~icons/carbon/moon')['default']
     CarbonSun: typeof import('~icons/carbon/sun')['default']
+    CarbonWarning: typeof import('~icons/carbon/warning')['default']
     CBAccount: typeof import('./components/buyer/CBAccount.vue')['default']
     CBArrivals: typeof import('./components/buyer/CBArrivals.vue')['default']
     CBBanner: typeof import('./components/buyer/CBBanner.vue')['default']
@@ -34,6 +35,7 @@ declare module 'vue' {
     CExtension: typeof import('./components/CExtension.vue')['default']
     CMap: typeof import('./components/CMap.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
+    CSFooter: typeof import('./components/seller/CSFooter.vue')['default']
     CSlick: typeof import('./components/CSlick.vue')['default']
     IAbout: typeof import('./components/icons/IAbout.vue')['default']
     IAccount: typeof import('./components/icons/IAccount.vue')['default']
@@ -134,10 +136,11 @@ declare module 'vue' {
     PCheckoutBot: typeof import('./components/partterns/PCheckoutBot.vue')['default']
     PNotFound: typeof import('./components/partterns/PNotFound.vue')['default']
     PNotNotify: typeof import('./components/partterns/PNotNotify.vue')['default']
+    PSRegister: typeof import('./components/partterns/seller/PSRegister.vue')['default']
     README: typeof import('./components/README.md')['default']
     RMenu: typeof import('./components/header/RMenu.vue')['default']
-    SHead: typeof import('./components/SHead.vue')['default']
-    SLMenu: typeof import('./components/SLMenu.vue')['default']
+    SHead: typeof import('./components/seller/SHead.vue')['default']
+    SLMenu: typeof import('./components/seller/SLMenu.vue')['default']
   }
 }
 

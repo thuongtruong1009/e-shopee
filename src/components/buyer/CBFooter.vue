@@ -24,7 +24,7 @@ const { t } = useI18n()
         <span><img src="https://img.icons8.com/ios/50/000000/youtube-play.png"></span>
       </div>
       <div class="copyright py-4">
-        <p>{{ t('footer.copyright') }} © <a href="">shopee</a>. {{ t('footer.all rights reserved') }}</p>
+        <p>{{ t('footer.copyright') }} © <a href="">shopee {{ new Date().getFullYear() }}</a>. {{ t('footer.all rights reserved') }}</p>
       </div>
     </div>
     <div class="right grid w-2/3 py-15 px-8 grid-cols-4 text-left bg-light-200 dark:bg-black">
