@@ -12,16 +12,16 @@ useHead({
 
 <template>
   <div class="seller_login_view_container grid grid-cols-2">
-    <div class="seller-login-container-left grid pt-10">
+    <div class="seller-login-container-left grid text-center pt-10">
       <h2 class="text-red-500 font-bold text-3xl">
         Professional seller
       </h2>
-      <h6 class="text-md tracking-tight w-4/5 mb-5">
+      <h6 class="text-md tracking-tight w-full mb-5">
         Manage your shop more effectively on e-shopee with e-shopee Seller-Channel
       </h6>
-      <img src="/img/seller/login/background.png" class="bg-contain w-md h-[13rem]">
+      <PSLogin />
     </div>
-    <div class="seller-login-container-right flex justify-end">
+    <div class="seller-login-container-right flex justify-center">
       <div class="w-4/5 bg-white grid justify-center p-5 rounded-2xl shadow-md shadow-gray-300">
         <h2 class="text-3xl font-semibold tracking-tight mb-5">
           Login to Seller channel

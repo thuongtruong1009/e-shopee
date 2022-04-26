@@ -135,6 +135,7 @@ declare module 'vue' {
     PCheckoutBot: typeof import('./components/partterns/PCheckoutBot.vue')['default']
     PNotFound: typeof import('./components/partterns/PNotFound.vue')['default']
     PNotNotify: typeof import('./components/partterns/PNotNotify.vue')['default']
+    PSLogin: typeof import('./components/partterns/seller/PSLogin.vue')['default']
     PSRegister: typeof import('./components/partterns/seller/PSRegister.vue')['default']
     README: typeof import('./components/README.md')['default']
     RMenu: typeof import('./components/header/RMenu.vue')['default']
