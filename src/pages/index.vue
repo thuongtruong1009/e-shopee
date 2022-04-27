@@ -213,7 +213,8 @@ li{
     word-wrap: break-word;
     border: 1px solid #e9e9e9;
     border-radius: 1rem;
-    box-shadow: 2px 2px 4px #d9d9d9;
+    box-shadow: 2px 2px 4px #cccccc;
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
 }
 .services-lists img{
     justify-self: center;

@@ -4,6 +4,7 @@ meta:
 </route>
 
 <script setup lang="ts">
+import CBTopProducts from '~/components/buyer/CBTopProducts.vue';
 useHead({
   title: 'e-shopee | buyer home',
 })
@@ -18,6 +19,7 @@ useHead({
     <CBArrivals />
     <CBMonthSale />
     <CBTrending />
+    <CBTopProducts />
     <CBDemo3 />
     <div class="flex justify-center">
       <CBToday />

@@ -18,7 +18,7 @@ useHead({
     <div class="seller-login-container-right flex justify-end">
       <div class="seller-signup-container-right">
         <h2 class="text-green-500 font-semibold text-sm mb-2">
-          Become to official of e-shopee! Why not?
+          Become to official member of e-shopee! Why not?
         </h2>
         <form class="box bg-white rounded-lg shadow-md shadow-gray-300 p-7.5 text-center w-125">
           <div class="form__control">
