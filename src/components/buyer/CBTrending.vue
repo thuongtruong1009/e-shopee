@@ -57,10 +57,10 @@ const trendList = reactive([{
 </script>
 
 <template>
-  <div class="top-trending-container bg-white pt-5 px-5 border-1 border-radius border-light-700 shadow-md shadow-gray-300/50 m-8 rounded-lg">
-    <div class="border-b-1 border-b-solid border-b-light-700 text-left py-3 flex justify-between">
-      <h1 class="uppercase text-lg text-gray-500">
-        {{ t('ctrending.top-seearch') }}
+  <div class="top-trending-container bg-white p-1 border-1 border-radius border-light-700 shadow-md shadow-gray-300/50 m-8 rounded-lg">
+    <div class="border-b-1 border-b-solid border-b-light-700 text-left p-5 flex justify-between bg-[#F5F5F5] rounded-lg">
+      <h1 class="uppercase text-lg text-gray-500 font-medium">
+        {{ t('ctrending.search') }}
       </h1>
       <p class="flex items-center gap-1 text-red-400 cursor-pointer" @click="loadMore">
         <ILoading />{{ t('ctrending.see-more') }}
@@ -83,14 +83,6 @@ const trendList = reactive([{
 </template>
 
 <style scoped>
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-::-webkit-scrollbar,
-::-webkit-scrollbar-track {
-  background: transparent;
-}
 ::-webkit-scrollbar-thumb {
   background: transparent;
 }

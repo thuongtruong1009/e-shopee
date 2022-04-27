@@ -30,6 +30,7 @@ declare module 'vue' {
     CBService: typeof import('./components/buyer/CBService.vue')['default']
     CBSwipper: typeof import('./components/buyer/CBSwipper.vue')['default']
     CBToday: typeof import('./components/buyer/CBToday.vue')['default']
+    CBTopProducts: typeof import('./components/buyer/CBTopProducts.vue')['default']
     CBTrending: typeof import('./components/buyer/CBTrending.vue')['default']
     CExtension: typeof import('./components/CExtension.vue')['default']
     CMap: typeof import('./components/CMap.vue')['default']

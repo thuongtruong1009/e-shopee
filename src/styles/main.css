@@ -46,6 +46,10 @@
   src: local("Gilroy-Regular ☞"), url("../fonts/Gilroy-Regular.woff") format("woff");
 } */
 
+*{
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #app {
@@ -56,7 +60,6 @@ body,
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  scroll-behavior: smooth;
   -webkit-user-scroll-behavior: smooth;
   -moz-user-scroll-behavior: smooth;
   -ms-user-scroll-behavior: smooth;

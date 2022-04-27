@@ -95,99 +95,99 @@ const onActiveNav = (item) => {
     </div>
     <div id="container" class="pb-5">
       <Transition duration="550" name="nested">
-      <div v-if="activeNav === 1">
-      <div id="content" class="flex items-center gap-5 px-1">
-          <div v-for="(image, i) in tabList1" :key="i" class="card duration-300 ease-linear relative rounded-lg w-65">
-          <div class="card-type flex justify-between absolute w-full p-2">
-            <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
-            <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('carrival.new') }}</span>
-          </div>
-          <div class="card-img max-w-full max-h-7/12">
-            <a href="single-product.html">
-              <img class="first-img rounded-t-lg" :src="image.img" alt="thumbnail">
-            </a>
-          </div>
-          <div class="product-description text-left p-2">
-            <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]">
-              {{ image.desc }}
-            </p>
-            <div class="star-rating flex justify-start">
-              <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
-            </div>
-            <div class="flex items-center justify-between">
-              <h6 class="card-price font-bold tracking-tighter">
-                ${{ image.price }}
-              </h6>
-              <ICart class="cart w-9 h-9 p-2 rounded-full bg-gray-100 cursor-pointer duration-200 ease-linear text-gray-500 hover:bg-[#FF9900] hover:text-white" />
+        <div v-if="activeNav === 1">
+          <div id="content" class="flex items-center gap-5 px-1">
+            <div v-for="(image, i) in tabList1" :key="i" class="card duration-300 ease-linear relative rounded-lg w-65">
+              <div class="card-type flex justify-between absolute w-full p-2">
+                <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
+                <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('carrival.new') }}</span>
+              </div>
+              <div class="card-img max-w-full max-h-7/12">
+                <a href="single-product.html">
+                  <img class="first-img rounded-t-lg" :src="image.img" alt="thumbnail">
+                </a>
+              </div>
+              <div class="product-description text-left p-2">
+                <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]">
+                  {{ image.desc }}
+                </p>
+                <div class="star-rating flex justify-start">
+                  <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
+                </div>
+                <div class="flex items-center justify-between">
+                  <h6 class="card-price font-bold tracking-tighter">
+                    ${{ image.price }}
+                  </h6>
+                  <ICart class="cart w-9 h-9 p-2 rounded-full bg-gray-100 cursor-pointer duration-200 ease-linear text-gray-500 hover:bg-[#FF9900] hover:text-white" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        </div>
-      </div>
       </Transition>
 
-<Transition duration="550" name="nested">
-      <div v-if="activeNav === 2">
-      <div id="content" class="flex items-center gap-5 px-1">
-          <div v-for="(image, i) in tabList2" :key="i" class="card duration-300 ease-linear relative rounded-lg w-65">
-          <div class="card-type flex justify-between absolute w-full p-2">
-            <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
-            <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('carrival.new') }}</span>
-          </div>
-          <div class="card-img max-w-full max-h-7/12">
-            <a href="single-product.html">
-              <img class="first-img rounded-t-lg" :src="image.img" alt="thumbnail">
-            </a>
-          </div>
-          <div class="product-description text-left p-2">
-            <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]">
-              {{ image.desc }}
-            </p>
-            <div class="star-rating flex justify-start">
-              <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
-            </div>
-            <div class="flex items-center justify-between">
-              <h6 class="card-price font-bold tracking-tighter">
-                ${{ image.price }}
-              </h6>
-              <ICart class="cart w-9 h-9 p-2 rounded-full bg-gray-100 cursor-pointer duration-200 ease-linear text-gray-500 hover:bg-[#FF9900] hover:text-white" />
+      <Transition duration="550" name="nested">
+        <div v-if="activeNav === 2">
+          <div id="content" class="flex items-center gap-5 px-1">
+            <div v-for="(image, i) in tabList2" :key="i" class="card duration-300 ease-linear relative rounded-lg w-65">
+              <div class="card-type flex justify-between absolute w-full p-2">
+                <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
+                <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('carrival.new') }}</span>
+              </div>
+              <div class="card-img max-w-full max-h-7/12">
+                <a href="single-product.html">
+                  <img class="first-img rounded-t-lg" :src="image.img" alt="thumbnail">
+                </a>
+              </div>
+              <div class="product-description text-left p-2">
+                <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]">
+                  {{ image.desc }}
+                </p>
+                <div class="star-rating flex justify-start">
+                  <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
+                </div>
+                <div class="flex items-center justify-between">
+                  <h6 class="card-price font-bold tracking-tighter">
+                    ${{ image.price }}
+                  </h6>
+                  <ICart class="cart w-9 h-9 p-2 rounded-full bg-gray-100 cursor-pointer duration-200 ease-linear text-gray-500 hover:bg-[#FF9900] hover:text-white" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        </div>
-      </div>
       </Transition>
 
-<Transition duration="550" name="nested">
-      <div v-if="activeNav === 3">
-      <div id="content" class="flex items-center gap-5 px-1">
-          <div v-for="(image, i) in tabList3" :key="i" class="card duration-300 ease-linear relative rounded-lg w-65">
-          <div class="card-type flex justify-between absolute w-full p-2">
-            <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
-            <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('carrival.new') }}</span>
-          </div>
-          <div class="card-img max-w-full max-h-7/12">
-            <a href="single-product.html">
-              <img class="first-img rounded-t-lg" :src="image.img" alt="thumbnail">
-            </a>
-          </div>
-          <div class="product-description text-left p-2">
-            <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]">
-              {{ image.desc }}
-            </p>
-            <div class="star-rating flex justify-start">
-              <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
-            </div>
-            <div class="flex items-center justify-between">
-              <h6 class="card-price font-bold tracking-tighter">
-                ${{ image.price }}
-              </h6>
-              <ICart class="cart w-9 h-9 p-2 rounded-full bg-gray-100 cursor-pointer duration-200 ease-linear text-gray-500 hover:bg-[#FF9900] hover:text-white" />
+      <Transition duration="550" name="nested">
+        <div v-if="activeNav === 3">
+          <div id="content" class="flex items-center gap-5 px-1">
+            <div v-for="(image, i) in tabList3" :key="i" class="card duration-300 ease-linear relative rounded-lg w-65">
+              <div class="card-type flex justify-between absolute w-full p-2">
+                <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
+                <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('carrival.new') }}</span>
+              </div>
+              <div class="card-img max-w-full max-h-7/12">
+                <a href="single-product.html">
+                  <img class="first-img rounded-t-lg" :src="image.img" alt="thumbnail">
+                </a>
+              </div>
+              <div class="product-description text-left p-2">
+                <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]">
+                  {{ image.desc }}
+                </p>
+                <div class="star-rating flex justify-start">
+                  <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
+                </div>
+                <div class="flex items-center justify-between">
+                  <h6 class="card-price font-bold tracking-tighter">
+                    ${{ image.price }}
+                  </h6>
+                  <ICart class="cart w-9 h-9 p-2 rounded-full shadow-md shadow-300 bg-gray-100 cursor-pointer duration-200 ease-linear text-gray-500 hover:bg-[#FF9900] hover:text-white" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        </div>
-      </div>
       </Transition>
     </div>
     <button id="slide-left" @click="onLeftScroll">
@@ -234,7 +234,7 @@ cursor: pointer;
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color);
   -webkit-box-shadow: var(--tw-ring-offset-shadow,0 0 rgba(107, 114, 128, 1)),var(--tw-ring-shadow,0 0 rgba(107, 114, 128, 1)),var(--tw-shadow);
   box-shadow: var(--tw-ring-offset-shadow,0 0 rgba(107, 114, 128, 1)),var(--tw-ring-shadow,0 0 rgba(107, 114, 128, 1)),var(--tw-shadow);
-  --tw-shadow-color: rgba(107, 114, 128, 1);
+  --tw-shadow-color: rgba(107, 114, 128, 0.5);
   --tw-shadow: var(--tw-shadow-colored);
 }
 /* ************************ PREV, NEXT ***************** */
