@@ -1,12 +1,9 @@
 <script setup>
-const onPrev = () => {
-  const topListContainer = document.getElementById('top_list')
-  topListContainer.scrollLeft -= topListContainer.offsetWidth
-}
-const onNext = () => {
-  const topListContainer = document.getElementById('top_list')
-  topListContainer.scrollLeft += topListContainer.offsetWidth
-}
+import progressRatio from '~/utils/progress'
+import { next, prev } from '~/utils/scrollX'
+
+const onPrev = () => prev('top_list')
+const onNext = () => next('top_list')
 
 const topList = reactive([{
   img: '/img/top-products/1.jfif',
@@ -149,7 +146,7 @@ const topList = reactive([{
   quantity: 6,
 }])
 
-const saleRatio = computed(() => (solded, total) => Number.parseFloat(solded * 100 / total).toFixed(2))
+const saleRatio = computed(() => progressRatio)
 
 </script>
 

@@ -1,12 +1,8 @@
 <script setup>
-const onPrev = () => {
-  const topListContainer = document.getElementById('top_list')
-  topListContainer.scrollLeft -= topListContainer.offsetWidth
-}
-const onNext = () => {
-  const topListContainer = document.getElementById('top_list')
-  topListContainer.scrollLeft += topListContainer.offsetWidth
-}
+import { next, prev } from '~/utils/scrollX'
+
+const onPrev = () => prev('top_list2')
+const onNext = () => next('top_list2')
 
 const topList = reactive([{
   img: '/img/top-products/1.jfif',
@@ -121,12 +117,12 @@ const topList = reactive([{
         See all >
       </p>
     </div>
-    <div id="top_list" class="flex overflow-x-scroll gap-3 p-2">
-      <div v-for="(top, i) in topList" :key="i" class="max-w-50 min-w-50 w-50">
+    <div id="top_list2" class="flex overflow-x-scroll gap-3 p-2">
+      <div v-for="(top, i) in topList" :key="i" class="max-w-50 min-w-50 w-50 rounded-md bg-blue-50">
         <div class="relative">
           <img src="/img/top-products/top_label.png" alt="top_label_img" class="absolute top-0 left-0 max-w-8 max-h-10">
           <img :src="top.img" :alt="`${top.img}_img`">
-          <p class="p-1 rounded-t-lg bg-[#BDBDBD] absolute bottom-0 left-0 w-full text-center text-sm text-white">
+          <p class="p-1 rounded-t-xl bg-[#BDBDBD] absolute bottom-0 left-0 w-full text-center text-sm text-white">
             Solded {{ top.quantity }}k+ / month
           </p>
         </div>
