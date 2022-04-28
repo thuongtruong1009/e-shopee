@@ -9,7 +9,7 @@ const onNextArrival = () => next('arrival_list')
 </script>
 
 <template>
-  <div class="deal_arrivals_container m-8 p-5 flex gap-8 bg-[#F5F5F5] rounded-2xl">
+  <div class="deal_arrivals_container m-8 p-5 flex gap-5 bg-[#F5F5F5] rounded-2xl">
     <div class="relative max-w-1/3">
       <div id="deals_list" class="rounded-xl overflow-x-scroll flex shadow-lg shadow-gray-300 bg-white">
         <div v-for="index in 3" :key="index" class="min-w-full p-5">
@@ -93,7 +93,7 @@ const onNextArrival = () => next('arrival_list')
         &#10095;
       </button>
     </div>
-    <div class="max-w-2/3 w-2/3 relative">
+    <div class="max-w-2/3 w-2/3 relative px-2">
       <div>
         <h1 class="text-3xl">
           New Arrivals
@@ -103,8 +103,8 @@ const onNextArrival = () => next('arrival_list')
         </h6>
       </div>
       <div id="arrival_list" class="overflow-x-scroll max-w-full">
-        <div v-for="i in 2" :key="i" class="flex gap-3 w-full pb-3 px-2">
-          <div v-for="index in 10" :key="index" class="max-w-50 min-w-50 bg-white rounded-lg shadow-md shadow-gray-300 p-2">
+        <div v-for="i in 2" :key="i" class="flex">
+          <div v-for="index in 10" :key="index" class="max-w-50 min-w-50 bg-white rounded-lg shadow-md shadow-gray-300 p-2 mr-3 mb-3">
             <div class="flex justify-end">
               <p class="p-1 text-xs font-medium rounded-md bg-[#FF7519] text-white">
                 New
@@ -127,7 +127,7 @@ const onNextArrival = () => next('arrival_list')
             </div>
           </div>
         </div>
-        <button class="absolute flex justify-center items-center rounded-full bg-white shadow-md shadow-gray-300 duration-300 top-1/2 -left-2 cursor-pointer w-7 h-7 p-1 hover:(w-10 h-10 text-3xl -translate-y-5) text-gray-500" @click="onPrevArrival">
+        <button class="absolute flex justify-center items-center rounded-full bg-white shadow-md shadow-gray-300 duration-300 top-1/2 left-0 cursor-pointer w-7 h-7 p-1 hover:(w-10 h-10 text-3xl -translate-y-5) text-gray-500" @click="onPrevArrival">
           &#10094;
         </button>
         <button class="absolute flex justify-center items-center rounded-full bg-white shadow-md shadow-gray-300 duration-300 top-1/2 -right-3 cursor-pointer w-7 h-7 p-1 hover:(w-10 h-10 text-3xl -translate-y-5) text-gray-500" @click="onNextArrival">

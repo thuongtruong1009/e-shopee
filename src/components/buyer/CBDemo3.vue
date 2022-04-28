@@ -1,23 +1,23 @@
 <template>
   <div class="demo2-container">
     <div class="split-wrap grid grid-cols-3 items-center p-8 gap-4">
-      <div class="split third rounded-lg">
+      <div class="split third rounded-lg shadow-md shadow-gray-400">
         <div class="cover">
           <img src="/img/banner/4.webp">
         </div>
       </div>
-      <div class="split third rounded-lg">
+      <div class="split third rounded-lg shadow-md shadow-gray-400">
         <div class="cover">
           <img src="/img/banner/5.webp">
         </div>
       </div>
       <div class="grid grid-rows-2 content-between gap-5">
-        <div class="split third rounded-lg">
+        <div class="split third rounded-lg shadow-md shadow-gray-400">
           <div class="cover">
             <img src="/img/banner/6.webp">
           </div>
         </div>
-        <div class="split third rounded-lg">
+        <div class="split third rounded-lg shadow-md shadow-gray-400">
           <div class="cover">
             <img src="/img/banner/7.webp">
           </div>

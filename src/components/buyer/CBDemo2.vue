@@ -1,12 +1,12 @@
 <template>
   <div class="demo2-container">
     <div class="split-wrap flex items-center p-8">
-      <div class="split third rounded-lg">
+      <div class="split third rounded-lg shadow-md shadow-gray-400">
         <div class="cover">
           <img src="/img/banner/8.webp">
         </div>
       </div>
-      <div class="split third rounded-lg">
+      <div class="split third rounded-lg shadow-md shadow-gray-400">
         <div class="cover">
           <img src="/img/banner/9.webp">
         </div>
