@@ -2,8 +2,8 @@
 import progressRatio from '~/utils/progress'
 import { next, prev } from '~/utils/scrollX'
 
-const onPrev = () => prev('top_list')
-const onNext = () => next('top_list')
+const onPrev = () => prev('flash_sales_list')
+const onNext = () => next('flash_sales_list')
 
 const topList = reactive([{
   img: '/img/top-products/1.jfif',
@@ -160,7 +160,7 @@ const saleRatio = computed(() => progressRatio)
         See all >
       </p>
     </div>
-    <div id="top_list" class="flex overflow-x-scroll gap-3 p-2">
+    <div id="flash_sales_list" class="flex overflow-x-scroll gap-3 p-2">
       <div v-for="(top, i) in topList" :key="i" class="max-w-50 min-w-50 w-50">
         <div class="relative">
           <img src="/img/today/discount.svg" alt="discount" class="absolute -top-5 -right-11 w-30">

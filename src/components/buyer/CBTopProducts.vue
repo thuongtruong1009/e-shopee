@@ -1,8 +1,8 @@
 <script setup>
 import { next, prev } from '~/utils/scrollX'
 
-const onPrev = () => prev('top_list2')
-const onNext = () => next('top_list2')
+const onPrev = () => prev('top_products_list')
+const onNext = () => next('top_products_list')
 
 const topList = reactive([{
   img: '/img/top-products/1.jfif',
@@ -117,7 +117,7 @@ const topList = reactive([{
         See all >
       </p>
     </div>
-    <div id="top_list2" class="flex overflow-x-scroll gap-3 p-2">
+    <div id="top_products_list" class="flex overflow-x-scroll gap-3 p-2">
       <div v-for="(top, i) in topList" :key="i" class="max-w-50 min-w-50 w-50 rounded-md bg-blue-50">
         <div class="relative">
           <img src="/img/top-products/top_label.png" alt="top_label_img" class="absolute top-0 left-0 max-w-8 max-h-10">
