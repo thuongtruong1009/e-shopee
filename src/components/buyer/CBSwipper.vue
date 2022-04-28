@@ -1,5 +1,7 @@
 <script setup>
 const images = reactive([
+  '/img/swipper/slide1.webp',
+  '/img/swipper/slide2.webp',
   'https://www.duchuymobile.com/images/promo/34/iphone-giam-gia.jpg',
   'https://static.ladipage.net/5bf3dc7edc60303c34e4991f/thumb-20211219233256.jpg',
   'https://binhminhdigital.com/StoreData/images/PageData/top-5-tai-nghe-chup-tai-sony-tot-trong-tam-gia-1-trieu-Binhminhdigital.jpg',
