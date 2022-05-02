@@ -4,13 +4,14 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    ACalendar: typeof import('./components/ACalendar.vue')['default']
-    AreaChart: typeof import('./components/AreaChart.vue')['default']
-    ASellerList: typeof import('./components/ASellerList.vue')['default']
+    CAAreaChart: typeof import('./components/admin/CAAreaChart.vue')['default']
+    CACalendar: typeof import('./components/admin/CACalendar.vue')['default']
     CarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
     CarbonLanguage: typeof import('~icons/carbon/language')['default']
     CarbonMoon: typeof import('~icons/carbon/moon')['default']
     CarbonSun: typeof import('~icons/carbon/sun')['default']
+    CarbonWarning: typeof import('~icons/carbon/warning')['default']
+    CASellerList: typeof import('./components/admin/CASellerList.vue')['default']
     CBAccount: typeof import('./components/buyer/CBAccount.vue')['default']
     CBBanner: typeof import('./components/buyer/CBBanner.vue')['default']
     CBBrand: typeof import('./components/head/CBBrand.vue')['default']
@@ -43,6 +44,7 @@ declare module 'vue' {
     IAccount: typeof import('./components/icons/IAccount.vue')['default']
     IAdmin: typeof import('./components/icons/IAdmin.vue')['default']
     IApplication: typeof import('./components/icons/IApplication.vue')['default']
+    IARemove: typeof import('./components/icons/IARemove.vue')['default']
     IBAccount: typeof import('./components/icons/account/IBAccount.vue')['default']
     IBAddress: typeof import('./components/icons/account/IBAddress.vue')['default']
     IBasket: typeof import('./components/icons/IBasket.vue')['default']

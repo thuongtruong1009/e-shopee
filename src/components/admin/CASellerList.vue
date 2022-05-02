@@ -1,5 +1,8 @@
 <script setup>
+import progressRatio from '~/utils/progress'
+
 const sellerList = reactive([{
+  id: 1,
   avatar: 'https://technext.github.io/star-admin2-free-admin-template/images/faces/face1.jpg',
   name: 'Brandon Washington',
   email: 'headadmin1@gmail.com',
@@ -8,6 +11,7 @@ const sellerList = reactive([{
   status: 'Offline',
 },
 {
+  id: 2,
   avatar: 'https://technext.github.io/star-admin2-free-admin-template/images/faces/face2.jpg',
   name: 'Laura Brooks',
   email: 'headadmin2@gmail.com',
@@ -16,6 +20,7 @@ const sellerList = reactive([{
   status: 'Active',
 },
 {
+  id: 3,
   avatar: 'https://technext.github.io/star-admin2-free-admin-template/images/faces/face3.jpg',
   name: 'Wayne Murphy',
   email: 'headadmin3@gmail.com',
@@ -24,6 +29,7 @@ const sellerList = reactive([{
   status: 'Not found',
 },
 {
+  id: 4,
   avatar: 'https://technext.github.io/star-admin2-free-admin-template/images/faces/face4.jpg',
   name: 'Matthew Bailey',
   email: 'headadmin4@gmail.com',
@@ -32,6 +38,7 @@ const sellerList = reactive([{
   status: 'Pending',
 },
 {
+  id: 4,
   avatar: 'https://technext.github.io/star-admin2-free-admin-template/images/faces/face5.jpg',
   name: 'Katherine Butler',
   email: 'headadmin5@gmail.com',
@@ -42,7 +49,7 @@ const sellerList = reactive([{
 
 const statusColor = ref('#34B1AA')
 const percent = (sold, total) => {
-  const result = parseFloat(sold * 100 / total).toFixed(2)
+  const result = progressRatio(sold, total)
   if (result <= 70) {
     statusColor.value = '#FFAF00'
     if (result < 40)
@@ -53,6 +60,8 @@ const percent = (sold, total) => {
   }
   return result
 }
+
+const deletelist = ref([])
 </script>
 
 <template>
@@ -66,30 +75,32 @@ const percent = (sold, total) => {
           Total 50+ new requests in this month
         </p>
       </div>
-      <div>
+      <div class="flex gap-2 text-sm">
+        <button class="btn py-2 px-3 rounded-md shadow-md shadow-gray-300 flex items-center gap-1 disabled:cursor-not-allowed" :disabled="!deletelist.length">
+          <IARemove /> Remove
+        </button>
         <button class="btn py-2 px-3 rounded-md shadow-md shadow-gray-300">
           <i class="fas fa-user-plus" /> Add new seller
         </button>
       </div>
     </div>
     <div class="seller-table divide-y divide-solid divide-1 divide-gray-300">
-      <div class="seller-head grid grid-cols-7 py-5">
-        <p class="col-span-1 text-center">
-          DELETE
-        </p>
-        <p class="col-span-3 text-center">
+      <div class="seller-head grid grid-cols-6 py-5">
+        <p class="col-span-2 text-left">
           SELLERS
         </p>
-        <p class="col-span-2">
+        <p class="col-span-2 text-left">
           PROGRESS
         </p>
-        <p class="col-span-1">
+        <p class="col-span-1 text-left">
           STATUS
+        </p>
+        <p class="col-span-1 text-left">
+          DELETE
         </p>
       </div>
       <div v-for="(seller, i) in sellerList" :key="i" class="seller-body grid grid-cols-6 py-2">
-        <div class="flex justify-around items-center col-span-3">
-          <input id="delete_checkbox" type="checkbox" name="delete_checkbox" class="w-4 h-4 cursor-pointer outline-none">
+        <div class="flex justify-start items-center col-span-2">
           <div class="flex">
             <img :src="seller.avatar" alt="avatar" class="rounded-full mr-2">
             <div>
@@ -108,13 +119,16 @@ const percent = (sold, total) => {
             <p>{{ seller.sold }}/{{ seller.total }}</p>
           </div>
           <div class="w-3/4 bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
-            <div class="h-1.5 rounded-full" :style="`width: ${percent(seller.sold, seller.total)}% ; background: ${statusColor}`" />
+            <div class="h-1.5 rounded-full" :style="`width: ${percent(seller.sold, seller.total)}% ; background:${statusColor};`" />
           </div>
         </div>
         <div class="flex justify-start items-center">
-          <p class="rounded-2xl py-0.5 px-2 bg-orange-200">
+          <p class="rounded-2xl py-0.5 px-2 bg-orange-200 text-xs">
             {{ seller.status }}
           </p>
+        </div>
+        <div class="flex items-center">
+          <input id="delete_checkbox" v-model="deletelist" :value="seller.id" type="checkbox" name="delete_checkbox" class="w-4 h-4 cursor-pointer" :class="`accent-[${statusColor}]`">
         </div>
       </div>
     </div>

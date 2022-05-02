@@ -6,3 +6,11 @@
     </div>
   </main>
 </template>
+
+<style scoped>
+.seller-main{
+  background: url("/img/admin/login_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>

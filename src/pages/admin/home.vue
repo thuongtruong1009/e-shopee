@@ -71,11 +71,11 @@ meta:
 
     <div class="grid grid-cols-3 justify-between my-3 gap-5">
       <VChart class="col-span-1 chart w-sm h-sm bg-white border-1 border-solid border-gray-200 rounded-lg pt-2 shadow-md shadow-gray-300" :option="option" />
-      <AreaChart class="col-span-2 bg-white border-1 border-solid border-gray-200 rounded-lg p-2 shadow-md shadow-gray-300" />
+      <CAAreaChart class="col-span-2 bg-white border-1 border-solid border-gray-200 rounded-lg p-2 shadow-md shadow-gray-300" />
     </div>
     <div class="my-3 grid grid-cols-3 justify-between gap-5">
-      <ACalendar class="col-span-1" />
-      <ASellerList class="col-span-2" />
+      <CACalendar class="col-span-1" />
+      <CASellerList class="col-span-2" />
     </div>
   </div>
 </template>
@@ -91,14 +91,6 @@ import {
 } from 'echarts/components'
 import VChart, { THEME_KEY } from 'vue-echarts'
 import { defineComponent, ref } from 'vue'
-
-import ITotalSale from '~/components/icons/ITotalSale.vue'
-import IBasket from '~/components/icons/IBasket.vue'
-import IDonut from '~/components/icons/IDonut.vue'
-import IMultiline from '~/components/icons/IMultiline.vue'
-import AreaChart from '~/components/AreaChart.vue'
-import ACalendar from '~/components/ACalendar.vue'
-import ASellerList from '~/components/ASellerList.vue'
 
 use([
   CanvasRenderer,

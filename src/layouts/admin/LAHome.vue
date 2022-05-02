@@ -1,6 +1,4 @@
 <script setup>
-import IEdit from '~/components/icons/IEdit.vue'
-import ILogout from '~/components/icons/ILogout.vue'
 const adminName = ref('Thuong Truong')
 const adminAvatar = ref('/img/admin/avatar_sample.png')
 
