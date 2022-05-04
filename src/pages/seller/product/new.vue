@@ -152,6 +152,13 @@ meta:
       </form>
       <div />
     </div>
+    <div class="sale_infor p-7 my-5 bg-white shadow-md shadow-gray-300 rounded-xl">
+      <div>
+        <h5 class="font-medium text-lg">
+          Sales information
+        </h5>
+      </div>
+    </div>
     <div class="transport_infor p-7 my-5 bg-white shadow-md shadow-gray-300 rounded-xl">
       <div>
         <h5 class="font-medium text-lg">
@@ -190,12 +197,23 @@ meta:
       </form>
     </div>
     <div class="flex justify-end">
-      <button class="inline rounded-md bg-[#EE4D2D] hover:bg-[#E54A2B] px-3 py-1.5 text-white text-md flex items-center gap-1"><ISave />Save & Display</button>
+      <button class="inline rounded-md bg-[#EE4D2D] hover:bg-[#E54A2B] px-3 py-1.5 text-white text-md flex items-center gap-1">
+        <ISave />Save & Display
+      </button>
     </div>
   </div>
 </template>
 
 <style scoped>
+label{
+  font-size: 0.9em;
+  font-weight: 500;
+  color: gray;
+}
+select, option{
+  padding: 0.3rem;
+}
+/* ********************* BASIC ************************ */
 .basic_fields{
   margin-top: 1rem;
 }
@@ -233,14 +251,7 @@ meta:
   border-radius: 0.3rem;
   height: min-content;
 }
-label{
-  font-size: 0.9em;
-  font-weight: 500;
-  color: gray;
-}
-select, option{
-  padding: 0.3rem;
-}
+/*  ************* TRANSPORT **************************** */
 .transport_fields{
   display: flex;
   text-align: right;
