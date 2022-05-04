@@ -5,7 +5,7 @@ meta:
 
 <template>
   <div class="seller_new_prod_view max-w-254 w-254">
-    <div class="basic_infor p-7 bg-white shadow-md shadow-gray-300 rounded-xl">
+    <div class="basic_infor p-7 my-5 bg-white shadow-md shadow-gray-300 rounded-xl">
       <h5 class="font-medium text-lg">
         Basic information
       </h5>
@@ -71,7 +71,7 @@ meta:
       </div>
       <div class="fields flex w-full">
         <div>
-          <label>Category</label>
+          <label>* Category</label>
         </div>
         <div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
           <p class="cursor-pointer">
@@ -82,6 +82,73 @@ meta:
           </router-link>
         </div>
       </div>
+    </div>
+    <div class="detail_infor p-7 my-5 bg-white shadow-md shadow-gray-300 rounded-xl">
+      <div>
+        <h5 class="font-medium text-lg">
+          Basic information
+        </h5>
+        <p class="text-xs">
+          Fill full information to grow level of the product display. <a href="" class="text-blue-600 font-medium">Guide view</a>
+        </p>
+      </div>
+      <div class="detail_fields grid grid-cols-2 gap-5 mt-5">
+        <div>
+          <label>* Brand</label>
+          <select name="brand">
+            <option value="1">
+              1
+            </option>
+          </select>
+        </div>
+        <div>
+          <label>* Sex</label>
+          <select name="sex">
+            <option value="unisex">
+              Unisex
+            </option>
+            <option value="men">
+              Men
+            </option>
+            <option value="women">
+              Women
+            </option>
+          </select>
+        </div>
+        <div>
+          <label>Origin</label>
+          <select name="origin">
+            <option value="vn">
+              VietNam
+            </option>
+          </select>
+        </div>
+        <div>
+          <label>Materials</label>
+          <select name="brand">
+            <option value="1">
+              1
+            </option>
+          </select>
+        </div>
+        <div>
+          <label>Organization name</label>
+          <select name="brand">
+            <option value="1">
+              1
+            </option>
+          </select>
+        </div>
+        <div>
+          <label>Organization address</label>
+          <select name="brand">
+            <option value="1">
+              1
+            </option>
+          </select>
+        </div>
+      </div>
+      <div />
     </div>
   </div>
 </template>
@@ -106,5 +173,30 @@ textarea, input{
   padding: 0.5rem;
   font-size: 0.8em;
   font-weight: 500;
+}
+/* **************** PRODUCT DETAILS ****************** */
+.detail_fields > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: end;
+}
+.detail_fields label{
+  margin-right: 1rem;
+}
+.detail_fields select{
+  width: 50%;
+  min-width: 50%;
+  border: 1px solid #e9e9e9;
+  border-radius: 0.3rem;
+  height: min-content;
+}
+label{
+  font-size: 0.9em;
+  font-weight: 500;
+  color: gray;
+}
+select, option{
+  padding: 0.3rem;
 }
 </style>
