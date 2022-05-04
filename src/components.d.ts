@@ -117,6 +117,7 @@ declare module 'vue' {
     IRupee: typeof import('./components/icons/header/IRupee.vue')['default']
     ISave: typeof import('./components/icons/ISave.vue')['default']
     ISearch: typeof import('./components/icons/ISearch.vue')['default']
+    ISEdit: typeof import('./components/icons/seller/ISEdit.vue')['default']
     ISell: typeof import('./components/icons/ISell.vue')['default']
     ISetting: typeof import('./components/icons/ISetting.vue')['default']
     IShakeHand: typeof import('./components/icons/about/IShakeHand.vue')['default']
