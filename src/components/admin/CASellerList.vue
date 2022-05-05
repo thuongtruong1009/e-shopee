@@ -38,7 +38,7 @@ const sellerList = reactive([{
   status: 'Pending',
 },
 {
-  id: 4,
+  id: 5,
   avatar: 'https://technext.github.io/star-admin2-free-admin-template/images/faces/face5.jpg',
   name: 'Katherine Butler',
   email: 'headadmin5@gmail.com',

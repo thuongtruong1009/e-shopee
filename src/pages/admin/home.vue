@@ -80,7 +80,7 @@ meta:
   </div>
 </template>
 
-<script>
+<script setup>
 import { use } from 'echarts/core'
 import { CanvasRenderer } from 'echarts/renderers'
 import { PieChart } from 'echarts/charts'
@@ -90,7 +90,11 @@ import {
   TooltipComponent,
 } from 'echarts/components'
 import VChart, { THEME_KEY } from 'vue-echarts'
-import { defineComponent, ref } from 'vue'
+import { provide } from 'vue'
+
+useHead({
+  title: 'admin | home',
+})
 
 use([
   CanvasRenderer,
@@ -100,65 +104,52 @@ use([
   LegendComponent,
 ])
 
-export default defineComponent({
-  name: 'HelloWorld',
-  components: {
-    VChart,
-  },
-  provide: {
-    [THEME_KEY]: 'light',
-  },
-  setup() {
-    useHead({
-      title: 'admin | home',
-    })
-    const option = ref({
-      title: {
-        text: 'Top sales',
-        left: 'center',
-      },
-      tooltip: {
-        trigger: 'item',
-        formatter: '{a} <br/>{b} : {c} ({d}%)',
-      },
-      legend: {
-        orient: 'vertical',
-        left: 'left',
-        data: ['Electronic', 'Jewels', 'Watch', 'Houseware', 'Iphone'],
-      },
-      series: [
-        {
-          name: 'Shopee Sources',
-          type: 'pie',
-          radius: '55%',
-          center: ['50%', '65%'],
-          data: [
-            { value: 335, name: 'Electronic' },
-            { value: 310, name: 'Jewels' },
-            { value: 234, name: 'Watch' },
-            { value: 135, name: 'Houseware' },
-            { value: 1548, name: 'Iphone' },
-          ],
-          emphasis: {
-            itemStyle: {
-              shadowBlur: 10,
-              shadowOffsetX: 0,
-              shadowColor: 'rgba(0, 0, 0, 0.5)',
-            },
-          },
-        },
-      ],
-    })
-    const myTimeout = setTimeout(() => {
-      const modalCongrate = document.getElementById('modalPopup')
-      modalCongrate.style.transform = 'translateX(20rem)'
-      const myTimeout = setTimeout(() => {
-        modalCongrate.style.opacity = 0
-        modalCongrate.style.display = 'none'
-      }, 1000)
-    }, 5000)
+provide(THEME_KEY, 'light')
 
-    return { option, myTimeout }
+const option = ref({
+  title: {
+    text: 'Top sales',
+    left: 'center',
   },
+  tooltip: {
+    trigger: 'item',
+    formatter: '{a} <br/>{b} : {c} ({d}%)',
+  },
+  legend: {
+    orient: 'vertical',
+    left: 'left',
+    data: ['Electronic', 'Jewels', 'Watch', 'Houseware', 'Iphone'],
+  },
+  series: [
+    {
+      name: 'Shopee Sources',
+      type: 'pie',
+      radius: '55%',
+      center: ['50%', '65%'],
+      data: [
+        { value: 335, name: 'Electronic' },
+        { value: 310, name: 'Jewels' },
+        { value: 234, name: 'Watch' },
+        { value: 135, name: 'Houseware' },
+        { value: 1548, name: 'Iphone' },
+      ],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)',
+        },
+      },
+    },
+  ],
 })
+const myTimeout = setTimeout(() => {
+  const modalCongrate = document.getElementById('modalPopup')
+  modalCongrate.style.transform = 'translateX(20rem)'
+  const myTimeout = setTimeout(() => {
+    modalCongrate.style.opacity = 0
+    modalCongrate.style.display = 'none'
+  }, 1000)
+}, 5000)
+
 </script>
