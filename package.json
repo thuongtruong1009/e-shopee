@@ -67,5 +67,12 @@
         "vite-ssg": "^0.17.11",
         "vitest": "^0.0.113",
         "vue-tsc": "^0.30.6"
-    }
+    },
+    "pnpm": {
+        "peerDependencyRules": {
+          "ignoreMissing": [
+            "vite"
+          ]
+        }
+      }
 }

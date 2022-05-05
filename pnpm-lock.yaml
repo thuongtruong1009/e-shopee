@@ -2,40 +2,40 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/eslint-config': ^0.14.2
-  '@iconify-json/carbon': ^1.1.4
-  '@iconify-json/ic': ^1.1.3
+  '@iconify-json/carbon': ^1.1.3
+  '@iconify-json/ic': ^1.1.2
   '@iconify-json/ion': ^1.1.1
   '@iconify-json/wi': ^1.1.1
   '@intlify/vite-plugin-vue-i18n': ^3.4.0
   '@types/markdown-it-link-attributes': ^3.0.1
   '@types/nprogress': ^0.2.0
-  '@vitejs/plugin-vue': ^2.3.2
-  '@vue/compiler-sfc': ^3.2.33
-  '@vue/server-renderer': ^3.2.33
-  '@vue/test-utils': ^2.0.0-rc.21
+  '@vitejs/plugin-vue': ^2.3.1
+  '@vue/compiler-sfc': ^3.2.32
+  '@vue/server-renderer': ^3.2.32
+  '@vue/test-utils': ^2.0.0-rc.20
   '@vueuse/core': ^7.7.1
   '@vueuse/head': ^0.7.6
   axios: ^0.27.2
   critters: ^0.0.15
   cross-env: ^7.0.3
-  cypress: ^9.6.0
+  cypress: ^9.5.4
   echarts: ^5.3.2
-  eslint: ^8.14.0
+  eslint: ^8.13.0
   eslint-plugin-cypress: ^2.12.1
   https-localhost: ^4.7.1
   markdown-it-link-attributes: ^4.0.0
-  markdown-it-prism: ^2.2.4
+  markdown-it-prism: ^2.2.3
   nprogress: ^0.2.0
-  pinia: ^2.0.14
-  pnpm: ^6.32.11
+  pinia: ^2.0.13
+  pnpm: ^6.32.6
   prism-theme-vars: ^0.2.2
-  sass: ^1.51.0
-  swiper: ^8.1.4
-  typescript: ^4.6.4
+  sass: ^1.50.0
+  swiper: ^8.1.1
+  typescript: ^4.6.3
   unplugin-auto-import: ^0.5.11
   unplugin-icons: ^0.13.4
   unplugin-vue-components: ^0.17.21
-  vite: ^2.9.8
+  vite: ^2.9.3
   vite-plugin-inspect: ^0.3.15
   vite-plugin-md: ^0.11.9
   vite-plugin-pages: ^0.19.9
@@ -44,14 +44,14 @@ specifiers:
   vite-plugin-windicss: ^1.8.4
   vite-ssg: ^0.17.11
   vitest: ^0.0.113
-  vue: ^3.2.33
+  vue: ^3.2.32
   vue-demi: ^0.12.5
   vue-echarts: ^6.0.2
-  vue-i18n: ^9.1.10
-  vue-router: ^4.0.15
+  vue-i18n: ^9.1.9
+  vue-router: ^4.0.14
   vue-slick-carousel: ^1.0.6
   vue-tsc: ^0.30.6
-  vue3-carousel: ^0.1.40
+  vue3-carousel: ^0.1.38
   vue3-charts: ^1.1.31
   vueperslides: ^3.3.2
 
@@ -1810,7 +1810,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 14.18.16
+      '@types/node': 17.0.31
     dev: true
     optional: true
 
