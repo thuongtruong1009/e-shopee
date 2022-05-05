@@ -3,6 +3,17 @@ meta:
   layout: seller/product/LSProdNew
 </route>
 
+<script setup>
+import { removeItemByIndex } from '~/utils/arrayHandle'
+useHead({
+  title: 'seller | new product',
+})
+
+const categoryList1 = ref([1, 2])
+const categoryList2 = ref([1, 2])
+
+</script>
+
 <template>
   <div class="seller_new_prod_view max-w-254 w-254">
     <div class="basic_infor p-7 my-5 bg-white shadow-md shadow-gray-300 rounded-xl">
@@ -158,6 +169,101 @@ meta:
           Sales information
         </h5>
       </div>
+      <form method="post">
+        <div class="grid grid-cols-2 gap-5">
+          <div>
+            <div class="text-center">
+              <label>Group catergory 1</label>
+            </div>
+            <div class="rounded-md bg-[#F6F6F6] p-3">
+              <div class="grid grid-cols-9 justify-between items-center mb-7">
+                <div class="col-span-3">
+                  <label>Name group</label>
+                </div>
+                <div class="border-1 border-[#e9e9e9] rounded-md divide-x divide-1 divide-solid divide-[#e9e9e9] flex bg-white p-1 text-sm col-span-5">
+                  <input type="text" class="border-none p-1 w-full">
+                  <p class="p-1 opacity-70">
+                    0/14
+                  </p>
+                </div>
+                <div class="col-span-1" />
+              </div>
+              <div class="grid grid-cols-9 justify-between items-start my-2">
+                <div class="col-span-3">
+                  <label>Category types</label>
+                </div>
+                <div class="col-span-6">
+                  <div v-for="i in categoryList1" :key="i" class="grid grid-cols-6">
+                    <div class="border-1 border-[#e9e9e9] rounded-md divide-x divide-1 divide-solid divide-[#e9e9e9] flex bg-white p-1 text-sm col-span-5 my-1">
+                      <input type="text" class="border-none p-1 w-full">
+                      <p class="p-1 opacity-70">
+                        0/14
+                      </p>
+                    </div>
+                    <div class="col-span-1 opacity-60 flex justify-center items-center cursor-pointer">
+                      <IARemove @click="removeItemByIndex(categoryList1, i, 1)" />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-6">
+                    <div class="border-1 border-[#e9e9e9] rounded-md border-2 border-dotted border-blue-500 text-blue-400 flex justify-center items-center gap-2 p-1 text-sm col-span-5 my-1 cursor-pointer" @click="categoryList1.push(categoryList1.length+1)">
+                      <ISNew />
+                      <p>Add category type</p>
+                    </div>
+                    <div class="col-span-1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-center">
+              <label>Group catergory 2</label>
+            </div>
+            <div class="rounded-md bg-[#F6F6F6] p-3">
+              <div class="grid grid-cols-9 justify-between items-center mb-7">
+                <div class="col-span-3">
+                  <label>Name group</label>
+                </div>
+                <div class="border-1 border-[#e9e9e9] rounded-md divide-x divide-1 divide-solid divide-[#e9e9e9] flex bg-white p-1 text-sm col-span-5">
+                  <input type="text" class="border-none p-1 w-full">
+                  <p class="p-1 opacity-70">
+                    0/14
+                  </p>
+                </div>
+                <div class="col-span-1" />
+              </div>
+              <div class="grid grid-cols-9 justify-between items-start my-2">
+                <div class="col-span-3">
+                  <label>Category types</label>
+                </div>
+                <div class="col-span-6">
+                  <div v-for="i in categoryList2" :key="i" class="grid grid-cols-6">
+                    <div class="border-1 border-[#e9e9e9] rounded-md divide-x divide-1 divide-solid divide-[#e9e9e9] flex bg-white p-1 text-sm col-span-5 my-1">
+                      <input type="text" class="border-none p-1 w-full">
+                      <p class="p-1 opacity-70">
+                        0/14
+                      </p>
+                    </div>
+                    <div class="col-span-1 opacity-60 flex justify-center items-center cursor-pointer">
+                      <IARemove @click="removeItemByIndex(categoryList2, i, 1)" />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-6">
+                    <div class="border-1 border-[#e9e9e9] rounded-md border-2 border-dotted border-blue-500 text-blue-400 flex justify-center items-center gap-2 p-1 text-sm col-span-5 my-1 cursor-pointer" @click="categoryList2.push(categoryList2.length+1)">
+                      <ISNew />
+                      <p>Add category type</p>
+                    </div>
+                    <div class="col-span-1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
     <div class="transport_infor p-7 my-5 bg-white shadow-md shadow-gray-300 rounded-xl">
       <div>
@@ -196,8 +302,11 @@ meta:
         </div>
       </form>
     </div>
-    <div class="flex justify-end">
-      <button class="inline rounded-md bg-[#EE4D2D] hover:bg-[#E54A2B] px-3 py-1.5 text-white text-md flex items-center gap-1">
+    <div class="flex justify-end text-md gap-5">
+      <button class="inline rounded-md bg-white hover:bg-[#F6F6F6] px-3 py-1.5 text-gray-600 border-1 border-[#e9e9e9] flex items-center gap-1">
+        <IARemove />Cancel
+      </button>
+      <button class="inline rounded-md bg-[#EE4D2D] hover:bg-[#E54A2B] px-3 py-1.25 text-white border-1 border-[#e9e9e9] flex items-center gap-1">
         <ISave />Save & Display
       </button>
     </div>
@@ -273,8 +382,11 @@ select, option{
 .transport_fields p{
   padding: 0.25rem;
 }
-.transport_fields > label{
+.transport_fields > label,
+.sale_infor label{
   width: 20%;
   padding-right: 1rem;
 }
+/* ******************* SALE ************************ */
+
 </style>
