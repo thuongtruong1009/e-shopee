@@ -1,8 +1,8 @@
-import AxiosInstance from "./axios-instance";
+import AxiosInstance from './axios-instance'
 
-class PasswordRequest{
-    passwordUser(){
-        
-    }
+class PasswordRequest {
+  passwordUser() {
+
+  }
 }
-export default new PasswordRequest
+export default new PasswordRequest()
