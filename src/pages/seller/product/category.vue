@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: seller/prod/LSProdAdd
+  layout: seller/product/LSProdAdd
 </route>
 
 <script setup>
@@ -109,9 +109,11 @@ const productsList = reactive([
           Thiết Bị Điện Gia Dụng > Thiết bị điện gia dụng lớn > Thiết bị làm mát
         </p>
       </div>
-      <button class="bg-[#E54A2B] text-white rounded-md px-10 py-1.5 my-5 shadow-md shadow-gray-300">
-        Next
-      </button>
+      <router-link to="/seller/product/new">
+        <button class="bg-[#E54A2B] text-white rounded-md px-10 py-1.5 my-5 shadow-md shadow-gray-300">
+          Next
+        </button>
+      </router-link>
     </div>
   </div>
 </template>
