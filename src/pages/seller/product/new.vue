@@ -5,9 +5,15 @@ meta:
 
 <script setup>
 import { removeItemByIndex } from '~/utils/arrayHandle'
+import countries from '~/shared/countries'
+
 useHead({
   title: 'seller | new product',
 })
+
+const goBack = () => {
+  history.back()
+}
 
 const categoryList1 = ref([1, 2])
 const categoryList2 = ref([1, 2])
@@ -132,8 +138,8 @@ const discountList = ref([1])
         <div>
           <label>Origin</label>
           <select name="origin">
-            <option value="vn">
-              VietNam
+            <option v-for="(country, i) in countries" :key="i" :value="country">
+              {{ country }}
             </option>
           </select>
         </div>
@@ -378,7 +384,7 @@ const discountList = ref([1])
       </form>
     </div>
     <div class="flex justify-end text-md gap-5">
-      <button class="inline rounded-md bg-white hover:bg-[#F6F6F6] px-3 py-1.5 text-gray-600 border-1 border-[#e9e9e9] flex items-center gap-1">
+      <button class="inline rounded-md bg-white hover:bg-[#F6F6F6] px-3 py-1.5 text-gray-600 border-1 border-[#e9e9e9] flex items-center gap-1" @click="goBack">
         <IARemove />Cancel
       </button>
       <button class="inline rounded-md bg-[#EE4D2D] hover:bg-[#E54A2B] px-3 py-1.25 text-white border-1 border-[#e9e9e9] flex items-center gap-1">
