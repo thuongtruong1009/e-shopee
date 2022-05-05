@@ -16,6 +16,11 @@ class AuthRequest {
     const url = '/auth/login'
     return AxiosInstance.post(url, user)
   }
+
+  loginAdmin(admin) {
+    const url = '/auth/admin/sign-in'
+    return AxiosInstance.post(url, admin)
+  }
 }
 
 export default new AuthRequest()
