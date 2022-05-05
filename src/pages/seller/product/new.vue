@@ -11,6 +11,7 @@ useHead({
 
 const categoryList1 = ref([1, 2])
 const categoryList2 = ref([1, 2])
+const discountList = ref([1])
 
 </script>
 
@@ -170,7 +171,7 @@ const categoryList2 = ref([1, 2])
         </h5>
       </div>
       <form method="post">
-        <div class="grid grid-cols-2 gap-5">
+        <div class="grid grid-cols-2 gap-5 my-5">
           <div>
             <div class="text-center">
               <label>Group catergory 1</label>
@@ -261,6 +262,80 @@ const categoryList2 = ref([1, 2])
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="sale_tips flex justify-between text-sm my-5">
+          <label>Tips for setting up item categories</label>
+          <div class="border-1 border-[#e9e9e9] rounded-md divide-x divide-1 divide-solid divide-[#e9e9e9] flex items-center bg-white">
+            <p class="px-2 opacity-70">
+              $
+            </p>
+            <input type="number" placeholder="price" class="px-1">
+            <input type="number" placeholder="warehouse" class="px-1">
+            <input type="text" placeholder="SKU type" class="px-1">
+          </div>
+          <button class="rounded-md bg-[#EE4D2D] hover:bg-[#E54A2B] px-3 py-1 text-white border-1 border-[#e9e9e9]">
+            Appy for all type
+          </button>
+        </div>
+        <div class="sale_discounts flex justify-between my-5 text-sm">
+          <div class="w-1/5">
+            <label>Buy more for discount</label>
+          </div>
+          <div class="rounded-md bg-[#F6F6F6] p-3 w-4/5 text-gray-500">
+            <div class="flex justify-between items-center">
+              <div class="grid grid-cols-4 w-full">
+                <div />
+                <div>
+                  <p>From (product)</p>
+                </div>
+                <div>
+                  <p>To (product)</p>
+                </div>
+                <div>
+                  <p>Price</p>
+                </div>
+                <div />
+              </div>
+              <div class="opacity-0">
+                <IARemove />
+              </div>
+            </div>
+            <div v-for="i in discountList" :key="i" class="flex justify-between items-center my-2">
+              <div class="grid grid-cols-4 w-full">
+                <div class="text-center">
+                  <p>{{ i }}. Price range {{ i }}</p>
+                </div>
+                <div>
+                  <input type="number" :name="`from${i}`">
+                </div>
+                <div>
+                  <input type="number" :name="`to${i}`">
+                </div>
+                <div>
+                  <input type="number" :name="`price${i}`">
+                </div>
+                <div />
+              </div>
+              <div class="opacity-70 cursor-pointer">
+                <IARemove @click="removeItemByIndex(discountList, i, 1)" />
+              </div>
+            </div>
+            <div class="grid justify-end my-2 px-[4%]">
+              <div class="border-1 border-[#e9e9e9] rounded-md border-2 border-dotted border-blue-500 text-blue-400 flex justify-center items-center gap-2 p-1 text-sm col-span-5 my-1 cursor-pointer" @click="discountList.push(discountList.length+1)">
+                <ISNew />
+                <p>Add price range</p>
+              </div>
+              <div class="text-xs">
+                <p>Buy multiple discounts will be hidden when the product is participating in Shock Deal or Promotion Combo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sale_size_chart flex my-5 text-sm">
+          <label>Size Chart image</label>
+          <div class="cover_img border-1 border-dashed border-blue-400 rounded-md max-w-19 h-19 flex justify-center items-center hover:bg-blue-50  cursor-pointer" style="background-image:url('/img/product/new.svg');background-repeat:no-repeat; background-position:center">
+            <input type="file" name="cover_img" accept="image/png, image/jpeg, image/jpg" class="opacity-0">
           </div>
         </div>
       </form>
@@ -374,12 +449,13 @@ select, option{
   border-radius: 0.3rem;
   margin-right: 1rem;
 }
-.transport_fields > div:hover, textarea:hover, select:hover{
+.transport_fields > div:hover, textarea:hover, select:hover, .sale_discounts input:hover{
   border: 1px solid #cccccc;
 }
 
 .transport_fields input,
-.transport_fields p{
+.transport_fields p,
+.sale_discounts input{
   padding: 0.25rem;
 }
 .transport_fields > label,
@@ -388,5 +464,8 @@ select, option{
   padding-right: 1rem;
 }
 /* ******************* SALE ************************ */
-
+.sale_discounts input{
+  border: 1px solid #e9e9e9;
+  border-radius: 0.3rem;
+}
 </style>
