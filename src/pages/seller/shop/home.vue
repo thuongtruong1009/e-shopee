@@ -9,13 +9,15 @@ import { next, prev } from '~/utils/scrollX'
 const router = useRouter()
 
 useHead({
-  title: 'e-shopee | shop',
+  title: 'seller | shop',
 })
 
 const { t } = useI18n()
 
 const onPrev = () => prev('shop_demo_product')
 const onNext = () => next('shop_demo_product')
+
+const activeTime = ref('minutes')
 
 const demoShopProducts = reactive([{
   img: '/img/top-products/1.jfif',
@@ -327,15 +329,15 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
                 Shopcuayen.depxinh
               </h2>
               <p class="text-xs opacity-80 font-light">
-                Online 39 minutes ago
+                {{ t('shop.online') }} 39 <span v-if="activeTime === 'days'">{{ t('shop.days') }}</span><span v-if="activeTime === 'hours'">{{ t('shop.hours') }}</span><span v-if="activeTime === 'minutes'">{{ t('shop.minutes') }}</span> {{ t('shop.ago') }}
               </p>
             </div>
-            <div class="flex justify-between gap-2 text-sm uppercase h-min">
+            <div class="flex justify-between gap-2 text-sm uppercase h-min capitalize">
               <button class="border-1 border-white rounded-md py-0.5 px-5 flex items-center gap-1">
-                <ISPlus />Follow
+                <ISPlus />{{ t('shop.follow') }}
               </button>
               <button class="border-1 border-white rounded-md py-0.5 px-5 flex items-center gap-1">
-                <ISChat />Chat
+                <ISChat />{{ t('shop.chat') }}
               </button>
             </div>
           </div>
@@ -344,33 +346,33 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
       <div class="shop_view_summary flex flex-wrap text-sm h-min m-auto font-medium">
         <div>
           <ISShop />
-          <p>Products: <span>57</span></p>
+          <p>{{ t('shop.products') }}: <span>57</span></p>
         </div>
         <div>
           <ISNote />
-          <p>Cancel ratio: <span>11%</span></p>
+          <p>{{ t('shop.cancel-ratio') }}: <span>11%</span></p>
         </div>
         <div>
           <ISFollowing />
-          <p>Following: <span>108</span></p>
+          <p>{{ t('shop.following') }}: <span>108</span></p>
         </div>
         <div>
           <ISFollower />
-          <p>Follower: <span>474</span></p>
+          <p>{{ t('shop.follower') }}: <span>474</span></p>
         </div>
         <div>
           <ISJoined />
-          <p>Joined: <span>31 months ago</span></p>
+          <p>{{ t('shop.joined') }}: <span>31 months ago</span></p>
         </div>
         <div>
           <ISEvaluate />
-          <p>Rating: <span>5.0 (8 votes)</span></p>
+          <p>{{ t('shop.rating') }}: <span>5.0 (8 votes)</span></p>
         </div>
       </div>
     </div>
     <div class="h-min bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-300 py-3 px-5">
       <div class="text-lg uppercase font-medium text-gray-500">
-        <h2>SHOP INFORMATION</h2>
+        <h2>{{ t('shop.shop-information') }}</h2>
       </div>
       <div class="grid grid-cols-2 text-sm gap-5">
         <div class="flex items-center">
@@ -397,18 +399,18 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
     <div class="h-min bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-300 p-3">
       <div class="shop_view_action bg-[#EDEDED] flex items-center gap-3 p-2 text-md rounded-lg">
         <div>
-          <p>Sort by</p>
+          <p>{{ t('shop.sort-by') }}</p>
         </div>
-        <div class="bg-white cursor-pointer rounded-md py-1 px-3">
-          <p>Popular</p>
+        <div class="bg-white cursor-pointer rounded-md py-1 px-3 capitalize">
+          <p>{{ t('shop.popular') }}</p>
         </div>
-        <div class="bg-white cursor-pointer rounded-md py-1 px-3">
-          <p>Latest</p>
+        <div class="bg-white cursor-pointer rounded-md py-1 px-3 capitalize">
+          <p>{{ t('shop.latest') }}</p>
         </div>
         <select class="rounded-md py-1 px-3 cursor-pointer">
-          <option>Price: default</option>
-          <option>Price: low to high</option>
-          <option>Price: high to low</option>
+          <option>{{ t('shop.price') }}: {{ t('shop.default') }}</option>
+          <option>{{ t('shop.price') }}: {{ t('shop.low-to-high') }}</option>
+          <option>{{ t('shop.price') }}: {{ t('shop.high-to-low') }}</option>
         </select>
       </div>
       <div class="shop_view_content flex justify-center flex-wrap gap-3 py-3">
