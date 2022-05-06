@@ -183,9 +183,9 @@ import provinceNames from '~/shared/provinces'
           <button class="px-3 py-0.5 rounded-md bg-[#FFEEE8] hover:bg-[#FFF5F1] border-1 border-solid border-[#EE4D2D] text-[#EE4D2D] capitalize flex items-center gap-1">
             <IChat />Chat now
           </button>
-          <button class="px-3 py-1 rounded-md hover:bg-[#FAFAFA] border-2 border-solid border-gray-300 text-[#EE4D2D] capitalize flex items-center gap-1">
+          <a href="/seller/shop/home"><button class="px-3 py-1 rounded-md hover:bg-[#FAFAFA] border-2 border-solid border-gray-300 text-[#EE4D2D] capitalize flex items-center gap-1">
             <IShop />Visit shop
-          </button>
+          </button></a>
         </div>
       </div>
     </div>

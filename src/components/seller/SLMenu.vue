@@ -82,7 +82,7 @@ const onClick = (index) => {
       </div>
       <div v-if="isShop === true" class="grid pl-10">
         <router-link to="/seller/shop/home" :style="isClick.four ? {'color': 'red'} : {'color': 'black'}" @click="onClick('four')">
-          <span class="text-xl">•</span> Shop view
+          <span class="text-xl">•</span> Shop preview
         </router-link>
         <router-link to="/seller/shop/profile" :style="isClick.five ? {'color': 'red'} : {'color': 'black'}" @click="onClick('five')">
           <span class="text-xl">•</span> Shop profile
