@@ -1,5 +1,6 @@
 import axios from 'axios'
 import queryString from 'query-string'
+import NProgress from 'nprogress'
 
 const baseDomain = 'https://127.0.0.1:80'
 const baseUrl = `${baseDomain}/api/v2`
@@ -20,6 +21,7 @@ const AxiosInstance = axios.create({
 
 AxiosInstance.interceptors.request.use(
   async(request) => {
+    NProgress.start()
     if (token)
       request.headers.token = `Bearer ${token}`
 
@@ -31,6 +33,7 @@ AxiosInstance.interceptors.request.use(
 )
 AxiosInstance.interceptors.response.use(
   (response) => {
+    NProgress.done()
     if (response && response.data)
       return response.data
 
