@@ -1,6 +1,20 @@
 <script setup>
-const toast = ref(true)
+defineProps(['msg', 'type', 'status'])
 
+const icons = reactive({
+  success: 'fas fa-check-circle text-[#47D864]',
+  info: 'fas fa-info-circle text-[#FF623D]',
+})
+
+// auto disappear after time
+// const status = ref(false)
+// watchEffect(() => {
+//   if (status.value === true) {
+//     setTimeout(() => {
+//       status.value = false
+//     }, 3000)
+//   }
+// })
 </script>
 
 <template>
@@ -9,11 +23,20 @@ const toast = ref(true)
   </button> -->
   <div class="toast_container">
     <Transition duration="550" name="nested">
-      <div v-if="toast">
+      <div v-if="status">
         <!-- class outer: vertical transition , class inner:horizon transition-->
         <div class="toast-wrapper">
-          <div class="toast inner">
-            You must enter a value for the todo
+          <div class="toast inner text-lg flex items-center gap-3 text-left" :class="type === 'success' ? 'border-l-[#47D864]' : 'border-l-[#FF623D]'">
+            <i :class="type === 'success' ? icons.success : icons.info" />
+            <div>
+              <h6 class="capitalize font-medium">
+                {{ type }}!
+              </h6>
+              <p class="text-xs">
+                {{ msg }}
+              </p>
+            </div>
+            <i class="fas fa-times opacity-50 cursor-pointer" @click="status = false" />
           </div>
         </div>
       </div>
@@ -24,17 +47,18 @@ const toast = ref(true)
 <style scoped>
 .toast_container {
     position: fixed;
-    right: 0;
+    right: 0.5rem;
     top: 50%;
     z-index: 999;
 }
 .toast {
-    padding: 20px;
-    color: white;
-    background: #ff0062;
-    border-radius: 10px;
+    padding: 1rem;
+    background: white;
+    border-radius: 0.5rem;
     box-shadow: 1px 3px 5px rgba(0,0,0,0.2);
-    max-width: 400px;
+    max-width: 25rem;
+    border-left-width: 0.25rem;
+    border-left-style: solid;
 }
 
 .nested-enter-active, .nested-leave-active {

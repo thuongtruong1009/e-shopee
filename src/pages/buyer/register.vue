@@ -14,21 +14,28 @@ const email = ref('')
 const password = ref('')
 const password_confirmation = ref('')
 
+const toastStatus = ref()
+const toastMsg = ref('')
+const toastType = ref('')
+
 const handleSubmit = () => {
-  AuthRequest.registerUser({ username, email, password, password_confirmation })
-    .then((response) => {
-      const { data } = response
-    })
-    .catch((error) => {
-      return error.response.data.error
-    })
+  // AuthRequest.registerUser({ username, email, password, password_confirmation })
+  //   .then((response) => {
+  //     const { data } = response
+  //   })
+  //   .catch((error) => {
+  //     return error.response.data.error
+  //   })
+  toastMsg.value = 'Register success! You are memeber of e-shopee'
+  toastType.value = 'success'
+  toastStatus.value = true
 }
 
 </script>
 
 <template>
   <div class="buyer-register-container flex justify-center pt-20">
-    <CToast />
+    <CToast :msg="toastMsg" :type="toastType" :status="toastStatus" />
     <div class="register-inner border-4 border-solid border-white rounded-2xl flex w-4xl relative flex shadow-2xl shadow-gray-400 bg-[#B0D9DB]">
       <form action="" method="post" class="bg-white w-1/2 p-5 rounded-xl">
         <div class="capitalize text-2xl font-bold flex justify-center items-center">
