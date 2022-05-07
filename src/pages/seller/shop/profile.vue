@@ -26,7 +26,7 @@ const { t } = useI18n()
           </p>
         </div>
       </div>
-      <div class="grid grid-cols-5 p-5 gap-8">
+      <form class="grid grid-cols-5 p-5 gap-8">
         <div class="profile-left col-span-2 rounded-md border-1 border-solid border-gray-300">
           <div class="profile-cover h-40 grid grid-cols-3 bg-gray-300 rounded-md text-white p-4">
             <div class="col-span-1 flex justify-center items-center">
@@ -126,11 +126,11 @@ const { t } = useI18n()
           </div>
         </div>
         <div class="col-span-5 flex justify-center items-center">
-          <button class="bg-[#E54A2B] text-white rounded-md px-10 py-1.5 my-5 shadow-md shadow-gray-300">
+          <button type="submit" class="bg-[#E54A2B] text-white rounded-md px-10 py-1.5 my-5 shadow-md shadow-gray-300">
             Save
           </button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </template>

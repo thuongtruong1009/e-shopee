@@ -2,7 +2,7 @@ import axios from 'axios'
 import queryString from 'query-string'
 import NProgress from 'nprogress'
 
-const baseDomain = 'https://127.0.0.1:80'
+const baseDomain = import.meta.env.VITE_BASE_DOMAIN
 const baseUrl = `${baseDomain}/api/v2`
 export const useToken = () => {
   return JSON.parse(localStorage.getItem('accessToken')).token || ''

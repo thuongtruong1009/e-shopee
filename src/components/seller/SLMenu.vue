@@ -130,10 +130,10 @@ const onClick = (index) => {
   font-family: "Lato", sans-serif;
 }
 router-link{
-  font-size: 0.9rem;
+  font-size: 0.9em;
 }
 .dropdown-item > p{
-  font-size: 1.1rem;
+  font-size: 1em;
   opacity: 0.8;
 }
 
