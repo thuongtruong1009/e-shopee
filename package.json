@@ -19,6 +19,7 @@
         "nprogress": "^0.2.0",
         "pinia": "^2.0.13",
         "prism-theme-vars": "^0.2.2",
+        "query-string": "^7.1.1",
         "swiper": "^8.1.1",
         "vue": "^3.2.32",
         "vue-demi": "^0.12.5",
@@ -26,6 +27,7 @@
         "vue-i18n": "^9.1.9",
         "vue-router": "^4.0.14",
         "vue-slick-carousel": "^1.0.6",
+        "vue-toasted": "^1.1.28",
         "vue3-carousel": "^0.1.38",
         "vue3-charts": "^1.1.31",
         "vueperslides": "^3.3.2"
@@ -70,9 +72,9 @@
     },
     "pnpm": {
         "peerDependencyRules": {
-          "ignoreMissing": [
-            "vite"
-          ]
+            "ignoreMissing": [
+                "vite"
+            ]
         }
-      }
+    }
 }

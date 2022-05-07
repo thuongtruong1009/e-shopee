@@ -1,4 +1,4 @@
-import AxiosInstance from './axios-instance.js'
+import AxiosInstance from './axios-instance'
 
 /**
  * Request to register user.

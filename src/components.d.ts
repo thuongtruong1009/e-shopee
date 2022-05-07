@@ -39,6 +39,7 @@ declare module 'vue' {
     Counter: typeof import('./components/Counter.vue')['default']
     CSFooter: typeof import('./components/seller/CSFooter.vue')['default']
     CSlick: typeof import('./components/CSlick.vue')['default']
+    CToast: typeof import('./components/CToast.vue')['default']
     IAbout: typeof import('./components/icons/IAbout.vue')['default']
     IAccount: typeof import('./components/icons/IAccount.vue')['default']
     IAdmin: typeof import('./components/icons/IAdmin.vue')['default']
