@@ -6,7 +6,7 @@ const notifyTotal = ref(102)
 const isOrder = ref(true)
 const isProd = ref(true)
 const isShop = ref(true)
-const isClick = ref({ zero: false, one: false, two: false, three: false, four: false, five: false })
+const isClick = ref({ zero: false, one: false, two: false, three: false, four: false, five: false, six: false, seven: false })
 
 const onOpenOrder = () => {
   if (isOrder.value === false) isOrder.value = true
@@ -81,13 +81,16 @@ const onClick = (index) => {
         </div>
       </div>
       <div v-if="isShop === true" class="grid pl-10">
-        <router-link to="/seller/shop/profile" :style="isClick.four ? {'color': 'red'} : {'color': 'black'}" @click="onClick('four')">
+        <router-link to="/seller/shop/home" :style="isClick.four ? {'color': 'red'} : {'color': 'black'}" @click="onClick('four')">
+          <span class="text-xl">•</span> Shop preview
+        </router-link>
+        <router-link to="/seller/shop/profile" :style="isClick.five ? {'color': 'red'} : {'color': 'black'}" @click="onClick('five')">
           <span class="text-xl">•</span> Shop profile
         </router-link>
-        <router-link to="/seller/shop/address" :style="isClick.five ? {'color': 'red'} : {'color': 'black'}" @click="onClick('five')">
+        <router-link to="/seller/shop/address" :style="isClick.six ? {'color': 'red'} : {'color': 'black'}" @click="onClick('six')">
           <span class="text-xl">•</span> Shop address
         </router-link>
-        <router-link to="/seller/login" :style="isClick.five ? {'color': 'red'} : {'color': 'black'}" @click="onClick('five')">
+        <router-link to="/seller/login" :style="isClick.seven ? {'color': 'red'} : {'color': 'black'}" @click="onClick('seven')">
           <span class="text-xl">•</span> Logout
         </router-link>
       </div>
@@ -118,7 +121,6 @@ const onClick = (index) => {
 
 <style scoped>
 .dropdown{
-  /* box-shadow: 1px 1px 5px gray; */
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   margin-right: 0.25rem;
@@ -128,10 +130,10 @@ const onClick = (index) => {
   font-family: "Lato", sans-serif;
 }
 router-link{
-  font-size: 0.9rem;
+  font-size: 0.9em;
 }
 .dropdown-item > p{
-  font-size: 1.1rem;
+  font-size: 1em;
   opacity: 0.8;
 }
 

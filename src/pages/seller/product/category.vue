@@ -10,23 +10,24 @@ useHead({
 const numberWord = ref('')
 const productsList = reactive([
   {
-    data: [{
-      type: 'articles',
-      id: '1',
-      attributes: {
-        title: 'JSON:API paints my bikeshed!',
-        body: 'The shortest article. Ever.',
-        created: '2015-05-22T14:56:29.000Z',
-        updated: '2015-05-22T14:56:28.000Z',
-      },
-      relationships: {
-        author: {
-          data: {
-            id: '42', type: 'people',
+    data: [
+      {
+        type: 'articles',
+        id: '1',
+        attributes: {
+          title: 'JSON:API paints my bikeshed!',
+          body: 'The shortest article. Ever.',
+          created: '2015-05-22T14:56:29.000Z',
+          updated: '2015-05-22T14:56:28.000Z',
+        },
+        relationships: {
+          author: {
+            data: {
+              id: '42', type: 'people',
+            },
           },
         },
-      },
-    }],
+      }],
     included: [
       {
         type: 'people',
@@ -59,6 +60,17 @@ const productsList = reactive([
 ])
 // const result = JSON.stringify(Object.keys(productsList[0]))
 // const level1 = result.slice(1, -1)
+const level1 = ref([])
+const level2 = ref([])
+const level3 = ref([])
+const openLevel = (level, data) => {
+  if (level === 1)
+    level1.value = data
+  else if (level === 2)
+    level2.value = data
+  else if (level === 3)
+    level3.value = data
+}
 </script>
 
 <template>
@@ -93,13 +105,23 @@ const productsList = reactive([
         </div>
         <div class="bg-white grid grid-cols-4 divide-x divide-solid divide-3 divide-gray-300 mt-5">
           <div class="py-2 max-h-80 overflow-y-scroll">
-            <div v-for="(product, i) in Object.keys(productsList[0])" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer">
+            <div v-for="(product, i) in Object.keys(productsList[0])" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer" @click="openLevel(1, productsList[0][product][0])">
               <p>{{ product }}</p>
               <ICaretRight />
             </div>
           </div>
-          <div>ô 2</div>
-          <div>ô 3</div>
+          <div>
+            <div v-for="(product, i) in Object.keys(level1)" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer" @click="openLevel(2, productsList[0][product.parent][0][product])">
+              <p>{{ product }}</p>
+              <ICaretRight />
+            </div>
+          </div>
+          <div>
+            <div v-for="(product, i) in Object.keys(level2)" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer">
+              <p>{{ product }}</p>
+              <ICaretRight />
+            </div>
+          </div>
           <div>ô 4</div>
         </div>
       </div>

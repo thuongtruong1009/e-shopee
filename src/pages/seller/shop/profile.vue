@@ -10,6 +10,7 @@ const numberShopDescription = ref('')
 useHead({
   title: 'seller | profile',
 })
+const { t } = useI18n()
 </script>
 
 <template>
@@ -18,14 +19,14 @@ useHead({
       <div class="head-profile items-center px-5">
         <div>
           <h1 class="font-bold text-2xl">
-            Profile information
+            {{ t('shop.profile-information') }}
           </h1>
           <p class="opacity-70 text-sm">
-            View Shop status and update your Shop profile
+            {{ t('shop.view-update-shop') }}
           </p>
         </div>
       </div>
-      <div class="grid grid-cols-5 p-5 gap-8">
+      <form class="grid grid-cols-5 p-5 gap-8">
         <div class="profile-left col-span-2 rounded-md border-1 border-solid border-gray-300">
           <div class="profile-cover h-40 grid grid-cols-3 bg-gray-300 rounded-md text-white p-4">
             <div class="col-span-1 flex justify-center items-center">
@@ -36,23 +37,23 @@ useHead({
                 {{ numberShopName }}
               </p>
               <p class="text-sm">
-                Join at 01/01/2020
+                {{ t('shop.join-at') }} 01/01/2020
               </p>
-              <p class="text-sm">
-                Follower: 99
+              <p class="text-sm capitalize">
+                {{ t('shop.follower') }}: 99
               </p>
             </div>
           </div>
           <div class="bg-[#6B6361] text-center text-white cursor-pointer">
             <p>
-              Edit cover photo
+              {{ t('shop.edit-cover-photo') }}
             </p>
           </div>
           <div class="profile-field grid grid-rows-5 divide-1 divide-solid divide-y divide-light-800">
             <div class="flex justify-between items-center p-3">
-              <div class="flex items-center">
+              <div class="flex items-center capitalize">
                 <ICake />
-                <p>Product</p>
+                <p>{{ t('shop.products') }}</p>
               </div>
               <div class="flex items-center">
                 <p>0</p>
@@ -62,7 +63,7 @@ useHead({
             <div class="flex justify-between items-center p-3">
               <div class="flex items-center">
                 <IChat />
-                <p>Response rate</p>
+                <p>{{ t('shop.response-rate') }}</p>
               </div>
               <div class="flex items-center">
                 <p>57%</p>
@@ -71,16 +72,16 @@ useHead({
             <div class="flex justify-between items-center p-3">
               <div class="flex items-center">
                 <ITime />
-                <p>Response time</p>
+                <p>{{t('shop.response-time')}}</p>
               </div>
               <div class="flex items-center">
-                <p>Within a few hours</p>
+                <p>{{t('shop.within-a-few-hours')}}</p>
               </div>
             </div>
             <div class="flex justify-between items-center p-3">
               <div class="flex items-center">
                 <IStar />
-                <p>Shop reviews</p>
+                <p>{{t('shop.shop-reviews')}}</p>
               </div>
               <div class="flex items-center">
                 <p>0</p>
@@ -89,7 +90,7 @@ useHead({
             <div class="flex justify-between items-center p-3">
               <div class="flex items-center">
                 <INote />
-                <p>Unsuccessful rate</p>
+                <p>{{t('shop.unsuccessful-rate')}}</p>
               </div>
               <div class="flex items-center">
                 <p>0,00%</p>
@@ -100,7 +101,7 @@ useHead({
         </div>
         <div class="profile-right col-span-3">
           <div>
-            <label for="shop-name">Shop Name</label>
+            <label for="shop-name">{{t('shop.shop-name')}}</label>
             <div class="w-[85%] border-1 border-solid border-gray-300 flex items-center my-2 py-1 rounded-md divide-x divide-solid divide-3 divide-gray-300">
               <input id="shop-name" v-model="numberShopName" type="text" name="shop-name" class="w-full outline-none px-2 text-sm text-gray-500" placeholder="Input shop name..." pattern="[A-Za-z0-9]{120}" required>
               <p class="flex justify-around opacity-60 text-xs px-2">
@@ -109,14 +110,15 @@ useHead({
             </div>
           </div>
           <div class="">
-            <label for="shop-preview" class="flex items-center">Some preview pictures or video <IQuestion /></label>
-            <div class="grid justify-center text-center items-center border-1 border-solid border-gray-300 outline-none rounded-md w-45 h-45 opacity-60 my-2 p-5 cursor-pointer">
+            <label for="shop-preview" class="flex items-center gap-2">{{t('shop.some-preview')}}<IQuestion /></label>
+            <div class="grid justify-center text-center items-center border-1 border-solid border-gray-300 outline-none rounded-md w-45 h-45 opacity-60 my-2 p-5 relative">
               <IPlus class="justify-self-center" />
-              <p>Add photos and videos (0/5)</p>
+              <p>{{t('shop.add-photos-videos')}} (0/5)</p>
+              <input type="file" name="demo1" class="opacity-0 absolute top-1/4 left-0 cursor-pointer ">
             </div>
           </div>
           <div>
-            <label for="shop-disciption">Shop description</label>
+            <label for="shop-disciption">{{t('shop.shop-description')}}</label>
             <textarea id="shop-disciption" v-model="numberShopDescription" name="shop-disciption" class="w-[85%] h-25 border-1 border-solid border-gray-300 outline-none rounded-md my-2 py-1 px-3 text-sm" placeholder="Enter description or information about your shop here...">dd3</textarea>
             <p class="text-right text-xs px-2 text-gray-400">
               {{ numberShopDescription.length }}/500
@@ -124,11 +126,11 @@ useHead({
           </div>
         </div>
         <div class="col-span-5 flex justify-center items-center">
-          <button class="bg-[#E54A2B] text-white rounded-md px-10 py-1.5 my-5 shadow-md shadow-gray-300">
+          <button type="submit" class="bg-[#E54A2B] text-white rounded-md px-10 py-1.5 my-5 shadow-md shadow-gray-300">
             Save
           </button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </template>

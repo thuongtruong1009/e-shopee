@@ -7,6 +7,7 @@ meta:
 useHead({
   title: 'seller | shop-address',
 })
+const { t } = useI18n()
 </script>
 
 <template>
@@ -15,14 +16,14 @@ useHead({
       <div class="head-address flex justify-between px-5 py-3">
         <div>
           <h1 class="font-bold text-xl">
-            Address
+            {{ t('shop.address') }}
           </h1>
           <p class="opacity-70 text-sm">
-            Manage your shipping and delivery address
+            {{ t('shop.manage-shipping') }}
           </p>
         </div>
         <p class="flex items-center gap-2 bg-red-500 rounded-md text-white h-9 px-3 cursor-pointer hover:bg-red-600 shadow-md shadow-gray-300">
-          <IPlus class="text-xs" />Add new address
+          <IPlus class="text-xs" />{{ t('shop.add-new-address') }}
         </p>
       </div>
       <div class="grid grid-cols-5 p-3">
@@ -30,10 +31,10 @@ useHead({
           <div class="text-[#00C689] flex justify-center pt-2">
             <ILocation />
           </div>
-          <div class="text-sm grid">
-            <p>Name</p>
-            <p>Phone number</p>
-            <p>Address</p>
+          <div class="text-sm grid capitalize">
+            <p>{{ t('shop.name') }}</p>
+            <p>{{ t('shop.phone-number') }}</p>
+            <p>{{ t('shop.address') }}</p>
           </div>
           <div class="col-span-3 text-md font-medium grid">
             <p>Thuong Truong</p>
@@ -43,10 +44,10 @@ useHead({
         </div>
         <div class="col-span-2 flex justify-between items-start">
           <p class="text-green-600 bg-green-100 px-1 text-xs rounded-sm">
-            Default address
+            {{ t('shop.default-address') }}
           </p>
-          <h1 class="flex gap-2 items-center text-blue-500 cursor-pointer">
-            <IEdit class="text-xs" />Edit
+          <h1 class="flex gap-2 items-center text-blue-500 cursor-pointer capitalize">
+            <IEdit class="text-xs" />{{ t('shop.edit') }}
           </h1>
         </div>
       </div>

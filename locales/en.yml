@@ -177,6 +177,48 @@ auth:
   b-reset-invite: Check the confirmation code sent from your registered email
   b-reset: Reset
   b-reset-form-button: Reset password
+shop:
+  online: Online
+  ago: ago
+  days: days
+  hours: hours
+  minutes: minutes
+  follow: Follow
+  chat: Chat
+  products: Products
+  cancel-ratio: Cancel ratio
+  following: Following
+  follower: Follower
+  joined: Joined
+  rating: Rating
+  shop-information: SHOP INFORMATION
+  sort-by: Sort by
+  popular: Popular
+  latest: Latest
+  price: Price
+  default: default
+  low-to-high: low to high
+  high-to-low: high to low
+  address: Address
+  manage-shipping: Manage your shipping and delivery address
+  add-new-address: Add new address
+  name: Name
+  phone-number: Phone number
+  edit: Edit
+  default-address: Default address
+  profile-information: Profile information
+  view-update-shop: View Shop status and update your Shop profile
+  join-at: Join at
+  edit-cover-photo: Edit cover photo
+  response-rate: Response rate
+  response-time: Response time
+  within-a-few-hours: Within a few hours
+  shop-reviews: Shop reviews
+  unsuccessful-rate: Unsuccessful rate
+  shop-name: Shop Name
+  some-preview: Some preview pictures or video
+  add-photos-videos: Add photos and videos
+  shop-description: Shop description
 cart:
   cart: Cart
   preview: Preview

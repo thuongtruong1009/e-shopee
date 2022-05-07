@@ -13,3 +13,10 @@ declare module '*.vue' {
   import Vue from 'vue'
   export default Vue
 }
+
+interface ImportMetaEnv {
+  readonly VITE_BASE_DOMAIN: string
+}
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}
