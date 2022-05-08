@@ -1,10 +1,4 @@
-import AxiosInstance from './axios-instance.js'
-
-/**
- * Request to register user.
- * @param {*} user a user object
- * @returns a response of the request
- */
+import AxiosInstance from './axios-instance'
 
 class AuthRequest {
   registerUser(user) {

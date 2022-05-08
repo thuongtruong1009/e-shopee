@@ -34,7 +34,25 @@ window.addEventListener('scroll', scrollFunction)
       <ITop />
     </div>
   </Transition>
-  <router-view />
+  <CToast />
+  <!-- <router-view /> -->
+  <router-view v-slot="{ Component, route }">
+    <transition :name="route.meta.transition || 'fade'" mode="out-in">
+      <keep-alive>
+        <suspense>
+          <template #default>
+            <component
+              :is="Component"
+              :key="route.meta.usePathKey ? route.path : undefined"
+            />
+          </template>
+          <template #fallback>
+            <CLoading />
+          </template>
+        </suspense>
+      </keep-alive>
+    </transition>
+  </router-view>
 </template>
 
 <style scoped>

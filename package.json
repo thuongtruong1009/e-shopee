@@ -1,4 +1,23 @@
 {
+    "name": "e-shopee",
+    "version": "2.3.0",
+    "description": "Online shopping application and e-commerce trading platform real-time",
+    "keywords": [
+        "e-shopee",
+        "commercial",
+        "shopping"
+    ],
+    "homepage": "https://github.com/thuongtruong1009/e-shopee#readme",
+    "bugs": {
+        "url": "https://github.com/thuongtruong1009/e-shopee/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thuongtruong1009/e-shopee"
+    },
+    "funding": "https://paypal.me/thuongtruong1009",
+    "license": "MIT",
+    "author": "Thuong Truong <thuongtruong1009@proton.me>",
     "private": true,
     "scripts": {
         "build": "vite-ssg build",
@@ -19,6 +38,7 @@
         "nprogress": "^0.2.0",
         "pinia": "^2.0.13",
         "prism-theme-vars": "^0.2.2",
+        "query-string": "^7.1.1",
         "swiper": "^8.1.1",
         "vue": "^3.2.32",
         "vue-demi": "^0.12.5",
@@ -26,6 +46,7 @@
         "vue-i18n": "^9.1.9",
         "vue-router": "^4.0.14",
         "vue-slick-carousel": "^1.0.6",
+        "vue-toasted": "^1.1.28",
         "vue3-carousel": "^0.1.38",
         "vue3-charts": "^1.1.31",
         "vueperslides": "^3.3.2"
@@ -60,6 +81,8 @@
         "vite": "^2.9.3",
         "vite-plugin-inspect": "^0.3.15",
         "vite-plugin-md": "^0.11.9",
+        "vite-plugin-optimize-persist": "^0.1.2",
+        "vite-plugin-package-config": "^0.1.1",
         "vite-plugin-pages": "^0.19.9",
         "vite-plugin-pwa": "^0.11.13",
         "vite-plugin-vue-layouts": "^0.5.0",
@@ -70,9 +93,24 @@
     },
     "pnpm": {
         "peerDependencyRules": {
-          "ignoreMissing": [
-            "vite"
-          ]
+            "ignoreMissing": [
+                "vite"
+            ]
         }
-      }
+    },
+    "vite": {
+        "optimizeDeps": {
+            "include": [
+                "swiper/vue",
+                "axios",
+                "query-string",
+                "echarts/core",
+                "echarts/renderers",
+                "echarts/charts",
+                "echarts/components",
+                "vue-echarts",
+                "vue3-charts"
+            ]
+        }
+    }
 }

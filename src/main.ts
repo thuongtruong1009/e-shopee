@@ -2,7 +2,6 @@
 import { ViteSSG } from 'vite-ssg'
 import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
-import App from './App.vue'
 
 // windicss layers
 import 'virtual:windi-base.css'
@@ -13,6 +12,7 @@ import './styles/main.css'
 import 'virtual:windi-utilities.css'
 // windicss devtools support (dev only)
 import 'virtual:windi-devtools'
+import App from './App.vue'
 
 const routes = setupLayouts(generatedRoutes)
 

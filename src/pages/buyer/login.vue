@@ -4,9 +4,30 @@ meta:
 </route>
 
 <script setup>
+import { useRouter } from 'vue-router'
+import { toast } from '~/stores/toast'
+import AuthRequest from '~/services/auth-request'
 useHead({
   title: 'e-shopee | buyer login',
 })
+
+const useToast = toast()
+const router = useRouter()
+
+const usernameOrEmail = ref('')
+const password = ref('')
+
+const handleSubmit = () => {
+  AuthRequest.loginUser({ usernameOrEmail: usernameOrEmail.value, password: password.value })
+    .then((response) => {
+      // const data = response
+      useToast.updateToast('success', 'Login success! Welcome back!', true)
+      router.push({ path: '/buyer/home' })
+    })
+    .catch((error) => {
+      return error.response.data.error
+    })
+}
 
 </script>
 
@@ -17,7 +38,7 @@ useHead({
         Welcome back!
       </h1>
     </div>
-    <form class="flex justify-center items-center flex-col p-5 rounded-2xl z-10 bg-[#ecf0f3]" method="POST" action="">
+    <form class="flex justify-center items-center flex-col p-5 rounded-2xl z-10 bg-[#ecf0f3]" @submit.prevent="handleSubmit">
       <h2 class="form_title fs-1 fw-bold pb-5">
         Experience many attractive offers and services
       </h2>
@@ -27,8 +48,8 @@ useHead({
         <IBGithub class="form__icon" />
       </div>
       <span class="form__span mt-4">or use email for login</span>
-      <input class="form__input" name="usernameOrEmail" type="text" placeholder="Email" required>
-      <input class="form__input" name="password" type="password" placeholder="Password" required>
+      <input v-model="usernameOrEmail" class="form__input" name="usernameOrEmail" type="text" placeholder="Email" required>
+      <input v-model="password" class="form__input" name="password" type="password" placeholder="Password" required>
       <div class="text-xs text-gray-500/50 flex justify-between w-full">
         <a href="/buyer/register">
           Don't have account?
@@ -37,11 +58,9 @@ useHead({
           Forgot password?
         </a>
       </div>
-      <a href="/buyer/home">
-        <button type="submit" class="form__button flex justify-center items-center gap-2 font-semibold uppercase mt-5">
-          <IBUnlock />SIGN IN
-        </button>
-      </a>
+      <button type="submit" class="form__button flex justify-center items-center gap-2 font-semibold uppercase mt-5" @click="handleSubmit">
+        <IBUnlock />SIGN IN
+      </button>
     </form>
     <!-- ballon decoration -->
     <div class="ballon__circle ballon__circle--t0 absolute" />
