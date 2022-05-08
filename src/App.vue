@@ -34,6 +34,7 @@ window.addEventListener('scroll', scrollFunction)
       <ITop />
     </div>
   </Transition>
+  <CToast />
   <router-view />
 </template>
 
