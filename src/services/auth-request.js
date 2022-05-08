@@ -1,11 +1,5 @@
 import AxiosInstance from './axios-instance'
 
-/**
- * Request to register user.
- * @param {*} user a user object
- * @returns a response of the request
- */
-
 class AuthRequest {
   registerUser(user) {
     const url = '/auth/sign-up'

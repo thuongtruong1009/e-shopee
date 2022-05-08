@@ -4,11 +4,14 @@ meta:
 </route>
 
 <script setup>
+import { useRouter } from 'vue-router'
 import { toast } from '~/stores/toast'
 import AuthRequest from '~/services/auth-request'
+
 useHead({
   title: 'e-shopee | buyer register',
 })
+const router = useRouter()
 const useToast = toast()
 
 const username = ref('')
@@ -17,12 +20,11 @@ const password = ref('')
 const password_confirmation = ref('')
 
 const handleSubmit = () => {
-  AuthRequest.registerUser({ username, email, password, password_confirmation })
+  AuthRequest.registerUser({ username: username.value, email: email.value, password: password.value, password_confirmation: password_confirmation.value })
     .then((response) => {
       const { data } = response
-      useToast.msg = 'Register success! You are memeber of e-shopee'
-      useToast.type = 'success'
-      useToast.status = true
+      useToast.updateToast('success', 'Login success! Welcome back!', true)
+      router.push({ path: '/buyer/login' })
     })
     .catch((error) => {
       return error.response.data.error
@@ -34,7 +36,7 @@ const handleSubmit = () => {
 <template>
   <div class="buyer-register-container flex justify-center pt-20">
     <div class="register-inner border-4 border-solid border-white rounded-2xl flex w-4xl relative flex shadow-2xl shadow-gray-400 bg-[#B0D9DB]">
-      <form action="" method="post" class="bg-white w-1/2 p-5 rounded-xl">
+      <form action="" method="post" class="bg-white w-1/2 p-5 rounded-xl" @submit.prevent="handleSubmit">
         <div class="capitalize text-2xl font-bold flex justify-center items-center">
           <IBRegister />
           <h1 @click="handleSubmit">
@@ -69,11 +71,9 @@ const handleSubmit = () => {
           <input v-model="password_confirmation" type="password" name="password_confirmation" placeholder="Password confirmation" required>
         </div>
         <div>
-          <a href="">
-            <button type="submit" class="capitalize bg-[#5ABBC1] font-semibold text-white text-md rounded-md py-1.75 w-full" @click="handleSubmit">
-              Create Account
-            </button>
-          </a>
+          <button type="submit" class="capitalize bg-[#5ABBC1] font-semibold text-white text-md rounded-md py-1.75 w-full" @click="handleSubmit">
+            Create Account
+          </button>
           <p class="text-left text-gray-400 text-sm mt-3">
             Already have account? <a href="/buyer/login" class="text-[#5ABBC1]">Login</a>
           </p>
