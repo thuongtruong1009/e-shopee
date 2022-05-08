@@ -1,4 +1,23 @@
 {
+    "name": "e-shopee",
+    "version": "2.3.0",
+    "description": "Online shopping application and e-commerce trading platform real-time",
+    "keywords": [
+        "e-shopee",
+        "commercial",
+        "shopping"
+    ],
+    "homepage": "https://github.com/thuongtruong1009/e-shopee#readme",
+    "bugs": {
+        "url": "https://github.com/thuongtruong1009/e-shopee/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thuongtruong1009/e-shopee"
+    },
+    "funding": "https://paypal.me/thuongtruong1009",
+    "license": "MIT",
+    "author": "Thuong Truong <thuongtruong1009@proton.me>",
     "private": true,
     "scripts": {
         "build": "vite-ssg build",
@@ -62,6 +81,8 @@
         "vite": "^2.9.3",
         "vite-plugin-inspect": "^0.3.15",
         "vite-plugin-md": "^0.11.9",
+        "vite-plugin-optimize-persist": "^0.1.2",
+        "vite-plugin-package-config": "^0.1.1",
         "vite-plugin-pages": "^0.19.9",
         "vite-plugin-pwa": "^0.11.13",
         "vite-plugin-vue-layouts": "^0.5.0",
@@ -74,6 +95,21 @@
         "peerDependencyRules": {
             "ignoreMissing": [
                 "vite"
+            ]
+        }
+    },
+    "vite": {
+        "optimizeDeps": {
+            "include": [
+                "swiper/vue",
+                "axios",
+                "query-string",
+                "echarts/core",
+                "echarts/renderers",
+                "echarts/charts",
+                "echarts/components",
+                "vue-echarts",
+                "vue3-charts"
             ]
         }
     }

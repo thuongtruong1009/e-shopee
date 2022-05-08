@@ -14,6 +14,8 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
+import OptimizationPersist from 'vite-plugin-optimize-persist'
+import PkgConfig from 'vite-plugin-package-config'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -27,6 +29,9 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
+
+    PkgConfig(),
+    OptimizationPersist(),
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({

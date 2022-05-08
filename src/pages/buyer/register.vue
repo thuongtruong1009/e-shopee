@@ -17,20 +17,16 @@ const password = ref('')
 const password_confirmation = ref('')
 
 const handleSubmit = () => {
-  // AuthRequest.registerUser({ username, email, password, password_confirmation })
-  //   .then((response) => {
-  //     const { data } = response
-  //     useToast.msg = 'Register success! You are memeber of e-shopee'
-  //     useToast.type = 'success'
-  //     useToast.status = true
-  //   })
-  //   .catch((error) => {
-  //     return error.response.data.error
-  //   })
-
-  useToast.msg = 'Register success! You are memeber of e-shopee'
-  useToast.type = 'success'
-  useToast.status = true
+  AuthRequest.registerUser({ username, email, password, password_confirmation })
+    .then((response) => {
+      const { data } = response
+      useToast.msg = 'Register success! You are memeber of e-shopee'
+      useToast.type = 'success'
+      useToast.status = true
+    })
+    .catch((error) => {
+      return error.response.data.error
+    })
 }
 
 </script>

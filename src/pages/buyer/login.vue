@@ -4,9 +4,32 @@ meta:
 </route>
 
 <script setup>
+import { toast } from '~/stores/toast'
+import AuthRequest from '~/services/auth-request'
 useHead({
   title: 'e-shopee | buyer login',
 })
+
+const useToast = toast()
+
+const usernameOrEmail = ref('')
+const password = ref('')
+
+const handleSubmit = () => {
+  // AuthRequest.loginUser({ usernameOrEmail, password })
+  //   .then((response) => {
+  //     const { data } = response
+  //     useToast.msg = 'Login success! Welcome back!'
+  //     useToast.type = 'success'
+  //     useToast.status = true
+  //   })
+  //   .catch((error) => {
+  //     return error.response.data.error
+  //   })
+  useToast.msg = 'Login success! Welcome back!'
+  useToast.type = 'success'
+  useToast.status = true
+}
 
 </script>
 
@@ -27,8 +50,8 @@ useHead({
         <IBGithub class="form__icon" />
       </div>
       <span class="form__span mt-4">or use email for login</span>
-      <input class="form__input" name="usernameOrEmail" type="text" placeholder="Email" required>
-      <input class="form__input" name="password" type="password" placeholder="Password" required>
+      <input v-model="usernameOrEmail" class="form__input" name="usernameOrEmail" type="text" placeholder="Email" required>
+      <input v-model="password" class="form__input" name="password" type="password" placeholder="Password" required>
       <div class="text-xs text-gray-500/50 flex justify-between w-full">
         <a href="/buyer/register">
           Don't have account?
@@ -37,8 +60,8 @@ useHead({
           Forgot password?
         </a>
       </div>
-      <a href="/buyer/home">
-        <button type="submit" class="form__button flex justify-center items-center gap-2 font-semibold uppercase mt-5">
+      <a href="">
+        <button type="submit" class="form__button flex justify-center items-center gap-2 font-semibold uppercase mt-5" @click="handleSubmit">
           <IBUnlock />SIGN IN
         </button>
       </a>
