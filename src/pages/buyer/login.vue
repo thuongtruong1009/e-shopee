@@ -12,9 +12,9 @@ useHead({
   title: 'e-shopee | buyer login',
 })
 
+const router = useRouter()
 const useLoading = loading()
 const useToast = toast()
-const router = useRouter()
 
 const payload = reactive({
   usernameOrEmail: '',
@@ -28,9 +28,9 @@ const handleSubmit = async(e) => {
     .then((res) => {
       localStorage.setItem('token', res.token)
       localStorage.setItem('user', JSON.stringify(res))
-      useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
-      router.push({ path: '/buyer/home' })
       useLoading.isLoading = false
+      router.push({ path: '/buyer/home' })
+      useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
     })
     .catch((error) => {
       return error

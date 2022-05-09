@@ -5,29 +5,36 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
+import { loading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
 import AuthRequest from '~/services/auth-request'
 
 useHead({
   title: 'e-shopee | buyer register',
 })
+
 const router = useRouter()
+const useLoading = loading()
 const useToast = toast()
 
-const username = ref('')
-const email = ref('')
-const password = ref('')
-const password_confirmation = ref('')
+const payload = reactive({
+  username: '',
+  email: '',
+  password: '',
+  password_confirmation: '',
+})
 
 const handleSubmit = () => {
-  AuthRequest.registerUser({ username: username.value, email: email.value, password: password.value, password_confirmation: password_confirmation.value })
+  useLoading.isLoading = true
+  AuthRequest.registerUser(payload)
     .then((response) => {
       // const { data } = response
-      useToast.updateToast('success', 'Login success! Welcome back!', true)
       router.push({ path: '/buyer/login' })
+      useLoading.isLoading = false
+      useToast.updateToast('success', 'Check the verify code sent from your mail box!', true)
     })
     .catch((error) => {
-      return error.response.data.error
+      return error
     })
 }
 
@@ -39,7 +46,7 @@ const handleSubmit = () => {
       <form class="bg-white w-1/2 p-5 rounded-xl" @submit.prevent="handleSubmit">
         <div class="capitalize text-2xl font-bold flex justify-center items-center">
           <IBRegister />
-          <h1 @click="handleSubmit">
+          <h1>
             Create Account
           </h1>
         </div>
@@ -50,28 +57,28 @@ const handleSubmit = () => {
           <div class="icon">
             <IBUsername />
           </div>
-          <input v-model="username" type="text" placeholder="Username" required>
+          <input v-model="payload.username" type="text" placeholder="Username" required>
         </div>
         <div>
           <div class="icon">
             <IBEmail />
           </div>
-          <input v-model="email" type="email" placeholder="Email address" required>
+          <input v-model="payload.email" type="email" placeholder="Email address" required>
         </div>
         <div>
           <div class="icon">
             <IBPassword />
           </div>
-          <input v-model="password" type="password" placeholder="Password" required>
+          <input v-model="payload.password" type="password" placeholder="Password" autocomplete="true" required>
         </div>
         <div>
           <div class="icon">
             <IBRepeat />
           </div>
-          <input v-model="password_confirmation" type="password" placeholder="Password confirmation" required>
+          <input v-model="payload.password_confirmation" type="password" placeholder="Password confirmation" required>
         </div>
         <div>
-          <button type="submit" class="capitalize bg-[#5ABBC1] font-semibold text-white text-md rounded-md py-1.75 w-full" @click="handleSubmit">
+          <button type="submit" class="capitalize bg-[#5ABBC1] font-semibold text-white text-md rounded-md py-1.75 w-full" :disabled="payload.email === ''" @click.prevent="handleSubmit">
             Create Account
           </button>
           <p class="text-left text-gray-400 text-sm mt-3">

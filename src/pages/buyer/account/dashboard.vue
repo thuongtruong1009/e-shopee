@@ -3,6 +3,11 @@ meta:
   layout: buyer/account/LBDashboard
 </route>
 
+<script setup>
+const user = JSON.parse(localStorage.getItem('user'))
+
+</script>
+
 <template>
   <div class="myaccount-content border-1 border-solid border-light-700 p-6 text-left rounded-lg bg-[#EBF6FC] dark:bg-cool-gray-800">
     <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
@@ -13,7 +18,7 @@ meta:
     </div>
     <div class="welcome py-5">
       <p>
-        Hello, <strong>Thuong Truong</strong> (If not <strong>you !</strong><a
+        Hello, <strong>{{user.data.username}}</strong> (If not <strong>you !</strong><a
           href="/login" class="logout text-red-400"
         > Logout</a>)
       </p>

@@ -126,7 +126,7 @@ onMounted(() => {
     })
   })
 
-  setInterval(draw, 6000)
+  setInterval(draw, 5000)
 })
 </script>
 

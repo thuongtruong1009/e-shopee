@@ -1,15 +1,13 @@
 import AxiosInstance from './axios-instance'
 
-const baseUrl = 'https://127.0.0.1:444/api/v2'
-
 class AuthRequest {
   registerUser(user) {
-    const url = `${baseUrl}/auth/sign-up`
+    const url = '/auth/sign-up'
     return AxiosInstance.post(url, user)
   }
 
   loginUser(user) {
-    const url = `${baseUrl}/auth/sign-in`
+    const url = '/auth/sign-in'
     return AxiosInstance.post(url, user)
   }
 
