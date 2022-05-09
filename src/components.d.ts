@@ -9,6 +9,7 @@ declare module 'vue' {
     CarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
     CarbonLanguage: typeof import('~icons/carbon/language')['default']
     CarbonMoon: typeof import('~icons/carbon/moon')['default']
+    CarbonPedestrian: typeof import('~icons/carbon/pedestrian')['default']
     CarbonSun: typeof import('~icons/carbon/sun')['default']
     CASellerList: typeof import('./components/admin/CASellerList.vue')['default']
     CBAccount: typeof import('./components/buyer/CBAccount.vue')['default']

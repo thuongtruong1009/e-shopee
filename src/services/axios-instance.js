@@ -1,8 +1,6 @@
 import queryString from 'query-string'
 import axios from 'axios'
 
-// const baseUrl = 'https://127.0.0.1:444/api/v2'
-
 const AxiosInstance = axios.create({
   baseURL: `${import.meta.env.VITE_BASE_DOMAIN}/api/v2`,
   headers: {

@@ -1,14 +1,15 @@
 <script setup>
-import { useUserStore } from '~/stores/user'
+import { category } from '~/stores/category'
 const { t } = useI18n()
 
-const user = useUserStore()
-const name = ref(user.savedName)
+const useCategory = category()
+const name = ref(useCategory.savedCategory)
 
 const router = useRouter()
 const go = () => {
   if (name.value)
     router.push(`/buyer/categories/${encodeURIComponent(name.value)}`)
+  name.value = ''
 }
 </script>
 
