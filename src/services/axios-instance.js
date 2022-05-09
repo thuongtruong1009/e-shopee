@@ -1,11 +1,11 @@
-import axios from 'axios'
+import Axios from 'axios'
 import queryString from 'query-string'
 import NProgress from 'nprogress'
 
-const baseUrl = `${import.meta.env.VITE_BASE_DOMAIN}/api/v2`
+// const baseUrl = 
 
-const AxiosInstance = axios.create({
-  baseUrl,
+const AxiosInstance = Axios.create({
+  baseUrl: `${import.meta.env.VITE_BASE_DOMAIN}/api/v2`,
   headers: {
     'content-type': 'application/json',
     // 'Authorization': `Bearer ${this.getToken()}`,

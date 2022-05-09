@@ -1,4 +1,7 @@
 <script setup>
+import { loading } from '~/stores/loading'
+
+const useLoading = loading()
 watchEffect(() => {
   window.onload = () => {
     document.body.scrollTop = document.documentElement.scrollTop = 0
@@ -35,8 +38,9 @@ window.addEventListener('scroll', scrollFunction)
     </div>
   </Transition>
   <CToast />
-  <!-- <router-view /> -->
-  <router-view v-slot="{ Component, route }">
+  <router-view v-if="useLoading.isLoading === false" />
+  <CLoading v-if="useLoading.isLoading === true" />
+  <!-- <router-view v-slot="{ Component, route }">
     <transition :name="route.meta.transition || 'fade'" mode="out-in">
       <keep-alive>
         <suspense>
@@ -52,7 +56,7 @@ window.addEventListener('scroll', scrollFunction)
         </suspense>
       </keep-alive>
     </transition>
-  </router-view>
+  </router-view> -->
 </template>
 
 <style scoped>

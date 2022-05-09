@@ -5,27 +5,35 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
+import { loading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
 import AuthRequest from '~/services/auth-request'
 useHead({
   title: 'e-shopee | buyer login',
 })
 
+const useLoading = loading()
 const useToast = toast()
 const router = useRouter()
 
-const usernameOrEmail = ref('')
-const password = ref('')
+const payload = reactive({
+  usernameOrEmail: '',
+  password: '',
+})
 
-const handleSubmit = () => {
-  AuthRequest.loginUser({ usernameOrEmail: usernameOrEmail.value, password: password.value })
-    .then((response) => {
-      // const data = response
-      useToast.updateToast('success', 'Login success! Welcome back!', true)
+const handleSubmit = async(e) => {
+  e.preventDefault()
+  useLoading.isLoading = true
+  await AuthRequest.loginUser(payload)
+    .then((res) => {
+      localStorage.setItem('token', res.token)
+      localStorage.setItem('user', JSON.stringify(res))
+      useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
       router.push({ path: '/buyer/home' })
+      useLoading.isLoading = false
     })
     .catch((error) => {
-      return error.response.data.error
+      return error
     })
 }
 
@@ -48,8 +56,8 @@ const handleSubmit = () => {
         <IBGithub class="form__icon" />
       </div>
       <span class="form__span mt-4">or use email for login</span>
-      <input v-model="usernameOrEmail" class="form__input" name="usernameOrEmail" type="text" placeholder="Email" required>
-      <input v-model="password" class="form__input" name="password" type="password" placeholder="Password" required>
+      <input v-model="payload.usernameOrEmail" class="form__input" name="usernameOrEmail" type="text" placeholder="Email" required>
+      <input v-model="payload.password" class="form__input" name="password" type="password" placeholder="Password" autocomplete="true" required>
       <div class="text-xs text-gray-500/50 flex justify-between w-full">
         <a href="/buyer/register">
           Don't have account?
