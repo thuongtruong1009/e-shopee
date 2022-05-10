@@ -3,135 +3,110 @@ meta:
   layout: admin/LALogin
 </route>
 
-<script setup lang="ts">
+<script setup>
+import { useRouter } from 'vue-router'
+import AuthRequest from '~/services/auth-request'
+import { toast } from '~/stores/toast'
+import { loading } from '~/stores/loading'
+
 useHead({
   title: 'admin | login',
 })
+const { t } = useI18n()
+
+const router = useRouter()
+const useLoading = loading()
+const useToast = toast()
+
+const payload = reactive({
+  usernameOrEmail: '',
+  password: '',
+})
+
+const handleSubmit = async(e) => {
+  e.preventDefault()
+  useLoading.isLoading = true
+  await AuthRequest.loginAdmin(payload)
+    .then((res) => {
+      localStorage.setItem('adminToken', res.token)
+      localStorage.setItem('admin', JSON.stringify(res))
+      router.push({ path: '/admin/home' })
+      useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
+      useLoading.isLoading = false
+    })
+    .catch((error) => {
+      return error
+    })
+}
+
 </script>
 
 <template>
-  <div class="login-container grid grid-rows-5">
-    <div class="login-banner row-span-2 flex justify-center items-center relative">
-      <h1 class="text-3xl text-white font-bold z-20">
-        LOG IN
-      </h1>
-      <span class="bg-blue-900 w-full h-full absolute opacity-30 z-10 rounded-t-2xl" />
+  <div class="seller_login_view_container grid grid-cols-2">
+    <div class="seller-login-container-left grid text-center pt-10">
+      <h2 class="text-red-500 font-bold text-3xl">
+        {{ t('auth.a-banner') }}
+      </h2>
+      <h6 class="text-md tracking-tight w-full mb-5">
+        {{ t('auth.a-desc') }}
+      </h6>
+      <PSLogin />
     </div>
-    <div class="row-span-3 px-20 py-15 bg-white rounded-b-2xl shadow-md shadow-gray-400">
-      <form action="" method="post">
-        <div>
-          <label for="user_name">Username</label>
-          <input type="text" placeholder="Enter username">
-        </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" placeholder="Enter password">
-        </div>
-        <div class="flex justify-between items-center pl-25">
-          <label class="container">Remember me
-            <input type="checkbox" checked="checked">
-            <span class="checkmark" />
-          </label>
-          <label for="forgot_password" class="cursor-pointer hover:text-[#6DB846] duration-200">Fogot Password?</label>
-        </div>
-        <div class="flex justify-center">
-          <router-link to="/admin/home">
-            <button type="submit" class="rounded-3xl bg-[#57B846] hover:bg-[#333333] py-2 px-10 text-white text-lg shadow-md shadow-gray-300 flex items-center gap-1">
-              <ILogin class="text-sm" /> Login
-            </button>
-          </router-link>
-        </div>
-      </form>
+    <div class="seller-login-container-right flex justify-center">
+      <div class="w-4/5 bg-white grid justify-center p-5 rounded-2xl shadow-md shadow-gray-300">
+        <h2 class="text-3xl font-semibold tracking-tight mb-5">
+          {{ t('auth.a-title') }}
+        </h2>
+        <form>
+          <div>
+            <input type="text" class="outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4 w-full focus:bg-[#E8F0FE] duration-200" placeholder="username or email...">
+          </div>
+          <div>
+            <input type="password" class="outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4 w-full focus:bg-[#E8F0FE] duration-200" placeholder="password...">
+          </div>
+          <div class="flex justify-between text-xs">
+            <div class="flex items-center gap-1 whitespace-nowrap accent-red-500">
+              <input id="remember" type="checkbox">
+              <label for="remember">{{ t('auth.a-remember') }}</label>
+            </div>
+            <p class="text-blue-600 hover:text-blue-800 cursor-pointer font-medium">
+              Forgot password?
+            </p>
+          </div>
+          <Router-Link to="/seller/home">
+            <div class="bg-red-500 hover:bg-red-600 text-center text-white rounded-md py-2 my-1.5 shadow-md shadow-gray-300 capitalize">
+              <button>{{ t('auth.a-login') }}</button>
+            </div>
+          </Router-Link>
+
+          <div class="grid gap-5">
+            <div class="flex justify-between text-xs pt-5">
+              <p class="opacity-60">
+                Don't have a Shopee account yet?
+              </p>
+              <Router-Link to="/seller/register">
+                <p class="text-blue-600 hover:text-blue-800 font-medium cursor-pointer">
+                  Create account
+                </p>
+              </Router-Link>
+            </div>
+            <div class="flex justify-center opacity-40 text-xs">
+              <span>_____________________  OR  _____________________</span>
+            </div>
+            <!-- <span>OR</span> -->
+            <div class="text-center outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4 cursor-pointer">
+              <p>Login with Primary/Secondary account</p>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.login-banner{
-    background-image: url('/img/admin/login_header.jpg');
-    background-size: cover;
-    border-radius: 1rem 1rem 0 0;
-}
-input[type='text'],
-input[type='password']{
-    border: 1px solid gray;
-    outline: none;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    padding: 0.5rem 0;
-    width: 30rem;
-}
 form > div{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-form > div:nth-child(2){
-    margin: 2rem 0 1rem 0;
-}
-.container {
-  display: block;
-  position: relative;
-  padding-left: 2rem;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 1rem;
-  width: max-content;
-}
-
-/* Hide the browser's default checkbox */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 1.25rem;
-  width: 1.25rem;
-  background-color: #eee;
-  border-radius: 0.2rem;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #6DB846;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  padding: 0.5rem 0;
+  margin: 0.3rem 0;
 }
 </style>
