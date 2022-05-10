@@ -7,7 +7,9 @@ meta:
 import { useRouter } from 'vue-router'
 import { loading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
+import { handleError } from '~/helpers/error'
 import AuthRequest from '~/services/auth-request'
+
 useHead({
   title: 'e-shopee | buyer login',
 })
@@ -33,9 +35,10 @@ const handleSubmit = async(e) => {
       useLoading.isLoading = false
     })
     .catch((error) => {
-      return error
+      return handleError(error)
     })
 }
+
 </script>
 
 <template>

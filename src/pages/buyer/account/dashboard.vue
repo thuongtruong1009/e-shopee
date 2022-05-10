@@ -5,14 +5,22 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
+import AuthRequest from '~/services/auth-request'
+
+useHead({
+  title: 'e-shopee | buyer dashboard',
+})
+
 const user = JSON.parse(localStorage.getItem('user'))
 
 const router = useRouter()
 
-const signOut = () => {
-  localStorage.removeItem('token')
-  localStorage.removeItem('user')
-  router.push({ path: '/buyer/login' })
+const signOut = async() => {
+  await AuthRequest.signOut().then(() => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    router.push({ path: '/buyer/login' })
+  })
 }
 
 </script>

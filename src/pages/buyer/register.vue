@@ -7,7 +7,9 @@ meta:
 import { useRouter } from 'vue-router'
 import { loading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
+import { handleError } from '~/helpers/error'
 import AuthRequest from '~/services/auth-request'
+import EmailRequest from '~/services/email-request'
 
 useHead({
   title: 'e-shopee | buyer register',
@@ -24,17 +26,21 @@ const payload = reactive({
   password_confirmation: '',
 })
 
-const handleSubmit = () => {
+const handleSubmit = async(e) => {
+  e.preventDefault()
   useLoading.isLoading = true
   AuthRequest.registerUser(payload)
-    .then((response) => {
-      // const { data } = response
-      router.push({ path: '/buyer/login' })
-      useLoading.isLoading = false
-      useToast.updateToast('success', 'Check the verify code sent from your mail box!', true)
+    .then((res) => {
+      await EmailRequest.createVerifyEmail().then(() => {
+        router.push({ path: '/buyer/login' })
+        useLoading.isLoading = false
+        useToast.updateToast('success', 'Verification email sent. Please check your mailbox!', true)
+      }).catch((error) => {
+        return handleError(error)
+      })
     })
     .catch((error) => {
-      return error
+      return handleError(error)
     })
 }
 
