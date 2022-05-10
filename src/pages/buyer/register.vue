@@ -15,6 +15,8 @@ useHead({
   title: 'e-shopee | buyer register',
 })
 
+const { t } = useI18n()
+
 const router = useRouter()
 const useLoading = loading()
 const useToast = toast()
@@ -34,7 +36,7 @@ const handleSubmit = async(e) => {
       await EmailRequest.createVerifyEmail().then(() => {
         router.push({ path: '/buyer/login' })
         useLoading.isLoading = false
-        useToast.updateToast('success', 'Verification email sent. Please check your mailbox!', true)
+        useToast.updateToast('success', `Hi, ${payload.username}. Check verification email sent in your mailbox!`, true)
       }).catch((error) => {
         return handleError(error)
       })
@@ -53,11 +55,11 @@ const handleSubmit = async(e) => {
         <div class="capitalize text-2xl font-bold flex justify-center items-center">
           <IBRegister />
           <h1>
-            Create Account
+            {{ t('auth.b-register-title') }}
           </h1>
         </div>
         <p class="text-sm text-gray-400 font-medium">
-          Join us and start shopping in your style
+          {{ t('auth.b-register-desc') }}
         </p>
         <div>
           <div class="icon">
@@ -84,11 +86,11 @@ const handleSubmit = async(e) => {
           <input v-model="payload.password_confirmation" type="password" placeholder="Password confirmation" required>
         </div>
         <div>
-          <button type="submit" class="capitalize bg-[#5ABBC1] font-semibold text-white text-md rounded-md py-1.75 w-full" :disabled="payload.email === ''" @click.prevent="handleSubmit">
-            Create Account
+          <button type="submit" class="capitalize bg-[#5ABBC1] font-semibold text-white text-md rounded-md py-1.75 w-full" :disabled="payload.email === ''" @click="handleSubmit">
+            {{ t('auth.b-register-btn') }}
           </button>
           <p class="text-left text-gray-400 text-sm mt-3">
-            Already have account? <a href="/buyer/login" class="text-[#5ABBC1]">Login</a>
+            {{t('auth.b-register-already-account')}}? <a href="/buyer/login" class="text-[#5ABBC1] capitalize">{{ t('auth.b-register-refer') }}</a>
           </p>
         </div>
       </form>

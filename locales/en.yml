@@ -172,6 +172,17 @@ auth:
   a-title: Login to Admin channel
   a-remember: Remember me
   a-login: Login
+  b-register-title: Create Account
+  b-register-desc: Join us and start shopping in your style
+  b-register-btn: Create Account
+  b-register-refer: Login
+  b-register-already-account: Already have account
+  b-login-welcome: Welcome back
+  b-login-desc: Experience many attractive offers and services
+  b-oauth: or use email for login
+  b-not-account: Don't have account
+  b-login-forgot: Forgot password
+  b-login-btn: SIGN IN
   b-forgot-title: You forgot you password
   b-forgot-invite: It's easy to reset a new password in a snap
   b-forgot: Forgot

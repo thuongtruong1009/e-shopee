@@ -8,6 +8,7 @@ import { useRouter } from 'vue-router'
 import AuthRequest from '~/services/auth-request'
 import { toast } from '~/stores/toast'
 import { loading } from '~/stores/loading'
+import { handleError } from '~/helpers/error'
 
 useHead({
   title: 'admin | login',
@@ -31,11 +32,11 @@ const handleSubmit = async(e) => {
       localStorage.setItem('adminToken', res.token)
       localStorage.setItem('admin', JSON.stringify(res))
       router.push({ path: '/admin/home' })
-      useToast.updateToast('success', `Login admin succes! Welcome back, ${payload.usernameOrEmail}!`, true)
+      useToast.updateToast('success', `Admin page is ready! Welcome back, ${payload.usernameOrEmail}!`, true)
       useLoading.isLoading = false
     })
     .catch((error) => {
-      return error
+      return handleError(error)
     })
 }
 
