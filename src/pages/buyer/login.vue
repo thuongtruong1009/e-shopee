@@ -28,9 +28,9 @@ const handleSubmit = async(e) => {
     .then((res) => {
       localStorage.setItem('token', res.token)
       localStorage.setItem('user', JSON.stringify(res))
-      useLoading.isLoading = false
       router.push({ path: '/buyer/home' })
       useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
+      useLoading.isLoading = false
     })
     .catch((error) => {
       return error
