@@ -31,7 +31,7 @@ const handleSubmit = async(e) => {
       localStorage.setItem('adminToken', res.token)
       localStorage.setItem('admin', JSON.stringify(res))
       router.push({ path: '/admin/home' })
-      useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
+      useToast.updateToast('success', `Login admin succes! Welcome back, ${payload.usernameOrEmail}!`, true)
       useLoading.isLoading = false
     })
     .catch((error) => {
@@ -57,12 +57,12 @@ const handleSubmit = async(e) => {
         <h2 class="text-3xl font-semibold tracking-tight mb-5">
           {{ t('auth.a-title') }}
         </h2>
-        <form>
+        <form @submit.prevent="handleSubmit">
           <div>
-            <input type="text" class="outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4 w-full focus:bg-[#E8F0FE] duration-200" placeholder="username or email...">
+            <input v-model="payload.usernameOrEmail" type="text" class="outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4 w-full focus:bg-[#E8F0FE] duration-200" placeholder="username or email...">
           </div>
           <div>
-            <input type="password" class="outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4 w-full focus:bg-[#E8F0FE] duration-200" placeholder="password...">
+            <input v-model="payload.password" type="password" class="outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4 w-full focus:bg-[#E8F0FE] duration-200" placeholder="password..." autocomplete="true">
           </div>
           <div class="flex justify-between text-xs">
             <div class="flex items-center gap-1 whitespace-nowrap accent-red-500">
@@ -73,22 +73,20 @@ const handleSubmit = async(e) => {
               Forgot password?
             </p>
           </div>
-          <Router-Link to="/seller/home">
-            <div class="bg-red-500 hover:bg-red-600 text-center text-white rounded-md py-2 my-1.5 shadow-md shadow-gray-300 capitalize">
-              <button>{{ t('auth.a-login') }}</button>
-            </div>
-          </Router-Link>
+          <div class="bg-red-500 hover:bg-red-600 text-center text-white rounded-md py-2 my-1.5 shadow-md shadow-gray-300 capitalize">
+            <button @click="handleSubmit">
+              {{ t('auth.a-login') }}
+            </button>
+          </div>
 
           <div class="grid gap-5">
             <div class="flex justify-between text-xs pt-5">
               <p class="opacity-60">
                 Don't have a Shopee account yet?
               </p>
-              <Router-Link to="/seller/register">
-                <p class="text-blue-600 hover:text-blue-800 font-medium cursor-pointer">
-                  Create account
-                </p>
-              </Router-Link>
+              <p class="text-blue-600 hover:text-blue-800 font-medium cursor-pointer">
+                Create account
+              </p>
             </div>
             <div class="flex justify-center opacity-40 text-xs">
               <span>_____________________  OR  _____________________</span>

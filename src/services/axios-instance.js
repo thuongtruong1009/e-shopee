@@ -13,9 +13,8 @@ const AxiosInstance = axios.create({
 
 AxiosInstance.interceptors.request.use(
   async(request) => {
-    if (localStorage.getItem('token'))
-      request.headers.token = `Bearer ${localStorage.getItem('token')}`
-
+    // if (localStorage.getItem('token'))
+    //   request.headers.token = `Bearer ${localStorage.getItem('token')}`
     return request
   },
   (error) => {

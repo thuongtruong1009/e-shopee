@@ -36,7 +36,6 @@ const handleSubmit = async(e) => {
       return error
     })
 }
-
 </script>
 
 <template>
