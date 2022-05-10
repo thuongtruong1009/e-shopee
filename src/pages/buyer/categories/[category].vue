@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { useUserStore } from '~/stores/user'
+import { category } from '~/stores/category'
 
-const props = defineProps<{ name: string }>()
+const props = defineProps<{ category: string }>()
 const router = useRouter()
-const user = useUserStore()
+const useCategory = category()
 const { t } = useI18n()
 
 watchEffect(() => {
-  user.setNewName(props.name)
+  useCategory.setNewName(props.category)
 })
 </script>
 
@@ -17,20 +17,20 @@ watchEffect(() => {
       <carbon-pedestrian class="inline-block" />
     </p>
     <p>
-      {{ t('intro.hi', { name: props.name }) }}
+      {{ t('intro.hi', { name: props.category }) }}
     </p>
 
     <p class="text-sm opacity-50">
       <em>{{ t('intro.dynamic-route') }}</em>
     </p>
 
-    <template v-if="user.otherNames.length">
+    <template v-if="useCategory.otherCategories.length">
       <p class="text-sm mt-4">
         <span class="opacity-75">{{ t('intro.aka') }}:</span>
         <ul>
-          <li v-for="otherName in user.otherNames" :key="otherName">
-            <router-link :to="`/hi/${otherName}`" replace>
-              {{ otherName }}
+          <li v-for="otherCategory in useCategory.otherCategories" :key="otherCategory">
+            <router-link :to="`/hi/${otherCategory}`" replace>
+              {{ otherCategory }}
             </router-link>
           </li>
         </ul>

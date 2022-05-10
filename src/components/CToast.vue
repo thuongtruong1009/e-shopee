@@ -49,11 +49,13 @@ watchEffect(() => {
 .toast_container {
     position: fixed;
     right: 0.5rem;
-    top: 50%;
-    z-index: 999;
+    top: 20%;
+    /* top: 10%;
+    left: 40%; */
+    z-index: 9999;
 }
 .toast {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     background: white;
     border-radius: 0.5rem;
     box-shadow: 1px 3px 5px rgba(0,0,0,0.2);
@@ -82,7 +84,7 @@ watchEffect(() => {
 
 .nested-enter-from,
 .nested-leave-to {
-    transform: translateY(3rem);
+    transform: translateY(-3rem);
     opacity: 0;
 }
 

@@ -3,6 +3,11 @@ meta:
   layout: buyer/account/LBDashboard
 </route>
 
+<script setup>
+const user = JSON.parse(localStorage.getItem('user'))
+
+</script>
+
 <template>
   <div class="myaccount-content border-1 border-solid border-light-700 p-6 text-left rounded-lg bg-[#EBF6FC] dark:bg-cool-gray-800">
     <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
@@ -13,9 +18,9 @@ meta:
     </div>
     <div class="welcome py-5">
       <p>
-        Hello, <strong>Thuong Truong</strong> (If not <strong>you !</strong><a
-          href="/login" class="logout text-red-400"
-        > Logout</a>)
+        Hello, <strong>@{{ user.data.username }}</strong><span class="text-xs ml-5">(If not you !<a
+          href="/buyer/login" class="logout text-red-400" @click="useAuth.$reset()"
+        > Logout</a>)</span>
       </p>
     </div>
     <p class="text-md font-light">
@@ -49,7 +54,7 @@ meta:
         <label>Address</label>
         <input type="text" name="address" required>
       </div>
-      <div>
+      <div class="dark:text-black">
         <select name="is_home">
           <option>Is Home</option>
           <option value="false">

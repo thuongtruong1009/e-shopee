@@ -24,6 +24,7 @@ declare module 'vue' {
     CBHead: typeof import('./components/buyer/CBHead.vue')['default']
     CBHeaderTop: typeof import('./components/header/CBHeaderTop.vue')['default']
     CBList: typeof import('./components/head/CBList.vue')['default']
+    CBLoading: typeof import('./components/CBLoading.vue')['default']
     CBMenuCategories: typeof import('./components/head/CBMenuCategories.vue')['default']
     CBMenuItem: typeof import('./components/head/CBMenuItem.vue')['default']
     CBMonthSale: typeof import('./components/buyer/CBMonthSale.vue')['default']

@@ -1,14 +1,11 @@
-import axios from 'axios'
 import queryString from 'query-string'
-import NProgress from 'nprogress'
-
-const baseUrl = `${import.meta.env.VITE_BASE_DOMAIN}/api/v2`
+import axios from 'axios'
 
 const AxiosInstance = axios.create({
-  baseUrl,
+  baseURL: `${import.meta.env.VITE_BASE_DOMAIN}/api/v2`,
   headers: {
-    'content-type': 'application/json',
-    // 'Authorization': `Bearer ${this.getToken()}`,
+    'Content-Type': 'application/json',
+    'Authorization': localStorage.getItem('token'),
   },
   paramsSerializer: params => queryString.stringify(params),
   responseEncoding: 'utf8',
@@ -16,9 +13,8 @@ const AxiosInstance = axios.create({
 
 AxiosInstance.interceptors.request.use(
   async(request) => {
-    NProgress.start()
-    if (localStorage.getItem('accessToken'))
-      request.headers.token = `Bearer ${localStorage.getItem('accessToken')}`
+    if (localStorage.getItem('token'))
+      request.headers.token = `Bearer ${localStorage.getItem('token')}`
 
     return request
   },
@@ -28,7 +24,6 @@ AxiosInstance.interceptors.request.use(
 )
 AxiosInstance.interceptors.response.use(
   (response) => {
-    NProgress.done()
     if (response && response.data)
       return response.data
 

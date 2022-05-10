@@ -1,15 +1,12 @@
 <template>
   <div class="loading_container">
-    <div class="content">
-      <div class="load-wrapp">
-        <div class="load-3">
-          <div class="line" />
-          <div class="line" />
-          <div class="line" />
-        </div>
+    <div class="load-wrapp">
+      <div class="load-3">
+        <div class="line" />
+        <div class="line" />
+        <div class="line" />
       </div>
     </div>
-    <div class="clear" />
   </div>
 </template>
 
@@ -18,32 +15,18 @@
     padding: 5rem;
     width: 100vw;
     height: 100vh;
-}
-
-.content {
-    padding: 15px;
-    overflow: hidden;
-    background-color: #e7e7e7;
-    background-color: rgba(0, 0, 0, 0.06);
-}
-
-.clear {
-    clear: both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .load-wrapp {
-    float: left;
     width: 100px;
     height: 100px;
-    margin: 0 10px 10px 0;
     padding: 20px 20px 20px;
-    border-radius: 5px;
+    border-radius: 1.5rem;
     text-align: center;
     background-color: #d8d8d8;
-}
-
-.load-wrapp:last-child {
-    margin-right: 0;
 }
 
 .line {
