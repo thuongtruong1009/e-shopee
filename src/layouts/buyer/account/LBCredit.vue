@@ -1,16 +1,19 @@
 <template>
-  <main class="text-gray-700 dark:text-gray-200 overflow-x-hidden">
-    <SHead />
-    <div class="seller-main w-screen flex justify-center p-20 items-center bg-[#F6F6F6] dark:bg-black">
-      <router-view />
+  <main class="text-gray-700 dark:text-gray-200">
+    <CBHeaderTop />
+    <CBHead />
+    <div class="header divide-y divide-gray-200 divide-solid px-15">
+      <div class="capitalize text-3xl font-semibold pt-15 pb-5 flex justify-center items-center">
+        <IAccount />
+        <h1>
+          My Account
+        </h1>
+      </div>
+      <div class="grid grid-cols-4 pt-5 pb-20">
+        <CBAccount class="col-span-1" />
+        <router-view class="col-span-3" />
+      </div>
     </div>
+    <CBFooter />
   </main>
 </template>
-
-<style scoped>
-.seller-main{
-  background: url("/img/admin/login_bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-</style>

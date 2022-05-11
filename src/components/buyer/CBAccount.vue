@@ -27,12 +27,13 @@ const { t } = useI18n()
 
     <router-link to="/buyer/account/payment" :title="payment">
       <div class="items">
-        <i class="fa fa-credit-card" />
+        <!-- <i class="fa fa-credit-card" /> -->
+        <i class="fas fa-university" />
         {{ t('caccount.payment-method') }}
       </div>
     </router-link>
 
-     <router-link to="/buyer/account/credit" :title="credit">
+    <router-link to="/buyer/account/credit" :title="credit">
       <div class="items">
         <i class="fa fa-credit-card" />
         {{ t('caccount.credit-card') }}
@@ -43,12 +44,6 @@ const { t } = useI18n()
       <div class="items">
         <i class="fa fa-map-marker" />
         {{ t('caccount.address') }}
-      </div>
-    </router-link>
-
-    <router-link to="/buyer/account/details" :title="details" class="active">
-      <div class="items">
-        <i class="fa fa-user" /> {{ t('caccount.account-details') }}
       </div>
     </router-link>
 

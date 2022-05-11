@@ -4,148 +4,145 @@ meta:
 </route>
 
 <script setup>
-import { useRouter } from 'vue-router'
 import { toast } from '~/stores/toast'
-import EmailRequest from '~/services/email-request'
+import { handleError } from '~/helpers/error'
+import AccountRequest from '~/services/account-request'
 
 useHead({
-  title: 'buyer | verify account',
+  title: 'buyer | account credit',
 })
-const router = useRouter()
 
-const payload = reactive({ id: JSON.parse(localStorage.getItem('user')).data.id, hash: '', signature: '' })
+const useToast = toast()
+const id = JSON.parse(localStorage.getItem('user')).data.id
 
-const handleSubmit = () => {
-  EmailRequest.getVerifyEmailById(payload).then((res) => {
-    router.push({ path: '/buyer/account/verify/success' })
+const payload = reactive({
+  cardholder_name: '',
+  expiry_date: '',
+  cvv: '',
+  registration_address: '',
+  postal_code: '',
+  card_number: '',
+})
+
+watchOnce(async() => {
+  await AccountRequest.getCreditCard().then((res) => {
+    payload.cardholder_name = res.data.cardholder_name
+    payload.expiry_date = res.data.expiry_date
+    payload.cvv = res.data.cvv
+    payload.registration_address = res.data.registration_address
+    payload.postal_code = res.data.postal_code
+    payload.card_number = res.data.card_number
+  }).catch((error) => {
+    return handleError(error)
+  })
+})
+
+const handleCreate = async(e) => {
+  e.preventDefault()
+  await AccountRequest.createCreditCard(payload).then(() => {
+    useToast.updateToast('created', 'your card has been created successfully!', true)
+  }).catch((error) => {
+    return handleError(error)
+  })
+}
+const handleUpdate = async(e) => {
+  e.preventDefault()
+  await AccountRequest.updateCreditCardById(id, payload).then(() => {
+    useToast.updateToast('updated', 'Your card has been successfully!', true)
+  }).catch((error) => {
+    return handleError(error)
+  })
+}
+
+const handleDelete = async(e) => {
+  e.preventDefault()
+  await AccountRequest.deleteCreditCardById(id, payload).then(() => {
+    useToast.updateToast('deleted', 'Your card has been deleted!', true)
+  }).catch((error) => {
+    return handleError(error)
   })
 }
 
 </script>
 
 <template>
-  <div class="login-container grid grid-rows-5">
-    <div class="login-banner row-span-2 flex justify-center items-center relative">
-      <h1 class="text-3xl text-white font-bold z-20">
-        Verify your account
-      </h1>
-      <span class="bg-blue-900 w-full h-full absolute opacity-30 z-10 rounded-t-2xl" />
+  <div class="payment-container border-1 border-solid border-light-700 rounded-md p-5 bg-[#EBF6FC] dark:bg-cool-gray-800">
+    <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
+      <IBPayment />
+      <h3 class="text-2xl">
+        Payment method
+      </h3>
     </div>
-    <div class="row-span-3 px-20 py-15 bg-white rounded-b-2xl shadow-md shadow-gray-400">
-      <form action="" method="post">
-        <div>
-          <label for="user_name">Username</label>
-          <input type="text" placeholder="Enter username">
-        </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" placeholder="Enter password">
-        </div>
-        <div class="flex justify-between items-center pl-25">
-          <label class="container">Remember me
-            <input type="checkbox" checked="checked">
-            <span class="checkmark" />
-          </label>
-          <label for="forgot_password" class="cursor-pointer hover:text-[#6DB846] duration-200">Fogot Password?</label>
-        </div>
-        <div class="flex justify-center">
-          <router-link to="/admin/home">
-            <button type="submit" class="rounded-3xl bg-[#57B846] hover:bg-[#333333] py-2 px-10 text-white text-lg shadow-md shadow-gray-300 flex items-center gap-1">
-              <ILogin class="text-sm" /> Login
-            </button>
-          </router-link>
-        </div>
-      </form>
+    <div class="py-5">
+      <p class="font-medium text-gray-500 text-md">
+        Thuong Truong
+      </p>
+      <p class="text-sm">
+        6 quater, Linh Trung ward, Thu Duc dist, HoChiMinh city, VietNam
+      </p>
+      <p class="text-sm">
+        ZIP postal: 700000
+      </p>
     </div>
+    <p class="saved-message py-5 text-gray-400 text-sm font-medium">
+      You not't saved your Payment method yet.
+    </p>
+
+    <form @submit.prevent="handleCreate">
+      <div>
+        <label>Card holder name</label>
+        <input v-model="payload.cardholder_name" type="text" required>
+      </div>
+      <div>
+        <label>Card number</label>
+        <input v-model="payload.card_number" type="text" required>
+      </div>
+      <div>
+        <label>Expiry date</label>
+        <input v-model="payload.expiry_date " type="date" required>
+      </div>
+      <div>
+        <label>Cvv</label>
+        <input v-model="payload.cvv" type="text" required>
+      </div>
+      <div>
+        <label>Registration address</label>
+        <input v-model="payload.registration_address" type="text" required>
+      </div>
+      <div>
+        <label>Postal ZIP code</label>
+        <input v-model="payload.postal_code" type="text" required>
+      </div>
+      <div class="pt-5 flex justify-end gap-5">
+        <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleUpdate">
+          <ISave />Update address
+        </button>
+        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
+          <ISave />Save Changes
+        </button>
+      </div>
+    </form>
   </div>
 </template>
 
 <style scoped>
-.login-banner{
-    background-image: url('/img/admin/login_header.jpg');
-    background-size: cover;
-    border-radius: 1rem 1rem 0 0;
+input{
+  width: 80%;
+  outline: none;
+  border: 1px solid rgba(233, 236, 239);
+  border-radius: 0.3rem;
+  padding: 0.3rem 1rem;
+  transition: 0.2s linear;
+  font-size: 0.9rem;
 }
-input[type='text'],
-input[type='password']{
-    border: 1px solid gray;
-    outline: none;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    padding: 0.5rem 0;
-    width: 30rem;
+input:focus{
+    box-shadow: 2px 2px 4px rgba(59, 175, 252, 0.8);
 }
-form > div{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-form > div:nth-child(2){
-    margin: 2rem 0 1rem 0;
-}
-.container {
-  display: block;
-  position: relative;
-  padding-left: 2rem;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 1rem;
-  width: max-content;
-}
-
-/* Hide the browser's default checkbox */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 1.25rem;
-  width: 1.25rem;
-  background-color: #eee;
-  border-radius: 0.2rem;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #6DB846;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+form > div:not(:last-child){
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
 }
 </style>

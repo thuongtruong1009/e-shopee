@@ -13,6 +13,7 @@ useHead({
 })
 
 const useToast = toast()
+const id = JSON.parse(localStorage.getItem('user')).data.id
 
 const payload = reactive({
   accountholder_name: '',
@@ -34,10 +35,26 @@ watchOnce(async() => {
   })
 })
 
-const handleUpdate = async(e) => {
+const handleCreate = async(e) => {
   e.preventDefault()
   await AccountRequest.createAddress(payload).then(() => {
-    useToast.updateToast('success', 'Payment method created successfully!', true)
+    useToast.updateToast('success', 'Payment method has been created successfully!', true)
+  }).catch((error) => {
+    return handleError(error)
+  })
+}
+const handleUpdate = async(e) => {
+  e.preventDefault()
+  await AccountRequest.updateBankAccountById(id, payload).then(() => {
+    useToast.updateToast('updated', 'Payment method has been updated successfully!', true)
+  }).catch((error) => {
+    return handleError(error)
+  })
+}
+const handleDelete = async(e) => {
+  e.preventDefault()
+  await AccountRequest.deleteBankAccountById(id, payload).then(() => {
+    useToast.updateToast('updated', 'Payment method has been updated successfully!', true)
   }).catch((error) => {
     return handleError(error)
   })
@@ -68,7 +85,7 @@ const handleUpdate = async(e) => {
       You not't saved your Payment method yet.
     </p>
 
-    <form @submit.prevent="handleUpdate">
+    <form @submit.prevent="handleCreate">
       <div>
         <label>Full name</label>
         <input v-model="payload.accountholder_name" type="text" required>
@@ -89,8 +106,14 @@ const handleUpdate = async(e) => {
         <label>Card number</label>
         <input v-model="payload.account_number" type="text" required>
       </div>
-      <div class="pt-5 flex justify-end">
-        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
+      <div class="pt-5 flex justify-end gap-5">
+        <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleDelete">
+          <ISave />Delete address
+        </button>
+        <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleUpdate">
+          <ISave />Update address
+        </button>
+        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
           <ISave />Save Changes
         </button>
       </div>

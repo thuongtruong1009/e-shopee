@@ -15,21 +15,7 @@ useHead({
 
 const router = useRouter()
 const useToast = toast()
-
-const fullName = ref('...')
-const address = ref('...')
-const phone = ref('...')
-
-onMounted(() => {
-  AccountRequest.getAddress().then((res) => {
-    fullName.value = res.data.full_name
-    address.value = res.data.address
-    phone.value = res.data.phone
-    useToast.updateToast('success', 'Address updated successfully!', true)
-  }).catch((error) => {
-    return handleError(error)
-  })
-})
+const id = JSON.parse(localStorage.getItem('user')).data.id
 
 const payload = reactive({
   full_name: '',
@@ -44,10 +30,31 @@ const payload = reactive({
   is_return_address: false,
 })
 
+const isEdit = ref(false)
+
+watchOnce(() => {
+  AccountRequest.getAddress().then((res) => {
+    payload.full_name = res.data.full_name
+    payload.address = res.data.address
+    payload.phone = res.data.phone
+  }).catch((error) => {
+    return handleError(error)
+  })
+})
+
 const handleSubmit = async(e) => {
   e.preventDefault()
   await AccountRequest.createAddress(payload).then(() => {
-    useToast.updateToast('success', 'Address created successfully!', true)
+    useToast.updateToast('created', 'Address has been created successfully!', true)
+  }).catch((error) => {
+    return handleError(error)
+  })
+}
+
+const handleUpdate = async(e) => {
+  e.preventDefault()
+  await AccountRequest.creatupdateAddressById(id, payload).then(() => {
+    useToast.updateToast('updated', 'Address has been updated successfully!', true)
   }).catch((error) => {
     return handleError(error)
   })
@@ -74,38 +81,80 @@ const handleSubmit = async(e) => {
         Mobile: (+84) 917-085-937
       </p>
     </div>
-    <a href="#" class="edit-address-btn text-sm text-blue-700 gap-1 flex items-center"><i
+    <a class="edit-address-btn text-sm text-blue-700 gap-1 flex items-center cursor-pointer" @click="isEdit = !isEdit"><i
       class="fa fa-edit"
     />Edit Address</a>
 
     <form>
       <div>
         <label>Full name</label>
-        <input type="text" name="full_name" required>
+        <input v-model="payload.full_name" type="text" required>
       </div>
       <div>
         <label>Phone number</label>
-        <input type="number" name="phone" required>
+        <input v-model="payload.phone" type="number" required>
       </div>
       <div>
         <label>State</label>
-        <input type="text" name="state" required>
+        <input v-model="payload.state" type="text" required>
       </div>
       <div>
         <label>City</label>
-        <input type="text" name="city" required>
+        <input v-model="payload.city" type="text" required>
       </div>
       <div>
         <label>Town</label>
-        <input type="text" name="town" required>
+        <input v-model="payload.town" type="text" required>
       </div>
       <div>
         <label>Address</label>
-        <input type="text" name="address" required>
+        <input v-model="payload.address" type="text" required>
       </div>
 
-      <div class="pt-5 flex justify-end">
-        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium">
+      <div class="dark:text-black">
+        <select v-model="payload.is_home">
+          <option>Is Home</option>
+          <option value="false">
+            False
+          </option>
+          <option value="true">
+            True
+          </option>
+        </select>
+        <select v-model="payload.is_pickup_address">
+          <option>Is Pickup Address</option>
+          <option value="false">
+            False
+          </option>
+          <option value="true">
+            True
+          </option>
+        </select>
+        <select v-model="payload.is_default_address">
+          <option>Is Default Address</option>
+          <option value="false">
+            False
+          </option>
+          <option value="true">
+            True
+          </option>
+        </select>
+        <select v-model="payload.is_return_address">
+          <option>Is Return Address</option>
+          <option value="false">
+            False
+          </option>
+          <option value="true">
+            True
+          </option>
+        </select>
+      </div>
+
+      <div class="pt-5 flex gap-5 justify-end">
+        <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-80" :disabled="!isEdit" @click="handleUpdate">
+          <ISave />Update address
+        </button>
+        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleSubmit">
           <ISave />Save Changes
         </button>
       </div>
@@ -114,7 +163,7 @@ const handleSubmit = async(e) => {
 </template>
 
 <style scoped>
-input{
+input, select{
   width: 80%;
   outline: none;
   border: 1px solid rgba(233, 236, 239);
