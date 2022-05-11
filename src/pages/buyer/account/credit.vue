@@ -88,7 +88,7 @@ const handleDelete = async(e) => {
       You not't saved your Payment method yet.
     </p>
 
-    <form @submit.prevent="handleCreate">
+    <form>
       <div>
         <label>Card holder name</label>
         <input v-model="payload.cardholder_name" type="text" required>
@@ -114,8 +114,11 @@ const handleDelete = async(e) => {
         <input v-model="payload.postal_code" type="text" required>
       </div>
       <div class="pt-5 flex justify-end gap-5">
+        <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleDelete">
+          <ISave />Delete credit
+        </button>
         <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleUpdate">
-          <ISave />Update address
+          <ISave />Update credit
         </button>
         <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
           <ISave />Save Changes

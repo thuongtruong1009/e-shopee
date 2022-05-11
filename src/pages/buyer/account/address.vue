@@ -42,7 +42,7 @@ watchOnce(() => {
   })
 })
 
-const handleSubmit = async(e) => {
+const handleCreate = async(e) => {
   e.preventDefault()
   await AccountRequest.createAddress(payload).then(() => {
     useToast.updateToast('created', 'Address has been created successfully!', true)
@@ -54,6 +54,14 @@ const handleSubmit = async(e) => {
 const handleUpdate = async(e) => {
   e.preventDefault()
   await AccountRequest.creatupdateAddressById(id, payload).then(() => {
+    useToast.updateToast('updated', 'Address has been updated successfully!', true)
+  }).catch((error) => {
+    return handleError(error)
+  })
+}
+const handleDelete = async(e) => {
+  e.preventDefault()
+  await AccountRequest.deleteAddressById(id).then(() => {
     useToast.updateToast('updated', 'Address has been updated successfully!', true)
   }).catch((error) => {
     return handleError(error)
@@ -151,10 +159,13 @@ const handleUpdate = async(e) => {
       </div>
 
       <div class="pt-5 flex gap-5 justify-end">
+        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleDelete">
+          <ISave />Delete address
+        </button>
         <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-80" :disabled="!isEdit" @click="handleUpdate">
           <ISave />Update address
         </button>
-        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleSubmit">
+        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
           <ISave />Save Changes
         </button>
       </div>

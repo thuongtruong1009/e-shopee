@@ -38,7 +38,7 @@ watchOnce(async() => {
 const handleCreate = async(e) => {
   e.preventDefault()
   await AccountRequest.createAddress(payload).then(() => {
-    useToast.updateToast('success', 'Payment method has been created successfully!', true)
+    useToast.updateToast('created', 'Payment method has been created successfully!', true)
   }).catch((error) => {
     return handleError(error)
   })
@@ -53,8 +53,8 @@ const handleUpdate = async(e) => {
 }
 const handleDelete = async(e) => {
   e.preventDefault()
-  await AccountRequest.deleteBankAccountById(id, payload).then(() => {
-    useToast.updateToast('updated', 'Payment method has been updated successfully!', true)
+  await AccountRequest.deleteBankAccountById(id).then(() => {
+    useToast.updateToast('deleted', 'Payment method has been deleted successfully!', true)
   }).catch((error) => {
     return handleError(error)
   })
@@ -85,7 +85,7 @@ const handleDelete = async(e) => {
       You not't saved your Payment method yet.
     </p>
 
-    <form @submit.prevent="handleCreate">
+    <form>
       <div>
         <label>Full name</label>
         <input v-model="payload.accountholder_name" type="text" required>
@@ -108,10 +108,10 @@ const handleDelete = async(e) => {
       </div>
       <div class="pt-5 flex justify-end gap-5">
         <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleDelete">
-          <ISave />Delete address
+          <ISave />Delete payment
         </button>
         <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleUpdate">
-          <ISave />Update address
+          <ISave />Update payment
         </button>
         <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
           <ISave />Save Changes
