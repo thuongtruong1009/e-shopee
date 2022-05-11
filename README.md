@@ -3,12 +3,12 @@
 [![Email](https://img.shields.io/twitter/url?color=green&label=Email&logo=gmail&logoColor=red&style=for-the-badge&url=https%3A%2F%2Fdev.to%2Fthuongtruong1009)](mailto:ititiu19228@student.hcmiu.edu.vn)
 
 <div align="center">
-  <h1><img width="30" height="28" src="/public/readme_icon.png" />e-shopee</h1>
+  <h1><img width="30" height="30" src="./public/favicon.svg" /> e-shopee</h1>
 </div>
 
 ## Preview
 
-- [Demo](https://e-shopee.vercel.app/)
+- [Demo link](https://e-shopee.vercel.app)
 
 <table>
   <tr>

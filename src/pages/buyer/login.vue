@@ -7,10 +7,14 @@ meta:
 import { useRouter } from 'vue-router'
 import { loading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
+import { handleError } from '~/helpers/error'
 import AuthRequest from '~/services/auth-request'
+
 useHead({
-  title: 'e-shopee | buyer login',
+  title: 'buyer | login',
 })
+
+const { t } = useI18n()
 
 const router = useRouter()
 const useLoading = loading()
@@ -33,7 +37,7 @@ const handleSubmit = async(e) => {
       useLoading.isLoading = false
     })
     .catch((error) => {
-      return error
+      return handleError(error)
     })
 }
 
@@ -42,32 +46,32 @@ const handleSubmit = async(e) => {
 <template>
   <div class="buyer-login-container grid justify-center items-center mt-20 relative">
     <div class="my-10 z-10">
-      <h1 class="capitalize text-3xl font-semibold">
-        Welcome back!
+      <h1 class="text-3xl font-semibold" style="text-shadow:3px 2px 3px #a8a8a8;">
+        {{ t('auth.b-login-welcome') }}!
       </h1>
     </div>
     <form class="flex justify-center items-center flex-col p-5 rounded-2xl z-10 bg-[#ecf0f3]" @submit.prevent="handleSubmit">
       <h2 class="form_title fs-1 fw-bold pb-5">
-        Experience many attractive offers and services
+        {{ t('auth.b-login-desc') }}
       </h2>
       <div class="flex justify-evenly w-full">
         <IBFacebook class="form__icon" />
         <IBGoogle class="form__icon" />
         <IBGithub class="form__icon" />
       </div>
-      <span class="form__span mt-4">or use email for login</span>
+      <span class="form__span mt-4">{{ t('auth.b-oauth') }}</span>
       <input v-model="payload.usernameOrEmail" class="form__input" name="usernameOrEmail" type="text" placeholder="Email" required>
       <input v-model="payload.password" class="form__input" name="password" type="password" placeholder="Password" autocomplete="true" required>
       <div class="text-xs text-gray-500/50 flex justify-between w-full">
         <a href="/buyer/register">
-          Don't have account?
+          {{ t('auth.b-not-account') }}?
         </a>
         <a href="/buyer/password/reset">
-          Forgot password?
+          {{ t('auth.b-login-forgot') }}?
         </a>
       </div>
       <button type="submit" class="form__button flex justify-center items-center gap-2 font-semibold uppercase mt-5" @click="handleSubmit">
-        <IBUnlock />SIGN IN
+        <IBUnlock />{{ t('auth.b-login-btn') }}
       </button>
     </form>
     <!-- ballon decoration -->
@@ -82,6 +86,7 @@ const handleSubmit = async(e) => {
 .buyer-login-container {
     font-family: "Montserrat", sans-serif;
 }
+
 .buyer-login-container > form{
     box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
 }

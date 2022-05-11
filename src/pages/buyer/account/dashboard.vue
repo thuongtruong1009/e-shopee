@@ -4,7 +4,24 @@ meta:
 </route>
 
 <script setup>
+import { useRouter } from 'vue-router'
+import AuthRequest from '~/services/auth-request'
+
+useHead({
+  title: 'e-shopee | buyer dashboard',
+})
+
 const user = JSON.parse(localStorage.getItem('user'))
+
+const router = useRouter()
+
+const signOut = async() => {
+  await AuthRequest.signOut().then(() => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    router.push({ path: '/buyer/login' })
+  })
+}
 
 </script>
 
@@ -19,7 +36,7 @@ const user = JSON.parse(localStorage.getItem('user'))
     <div class="welcome py-5">
       <p>
         Hello, <strong>@{{ user.data.username }}</strong><span class="text-xs ml-5">(If not you !<a
-          href="/buyer/login" class="logout text-red-400" @click="useAuth.$reset()"
+          class="logout text-red-400" @click="signOut"
         > Logout</a>)</span>
       </p>
     </div>

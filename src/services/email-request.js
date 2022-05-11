@@ -6,9 +6,9 @@ class EmailRequest {
     return AxiosInstance.post(url)
   }
 
-  getVerifyEmailById(id, hash, data) {
+  getVerifyEmailById(id, hash, signature) {
     const url = `/email/verify/${id}/${hash}`
-    return AxiosInstance.get(url, { hash }, data)
+    return AxiosInstance.get(url, { id, hash, signature })
   }
 }
 

@@ -7,11 +7,15 @@ meta:
 import { useRouter } from 'vue-router'
 import { loading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
+import { handleError } from '~/helpers/error'
 import AuthRequest from '~/services/auth-request'
+import EmailRequest from '~/services/email-request'
 
 useHead({
   title: 'e-shopee | buyer register',
 })
+
+const { t } = useI18n()
 
 const router = useRouter()
 const useLoading = loading()
@@ -24,17 +28,21 @@ const payload = reactive({
   password_confirmation: '',
 })
 
-const handleSubmit = () => {
+const handleSubmit = async(e) => {
+  e.preventDefault()
   useLoading.isLoading = true
-  AuthRequest.registerUser(payload)
-    .then((response) => {
-      // const { data } = response
-      router.push({ path: '/buyer/login' })
-      useLoading.isLoading = false
-      useToast.updateToast('success', 'Check the verify code sent from your mail box!', true)
+  await AuthRequest.registerUser(payload)
+    .then((res) => {
+      EmailRequest.createVerifyEmail().then(() => {
+        router.push({ path: '/buyer/login' })
+        useLoading.isLoading = false
+        useToast.updateToast('success', `Hi, ${payload.username}. Check verification email sent in your mailbox!`, true)
+      }).catch((error) => {
+        return handleError(error)
+      })
     })
     .catch((error) => {
-      return error
+      return handleError(error)
     })
 }
 
@@ -47,11 +55,11 @@ const handleSubmit = () => {
         <div class="capitalize text-2xl font-bold flex justify-center items-center">
           <IBRegister />
           <h1>
-            Create Account
+            {{ t('auth.b-register-title') }}
           </h1>
         </div>
         <p class="text-sm text-gray-400 font-medium">
-          Join us and start shopping in your style
+          {{ t('auth.b-register-desc') }}
         </p>
         <div>
           <div class="icon">
@@ -78,11 +86,11 @@ const handleSubmit = () => {
           <input v-model="payload.password_confirmation" type="password" placeholder="Password confirmation" required>
         </div>
         <div>
-          <button type="submit" class="capitalize bg-[#5ABBC1] font-semibold text-white text-md rounded-md py-1.75 w-full" :disabled="payload.email === ''" @click.prevent="handleSubmit">
-            Create Account
+          <button type="submit" class="capitalize bg-[#5ABBC1] font-semibold text-white text-md rounded-md py-1.75 w-full" :disabled="payload.email === ''" @click="handleSubmit">
+            {{ t('auth.b-register-btn') }}
           </button>
           <p class="text-left text-gray-400 text-sm mt-3">
-            Already have account? <a href="/buyer/login" class="text-[#5ABBC1]">Login</a>
+            {{t('auth.b-register-already-account')}}? <a href="/buyer/login" class="text-[#5ABBC1] capitalize">{{ t('auth.b-register-refer') }}</a>
           </p>
         </div>
       </form>
