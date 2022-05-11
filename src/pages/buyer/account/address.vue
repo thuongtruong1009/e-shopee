@@ -3,6 +3,58 @@ meta:
   layout: buyer/account/LBAddress
 </route>
 
+<script setup>
+import { useRouter } from 'vue-router'
+import { toast } from '~/stores/toast'
+import { handleError } from '~/helpers/error'
+import AccountRequest from '~/services/account-request'
+
+useHead({
+  title: 'buyer | address',
+})
+
+const router = useRouter()
+const useToast = toast()
+
+const fullName = ref('...')
+const address = ref('...')
+const phone = ref('...')
+
+onMounted(() => {
+  AccountRequest.getAddress().then((res) => {
+    fullName.value = res.data.full_name
+    address.value = res.data.address
+    phone.value = res.data.phone
+    useToast.updateToast('success', 'Address updated successfully!', true)
+  }).catch((error) => {
+    return handleError(error)
+  })
+})
+
+const payload = reactive({
+  full_name: '',
+  phone: '',
+  state: '',
+  city: '',
+  town: '',
+  address: '',
+  is_home: false,
+  is_pickup_address: false,
+  is_default_address: false,
+  is_return_address: false,
+})
+
+const handleSubmit = async(e) => {
+  e.preventDefault()
+  await AccountRequest.createAddress(payload).then(() => {
+    useToast.updateToast('success', 'Address created successfully!', true)
+  }).catch((error) => {
+    return handleError(error)
+  })
+}
+
+</script>
+
 <template>
   <div class="myaccount-content border-1 border-solid border-light-700 rounded-md p-5 bg-[#EBF6FC] dark:bg-cool-gray-800">
     <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
@@ -11,7 +63,6 @@ meta:
         Billing Address
       </h3>
     </div>
-
     <div class="py-5">
       <p class="font-medium text-gray-500 text-md">
         Thuong Truong
@@ -23,12 +74,11 @@ meta:
         Mobile: (+84) 917-085-937
       </p>
     </div>
-
     <a href="#" class="edit-address-btn text-sm text-blue-700 gap-1 flex items-center"><i
       class="fa fa-edit"
     />Edit Address</a>
 
-    <form action="" method="post">
+    <form>
       <div>
         <label>Full name</label>
         <input type="text" name="full_name" required>

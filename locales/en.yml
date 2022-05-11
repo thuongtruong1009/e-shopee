@@ -33,6 +33,7 @@ caccount:
   orders: Orders
   download: Download
   payment-method: Payment Method
+  credit-card: Credit Card
   address: Address
   account-details: Account Details
   Logout: Logout

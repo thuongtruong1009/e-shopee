@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: buyer/account/LBVerify
+  layout: buyer/account/LBCredit
 </route>
 
 <script setup>
