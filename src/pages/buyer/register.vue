@@ -28,18 +28,23 @@ const payload = reactive({
   password_confirmation: '',
 })
 
+const verify = () => {
+  EmailRequest.createVerifyEmail().then(() => {
+
+  }).catch((error) => {
+    return handleError(error)
+  })
+}
+
 const handleSubmit = async(e) => {
   e.preventDefault()
   useLoading.isLoading = true
   await AuthRequest.registerUser(payload)
     .then((res) => {
-      EmailRequest.createVerifyEmail().then(() => {
-        router.push({ path: '/buyer/login' })
-        useLoading.isLoading = false
-        useToast.updateToast('success', `Hi, ${payload.username}. Check verification email sent in your mailbox!`, true)
-      }).catch((error) => {
-        return handleError(error)
-      })
+      // verify()
+      router.push({ path: '/buyer/login' })
+      useLoading.isLoading = false
+      useToast.updateToast('success', `Hi, ${payload.username}. Check verification email sent in your mailbox!`, true)
     })
     .catch((error) => {
       return handleError(error)
@@ -83,14 +88,14 @@ const handleSubmit = async(e) => {
           <div class="icon">
             <IBRepeat />
           </div>
-          <input v-model="payload.password_confirmation" type="password" placeholder="Password confirmation" required>
+          <input v-model="payload.password_confirmation" type="password" placeholder="Password confirmation" autocomplete="true" required>
         </div>
         <div>
           <button type="submit" class="capitalize bg-[#5ABBC1] font-semibold text-white text-md rounded-md py-1.75 w-full" :disabled="payload.email === ''" @click="handleSubmit">
             {{ t('auth.b-register-btn') }}
           </button>
           <p class="text-left text-gray-400 text-sm mt-3">
-            {{t('auth.b-register-already-account')}}? <a href="/buyer/login" class="text-[#5ABBC1] capitalize">{{ t('auth.b-register-refer') }}</a>
+            {{ t('auth.b-register-already-account') }}? <a href="/buyer/login" class="text-[#5ABBC1] capitalize">{{ t('auth.b-register-refer') }}</a>
           </p>
         </div>
       </form>

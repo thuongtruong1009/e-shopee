@@ -26,12 +26,12 @@ const payload = reactive({
 
 watchOnce(async() => {
   await AccountRequest.getCreditCard().then((res) => {
-    payload.cardholder_name = res.data.cardholder_name
-    payload.expiry_date = res.data.expiry_date
-    payload.cvv = res.data.cvv
-    payload.registration_address = res.data.registration_address
-    payload.postal_code = res.data.postal_code
-    payload.card_number = res.data.card_number
+    payload.cardholder_name = res
+    payload.expiry_date = res
+    payload.cvv = res
+    payload.registration_address = res
+    payload.postal_code = res
+    payload.card_number = res
   }).catch((error) => {
     return handleError(error)
   })
@@ -99,7 +99,7 @@ const handleDelete = async(e) => {
       </div>
       <div>
         <label>Expiry date</label>
-        <input v-model="payload.expiry_date " type="date" required>
+        <input v-model="payload.expiry_date " type="text" required>
       </div>
       <div>
         <label>Cvv</label>

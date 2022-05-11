@@ -26,20 +26,35 @@ const payload = reactive({
   avatar_image: 'https://avatars.githubusercontent.com/u/47313528?v=4',
 })
 
-watchOnce(async() => {
+const genderType = reactive([
+  {
+    id: 1,
+    type: 'Gender',
+  },
+  {
+    id: 2,
+    type: 'Male',
+  },
+  {
+    id: 3,
+    type: 'Female',
+  }])
+
+const handleGet = async() => {
   await AccountRequest.getProfile().then((res) => {
-    payload.display_name = res.data.display_name
-    payload.phone = res.data.phone
-    payload.gender = res.data.gender
-    payload.date_of_birth = res.data.date_of_birth
-    payload.avatar_image = res.data.avatar_image
+    payload.display_name = res
+    payload.phone = res
+    payload.gender = res
+    payload.date_of_birth = res.toString()
+    payload.avatar_image = res
   }).catch((error) => {
     return handleError(error)
   })
-})
+}
 
-const updateProfile = async() => {
-  await AccountRequest.updateProfile().then(() => {
+const handleUpdate = async() => {
+  await AccountRequest.updateProfile(payload).then((res) => {
+    handleGet()
     useToast.updateToast('success', 'Profile account has been updated!', true)
   }).catch((error) => {
     return handleError(error)
@@ -47,7 +62,7 @@ const updateProfile = async() => {
 }
 
 const signOut = async() => {
-  await AuthRequest.signOut().then(() => {
+  await AuthRequest.logoutUser().then(() => {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
     router.push({ path: '/buyer/login' })
@@ -67,38 +82,32 @@ const signOut = async() => {
     <div class="welcome py-5">
       <p>
         Hello, <strong>@{{ user.data.username }}</strong><span class="text-xs ml-5">(If not you !<a
-          class="logout text-red-400" @click="signOut"
+          class="logout text-red-400 cursor-pointer" @click="signOut"
         > Logout</a>)</span>
       </p>
     </div>
-    <p class="text-md font-light">
+    <p class="text-sm text-gray-400">
       From your account dashboard. you can easily check &amp; view your
       recent orders, manage your shipping and billing addresses and edit your
       password and account details.
     </p>
 
     <form @submit.prevent="updateProfile">
-      <div class="">
-        <input v-model="payload.display_name" placeholder="Full name" type="email" required>
+      <div>
+        <input v-model="payload.display_name" placeholder="Full name" type="text" required>
       </div>
 
-      <div class="">
+      <div>
         <input v-model="payload.phone" placeholder="Phone name" type="text">
         <select v-model="payload.gender" class="cursor-pointer">
-          <option :value="1">
-            Gender
-          </option>
-          <option :value="2">
-            Male
-          </option>
-          <option :value="3">
-            Female
+          <option v-for="(gender, i) in genderType" :key="i" :value="gender.id">
+            {{ gender.type }}
           </option>
         </select>
       </div>
 
       <div>
-        <input v-model="payload.date_of_birth" placeholder="Date of birth" type="date" required>
+        <input v-model="payload.date_of_birth" placeholder="Date of birth" type="text" required>
       </div>
 
       <div>
@@ -106,7 +115,7 @@ const signOut = async() => {
       </div>
 
       <div class="pt-5 flex justify-end">
-        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="updateProfile">
+        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
           <ISave />Save Changes
         </button>
       </div>

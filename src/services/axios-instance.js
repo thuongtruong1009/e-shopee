@@ -5,16 +5,15 @@ const AxiosInstance = axios.create({
   baseURL: `${import.meta.env.VITE_BASE_DOMAIN}/api/v2`,
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': localStorage.getItem('token'),
+    // 'Authorization': localStorage.getItem('token'),
   },
   paramsSerializer: params => queryString.stringify(params),
   responseEncoding: 'utf8',
 })
-
 AxiosInstance.interceptors.request.use(
   async(request) => {
-    // if (localStorage.getItem('token'))
-    //   request.headers.token = `Bearer ${localStorage.getItem('token')}`
+    const token = localStorage.getItem('token')
+    request.headers.Authorization = token ? `Bearer ${token}` : ''
     return request
   },
   (error) => {

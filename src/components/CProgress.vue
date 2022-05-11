@@ -18,6 +18,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background: #7a7a7a59 10%;
 }
 
 .load-wrapp {

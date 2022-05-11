@@ -1,5 +1,19 @@
 <script setup>
+import { useRouter } from 'vue-router'
+import AuthRequest from '~/services/auth-request'
+
 const { t } = useI18n()
+
+const router = useRouter()
+
+const signOut = async() => {
+  await AuthRequest.logoutUser().then(() => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    router.push({ path: '/buyer/login' })
+  })
+}
+
 </script>
 
 <template>
@@ -47,11 +61,9 @@ const { t } = useI18n()
       </div>
     </router-link>
 
-    <router-link to="/buyer/login" :title="logout">
-      <div class="items rounded-b-lg">
-        <i class="fa fa-sign-out" /> {{ t('caccount.Logout') }}
-      </div>
-    </router-link>
+    <div class="items rounded-b-lg" @click="signOut">
+      <i class="fa fa-sign-out" /> {{ t('caccount.Logout') }}
+    </div>
   </div>
 </template>
 
