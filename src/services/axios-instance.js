@@ -5,6 +5,7 @@ const AxiosInstance = axios.create({
   baseURL: `${import.meta.env.VITE_BASE_DOMAIN}/api/v2`,
   headers: {
     'Content-Type': 'application/json',
+    'X-Requested-With': 'XMLHttpRequest',
     // 'Authorization': localStorage.getItem('token'),
   },
   paramsSerializer: params => queryString.stringify(params),

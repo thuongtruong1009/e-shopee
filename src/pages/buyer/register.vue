@@ -41,7 +41,7 @@ const handleSubmit = async(e) => {
   useLoading.isLoading = true
   await AuthRequest.registerUser(payload)
     .then((res) => {
-      // verify()
+      verify()
       router.push({ path: '/buyer/login' })
       useLoading.isLoading = false
       useToast.updateToast('success', `Hi, ${payload.username}. Check verification email sent in your mailbox!`, true)
