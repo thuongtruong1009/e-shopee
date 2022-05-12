@@ -225,15 +225,17 @@ shop:
   profile-information: Profile information
   view-update-shop: View Shop status and update your Shop profile
   join-at: Join at
+  id: ID
   edit-cover-photo: Edit cover photo
   response-rate: Response rate
   response-time: Response time
   within-a-few-hours: Within a few hours
   shop-reviews: Shop reviews
   unsuccessful-rate: Unsuccessful rate
+  shop-id: Shop ID
   shop-name: Shop Name
   some-preview: Some preview pictures or video
-  add-photos-videos: Add photos and videos
+  add-photos-videos: Add photos or videos
   shop-description: Shop description
 cart:
   cart: Cart

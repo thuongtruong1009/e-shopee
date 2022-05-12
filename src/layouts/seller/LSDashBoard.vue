@@ -1,4 +1,10 @@
 <script setup>
+import { useRouter } from 'vue-router'
+import AuthRequest from '~/services/auth-request'
+import { loading } from '~/stores/loading'
+
+const useLoading = loading()
+const router = useRouter()
 
 onMounted(() => {
   const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a')
@@ -65,6 +71,16 @@ onMounted(() => {
   })
 })
 
+const signOut = async() => {
+  useLoading.isLoading = true
+  await AuthRequest.logoutUser().then(() => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    useLoading.isLoading = true
+    router.push({ path: '/buyer/login' })
+  })
+}
+
 </script>
 
 <template>
@@ -119,7 +135,7 @@ onMounted(() => {
             <span class="text">Shop edit profile</span>
           </a>
         </li>
-		<li>
+        <li>
           <a href="/seller/shop/register">
             <i class="bx bxs-cog" />
             <span class="text">Shop new register</span>
@@ -133,8 +149,8 @@ onMounted(() => {
             <span class="text">Admin channel</span>
           </a>
         </li>
-        <li>
-          <a href="#" class="logout">
+        <li @click="signOut">
+          <a class="logout">
             <i class="bx bxs-log-out-circle" />
             <span class="text">Sign out</span>
           </a>
@@ -169,7 +185,6 @@ onMounted(() => {
       <div class="grid justify-center p-10">
         <div class="head-title mb-5">
           <div class="left">
-            <h1>Dashboard</h1>
             <ul class="breadcrumb">
               <li>
                 <a href="#">Seller</a>
