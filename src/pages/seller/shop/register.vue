@@ -5,7 +5,7 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
-import { toast } from '~/utils/toast'
+import { toast } from '~/stores/toast'
 import ShopRequest from '~/services/shop-request'
 import { loading } from '~/stores/loading'
 import { handleError } from '~/helpers/error'
