@@ -14,11 +14,11 @@ useHead({
   title: 'e-shopee | buyer dashboard',
 })
 
-const user = JSON.parse(localStorage.getItem('user'))
 const router = useRouter()
 const useToast = toast()
 
-const payload = reactive({
+const payget = reactive({
+  username: '',
   display_name: '',
   phone: '',
   gender: 1,
@@ -29,32 +29,34 @@ const payload = reactive({
 const genderType = reactive([
   {
     id: 1,
-    type: 'Gender',
-  },
-  {
-    id: 2,
     type: 'Male',
   },
   {
-    id: 3,
+    id: 2,
     type: 'Female',
+  },
+  {
+    id: 3,
+    type: 'Others',
   }])
 
-const handleGet = async() => {
+// const isUpdate = ref(false)
+
+watchOnce(async() => {
   await AccountRequest.getProfile().then((res) => {
-    payload.display_name = res
-    payload.phone = res
-    payload.gender = res
-    payload.date_of_birth = res.toString()
-    payload.avatar_image = res
+    payget.username = res.data.username
+    payget.display_name = res.data.profile.display_name
+    payget.phone = res.data.profile.phone
+    payget.gender = res.data.profile.gender
+    payget.date_of_birth = res.data.profile.date_of_birth
+    payget.avatar_image = res.data.profile.avatar_image
   }).catch((error) => {
     return handleError(error)
   })
-}
+})
 
 const handleUpdate = async() => {
-  await AccountRequest.updateProfile(payload).then((res) => {
-    handleGet()
+  await AccountRequest.updateProfile(payget).then((res) => {
     useToast.updateToast('success', 'Profile account has been updated!', true)
   }).catch((error) => {
     return handleError(error)
@@ -81,7 +83,7 @@ const signOut = async() => {
     </div>
     <div class="welcome py-5">
       <p>
-        Hello, <strong>@{{ user.data.username }}</strong><span class="text-xs ml-5">(If not you !<a
+        Hello, <strong>@{{ payget.username }}</strong><span class="text-xs ml-5">(If not you !<a
           class="logout text-red-400 cursor-pointer" @click="signOut"
         > Logout</a>)</span>
       </p>
@@ -94,12 +96,12 @@ const signOut = async() => {
 
     <form @submit.prevent="updateProfile">
       <div>
-        <input v-model="payload.display_name" placeholder="Full name" type="text" required>
+        <input v-model="payget.display_name" placeholder="Full name" type="text" required>
       </div>
 
       <div>
-        <input v-model="payload.phone" placeholder="Phone name" type="text">
-        <select v-model="payload.gender" class="cursor-pointer">
+        <input v-model="payget.phone" placeholder="Phone name" type="text">
+        <select v-model="payget.gender" class="cursor-pointer">
           <option v-for="(gender, i) in genderType" :key="i" :value="gender.id">
             {{ gender.type }}
           </option>
@@ -107,15 +109,15 @@ const signOut = async() => {
       </div>
 
       <div>
-        <input v-model="payload.date_of_birth" placeholder="Date of birth" type="text" required>
+        <input v-model="payget.date_of_birth" placeholder="Date of birth" type="text" required>
       </div>
 
       <div>
-        <input v-model="payload.avatar_image" placeholder="Avatar link url" type="text" required>
+        <input v-model="payget.avatar_image" placeholder="Avatar link url" type="text" required>
       </div>
 
       <div class="pt-5 flex justify-end">
-        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
+        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="isUpdate === true">
           <ISave />Save Changes
         </button>
       </div>

@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: seller/LSNotifications
+  layout: seller/LSShopDashBoard
 </route>
 
 <script setup>
@@ -52,7 +52,7 @@ const notifications = reactive([{
 </script>
 
 <template>
-  <div class="seller-notifications-container w-272 px-5 bg-white shadow-sm shadow-gray-500/50 rounded-md divide-y divide-solid divide-1 divide-light-800">
+  <div class="seller-notifications-container max-w-272 w-272 px-5 bg-white shadow-sm shadow-gray-500/50 rounded-2xl divide-y divide-solid divide-1 divide-light-800">
     <div class="flex justify-between items-center py-5">
       <h1 class="text-xl font-medium flex items-center gap-2">
         <INotify class="text-xl" />All notifications

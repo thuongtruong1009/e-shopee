@@ -9,6 +9,7 @@ import { loading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
 import { handleError } from '~/helpers/error'
 import AuthRequest from '~/services/auth-request'
+import EmailRequest from '~/services/email-request'
 
 useHead({
   title: 'buyer | login',
@@ -32,9 +33,13 @@ const handleSubmit = async(e) => {
     .then((res) => {
       localStorage.setItem('token', res.token)
       localStorage.setItem('user', JSON.stringify(res))
-      router.push({ path: '/buyer/home' })
-      useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
-      useLoading.isLoading = false
+      EmailRequest.createVerifyEmail().then(() => {
+      }).catch((error) => {
+        router.push({ path: '/buyer/home' })
+        useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
+        useLoading.isLoading = false
+        return handleError(error)
+      })
     })
     .catch((error) => {
       return handleError(error)

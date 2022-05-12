@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: seller/shop/LSShopRegister
+  layout: seller/LSDashBoard
 </route>
 
 <script setup>
@@ -38,8 +38,7 @@ const handleCreate = async() => {
 </script>
 
 <template>
-  <div class="shop_register_container w-full p-10 flex justify-center">
-    <div class="bg-white max-w-300 w-300 grid shadow-sm shadow-gray-500/50 rounded-md divide-1 divide-solid divide-y divide-light-800 p-10">
+    <div class="bg-white max-w-300 w-300 grid shadow-sm shadow-gray-500/50 rounded-2xl divide-1 divide-solid divide-y divide-light-800 p-10">
       <div class="head-profile grid justify-center items-center p-5">
         <div class="flex justify-center items-center gap-3">
           <div class="flex items-center bg-orange-600 rounded-full w-2.5 h-2.5" />
@@ -88,7 +87,6 @@ const handleCreate = async() => {
         </div>
       </form>
     </div>
-  </div>
 </template>
 
 <style scoped>

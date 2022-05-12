@@ -9,7 +9,6 @@ import { loading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
 import { handleError } from '~/helpers/error'
 import AuthRequest from '~/services/auth-request'
-import EmailRequest from '~/services/email-request'
 
 useHead({
   title: 'e-shopee | buyer register',
@@ -28,20 +27,11 @@ const payload = reactive({
   password_confirmation: '',
 })
 
-const verify = () => {
-  EmailRequest.createVerifyEmail().then(() => {
-
-  }).catch((error) => {
-    return handleError(error)
-  })
-}
-
 const handleSubmit = async(e) => {
   e.preventDefault()
   useLoading.isLoading = true
   await AuthRequest.registerUser(payload)
     .then((res) => {
-      verify()
       router.push({ path: '/buyer/login' })
       useLoading.isLoading = false
       useToast.updateToast('success', `Hi, ${payload.username}. Check verification email sent in your mailbox!`, true)
