@@ -17,7 +17,7 @@ const useLoading = loading()
 
 const payload = reactive({
   slug: 'id_01',
-  product_id = '01',
+  product_id: '01',
 })
 
 watchOnce(async() => {
