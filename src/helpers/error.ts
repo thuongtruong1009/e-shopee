@@ -1,1 +1,1 @@
-export const handleError = (error: any) => process.stdout.write(error.toJSON())
+export const handleError = (error: any) => (`Error message: ${error.message}`)

@@ -1,5 +1,19 @@
 <script setup>
+import { useRouter } from 'vue-router'
+import AuthRequest from '~/services/auth-request'
+
 const { t } = useI18n()
+
+const router = useRouter()
+
+const signOut = async() => {
+  await AuthRequest.logoutUser().then(() => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    router.push({ path: '/buyer/login' })
+  })
+}
+
 </script>
 
 <template>
@@ -27,8 +41,16 @@ const { t } = useI18n()
 
     <router-link to="/buyer/account/payment" :title="payment">
       <div class="items">
-        <i class="fa fa-credit-card" />
+        <!-- <i class="fa fa-credit-card" /> -->
+        <i class="fas fa-university" />
         {{ t('caccount.payment-method') }}
+      </div>
+    </router-link>
+
+    <router-link to="/buyer/account/credit" :title="credit">
+      <div class="items">
+        <i class="fa fa-credit-card" />
+        {{ t('caccount.credit-card') }}
       </div>
     </router-link>
 
@@ -39,17 +61,9 @@ const { t } = useI18n()
       </div>
     </router-link>
 
-    <router-link to="/buyer/account/details" :title="details" class="active">
-      <div class="items">
-        <i class="fa fa-user" /> {{ t('caccount.account-details') }}
-      </div>
-    </router-link>
-
-    <router-link to="/buyer/login" :title="logout">
-      <div class="items rounded-b-lg">
-        <i class="fa fa-sign-out" /> {{ t('caccount.Logout') }}
-      </div>
-    </router-link>
+    <div class="items rounded-b-lg" @click="signOut">
+      <i class="fa fa-sign-out" /> {{ t('caccount.Logout') }}
+    </div>
   </div>
 </template>
 

@@ -5,11 +5,15 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
-const router = useRouter()
+import { toast } from '~/stores/toast'
+import { handleError } from '~/helpers/error'
+
 useHead({
   title: 'e-shopee | buyer cart',
 })
 const { t } = useI18n()
+
+const router = useRouter()
 
 const onCheckout = computed(() => {
   router.push({ path: '/buyer/checkout' })
@@ -79,7 +83,7 @@ const cartList = reactive([{
 
 <template>
   <div class="cart-container text-center">
-    <table class="table w-full bg-white shadow-md shadow-300">
+    <table class="table w-full shadow-md shadow-300 bg-[#ffffff99] dark:bg-gray-800">
       <thead class="bg-[#F33535] text-white">
         <tr>
           <th class="flex justify-center items-center gap-1">
@@ -160,7 +164,9 @@ const cartList = reactive([{
           </div>
 
           <div class="promoCode mt-5">
-            <p class="w-full italic mb-2">{{ t('cart.promo-code') }}?</p>
+            <p class="w-full italic mb-2">
+              {{ t('cart.promo-code') }}?
+            </p>
             <form action="" method="post" class="flex">
               <input type="text" name="promo" placholder="Enter Code" class="p-2 w-4/5 border-1 border-[#dadada]">
               <button type="submit" class="flex justify-center font-semibold border-1 border-solid border-[#82CA9C] bg-[#82CA9C] hover:border-[#f69679] hover:bg-[#f69679] py-3 rounded-r-3xl w-1/5">
@@ -489,7 +495,6 @@ C216.3,217.7,200.8,213.7,178.1,211.7z"
 <style scoped>
 input[type="number"]{
     border: 1px solid rgb(210, 210, 210);
-    outline: none;
     border-radius: 0.25rem;
     width: 35%;
     padding: 0.25rem;
@@ -501,14 +506,13 @@ input[type="number"]:focus{
 }
 table {
   border-collapse: collapse;
-  border-radius: 0.6em;
+  border-radius: 2rem;
   overflow: hidden;
 }
 th{
   padding: 0.5em 0;
 }
-td {
-  padding: 0.5em;
+td:not(:last-child){
   border-bottom: 1px solid rgb(212, 212, 212);
 }
 /* *******************CHECKOUT BOT CONTAINER ******************/

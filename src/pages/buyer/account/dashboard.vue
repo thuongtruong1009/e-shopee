@@ -5,18 +5,64 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
+import { toast } from '~/stores/toast'
+import { handleError } from '~/helpers/error'
 import AuthRequest from '~/services/auth-request'
+import AccountRequest from '~/services/account-request'
 
 useHead({
   title: 'e-shopee | buyer dashboard',
 })
 
 const user = JSON.parse(localStorage.getItem('user'))
-
 const router = useRouter()
+const useToast = toast()
+
+const payload = reactive({
+  display_name: '',
+  phone: '',
+  gender: 1,
+  date_of_birth: '',
+  avatar_image: 'https://avatars.githubusercontent.com/u/47313528?v=4',
+})
+
+const genderType = reactive([
+  {
+    id: 1,
+    type: 'Gender',
+  },
+  {
+    id: 2,
+    type: 'Male',
+  },
+  {
+    id: 3,
+    type: 'Female',
+  }])
+
+const handleGet = async() => {
+  await AccountRequest.getProfile().then((res) => {
+    payload.display_name = res
+    payload.phone = res
+    payload.gender = res
+    payload.date_of_birth = res.toString()
+    payload.avatar_image = res
+  }).catch((error) => {
+    return handleError(error)
+  })
+}
+
+const handleUpdate = async() => {
+  await AccountRequest.updateProfile(payload).then((res) => {
+    handleGet()
+    useToast.updateToast('success', 'Profile account has been updated!', true)
+  }).catch((error) => {
+    return handleError(error)
+  })
+}
 
 const signOut = async() => {
-  await AuthRequest.signOut().then(() => {
+  await AuthRequest.logoutUser().then(() => {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
     router.push({ path: '/buyer/login' })
@@ -36,82 +82,40 @@ const signOut = async() => {
     <div class="welcome py-5">
       <p>
         Hello, <strong>@{{ user.data.username }}</strong><span class="text-xs ml-5">(If not you !<a
-          class="logout text-red-400" @click="signOut"
+          class="logout text-red-400 cursor-pointer" @click="signOut"
         > Logout</a>)</span>
       </p>
     </div>
-    <p class="text-md font-light">
+    <p class="text-sm text-gray-400">
       From your account dashboard. you can easily check &amp; view your
       recent orders, manage your shipping and billing addresses and edit your
       password and account details.
     </p>
 
-    <form action="" method="post">
+    <form @submit.prevent="updateProfile">
       <div>
-        <label>Full name</label>
-        <input type="text" name="accountholder_name" required>
+        <input v-model="payload.display_name" placeholder="Full name" type="text" required>
       </div>
+
       <div>
-        <label>Phone number</label>
-        <input type="number" name="phone" required>
-      </div>
-      <div>
-        <label>State</label>
-        <input type="text" name="state" required>
-      </div>
-      <div>
-        <label>City</label>
-        <input type="text" name="city" required>
-      </div>
-      <div>
-        <label>Town</label>
-        <input type="text" name="town" required>
-      </div>
-      <div>
-        <label>Address</label>
-        <input type="text" name="address" required>
-      </div>
-      <div class="dark:text-black">
-        <select name="is_home">
-          <option>Is Home</option>
-          <option value="false">
-            False
-          </option>
-          <option value="true">
-            True
-          </option>
-        </select>
-        <select name="is_pickup_address">
-          <option>Is Pickup Address</option>
-          <option value="false">
-            False
-          </option>
-          <option value="true">
-            True
-          </option>
-        </select>
-        <select name="is_default_address">
-          <option>Is Default Address</option>
-          <option value="false">
-            False
-          </option>
-          <option value="true">
-            True
-          </option>
-        </select>
-        <select name="is_return_address">
-          <option>Is Return Address</option>
-          <option value="false">
-            False
-          </option>
-          <option value="true">
-            True
+        <input v-model="payload.phone" placeholder="Phone name" type="text">
+        <select v-model="payload.gender" class="cursor-pointer">
+          <option v-for="(gender, i) in genderType" :key="i" :value="gender.id">
+            {{ gender.type }}
           </option>
         </select>
       </div>
 
+      <div>
+        <input v-model="payload.date_of_birth" placeholder="Date of birth" type="text" required>
+      </div>
+
+      <div>
+        <input v-model="payload.avatar_image" placeholder="Avatar link url" type="text" required>
+      </div>
+
       <div class="pt-5 flex justify-end">
-        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium">
+        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
           <ISave />Save Changes
         </button>
       </div>
@@ -121,22 +125,18 @@ const signOut = async() => {
 
 <style scoped>
 input, select{
+  width: 100%;
   border: 1px solid rgba(233, 236, 239);
   border-radius: 0.3rem;
   padding: 0.3rem 1rem;
   transition: 0.2s linear;
   font-size: 0.9rem;
 }
-input{
-  width: 80%;
+input:focus,
+select:hover{
+    box-shadow: 2px 2px 4px rgba(59, 175, 252, 0.8);
 }
-select{
-  cursor: pointer;
-}
-input:focus, select:focus{
-  box-shadow: 2px 2px 4px rgba(59, 175, 252, 0.8);
-}
-form > div:not(:last-child){
+form > div{
   padding: 0.5rem 0;
   display: flex;
   justify-content: space-between;

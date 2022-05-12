@@ -1,5 +1,18 @@
 <script setup>
+import { useRouter } from 'vue-router'
+import AuthRequest from '~/services/auth-request'
 const { t } = useI18n()
+
+const router = useRouter()
+
+const signOut = async() => {
+  await AuthRequest.logoutUser().then(() => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    router.push({ path: '/buyer/login' })
+  })
+}
+
 </script>
 
 <template>
@@ -54,7 +67,7 @@ const { t } = useI18n()
               {{ t('header.login') }} <ILogin />
             </a>
           </li>
-          <li class="menu-child-item">
+          <li class="menu-child-item" @click="signOut">
             <a href="/buyer/login" class="menu-child-link">
               {{ t('header.sign out') }} <ILogout />
             </a>

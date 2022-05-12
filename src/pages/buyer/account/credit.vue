@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: buyer/account/LBPayment
+  layout: buyer/account/LBCredit
 </route>
 
 <script setup>
@@ -9,27 +9,29 @@ import { handleError } from '~/helpers/error'
 import AccountRequest from '~/services/account-request'
 
 useHead({
-  title: 'buyer | account payment',
+  title: 'buyer | account credit',
 })
 
 const useToast = toast()
 const id = JSON.parse(localStorage.getItem('user')).data.id
 
 const payload = reactive({
-  accountholder_name: '',
-  identification_number: '',
-  bank_name: '',
-  bank_branch: '',
-  account_number: '',
+  cardholder_name: '',
+  expiry_date: '',
+  cvv: '',
+  registration_address: '',
+  postal_code: '',
+  card_number: '',
 })
 
 watchOnce(async() => {
-  await AccountRequest.getAddress().then((res) => {
-    payload.accountholder_name = res.data.accountholder_name
-    payload.identification_number = res.data.identification_number
-    payload.bank_name = res.data.bank_name
-    payload.bank_branch = res.data.bank_branch
-    payload.account_number = res.data.account_number
+  await AccountRequest.getCreditCard().then((res) => {
+    payload.cardholder_name = res
+    payload.expiry_date = res
+    payload.cvv = res
+    payload.registration_address = res
+    payload.postal_code = res
+    payload.card_number = res
   }).catch((error) => {
     return handleError(error)
   })
@@ -37,24 +39,25 @@ watchOnce(async() => {
 
 const handleCreate = async(e) => {
   e.preventDefault()
-  await AccountRequest.createAddress(payload).then(() => {
-    useToast.updateToast('created', 'Payment method has been created successfully!', true)
+  await AccountRequest.createCreditCard(payload).then(() => {
+    useToast.updateToast('created', 'your card has been created successfully!', true)
   }).catch((error) => {
     return handleError(error)
   })
 }
 const handleUpdate = async(e) => {
   e.preventDefault()
-  await AccountRequest.updateBankAccountById(id, payload).then(() => {
-    useToast.updateToast('updated', 'Payment method has been updated successfully!', true)
+  await AccountRequest.updateCreditCardById(id, payload).then(() => {
+    useToast.updateToast('updated', 'Your card has been successfully!', true)
   }).catch((error) => {
     return handleError(error)
   })
 }
+
 const handleDelete = async(e) => {
   e.preventDefault()
-  await AccountRequest.deleteBankAccountById(id).then(() => {
-    useToast.updateToast('deleted', 'Payment method has been deleted successfully!', true)
+  await AccountRequest.deleteCreditCardById(id, payload).then(() => {
+    useToast.updateToast('deleted', 'Your card has been deleted!', true)
   }).catch((error) => {
     return handleError(error)
   })
@@ -78,7 +81,7 @@ const handleDelete = async(e) => {
         6 quater, Linh Trung ward, Thu Duc dist, HoChiMinh city, VietNam
       </p>
       <p class="text-sm">
-        Mobile: (+84) 917-085-937
+        ZIP postal: 700000
       </p>
     </div>
     <p class="saved-message py-5 text-gray-400 text-sm font-medium">
@@ -87,31 +90,35 @@ const handleDelete = async(e) => {
 
     <form>
       <div>
-        <label>Full name</label>
-        <input v-model="payload.accountholder_name" type="text" required>
-      </div>
-      <div>
-        <label>Identification number</label>
-        <input v-model="payload.identification_number" type="text" required>
-      </div>
-      <div>
-        <label>Bank name</label>
-        <input v-model="payload.bank_name" type="text" required>
-      </div>
-      <div>
-        <label>Bank branch</label>
-        <input v-model="payload.bank_branch" type="text" required>
+        <label>Card holder name</label>
+        <input v-model="payload.cardholder_name" type="text" required>
       </div>
       <div>
         <label>Card number</label>
-        <input v-model="payload.account_number" type="text" required>
+        <input v-model="payload.card_number" type="text" required>
+      </div>
+      <div>
+        <label>Expiry date</label>
+        <input v-model="payload.expiry_date " type="text" required>
+      </div>
+      <div>
+        <label>Cvv</label>
+        <input v-model="payload.cvv" type="text" required>
+      </div>
+      <div>
+        <label>Registration address</label>
+        <input v-model="payload.registration_address" type="text" required>
+      </div>
+      <div>
+        <label>Postal ZIP code</label>
+        <input v-model="payload.postal_code" type="text" required>
       </div>
       <div class="pt-5 flex justify-end gap-5">
         <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleDelete">
-          <ISave />Delete payment
+          <ISave />Delete credit
         </button>
         <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleUpdate">
-          <ISave />Update payment
+          <ISave />Update credit
         </button>
         <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
           <ISave />Save Changes
