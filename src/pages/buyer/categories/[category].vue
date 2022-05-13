@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { category } from '~/stores/category'
 
 const props = defineProps<{ category: string }>()
