@@ -58,18 +58,17 @@ onMounted(() => {
       searchForm.classList.remove('show')
     }
   })
-
-  const switchMode = document.getElementById('switch-mode')
-
-  switchMode.addEventListener('change', () => {
-    const seller_dashboard_layout = document.querySelector('.seller_dashboard_layout')
-    if (this.checked)
-      seller_dashboard_layout.classList.add('dark')
-
-    else
-      seller_dashboard_layout.classList.remove('dark')
-  })
 })
+
+const darkMode = () => {
+  const switchMode = document.getElementById('switch-mode')
+  const seller_dashboard_layout = document.querySelector('.seller_dashboard_layout')
+  if (switchMode.checked)
+    seller_dashboard_layout.classList.remove('dark')
+
+  else
+    seller_dashboard_layout.classList.add('dark')
+}
 
 const signOut = async() => {
   useLoading.isLoading = true
@@ -144,7 +143,7 @@ const signOut = async() => {
       </ul>
       <ul class="side-menu">
         <li>
-          <a href="#">
+          <a href="/admin/login">
             <i class="bx bxs-group" />
             <span class="text">Admin channel</span>
           </a>
@@ -172,7 +171,7 @@ const signOut = async() => {
           </div>
         </form>
         <input id="switch-mode" type="checkbox" hidden>
-        <label for="switch-mode" class="switch-mode" />
+        <label for="switch-mode" class="switch-mode" @click="darkMode" />
         <a href="/seller/notifications" class="notification">
           <i class="bx bxs-bell" />
           <span class="num">8</span>

@@ -4,6 +4,7 @@ meta:
 </route>
 
 <script setup>
+import { useUser } from '~/stores/user'
 import { toast } from '~/stores/toast'
 import { handleError } from '~/helpers/error'
 import AccountRequest from '~/services/account-request'
@@ -14,6 +15,8 @@ useHead({
 
 const useToast = toast()
 const id = JSON.parse(localStorage.getItem('user')).data.id
+const user = useUser()
+const isCreating = ref(true)
 
 const payload = reactive({
   accountholder_name: '',
@@ -24,36 +27,33 @@ const payload = reactive({
 })
 
 watchOnce(async() => {
-  await AccountRequest.getAddress().then((res) => {
-    payload.accountholder_name = res.data.accountholder_name
-    payload.identification_number = res.data.identification_number
-    payload.bank_name = res.data.bank_name
-    payload.bank_branch = res.data.bank_branch
-    payload.account_number = res.data.account_number
+  await AccountRequest.getBankAccount().then((res) => {
+    user.payment = res.data[0]
   }).catch((error) => {
     return handleError(error)
   })
+  user.payment !== '' ? isCreating.value = false : isCreating.value = true
 })
 
 const handleCreate = async(e) => {
   e.preventDefault()
-  await AccountRequest.createAddress(payload).then(() => {
-    useToast.updateToast('created', 'Payment method has been created successfully!', true)
+  await AccountRequest.createBankAccount(payload).then(() => {
+    useToast.updateToast('success', 'Payment method has been created successfully!', true)
   }).catch((error) => {
     return handleError(error)
   })
 }
 const handleUpdate = async(e) => {
   e.preventDefault()
-  await AccountRequest.updateBankAccountById(id, payload).then(() => {
-    useToast.updateToast('updated', 'Payment method has been updated successfully!', true)
+  await AccountRequest.updateBankAccountById(user.payment.id, payload).then(() => {
+    useToast.updateToast('success', 'Payment method has been updated successfully!', true)
   }).catch((error) => {
     return handleError(error)
   })
 }
 const handleDelete = async(e) => {
   e.preventDefault()
-  await AccountRequest.deleteBankAccountById(id).then(() => {
+  await AccountRequest.deleteBankAccountById(user.payment.id).then(() => {
     useToast.updateToast('deleted', 'Payment method has been deleted successfully!', true)
   }).catch((error) => {
     return handleError(error)
@@ -64,28 +64,47 @@ const handleDelete = async(e) => {
 
 <template>
   <div class="payment-container border-1 border-solid border-light-700 rounded-md p-5 bg-[#EBF6FC] dark:bg-cool-gray-800">
-    <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
-      <IBPayment />
-      <h3 class="text-2xl">
-        Payment method
-      </h3>
+    <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex justify-between items-center">
+      <div class="flex items-center gap-1 font-medium ">
+        <IBPayment />
+        <h3 class="text-2xl">
+          Payment method
+        </h3>
+      </div>
+      <div class="text-blue-500" @click="isCreating = !isCreating">
+        <IBCreate v-if="!isCreating" />
+        <IEdit v-if="isCreating" />
+      </div>
     </div>
-    <div class="py-5">
-      <p class="font-medium text-gray-500 text-md">
-        Thuong Truong
-      </p>
-      <p class="text-sm">
-        6 quater, Linh Trung ward, Thu Duc dist, HoChiMinh city, VietNam
-      </p>
-      <p class="text-sm">
-        Mobile: (+84) 917-085-937
-      </p>
+    <div v-if="user.payment !==''" class="payment_infor py-5 text-sm flex justify-around gap-10">
+      <div>
+        <p>
+          Owner account: <span>{{ user.payment.accountholder_name }}</span>
+        </p>
+        <p>
+          Identification number: <span>{{ user.payment.identification_number }}</span>
+        </p>
+        <p>
+          Payment ID: <span>{{ user.payment.id }}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          Bank name: <span>{{ user.payment.bank_name }}</span>
+        </p>
+        <p>
+          Bank branch: <span>{{ user.payment.bank_branch }}</span>
+        </p>
+        <p>
+          Account number: <span>{{ user.payment.account_number }}</span>
+        </p>
+      </div>
     </div>
-    <p class="saved-message py-5 text-gray-400 text-sm font-medium">
+    <p v-else class="saved-message py-5 text-gray-400 text-sm font-medium">
       You not't saved your Payment method yet.
     </p>
 
-    <form>
+    <form v-if="isCreating">
       <div>
         <label>Full name</label>
         <input v-model="payload.accountholder_name" type="text" required>
@@ -110,11 +129,36 @@ const handleDelete = async(e) => {
         <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleDelete">
           <ISave />Delete payment
         </button>
+        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
+          <ISave />Create payment
+        </button>
+      </div>
+    </form>
+
+    <form v-if="!isCreating">
+      <div>
+        <label>Full name</label>
+        <input v-model="payload.accountholder_name" type="text" required>
+      </div>
+      <div>
+        <label>Identification number</label>
+        <input v-model="payload.identification_number" type="text" required>
+      </div>
+      <div>
+        <label>Bank name</label>
+        <input v-model="payload.bank_name" type="text" required>
+      </div>
+      <div>
+        <label>Bank branch</label>
+        <input v-model="payload.bank_branch" type="text" required>
+      </div>
+      <div>
+        <label>Card number</label>
+        <input v-model="payload.account_number" type="text" required>
+      </div>
+      <div class="pt-5 flex justify-end">
         <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleUpdate">
           <ISave />Update payment
-        </button>
-        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
-          <ISave />Save Changes
         </button>
       </div>
     </form>
@@ -122,6 +166,14 @@ const handleDelete = async(e) => {
 </template>
 
 <style scoped>
+.payment_infor div p{
+  margin: 0.5rem;
+}
+.payment_infor div p span{
+  font-size: 1em;
+  font-weight: 500;
+  color: #ff3700d6;
+}
 input{
   width: 80%;
   outline: none;

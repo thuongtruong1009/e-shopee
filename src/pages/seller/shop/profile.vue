@@ -6,7 +6,7 @@ meta:
 <script setup>
 import ShopRequest from '~/services/shop-request'
 import { handleError } from '~/helpers/error'
-import { loading } from '~/stores/loading'
+import { useLoading } from '~/stores/loading'
 import { useShop } from '~/stores/shop'
 import { handleDate } from '~/utils/date'
 const numberShopName = ref('Lamborghini Aventador S')
@@ -16,7 +16,7 @@ useHead({
   title: 'seller | shop profile',
 })
 const { t } = useI18n()
-const useLoading = loading()
+const loading = useLoading()
 const shop = useShop()
 
 const payload = reactive({

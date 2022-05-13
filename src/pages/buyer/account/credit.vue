@@ -4,6 +4,8 @@ meta:
 </route>
 
 <script setup>
+import { useLoading } from '~/stores/loading'
+import { useUser } from '~/stores/user'
 import { toast } from '~/stores/toast'
 import { handleError } from '~/helpers/error'
 import AccountRequest from '~/services/account-request'
@@ -14,6 +16,9 @@ useHead({
 
 const useToast = toast()
 const id = JSON.parse(localStorage.getItem('user')).data.id
+const user = useUser()
+const loading = useLoading()
+const isCreating = ref(true)
 
 const payload = reactive({
   cardholder_name: '',
@@ -26,28 +31,24 @@ const payload = reactive({
 
 watchOnce(async() => {
   await AccountRequest.getCreditCard().then((res) => {
-    payload.cardholder_name = res
-    payload.expiry_date = res
-    payload.cvv = res
-    payload.registration_address = res
-    payload.postal_code = res
-    payload.card_number = res
+    user.credit = res.data[0]
   }).catch((error) => {
     return handleError(error)
   })
+  user.credit !== '' ? isCreating.value = false : isCreating.value = true
 })
 
 const handleCreate = async(e) => {
   e.preventDefault()
   await AccountRequest.createCreditCard(payload).then(() => {
-    useToast.updateToast('created', 'your card has been created successfully!', true)
+    useToast.updateToast('sucess', 'your card has been created successfully!', true)
   }).catch((error) => {
     return handleError(error)
   })
 }
 const handleUpdate = async(e) => {
   e.preventDefault()
-  await AccountRequest.updateCreditCardById(id, payload).then(() => {
+  await AccountRequest.updateCreditCardById(user.credit.id, payload).then(() => {
     useToast.updateToast('updated', 'Your card has been successfully!', true)
   }).catch((error) => {
     return handleError(error)
@@ -67,34 +68,63 @@ const handleDelete = async(e) => {
 
 <template>
   <div class="payment-container border-1 border-solid border-light-700 rounded-md p-5 bg-[#EBF6FC] dark:bg-cool-gray-800">
-    <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
-      <IBPayment />
-      <h3 class="text-2xl">
-        Payment method
-      </h3>
+    <div class="border-b-1 border-b-solid border-b-light-700 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-1 font-medium">
+        <IBPayment />
+        <h3 class="text-2xl">
+          Credit card
+        </h3>
+      </div>
+      <div class="text-blue-500" @click="isCreating = !isCreating">
+        <IBCreate v-if="!isCreating" />
+        <IEdit v-if="isCreating" />
+      </div>
     </div>
-    <div class="py-5">
-      <p class="font-medium text-gray-500 text-md">
-        Thuong Truong
+    <div class="credit_infor py-5 text-sm flex justify-around gap-10">
+      <div>
+        <p>
+          Owner account: <span>{{ user.credit.cardholder_name }}</span>
+        </p>
+        <p>
+          Address register: <span>{{ user.credit.registration_address }}</span>
+        </p>
+        <p>
+          ZIP postal: <span>{{ user.credit.postal_code }}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          ID card: <span>{{ user.credit.id }}</span>
+        </p>
+        <p>
+          Card number: <span>{{ user.credit.card_number }}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          Expiry date: <span>{{ user.credit.expiry_date }}</span>
+        </p>
+        <p>
+          Cvv number: <span>{{ user.credit.cvv }}</span>
+        </p>
+      </div>
+    </div>
+    <div class="saved-message py-5 text-gray-400 text-sm font-medium">
+      <p v-if="user.payment !==''">
+        You have 1 payment method
       </p>
-      <p class="text-sm">
-        6 quater, Linh Trung ward, Thu Duc dist, HoChiMinh city, VietNam
-      </p>
-      <p class="text-sm">
-        ZIP postal: 700000
+      <p v-else>
+        You not't saved your Payment method yet.
       </p>
     </div>
-    <p class="saved-message py-5 text-gray-400 text-sm font-medium">
-      You not't saved your Payment method yet.
-    </p>
 
-    <form>
+    <form v-if="isCreating">
       <div>
         <label>Card holder name</label>
         <input v-model="payload.cardholder_name" type="text" required>
       </div>
       <div>
-        <label>Card number</label>
+        <label>Card number <span>(16 digits)</span></label>
         <input v-model="payload.card_number" type="text" required>
       </div>
       <div>
@@ -102,7 +132,7 @@ const handleDelete = async(e) => {
         <input v-model="payload.expiry_date " type="text" required>
       </div>
       <div>
-        <label>Cvv</label>
+        <label>Cvv <span>(3 digits)</span></label>
         <input v-model="payload.cvv" type="text" required>
       </div>
       <div>
@@ -110,18 +140,47 @@ const handleDelete = async(e) => {
         <input v-model="payload.registration_address" type="text" required>
       </div>
       <div>
-        <label>Postal ZIP code</label>
+        <label>Postal ZIP code <span>(5 digits)</span></label>
         <input v-model="payload.postal_code" type="text" required>
       </div>
       <div class="pt-5 flex justify-end gap-5">
         <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleDelete">
           <ISave />Delete credit
         </button>
+        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
+          <ISave />Create credit
+        </button>
+      </div>
+    </form>
+
+    <form v-if="!isCreating">
+      <div>
+        <label>Card holder name</label>
+        <input v-model="payload.cardholder_name" type="text" required>
+      </div>
+      <div>
+        <label>Card number <span>(16 digits)</span></label>
+        <input v-model="payload.card_number" type="text" required>
+      </div>
+      <div>
+        <label>Expiry date</label>
+        <input v-model="payload.expiry_date " type="text" required>
+      </div>
+      <div>
+        <label>Cvv <span>(3 digits)</span></label>
+        <input v-model="payload.cvv" type="text" required>
+      </div>
+      <div>
+        <label>Registration address</label>
+        <input v-model="payload.registration_address" type="text" required>
+      </div>
+      <div>
+        <label>Postal ZIP code <span>(5 digits)</span></label>
+        <input v-model="payload.postal_code" type="text" required>
+      </div>
+      <div class="pt-5 flex justify-end">
         <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleUpdate">
           <ISave />Update credit
-        </button>
-        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
-          <ISave />Save Changes
         </button>
       </div>
     </form>
@@ -129,6 +188,14 @@ const handleDelete = async(e) => {
 </template>
 
 <style scoped>
+.credit_infor div p{
+  margin: 0.5rem;
+}
+.credit_infor div p span{
+  font-size: 1em;
+  font-weight: 500;
+  color: #ff3700d6;
+}
 input{
   width: 80%;
   outline: none;
@@ -147,5 +214,8 @@ form > div:not(:last-child){
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+}
+form label span{
+  font-size: 0.5em;
 }
 </style>

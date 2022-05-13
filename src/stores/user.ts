@@ -4,5 +4,8 @@ import { ref } from 'vue'
 export const useUser = defineStore('user', () => {
   const payget = ref<any>([])
   const profile = ref<any>([])
-  return { payget, profile }
+  const credit = ref<any>([])
+  const payment = ref<any>([])
+  const address = ref<any>([])
+  return { payget, profile, credit, payment, address }
 })

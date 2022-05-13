@@ -5,7 +5,7 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
-import { loading } from '~/stores/loading'
+import { useLoading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
 import { handleError } from '~/helpers/error'
 import AuthRequest from '~/services/auth-request'
@@ -18,7 +18,7 @@ useHead({
 const { t } = useI18n()
 
 const router = useRouter()
-const useLoading = loading()
+const loading = useLoading()
 const useToast = toast()
 
 const payload = reactive({

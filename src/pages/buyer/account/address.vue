@@ -5,6 +5,7 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
+import {useUser} from '~/stores/user'
 import { toast } from '~/stores/toast'
 import { handleError } from '~/helpers/error'
 import AccountRequest from '~/services/account-request'
@@ -16,6 +17,7 @@ useHead({
 const router = useRouter()
 const useToast = toast()
 const id = JSON.parse(localStorage.getItem('user')).data.id
+const user = useUser()
 
 const payload = reactive({
   full_name: '',
@@ -34,9 +36,7 @@ const isEdit = ref(false)
 
 watchOnce(() => {
   AccountRequest.getAddress().then((res) => {
-    payload.full_name = res.data.full_name
-    payload.address = res.data.address
-    payload.phone = res.data.phone
+    user.address = res.data[0]
   }).catch((error) => {
     return handleError(error)
   })
