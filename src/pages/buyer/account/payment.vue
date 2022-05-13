@@ -54,7 +54,7 @@ const handleUpdate = async(e) => {
 const handleDelete = async(e) => {
   e.preventDefault()
   await AccountRequest.deleteBankAccountById(user.payment.id).then(() => {
-    useToast.updateToast('deleted', 'Payment method has been deleted successfully!', true)
+    useToast.updateToast('deleted', 'Payment method has been removed!', true)
   }).catch((error) => {
     return handleError(error)
   })
@@ -71,9 +71,12 @@ const handleDelete = async(e) => {
           Payment method
         </h3>
       </div>
-      <div class="text-blue-500" @click="isCreating = !isCreating">
-        <IBCreate v-if="!isCreating" />
-        <IEdit v-if="isCreating" />
+      <div class="flex items-center gap-5">
+        <div class="text-blue-500" @click="isCreating = !isCreating">
+          <IBCreate v-if="!isCreating" />
+          <IEdit v-if="isCreating" />
+        </div>
+        <IBDelete class="text-red-400" @click="handleDelete" />
       </div>
     </div>
     <div v-if="user.payment !==''" class="payment_infor py-5 text-sm flex justify-around gap-10">
@@ -104,7 +107,7 @@ const handleDelete = async(e) => {
       You not't saved your Payment method yet.
     </p>
 
-    <form v-if="isCreating">
+    <form>
       <div>
         <label>Full name</label>
         <input v-model="payload.accountholder_name" type="text" required>
@@ -126,39 +129,11 @@ const handleDelete = async(e) => {
         <input v-model="payload.account_number" type="text" required>
       </div>
       <div class="pt-5 flex justify-end gap-5">
-        <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleDelete">
-          <ISave />Delete payment
-        </button>
-        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
-          <ISave />Create payment
-        </button>
-      </div>
-    </form>
-
-    <form v-if="!isCreating">
-      <div>
-        <label>Full name</label>
-        <input v-model="payload.accountholder_name" type="text" required>
-      </div>
-      <div>
-        <label>Identification number</label>
-        <input v-model="payload.identification_number" type="text" required>
-      </div>
-      <div>
-        <label>Bank name</label>
-        <input v-model="payload.bank_name" type="text" required>
-      </div>
-      <div>
-        <label>Bank branch</label>
-        <input v-model="payload.bank_branch" type="text" required>
-      </div>
-      <div>
-        <label>Card number</label>
-        <input v-model="payload.account_number" type="text" required>
-      </div>
-      <div class="pt-5 flex justify-end">
-        <button type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleUpdate">
+        <button v-if="!isCreating" type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleUpdate">
           <ISave />Update payment
+        </button>
+        <button v-if="isCreating" type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
+          <ISave />Create payment
         </button>
       </div>
     </form>

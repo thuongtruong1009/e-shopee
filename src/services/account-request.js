@@ -66,9 +66,9 @@ class AccountRequest {
     return AxiosInstance.put(url, data)
   }
 
-  deleteCreditCardById(id, data) {
+  deleteCreditCardById(id) {
     const url = `/account/credit-cards/${id}`
-    return AxiosInstance.delete(url, data)
+    return AxiosInstance.delete(url)
   }
 }
 export default new AccountRequest()

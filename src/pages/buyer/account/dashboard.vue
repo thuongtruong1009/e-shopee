@@ -137,11 +137,11 @@ const signOut = async() => {
       </div>
 
       <div>
-        <input v-model="payload.date_of_birth" placeholder="Date of birth" type="text" required>
+        <input v-model="payload.date_of_birth" placeholder="Date of birth (MM/DD/YY)" type="text" required>
       </div>
 
       <div>
-        <input v-model="payload.avatar_image" placeholder="Avatar link url" type="text" required>
+        <input v-model="payload.avatar_image" placeholder="Avatar link url" type="text" required disabled>
       </div>
 
       <div class="pt-5 flex justify-end">
