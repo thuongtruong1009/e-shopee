@@ -1,9 +1,9 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import AuthRequest from '~/services/auth-request'
-import { loading } from '~/stores/loading'
+import { useLoading } from '~/stores/loading'
 
-const useLoading = loading()
+const loading = useLoading()
 const router = useRouter()
 
 onMounted(() => {
@@ -71,11 +71,11 @@ const darkMode = () => {
 }
 
 const signOut = async() => {
-  useLoading.isLoading = true
+  loading.isLoading = true
   await AuthRequest.logoutUser().then(() => {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
-    useLoading.isLoading = true
+    loading.isLoading = true
     router.push({ path: '/buyer/login' })
   })
 }
