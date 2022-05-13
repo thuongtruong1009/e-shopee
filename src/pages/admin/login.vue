@@ -7,8 +7,8 @@ meta:
 import { useRouter } from 'vue-router'
 import AuthRequest from '~/services/auth-request'
 import { toast } from '~/stores/toast'
-import {useAdmin} from '~/stores/admin'
-import { loading } from '~/stores/loading'
+import { useAdmin } from '~/stores/admin'
+import { useLoading } from '~/stores/loading'
 import { handleError } from '~/helpers/error'
 
 useHead({
@@ -17,7 +17,7 @@ useHead({
 const { t } = useI18n()
 
 const router = useRouter()
-const useLoading = loading()
+const loading = useLoading()
 const useToast = toast()
 const admin = useAdmin()
 
@@ -28,7 +28,7 @@ const payload = reactive({
 
 const handleSubmit = async(e) => {
   e.preventDefault()
-  useLoading.isLoading = true
+  loading.isLoading = true
   await AuthRequest.loginAdmin(payload)
     .then((res) => {
       admin.payget = res.data
@@ -36,7 +36,7 @@ const handleSubmit = async(e) => {
       localStorage.setItem('admin', JSON.stringify(res))
       router.push({ path: '/admin/home' })
       useToast.updateToast('success', `Admin page is ready! Welcome back, ${payload.usernameOrEmail}!`, true)
-      useLoading.isLoading = false
+      loading.isLoading = false
     })
     .catch((error) => {
       return handleError(error)
