@@ -1,11 +1,11 @@
 <route lang="yaml">
 meta:
-  layout: seller/product/LSProdAdd
+  layout: seller/LSDashBoard
 </route>
 
 <script setup>
 useHead({
-  title: 'seller | add-productions',
+  title: 'seller | add product category',
 })
 const numberWord = ref('')
 const productsList = reactive([
@@ -74,7 +74,7 @@ const openLevel = (level, data) => {
 </script>
 
 <template>
-  <div class="seller-prod-add-container w-300 p-7 bg-white shadow-sm shadow-gray-500/50 rounded-md divide-y divide-solid divide-1 divide-light-800">
+  <div class="seller-prod-add-container max-w-300 w-300 p-7 bg-white shadow-sm shadow-gray-500/50 rounded-2xl divide-y divide-solid divide-1 divide-light-800">
     <div class="pb-7">
       <h4 class="text-xl font-medium my-1">
         Add 1 new product

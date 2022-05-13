@@ -1,11 +1,11 @@
 <route lang="yaml">
 meta:
-  layout: seller/product/LSProdAll
+  layout: seller/LSDashBoard
 </route>
 
 <script setup>
 useHead({
-  title: 'seller | all-productions',
+  title: 'seller | all productions',
 })
 
 const queryType = ref('all')
@@ -33,8 +33,8 @@ function onQueryType(type) {
 </script>
 
 <template>
-  <div class="seller-prods-container w-full px-24 py-2">
-    <form id="myForm" class="top-container grid grid-cols-2 gap-3 p-5 bg-white shadow-sm shadow-gray-500/50 rounded-md">
+  <div class="seller-prods-container max-w-300 w-300 p-2">
+    <form id="myForm" class="top-container grid grid-cols-2 gap-3 p-5 bg-white shadow-sm shadow-gray-500/50 rounded-xl">
       <div class="flex items-center">
         <select id="country" type="text" name="country">
           <option>Product name</option>
@@ -81,7 +81,7 @@ function onQueryType(type) {
       </div>
     </form>
 
-    <div class="bottom-container p-5 my-5 bg-white shadow-sm shadow-gray-500/50 rounded-md divide-light-800 divide-y devide-solid">
+    <div class="bottom-container p-5 my-5 bg-white shadow-sm shadow-gray-500/50 rounded-2xl divide-light-800 divide-y devide-solid">
       <div class="tabs7 mb-5 flex bg-[#eee] p-1.25 rounded-lg">
         <div class="tab-item focus:bg-white" :class="{active : queryType === 'all'}" @click="onQueryType('all')">
           All

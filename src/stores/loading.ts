@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const loading = defineStore('loading', () => {
+export const useLoading = defineStore('loading', () => {
   const isLoading = ref(false)
 
   return { isLoading }

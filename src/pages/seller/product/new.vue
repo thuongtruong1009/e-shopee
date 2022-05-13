@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: seller/product/LSProdNew
+  layout: seller/LSDashBoard
 </route>
 
 <script setup>

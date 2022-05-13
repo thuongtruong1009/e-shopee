@@ -4,7 +4,35 @@ meta:
 </route>
 
 <script setup>
+import { useLoading } from '~/stores/loading'
+import { handleError } from '~/helpers/error'
+import ShopRequest from '~/services/shop-request'
+import ProductRequest from '~/services/product-request'
 import provinceNames from '~/shared/provinces'
+
+useHead({
+  title: 'buyer | product details',
+})
+const loading = useLoading()
+
+const payload = reactive({
+  slug: 'id_01',
+  product_id: '01',
+})
+
+watchOnce(async() => {
+  loading.isLoading = true
+  await ProductRequest.getProductsById(payload.product_id).then((res) => {
+  }).catch((error) => {
+    return handleError(error)
+  })
+
+  await ShopRequest.getShopsProducts(payload.slug).then((res) => {
+  }).catch((error) => {
+    return handleError(error)
+  })
+  loading.isLoading = false
+})
 
 </script>
 
@@ -183,7 +211,7 @@ import provinceNames from '~/shared/provinces'
           <button class="px-3 py-0.5 rounded-md bg-[#FFEEE8] hover:bg-[#FFF5F1] border-1 border-solid border-[#EE4D2D] text-[#EE4D2D] capitalize flex items-center gap-1">
             <IChat />Chat now
           </button>
-          <a href="/seller/shop/home"><button class="px-3 py-1 rounded-md hover:bg-[#FAFAFA] border-2 border-solid border-gray-300 text-[#EE4D2D] capitalize flex items-center gap-1">
+          <a href="/seller/shop/public"><button class="px-3 py-1 rounded-md hover:bg-[#FAFAFA] border-2 border-solid border-gray-300 text-[#EE4D2D] capitalize flex items-center gap-1">
             <IShop />Visit shop
           </button></a>
         </div>

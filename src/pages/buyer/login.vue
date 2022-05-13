@@ -5,10 +5,11 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
-import { loading } from '~/stores/loading'
+import { useLoading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
 import { handleError } from '~/helpers/error'
 import AuthRequest from '~/services/auth-request'
+import EmailRequest from '~/services/email-request'
 
 useHead({
   title: 'buyer | login',
@@ -17,7 +18,7 @@ useHead({
 const { t } = useI18n()
 
 const router = useRouter()
-const useLoading = loading()
+const loading = useLoading()
 const useToast = toast()
 
 const payload = reactive({
@@ -32,9 +33,13 @@ const handleSubmit = async(e) => {
     .then((res) => {
       localStorage.setItem('token', res.token)
       localStorage.setItem('user', JSON.stringify(res))
-      router.push({ path: '/buyer/home' })
-      useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
-      useLoading.isLoading = false
+      EmailRequest.createVerifyEmail().then(() => {
+      }).catch((error) => {
+        router.push({ path: '/buyer/home' })
+        useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
+        useLoading.isLoading = false
+        return handleError(error)
+      })
     })
     .catch((error) => {
       return handleError(error)

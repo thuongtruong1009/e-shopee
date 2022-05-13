@@ -7,6 +7,7 @@ meta:
 import { useRouter } from 'vue-router'
 import { toast } from '~/stores/toast'
 import { handleError } from '~/helpers/error'
+import { useUser } from '~/stores/user'
 import AuthRequest from '~/services/auth-request'
 import AccountRequest from '~/services/account-request'
 
@@ -14,47 +15,46 @@ useHead({
   title: 'e-shopee | buyer dashboard',
 })
 
-const user = JSON.parse(localStorage.getItem('user'))
 const router = useRouter()
 const useToast = toast()
+const user = useUser()
 
 const payload = reactive({
+  username: '',
   display_name: '',
   phone: '',
   gender: 1,
   date_of_birth: '',
-  avatar_image: 'https://avatars.githubusercontent.com/u/47313528?v=4',
+  avatar_image: 'demo-avatar-01',
 })
 
 const genderType = reactive([
   {
     id: 1,
-    type: 'Gender',
-  },
-  {
-    id: 2,
     type: 'Male',
   },
   {
-    id: 3,
+    id: 2,
     type: 'Female',
+  },
+  {
+    id: 3,
+    type: 'Others',
   }])
 
-const handleGet = async() => {
+watchOnce(async() => {
   await AccountRequest.getProfile().then((res) => {
-    payload.display_name = res
-    payload.phone = res
-    payload.gender = res
-    payload.date_of_birth = res.toString()
-    payload.avatar_image = res
+    user.payget = res.data
+    user.profile = res.data.profile
   }).catch((error) => {
     return handleError(error)
   })
-}
+})
+
+const isUpdate = ref(false)
 
 const handleUpdate = async() => {
   await AccountRequest.updateProfile(payload).then((res) => {
-    handleGet()
     useToast.updateToast('success', 'Profile account has been updated!', true)
   }).catch((error) => {
     return handleError(error)
@@ -73,15 +73,21 @@ const signOut = async() => {
 
 <template>
   <div class="myaccount-content border-1 border-solid border-light-700 p-6 text-left rounded-lg bg-[#EBF6FC] dark:bg-cool-gray-800">
-    <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
-      <IBDashboard />
-      <h3 class="text-2xl">
-        Dashboard
-      </h3>
+    <div class="flex justify-between">
+      <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
+        <IBDashboard />
+        <h3 class="text-2xl">
+          Dashboard
+        </h3>
+      </div>
+      <div class="flex items-center text-blue-500" @click="isUpdate = !isUpdate">
+        <IEdit v-if="!isUpdate" />
+        <IBEye v-if="isUpdate" />
+      </div>
     </div>
     <div class="welcome py-5">
       <p>
-        Hello, <strong>@{{ user.data.username }}</strong><span class="text-xs ml-5">(If not you !<a
+        Hello, <strong>@{{ user.payget.username }}</strong><span class="text-xs ml-5">(If not you !<a
           class="logout text-red-400 cursor-pointer" @click="signOut"
         > Logout</a>)</span>
       </p>
@@ -92,7 +98,31 @@ const signOut = async() => {
       password and account details.
     </p>
 
-    <form @submit.prevent="updateProfile">
+    <form v-if="!isUpdate">
+      <div>
+        <input v-model="user.profile.display_name" placeholder="Full name" disabled>
+      </div>
+
+      <div>
+        <input v-model="user.profile.phone" placeholder="Phone name" disabled>
+        <select v-model="user.profile.gender" disabled>
+          <option v-for="(gender, i) in genderType" :key="i" :value="gender.id">
+            {{ gender.type }}
+          </option>
+        </select>
+      </div>
+
+      <div>
+        <input v-model="user.profile.date_of_birth" placeholder="Date of birth" disabled>
+        <input v-model="user.payget.email" placeholder="Date of birth" disabled>
+      </div>
+
+      <div>
+        <input v-model="user.profile.avatar_image" placeholder="Avatar link url" disabled>
+      </div>
+    </form>
+    <!-- ---------------------------------- -->
+    <form v-if="isUpdate" @submit.prevent="updateProfile">
       <div>
         <input v-model="payload.display_name" placeholder="Full name" type="text" required>
       </div>
@@ -107,11 +137,11 @@ const signOut = async() => {
       </div>
 
       <div>
-        <input v-model="payload.date_of_birth" placeholder="Date of birth" type="text" required>
+        <input v-model="payload.date_of_birth" placeholder="Date of birth (MM/DD/YY)" type="text" required>
       </div>
 
       <div>
-        <input v-model="payload.avatar_image" placeholder="Avatar link url" type="text" required>
+        <input v-model="payload.avatar_image" placeholder="Avatar link url" type="text" required disabled>
       </div>
 
       <div class="pt-5 flex justify-end">
@@ -124,16 +154,18 @@ const signOut = async() => {
 </template>
 
 <style scoped>
-input, select{
+input, select, fieldset{
   width: 100%;
   border: 1px solid rgba(233, 236, 239);
   border-radius: 0.3rem;
   padding: 0.3rem 1rem;
   transition: 0.2s linear;
   font-size: 0.9rem;
+  background: white;
 }
 input:focus,
-select:hover{
+select:hover,
+fieldset:hover{
     box-shadow: 2px 2px 4px rgba(59, 175, 252, 0.8);
 }
 form > div{
