@@ -4,7 +4,7 @@ meta:
 </route>
 
 <script setup>
-import { loading } from '~/stores/loading'
+import { useLoading } from '~/stores/loading'
 import { handleError } from '~/helpers/error'
 import ShopRequest from '~/services/shop-request'
 import ProductRequest from '~/services/product-request'
@@ -13,7 +13,7 @@ import provinceNames from '~/shared/provinces'
 useHead({
   title: 'buyer | product details',
 })
-const useLoading = loading()
+const loading = useLoading()
 
 const payload = reactive({
   slug: 'id_01',
@@ -21,7 +21,7 @@ const payload = reactive({
 })
 
 watchOnce(async() => {
-  useLoading.isLoading = true
+  loading.isLoading = true
   await ProductRequest.getProductsById(payload.product_id).then((res) => {
   }).catch((error) => {
     return handleError(error)
@@ -31,7 +31,7 @@ watchOnce(async() => {
   }).catch((error) => {
     return handleError(error)
   })
-  useLoading.isLoading = false
+  loading.isLoading = false
 })
 
 </script>
