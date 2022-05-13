@@ -39,7 +39,7 @@ window.addEventListener('scroll', scrollFunction)
   </Transition>
   <CToast />
   <router-view />
-  <CProgress v-if="loading.isLoading === true" />
+  <CLoading v-if="loading.isLoading === true" />
   <!-- <router-view v-slot="{ Component, route }">
     <transition :name="route.meta.transition || 'fade'" mode="out-in">
       <keep-alive>

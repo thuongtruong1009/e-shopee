@@ -70,6 +70,11 @@ const darkMode = () => {
     seller_dashboard_layout.classList.add('dark')
 }
 
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
+
 const signOut = async() => {
   loading.isLoading = true
   await AuthRequest.logoutUser().then(() => {

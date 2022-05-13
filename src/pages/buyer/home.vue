@@ -4,11 +4,16 @@ meta:
 </route>
 
 <script setup lang="ts">
-import CBTopProducts from '~/components/buyer/CBTopProducts.vue';
-import CBFlashSales from '../../components/buyer/CBFlashSales.vue';
-import CBDealArrivals from '../../components/buyer/CBDealArrivals.vue';
+import {useRouter} from 'vue-router'
+
 useHead({
   title: 'e-shopee | buyer home',
+})
+const router = useRouter()
+
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
 })
 </script>
 

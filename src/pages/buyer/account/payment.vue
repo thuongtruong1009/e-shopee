@@ -26,6 +26,11 @@ const payload = reactive({
   account_number: '',
 })
 
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
+
 watchOnce(async() => {
   await AccountRequest.getBankAccount().then((res) => {
     user.payment = res.data[0]

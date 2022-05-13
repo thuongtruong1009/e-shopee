@@ -1,10 +1,18 @@
-<script setup lang="ts">
+<script setup>
 import { category } from '~/stores/category'
 
 const props = defineProps<{ category: string }>()
 const router = useRouter()
 const useCategory = category()
 const { t } = useI18n()
+useHead({
+  title: `buyer | ${props.category}category`,
+})
+
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
 
 watchEffect(() => {
   useCategory.setNewName(props.category)

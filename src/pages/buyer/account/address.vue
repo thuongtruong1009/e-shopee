@@ -21,6 +21,11 @@ const user = useUser()
 const isCreating = ref(false)
 const optionAddress = ref()
 
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
+
 const payload = reactive({
   full_name: user.payget.username,
   phone: '',

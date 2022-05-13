@@ -4,6 +4,7 @@ meta:
 </route>
 
 <script setup>
+import {useRouter} from 'vue-router'
 import { useLoading } from '~/stores/loading'
 import { handleError } from '~/helpers/error'
 import ShopRequest from '~/services/shop-request'
@@ -14,10 +15,16 @@ useHead({
   title: 'buyer | product details',
 })
 const loading = useLoading()
+const router = useRouter()
 
 const payload = reactive({
   slug: 'id_01',
   product_id: '01',
+})
+
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
 })
 
 watchOnce(async() => {

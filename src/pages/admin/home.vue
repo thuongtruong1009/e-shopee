@@ -14,12 +14,19 @@ import {
 } from 'echarts/components'
 import VChart, { THEME_KEY } from 'vue-echarts'
 import { provide } from 'vue'
+import { useRouter } from 'vue-router'
 import { useAdmin } from '~/stores/admin'
 
 const admin = useAdmin()
+const router = useRouter()
 
 useHead({
   title: 'admin | home',
+})
+
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/admin/login' })
 })
 
 use([
