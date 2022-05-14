@@ -5,35 +5,43 @@ meta:
 
 <script setup>
 import ShopRequest from '~/services/shop-request'
+import AccountRequest from '~/services/account-request'
 import { handleError } from '~/helpers/error'
 import { useLoading } from '~/stores/loading'
+import { useUser } from '~/stores/user'
 import { useSeller } from '~/stores/seller'
 import { handleDate } from '~/utils/date'
-const numberShopName = ref('Lamborghini Aventador S')
-const numberShopDescription = ref('')
 
 useHead({
   title: 'seller | shop profile',
 })
 const { t } = useI18n()
 const loading = useLoading()
+const user = useUser()
 const seller = useSeller()
 
 const payload = reactive({
   slug: '',
   name: '',
   description: '',
-  avatar_image: '',
-  cover_image: '',
-  banners: [],
+  avatar_image: 'demo-avatar-02',
+  cover_image: 'demo-shop-cover-01',
+  banners: ['https:\/\/youtu.be\/GxUxTtdkW2E', 'https:\/\/youtu.be\/S8_YwFLCh4U', 'demo-shop-banner-01_01'],
 })
 
+const resumeUser = ref([])
 watchOnce(async() => {
   loading.isLoading = true
   await ShopRequest.getShops().then((res) => {
     seller.payget = res.data[0]
     seller.statics = res.data[0].statistic
     loading.isLoading = false
+  }).catch((error) => {
+    return handleError(error)
+  })
+
+  await AccountRequest.getAddress().then((res) => {
+    resumeUser.value = res.data.filter(e => Object.keys(user.address.id === 0))[0]
   }).catch((error) => {
     return handleError(error)
   })
@@ -48,6 +56,8 @@ const handleUpdate = async() => {
   })
 }
 
+const totalFile = ref(0)
+
 onMounted(() => {
   $(document).ready(() => {
     $('#fileInput').on('change', function() {
@@ -56,6 +66,9 @@ onMounted(() => {
     })
 
     function uploadFile(files, index) {
+      totalFile.value = files.length // count total file
+      payload.banners.push(files[index]) // push to banner array
+
       const length = files.length
       if (index === length)
         return
@@ -64,7 +77,7 @@ onMounted(() => {
       const fileReader = new FileReader()
       fileReader.onload = function() {
         const str = '<div>'
-                + '<img class="img-thumbnail js-file-image w-30 max-h-40 rounded-md">'
+                + '<img class="img-thumbnail js-file-image w-30 max-h-30 rounded-md">'
                 + '<span class="js-file-name"></span><br>'
                 + '<span class="js-file-size"></span> (Byte)<br>'
                 + '</div>'
@@ -129,9 +142,10 @@ onMounted(() => {
             <p>{{ t('shop.phone-number') }}</p>
             <p>{{ t('shop.address') }}</p>
           </div>
-          <div class="col-span-3 text-md font-medium grid">
-            <p>{{ seller.payget.name }}</p>
-            <p>Linh Trung ward, Thu Duc district, Ho Chi Minh city, VietNam</p>
+          <div class="col-span-3 text-md font-medium grid whitespace-nowrap">
+            <p>{{ resumeUser.full_name }}</p>
+            <p>{{ resumeUser.phone }}</p>
+            <p>{{ resumeUser.address }}</p>
           </div>
         </div>
         <div class="col-span-2 flex justify-between items-start">
@@ -238,34 +252,23 @@ onMounted(() => {
           </div>
         </div>
 
-        <!-- <div>
-          <label for="shop-preview" class="flex items-center gap-2">{{ t('shop.some-preview') }}<IQuestion /></label>
-          <div class="flex justify-between">
-            <div
-              v-for="i in 4" :key="i" class="imagePreviewWrapper grid justify-center text-center items-center border-1 border-solid border-gray-300 outline-none rounded-md w-30 h-30 opacity-60 my-2 p-5 relative"
-            >
-              <IPlus class="justify-self-center" />
-              <p class="text-xs">
-                {{ t('shop.add-photos-videos') }} (0/5)
-              </p>
-              <input type="file" class="opacity-0 absolute top-1/4 left-0 cursor-pointer" accept="image/jpg, image/jpeg, image/png">
-            </div>
-          </div>
-        </div> -->
-
-        <div>
-          <div class="container w-7 max-w-7">
-            <input id="fileInput" type="file" class="form-control" multiple>
-          </div>
-          <div class="container js-file-list grid grid-cols-6 break-words gap-2 text-xs text-gray-500 text-center" />
-        </div>
-
         <div>
           <label for="shop-disciption">{{ t('shop.shop-description') }}</label>
           <textarea id="shop-disciption" v-model="payload.description" name="shop-disciption" class="w-[85%] h-25 border-1 border-solid border-gray-300 outline-none rounded-md my-2 py-1 px-3 text-sm" placeholder="Enter description or information about your shop here...">dd3</textarea>
           <p class="text-right text-xs px-2 text-gray-400">
             {{ payload.description.length }}/500
           </p>
+        </div>
+
+        <div class="flex items-start gap-2">
+          <div class="grid justify-center text-center items-center border-1 border-solid border-gray-300 outline-none rounded-md w-30 h-30 opacity-60 p-5 relative">
+            <IPlus class="justify-self-center" />
+            <p class="text-xs">
+              {{ t('shop.add-photos-videos') }} ({{ totalFile }}/5)
+            </p>
+            <input id="fileInput" type="file" class="opacity-0 absolute top-1/4 left-0 cursor-pointer" accept="image/jpg, image/jpeg, image/png" multiple>
+          </div>
+          <div class="container js-file-list grid grid-cols-5 break-words gap-2 text-xs text-gray-500 text-center" />
         </div>
       </div>
       <div class="col-span-5 flex justify-center items-center">
@@ -289,9 +292,5 @@ onMounted(() => {
 }
 label{
   font-weight: 500;
-}
-.imagePreviewWrapper {
-  background-size: cover;
-    background-position: center center;
 }
 </style>
