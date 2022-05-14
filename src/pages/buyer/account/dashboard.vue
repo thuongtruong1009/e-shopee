@@ -42,6 +42,11 @@ const genderType = reactive([
     type: 'Others',
   }])
 
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
+
 watchOnce(async() => {
   await AccountRequest.getProfile().then((res) => {
     user.payget = res.data

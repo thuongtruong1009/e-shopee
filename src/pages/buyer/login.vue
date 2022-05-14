@@ -26,9 +26,14 @@ const payload = reactive({
   password: '',
 })
 
+onMounted(() => {
+  localStorage.removeItem('token')
+  localStorage.removeItem('user')
+})
+
 const handleSubmit = async(e) => {
   e.preventDefault()
-  useLoading.isLoading = true
+  loading.isLoading = true
   await AuthRequest.loginUser(payload)
     .then((res) => {
       localStorage.setItem('token', res.token)
@@ -37,7 +42,7 @@ const handleSubmit = async(e) => {
       }).catch((error) => {
         router.push({ path: '/buyer/home' })
         useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
-        useLoading.isLoading = false
+        loading.isLoading = false
         return handleError(error)
       })
     })

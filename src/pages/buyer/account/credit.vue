@@ -29,6 +29,11 @@ const payload = reactive({
   card_number: '',
 })
 
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
+
 watchOnce(async() => {
   await AccountRequest.getCreditCard().then((res) => {
     user.credit = res.data[0]

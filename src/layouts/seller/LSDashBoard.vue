@@ -53,7 +53,7 @@ onMounted(() => {
   }
 
   window.addEventListener('resize', () => {
-    if (this.innerWidth > 576) {
+    if (window.innerWidth > 576) {
       searchButtonIcon.classList.replace('bx-x', 'bx-search')
       searchForm.classList.remove('show')
     }
@@ -69,6 +69,11 @@ const darkMode = () => {
   else
     seller_dashboard_layout.classList.add('dark')
 }
+
+onBeforeMount(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
 
 const signOut = async() => {
   loading.isLoading = true

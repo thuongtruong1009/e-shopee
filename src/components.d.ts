@@ -36,6 +36,7 @@ declare module 'vue' {
     CBTopProducts: typeof import('./components/buyer/CBTopProducts.vue')['default']
     CBTrending: typeof import('./components/buyer/CBTrending.vue')['default']
     CExtension: typeof import('./components/CExtension.vue')['default']
+    CLoading: typeof import('./components/seller/CLoading.vue')['default']
     CMap: typeof import('./components/CMap.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
     CProgress: typeof import('./components/CProgress.vue')['default']

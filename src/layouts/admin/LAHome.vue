@@ -6,14 +6,13 @@ import AuthRequest from '~/services/auth-request'
 const admin = useAdmin()
 const router = useRouter()
 
-// const adminName = ref('Thuong Truong')
-// const adminAvatar = ref('/img/admin/avatar_sample.png')
+const adminAvatar = ref('/img/admin/avatar_sample.png')
 
 const signOut = async() => {
-  await AuthRequest.logoutUser().then(() => {
-    localStorage.removeItem('adminToken')
+  await AuthRequest.logoutAdmin().then(() => {
+    localStorage.removeItem('token')
     localStorage.removeItem('admin')
-    router.push({ path: '/buyer/login' })
+    router.push({ path: '/admin/login' })
   })
 }
 
@@ -46,7 +45,7 @@ const signOut = async() => {
               </p>
             </div>
           </div>
-          <div class="text-gray-400 text-xl font-bold flex justify-center items-center border-2 border-solid border-gray rounded-lg col-span-1 h-full cursor-pointer hover:(bg-[#00C689] text-white) duration-200 shadow-md shadow-gray-200">
+          <div class="text-gray-400 text-xl font-bold flex justify-center items-center border-2 border-solid border-gray rounded-lg col-span-1 h-full cursor-pointer hover:(bg-[#00C689] text-white) duration-200 shadow-md shadow-gray-200" @click="signOut">
             <ILogout />
           </div>
         </div>

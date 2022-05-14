@@ -26,13 +26,18 @@ const payload = reactive({
   password: '',
 })
 
+onMounted(() => {
+  localStorage.removeItem('token')
+  localStorage.removeItem('admin')
+})
+
 const handleSubmit = async(e) => {
   e.preventDefault()
   loading.isLoading = true
   await AuthRequest.loginAdmin(payload)
     .then((res) => {
       admin.payget = res.data
-      localStorage.setItem('adminToken', res.token)
+      localStorage.setItem('token', res.token)
       localStorage.setItem('admin', JSON.stringify(res))
       router.push({ path: '/admin/home' })
       useToast.updateToast('success', `Admin page is ready! Welcome back, ${payload.usernameOrEmail}!`, true)
