@@ -7,7 +7,7 @@ meta:
 import ShopRequest from '~/services/shop-request'
 import { handleError } from '~/helpers/error'
 import { useLoading } from '~/stores/loading'
-import { useShop } from '~/stores/shop'
+import { useSeller } from '~/stores/seller'
 import { handleDate } from '~/utils/date'
 const numberShopName = ref('Lamborghini Aventador S')
 const numberShopDescription = ref('')
@@ -17,7 +17,7 @@ useHead({
 })
 const { t } = useI18n()
 const loading = useLoading()
-const shop = useShop()
+const seller = useSeller()
 
 const payload = reactive({
   slug: '',
@@ -28,25 +28,62 @@ const payload = reactive({
   banners: [],
 })
 
-watchOnce(() => {
-  useLoading.isLoading = true
-  ShopRequest.getShops().then((res) => {
-    shop.payget = res.data[0]
-    useLoading.isLoading = false
+watchOnce(async() => {
+  loading.isLoading = true
+  await ShopRequest.getShops().then((res) => {
+    seller.payget = res.data[0]
+    seller.statics = res.data[0].statistic
+    loading.isLoading = false
   }).catch((error) => {
     return handleError(error)
   })
 })
 
 const handleUpdate = async() => {
-  useLoading.isLoading = true
+  loading.isLoading = true
   await ShopRequest.updateShops(payload).then((res) => {
-    useLoading.isLoading = false
-    return res
+    loading.isLoading = false
   }).catch((error) => {
     return handleError(error)
   })
 }
+
+onMounted(() => {
+  $(document).ready(() => {
+    $('#fileInput').on('change', function() {
+      const files = $(this)[0].files
+      uploadFile(files, 0)
+    })
+
+    function uploadFile(files, index) {
+      const length = files.length
+      if (index === length)
+        return
+
+      const file = files[index]
+      const fileReader = new FileReader()
+      fileReader.onload = function() {
+        const str = '<div>'
+                + '<img class="img-thumbnail js-file-image w-30 max-h-40 rounded-md">'
+                + '<span class="js-file-name"></span><br>'
+                + '<span class="js-file-size"></span> (Byte)<br>'
+                + '</div>'
+        $('.js-file-list').append(str)
+
+        const imageSrc = event.target.result
+        const fileName = file.name
+        const fileSize = file.size
+
+        $('.js-file-name').last().text(fileName)
+        $('.js-file-size').last().text(fileSize)
+        $('.js-file-image').last().attr('src', imageSrc)
+
+        uploadFile(files, index + 1)
+      }
+      fileReader.readAsDataURL(file)
+    }
+  })
+})
 
 </script>
 
@@ -93,47 +130,50 @@ const handleUpdate = async() => {
             <p>{{ t('shop.address') }}</p>
           </div>
           <div class="col-span-3 text-md font-medium grid">
-            <p>{{ shop.payget.name }}</p>
+            <p>{{ seller.payget.name }}</p>
             <p>Linh Trung ward, Thu Duc district, Ho Chi Minh city, VietNam</p>
           </div>
         </div>
         <div class="col-span-2 flex justify-between items-start">
-          <img v-for="(banner, i) in shop.payget.banners" :key="i" :src="`https://tp-o.tk/api/v2/resources/images/${shop.payget.avatar_image}.jpg`" alt="">
+          <img v-for="(banner, i) in seller.payget.banners" :key="i" :src="`https://tp-o.tk/api/v2/resources/images/${banner}.jpg`" alt="">
         </div>
       </div>
     </div>
 
     <form class="grid grid-cols-5 p-5 gap-8">
-      <div class="profile-left col-span-2 rounded-md border-1 border-solid border-gray-300">
-        <div class="profile-cover h-40 grid grid-cols-3 bg-gray-300 rounded-md text-white p-4">
-          <div class="col-span-1 flex justify-center items-center">
-            <img src="/img/seller/shop/sample_avatar.png" alt="sample_avatar" class="max-w-25 max-h-25 rounded-full">
+      <div class="profile-left col-span-2">
+        <div>
+          <div class="profile-cover h-40 grid grid-cols-3 bg-gray-300 text-white p-4 rounded-t-xl">
+            <div class="col-span-1 flex justify-center items-center">
+              <img src="/img/seller/shop/sample_avatar.png" alt="sample_avatar" class="max-w-25 max-h-25 rounded-full">
+            <!-- <img :src="`https://tp-o.tk/api/v2/resources/images/${seller.payget.avatar_image}.jpg`" alt="sample_avatar" class="max-w-25 max-h-25 rounded-full"> -->
+            </div>
+            <div class="col-span-2 grid justify-center p-5">
+              <p class="text-lg font-medium">
+                {{ seller.payget.name }}
+              </p>
+              <p class="text-sm">
+                {{ t('shop.join-at') }} {{ handleDate(seller.payget.created_at) }}
+              </p>
+              <p class="text-sm capitalize">
+                {{ t('shop.id') }}: {{ seller.payget.slug }}
+              </p>
+            </div>
           </div>
-          <div class="col-span-2 grid justify-center p-5">
-            <p class="text-lg font-medium">
-              {{ shop.payget.name }}
-            </p>
-            <p class="text-sm">
-              {{ t('shop.join-at') }} {{ handleDate(shop.payget.created_at) }}
-            </p>
-            <p class="text-sm capitalize">
-              {{ t('shop.id') }}: {{ shop.payget.slug }}
+          <div class="bg-[#6B6361] text-center text-white cursor-pointer rounded-b-xl">
+            <p>
+              {{ t('shop.edit-cover-photo') }}
             </p>
           </div>
         </div>
-        <div class="bg-[#6B6361] text-center text-white cursor-pointer">
-          <p>
-            {{ t('shop.edit-cover-photo') }}
-          </p>
-        </div>
-        <div class="profile-field grid grid-rows-5 divide-1 divide-solid divide-y divide-light-800">
+        <div class="profile-field grid grid-rows-5 divide-1 divide-solid divide-y rounded-xl divide-light-800 border-1 border-solid border-gray-300">
           <div class="flex justify-between items-center p-3">
             <div class="flex items-center capitalize">
               <ICake />
               <p>{{ t('shop.products') }}</p>
             </div>
             <div class="flex items-center">
-              <p>{{ shop.payget.statistic.all_product_count }}</p>
+              <p>{{ seller.statics.all_product_count }}</p>
               <ICaretRight />
             </div>
           </div>
@@ -161,7 +201,7 @@ const handleUpdate = async() => {
               <p>{{ t('shop.shop-reviews') }}</p>
             </div>
             <div class="flex items-center">
-              <p>{{ shop.payget.statistic.average_raiting }}</p>
+              <p>{{ seller.statics.average_raiting }}</p>
             </div>
           </div>
           <div class="flex justify-between items-center p-3">
@@ -170,7 +210,7 @@ const handleUpdate = async() => {
               <p>{{ t('shop.unsuccessful-rate') }}</p>
             </div>
             <div class="flex items-center">
-              <p>{{ shop.payget.statistic.nonfulfilment_rate }}%</p>
+              <p>{{ seller.statics.nonfulfilment_rate }}%</p>
               <ICaretRight />
             </div>
           </div>
@@ -198,7 +238,7 @@ const handleUpdate = async() => {
           </div>
         </div>
 
-        <div>
+        <!-- <div>
           <label for="shop-preview" class="flex items-center gap-2">{{ t('shop.some-preview') }}<IQuestion /></label>
           <div class="flex justify-between">
             <div
@@ -211,7 +251,15 @@ const handleUpdate = async() => {
               <input type="file" class="opacity-0 absolute top-1/4 left-0 cursor-pointer" accept="image/jpg, image/jpeg, image/png">
             </div>
           </div>
+        </div> -->
+
+        <div>
+          <div class="container w-7 max-w-7">
+            <input id="fileInput" type="file" class="form-control" multiple>
+          </div>
+          <div class="container js-file-list grid grid-cols-6 break-words gap-2 text-xs text-gray-500 text-center" />
         </div>
+
         <div>
           <label for="shop-disciption">{{ t('shop.shop-description') }}</label>
           <textarea id="shop-disciption" v-model="payload.description" name="shop-disciption" class="w-[85%] h-25 border-1 border-solid border-gray-300 outline-none rounded-md my-2 py-1 px-3 text-sm" placeholder="Enter description or information about your shop here...">dd3</textarea>
