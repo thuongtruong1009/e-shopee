@@ -5,8 +5,16 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
+import { useLoading } from '~/stores/loading'
+import { useSeller } from '~/stores/seller'
+import { handleError } from '~/helpers/error'
+import ShopRequest from '~/services/shop-request'
 import { next, prev } from '~/utils/scrollX'
+import { handleDate } from '~/utils/date'
+
 const router = useRouter()
+const seller = useSeller()
+const loading = useLoading()
 
 useHead({
   title: 'seller | shop',
@@ -17,6 +25,16 @@ const { t } = useI18n()
 const onPrev = () => prev('shop_demo_product')
 const onNext = () => next('shop_demo_product')
 
+watchOnce(async() => {
+  loading.isLoading = true
+  await ShopRequest.getShops().then((res) => {
+    seller.payget = res.data[0]
+    seller.statics = res.data[0].statistic
+    loading.isLoading = false
+  }).catch((error) => {
+    return handleError(error)
+  })
+})
 const activeTime = ref('minutes')
 
 const demoShopProducts = reactive([{
@@ -326,7 +344,7 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
           <div class="grid place-content-between">
             <div>
               <h2 class="text-xl text-white font-medium">
-                Shopcuayen.depxinh
+                {{ seller.payget.name }}
               </h2>
               <p class="text-xs opacity-80 font-light">
                 {{ t('shop.online') }} 39 <span v-if="activeTime === 'days'">{{ t('shop.days') }}</span><span v-if="activeTime === 'hours'">{{ t('shop.hours') }}</span><span v-if="activeTime === 'minutes'">{{ t('shop.minutes') }}</span> {{ t('shop.ago') }}
@@ -346,11 +364,11 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
       <div class="shop_view_summary flex flex-wrap text-sm h-min m-auto font-medium">
         <div>
           <ISShop />
-          <p>{{ t('shop.products') }}: <span>57</span></p>
+          <p>{{ t('shop.products') }}: <span>{{ seller.statics.all_product_count }}</span></p>
         </div>
         <div>
           <ISNote />
-          <p>{{ t('shop.cancel-ratio') }}: <span>11%</span></p>
+          <p>{{ t('shop.cancel-ratio') }}: <span>{{ seller.statics.nonfulfilment_rate }}%</span></p>
         </div>
         <div>
           <ISFollowing />
@@ -362,11 +380,11 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
         </div>
         <div>
           <ISJoined />
-          <p>{{ t('shop.joined') }}: <span>31 months ago</span></p>
+          <p>{{ t('shop.joined') }}: <span>{{ handleDate(seller.payget.created_at) }}</span></p>
         </div>
         <div>
           <ISEvaluate />
-          <p>{{ t('shop.rating') }}: <span>5.0 (8 votes)</span></p>
+          <p>{{ t('shop.rating') }}: <span>4.5 ({{ seller.statics.average_raiting }} votes)</span></p>
         </div>
       </div>
     </div>
@@ -389,10 +407,7 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
           </div>
         </div>
         <div class="grid justify-center place-content-start gap-2">
-          <p>
-            Lớn lên mới biết cuộc sống không màu hồng, bên cạnh màu hồng còn có nhiều màu khác nữa. Nhưng vì mình mê màu hồng quá nên mình đặt tên shop là A Pink, và mẫu nào mình bán cũng có màu hồng :) Cùng mình săn lùng những item màu hồng xinh xỉu giá hạt dẻ mà chất lượng sẽ không làm bạn thất vọng nha.
-          </p>
-          <p>Nếu hôm nào bạn cảm thấy cuộc đời không màu hồng...thì cũng không sao cả, A Pink vẫn luôn có sẵn cả những màu khác nha :)</p>
+          <p>{{ seller.payget.description }}</p>
         </div>
       </div>
     </div>

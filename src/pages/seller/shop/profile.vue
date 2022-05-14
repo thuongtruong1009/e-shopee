@@ -7,6 +7,7 @@ meta:
 import ShopRequest from '~/services/shop-request'
 import AccountRequest from '~/services/account-request'
 import { handleError } from '~/helpers/error'
+import { toast } from '~/stores/toast'
 import { useLoading } from '~/stores/loading'
 import { useUser } from '~/stores/user'
 import { useSeller } from '~/stores/seller'
@@ -19,6 +20,7 @@ const { t } = useI18n()
 const loading = useLoading()
 const user = useUser()
 const seller = useSeller()
+const useToast = toast()
 
 const payload = reactive({
   slug: '',
@@ -51,6 +53,7 @@ const handleUpdate = async() => {
   loading.isLoading = true
   await ShopRequest.updateShops(payload).then((res) => {
     loading.isLoading = false
+    useToast.updateToast('success', 'Your shop profile has been updated!', true)
   }).catch((error) => {
     return handleError(error)
   })
