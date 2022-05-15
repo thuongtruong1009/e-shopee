@@ -31,6 +31,8 @@
         "typecheck": "vue-tsc --noEmit"
     },
     "dependencies": {
+        "@sentry/tracing": "^6.19.7",
+        "@sentry/vue": "^6.19.7",
         "@vueuse/core": "^7.7.1",
         "@vueuse/head": "^0.7.6",
         "axios": "^0.27.2",
