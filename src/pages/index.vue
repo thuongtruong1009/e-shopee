@@ -5,7 +5,7 @@ meta:
 
 <script setup>
 useHead({
-  title: 'e-shopee',
+  title: 'e-shopee | Welcome',
 })
 const { t } = useI18n()
 </script>

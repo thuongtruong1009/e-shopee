@@ -11,7 +11,7 @@ useHead({
 })
 const router = useRouter()
 
-onMounted(() => {
+onBeforeMount(() => {
   if (!localStorage.getItem('token'))
     router.push({ path: '/buyer/login' })
 })

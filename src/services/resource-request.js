@@ -2,7 +2,7 @@ import AxiosInstance from './axios-instance'
 
 class ResourceRequest {
   createResourcesImages(data) {
-    const url = '/resource/images'
+    const url = '/resources/images'
     return AxiosInstance.post(url, data)
   }
 }

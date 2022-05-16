@@ -13,74 +13,106 @@
 <table>
   <tr>
     <td align="center">
-      <details open><summary>e-shopee Home page</summary>
-        <img alt="" width="400" src="./public/preview/home_light.png">
-      </details>
-      <details open><summary>Buyer Register page</summary>
-      <img alt="" width="400" src="./public/preview/buyer_register.png">
-      </details>
-      <details open><summary>Buyer Login page</summary>
-        <img alt="" width="400" src="./public/preview/buyer_login.png">
+      <details open><summary>e-shopee Index page</summary>
+        <img alt="" width="400" src="./public/preview/others/index.png">
       </details>
       <details open><summary>Buyer Contact page</summary>
-        <img alt="" width="400" src="./public/preview/buyer_contact1.png">
-        <img alt="" width="400" src="./public/preview/buyer_contact2.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_contact.jpeg">
       </details>
       <details open><summary>Buyer About page</summary>
-        <img alt="" width="400" src="./public/preview/buyer_about1.png">
-        <img alt="" width="400" src="./public/preview/buyer_about2.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_about.jpeg">
       </details>
       <details open><summary>Buyer Checkout page</summary>
-        <img alt="" width="400" src="./public/preview/buyer_checkout1.png">
-        <img alt="" width="400" src="./public/preview/buyer_checkout2.png">
-        <img alt="" width="400" src="./public/preview/buyer_checkout3.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_checkout1.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_checkout2.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_checkout3.png">
       </details>
       <details open><summary>Buyer Cart page</summary>
-        <img alt="" width="400" src="./public/preview/buyer_cart.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_cart.jpeg">
       </details>
       <details open><summary>Buyer Account page</summary>
-        <img alt="" width="400" src="./public/preview/buyer_account_dashboard.png">
-        <img alt="" width="400" src="./public/preview/buyer_account_orders.png">
-        <img alt="" width="400" src="./public/preview/buyer_account_payment.png">
-        <img alt="" width="400" src="./public/preview/buyer_account_address.png">
-        <img alt="" width="400" src="./public/preview/buyer_account_details.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_account_dashboard.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_account_orders.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_account_payment.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_account_address.jpeg">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_account_credit.png">
       </details>
       <img width="900" height="1" alt="">
     </td>
     <td align="center">
+      <details open><summary>Buyer Register page</summary>
+        <img alt="" width="400" src="./public/preview/buyer/buyer_register.png">
+      </details>
+      <details open><summary>Buyer Login page</summary>
+        <img alt="" width="400" src="./public/preview/buyer/buyer_login.png">
+      </details>
       <details open><summary>Buyer Home page</summary>
-        <img alt="" width="400" src="./public/preview/buyer_home1.png">
-        <img alt="" width="400" src="./public/preview/buyer_home2.png">
-        <img alt="" width="400" src="./public/preview/buyer_home3.png">
-        <img alt="" width="400" src="./public/preview/buyer_home4.png">
-        <img alt="" width="400" src="./public/preview/buyer_home5.png">
-        <img alt="" width="400" src="./public/preview/buyer_home6.png">
-        <img alt="" width="400" src="./public/preview/buyer_home7.png">
-        <img alt="" width="400" src="./public/preview/buyer_home8.png">
-        <img alt="" width="400" src="./public/preview/buyer_home9.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_home.jpeg">
       </details>
       <details open><summary>Buyer Filter page</summary>
-        <img alt="" width="400" src="./public/preview/buyer_filter_grid.png">
-        <img alt="" width="400" src="./public/preview/buyer_filter_flow.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_search_grid.jpeg">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_search_flow.jpeg">
       </details>
       <details open><summary>Buyer Product details page</summary>
-        <img alt="" width="400" src="./public/preview/buyer_product_details.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_product_details.png">
       </details>
       <details open><summary>Buyer Sidebar Menu page</summary>
-        <img alt="" width="400" src="./public/preview/buyer_sidebar_menu.png">
+        <img alt="" width="400" src="./public/preview/buyer/buyer_sidebar_menu.png">
       </details>
       <details open><summary>Author page</summary>
-        <img alt="" width="400" src="./public/preview/author.png">
+        <img alt="" width="400" src="./public/preview/others/author.png">
       </details>
       <img width="900" height="1" alt="">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+     <details open><summary>Seller dashboard page</summary>
+        <img alt="" width="400" src="./public/preview/seller/seller_dashboard.png">
+      </details>
+      <details open><summary>Seller orders page</summary>
+        <img alt="" width="400" src="./public/preview/seller/seller_all_orders.jpeg">
+      </details>
+      <details open><summary>Seller add products page</summary>
+        <img alt="" width="400" src="./public/preview/seller/seller_add_product_category.jpeg">
+      </details>
+      <details open><summary>Seller all products page</summary>
+        <img alt="" width="400" src="./public/preview/seller/seller_all_products.jpeg">
+      </details>
+      <details open><summary>Seller notifications page</summary>
+        <img alt="" width="400" src="./public/preview/seller/seller_notifications.jpeg">
+      </details>
+    </td>
+    <td align="center">
+      <details open><summary>Seller shop register page</summary>
+        <img alt="" width="400" src="./public/preview/seller/seller_shop_register.jpeg">
+      </details>
+      <details open><summary>Seller shop profile page</summary>
+        <img alt="" width="400" src="./public/preview/seller/seller_profile.jpeg">
+      </details>
+      <details open><summary>Seller shop preview page</summary>
+        <img alt="" width="400" src="./public/preview/seller/seller_shop_preview.jpeg">
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <details open><summary>Admin login page</summary>
+        <img alt="" width="400" src="./public/preview/admin/admin_login.png">
+      </details>
+    </td>
+     <td align="center">
+      <details open><summary>Admin dashboard page</summary>
+        <img alt="" width="400" src="./public/preview/admin/admin_home.jpeg">
+      </details>
     </td>
   </tr>
 </table>
 
 ## Descriptions and requirements
 * Authenticate multi users
-* **Three-roles** interface (Buyer-Seller-Admin). Reference with [shopee website](https://shopee.vn)
-* Connect databases through **API** fetches
+* **3-roles** interface (Buyer-Seller-Admin). Reference with [shopee website](https://shopee.vn)
+* Connect databases and **API** by **Axios** request
 * Multi language locales web (VietNamese, English, Russian, Chinese, Indian, Korean, Japanese, Spanish, Brazil, France...)
 * Dark/Light modes web
 * Friendly with **SEO** and **Google Analys**

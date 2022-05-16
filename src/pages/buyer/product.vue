@@ -22,7 +22,7 @@ const payload = reactive({
   product_id: '01',
 })
 
-onMounted(() => {
+onBeforeMount(() => {
   if (!localStorage.getItem('token'))
     router.push({ path: '/buyer/login' })
 })

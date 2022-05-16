@@ -24,7 +24,7 @@ useHead({
   title: 'admin | home',
 })
 
-onMounted(() => {
+onBeforeMount(() => {
   if (!localStorage.getItem('token'))
     router.push({ path: '/admin/login' })
 })
