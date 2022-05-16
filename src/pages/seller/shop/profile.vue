@@ -6,12 +6,14 @@ meta:
 <script setup>
 import ShopRequest from '~/services/shop-request'
 import AccountRequest from '~/services/account-request'
+import ResourceRequest from '~/services/resource-request'
 import { handleError } from '~/helpers/error'
 import { toast } from '~/stores/toast'
 import { useLoading } from '~/stores/loading'
 import { useUser } from '~/stores/user'
 import { useSeller } from '~/stores/seller'
 import { handleDate } from '~/utils/date'
+import AxiosInstance from '~/services/axios-instance'
 
 useHead({
   title: 'seller | shop profile',
@@ -28,7 +30,15 @@ const payload = reactive({
   description: '',
   avatar_image: 'demo-avatar-02',
   cover_image: 'demo-shop-cover-01',
-  banners: ['https:\/\/youtu.be\/GxUxTtdkW2E', 'https:\/\/youtu.be\/S8_YwFLCh4U', 'demo-shop-banner-01_01'],
+  banners: [
+    // {
+    //   image: {
+    //     id: '',
+    //     hyper_link: 'https://www.w3schools.com/w3css/img_lights.jpg',
+    //   },
+    // video: 'https://www.youtube.com/watch?v=JmwDuKzbkNA',
+    // },
+  ],
 })
 
 const resumeUser = ref([])
@@ -60,45 +70,58 @@ const handleUpdate = async() => {
 }
 
 const totalFile = ref(0)
+const data = reactive({
+  images: [
+  //   {
+  //   ratio: 0,
+  //   is_demo: true,
+  //   file: '',
+  // },
+  ],
+})
 
-onMounted(() => {
-  $(document).ready(() => {
-    $('#fileInput').on('change', function() {
-      const files = $(this)[0].files
-      uploadFile(files, 0)
+$(document).ready(() => {
+  const files = document.querySelector('#fileInput')
+  files.addEventListener('change', (e) => {
+    // const files = $(this)[0].files
+    // console.log(files)
+    // const files = e.target[0].files
+
+    const foo = { ratio: 0, is_demo: true, file: e.target.files[0].name }
+    data.images.push(foo)
+    // console.log(foo)
+    ResourceRequest.createResourcesImages(data).then((res) => {
+    }).catch((error) => {
+      return handleError(error)
     })
 
-    function uploadFile(files, index) {
-      totalFile.value = files.length // count total file
-      payload.banners.push(files[index]) // push to banner array
-
-      const length = files.length
-      if (index === length)
-        return
-
-      const file = files[index]
-      const fileReader = new FileReader()
-      fileReader.onload = function() {
-        const str = '<div>'
-                + '<img class="img-thumbnail js-file-image w-30 max-h-30 rounded-md">'
-                + '<span class="js-file-name"></span><br>'
-                + '<span class="js-file-size"></span> (Byte)<br>'
-                + '</div>'
-        $('.js-file-list').append(str)
-
-        const imageSrc = event.target.result
-        const fileName = file.name
-        const fileSize = file.size
-
-        $('.js-file-name').last().text(fileName)
-        $('.js-file-size').last().text(fileSize)
-        $('.js-file-image').last().attr('src', imageSrc)
-
-        uploadFile(files, index + 1)
-      }
-      fileReader.readAsDataURL(file)
-    }
+    // uploadFile(files, 0)
   })
+  // function uploadFile(files, index) {
+  //   totalFile.value = files.length // count total file
+  //   const length = files.length
+  //   if (index === length)
+  //     return
+  //   const file = files[index]
+  //   const fileReader = new FileReader()
+  //   fileReader.onload = function() {
+  //     const str = '<div>'
+  //               + '<img class="img-thumbnail js-file-image w-30 max-h-30 rounded-md">'
+  //               + '<span class="js-file-name"></span><br>'
+  //               + '<span class="js-file-size"></span> (Byte)<br>'
+  //               + '</div>'
+  //     $('.js-file-list').append(str)
+  //     const imageSrc = event.target.result
+  //     const fileName = file.name
+  //     const fileSize = file.size
+  //     $('.js-file-name').last().text(fileName)
+  //     $('.js-file-size').last().text(fileSize)
+  //     $('.js-file-image').last().attr('src', imageSrc)
+
+  //     uploadFile(files, index + 1)
+  //   }
+  //   fileReader.readAsDataURL(file)
+  // }
 })
 
 </script>
@@ -187,7 +210,9 @@ onMounted(() => {
           <div class="flex justify-between items-center p-3">
             <div class="flex items-center capitalize">
               <ICake />
-              <p>{{ t('shop.products') }}</p>
+              <p @click="uploadData">
+                {{ t('shop.products') }}
+              </p>
             </div>
             <div class="flex items-center">
               <p>{{ seller.statics.all_product_count }}</p>
@@ -269,7 +294,7 @@ onMounted(() => {
             <p class="text-xs">
               {{ t('shop.add-photos-videos') }} ({{ totalFile }}/5)
             </p>
-            <input id="fileInput" type="file" class="opacity-0 absolute top-1/4 left-0 cursor-pointer" accept="image/jpg, image/jpeg, image/png" multiple>
+            <input id="fileInput" type="file" class="opacity-0 absolute top-1/4 left-0 cursor-pointer" accept="image/png, image/jpg" multiple @change="change">
           </div>
           <div class="container js-file-list grid grid-cols-5 break-words gap-2 text-xs text-gray-500 text-center" />
         </div>
