@@ -20,6 +20,19 @@ const user = useUser()
 const loading = useLoading()
 const isCreating = ref(true)
 
+onBeforeMount(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
+
+watch(async() => {
+  loading.isLoading = true
+  const { data: creditData } = await AccountRequest.getCreditCard()
+  user.credit = creditData[0]
+  loading.isLoading = false
+  user.credit !== '' ? isCreating.value = false : isCreating.value = true
+})
+
 const payload = reactive({
   cardholder_name: '',
   expiry_date: '',
@@ -28,21 +41,6 @@ const payload = reactive({
   postal_code: '',
   card_number: '',
 })
-
-onMounted(() => {
-  if (!localStorage.getItem('token'))
-    router.push({ path: '/buyer/login' })
-})
-
-watchOnce(async() => {
-  await AccountRequest.getCreditCard().then((res) => {
-    user.credit = res.data[0]
-  }).catch((error) => {
-    return handleError(error)
-  })
-  user.credit !== '' ? isCreating.value = false : isCreating.value = true
-})
-
 const handleCreate = async(e) => {
   e.preventDefault()
   await AccountRequest.createCreditCard(payload).then(() => {
@@ -129,6 +127,7 @@ const handleDelete = async(e) => {
     <form>
       <div>
         <label>Card holder name</label>
+        <!-- <input v-if="user.credit.cardholder_name" :value="user.credit.cardholder_name" type="text" required> -->
         <input v-model="payload.cardholder_name" type="text" required>
       </div>
       <div>
