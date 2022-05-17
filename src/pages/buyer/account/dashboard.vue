@@ -6,7 +6,6 @@ meta:
 <script setup>
 import { useRouter } from 'vue-router'
 import { toast } from '~/stores/toast'
-import { handleError } from '~/helpers/error'
 import { useUser } from '~/stores/user'
 import AuthRequest from '~/services/auth-request'
 import AccountRequest from '~/services/account-request'
@@ -15,9 +14,15 @@ useHead({
   title: 'e-shopee | buyer dashboard',
 })
 
+const { t } = useI18n()
 const router = useRouter()
 const useToast = toast()
 const user = useUser()
+
+onBeforeMount(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
 
 const payload = reactive({
   username: '',
@@ -42,36 +47,24 @@ const genderType = reactive([
     type: 'Others',
   }])
 
-onMounted(() => {
-  if (!localStorage.getItem('token'))
-    router.push({ path: '/buyer/login' })
-})
-
-watchOnce(async() => {
-  await AccountRequest.getProfile().then((res) => {
-    user.payget = res.data
-    user.profile = res.data.profile
-  }).catch((error) => {
-    return handleError(error)
-  })
+watchEffect(async() => {
+  const { data: userData } = await AccountRequest.getProfile()
+  user.payget = userData
+  user.profile = userData.profile
 })
 
 const isUpdate = ref(false)
-
 const handleUpdate = async() => {
-  await AccountRequest.updateProfile(payload).then((res) => {
-    useToast.updateToast('success', 'Profile account has been updated!', true)
-  }).catch((error) => {
-    return handleError(error)
-  })
+  await AccountRequest.updateProfile(payload)
+  isUpdate.value = false
+  useToast.updateToast('success', 'Profile account has been updated!', true)
 }
 
 const signOut = async() => {
-  await AuthRequest.logoutUser().then(() => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('user')
-    router.push({ path: '/buyer/login' })
-  })
+  await AuthRequest.logoutUser()
+  localStorage.removeItem('token')
+  localStorage.removeItem('user')
+  router.push({ path: '/buyer/login' })
 }
 
 </script>
@@ -81,26 +74,24 @@ const signOut = async() => {
     <div class="flex justify-between">
       <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
         <IBDashboard />
-        <h3 class="text-2xl">
-          Dashboard
+        <h3 class="text-2xl capitalize">
+          {{ t('account.dashboard') }}
         </h3>
       </div>
-      <div class="flex items-center text-blue-500" @click="isUpdate = !isUpdate">
+      <div class="flex items-center text-blue-500 cursor-pointer" @click="isUpdate = !isUpdate">
         <IEdit v-if="!isUpdate" />
         <IBEye v-if="isUpdate" />
       </div>
     </div>
     <div class="welcome py-5">
       <p>
-        Hello, <strong>@{{ user.payget.username }}</strong><span class="text-xs ml-5">(If not you !<a
-          class="logout text-red-400 cursor-pointer" @click="signOut"
-        > Logout</a>)</span>
+        {{ t('account.hello') }}, <strong>@{{ user.payget.username }}</strong><span class="text-xs ml-5">({{ t('account.not-you') }} !<a
+          class="logout text-red-400 cursor-pointer capitalize" @click="signOut"
+        > {{ t('account.logout') }}</a>)</span>
       </p>
     </div>
     <p class="text-sm text-gray-400">
-      From your account dashboard. you can easily check &amp; view your
-      recent orders, manage your shipping and billing addresses and edit your
-      password and account details.
+      {{ t('account.dashboard-desc', {symbol: '&amp;'}) }}.
     </p>
 
     <form v-if="!isUpdate">
@@ -151,7 +142,7 @@ const signOut = async() => {
 
       <div class="pt-5 flex justify-end">
         <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
-          <ISave />Save Changes
+          <ISave />{{ t('account.save-changes') }}
         </button>
       </div>
     </form>

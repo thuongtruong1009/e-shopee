@@ -35,9 +35,9 @@ const { t } = useI18n()
     </div>
     <div class="flex justify-between flex-wrap text-left p-10">
       <div class="max-w-115">
-        <h2><ICompany /> {{ t('about.our-company') }}</h2>
+        <h2><ICompany /> {{ t('about.our-purpose') }}</h2>
         <p class="dark:text-gray-400">
-          {{ t('about.company-desc') }}.
+          {{ t('about.purpose-desc') }}.
         </p>
         <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="company_img" class="bg-contain rounded-lg mt-5">
       </div>

@@ -1,21 +1,20 @@
 <route lang="yaml">
 meta:
-  layout: buyer/account/LBCredit
+  layout: buyer/account/LBDashboard
 </route>
 
 <script setup>
 import { useLoading } from '~/stores/loading'
 import { useUser } from '~/stores/user'
 import { toast } from '~/stores/toast'
-import { handleError } from '~/helpers/error'
 import AccountRequest from '~/services/account-request'
 
 useHead({
   title: 'buyer | account credit',
 })
 
+const { t } = useI18n()
 const useToast = toast()
-const id = JSON.parse(localStorage.getItem('user')).data.id
 const user = useUser()
 const loading = useLoading()
 const isCreating = ref(true)
@@ -43,28 +42,19 @@ const payload = reactive({
 })
 const handleCreate = async(e) => {
   e.preventDefault()
-  await AccountRequest.createCreditCard(payload).then(() => {
-    useToast.updateToast('sucess', 'your card has been created successfully!', true)
-  }).catch((error) => {
-    return handleError(error)
-  })
+  await AccountRequest.createCreditCard(payload)
+  useToast.updateToast('sucess', 'your card has been created successfully!', true)
 }
 const handleUpdate = async(e) => {
   e.preventDefault()
-  await AccountRequest.updateCreditCardById(user.credit.id, payload).then(() => {
-    useToast.updateToast('updated', 'Your card has been successfully!', true)
-  }).catch((error) => {
-    return handleError(error)
-  })
+  await AccountRequest.updateCreditCardById(user.credit.id, payload)
+  useToast.updateToast('updated', 'Your card has been successfully!', true)
 }
 
 const handleDelete = async(e) => {
   e.preventDefault()
-  await AccountRequest.deleteCreditCardById(user.credit.id).then(() => {
-    useToast.updateToast('deleted', 'Your card has been deleted!', true)
-  }).catch((error) => {
-    return handleError(error)
-  })
+  await AccountRequest.deleteCreditCardById(user.credit.id)
+  useToast.updateToast('deleted', 'Your card has been deleted!', true)
 }
 
 </script>
@@ -75,43 +65,43 @@ const handleDelete = async(e) => {
       <div class="flex items-center gap-1 font-medium">
         <IBPayment />
         <h3 class="text-2xl">
-          Credit card
+          {{ t('account.credit-card') }}
         </h3>
       </div>
       <div class="flex item gap-5">
-        <div class="text-blue-500" @click="isCreating = !isCreating">
+        <div class="text-blue-500 cursor-pointer" @click="isCreating = !isCreating">
           <IBCreate v-if="!isCreating" />
           <IEdit v-if="isCreating" />
         </div>
-        <IBDelete class="text-red-400" @click="handleDelete" />
+        <IBDelete class="text-red-400 cursor-pointer" @click="handleDelete" />
       </div>
     </div>
     <div class="credit_infor py-5 text-sm flex justify-around gap-10">
       <div>
         <p>
-          Owner account: <span>{{ user.credit.cardholder_name }}</span>
+          {{ t('account.owner-account') }}: <span>{{ user.credit.cardholder_name }}</span>
         </p>
         <p>
-          Address register: <span>{{ user.credit.registration_address }}</span>
+          {{ t('account.address-register') }}: <span>{{ user.credit.registration_address }}</span>
         </p>
         <p>
-          ZIP postal: <span>{{ user.credit.postal_code }}</span>
-        </p>
-      </div>
-      <div>
-        <p>
-          ID card: <span>{{ user.credit.id }}</span>
-        </p>
-        <p>
-          Card number: <span>{{ user.credit.card_number }}</span>
+          {{ t('account.zip-postal') }}: <span>{{ user.credit.postal_code }}</span>
         </p>
       </div>
       <div>
         <p>
-          Expiry date: <span>{{ user.credit.expiry_date }}</span>
+          {{ t('account.id-card') }}: <span>{{ user.credit.id }}</span>
         </p>
         <p>
-          Cvv number: <span>{{ user.credit.cvv }}</span>
+          {{ t('account.card-number') }}: <span>{{ user.credit.card_number }}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          {{ t('account.expiry-date') }}: <span>{{ user.credit.expiry_date }}</span>
+        </p>
+        <p>
+          {{ t('account.cvv-number') }}: <span>{{ user.credit.cvv }}</span>
         </p>
       </div>
     </div>
@@ -126,16 +116,16 @@ const handleDelete = async(e) => {
 
     <form>
       <div>
-        <label>Card holder name</label>
+        <label>{{ t('account.card-name') }}</label>
         <!-- <input v-if="user.credit.cardholder_name" :value="user.credit.cardholder_name" type="text" required> -->
         <input v-model="payload.cardholder_name" type="text" required>
       </div>
       <div>
-        <label>Card number <span>(16 digits)</span></label>
+        <label>{{ t('account.card-number') }} <span>(16 digits)</span></label>
         <input v-model="payload.card_number" type="text" required>
       </div>
       <div>
-        <label>Expiry date</label>
+        <label>{{ t('account.expiry-date') }}</label>
         <input v-model="payload.expiry_date " type="text" required>
       </div>
       <div>
@@ -143,19 +133,19 @@ const handleDelete = async(e) => {
         <input v-model="payload.cvv" type="text" required>
       </div>
       <div>
-        <label>Registration address</label>
+        <label>{{ t('account.registration-address') }}</label>
         <input v-model="payload.registration_address" type="text" required>
       </div>
       <div>
-        <label>Postal ZIP code <span>(5 digits)</span></label>
+        <label>{{ t('account.postal-zip-code') }}<span>(5 digits)</span></label>
         <input v-model="payload.postal_code" type="text" required>
       </div>
       <div class="pt-5 flex justify-end">
         <button v-if="!isCreating" type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
-          <ISave />Update credit
+          <ISave />{{ t('account.update-card') }}
         </button>
         <button v-if="isCreating" type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
-          <ISave />Create credit
+          <ISave />{{ t('account.create-card') }}
         </button>
       </div>
     </form>
