@@ -4,73 +4,42 @@ meta:
 </route>
 
 <script setup>
+import ProductRequest from '~/services/product-request'
+import { useProduct } from '~/stores/product'
+
 useHead({
   title: 'seller | add product category',
 })
+const product = useProduct()
 const numberWord = ref('')
-const productsList = reactive([
-  {
-    data: [
-      {
-        type: 'articles',
-        id: '1',
-        attributes: {
-          title: 'JSON:API paints my bikeshed!',
-          body: 'The shortest article. Ever.',
-          created: '2015-05-22T14:56:29.000Z',
-          updated: '2015-05-22T14:56:28.000Z',
-        },
-        relationships: {
-          author: {
-            data: {
-              id: '42', type: 'people',
-            },
-          },
-        },
-      }],
-    included: [
-      {
-        type: 'people',
-        id: '42',
-        attributes: {
-          name: 'John',
-          age: 80,
-          gender: 'male',
-        },
-      },
-    ],
-    machine: [{
-      type: 'articles',
-      id: '1',
-      attributes: {
-        title: 'JSON:API paints my bikeshed!',
-        body: 'The shortest article. Ever.',
-        created: '2015-05-22T14:56:29.000Z',
-        updated: '2015-05-22T14:56:28.000Z',
-      },
-      relationships: {
-        author: {
-          data: {
-            id: '42', type: 'people',
-          },
-        },
-      },
-    }],
-  },
-])
-// const result = JSON.stringify(Object.keys(productsList[0]))
-// const level1 = result.slice(1, -1)
-const level1 = ref([])
-const level2 = ref([])
-const level3 = ref([])
-const openLevel = (level, data) => {
-  if (level === 1)
-    level1.value = data
-  else if (level === 2)
-    level2.value = data
-  else if (level === 3)
-    level3.value = data
+
+watch(async() => {
+  const { data } = await ProductRequest.getCategoriesChildrenById(0)
+  product.category = data
+})
+
+const choicedList = reactive({
+  1: '',
+  2: '',
+  3: '',
+})
+
+const getLevel1 = async(id) => {
+  const { data } = await ProductRequest.getCategoriesChildrenById(id)
+  product.level1 = data
+  choicedList[1] = id
 }
+
+const getLevel2 = async(id) => {
+  const { data } = await ProductRequest.getCategoriesChildrenById(id)
+  product.level2 = data
+}
+
+const getLevel3 = async(id) => {
+  const { data } = await ProductRequest.getCategoriesChildrenById(id)
+  product.level3 = data
+}
+
 </script>
 
 <template>
@@ -105,30 +74,35 @@ const openLevel = (level, data) => {
         </div>
         <div class="bg-white grid grid-cols-4 divide-x divide-solid divide-3 divide-gray-300 mt-5">
           <div class="py-2 max-h-80 overflow-y-scroll">
-            <div v-for="(product, i) in Object.keys(productsList[0])" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer" @click="openLevel(1, productsList[0][product][0])">
-              <p>{{ product }}</p>
+            <div v-for="(category, i) in product.category.children" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer" @click="getLevel1(category.id)">
+              <p>{{ category.name }}</p>
               <ICaretRight />
             </div>
           </div>
           <div>
-            <div v-for="(product, i) in Object.keys(level1)" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer" @click="openLevel(2, productsList[0][product.parent][0][product])">
-              <p>{{ product }}</p>
+            <div v-for="(category, i) in product.level1.children" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer" @click="getLevel2(category.id)">
+              <p>{{ category.name }}</p>
               <ICaretRight />
             </div>
           </div>
           <div>
-            <div v-for="(product, i) in Object.keys(level2)" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer">
-              <p>{{ product }}</p>
+            <div v-for="(category, i) in product.level2.children" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer" @click="getLevel3(category.id)">
+              <p>{{ category.name }}</p>
               <ICaretRight />
             </div>
           </div>
-          <div>ô 4</div>
+          <div>
+            <div v-for="(category, i) in product.level3.children" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer">
+              <p>{{ category.name }}</p>
+              <ICaretRight />
+            </div>
+          </div>
         </div>
       </div>
       <div class="flex my-3 font-medium">
         <p>👉 Selected: </p>
         <p class="text-red-500 ml-5">
-          Thiết Bị Điện Gia Dụng > Thiết bị điện gia dụng lớn > Thiết bị làm mát
+          Thiết Bị Điện Gia Dụng > Thiết bị điện gia dụng lớn > Thiết bị làm mát > {{ choicedList[1] }}
         </p>
       </div>
       <router-link to="/seller/product/new">

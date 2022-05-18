@@ -11,13 +11,6 @@ const { t } = useI18n()
     </div>
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
-        <router-link to="/admin/login">
-          <span class="dropdown__selected flex items-center gap-1"><IAdmin />{{ t('menu.admin') }}</span>
-        </router-link>
-      </div>
-    </div>
-    <div class="dropdown dark:bg-black">
-      <div class="dropdown__select">
         <span class="dropdown__selected flex items-center gap-1"><IPage />{{ t('header.pages') }} <i class="fas fa-chevron-down" /></span>
       </div>
       <ul class="dropdown__list">
@@ -80,9 +73,9 @@ transform: rotate(180deg);
 }
 .container{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-start;
     align-items: center;
-    width: 30%;
+    gap: 2rem;
 }
   .dropdown {
     width: 10%;
@@ -169,7 +162,6 @@ transform: rotate(180deg);
   }
   .dropdown__item:first-child {
     border-radius: 0.75rem 0.75rem 0 0;
-    position: relative;
   }
   .dropdown__item:first-child:before {
     content: "";
