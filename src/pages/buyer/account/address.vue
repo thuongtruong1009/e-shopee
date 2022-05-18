@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: buyer/account/LBAddress
+  layout: buyer/account/LBDashboard
 </route>
 
 <script setup>
@@ -14,6 +14,7 @@ useHead({
   title: 'buyer | address',
 })
 
+const { t } = useI18n()
 const router = useRouter()
 const useToast = toast()
 const id = JSON.parse(localStorage.getItem('user')).data.id
@@ -24,6 +25,11 @@ const optionAddress = ref()
 onMounted(() => {
   if (!localStorage.getItem('token'))
     router.push({ path: '/buyer/login' })
+})
+
+watch(async() => {
+  const { data: addressData } = await AccountRequest.getAddress()
+  user.address = addressData
 })
 
 const payload = reactive({
@@ -39,46 +45,27 @@ const payload = reactive({
   is_return_address: '',
 })
 
-const isEdit = ref(false)
-
 const addressType = reactive([
   {
     0: true,
     1: false,
   }])
 
-watchOnce(() => {
-  AccountRequest.getAddress().then((res) => {
-    user.address = res.data
-  }).catch((error) => {
-    return handleError(error)
-  })
-})
-
 const handleCreate = async(e) => {
   e.preventDefault()
-  await AccountRequest.createAddress(payload).then(() => {
-    useToast.updateToast('created', 'Address has been created successfully!', true)
-  }).catch((error) => {
-    return handleError(error)
-  })
+  await AccountRequest.createAddress(payload)
+  useToast.updateToast('created', 'Address has been created successfully!', true)
 }
 
-const handleUpdate = async(e, id) => {
+const isEdit = ref(false)
+const handleUpdate = async(e) => {
   e.preventDefault()
-  await AccountRequest.updateAddressById(optionAddress.value, payload).then(() => {
-    useToast.updateToast('sucess', 'Address has been updated successfully!', true)
-  }).catch((error) => {
-    return handleError(error)
-  })
+  await AccountRequest.updateAddressById(optionAddress.value, payload)
+  useToast.updateToast('sucess', 'Address has been updated successfully!', true)
 }
-const handleDelete = async(e) => {
-  e.preventDefault()
-  await AccountRequest.deleteAddressById(optionAddress.value).then(() => {
-    useToast.updateToast('delete', 'Address has been removed!', true)
-  }).catch((error) => {
-    return handleError(error)
-  })
+const handleDelete = async() => {
+  await AccountRequest.deleteAddressById(optionAddress.value)
+  useToast.updateToast('delete', 'Address has been removed!', true)
 }
 
 </script>
@@ -89,7 +76,7 @@ const handleDelete = async(e) => {
       <div class="flex items-center gap-1 font-medium">
         <IBAddress />
         <h3 class="text-2xl">
-          Billing Address
+          {{ t('account.billing-address') }}
         </h3>
       </div>
       <div class="flex items-center gap-5">
@@ -107,47 +94,47 @@ const handleDelete = async(e) => {
           <input type="radio" name="radio_delete" class="accent-red-500" @click="optionAddress = location.id">
         </p>
         <p>
-          Phone number {{ i+1 }}: <span>{{ location.phone }}</span>
+          {{ t('account.phone-number') }} {{ i+1 }}: <span>{{ location.phone }}</span>
         </p>
         <p>
-          Address {{ i+1 }}: <span>{{ location.address }}</span>
+          {{ t('account.address') }} {{ i+1 }}: <span>{{ location.address }}</span>
         </p>
         <p>
-          Location {{ i+1 }}: <span>{{ location.town }}, {{ location.city }}</span>
+          {{ t('account.location') }} {{ i+1 }}: <span>{{ location.town }}, {{ location.city }}</span>
         </p>
       </div>
     </div>
 
     <form>
       <div>
-        <label>Full name</label>
+        <label>{{ t('account.full-name') }}</label>
         <input v-model="payload.full_name" type="text" required>
       </div>
       <div>
-        <label>Phone number <span>(10-11 digits)</span></label>
+        <label>{{ t('account.phone-number') }} <span>(10-11 digits)</span></label>
         <input v-model="payload.phone" type="number" required>
       </div>
       <div>
-        <label>State</label>
+        <label>{{ t('account.state') }}</label>
         <input v-model="payload.state" type="text" required>
       </div>
       <div>
-        <label>City</label>
+        <label>{{ t('account.city') }}</label>
         <input v-model="payload.city" type="text" required>
       </div>
       <div>
-        <label>Town</label>
+        <label>{{ t('account.town') }}</label>
         <input v-model="payload.town" type="text" required>
       </div>
       <div>
-        <label>Address</label>
+        <label>{{ t('account.address') }}</label>
         <input v-model="payload.address" type="text" required>
       </div>
 
       <div class="addres_type dark:text-black">
         <select v-for="(types, index) in addressType" :key="index" v-model="payload.is_home">
           <option value="" disabled selected hidden>
-            Is home
+            {{ t('account.is-home') }}
           </option>
           <option v-for="(type, i) in types" :key="i" :value="type.i">
             {{ type }}
@@ -155,7 +142,7 @@ const handleDelete = async(e) => {
         </select>
         <select v-model="payload.is_pickup_address">
           <option value="" disabled selected hidden>
-            Is pickup address
+            {{ t('account.is-pickup-address') }}
           </option>
           <option :value="false">
             False
@@ -166,7 +153,7 @@ const handleDelete = async(e) => {
         </select>
         <select v-model="payload.is_default_address">
           <option value="" disabled selected hidden>
-            Is default address
+            {{ t('account.is-default-address') }}
           </option>
           <option :value="false">
             False
@@ -177,7 +164,7 @@ const handleDelete = async(e) => {
         </select>
         <select v-model="payload.is_return_address">
           <option value="" disabled selected hidden>
-            Is return addressk
+            {{ t('account.is-return-address') }}
           </option>
           <option :value="false">
             False
@@ -190,10 +177,10 @@ const handleDelete = async(e) => {
 
       <div class="pt-5 flex gap-5 justify-end">
         <button v-if="!isCreating" type="submit" class="btn bg-black duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
-          <ISave />Update address
+          <ISave />{{ t('account.update-address') }}
         </button>
         <button v-if="isCreating" type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
-          <ISave />Create address
+          <ISave />{{ t('account.create-address') }}
         </button>
       </div>
     </form>

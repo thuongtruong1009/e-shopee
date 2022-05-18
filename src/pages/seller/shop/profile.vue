@@ -24,10 +24,22 @@ const user = useUser()
 const seller = useSeller()
 const useToast = toast()
 
+const resumeAddress = ref([])
+watch(async() => {
+  loading.isLoading = true
+  const { data: shopData } = await ShopRequest.getShops()
+  seller.payget = shopData[0]
+  seller.statics = shopData[0].statistic
+  loading.isLoading = false
+
+  const { data: addressData } = await AccountRequest.getAddress()
+  resumeAddress.value = addressData.filter(e => Object.keys(addressData.id === 0))[0]
+})
+
 const payload = reactive({
-  slug: '',
-  name: '',
-  description: '',
+  slug: seller.payget.slug,
+  name: seller.payget.name,
+  description: seller.payget.description,
   avatar_image: 'demo-avatar-02',
   cover_image: 'demo-shop-cover-01',
   banners: [
@@ -40,25 +52,6 @@ const payload = reactive({
     // },
   ],
 })
-
-const resumeUser = ref([])
-watchOnce(async() => {
-  loading.isLoading = true
-  await ShopRequest.getShops().then((res) => {
-    seller.payget = res.data[0]
-    seller.statics = res.data[0].statistic
-    loading.isLoading = false
-  }).catch((error) => {
-    return handleError(error)
-  })
-
-  await AccountRequest.getAddress().then((res) => {
-    resumeUser.value = res.data.filter(e => Object.keys(user.address.id === 0))[0]
-  }).catch((error) => {
-    return handleError(error)
-  })
-})
-
 const handleUpdate = async() => {
   loading.isLoading = true
   await ShopRequest.updateShops(payload).then((res) => {
@@ -72,11 +65,11 @@ const handleUpdate = async() => {
 const totalFile = ref(0)
 const data = reactive({
   images: [
-  //   {
-  //   ratio: 0,
-  //   is_demo: true,
-  //   file: '',
-  // },
+    // {
+    //   ratio: 0,
+    //   is_demo: true,
+    //   file: '',
+    // },
   ],
 })
 
@@ -84,16 +77,21 @@ $(document).ready(() => {
   const files = document.querySelector('#fileInput')
   files.addEventListener('change', (e) => {
     // const files = $(this)[0].files
-    // console.log(files)
-    // const files = e.target[0].files
 
-    const foo = { ratio: 0, is_demo: true, file: e.target.files[0].name }
-    data.images.push(foo)
-    // console.log(foo)
-    ResourceRequest.createResourcesImages(data).then((res) => {
-    }).catch((error) => {
-      return handleError(error)
-    })
+    // const files = e.target.files
+    // const formData = new FormData()
+    // formData.append('images[0]ratio', 0)
+    // formData.append('images[]', files[0])
+    // formData.append('images[]', files[0])
+    // formData.append('is_demo', true)
+
+    // formData.append('images', JSON.stringify([{ ratio: 0, file: files }]))
+
+    // console.log(formData)
+    // ResourceRequest.createResourcesImages(formData).then((res) => {
+    // }).catch((error) => {
+    //   return handleError(error)
+    // })
 
     // uploadFile(files, 0)
   })
@@ -154,9 +152,9 @@ $(document).ready(() => {
             {{ t('shop.manage-shipping') }}
           </p>
         </div>
-        <p class="flex items-center gap-2 bg-red-500 rounded-md text-white h-9 px-3 cursor-pointer hover:bg-red-600 shadow-md shadow-gray-300">
+        <a href="/buyer/account/address"><p class="flex items-center gap-2 bg-red-500 rounded-md text-white h-9 px-3 cursor-pointer hover:bg-red-600 shadow-md shadow-gray-300">
           <IPlus class="text-xs" />{{ t('shop.add-new-address') }}
-        </p>
+        </p></a>
       </div>
       <div class="grid grid-cols-5 p-3">
         <div class="col-span-3 grid grid-cols-5">
@@ -169,13 +167,13 @@ $(document).ready(() => {
             <p>{{ t('shop.address') }}</p>
           </div>
           <div class="col-span-3 text-md font-medium grid whitespace-nowrap">
-            <p>{{ resumeUser.full_name }}</p>
-            <p>{{ resumeUser.phone }}</p>
-            <p>{{ resumeUser.address }}</p>
+            <p>{{ resumeAddress.full_name }}</p>
+            <p>{{ resumeAddress.phone }}</p>
+            <p>{{ resumeAddress.address }}, {{ resumeAddress.city }}, {{ resumeAddress.state }}</p>
           </div>
         </div>
         <div class="col-span-2 flex justify-between items-start">
-          <img v-for="(banner, i) in seller.payget.banners" :key="i" :src="`https://tp-o.tk/api/v2/resources/images/${banner}.jpg`" alt="">
+          <img v-for="(banner, i) in seller.payget.banners" :key="i" :src="`https://tp-o.tk/api/v2/resources/images/${banner}`" alt="">
         </div>
       </div>
     </div>
@@ -190,13 +188,13 @@ $(document).ready(() => {
             </div>
             <div class="col-span-2 grid justify-center p-5">
               <p class="text-lg font-medium">
-                {{ seller.payget.name }}
+                {{ payload.name }}
               </p>
               <p class="text-sm">
                 {{ t('shop.join-at') }} {{ handleDate(seller.payget.created_at) }}
               </p>
               <p class="text-sm capitalize">
-                {{ t('shop.id') }}: {{ seller.payget.slug }}
+                {{ t('shop.id') }}: {{ payload.slug }}
               </p>
             </div>
           </div>

@@ -8,7 +8,9 @@ import { useRouter } from 'vue-router'
 import { toast } from '~/stores/toast'
 import ShopRequest from '~/services/shop-request'
 import { useLoading } from '~/stores/loading'
+import { useUser } from '~/stores/user'
 import { handleError } from '~/helpers/error'
+import AccountRequest from '~/services/account-request'
 
 useHead({
   title: 'seller | shop register',
@@ -17,19 +19,28 @@ const { t } = useI18n()
 const router = useRouter()
 const loading = useLoading()
 const useToast = toast()
+const user = useUser()
+
+const resumeAddress = ref([])
+watch(async() => {
+  loading.isLoading = true
+  const { data: addressData } = await AccountRequest.getAddress()
+  resumeAddress.value = addressData.filter(e => Object.keys(addressData.id === 0))[0]
+  loading.isLoading = false
+})
 
 const payload = reactive({
   name: 'dededdede',
   slug: 'Shop-03',
   address: '',
-  phone: '084988888888',
+  phone: '',
 })
 
 const handleCreate = async() => {
-  useLoading.isLoading = true
+  loading.isLoading = true
   await ShopRequest.createShops(payload).then((res) => {
     // router.push('/seller/home')
-    useLoading.isLoading = false
+    loading.isLoading = false
     useToast.updateToast('success', 'Your shop information has been created successfull!', true)
   }).catch((error) => {
     return handleError(error)
@@ -68,7 +79,8 @@ const handleCreate = async() => {
         </div>
         <div>
           <label><span>*</span> New address</label>
-          <input v-model="payload.address" type="text" class="w-full px-3 py-1 border-1 border-[#e9e9e9] rounded-md" placeholder="Input address..." required>
+          <input v-if="resumeAddress" :value="resumeAddress.address" type="text" class="w-full px-3 py-1 border-1 border-[#e9e9e9] rounded-md" placeholder="Input address..." required disabled>
+          <input v-else v-model="payload.address" type="text" class="w-full px-3 py-1 border-1 border-[#e9e9e9] rounded-md" placeholder="Input address..." required>
         </div>
         <div>
           <label><span>*</span> Phone</label>
@@ -76,7 +88,8 @@ const handleCreate = async() => {
             <p class="flex justify-around opacity-60 text-xs px-2">
               +84
             </p>
-            <input v-model="payload.phone" type="text" name="add-product-name" class="w-full px-2" placeholder="Input phone number..." pattern="[A-Za-z0-9]{120}" required>
+            <input v-if="resumeAddress" :value="resumeAddress.phone" type="text" class="w-full px-2" placeholder="Input phone number..." pattern="[A-Za-z0-9]{120}" required>
+            <input v-else v-model="payload.phone" type="text" class="w-full px-2" placeholder="Input phone number..." pattern="[A-Za-z0-9]{120}" required>
           </div>
         </div>
       </div>

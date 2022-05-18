@@ -21,14 +21,14 @@ const router = useRouter()
 const loading = useLoading()
 const useToast = toast()
 
-const payload = reactive({
-  usernameOrEmail: '',
-  password: '',
-})
-
 onMounted(() => {
   localStorage.removeItem('token')
   localStorage.removeItem('user')
+})
+
+const payload = reactive({
+  usernameOrEmail: '',
+  password: '',
 })
 
 const handleSubmit = async(e) => {

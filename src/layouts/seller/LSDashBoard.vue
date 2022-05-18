@@ -3,6 +3,11 @@ import { useRouter } from 'vue-router'
 import AuthRequest from '~/services/auth-request'
 import { useLoading } from '~/stores/loading'
 
+const { t, availableLocales, locale } = useI18n()
+const toggleLocales = () => {
+  const locales = availableLocales
+  locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+}
 const loading = useLoading()
 const router = useRouter()
 
@@ -100,49 +105,49 @@ const signOut = async() => {
         <li class="active">
           <a href="/seller/home">
             <i class="bx bxs-dashboard" />
-            <span class="text">Dashboard</span>
+            <span class="text">{{ t('menu.s-dashboard') }}</span>
           </a>
         </li>
         <li>
           <a href="/seller/orders/all">
             <i class="bx bxs-shopping-bag-alt" />
-            <span class="text">All orders</span>
+            <span class="text">{{ t('menu.s-all-orders') }}</span>
           </a>
         </li>
         <li>
           <a href="/seller/shop/register">
             <i class="bx bxs-doughnut-chart" />
-            <span class="text">Order canceled</span>
+            <span class="text">{{ t('menu.s-order-canceled') }}</span>
           </a>
         </li>
         <li>
           <a href="/seller/product/all">
             <i class="bx bxs-message-dots" />
-            <span class="text">All products</span>
+            <span class="text">{{ t('menu.s-all-products') }}</span>
           </a>
         </li>
         <li>
           <a href="/seller/product/category">
             <i class="bx bxs-cart-add" />
-            <span class="text">Add products</span>
+            <span class="text">{{ t('menu.s-add-products') }}</span>
           </a>
         </li>
         <li>
           <a href="/seller/shop/preview">
             <i class="bx bxs-store-alt" />
-            <span class="text">Shop preview</span>
+            <span class="text">{{ t('menu.s-shop-preview') }}</span>
           </a>
         </li>
         <li>
           <a href="/seller/shop/profile">
             <i class="bx bxs-cog" />
-            <span class="text">Shop edit profile</span>
+            <span class="text">{{ t('menu.s-shop-edit-profile') }}</span>
           </a>
         </li>
         <li>
           <a href="/seller/shop/register">
             <i class="bx bxs-cog" />
-            <span class="text">Shop new register</span>
+            <span class="text">{{ t('menu.s-shop-new-register') }}</span>
           </a>
         </li>
       </ul>
@@ -150,13 +155,13 @@ const signOut = async() => {
         <li>
           <a href="/admin/login">
             <i class="bx bxs-group" />
-            <span class="text">Admin channel</span>
+            <span class="text">{{ t('menu.s-admin-channel') }}</span>
           </a>
         </li>
         <li @click="signOut">
           <a class="logout">
             <i class="bx bxs-log-out-circle" />
-            <span class="text">Sign out</span>
+            <span class="text">{{ t('menu.s-sign-out') }}</span>
           </a>
         </li>
       </ul>
@@ -175,6 +180,9 @@ const signOut = async() => {
             </button>
           </div>
         </form>
+        <a class="icon-btn mx-2.25 hover:bg-[#e9e9e9] dark:hover:bg-gray-600 rounded-full p-1.75" :title="t('button.toggle_langs')" @click="toggleLocales">
+          <carbon-language />
+        </a>
         <input id="switch-mode" type="checkbox" hidden>
         <label for="switch-mode" class="switch-mode" @click="darkMode" />
         <a href="/seller/notifications" class="notification">
@@ -191,7 +199,7 @@ const signOut = async() => {
           <div class="left">
             <ul class="breadcrumb">
               <li>
-                <a href="#">Seller</a>
+                <a href="#">{{ t('menu.s-seller') }}</a>
               </li>
               <li><i class="bx bx-chevron-right" /></li>
               <li>
@@ -311,7 +319,6 @@ const signOut = async() => {
 	display: flex;
 	justify-content: center;
 }
-/* SIDEBAR */
 
 /* CONTENT */
 #content {

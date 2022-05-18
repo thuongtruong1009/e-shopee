@@ -77,6 +77,17 @@ menu:
   notifications-warn: Login to see your notifications
   register: Register
   login: Login
+  s-dashboard: Dashboard
+  s-all-orders: All orders
+  s-order-canceled: Order canceled
+  s-all-products: All products
+  s-add-products: Add products
+  s-shop-preview: Shop preview
+  s-shop-edit-profile: Shop edit profile
+  s-shop-new-register: Shop new register
+  s-admin-channel: Admin channel
+  s-sign-out: Sign out
+  s-seller: Seller
 header:
   home: Home
   shop: Shop
@@ -193,6 +204,53 @@ auth:
   b-reset-invite: Check the confirmation code sent from your registered email
   b-reset: Reset
   b-reset-form-button: Reset password
+account:
+  dashboard: Dashboard
+  hello: Hello
+  not-you: If not you
+  logout: Logout
+  dashboard-desc: From your account dashboard. you can easily check {symbol} view your recent orders, manage your shipping and billing addresses and edit your password and account details
+  save-changes: Save changes
+  payment-method: Payment method
+  owner-account: Owner account
+  identification-number: Identification number
+  payment-id: Payment ID
+  bank-name: Bank name
+  bank-branch: Bank branch
+  account-number: Account number
+  not-payment: You not't saved your Payment method yet
+  full-name: Full name
+  digits: digits
+  card-number: Card number
+  update-payment: Update payment
+  create-payment: Create payment
+  credit-card: Credit card
+  address-register: Address register
+  zip-postal: ZIP postal
+  postal-zip-code: Postal ZIP code 
+  id-card: ID card
+  expiry-date: Expiry date
+  cvv-number: Cvv number
+  card-name: Card holder name
+  cvv: Cvv
+  registration-address: Registration address
+  update-card: Update card
+  create-card: Create card
+  billing-address: Billing Address
+  phone-number: Phone number
+  address: Address
+  location: Location
+  state: State
+  city: City
+  town: Town
+  is-home: Is home
+  is-pickup-address: Is pickup address
+  is-default-address: Is default address
+  is-return-address: Is return address
+  false: False
+  true: True
+  update-address: Update address
+  create-address: Create address
 shop:
   online: Online
   ago: ago
@@ -237,6 +295,14 @@ shop:
   some-preview: Some preview pictures or video
   add-photos-videos: Add photos or videos
   shop-description: Shop description
+category:
+  title: Add 1 new product
+  desc: Please select the appropriate category for your product
+  product-name: Product name
+  tutorial1: Choose the correct category
+  tutorial2: click here to find out
+  selected: Selected
+  next: Next
 cart:
   cart: Cart
   preview: Preview
@@ -349,11 +415,11 @@ wishlist:
 about:
   about-us: About Us
   welcome: Welcome to
-  desc-one: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore aperiam fugit consequuntur voluptatibus ex sint iure in, distinctio sed dolorem aspernatur veritatis repellendus dolorum voluptate, animi libero officiis eveniet accusamus recusandae. Temporibus amet ducimus sapiente voluptatibus autem dolorem magnam quas, officiis eveniet accusamus animi libero officiis eveniet accusamus recusandae. Temporibus
-  desc-two: Sint voluptatum beatae necessitatibus quos mollitia vero, optio asperiores aut tempora iusto eum rerum, possimus, minus quidem ut saepe laboriosam. Praesentium aperiam accusantium minus repellendus accusamus neque iusto pariatur laudantium provident quod
-  our-company: Our Company
-  company-desc: Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit
+  desc-one: e-shopee is the largest eCommerce platform in Southeast Asia and Taiwan. It is a platform tailored for the region, making online shopping easy, secure and fast through its strong payment and logistical support. Shopee is strongly supported by Sea (formerly known as Garena), Southeast Asia's largest internet platform provider.
+  desc-two: Shopee can be downloaded for free on App Store and Google Play in Singapore, Malaysia, Thailand, Taiwan, Indonesia, Vietnam, and the Philippines. For more information, please visit https://shopee.vn
+  our-purpose: Our Purpose
+  purpose-desc: The Shopee team believes in the transformative power of technology and wants to change the world for the better by providing a platform to connect buyers and sellers in one community. As shopping on mobile devices becomes the new norm, Shopee aims to continuously enhance its platform to deliver a seamless and enjoyable shopping experience for all users and be the region's e-commerce platform of choice.
   our-team: Our Team
-  team-desc: Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit
+  team-desc: The Shopee team believes in the transformative power of technology and wants to change the world for the better by providing a platform to connect buyers and sellers in one community. As shopping on mobile devices becomes the new norm, Shopee aims to continuously enhance its platform to deliver a seamless and enjoyable shopping experience for all users and be the region's e-commerce platform of choice.
   testimonial: Testimonial
-  testimonial-desc: Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit
+  testimonial-desc: The Shopee team believes in the transformative power of technology and wants to change the world for the better by providing a platform to connect buyers and sellers in one community. As shopping on mobile devices becomes the new norm, Shopee aims to continuously enhance its platform to deliver a seamless and enjoyable shopping experience for all users and be the region's e-commerce platform of choice.
