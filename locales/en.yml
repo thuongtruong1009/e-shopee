@@ -284,6 +284,14 @@ shop:
   some-preview: Some preview pictures or video
   add-photos-videos: Add photos or videos
   shop-description: Shop description
+category:
+  title: Add 1 new product
+  desc: Please select the appropriate category for your product
+  product-name: Product name
+  tutorial1: Choose the correct category
+  tutorial2: click here to find out
+  selected: Selected
+  next: Next
 cart:
   cart: Cart
   preview: Preview
