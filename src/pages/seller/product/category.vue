@@ -18,26 +18,22 @@ watch(async() => {
   product.category = data
 })
 
-const choicedList = reactive({
-  1: '',
-  2: '',
-  3: '',
-})
-
 const getLevel1 = async(id) => {
   const { data } = await ProductRequest.getCategoriesChildrenById(id)
   product.level1 = data
-  choicedList[1] = id
+  product.choicedList[0] = product.level1.parent
 }
 
 const getLevel2 = async(id) => {
   const { data } = await ProductRequest.getCategoriesChildrenById(id)
   product.level2 = data
+  product.choicedList[1] = product.level2.parent
 }
 
 const getLevel3 = async(id) => {
   const { data } = await ProductRequest.getCategoriesChildrenById(id)
   product.level3 = data
+  product.choicedList[2] = product.level3.parent
 }
 
 </script>
@@ -72,37 +68,38 @@ const getLevel3 = async(id) => {
             Choose the correct category, <a href="" class="text-blue-500">click here to find out</a>
           </p>
         </div>
-        <div class="bg-white grid grid-cols-4 divide-x divide-solid divide-3 divide-gray-300 mt-5">
+        <CSChooseCategory :level0="product.category.children" :level1="product.level1.children" :level2="product.level2.children" :level3="product.level3.children" @get-level1="getLevel1" @get-level2="getLevel2" @get-level3="getLevel3" />
+        <!-- <div class="bg-white grid grid-cols-4 divide-x divide-solid divide-3 divide-gray-300 mt-5">
           <div class="py-2 max-h-80 overflow-y-scroll">
             <div v-for="(category, i) in product.category.children" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer" @click="getLevel1(category.id)">
               <p>{{ category.name }}</p>
-              <ICaretRight />
+              <ICaretRight v-if="category.number_of_children" />
             </div>
           </div>
           <div>
             <div v-for="(category, i) in product.level1.children" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer" @click="getLevel2(category.id)">
               <p>{{ category.name }}</p>
-              <ICaretRight />
+              <ICaretRight v-if="category.number_of_children"/>
             </div>
           </div>
           <div>
             <div v-for="(category, i) in product.level2.children" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer" @click="getLevel3(category.id)">
-              <p>{{ category.name }}</p>
-              <ICaretRight />
+              <a>{{ category.name }}</a>
+              <ICaretRight v-if="category.number_of_children" />
             </div>
           </div>
           <div>
             <div v-for="(category, i) in product.level3.children" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer">
               <p>{{ category.name }}</p>
-              <ICaretRight />
+              <ICaretRight v-if="category.number_of_children" />
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="flex my-3 font-medium">
         <p>👉 Selected: </p>
         <p class="text-red-500 ml-5">
-          Thiết Bị Điện Gia Dụng > Thiết bị điện gia dụng lớn > Thiết bị làm mát > {{ choicedList[1] }}
+          {{ product.choicedList[0].name }} <span v-if="product.choicedList[1].name ">></span> {{ product.choicedList[1].name }} <span v-if="product.choicedList[2].name ">></span> {{ product.choicedList[2].name }}
         </p>
       </div>
       <router-link to="/seller/product/new">
@@ -119,7 +116,4 @@ label{
     font-family: 'Helvetica Neue', sans-serif;
 }
 /* https://stackoverflow.com/questions/45152839/horizontally-scroll-hidden-overflow-x-with-buttons-and-js */
-::-webkit-scrollbar-thumb {
-  background: #ddd;
-}
 </style>
