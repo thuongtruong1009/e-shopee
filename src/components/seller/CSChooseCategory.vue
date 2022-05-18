@@ -10,7 +10,7 @@ defineEmits(['get-level1', 'get-level2', 'get-level3'])
 </script>
 
 <template>
-  <div class="bg-white grid grid-cols-4 divide-x divide-solid divide-3 divide-gray-300 mt-5">
+  <div class="bg-white dark:bg-blue-gray-800 grid grid-cols-4 divide-x divide-solid divide-3 divide-gray-300 mt-5">
     <div class="py-2 max-h-80 overflow-y-scroll">
       <div v-for="(category, i) in props.level0" :key="i" class="flex justify-between items-center hover:bg-[#FAFAFA] px-3 py-1 cursor-pointer" @click="$emit('get-level1', category.id)">
         <p>{{ category.name }}</p>

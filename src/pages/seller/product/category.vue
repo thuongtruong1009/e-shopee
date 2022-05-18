@@ -40,9 +40,9 @@ const getLevel3 = async(id) => {
 </script>
 
 <template>
-  <div class="seller-prod-add-container max-w-300 w-300 p-7 bg-white shadow-sm shadow-gray-500/50 rounded-2xl divide-y divide-solid divide-1 divide-light-800">
+  <div class="seller-prod-add-container max-w-300 w-300 p-7 bg-white dark:bg-blue-gray-900 dark:text-gray-200 shadow-sm shadow-gray-500/50 rounded-2xl divide-y divide-solid divide-1 divide-light-800">
     <div class="pb-7">
-      <h4 class="text-xl font-medium my-1">
+      <h4 class="text-xl font-medium my-1 dark:text-white">
         {{ t('category.title') }}
       </h4>
       <p class="text-gray-400 text-sm">
@@ -53,17 +53,17 @@ const getLevel3 = async(id) => {
       <div class="pt-8 mb-4 flex items-center">
         <label for="add-product-name">{{ t('category.product-name') }}: </label>
         <div class="w-[85%] ml-5 border-1 border-red-500 border-solid flex items-center py-1 rounded-md divide-x divide-solid divide-3 divide-gray-300">
-          <input id="add-product-name" v-model="numberWord" type="text" name="add-product-name" class="w-full outline-none px-2" placeholder="Input..." pattern="[A-Za-z0-9]{120}" required>
+          <input id="add-product-name" v-model="numberWord" type="text" name="add-product-name" class="dark:bg-blue-gray-800 w-full outline-none px-2" placeholder="Input..." pattern="[A-Za-z0-9]{120}" required>
           <p class="flex justify-around opacity-60 text-xs px-2">
             {{ numberWord.length }}/120
           </p>
         </div>
       </div>
-      <div class="bg-[#FAFAFA] p-5 rounded-md">
+      <div class="bg-[#FAFAFA] dark:bg-blue-gray-800 p-5 rounded-md">
         <div class="grid grid-cols-3 gap-2 justify-start items-center">
-          <div class="flex items-center border-1 border-solid border-gray-400 rounded-2xl py-1 px-2 bg-[#FAFAFA]">
+          <div class="flex items-center border-1 border-solid border-gray-400 rounded-2xl py-1 px-2 bg-[#FAFAFA] dark:bg-blue-gray-700">
             <ISearch />
-            <input id="" type="text" name="add-product-search" class="outline-none ml-2 w-[85%]" placeholder="Product type name...">
+            <input id="" type="text" name="add-product-search" class="dark:bg-blue-gray-700 ml-2 w-[85%]" placeholder="Product type name...">
           </div>
           <p class="text-gray-400 text-sm">
             {{ t('category.tutorial1') }}, <a href="" class="text-blue-500">{{ t('category.tutorial2') }}</a>
@@ -78,7 +78,7 @@ const getLevel3 = async(id) => {
         </p>
       </div>
       <router-link to="/seller/product/new">
-        <button class="bg-[#E54A2B] text-white rounded-md px-10 py-1.5 my-5 shadow-md shadow-gray-300">
+        <button class="bg-[#E54A2B] text-white rounded-md px-10 py-1.5 my-5 shadow-md shadow-gray-300 dark:shadow-gray-600">
           {{ t('category.next') }}
         </button>
       </router-link>

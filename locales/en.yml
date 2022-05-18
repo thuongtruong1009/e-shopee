@@ -77,6 +77,17 @@ menu:
   notifications-warn: Login to see your notifications
   register: Register
   login: Login
+  s-dashboard: Dashboard
+  s-all-orders: All orders
+  s-order-canceled: Order canceled
+  s-all-products: All products
+  s-add-products: Add products
+  s-shop-preview: Shop preview
+  s-shop-edit-profile: Shop edit profile
+  s-shop-new-register: Shop new register
+  s-admin-channel: Admin channel
+  s-sign-out: Sign out
+  s-seller: Seller
 header:
   home: Home
   shop: Shop
