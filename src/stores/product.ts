@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 
 export const useProduct = defineStore('product', () => {
   const category = ref<any>([])

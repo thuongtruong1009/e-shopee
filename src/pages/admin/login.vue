@@ -40,8 +40,8 @@ const handleSubmit = async(e) => {
       localStorage.setItem('token', res.token)
       localStorage.setItem('admin', JSON.stringify(res))
       router.push({ path: '/admin/home' })
-      useToast.updateToast('success', `Admin page is ready! Welcome back, ${payload.usernameOrEmail}!`, true)
       loading.isLoading = false
+      useToast.updateToast('success', `Admin page is ready! Welcome back, ${payload.usernameOrEmail}!`, true)
     })
     .catch((error) => {
       return handleError(error)

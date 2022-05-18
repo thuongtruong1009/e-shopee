@@ -6,7 +6,7 @@ export default defineConfig({
   darkMode: 'class',
   // https://windicss.org/posts/v30.html#attributify-mode
   attributify: true,
-
+  safelist: ['accent-[#34B1AA]', 'accent-[#FFAF00]', 'accent-[#F95F53]', 'accent-[#34B1AA]'].join(' '),
   plugins: [
     typography(),
   ],
