@@ -1,14 +1,14 @@
 import AxiosInstance from './axios-instance.js'
 
 class OrderRequest {
-  getOrders(params) {
+  getOrders(data) {
     const url = '/orders/'
-    return AxiosInstance.get(url, { params })
+    return AxiosInstance.get(url, data)
   }
 
-  updateOrder(id, status) {
-    const url = `/orders/${id}`
-    AxiosInstance.put(url, { status })
+  createOrders(data) {
+    const url = '/orders'
+    AxiosInstance.post(url, data)
   }
 }
 

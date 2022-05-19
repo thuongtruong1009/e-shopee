@@ -240,15 +240,15 @@ const products = reactive([{
             {{ t('wishlist.categories') }}
           </h4>
           <div class="filter-check-box">
-            <input id="20820" type="checkbox">
+            <input id="20820" type="checkbox" class="accent-pink-500">
             <label for="20820">Digital Cameras <span>(13)</span></label>
           </div>
           <div class="filter-check-box">
-            <input id="20821" type="checkbox">
+            <input id="20821" type="checkbox" class="accent-pink-500">
             <label for="20821">Camcorders <span>(13)</span></label>
           </div>
           <div class="filter-check-box">
-            <input id="20822" type="checkbox">
+            <input id="20822" type="checkbox" class="accent-pink-500">
             <label for="20822">Camera Drones<span>(13)</span></label>
           </div>
 
@@ -291,11 +291,11 @@ const products = reactive([{
             {{ t('wishlist.brand') }}
           </h4>
           <div class="filter-check-box">
-            <input id="20824" type="checkbox">
+            <input id="20824" type="checkbox" class="accent-pink-500">
             <label for="20824">Graphic Corner<span>(5)</span></label>
           </div>
           <div class="filter-check-box">
-            <input id="20825" type="checkbox">
+            <input id="20825" type="checkbox" class="accent-pink-500">
             <label for="20825">Studio Design<span>(8)</span></label>
           </div>
         </form>
@@ -313,7 +313,7 @@ const products = reactive([{
       </ul>
       <div class="banner hover-animation relative overflow-hidden">
         <a href="shop-grid-4-column.html" class="block">
-          <img src="/img/banner/2.webp" alt="img" class="rounded-md">
+          <img src="/img/banner/2.webp" alt="img" class="rounded-xl">
         </a>
       </div>
     </aside>

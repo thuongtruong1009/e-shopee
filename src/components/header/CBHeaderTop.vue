@@ -18,9 +18,9 @@ window.addEventListener('scroll', scrollFunction)
 </script>
 
 <template>
-  <div id="header" class="buyer_header_container grid grid-cols-2 justify-between items-center bg-black">
+  <div id="header" class="buyer_header_container grid grid-cols-3 justify-between items-center bg-black">
     <LMenu />
-    <div class="flex justify-end items-center text-white">
+    <div class="flex justify-end items-center text-white col-span-2">
       <RMenu />
       <CExtension class="mx-2.75" />
     </div>
