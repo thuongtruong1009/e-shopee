@@ -5,20 +5,54 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
+import { useUser } from '~/stores/user'
 import { toast } from '~/stores/toast'
+import { useLoading } from '~/stores/loading'
+import CartRequest from '~/services/cart-request'
 import { handleError } from '~/helpers/error'
 
 useHead({
-  title: 'e-shopee | buyer cart',
+  title: 'buyer | cart',
 })
 const { t } = useI18n()
 
 const router = useRouter()
+const useToast = toast()
+const loading = useLoading()
+const user = useUser()
+
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
 
 const onCheckout = computed(() => {
   router.push({ path: '/buyer/checkout' })
 })
 
+const payget = reactive({
+  limit: 10,
+  page: 1,
+})
+watchEffect(async() => {
+  loading.isLoading = true
+  const { data: cartData } = await CartRequest.getCart({ params: { limit: payget.limit, page: payget.page } })
+  user.cart = cartData[0]
+  loading.isLoading = false
+})
+
+const payload = reactive({
+  product_model_id: '',
+  quantity: [1, 1],
+})
+const handleUpdate = async() => {
+  await CartRequest.updateCart(payload)
+  useToast.updateToast('success', 'You cart items has been updated!', true)
+}
+const handleDelete = async(id) => {
+  await CartRequest.deleteCart(id)
+  useToast.updateToast('success', 'You has been delete one cart items!', true)
+}
 const cartList = reactive([{
   img: '/img/product/shoes/1.webp',
   name: 'Water and Wind Resistant',
@@ -122,7 +156,7 @@ const cartList = reactive([{
           </td>
           <td>
             <div class="count flex justify-center">
-              <input type="number" min="1" max="10" step="1" value="1" class="dark:bg-black">
+              <input v-model="payload.quantity[i]" type="number" min="1" max="10" step="1" class="dark:bg-black">
             </div>
           </td>
           <td>
@@ -132,10 +166,10 @@ const cartList = reactive([{
             </span>
           </td>
           <td>
-            <a href="#"><span class="trash flex justify-center"><ITrash /></span></a>
+            <a href="" @click="handleDelete"><span class="trash flex justify-center"><ITrash /></span></a>
           </td>
           <td>
-            <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-2 font-semibold">{{ t('cart.update') }}</a>
+            <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-2 font-semibold" @click="handleUpdate">{{ t('cart.update') }}</a>
           </td>
         </tr>
       </tbody>
