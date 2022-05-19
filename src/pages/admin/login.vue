@@ -21,14 +21,13 @@ const loading = useLoading()
 const useToast = toast()
 const admin = useAdmin()
 
-const payload = reactive({
-  usernameOrEmail: '',
-  password: '',
-})
-
 onMounted(() => {
   localStorage.removeItem('token')
   localStorage.removeItem('admin')
+})
+const payload = reactive({
+  usernameOrEmail: '',
+  password: '',
 })
 
 const handleSubmit = async(e) => {
@@ -39,7 +38,7 @@ const handleSubmit = async(e) => {
       admin.payget = res.data
       localStorage.setItem('token', res.token)
       localStorage.setItem('admin', JSON.stringify(res))
-      router.push({ path: '/admin/home' })
+      router.push({ path: '/admin/dashboard' })
       loading.isLoading = false
       useToast.updateToast('success', `Admin page is ready! Welcome back, ${payload.usernameOrEmail}!`, true)
     })
@@ -82,8 +81,8 @@ const handleSubmit = async(e) => {
               Forgot password?
             </p>
           </div>
-          <div class="bg-red-500 hover:bg-red-600 text-center text-white rounded-md py-2 my-1.5 shadow-md shadow-gray-300 capitalize">
-            <button @click="handleSubmit">
+          <div class="bg-red-500 hover:bg-red-600 text-center text-white rounded-md py-2 my-1.5 shadow-md shadow-gray-300 capitalize" @click="handleSubmit">
+            <button>
               {{ t('auth.a-login') }}
             </button>
           </div>
@@ -100,7 +99,6 @@ const handleSubmit = async(e) => {
             <div class="flex justify-center opacity-40 text-xs">
               <span>_____________________  OR  _____________________</span>
             </div>
-            <!-- <span>OR</span> -->
             <div class="text-center outline-none rounded-md border-1 border-solid border-gray-300 py-2 px-4 cursor-pointer">
               <p>Login with Primary/Secondary account</p>
             </div>

@@ -79,9 +79,9 @@ const deletelist = ref([])
         <button class="btn py-2 px-3 rounded-md shadow-md shadow-gray-300 flex items-center gap-1 disabled:cursor-not-allowed" :disabled="!deletelist.length">
           <IARemove /> Remove
         </button>
-        <button class="btn py-2 px-3 rounded-md shadow-md shadow-gray-300">
+        <!-- <button class="btn py-2 px-3 rounded-md shadow-md shadow-gray-300">
           <i class="fas fa-user-plus" /> Add new seller
-        </button>
+        </button> -->
       </div>
     </div>
     <div class="seller-table divide-y divide-solid divide-1 divide-gray-300">

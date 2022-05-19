@@ -56,7 +56,7 @@ const { t } = useI18n()
     </div>
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
-        <router-link to="/seller/login">
+        <router-link to="/seller/home">
           <span class="dropdown__selected flex items-center gap-1"><ISell />{{ t('menu.become-seller') }}</span>
         </router-link>
       </div>

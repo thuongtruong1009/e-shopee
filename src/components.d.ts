@@ -45,6 +45,7 @@ declare module 'vue' {
     CSFooter: typeof import('./components/seller/CSFooter.vue')['default']
     CSlick: typeof import('./components/CSlick.vue')['default']
     CToast: typeof import('./components/CToast.vue')['default']
+    IAAttributes: typeof import('./components/icons/admin/IAAttributes.vue')['default']
     IAbout: typeof import('./components/icons/IAbout.vue')['default']
     IAccount: typeof import('./components/icons/IAccount.vue')['default']
     IAdmin: typeof import('./components/icons/IAdmin.vue')['default']

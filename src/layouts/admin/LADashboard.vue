@@ -16,13 +16,12 @@ const signOut = async() => {
   })
 }
 
-
 </script>
 
 <template>
   <main class="text-gray-700 dark:text-gray-200 overflow-x-hidden">
     <SHead />
-    <div class="w-screen bg-[#F6F6F6] flex dark:bg-black">
+    <div class="bg-[#F6F6F6] flex dark:bg-black">
       <div class="w-100 bg-white px-3">
         <div class="flex justify-end text-gray-400 hover:text-black cursor-pointer py-1">
           <IEdit />
@@ -50,7 +49,9 @@ const signOut = async() => {
           </div>
         </div>
       </div>
-      <router-view />
+      <div class="flex justify-center w-full p-3">
+        <router-view />
+      </div>
     </div>
   </main>
 </template>
