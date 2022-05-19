@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: admin/LAHome
+  layout: admin/LADashboard
 </route>
 
 <script setup>
@@ -137,13 +137,14 @@ const myTimeout = setTimeout(() => {
           </div>
         </div>
       </div>
-      <div class="bg-[#FDA006] flex justify-around items-center rounded-2xl py-3 cursor-pointer shadow-md shadow-gray-500/50">
+
+      <div class="bg-[#FDA006] flex justify-around items-center rounded-2xl py-3 cursor-pointer shadow-md shadow-gray-500/50" @click="router.push({ path: '/admin/category/attributes' })">
         <div class="p-3 bg-white rounded-full text-[#FDA006]">
           <IMultiline />
         </div>
         <div class="text-white tracking-tight">
           <p class="font-medium">
-            Total Growth
+            Categories
           </p>
           <div class="flex items-center">
             <span class="mr-3 font-bold text-xl">$231</span>

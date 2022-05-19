@@ -68,12 +68,12 @@ class ProductRequest {
 
   updateCategoriesAttributes(data) {
     const url = '/products/categories/attributes'
-    return AxiosInstance.put(url, data)
+    return AxiosInstance.post(url, data)
   }
 
   deleteCategoriesAttributes(data) {
     const url = '/products/categories/attributes'
-    return AxiosInstance.delete(url, data)
+    return AxiosInstance.post(url, data)
   }
 
   searchCategoriesAttributes(input) {

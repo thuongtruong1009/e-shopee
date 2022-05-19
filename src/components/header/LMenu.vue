@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="container dark:text-white">
+  <div class="container dark:text-white flex justify-center items-center gap-3 pl-5">
     <div class="dropdown">
       <div class="dropdown__select">
         <a href="/buyer/home"><span class="dropdown__selected flex items-center gap-1"><IHome />{{ t('header.home') }}</span></a>
@@ -56,7 +56,7 @@ const { t } = useI18n()
     </div>
     <div class="dropdown dark:bg-black">
       <div class="dropdown__select">
-        <router-link to="/seller/login">
+        <router-link to="/seller/home">
           <span class="dropdown__selected flex items-center gap-1"><ISell />{{ t('menu.become-seller') }}</span>
         </router-link>
       </div>
@@ -65,20 +65,11 @@ const { t } = useI18n()
 </template>
 
 <style scoped>
-.dropdown__select{
-  transition: 1s linear;
-}
 .dropdown__select:hover i{
 transform: rotate(180deg);
 }
-.container{
-    display: flex;
-    justify-content: space-start;
-    align-items: center;
-    gap: 2rem;
-}
   .dropdown {
-    width: 10%;
+    width: fit-content;
     position: relative;
     color: white;
     font-size: 0.75rem;

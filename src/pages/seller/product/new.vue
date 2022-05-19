@@ -4,12 +4,20 @@ meta:
 </route>
 
 <script setup>
+import ProductRequest from '~/services/product-request'
+import { useProduct } from '~/stores/product'
+import { useLoading } from '~/stores/loading'
+import { toast } from '~/stores/toast'
 import { removeItemByIndex } from '~/utils/arrayHandle'
 import countries from '~/shared/countries'
 
 useHead({
   title: 'seller | new product',
 })
+
+const product = useProduct()
+const loading = useLoading()
+const useToast = toast()
 
 const goBack = () => {
   history.back()
@@ -18,6 +26,28 @@ const goBack = () => {
 const categoryList1 = ref([1, 2])
 const categoryList2 = ref([1, 2])
 const discountList = ref([1])
+
+const payload = reactive({
+  brand_id: '',
+  is_published: true,
+  name: '',
+  description: '',
+  weight: '',
+  images: '',
+  videos: '',
+  attributes: '',
+  variations: '',
+  category_path: '',
+  wholesale_prices: '',
+  models: '',
+})
+
+const handleCreate = async() => {
+  loading.isLoading = true
+  await ProductRequest.createProducts(payload)
+  loading.isLoading = false
+  useToast.updateToast('success', 'You has been created product successfully!', true)
+}
 
 </script>
 
@@ -78,7 +108,7 @@ const discountList = ref([1])
           <label>* Product name</label>
         </div>
         <div>
-          <input type="text">
+          <input v-model="payload.name" type="text">
         </div>
       </div>
       <div class="basic_fields flex w-full">
@@ -86,7 +116,7 @@ const discountList = ref([1])
           <label>* Product descriptions</label>
         </div>
         <div>
-          <textarea id="" name="prod_desc" rows="10" />
+          <textarea v-model="payload.description" name="prod_desc" rows="10" />
         </div>
       </div>
       <div class="basic_fields flex w-full">
@@ -94,8 +124,8 @@ const discountList = ref([1])
           <label>* Category</label>
         </div>
         <div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
-          <p class="cursor-pointer">
-            Sắc đẹp > Chăm sóc nam giới > Chăm sóc tóc
+          <p class="cursor-pointer text-red-500">
+            {{ product.choicedList[0].name }} <span v-if="product.choicedList[1].name ">></span> {{ product.choicedList[1].name }} <span v-if="product.choicedList[2].name ">></span> {{ product.choicedList[2].name }}
           </p>
           <router-link to="/seller/product/category">
             <ISEdit />
