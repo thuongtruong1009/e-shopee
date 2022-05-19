@@ -7,11 +7,13 @@ meta:
 import { useRouter } from 'vue-router'
 import ProductRequest from '~/services/product-request'
 import { useAdmin } from '~/stores/admin'
+import { toast } from '~/stores/toast'
 import { random } from '~/utils/random'
 import { btnColors } from '~/shared/colors'
 
 const router = useRouter()
 const admin = useAdmin()
+const useToast = toast()
 onBeforeMount(() => {
   if (!localStorage.getItem('token'))
     router.push({ path: '/admin/login' })
@@ -20,18 +22,59 @@ onBeforeMount(() => {
 const inputSearch = ref('')
 const handleSearch = async(e) => {
   e.preventDefault()
-  const { data } = await ProductRequest.searchCategoriesAttributes(inputSearch.value)
-  admin.attributesSearch = data
-//   await ProductRequest.searchCategoriesAttributes(inputSearch.value).then((res) => {
-//     admin.attributesSearch = res
-//     console.log(res)
-//   })
+  const { data: searchData } = await ProductRequest.searchCategoriesAttributes(inputSearch.value)
+  admin.attributesSearch = searchData
+  inputSearch.value = ''
+}
+
+const createItem = reactive({
+  create: [{
+    name: '',
+    units: ['', ''],
+  }],
+
+})
+const handleCreate = async() => {
+  await ProductRequest.createCategoriesAttributes(createItem)
+  useToast.updateToast('success', 'Category attributes has been created!', true)
+  createItem.create[0].name = ''
+  createItem.create[0].units[0] = ''
+  createItem.create[0].units[1] = ''
+}
+
+const updateItem = reactive({
+  update: [{
+    id: 1,
+    name: 'string',
+    units: [
+      'string', 'string',
+    ],
+  }],
+})
+const handleUpdate = async(id, name, units0, units1) => {
+  updateItem.update[0].id = id
+  updateItem.update[0].name = name
+  updateItem.update[0].units[0] = units0
+  updateItem.update[0].units[1] = units1
+  await ProductRequest.updateCategoriesAttributes(updateItem)
+  useToast.updateToast('success', 'Category attributes has been updated!', true)
+}
+
+const deleteItem = reactive({
+  delete: [{
+    id: '',
+  }],
+})
+const handleDelete = async(id) => {
+  deleteItem.delete[0].id = id
+  await ProductRequest.deleteCategoriesAttributes(deleteItem)
+  useToast.updateToast('success', 'Category attributes has been deleted!', true)
 }
 
 </script>
 
 <template>
-  <section class="grid gap-5 max-w-250 w-250 h-min">
+  <section class="grid gap-5 max-w-300 w-300 h-min">
     <div class="flex items-center gap-2 text-lg text-[#F34280] font-medium my-5">
       <IAAttributes />
       <h1>Category attributes</h1>
@@ -47,7 +90,7 @@ const handleSearch = async(e) => {
         </h2>
       </div>
       <div class="col-span-2 rounded-md">
-        <div class="flex justify-between items-center bg-[#B194D7] rounded-t-xl py-1 px-3">
+        <div class="flex justify-between items-center bg-[#B194D7] rounded-t-xl p-3">
           <h5 class="text-white font-medium">
             Search item
           </h5>
@@ -62,7 +105,7 @@ const handleSearch = async(e) => {
           </form>
         </div>
 
-        <div class="relative overflow-x-auto shadow-md sm:rounded-xl">
+        <div class="relative overflow-x-hidden max-h-md">
           <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
@@ -70,13 +113,10 @@ const handleSearch = async(e) => {
                   Product name
                 </th>
                 <th class="px-6 py-3 font-normal">
-                  Color
-                </th>
-                <th class="px-6 py-3 font-normal">
-                  Category
+                  Units
                 </th>
                 <th class="px-6 py-3 font-medium font-normal">
-                  Price
+                  ID
                 </th>
                 <th class="px-6 py-3">
                   <span class="sr-only">Edit</span>
@@ -84,65 +124,44 @@ const handleSearch = async(e) => {
               </tr>
             </thead>
             <tbody>
-              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                  Apple MacBook Pro 17"
+              <tr v-for="(attribute, i) in admin.attributesSearch" :key="i" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                  <input type="text" :value="attribute.name" :disabled="!attribute.name">
                 </th>
-                <td class="px-6 py-4">
-                  Sliver
+                <td class="px-6 py-4 flex gap-2">
+                  <!-- <span v-if="attribute.units[0]">{{ attribute.units[0] }}</span> <span v-if="attribute.units[1]">, {{ attribute.units[1] }}</span> -->
+                  <input :value="attribute.units[0]" type="text" class="w-10" :disabled="!attribute.units[0]">
+                  <input :value="attribute.units[1]" type="text" class="w-10" :disabled="!attribute.units[1]">
                 </td>
                 <td class="px-6 py-4">
-                  Laptop
+                  <input type="text" :value="attribute.id" class="w-15" :disabled="!attribute.id">
                 </td>
-                <td class="px-6 py-4">
-                  $2999
-                </td>
-                <td class="px-6 py-4 text-right">
-                  <button type="button" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                <td class="p-4 text-right flex gap-2 justify-end">
+                  <button type="button" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center" @click="handleUpdate">
                     Update
                   </button>
-                </td>
-              </tr>
-              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                  Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                  White
-                </td>
-                <td class="px-6 py-4">
-                  Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                  $1999
-                </td>
-                <td class="px-6 py-4 text-right">
-                  <button type="button" class="text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                  <button type="button" class="text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center" @click="handleDelete(attribute.id)">
+                    <!-- <IADelete /> -->
                     Delete
-                  </button>
-                </td>
-              </tr>
-              <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                  Magic Mouse 2
-                </th>
-                <td class="px-6 py-4">
-                  Black
-                </td>
-                <td class="px-6 py-4">
-                  Accessories
-                </td>
-                <td class="px-6 py-4">
-                  $99
-                </td>
-                <td class="px-6 py-4 text-right">
-                  <button type="button" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    Add
                   </button>
                 </td>
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-900 shadow-md rounded-b-lg flex justify-between items-center p-3">
+          <div class="font-medium dark:text-white">
+            <input v-model="createItem.create[0].name" type="text" class="border-1 rounded-md py-1 px-3 border-blue-300" required placeholder="name...">
+          </div>
+          <div class="font-medium dark:text-white flex gap-2">
+            <input v-model="createItem.create[0].units[0]" type="text" class="border-1 rounded-md py-1 px-3 border-blue-300 w-20" required placeholder="units 1...">
+            <input v-model="createItem.create[0].units[1]" type="text" class="border-1 rounded-md py-1 px-3 border-blue-300 w-20" required placeholder="units 2...">
+          </div>
+          <div>
+            <button type="button" class="text-white bg-gradient-to-br from-lime-200 via-lime-500 to-lime-600 hover:bg-gradient-to-tl focus:ring-2 focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center gap-1" @click="handleCreate">
+              <IAAdd />Add
+            </button>
+          </div>
         </div>
       </div>
     </div>
