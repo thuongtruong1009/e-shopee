@@ -6,9 +6,11 @@ meta:
 <script setup>
 import { useRouter } from 'vue-router'
 import { useLoading } from '~/stores/loading'
+import { toast } from '~/stores/toast'
 import { handleError } from '~/helpers/error'
 import ShopRequest from '~/services/shop-request'
 import ProductRequest from '~/services/product-request'
+import AccountRequest from '~/services/account-request'
 import CartRequest from '~/services/cart-request'
 import OrderRequest from '~/services/order-request'
 import provinceNames from '~/shared/provinces'
@@ -18,6 +20,7 @@ useHead({
 })
 const loading = useLoading()
 const router = useRouter()
+const useToast = toast()
 
 const payload = reactive({
   slug: 'id_01',
@@ -44,7 +47,7 @@ watchOnce(async() => {
 })
 
 const payloadCart = reactive({
-  product_model_id: '',
+  product_model_id: 1,
   quantity: 1,
 })
 const handleAdd = async() => {
@@ -59,9 +62,20 @@ const payloadOrder = reactive({
     quantity: 1,
   }],
 })
-const handleOrder = async() => {
-  await OrderRequest.createOrders(payloadOrder)
-  useToast.updateToast('success', 'You order has been created!', true)
+onMounted(async() => {
+  const { data: addressData } = await AccountRequest.getAddress()
+  payloadOrder.address_id = addressData.filter(e => Object.keys(addressData.id === 0))[0].id
+})
+
+const handleOrder = () => {
+  if (payloadOrder.address_id) {
+    OrderRequest.createOrders(payloadOrder)
+    useToast.updateToast('success', 'You order has been created!', true)
+  }
+  else {
+    useToast.updateToast('error', 'Please need fill your address information!', true)
+    router.push({ path: '/buyer/account/address' })
+  }
 }
 
 </script>
@@ -81,7 +95,7 @@ const handleOrder = async() => {
       </div>
       <div class="pr-5 grid content-between min-h-112">
         <h2 class="break-words text-xl font-medium">
-          🔥HÀNG SIÊU CẤP🔥Dép bánh mỳ nam nữ đúc nguyên khối cute siêu nhẹ và êm chân
+          🔥HÀNG SIÊU CẤP🔥Dép bánh mỳ nam nữ đúc nguyên khối cute siêu nhẹ và êm chân {{ payloadOrder.address_id }}
         </h2>
         <div class="flex divide-1 divide-solid divide-x divide-gray-300">
           <div class="flex items-center gap-2 pr-3">

@@ -3,6 +3,31 @@ meta:
   layout: buyer/account/LBDashboard
 </route>
 
+<script setup>
+import { useLoading } from '~/stores/loading'
+import { toast } from '~/stores/toast'
+import { useUser } from '~/stores/user'
+import { useOrder } from '~/stores/order'
+import OrderRequest from '~/services/order-request'
+import { handleDate } from '~/utils/date'
+
+const loading = useLoading()
+const user = useUser()
+const order = useOrder()
+
+const payload = reactive({
+  limit: 10,
+  status_id: 1,
+})
+onMounted(async() => {
+  loading.isLoading = true
+  const { data: orderData } = await OrderRequest.getOrders({ params: { limit: payload.limit, status_id: payload.status_id } })
+  user.order = orderData
+  order.payget = orderData.data[0]
+  loading.isLoading = false
+})
+</script>
+
 <template>
   <div class="orders-container border-1 border-solid border-light-700 rounded-lg p-5 bg-[#EBF6FC] dark:bg-cool-gray-800">
     <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
@@ -28,9 +53,9 @@ meta:
         <tbody class="text-sm text-gray-500">
           <tr>
             <td>1</td>
-            <td>Mostarizing Oil</td>
-            <td>Aug 22, 2018</td>
-            <td>Pending</td>
+            <td>{{ order.payget.name }}</td>
+            <td>{{ handleDate(order.payget.created_at) }}</td>
+            <td>{{ order.payget.status_id }}</td>
             <td>$45</td>
             <td>
               <a href="/cart" class="hover:text-light-700">View</a>
