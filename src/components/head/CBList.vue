@@ -1,5 +1,13 @@
 <script setup>
+import { useRouter } from 'vue-router'
+import CartRequest from '~/services/cart-request'
+import { useUser } from '~/stores/user'
+import { toast } from '~/stores/toast'
+
 const { t } = useI18n()
+const useToast = toast()
+const user = useUser()
+
 const isBlurBgModal = ref(false)
 const openNav = () => {
   document.getElementById('mySidenav').style.width = '22rem'
@@ -13,6 +21,20 @@ const closeNav = () => {
   body.style.overflowY = ''
   isBlurBgModal.value = false
 }
+
+const cartPayload = reactive({
+  limit: 10,
+  page: 1,
+})
+const pricePayload = reactive({
+  product_model_id: 1,
+  quantity: 1,
+})
+watchEffect(async() => {
+  const { data: cartData } = await CartRequest.getCart({ params: { limit: cartPayload.limit, page: cartPayload.page } })
+  user.cart = cartData[0]
+  const { data: priceData } = await CartRequest.getPrices({ params: { product_model_id: pricePayload.product_model_id, quantity: pricePayload.quantity } })
+})
 </script>
 
 <template>
