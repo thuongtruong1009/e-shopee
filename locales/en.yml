@@ -310,8 +310,8 @@ cart:
   status: Status
   quantity: Quantily
   price: Price
+  delete: Delete
   action: Action
-  checkout: Checkout
   update: Update
   promo-code: Have A Promo Code
   subtotal: Subtotal

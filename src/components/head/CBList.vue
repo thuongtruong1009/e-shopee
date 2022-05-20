@@ -1,14 +1,12 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import CartRequest from '~/services/cart-request'
-import { useUser } from '~/stores/user'
 import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
 import { sumPrice } from '~/utils/sumPrice'
 
 const { t } = useI18n()
 const useToast = toast()
-const user = useUser()
 const cart = useCart()
 
 const isBlurBgModal = ref(false)
@@ -55,10 +53,10 @@ onMounted(async() => {
       </router-link>
     </div>
     <div class="flex items-end hover:text-[#adff2f] dark:text-[#adff2f] relative" @click="openNav">
-      <span class="total-notifications absolute -top-2 left-5 bg-green-500 w-5 h-5 text-white rounded-full flex justify-center items-center pr-0.5 text-xs font-medium">10</span>
+      <span class="total-notifications absolute -top-2 left-5 bg-green-500 w-5 h-5 text-white rounded-full flex justify-center items-center pr-0.5 text-xs font-medium">{{ cart.result.length }}</span>
       <ICart />
       <h1 class="font-semibold ml-3">
-        $90.00
+        ${{ sumPrice(cart.result, cart.payget.price, cart.payget.quantity) }}
       </h1>
     </div>
     <div v-if="isBlurBgModal" class="blur-bg w-screen h-screen absolute top-0 -left-10 bg-black bg-opacity-30 z-1" @click="closeNav" />
@@ -87,7 +85,7 @@ onMounted(async() => {
       </ul>
       <div class="flex flex-wrap justify-between p-5">
         <strong>{{ t('cart.subtotal') }} :</strong>
-        <span class="amount font-semibold">${{ sumPrice(cart.result, cart.payget.final_price) }}</span>
+        <span class="amount font-semibold">${{ sumPrice(cart.result, cart.payget.price, cart.payget.quantity) }}</span>
       </div>
       <div class="flex justify-around items-center p-5">
         <router-link to="/buyer/cart">

@@ -5,9 +5,11 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
-import { useUser } from '~/stores/user'
+import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
+import { orderStatus } from '~/utils/orderStatus'
 import { useLoading } from '~/stores/loading'
+import { sumPrice } from '~/utils/sumPrice'
 import CartRequest from '~/services/cart-request'
 import { handleError } from '~/helpers/error'
 
@@ -19,7 +21,7 @@ const { t } = useI18n()
 const router = useRouter()
 const useToast = toast()
 const loading = useLoading()
-const user = useUser()
+const cart = useCart()
 
 onMounted(() => {
   if (!localStorage.getItem('token'))
@@ -37,15 +39,17 @@ const payget = reactive({
 watchEffect(async() => {
   loading.isLoading = true
   const { data: cartData } = await CartRequest.getCart({ params: { limit: payget.limit, page: payget.page } })
-  user.cart = cartData[0]
+  cart.result = cartData.data
+  cart.payget = cartData.data[0]
   loading.isLoading = false
 })
 
 const payload = reactive({
   product_model_id: '',
-  quantity: [1, 1],
+  quantity: '',
 })
-const handleUpdate = async() => {
+const handleUpdate = async(id) => {
+  payload.product_model_id = id
   await CartRequest.updateCart(payload)
   useToast.updateToast('success', 'You cart items has been updated!', true)
 }
@@ -53,66 +57,6 @@ const handleDelete = async(id) => {
   await CartRequest.deleteCart(id)
   useToast.updateToast('success', 'You has been delete one cart items!', true)
 }
-const cartList = reactive([{
-  img: '/img/product/shoes/1.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/2.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/3.webp',
-  name: 'Water and Wind Resistant',
-  inStock: false,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/4.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/5.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/6.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/7.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/8.webp',
-  name: 'Water and Wind Resistant',
-  inStock: false,
-  price: 38.24,
-},
-{
-  img: '/img/product/shoes/9.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/12.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-}])
 </script>
 
 <template>
@@ -120,13 +64,13 @@ const cartList = reactive([{
     <table class="table w-full shadow-md shadow-300 bg-[#ffffff99] dark:bg-gray-800">
       <thead class="bg-[#F33535] text-white">
         <tr>
-          <th class="flex justify-center items-center gap-1">
+          <th>
             👁 {{ t('cart.preview') }}
           </th>
           <th>
             🏷 {{ t('cart.name') }}
           </th>
-          <th class="flex justify-center items-center gap-1">
+          <th>
             🎀{{ t('cart.status') }}
           </th>
           <th>
@@ -136,27 +80,27 @@ const cartList = reactive([{
             📈 {{ t('cart.price') }}
           </th>
           <th>
-            🚀 {{ t('cart.action') }}
+            🛒 {{ t('cart.delete') }}
           </th>
-          <th class="flex justify-center items-center gap-1">
-            🛒 {{ t('cart.checkout') }}
+          <th>
+            🚀 {{ t('cart.action') }}
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, i) in cartList" :key="i" class="odd:bg-light-50 dark:odd:bg-[#121212]">
+        <tr v-for="(item, i) in cart.result" :key="i" class="odd:bg-light-50 dark:odd:bg-[#121212] py-2">
           <td>
-            <img :src="item.img" alt="img_preview" class="max-w-50 max-h-50">
+            <img :src="`https://tp-o.tk/storage/app/public/image/${item.product.images[0]}.jpg`" alt="img_preview" class="max-w-50 max-h-50">
           </td>
           <td>
-            <span class="whish-title">{{ item.name }}</span>
+            <span class="whish-title">{{ item.product.name }}</span>
           </td>
           <td>
-            <span class="badge text-xs text-white rounded-3xl px-1.5 py-0.5 font-medium whitespace-nowrap" :style="[item.inStock ? {background: '#82CA9C'} : {background: 'red'}]">{{ item.inStock == true ? 'In Stock' : 'Out of Stock' }}</span>
+            <span class="badge text-xs text-white rounded-3xl px-1.5 py-0.5 font-medium whitespace-nowrap">{{ item.product.status_id }}</span>
           </td>
           <td>
             <div class="count flex justify-center">
-              <input v-model="payload.quantity[i]" type="number" min="1" max="10" step="1" class="dark:bg-black">
+              <input v-model="item.quantity" type="number" min="1" max="10" step="1" class="dark:bg-black" :disabled="item.quantity = 3" @change="payload.quantity = item.quantity">
             </div>
           </td>
           <td>
@@ -166,10 +110,10 @@ const cartList = reactive([{
             </span>
           </td>
           <td>
-            <a href="" @click="handleDelete"><span class="trash flex justify-center"><ITrash /></span></a>
+            <a href="#" @click="handleDelete(item.product_model_id)"><span class="trash flex justify-center"><ITrash /></span></a>
           </td>
           <td>
-            <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-2 font-semibold" @click="handleUpdate">{{ t('cart.update') }}</a>
+            <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-1 font-semibold" @click="handleUpdate(item.product_model_id)">{{ t('cart.update') }}</a>
           </td>
         </tr>
       </tbody>
@@ -181,18 +125,21 @@ const cartList = reactive([{
           <div class="subtotal">
             <ul>
               <li class="totalRow">
-                <span class="label">{{ t('cart.subtotal') }}</span><span class="value">$35.00</span>
+                <!-- <span class="label">{{ t('cart.subtotal') }}</span><span class="value">$35.00</span> -->
+                <span />
               </li>
 
               <li class="totalRow">
-                <span class="label">{{ t('cart.shipping') }}</span><span class="value">$5.00</span>
+                <!-- <span class="label">{{ t('cart.shipping') }}</span><span class="value">$0.00</span> -->
+                <span />
               </li>
 
               <li class="totalRow">
-                <span class="label">{{ t('cart.tax') }}</span><span class="value">$4.00</span>
+                <!-- <span class="label">{{ t('cart.tax') }}</span><span class="value">$0.00</span> -->
+                <span />
               </li>
               <li class="totalRow final">
-                <span class="label">{{ t('cart.total') }}</span><span class="value">$44.00</span>
+                <span class="label">{{ t('cart.total') }}</span><span class="value">${{ sumPrice(cart.result, cart.payget.price, cart.payget.quantity) }}</span>
               </li>
             </ul>
           </div>
@@ -540,7 +487,7 @@ input[type="number"]:focus{
 }
 table {
   border-collapse: collapse;
-  border-radius: 2rem;
+  border-radius: 1rem;
   overflow: hidden;
 }
 th{
@@ -562,10 +509,10 @@ td:not(:last-child){
 }
 .subtotal {
   width: 100%;
-  border: 2px dashed #efefef;
+  /* border: 2px dashed #efefef;
   border-top: none;
   border-left: none;
-  border-bottom-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem; */
 }
 .subtotal .totalRow {
   padding: 0.25em 0.5rem;
