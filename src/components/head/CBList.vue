@@ -2,15 +2,18 @@
 import { useRouter } from 'vue-router'
 import CartRequest from '~/services/cart-request'
 import { useUser } from '~/stores/user'
+import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
+import { sumPrice } from '~/utils/sumPrice'
 
 const { t } = useI18n()
 const useToast = toast()
 const user = useUser()
+const cart = useCart()
 
 const isBlurBgModal = ref(false)
 const openNav = () => {
-  document.getElementById('mySidenav').style.width = '22rem'
+  document.getElementById('mySidenav').style.width = '25rem'
   const body = document.body
   body.style.overflowY = 'hidden'
   isBlurBgModal.value = true
@@ -21,7 +24,7 @@ const closeNav = () => {
   body.style.overflowY = ''
   isBlurBgModal.value = false
 }
-
+// --------------------------------------------
 const cartPayload = reactive({
   limit: 10,
   page: 1,
@@ -30,10 +33,12 @@ const pricePayload = reactive({
   product_model_id: 1,
   quantity: 1,
 })
-watchEffect(async() => {
+onMounted(async() => {
   const { data: cartData } = await CartRequest.getCart({ params: { limit: cartPayload.limit, page: cartPayload.page } })
-  user.cart = cartData[0]
-  const { data: priceData } = await CartRequest.getPrices({ params: { product_model_id: pricePayload.product_model_id, quantity: pricePayload.quantity } })
+  cart.result = cartData.data
+  cart.payget = cartData.data[0]
+  cart.product = cartData.data[0].product
+  // const { data: priceData } = await CartRequest.getPrices({ params: { product_model_id: pricePayload.product_model_id, quantity: pricePayload.quantity } })
 })
 </script>
 
@@ -71,18 +76,18 @@ watchEffect(async() => {
               src="/img/product/1.png" alt="Cart product Image" class="max-w-25 max-h-25 border-light-600 border-solid border-1 rounded-md mr-3"
             ></a>
             <div>
-              <h5 class="title hover:text-[#E14641] cursor-pointer">
-                Walnut Cutting Board
+              <h5 class="title text-[#E14641] cursor-pointer">
+                {{ cart.product.name }}
               </h5>
-              <span class="quantity-price">1 x <span class="price">$100.00</span></span>
+              <span class="quantity-price">{{ cart.payget.quantity }} x <span class="price">${{ cart.payget.price }}</span></span>
             </div>
           </div>
-          <span class="remove hover:text-red-500 cursor-pointer">×</span>
+          <span class="remove hover:text-red-500 cursor-pointer ml-2">×</span>
         </li>
       </ul>
       <div class="flex flex-wrap justify-between p-5">
         <strong>{{ t('cart.subtotal') }} :</strong>
-        <span class="amount font-semibold">$144.00</span>
+        <span class="amount font-semibold">${{ sumPrice(cart.result, cart.payget.final_price) }}</span>
       </div>
       <div class="flex justify-around items-center p-5">
         <router-link to="/buyer/cart">
@@ -97,7 +102,7 @@ watchEffect(async() => {
         </router-link>
       </div>
       <p class="minicart-message p-5 text-xs">
-        {{ t('cart.free-ship') }} $100!
+        {{ t('cart.free-ship') }} $1000!
       </p>
     </div>
   </div>
