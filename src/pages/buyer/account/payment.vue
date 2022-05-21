@@ -79,31 +79,31 @@ const handleDelete = async() => {
 
     <form>
       <div>
-        <label>{{ t('account.owner-account') }}</label>
+        <label>{{ t('account.payment-owner') }}</label>
         <input v-model="payload.accountholder_name" type="text" required>
       </div>
       <div>
-        <label>{{ t('account.identification-number') }} <span>(12 {{ t('account.digits') }})</span></label>
+        <label>{{ t('account.payment-identification') }} <span>(12 {{ t('account.digits') }})</span></label>
         <input v-model="payload.identification_number" type="text" required>
       </div>
       <div>
-        <label>{{ t('account.bank-name') }}</label>
+        <label>{{ t('account.payment-bank') }}</label>
         <input v-model="payload.bank_name" type="text" required>
       </div>
       <div>
-        <label>{{ t('account.bank-branch') }}</label>
+        <label>{{ t('account.payment-branch') }}</label>
         <input v-model="payload.bank_branch" type="text" required>
       </div>
       <div>
-        <label>{{ t('account.account-number') }} <span>(9 digits)</span></label>
+        <label>{{ t('account.payment-account') }} <span>(9 digits)</span></label>
         <input v-model="payload.account_number" type="text" required>
       </div>
       <div class="pt-5 flex justify-end gap-5">
         <button v-if="user.payment" type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
-          <ISave />{{ t('account.update-payment') }}
+          <ISave />{{ t('account.payment-update') }}
         </button>
         <button v-else type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
-          <ISave />{{ t('account.create-payment') }}
+          <ISave />{{ t('account.payment-create') }}
         </button>
       </div>
     </form>

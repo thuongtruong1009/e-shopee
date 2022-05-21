@@ -12,9 +12,18 @@ import { orderStatus } from '~/utils/orderStatus'
 import OrderRequest from '~/services/order-request'
 import { handleDate } from '~/utils/date'
 
+useHead({
+  title: 'buyer | orders',
+})
+const { t } = useI18n()
 const loading = useLoading()
 const user = useUser()
 const order = useOrder()
+
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
 
 const payload = reactive({
   limit: 10,
@@ -34,7 +43,7 @@ watch(async() => {
     <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
       <IBOrder />
       <h3 class="text-2xl">
-        Your orders lists
+        {{ t('account.order-title') }}
       </h3>
     </div>
 
@@ -42,12 +51,12 @@ watch(async() => {
       <table class="w-full">
         <thead class="text-[#05967A]">
           <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Total</th>
-            <th>Action</th>
+            <th>{{ t('account.order-no') }}</th>
+            <th>{{ t('account.order-name') }}</th>
+            <th>{{t('account.order-date')}}</th>
+            <th>{{t('account.order-status')}}</th>
+            <th>{{t('account.order-total')}}</th>
+            <th>{{t('account.order-action')}}</th>
           </tr>
         </thead>
 

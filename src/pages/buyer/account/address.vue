@@ -76,7 +76,7 @@ const handleDelete = async() => {
       <div class="flex items-center gap-1 font-medium">
         <IBAddress />
         <h3 class="text-2xl">
-          {{ t('account.billing-address') }}
+          {{ t('account.address-billing') }}
         </h3>
       </div>
       <div class="flex items-center gap-5">
@@ -94,36 +94,36 @@ const handleDelete = async() => {
           <input type="radio" name="radio_delete" class="accent-red-500" @click="optionAddress = location.id">
         </p>
         <p>
-          {{ t('account.phone-number') }} {{ i+1 }}: <span>{{ location.phone }}</span>
+          {{ t('account.address-phone') }} {{ i+1 }}: <span>{{ location.phone }}</span>
         </p>
         <p>
           {{ t('account.address') }} {{ i+1 }}: <span>{{ location.address }}</span>
         </p>
         <p>
-          {{ t('account.location') }} {{ i+1 }}: <span>{{ location.town }}, {{ location.city }}</span>
+          {{ t('account.address-location') }} {{ i+1 }}: <span>{{ location.town }}, {{ location.city }}</span>
         </p>
       </div>
     </div>
 
     <form>
       <div>
-        <label>{{ t('account.full-name') }}</label>
+        <label>{{ t('account.address-owner') }}</label>
         <input v-model="payload.full_name" type="text" required placeholder="Full name...">
       </div>
       <div>
-        <label>{{ t('account.phone-number') }} <span>(10-11 digits)</span></label>
+        <label>{{ t('account.address-phone') }} <span>(10-11 digits)</span></label>
         <input v-model="payload.phone" type="number" required placeholder="Phone number [create: 11 digits] - [update: 10 digits]...">
       </div>
       <div>
-        <label>{{ t('account.state') }}</label>
+        <label>{{ t('account.address-state') }}</label>
         <input v-model="payload.state" type="text" required placeholder="State name...">
       </div>
       <div>
-        <label>{{ t('account.city') }}</label>
+        <label>{{ t('account.address-city') }}</label>
         <input v-model="payload.city" type="text" required placeholder="Current city..">
       </div>
       <div>
-        <label>{{ t('account.town') }}</label>
+        <label>{{ t('account.address-town') }}</label>
         <input v-model="payload.town" type="text" required placeholder="Town name..">
       </div>
       <div>
@@ -177,10 +177,10 @@ const handleDelete = async() => {
 
       <div class="pt-5 flex gap-5 justify-end">
         <button v-if="!isCreating" type="submit" class="btn bg-black duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
-          <ISave />{{ t('account.update-address') }}
+          <ISave />{{ t('account.address-update') }}
         </button>
         <button v-if="isCreating" type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
-          <ISave />{{ t('account.create-address') }}
+          <ISave />{{ t('account.address-create') }}
         </button>
       </div>
     </form>

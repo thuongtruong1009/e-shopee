@@ -3,6 +3,21 @@ meta:
   layout: buyer/account/LBDashboard
 </route>
 
+<script setup>
+import { useRouter } from 'vue-router'
+
+useHead({
+  title: 'buyer | download',
+})
+const router = useRouter()
+
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
+
+</script>
+
 <template>
   <div class="download-container border-1 border-solid border-light-700 rounded-md p-5 bg-[#EBF6FC] dark:bg-cool-gray-800">
     <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
@@ -28,7 +43,7 @@ meta:
             <td>Mostarizing Oil</td>
             <td>Aug 22, 2018</td>
             <td>Yes</td>
-            <td><a href="/cart" class="hover:text-light-700">Download File</a></td>
+            <td><a href="/buyer/cart" class="hover:text-light-700">Download File</a></td>
           </tr>
           <tr>
             <td>Katopeno Altuni</td>

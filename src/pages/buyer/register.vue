@@ -11,7 +11,7 @@ import { handleError } from '~/helpers/error'
 import AuthRequest from '~/services/auth-request'
 
 useHead({
-  title: 'e-shopee | buyer register',
+  title: 'buyer | register',
 })
 
 const { t } = useI18n()

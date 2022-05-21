@@ -77,13 +77,12 @@ const handleDelete = async(e) => {
     </div>
     <div class="saved-message py-5 text-gray-400 text-sm font-medium">
       <p v-if="user.payment">
-        You have 1 payment method
+        {{ t('account.have-card') }}
       </p>
       <p v-else>
-        You not't saved your Payment method yet.
+        {{ t('account.not-card') }}.
       </p>
     </div>
-
     <form>
       <div>
         <label>{{ t('account.card-name') }}</label>
@@ -94,15 +93,15 @@ const handleDelete = async(e) => {
         <input v-model="payload.card_number" type="text" required>
       </div>
       <div>
-        <label>{{ t('account.expiry-date') }}</label>
+        <label>{{ t('account.card-expiry') }}</label>
         <input v-model="payload.expiry_date " type="text" required>
       </div>
       <div>
-        <label>Cvv <span>(3 digits)</span></label>
+        <label>{{ t('account.card-cvv') }} <span>(3 digits)</span></label>
         <input v-model="payload.cvv" type="text" required>
       </div>
       <div>
-        <label>{{ t('account.registration-address') }}</label>
+        <label>{{ t('account.card-address') }}</label>
         <input v-model="payload.registration_address" type="text" required>
       </div>
       <div>
@@ -111,10 +110,10 @@ const handleDelete = async(e) => {
       </div>
       <div class="pt-5 flex justify-end">
         <button v-if="user.credit" type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
-          <ISave />{{ t('account.update-card') }}
+          <ISave />{{ t('account.card-upadte') }}
         </button>
         <button v-if="!user.credit" type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
-          <ISave />{{ t('account.create-card') }}
+          <ISave />{{ t('account.card-create') }}
         </button>
       </div>
     </form>
