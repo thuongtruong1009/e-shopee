@@ -11,7 +11,7 @@ import AuthRequest from '~/services/auth-request'
 import AccountRequest from '~/services/account-request'
 
 useHead({
-  title: 'e-shopee | buyer dashboard',
+  title: 'buyer | dashboard',
 })
 
 const { t } = useI18n()
@@ -19,19 +19,30 @@ const router = useRouter()
 const useToast = toast()
 const user = useUser()
 
-onBeforeMount(() => {
-  if (!localStorage.getItem('token'))
-    router.push({ path: '/buyer/login' })
-})
-
 const payload = reactive({
   username: '',
   display_name: '',
   phone: '',
-  gender: 1,
+  gender: '',
   date_of_birth: '',
   avatar_image: 'demo-avatar-01',
 })
+
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
+watch(async() => {
+  const { data: userData } = await AccountRequest.getProfile()
+  user.payget = userData
+  user.profile = userData.profile
+
+  payload.display_name = user.profile.display_name
+  payload.phone = user.profile.phone
+  payload.gender = user.profile.gender
+  payload.date_of_birth = user.profile.date_of_birth
+})
+// --------------------------------------------
 
 const genderType = reactive([
   {
@@ -46,20 +57,11 @@ const genderType = reactive([
     id: 3,
     type: 'Others',
   }])
-
-watchEffect(async() => {
-  const { data: userData } = await AccountRequest.getProfile()
-  user.payget = userData
-  user.profile = userData.profile
-})
-
-const isUpdate = ref(false)
 const handleUpdate = async() => {
   await AccountRequest.updateProfile(payload)
-  isUpdate.value = false
   useToast.updateToast('success', 'Profile account has been updated!', true)
 }
-
+// -------------------------------------------------------
 const signOut = async() => {
   await AuthRequest.logoutUser()
   localStorage.removeItem('token')
@@ -78,10 +80,6 @@ const signOut = async() => {
           {{ t('account.dashboard') }}
         </h3>
       </div>
-      <div class="flex items-center text-blue-500 cursor-pointer" @click="isUpdate = !isUpdate">
-        <IEdit v-if="!isUpdate" />
-        <IBEye v-if="isUpdate" />
-      </div>
     </div>
     <div class="welcome py-5">
       <p>
@@ -94,35 +92,10 @@ const signOut = async() => {
       {{ t('account.dashboard-desc', {symbol: '&amp;'}) }}.
     </p>
 
-    <form v-if="!isUpdate">
-      <div>
-        <input v-model="user.profile.display_name" placeholder="Full name" disabled>
-      </div>
-
-      <div>
-        <input v-model="user.profile.phone" placeholder="Phone name" disabled>
-        <select v-model="user.profile.gender" disabled>
-          <option v-for="(gender, i) in genderType" :key="i" :value="gender.id">
-            {{ gender.type }}
-          </option>
-        </select>
-      </div>
-
-      <div>
-        <input v-model="user.profile.date_of_birth" placeholder="Date of birth" disabled>
-        <input v-model="user.payget.email" placeholder="Date of birth" disabled>
-      </div>
-
-      <div>
-        <input v-model="user.profile.avatar_image" placeholder="Avatar link url" disabled>
-      </div>
-    </form>
-    <!-- ---------------------------------- -->
-    <form v-if="isUpdate" @submit.prevent="updateProfile">
+    <form @submit.prevent="updateProfile">
       <div>
         <input v-model="payload.display_name" placeholder="Full name" type="text" required>
       </div>
-
       <div>
         <input v-model="payload.phone" placeholder="Phone name" type="text">
         <select v-model="payload.gender" class="cursor-pointer">
@@ -131,15 +104,13 @@ const signOut = async() => {
           </option>
         </select>
       </div>
-
       <div>
-        <input v-model="payload.date_of_birth" placeholder="Date of birth (MM/DD/YY)" type="text" required>
+        <input v-model="payload.date_of_birth" placeholder="Date of birth (MM/DD/YYYY)" type="text" required>
+        <input v-model="user.payget.email" placeholder="Date of birth" disabled>
       </div>
-
       <div>
         <input v-model="payload.avatar_image" placeholder="Avatar link url" type="text" required disabled>
       </div>
-
       <div class="pt-5 flex justify-end">
         <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
           <ISave />{{ t('account.save-changes') }}
@@ -150,7 +121,7 @@ const signOut = async() => {
 </template>
 
 <style scoped>
-input, select, fieldset{
+input, select{
   width: 100%;
   border: 1px solid rgba(233, 236, 239);
   border-radius: 0.3rem;
@@ -160,8 +131,7 @@ input, select, fieldset{
   background: white;
 }
 input:focus,
-select:hover,
-fieldset:hover{
+select:hover{
     box-shadow: 2px 2px 4px rgba(59, 175, 252, 0.8);
 }
 form > div{

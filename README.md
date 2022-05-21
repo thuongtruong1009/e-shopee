@@ -226,7 +226,8 @@
 ## Try it now!
 
 > Vitesse requires Node >=14
-> [Allow CORS extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) must be turn on
+
+> [Allow CORS extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
 
 ### GitHub Template
 
