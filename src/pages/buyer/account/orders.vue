@@ -24,7 +24,7 @@ onMounted(async() => {
   loading.isLoading = true
   const { data: orderData } = await OrderRequest.getOrders({ params: { limit: payload.limit, status_id: payload.status_id } })
   user.order = orderData
-  order.payget = orderData.data[0]
+  order.payget = orderData.data
   loading.isLoading = false
 })
 </script>
@@ -52,13 +52,13 @@ onMounted(async() => {
         </thead>
 
         <tbody class="text-sm text-gray-500 bg-white dark:bg-blue-gray-600 dark:text-gray-200">
-          <tr>
+          <tr v-for="(item, index) in order.payget" :key="index">
             <td>1</td>
-            <td>{{ order.payget.name }}</td>
-            <td>{{ order.payget.created_at }}</td>
-            <td>{{ orderStatus(order.payget.status_id) }}</td>
-            <td>{{ order.payget.quantity }}</td>
-            <td>${{ order.payget.total }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.created_at }}</td>
+            <td>{{ orderStatus(item.status_id) }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ item.total }}</td>
           </tr>
         </tbody>
       </table>

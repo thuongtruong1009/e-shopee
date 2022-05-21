@@ -54,7 +54,7 @@ const handleAdd = async() => {
   await CartRequest.addCart(payloadCart)
   useToast.updateToast('success', 'You cart items has been updated!', true)
 }
-
+// --------------------------------------------
 const payloadOrder = reactive({
   address_id: '',
   orders: [{
