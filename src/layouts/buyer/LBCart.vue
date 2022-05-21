@@ -2,7 +2,7 @@
   <main class="text-center text-gray-700 dark:text-gray-200">
     <CBHeaderTop />
     <CBHead />
-    <div class="p-15 bg-[#DAECF7]">
+    <div class="p-15 bg-[#DAECF7] dark:bg-$dark-bg">
       <h2 class="py-5 font-semibold text-3xl">
         Your cart items
       </h2>

@@ -7,11 +7,11 @@ meta:
 import { useRouter } from 'vue-router'
 import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
-import { orderStatus } from '~/utils/orderStatus'
 import { useLoading } from '~/stores/loading'
 import { sumPrice } from '~/utils/sumPrice'
 import CartRequest from '~/services/cart-request'
 import { handleError } from '~/helpers/error'
+import { removeItemByIndex } from '~/utils/arrayHandle'
 
 useHead({
   title: 'buyer | cart',
@@ -41,6 +41,7 @@ watchEffect(async() => {
   const { data: cartData } = await CartRequest.getCart({ params: { limit: payget.limit, page: payget.page } })
   cart.result = cartData.data
   cart.payget = cartData.data[0]
+  cart.product = cartData.data[0].product
   loading.isLoading = false
 })
 
@@ -54,6 +55,7 @@ const handleUpdate = async(id) => {
   useToast.updateToast('success', 'You cart items has been updated!', true)
 }
 const handleDelete = async(id) => {
+  removeItemByIndex(cart.result, id, 1)
   await CartRequest.deleteCart(id)
   useToast.updateToast('success', 'You has been delete one cart items!', true)
 }
@@ -71,9 +73,6 @@ const handleDelete = async(id) => {
             🏷 {{ t('cart.name') }}
           </th>
           <th>
-            🎀{{ t('cart.status') }}
-          </th>
-          <th>
             ⏳ {{ t('cart.quantity') }}
           </th>
           <th>
@@ -88,19 +87,21 @@ const handleDelete = async(id) => {
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, i) in cart.result" :key="i" class="odd:bg-light-50 dark:odd:bg-[#121212] py-2">
+        <tr v-for="(item, index) in cart.result" :key="index" class="odd:bg-light-50 dark:odd:bg-[#121212] py-2">
           <td>
-            <img :src="`https://tp-o.tk/storage/app/public/image/${item.product.images[0]}.jpg`" alt="img_preview" class="max-w-50 max-h-50">
+            <img src="/img/product/shoes/8.webp" alt="img_preview" class="max-w-40 max-h-40 rounded-md">
           </td>
           <td>
-            <span class="whish-title">{{ item.product.name }}</span>
-          </td>
-          <td>
-            <span class="badge text-xs text-white rounded-3xl px-1.5 py-0.5 font-medium whitespace-nowrap">{{ item.product.status_id }}</span>
+            <span class="whish-title font-semibold">{{ item.product.name }}</span><br>
+            <div class="flex justify-center gap-5 text-xs">
+              <div v-for="(desc, i) in item.product.variations" :key="i">
+                <p><span class="text-red-400">{{ desc.name }}:</span> <span>{{ desc.options.toString() }}</span></p>
+              </div>
+            </div>
           </td>
           <td>
             <div class="count flex justify-center">
-              <input v-model="item.quantity" type="number" min="1" max="10" step="1" class="dark:bg-black" :disabled="item.quantity = 3" @change="payload.quantity = item.quantity">
+              <input v-model="item.quantity" type="number" min="1" max="10" step="1" class="dark:bg-black" @change="payload.quantity = item.quantity">
             </div>
           </td>
           <td>
@@ -477,7 +478,7 @@ C216.3,217.7,200.8,213.7,178.1,211.7z"
 input[type="number"]{
     border: 1px solid rgb(210, 210, 210);
     border-radius: 0.25rem;
-    width: 35%;
+    width: 50%;
     padding: 0.25rem;
     transition: 0.2s linear;
     margin-top: 0.25rem;

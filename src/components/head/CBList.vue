@@ -4,6 +4,7 @@ import CartRequest from '~/services/cart-request'
 import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
 import { sumPrice } from '~/utils/sumPrice'
+import {removeItemByIndex} from '~/utils/arrayHandle'
 
 const { t } = useI18n()
 const useToast = toast()
@@ -31,13 +32,18 @@ const pricePayload = reactive({
   product_model_id: 1,
   quantity: 1,
 })
-onMounted(async() => {
+watchEffect(async() => {
   const { data: cartData } = await CartRequest.getCart({ params: { limit: cartPayload.limit, page: cartPayload.page } })
   cart.result = cartData.data
   cart.payget = cartData.data[0]
   cart.product = cartData.data[0].product
   // const { data: priceData } = await CartRequest.getPrices({ params: { product_model_id: pricePayload.product_model_id, quantity: pricePayload.quantity } })
 })
+const handleDelete = async(id) => {
+  removeItemByIndex(cart.result, id, 1)
+  await CartRequest.deleteCart(id)
+  useToast.updateToast('success', 'You has been delete one cart items!', true)
+}
 </script>
 
 <template>
@@ -68,19 +74,19 @@ onMounted(async() => {
         <span class="cursor-pointer text-4xl" @click="closeNav">&times;</span>
       </div>
       <ul class="minicart-product-list divide-light-700 divide-y max-h-1/2 overflow-y-scroll">
-        <li v-for="i in 6" :key="i" class="flex justify-between items-start p-5 inline-block">
+        <li v-for="(item, index) in cart.result" :key="index" class="flex justify-between items-start p-5 inline-block">
           <div class="flex">
             <a><img
-              src="/img/product/1.png" alt="Cart product Image" class="max-w-25 max-h-25 border-light-600 border-solid border-1 rounded-md mr-3"
+              src="/img/product/1.png" alt="cart_product_img" class="max-w-25 max-h-25 border-light-600 border-solid border-1 rounded-md mr-3"
             ></a>
             <div>
               <h5 class="title text-[#E14641] cursor-pointer">
-                {{ cart.product.name }}
+                {{ item.product.name }}
               </h5>
-              <span class="quantity-price">{{ cart.payget.quantity }} x <span class="price">${{ cart.payget.price }}</span></span>
+              <span class="quantity-price">{{ item.quantity }} x <span class="price">${{ item.price }}</span></span>
             </div>
           </div>
-          <span class="remove hover:text-red-500 cursor-pointer ml-2">×</span>
+          <span class="remove hover:text-red-500 cursor-pointer ml-2" @click="handleDelete(item.product_model_id)">×</span>
         </li>
       </ul>
       <div class="flex flex-wrap justify-between p-5">

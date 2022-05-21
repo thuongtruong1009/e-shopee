@@ -307,13 +307,13 @@ cart:
   cart: Cart
   preview: Preview
   name: Name
-  status: Status
   quantity: Quantily
   price: Price
   delete: Delete
   action: Action
   update: Update
   promo-code: Have A Promo Code
+  checkout: Checkout
   subtotal: Subtotal
   shipping: Shipping
   tax: Tax

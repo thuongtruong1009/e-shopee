@@ -4,17 +4,17 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="footer flex dark:text-gray-200">
+  <div class="footer flex dark:text-$dark-text">
     <div class="left md:(w-1/3 p-16 bg-gray-100) text-left dark:bg-black <md:(w-1/2 p-7 bg-light-200)">
       <IBrand class="py-4" />
       <p class="py-4">
         {{ t('footer.commit') }}
       </p>
       <div class="contact flex py-4">
-        <span><a href="tel:(+84)917085937"><img src="/img/icon/phone2.png" alt=""></a></span>
+        <span><a href="tel:(+84)917085937"><img src="/img/icon/phone2.png" alt="phone_img"></a></span>
         <div class="phone pl-4">
           <p>{{ t('footer.help') }}</p>
-          <a href="tel:(+84)917085937"><h4 class="font-semibold text-black dark:text-gray-100 hover:text-red-500 duration-300">(+84) 917 085 937</h4></a>
+          <a href="tel:(+84)917085937"><h4 class="font-semibold text-black dark:text-gray-200 hover:text-red-500 duration-300">(+84) 917 085 937</h4></a>
         </div>
       </div>
       <div class="social flex justify-start py-4">
