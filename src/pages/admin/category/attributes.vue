@@ -8,12 +8,15 @@ import { useRouter } from 'vue-router'
 import ProductRequest from '~/services/product-request'
 import { useAdmin } from '~/stores/admin'
 import { toast } from '~/stores/toast'
+import { useProduct } from '~/stores/product'
 import { random } from '~/utils/random'
 import { btnColors } from '~/shared/colors'
 
 const router = useRouter()
 const admin = useAdmin()
 const useToast = toast()
+const product = useProduct()
+
 onBeforeMount(() => {
   if (!localStorage.getItem('token'))
     router.push({ path: '/admin/login' })
@@ -70,6 +73,29 @@ const handleDelete = async(id) => {
   await ProductRequest.deleteCategoriesAttributes(deleteItem)
   useToast.updateToast('success', 'Category attributes has been deleted!', true)
 }
+// ----------------------------------------------------
+watch(async() => {
+  const { data } = await ProductRequest.getCategoriesChildrenById(0)
+  product.category = data
+})
+
+const getLevel1 = async(id) => {
+  const { data } = await ProductRequest.getCategoriesChildrenById(id)
+  product.level1 = data
+  product.choicedList[0] = product.level1.parent
+}
+
+const getLevel2 = async(id) => {
+  const { data } = await ProductRequest.getCategoriesChildrenById(id)
+  product.level2 = data
+  product.choicedList[1] = product.level2.parent
+}
+
+const getLevel3 = async(id) => {
+  const { data } = await ProductRequest.getCategoriesChildrenById(id)
+  product.level3 = data
+  product.choicedList[2] = product.level3.parent
+}
 
 </script>
 
@@ -83,6 +109,9 @@ const handleDelete = async(id) => {
       <div class="bg-[#AEC4D1] p-2">trên</div>
       <div class="p-2">duoi</div>
     </div> -->
+
+    <CAChooseCategory :level0="product.category.children" :level1="product.level1.children" :level2="product.level2.children" :level3="product.level3.children" @get-level1="getLevel1" @get-level2="getLevel2" @get-level3="getLevel3" />
+
     <div class="grid grid-cols-3 gap-5">
       <div class="list_category col-span-1 overflow-y-scroll max-h-lg px-2">
         <h2 v-for="i in 30" :key="i" :class="`bg-[${btnColors[random(7)]}]`" class="p-2 text-white my-2 rounded-lg cursor-pointer">

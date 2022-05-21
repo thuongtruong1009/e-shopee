@@ -4,11 +4,15 @@ meta:
 </route>
 
 <script setup>
-import {useRouter} from 'vue-router'
+import { useRouter } from 'vue-router'
 import { useLoading } from '~/stores/loading'
+import { toast } from '~/stores/toast'
 import { handleError } from '~/helpers/error'
 import ShopRequest from '~/services/shop-request'
 import ProductRequest from '~/services/product-request'
+import AccountRequest from '~/services/account-request'
+import CartRequest from '~/services/cart-request'
+import OrderRequest from '~/services/order-request'
 import provinceNames from '~/shared/provinces'
 
 useHead({
@@ -16,6 +20,7 @@ useHead({
 })
 const loading = useLoading()
 const router = useRouter()
+const useToast = toast()
 
 const payload = reactive({
   slug: 'id_01',
@@ -41,6 +46,38 @@ watchOnce(async() => {
   loading.isLoading = false
 })
 
+const payloadCart = reactive({
+  product_model_id: 1,
+  quantity: 1,
+})
+const handleAdd = async() => {
+  await CartRequest.addCart(payloadCart)
+  useToast.updateToast('success', 'You cart items has been updated!', true)
+}
+
+const payloadOrder = reactive({
+  address_id: '',
+  orders: [{
+    product_model_id: 1,
+    quantity: 1,
+  }],
+})
+onMounted(async() => {
+  const { data: addressData } = await AccountRequest.getAddress()
+  payloadOrder.address_id = addressData.filter(e => Object.keys(addressData.id === 0))[0].id
+})
+
+const handleOrder = () => {
+  if (payloadOrder.address_id) {
+    OrderRequest.createOrders(payloadOrder)
+    useToast.updateToast('success', 'You order has been created!', true)
+  }
+  else {
+    useToast.updateToast('error', 'Please need fill your address information!', true)
+    router.push({ path: '/buyer/account/address' })
+  }
+}
+
 </script>
 
 <template>
@@ -58,7 +95,7 @@ watchOnce(async() => {
       </div>
       <div class="pr-5 grid content-between min-h-112">
         <h2 class="break-words text-xl font-medium">
-          🔥HÀNG SIÊU CẤP🔥Dép bánh mỳ nam nữ đúc nguyên khối cute siêu nhẹ và êm chân
+          🔥HÀNG SIÊU CẤP🔥Dép bánh mỳ nam nữ đúc nguyên khối cute siêu nhẹ và êm chân {{ payloadOrder.address_id }}
         </h2>
         <div class="flex divide-1 divide-solid divide-x divide-gray-300">
           <div class="flex items-center gap-2 pr-3">
@@ -163,13 +200,13 @@ watchOnce(async() => {
         <div class="infor">
           <label>Quantities</label>
           <div class="uppercase flex items-center rounded-md border-1 border-solid border-gray-300 text-sm">
-            <p class="px-2 cursor-pointer hover:bg-[#FAFAFA]">
+            <p class="px-2 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none': payloadCart.quantity<2}" @click="payloadCart.quantity--">
               <IBMinus />
             </p>
             <p class="border-l-1 border-l-solid border-l-gray-300 border-r-1 border-r-solid border-r-gray-300 font-medium px-5 py-1">
-              1
+              {{ payloadCart.quantity }}
             </p>
-            <p class="px-2 cursor-pointer hover:bg-[#FAFAFA]">
+            <p class="px-2 cursor-pointer hover:bg-[#FAFAFA]" @click="payloadCart.quantity++">
               <IBPlus />
             </p>
           </div>
@@ -178,10 +215,10 @@ watchOnce(async() => {
           </p>
         </div>
         <div class="flex gap-3">
-          <button class="px-5 py-3 rounded-md bg-[#FFEEE8] hover:bg-[#FFF5F1] border-1 border-solid border-[#EE4D2D] text-[#EE4D2D] capitalize flex items-center gap-1">
+          <button class="px-5 py-3 rounded-md bg-[#FFEEE8] hover:bg-[#FFF5F1] border-1 border-solid border-[#EE4D2D] text-[#EE4D2D] capitalize flex items-center gap-1" @click="handleAdd">
             <ICart class="max-h-6" />Thêm vào giỏ hàng
           </button>
-          <button class="px-5 py-3 rounded-md bg-[#EE4D2D] hover:bg-[#F05D40] border-1 border-solid border-[#EE4D2D] text-white capitalize">
+          <button class="px-5 py-3 rounded-md bg-[#EE4D2D] hover:bg-[#F05D40] border-1 border-solid border-[#EE4D2D] text-white capitalize" @click="handleOrder">
             Mua Ngay
           </button>
         </div>

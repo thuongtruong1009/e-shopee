@@ -1,6 +1,8 @@
 [![Dev.to](https://img.shields.io/twitter/url?color=green&label=Dev.to&logo=dev.to&logoColor=yellow&style=for-the-badge&url=https%3A%2F%2Fdev.to%2Fthuongtruong1009)](https://dev.to/thuongtruong1009)
 [![Github](https://img.shields.io/twitter/url?color=green&label=Github&logo=github&logoColor=white&style=for-the-badge&url=https%3A%2F%2Fdev.to%2Fthuongtruong1009)](https://github.com/thuongtruong1009/e-shopee)
 [![Email](https://img.shields.io/twitter/url?color=green&label=Email&logo=gmail&logoColor=red&style=for-the-badge&url=https%3A%2F%2Fdev.to%2Fthuongtruong1009)](mailto:ititiu19228@student.hcmiu.edu.vn)
+![Commit status](https://img.shields.io/github/checks-status/thuongtruong1009/e-shopee/main?style=for-the-badge)
+![Activity](https://img.shields.io/github/commit-activity/y/thuongtruong1009/e-shopee?style=for-the-badge)
 
 <div align="center">
   <h1><img width="30" height="30" src="./public/favicon.svg" /> e-shopee</h1>
@@ -8,7 +10,8 @@
 
 ## Preview
 
-- [Demo link](https://e-shopee.vercel.app)
+- [Official demo link](https://e-shopee.vercel.app)
+- [Dev beta link](https://www.shopest.tk)
 
 <table>
   <tr>
@@ -82,6 +85,7 @@
       <details open><summary>Seller notifications page</summary>
         <img alt="" width="400" src="./public/preview/seller/seller_notifications.jpeg">
       </details>
+      <img width="900" height="1" alt="">
     </td>
     <td align="center">
       <details open><summary>Seller shop register page</summary>
@@ -93,6 +97,7 @@
       <details open><summary>Seller shop preview page</summary>
         <img alt="" width="400" src="./public/preview/seller/seller_shop_preview.jpeg">
       </details>
+      <img width="900" height="1" alt="">
     </td>
   </tr>
   <tr>
@@ -100,11 +105,13 @@
       <details open><summary>Admin login page</summary>
         <img alt="" width="400" src="./public/preview/admin/admin_login.png">
       </details>
+      <img width="900" height="1" alt="">
     </td>
      <td align="center">
       <details open><summary>Admin dashboard page</summary>
         <img alt="" width="400" src="./public/preview/admin/admin_home.jpeg">
       </details>
+      <img width="900" height="1" alt="">
     </td>
   </tr>
 </table>
@@ -219,6 +226,7 @@
 ## Try it now!
 
 > Vitesse requires Node >=14
+> [Allow CORS extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) must be turn on
 
 ### GitHub Template
 
@@ -227,7 +235,7 @@
 ### Clone to local
 ```bash
 git clone https://github.com/thuongtruong1009/e-shopee
-cd my-vitesse-app
+cd e-shopee
 pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 ```
 

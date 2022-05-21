@@ -34,23 +34,16 @@ const payload = reactive({
 const handleSubmit = async(e) => {
   e.preventDefault()
   loading.isLoading = true
-  await AuthRequest.loginUser(payload)
-    .then((res) => {
-      localStorage.setItem('token', res.token)
-      localStorage.setItem('user', JSON.stringify(res))
-      EmailRequest.createVerifyEmail().then(() => {
-      }).catch((error) => {
-        router.push({ path: '/buyer/home' })
-        useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
-        loading.isLoading = false
-        return handleError(error)
-      })
-    })
-    .catch((error) => {
-      return handleError(error)
-    })
+  await AuthRequest.loginUser(payload).then((res) => {
+    localStorage.setItem('token', res.token)
+    localStorage.setItem('user', JSON.stringify(res))
+    router.push({ path: '/buyer/home' })
+    useToast.updateToast('success', `Login success! Welcome back, ${payload.usernameOrEmail}!`, true)
+    loading.isLoading = false
+  }).catch((err) => {
+    handleError(err)
+  })
 }
-
 </script>
 
 <template>

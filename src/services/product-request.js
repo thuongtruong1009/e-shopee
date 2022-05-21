@@ -26,6 +26,11 @@ class ProductRequest {
     return AxiosInstance.post(url, data)
   }
 
+  getPrices(data) {
+    const url = '/products/prices'
+    return AxiosInstance.get(url, data)
+  }
+
   getCategoriesById(id) {
     const url = `/products/categories/${id}`
     return AxiosInstance.get(url)

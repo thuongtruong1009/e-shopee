@@ -7,5 +7,6 @@ export const useUser = defineStore('user', () => {
   const credit = ref<any>([])
   const payment = ref<any>([])
   const address = ref<any>([])
-  return { payget, profile, credit, payment, address }
+  const order = ref<any>([])
+  return { payget, profile, credit, payment, address, order }
 })

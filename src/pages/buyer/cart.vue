@@ -5,80 +5,60 @@ meta:
 
 <script setup>
 import { useRouter } from 'vue-router'
+import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
+import { useLoading } from '~/stores/loading'
+import { sumPrice } from '~/utils/sumPrice'
+import CartRequest from '~/services/cart-request'
 import { handleError } from '~/helpers/error'
+import { removeItemByIndex } from '~/utils/arrayHandle'
 
 useHead({
-  title: 'e-shopee | buyer cart',
+  title: 'buyer | cart',
 })
 const { t } = useI18n()
 
 const router = useRouter()
+const useToast = toast()
+const loading = useLoading()
+const cart = useCart()
+
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
 
 const onCheckout = computed(() => {
   router.push({ path: '/buyer/checkout' })
 })
 
-const cartList = reactive([{
-  img: '/img/product/shoes/1.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/2.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/3.webp',
-  name: 'Water and Wind Resistant',
-  inStock: false,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/4.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/5.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/6.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/7.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/8.webp',
-  name: 'Water and Wind Resistant',
-  inStock: false,
-  price: 38.24,
-},
-{
-  img: '/img/product/shoes/9.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-},
-{
-  img: '/img/product/shoes/12.webp',
-  name: 'Water and Wind Resistant',
-  inStock: true,
-  price: 15,
-}])
+const payget = reactive({
+  limit: 10,
+  page: 1,
+})
+watchEffect(async() => {
+  loading.isLoading = true
+  const { data: cartData } = await CartRequest.getCart({ params: { limit: payget.limit, page: payget.page } })
+  cart.result = cartData.data
+  cart.payget = cartData.data[0]
+  cart.product = cartData.data[0].product
+  loading.isLoading = false
+})
+
+const payload = reactive({
+  product_model_id: '',
+  quantity: '',
+})
+const handleUpdate = async(id) => {
+  payload.product_model_id = id
+  await CartRequest.updateCart(payload)
+  useToast.updateToast('success', 'You cart items has been updated!', true)
+}
+const handleDelete = async(id) => {
+  removeItemByIndex(cart.result, id, 1)
+  await CartRequest.deleteCart(id)
+  useToast.updateToast('success', 'You has been delete one cart items!', true)
+}
 </script>
 
 <template>
@@ -86,14 +66,11 @@ const cartList = reactive([{
     <table class="table w-full shadow-md shadow-300 bg-[#ffffff99] dark:bg-gray-800">
       <thead class="bg-[#F33535] text-white">
         <tr>
-          <th class="flex justify-center items-center gap-1">
+          <th>
             👁 {{ t('cart.preview') }}
           </th>
           <th>
             🏷 {{ t('cart.name') }}
-          </th>
-          <th class="flex justify-center items-center gap-1">
-            🎀{{ t('cart.status') }}
           </th>
           <th>
             ⏳ {{ t('cart.quantity') }}
@@ -102,27 +79,29 @@ const cartList = reactive([{
             📈 {{ t('cart.price') }}
           </th>
           <th>
-            🚀 {{ t('cart.action') }}
+            🛒 {{ t('cart.delete') }}
           </th>
-          <th class="flex justify-center items-center gap-1">
-            🛒 {{ t('cart.checkout') }}
+          <th>
+            🚀 {{ t('cart.action') }}
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, i) in cartList" :key="i" class="odd:bg-light-50 dark:odd:bg-[#121212]">
+        <tr v-for="(item, index) in cart.result" :key="index" class="odd:bg-light-50 dark:odd:bg-[#121212] py-2">
           <td>
-            <img :src="item.img" alt="img_preview" class="max-w-50 max-h-50">
+            <img src="/img/product/shoes/8.webp" alt="img_preview" class="max-w-40 max-h-40 rounded-md">
           </td>
           <td>
-            <span class="whish-title">{{ item.name }}</span>
-          </td>
-          <td>
-            <span class="badge text-xs text-white rounded-3xl px-1.5 py-0.5 font-medium whitespace-nowrap" :style="[item.inStock ? {background: '#82CA9C'} : {background: 'red'}]">{{ item.inStock == true ? 'In Stock' : 'Out of Stock' }}</span>
+            <span class="whish-title font-semibold">{{ item.product.name }}</span><br>
+            <div class="flex justify-center gap-5 text-xs">
+              <div v-for="(desc, i) in item.product.variations" :key="i">
+                <p><span class="text-red-400">{{ desc.name }}:</span> <span>{{ desc.options.toString() }}</span></p>
+              </div>
+            </div>
           </td>
           <td>
             <div class="count flex justify-center">
-              <input type="number" min="1" max="10" step="1" value="1" class="dark:bg-black">
+              <input v-model="item.quantity" type="number" min="1" max="10" step="1" class="dark:bg-black" @change="payload.quantity = item.quantity">
             </div>
           </td>
           <td>
@@ -132,10 +111,10 @@ const cartList = reactive([{
             </span>
           </td>
           <td>
-            <a href="#"><span class="trash flex justify-center"><ITrash /></span></a>
+            <a href="#" @click="handleDelete(item.product_model_id)"><span class="trash flex justify-center"><ITrash /></span></a>
           </td>
           <td>
-            <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-2 font-semibold">{{ t('cart.update') }}</a>
+            <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-1 font-semibold" @click="handleUpdate(item.product_model_id)">{{ t('cart.update') }}</a>
           </td>
         </tr>
       </tbody>
@@ -147,18 +126,21 @@ const cartList = reactive([{
           <div class="subtotal">
             <ul>
               <li class="totalRow">
-                <span class="label">{{ t('cart.subtotal') }}</span><span class="value">$35.00</span>
+                <!-- <span class="label">{{ t('cart.subtotal') }}</span><span class="value">$35.00</span> -->
+                <span />
               </li>
 
               <li class="totalRow">
-                <span class="label">{{ t('cart.shipping') }}</span><span class="value">$5.00</span>
+                <!-- <span class="label">{{ t('cart.shipping') }}</span><span class="value">$0.00</span> -->
+                <span />
               </li>
 
               <li class="totalRow">
-                <span class="label">{{ t('cart.tax') }}</span><span class="value">$4.00</span>
+                <!-- <span class="label">{{ t('cart.tax') }}</span><span class="value">$0.00</span> -->
+                <span />
               </li>
               <li class="totalRow final">
-                <span class="label">{{ t('cart.total') }}</span><span class="value">$44.00</span>
+                <span class="label">{{ t('cart.total') }}</span><span class="value">${{ sumPrice(cart.result, cart.payget.price, cart.payget.quantity) }}</span>
               </li>
             </ul>
           </div>
@@ -496,7 +478,7 @@ C216.3,217.7,200.8,213.7,178.1,211.7z"
 input[type="number"]{
     border: 1px solid rgb(210, 210, 210);
     border-radius: 0.25rem;
-    width: 35%;
+    width: 50%;
     padding: 0.25rem;
     transition: 0.2s linear;
     margin-top: 0.25rem;
@@ -506,7 +488,7 @@ input[type="number"]:focus{
 }
 table {
   border-collapse: collapse;
-  border-radius: 2rem;
+  border-radius: 1rem;
   overflow: hidden;
 }
 th{
@@ -528,10 +510,10 @@ td:not(:last-child){
 }
 .subtotal {
   width: 100%;
-  border: 2px dashed #efefef;
+  /* border: 2px dashed #efefef;
   border-top: none;
   border-left: none;
-  border-bottom-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem; */
 }
 .subtotal .totalRow {
   padding: 0.25em 0.5rem;

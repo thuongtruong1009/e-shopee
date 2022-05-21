@@ -75,7 +75,7 @@ const darkMode = () => {
     seller_dashboard_layout.classList.add('dark')
 }
 
-onBeforeMount(() => {
+onMounted(() => {
   if (!localStorage.getItem('token'))
     router.push({ path: '/buyer/login' })
 })

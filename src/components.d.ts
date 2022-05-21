@@ -6,6 +6,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     CAAreaChart: typeof import('./components/admin/CAAreaChart.vue')['default']
     CACalendar: typeof import('./components/admin/CACalendar.vue')['default']
+    CAChooseCategory: typeof import('./components/admin/CAChooseCategory.vue')['default']
     CarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
     CarbonLanguage: typeof import('~icons/carbon/language')['default']
     CarbonMoon: typeof import('~icons/carbon/moon')['default']

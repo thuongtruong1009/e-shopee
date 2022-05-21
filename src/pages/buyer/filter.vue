@@ -5,7 +5,7 @@ meta:
 
 <script setup>
 useHead({
-  title: 'e-shopee | buyer wishlist',
+  title: 'buyer | filter',
 })
 const { t } = useI18n()
 

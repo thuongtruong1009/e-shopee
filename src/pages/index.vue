@@ -20,7 +20,7 @@ const { t } = useI18n()
             <IAdmin />{{ t('index.admin-chanel') }}
           </h2>
         </router-link>
-        <router-link to="/seller/login">
+        <router-link to="/seller/home">
           <h2 class="text-sm flex items-center gap-1">
             <ISell />{{ t('index.seller-chanel') }}
           </h2>
