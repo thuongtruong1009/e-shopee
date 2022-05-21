@@ -219,7 +219,6 @@ account:
   bank-branch: Bank branch
   account-number: Account number
   not-payment: You not't saved your Payment method yet
-  full-name: Full name
   digits: digits
   card-number: Card number
   update-payment: Update payment

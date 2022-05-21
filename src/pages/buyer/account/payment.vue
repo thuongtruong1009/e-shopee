@@ -13,10 +13,9 @@ useHead({
 })
 const { t } = useI18n()
 const useToast = toast()
-const id = JSON.parse(localStorage.getItem('user')).data.id
 const user = useUser()
 
-onBeforeMount(() => {
+onMounted(() => {
   if (!localStorage.getItem('token'))
     router.push({ path: '/buyer/login' })
 })
@@ -33,7 +32,11 @@ const isCreating = ref(true)
 watch(async() => {
   const { data: bankData } = await AccountRequest.getBankAccount()
   user.payment = bankData[0]
-  user.payment !== '' ? isCreating.value = false : isCreating.value = true
+  payload.accountholder_name = user.payment.accountholder_name
+  payload.identification_number = user.payment.identification_number
+  payload.bank_name = user.payment.bank_name
+  payload.bank_branch = user.payment.bank_branch
+  payload.account_number = user.payment.account_number
 })
 
 const handleCreate = async(e) => {
@@ -49,7 +52,7 @@ const handleUpdate = async(e) => {
 
 const handleDelete = async() => {
   await AccountRequest.deleteBankAccountById(user.payment.id)
-  useToast.updateToast('deleted', 'Payment method has been removed!', true)
+  useToast.updateToast('success', 'Payment method has been removed!', true)
 }
 
 </script>
@@ -63,45 +66,16 @@ const handleDelete = async() => {
           {{ t('account.payment-method') }}
         </h3>
       </div>
-      <div class="flex items-center gap-5">
-        <div class="text-blue-500 cursor-pointer" @click="isCreating = !isCreating">
-          <IBCreate v-if="!isCreating" />
-          <IEdit v-if="isCreating" />
-        </div>
-        <IBDelete class="text-red-400 cursor-pointer" @click="handleDelete" />
-      </div>
+      <IBDelete v-if="user.payment" class="text-red-400 cursor-pointer" @click="handleDelete" />
     </div>
-    <div v-if="user.payment !==''" class="payment_infor py-5 text-sm flex justify-around gap-10">
-      <div>
-        <p>
-          {{ t('account.owner-account') }}: <span>{{ user.payment.accountholder_name }}</span>
-        </p>
-        <p>
-          {{ t('account.identification-number') }}: <span>{{ user.payment.identification_number }}</span>
-        </p>
-        <p>
-          {{ t('account.payment-id') }}: <span>{{ user.payment.id }}</span>
-        </p>
-      </div>
-      <div>
-        <p>
-          {{ t('account.bank-name') }}: <span>{{ user.payment.bank_name }}</span>
-        </p>
-        <p>
-          {{ t('account.bank-branch') }}: <span>{{ user.payment.bank_branch }}</span>
-        </p>
-        <p>
-          {{ t('account.account-number') }}: <span>{{ user.payment.account_number }}</span>
-        </p>
-      </div>
-    </div>
-    <p v-else class="saved-message py-5 text-gray-400 text-sm font-medium">
+
+    <p v-if="!user.payment" class="saved-message py-5 text-gray-400 text-sm font-medium">
       {{ t('account.not-payment') }}.
     </p>
 
     <form>
       <div>
-        <label>{{ t('account.full-name') }}</label>
+        <label>{{ t('account.owner-account') }}</label>
         <input v-model="payload.accountholder_name" type="text" required>
       </div>
       <div>
@@ -121,10 +95,10 @@ const handleDelete = async() => {
         <input v-model="payload.account_number" type="text" required>
       </div>
       <div class="pt-5 flex justify-end gap-5">
-        <button v-if="!isCreating" type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium opacity-60" @click="handleUpdate">
+        <button v-if="user.payment" type="submit" class="btn bg-black  duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
           <ISave />{{ t('account.update-payment') }}
         </button>
-        <button v-if="isCreating" type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
+        <button v-else type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
           <ISave />{{ t('account.create-payment') }}
         </button>
       </div>

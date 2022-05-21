@@ -27,11 +27,6 @@ onMounted(() => {
     router.push({ path: '/buyer/login' })
 })
 
-watch(async() => {
-  const { data: addressData } = await AccountRequest.getAddress()
-  user.address = addressData
-})
-
 const payload = reactive({
   full_name: user.payget.username,
   phone: '',
@@ -43,6 +38,11 @@ const payload = reactive({
   is_pickup_address: '',
   is_default_address: '',
   is_return_address: '',
+})
+
+watch(async() => {
+  const { data: addressData } = await AccountRequest.getAddress()
+  user.address = addressData
 })
 
 const addressType = reactive([
