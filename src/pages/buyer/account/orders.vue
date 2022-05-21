@@ -20,12 +20,12 @@ const payload = reactive({
   limit: 10,
   status_id: 1,
 })
-onMounted(async() => {
+watch(async() => {
   loading.isLoading = true
   const { data: orderData } = await OrderRequest.getOrders({ params: { limit: payload.limit, status_id: payload.status_id } })
+  loading.isLoading = false
   user.order = orderData
   order.payget = orderData.data
-  loading.isLoading = false
 })
 </script>
 
@@ -53,7 +53,7 @@ onMounted(async() => {
 
         <tbody class="text-sm text-gray-500 bg-white dark:bg-blue-gray-600 dark:text-gray-200">
           <tr v-for="(item, index) in order.payget" :key="index">
-            <td>1</td>
+            <td>{{ index+1 }}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.created_at }}</td>
             <td>{{ orderStatus(item.status_id) }}</td>

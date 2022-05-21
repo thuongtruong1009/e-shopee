@@ -28,7 +28,7 @@ onMounted(() => {
 })
 
 const payload = reactive({
-  full_name: user.payget.username,
+  full_name: '',
   phone: '',
   state: '',
   city: '',
@@ -54,18 +54,18 @@ const addressType = reactive([
 const handleCreate = async(e) => {
   e.preventDefault()
   await AccountRequest.createAddress(payload)
-  useToast.updateToast('created', 'Address has been created successfully!', true)
+  useToast.updateToast('success', 'Address has been created successfully!', true)
 }
 
 const isEdit = ref(false)
 const handleUpdate = async(e) => {
   e.preventDefault()
   await AccountRequest.updateAddressById(optionAddress.value, payload)
-  useToast.updateToast('sucess', 'Address has been updated successfully!', true)
+  useToast.updateToast('success', 'Address has been updated successfully!', true)
 }
 const handleDelete = async() => {
   await AccountRequest.deleteAddressById(optionAddress.value)
-  useToast.updateToast('delete', 'Address has been removed!', true)
+  useToast.updateToast('success', 'Address has been removed!', true)
 }
 
 </script>
@@ -80,11 +80,11 @@ const handleDelete = async() => {
         </h3>
       </div>
       <div class="flex items-center gap-5">
-        <div class="text-blue-500" @click="isCreating = !isCreating">
+        <div class="text-blue-500 cursor-pointer" @click="isCreating = !isCreating">
           <IBCreate v-if="!isCreating" />
           <IEdit v-if="isCreating" />
         </div>
-        <IBDelete class="text-red-400" @click="handleDelete" />
+        <IBDelete class="text-red-400 cursor-pointer" @click="handleDelete" />
       </div>
     </div>
     <div class="address_infor py-5 text-sm flex flex-wrap justify-around gap-10">
@@ -108,33 +108,33 @@ const handleDelete = async() => {
     <form>
       <div>
         <label>{{ t('account.full-name') }}</label>
-        <input v-model="payload.full_name" type="text" required>
+        <input v-model="payload.full_name" type="text" required placeholder="Full name...">
       </div>
       <div>
         <label>{{ t('account.phone-number') }} <span>(10-11 digits)</span></label>
-        <input v-model="payload.phone" type="number" required>
+        <input v-model="payload.phone" type="number" required placeholder="Phone number [create: 11 digits] - [update: 10 digits]...">
       </div>
       <div>
         <label>{{ t('account.state') }}</label>
-        <input v-model="payload.state" type="text" required>
+        <input v-model="payload.state" type="text" required placeholder="State name...">
       </div>
       <div>
         <label>{{ t('account.city') }}</label>
-        <input v-model="payload.city" type="text" required>
+        <input v-model="payload.city" type="text" required placeholder="Current city..">
       </div>
       <div>
         <label>{{ t('account.town') }}</label>
-        <input v-model="payload.town" type="text" required>
+        <input v-model="payload.town" type="text" required placeholder="Town name..">
       </div>
       <div>
         <label>{{ t('account.address') }}</label>
-        <input v-model="payload.address" type="text" required>
+        <input v-model="payload.address" type="text" required placeholder="Home number, building, street...">
       </div>
 
       <div class="addres_type dark:text-black">
         <select v-for="(types, index) in addressType" :key="index" v-model="payload.is_home">
           <option value="" disabled selected hidden>
-            {{ t('account.is-home') }}
+            {{ t('account.is-home') }}?
           </option>
           <option v-for="(type, i) in types" :key="i" :value="type.i">
             {{ type }}
@@ -142,7 +142,7 @@ const handleDelete = async() => {
         </select>
         <select v-model="payload.is_pickup_address">
           <option value="" disabled selected hidden>
-            {{ t('account.is-pickup-address') }}
+            {{ t('account.is-pickup-address') }}?
           </option>
           <option :value="false">
             False
@@ -153,7 +153,7 @@ const handleDelete = async() => {
         </select>
         <select v-model="payload.is_default_address">
           <option value="" disabled selected hidden>
-            {{ t('account.is-default-address') }}
+            {{ t('account.is-default-address') }}?
           </option>
           <option :value="false">
             False
@@ -164,7 +164,7 @@ const handleDelete = async() => {
         </select>
         <select v-model="payload.is_return_address">
           <option value="" disabled selected hidden>
-            {{ t('account.is-return-address') }}
+            {{ t('account.is-return-address') }}?
           </option>
           <option :value="false">
             False
@@ -208,14 +208,13 @@ form input, form select{
   transition: 0.2s linear;
   font-size: 0.9rem;
 }
+form select, input[type="radio"]{
+  cursor: pointer;
+}
 form input:focus{
     box-shadow: 2px 2px 4px rgba(59, 175, 252, 0.8);
 }
-/* form .addres_type > div{
-  display: flex;
-  flex-direction: column;
-  flex: 100%;
-} */
+
 form > div:not(:last-child){
   padding: 0.5rem 0;
   display: flex;

@@ -6,6 +6,7 @@ meta:
 <script setup>
 import { useUser } from '~/stores/user'
 import { toast } from '~/stores/toast'
+import { useLoading } from '~/stores/loading'
 import AccountRequest from '~/services/account-request'
 
 useHead({
@@ -14,6 +15,7 @@ useHead({
 const { t } = useI18n()
 const useToast = toast()
 const user = useUser()
+const loading = useLoading()
 
 onMounted(() => {
   if (!localStorage.getItem('token'))
@@ -30,8 +32,10 @@ const payload = reactive({
 
 const isCreating = ref(true)
 watch(async() => {
+  loading.isLoading = true
   const { data: bankData } = await AccountRequest.getBankAccount()
   user.payment = bankData[0]
+  loading.isLoading = false
   payload.accountholder_name = user.payment.accountholder_name
   payload.identification_number = user.payment.identification_number
   payload.bank_name = user.payment.bank_name
@@ -91,7 +95,7 @@ const handleDelete = async() => {
         <input v-model="payload.bank_branch" type="text" required>
       </div>
       <div>
-        <label>{{ t('account.card-number') }} <span>(9 digits)</span></label>
+        <label>{{ t('account.account-number') }} <span>(9 digits)</span></label>
         <input v-model="payload.account_number" type="text" required>
       </div>
       <div class="pt-5 flex justify-end gap-5">
@@ -107,14 +111,6 @@ const handleDelete = async() => {
 </template>
 
 <style scoped>
-.payment_infor div p{
-  margin: 0.5rem;
-}
-.payment_infor div p span{
-  font-size: 1em;
-  font-weight: 500;
-  color: #ff3700d6;
-}
 input{
   width: 75%;
   outline: none;

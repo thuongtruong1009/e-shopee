@@ -220,10 +220,10 @@ account:
   account-number: Account number
   not-payment: You not't saved your Payment method yet
   digits: digits
-  card-number: Card number
   update-payment: Update payment
   create-payment: Create payment
   credit-card: Credit card
+  card-number: Card number
   address-register: Address register
   zip-postal: ZIP postal
   postal-zip-code: Postal ZIP code 
@@ -236,6 +236,7 @@ account:
   update-card: Update card
   create-card: Create card
   billing-address: Billing Address
+  full-name: Full name
   phone-number: Phone number
   address: Address
   location: Location

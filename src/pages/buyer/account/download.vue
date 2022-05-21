@@ -34,7 +34,7 @@ meta:
             <td>Katopeno Altuni</td>
             <td>Sep 12, 2018</td>
             <td>Never</td>
-            <td><a href="/cart" class="hover:text-light-700">Download File</a></td>
+            <td><a href="/buyer/cart" class="hover:text-light-700">Download File</a></td>
           </tr>
         </tbody>
       </table>
