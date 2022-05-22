@@ -152,7 +152,7 @@ const saleRatio = computed(() => progressRatio)
 
 <template>
   <div class="top_products_container relative m-8 p-1 rounded-lg border-1 border-[#e9e9e9] shadow-md shadow-gray-300/50">
-    <div class="text-red-500 p-5 border-b-1 border-b-[#e9e9e9] flex justify-between bg-[#F5F5F5] rounded-lg">
+    <div class="text-red-500 p-5 border-b-1 border-b-[#e9e9e9] flex justify-between bg-[#F5F5F5] dark:(bg-blue-gray-800 border-b-[#888]) rounded-lg">
       <h1 class="uppercase font-semibold text-xl flex items-center gaáp">
         <IBFlash />FLASH SALES
       </h1>
@@ -183,8 +183,8 @@ const saleRatio = computed(() => progressRatio)
         </div>
 
         <div>
-          <div class="w-full bg-[#FFBDA6] rounded-full dark:bg-gray-700 relative shadow-md shadow-gray-300">
-            <div class="bg-[#F6442E] text-xs font-medium text-white text-center pb-0.5 leading-none rounded-l-full" :style="`width: ${saleRatio(top.solded, top.quantity)}%`">
+          <div class="w-full bg-[#FFBDA6] rounded-full dark:(bg-gray-500 shadow-gray-600) relative shadow-md shadow-gray-300">
+            <div class="bg-[#F6442E] shadow-sm dark:(shadow-gray-600) text-xs font-medium text-white text-center pb-0.5 leading-none rounded-l-full" :style="`width: ${saleRatio(top.solded, top.quantity)}%`">
               &nbsp;
             </div>
             <p class="absolute top-0 left-1/3 w-auto h-full text-xs text-white">
@@ -194,10 +194,10 @@ const saleRatio = computed(() => progressRatio)
         </div>
       </div>
     </div>
-    <div class="prev absolute flex justify-center items-center rounded-full bg-white shadow-md shadow-gray-300 duration-300 top-1/2 -left-3 cursor-pointer w-7 h-7 p-1 hover:(w-10 h-10 text-3xl -left-4) text-gray-500" @click="onPrev">
+    <div class="prev absolute flex justify-center items-center rounded-full bg-white dark:(bg-blue-gray-600 text-white shadow-gray-500) shadow-md shadow-gray-300 duration-300 top-1/2 -left-3 cursor-pointer w-7 h-7 p-1 hover:(w-10 h-10 text-3xl -left-4) text-gray-500" @click="onPrev">
       &#10094;
     </div>
-    <div class="next absolute flex justify-center items-center rounded-full bg-white shadow-md shadow-gray-300 duration-300 top-1/2 -right-3 cursor-pointer w-7 h-7 p-1 hover:(w-10 h-10 text-3xl -right-4) text-gray-500" @click="onNext">
+    <div class="next absolute flex justify-center items-center rounded-full bg-white dark:(bg-blue-gray-600 text-white shadow-gray-500) shadow-md shadow-gray-300 duration-300 top-1/2 -right-3 cursor-pointer w-7 h-7 p-1 hover:(w-10 h-10 text-3xl -right-4) text-gray-500" @click="onNext">
       &#10095;
     </div>
   </div>

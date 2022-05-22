@@ -1,14 +1,17 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import CartRequest from '~/services/cart-request'
+import OrderRequest from '~/services/order-request'
+import AccountRequest from '~/services/account-request'
 import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
 import { sumPrice } from '~/utils/sumPrice'
-import {removeItemByIndex} from '~/utils/arrayHandle'
+import { removeItemByIndex } from '~/utils/arrayHandle'
 
 const { t } = useI18n()
 const useToast = toast()
 const cart = useCart()
+const router = useRouter()
 
 const isBlurBgModal = ref(false)
 const openNav = () => {
@@ -28,21 +31,40 @@ const cartPayload = reactive({
   limit: 10,
   page: 1,
 })
-const pricePayload = reactive({
-  product_model_id: 1,
-  quantity: 1,
-})
 watchEffect(async() => {
   const { data: cartData } = await CartRequest.getCart({ params: { limit: cartPayload.limit, page: cartPayload.page } })
   cart.result = cartData.data
   cart.payget = cartData.data[0]
   cart.product = cartData.data[0].product
-  // const { data: priceData } = await CartRequest.getPrices({ params: { product_model_id: pricePayload.product_model_id, quantity: pricePayload.quantity } })
 })
 const handleDelete = async(id) => {
   removeItemByIndex(cart.result, id, 1)
   await CartRequest.deleteCart(id)
   useToast.updateToast('success', 'You has been delete one cart items!', true)
+}
+// ---------------------------------------------------------------
+const payloadOrder = reactive({
+  address_id: '',
+  orders: [{
+    product_model_id: '',
+    quantity: '',
+  }],
+})
+onMounted(async() => {
+  const { data: addressData } = await AccountRequest.getAddress()
+  payloadOrder.address_id = addressData.filter(e => Object.keys(addressData.id === 0))[0].id
+})
+
+const handleOrder = async() => {
+  if (payloadOrder.address_id) {
+    await cart.result.map(item => payloadOrder.orders.push({ product_model_id: item.product_model_id, quantity: item.quantity }))
+    await OrderRequest.createOrders(payloadOrder)
+    useToast.updateToast('success', 'You order has been created!', true)
+  }
+  else {
+    useToast.updateToast('error', 'Please need fill your address information!', true)
+    router.push({ path: '/buyer/account/address' })
+  }
 }
 </script>
 
@@ -50,7 +72,7 @@ const handleDelete = async(id) => {
   <div class="container flex justify-center items-center lg:w-xs text-white dark:text-black">
     <div>
       <router-link to="/buyer/filter">
-        <ICompare class="hover:text-[#adff2f] dark:text-[#adff2f]" />
+        <IBCompare class="hover:text-[#adff2f] dark:text-[#adff2f]" />
       </router-link>
     </div>
     <div>
@@ -60,7 +82,7 @@ const handleDelete = async(id) => {
     </div>
     <div class="flex items-end hover:text-[#adff2f] dark:text-[#adff2f] relative" @click="openNav">
       <span class="total-notifications absolute -top-2 left-5 bg-green-500 w-5 h-5 text-white rounded-full flex justify-center items-center pr-0.5 text-xs font-medium">{{ cart.result.length }}</span>
-      <ICart />
+      <IBCart />
       <h1 class="font-semibold ml-3">
         ${{ sumPrice(cart.result, cart.payget.price, cart.payget.quantity) }}
       </h1>
@@ -99,11 +121,9 @@ const handleDelete = async(id) => {
             {{ t('cart.view-cart') }}
           </button>
         </router-link>
-        <router-link to="/buyer/checkout">
-          <button type="submit" value="submit" class="bg-black text-white font-semibold text-xs py-3 px-7 rounded-md hover:bg-[#E14641] duration-200 uppercase cursor-pointer">
-            {{ t('cart.checkout') }}
-          </button>
-        </router-link>
+        <button type="submit" value="submit" class="bg-black text-white font-semibold text-xs py-3 px-7 rounded-md hover:bg-[#E14641] duration-200 uppercase cursor-pointer" @click="handleOrder">
+          {{ t('cart.checkout') }}
+        </button>
       </div>
       <p class="minicart-message p-5 text-xs">
         {{ t('cart.free-ship') }} $1000!

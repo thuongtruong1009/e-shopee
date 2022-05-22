@@ -66,15 +66,16 @@ ccategory:
 menu:
   admin: Admin
   about-page: About Page
-  cart-page: Cart Page
-  checkout-page: Checkout Page
-  compare-page: Compare Page
-  login-page: Login Page
-  account-page: Account Page
-  wishlist-page: Wishlist Page
+  b-cart-page: Cart Page
+  b-order-page: Order Page
+  b-filter-page: Filter Page
+  b-login-page: Login Page
+  b-account-page: Account Page
+  b-wishlist-page: Wishlist Page
   become-seller: Become Seller
-  notifications: notifications
-  notifications-warn: Login to see your notifications
+  notifications: Notifications
+  notifications-warn: No have recent notifications
+  notifications-go: Open notifications center
   register: Register
   login: Login
   s-dashboard: Dashboard
@@ -210,47 +211,54 @@ account:
   not-you: If not you
   logout: Logout
   dashboard-desc: From your account dashboard. you can easily check {symbol} view your recent orders, manage your shipping and billing addresses and edit your password and account details
+  order-title: Your orders lists
+  order-no: No
+  order-name: Name
+  order-date: Date
+  order-status: Status
+  order-total: Total
+  order-action: Action
   save-changes: Save changes
   payment-method: Payment method
-  owner-account: Owner account
-  identification-number: Identification number
+  payment-owner: Owner account
+  payment-identification: Identification number
   payment-id: Payment ID
-  bank-name: Bank name
-  bank-branch: Bank branch
-  account-number: Account number
+  payment-bank: Bank name
+  payment-branch: Bank branch
+  payment-account: Account number
   not-payment: You not't saved your Payment method yet
-  full-name: Full name
   digits: digits
-  card-number: Card number
-  update-payment: Update payment
-  create-payment: Create payment
+  payment-update: Update payment
+  payment-create: Create payment
   credit-card: Credit card
+  card-number: Card number
   address-register: Address register
   zip-postal: ZIP postal
   postal-zip-code: Postal ZIP code 
-  id-card: ID card
-  expiry-date: Expiry date
-  cvv-number: Cvv number
+  card-expiry: Expiry date
   card-name: Card holder name
-  cvv: Cvv
-  registration-address: Registration address
-  update-card: Update card
-  create-card: Create card
-  billing-address: Billing Address
-  phone-number: Phone number
+  card-cvv: Cvv
+  card-address: Registration address
+  card-upadte: Update card
+  card-create: Create card
+  have-card: You have 1 payment method
+  not-card: You not't saved your Payment method yet
+  address-billing: Billing Address
+  address-owner: Full name
+  address-phone: Phone number
   address: Address
-  location: Location
-  state: State
-  city: City
-  town: Town
+  address-location: Location
+  address-state: State
+  address-city: City
+  address-town: Town
   is-home: Is home
   is-pickup-address: Is pickup address
   is-default-address: Is default address
   is-return-address: Is return address
   false: False
   true: True
-  update-address: Update address
-  create-address: Create address
+  address-update: Update address
+  address-create: Create address
 shop:
   online: Online
   ago: ago

@@ -12,20 +12,29 @@ import { orderStatus } from '~/utils/orderStatus'
 import OrderRequest from '~/services/order-request'
 import { handleDate } from '~/utils/date'
 
+useHead({
+  title: 'buyer | orders',
+})
+const { t } = useI18n()
 const loading = useLoading()
 const user = useUser()
 const order = useOrder()
+
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
 
 const payload = reactive({
   limit: 10,
   status_id: 1,
 })
-onMounted(async() => {
+watch(async() => {
   loading.isLoading = true
   const { data: orderData } = await OrderRequest.getOrders({ params: { limit: payload.limit, status_id: payload.status_id } })
-  user.order = orderData
-  order.payget = orderData.data[0]
   loading.isLoading = false
+  user.order = orderData
+  order.payget = orderData.data
 })
 </script>
 
@@ -34,7 +43,7 @@ onMounted(async() => {
     <div class="border-b-1 border-b-solid border-b-light-700 py-3 font-medium flex items-center gap-1">
       <IBOrder />
       <h3 class="text-2xl">
-        Your orders lists
+        {{ t('account.order-title') }}
       </h3>
     </div>
 
@@ -42,23 +51,23 @@ onMounted(async() => {
       <table class="w-full">
         <thead class="text-[#05967A]">
           <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Total</th>
-            <th>Action</th>
+            <th>{{ t('account.order-no') }}</th>
+            <th>{{ t('account.order-name') }}</th>
+            <th>{{t('account.order-date')}}</th>
+            <th>{{t('account.order-status')}}</th>
+            <th>{{t('account.order-total')}}</th>
+            <th>{{t('account.order-action')}}</th>
           </tr>
         </thead>
 
         <tbody class="text-sm text-gray-500 bg-white dark:bg-blue-gray-600 dark:text-gray-200">
-          <tr>
-            <td>1</td>
-            <td>{{ order.payget.name }}</td>
-            <td>{{ order.payget.created_at }}</td>
-            <td>{{ orderStatus(order.payget.status_id) }}</td>
-            <td>{{ order.payget.quantity }}</td>
-            <td>${{ order.payget.total }}</td>
+          <tr v-for="(item, index) in order.payget" :key="index">
+            <td>{{ index+1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.created_at }}</td>
+            <td>{{ orderStatus(item.status_id) }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ item.total }}</td>
           </tr>
         </tbody>
       </table>

@@ -2,7 +2,7 @@
 import { useLoading } from '~/stores/loading'
 
 const loading = useLoading()
-watchEffect(() => {
+onMounted(() => {
   window.onload = () => {
     document.body.scrollTop = document.documentElement.scrollTop = 0
   }

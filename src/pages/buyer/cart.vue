@@ -10,6 +10,8 @@ import { toast } from '~/stores/toast'
 import { useLoading } from '~/stores/loading'
 import { sumPrice } from '~/utils/sumPrice'
 import CartRequest from '~/services/cart-request'
+import AccountRequest from '~/services/account-request'
+import OrderRequest from '~/services/order-request'
 import { handleError } from '~/helpers/error'
 import { removeItemByIndex } from '~/utils/arrayHandle'
 
@@ -28,10 +30,6 @@ onMounted(() => {
     router.push({ path: '/buyer/login' })
 })
 
-const onCheckout = computed(() => {
-  router.push({ path: '/buyer/checkout' })
-})
-
 const payget = reactive({
   limit: 10,
   page: 1,
@@ -39,10 +37,10 @@ const payget = reactive({
 watchEffect(async() => {
   loading.isLoading = true
   const { data: cartData } = await CartRequest.getCart({ params: { limit: payget.limit, page: payget.page } })
+  loading.isLoading = false
   cart.result = cartData.data
   cart.payget = cartData.data[0]
   cart.product = cartData.data[0].product
-  loading.isLoading = false
 })
 
 const payload = reactive({
@@ -58,6 +56,30 @@ const handleDelete = async(id) => {
   removeItemByIndex(cart.result, id, 1)
   await CartRequest.deleteCart(id)
   useToast.updateToast('success', 'You has been delete one cart items!', true)
+}
+// --------------------------------------------
+const payloadOrder = reactive({
+  address_id: '',
+  orders: [{
+    product_model_id: '',
+    quantity: '',
+  }],
+})
+onMounted(async() => {
+  const { data: addressData } = await AccountRequest.getAddress()
+  payloadOrder.address_id = addressData.filter(e => Object.keys(addressData.id === 0))[0].id
+})
+
+const handleOrder = async() => {
+  if (payloadOrder.address_id) {
+    await cart.result.map(item => payloadOrder.orders.push({ product_model_id: item.product_model_id, quantity: item.quantity }))
+    await OrderRequest.createOrders(payloadOrder)
+    useToast.updateToast('success', 'You order has been created!', true)
+  }
+  else {
+    useToast.updateToast('error', 'Please need fill your address information!', true)
+    router.push({ path: '/buyer/account/address' })
+  }
 }
 </script>
 
@@ -101,7 +123,7 @@ const handleDelete = async(id) => {
           </td>
           <td>
             <div class="count flex justify-center">
-              <input v-model="item.quantity" type="number" min="1" max="10" step="1" class="dark:bg-black" @change="payload.quantity = item.quantity">
+              <input v-model="item.quantity" type="number" min="1" max="3" step="1" class="dark:bg-black" @change="payload.quantity = item.quantity">
             </div>
           </td>
           <td>
@@ -158,7 +180,7 @@ const handleDelete = async(id) => {
           </div>
         </div>
 
-        <button class="checkout absolute bottom-10 left-10 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-3xl text-white py-2 shadow-md shadow-gray-300 px-5 flex justify-end items-center gap-1" @click="onCheckout">
+        <button class="checkout absolute bottom-10 left-10 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-3xl text-white py-2 shadow-md shadow-gray-300 px-5 flex justify-end items-center gap-1" @click="handleOrder">
           <ISave />{{ t('cart.checkout') }}
         </button>
         <div class="card-wrap">
