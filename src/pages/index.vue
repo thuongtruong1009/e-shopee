@@ -17,43 +17,43 @@ const toggleLocales = () => {
 
 <template>
   <div class="index-view overflow-x-hidden">
-    <div class="index-header flex justify-between py-4 px-20 border-b-1 border-b-solid bg-[#ececec]">
+    <div class="index-header flex justify-between py-4 px-20 border-b-1 border-b-solid bg-[#ececec] dark:bg-blue-gray-700">
       <div class="flex items-end">
         <IShopee />
         <div class="flex mx-5 gap-5">
           <router-link to="/admin/login">
-          <h2 class="text-sm flex items-center gap-1">
-            <IAdmin />{{ t('index.admin-chanel') }}
-          </h2>
-        </router-link>
-        <router-link to="/seller/home">
-          <h2 class="text-sm flex items-center gap-1">
-            <ISell />{{ t('index.seller-chanel') }}
-          </h2>
-        </router-link>
-        <router-link to="/buyer/login">
-          <h2 class="text-sm flex items-center gap-1">
-            <IHome />{{ t('index.buying-chanel') }}
-          </h2>
-        </router-link>
+            <h2 class="text-sm flex items-center gap-1">
+              <IAdmin />{{ t('index.admin-chanel') }}
+            </h2>
+          </router-link>
+          <router-link to="/seller/home">
+            <h2 class="text-sm flex items-center gap-1">
+              <ISell />{{ t('index.seller-chanel') }}
+            </h2>
+          </router-link>
+          <router-link to="/buyer/login">
+            <h2 class="text-sm flex items-center gap-1">
+              <IHome />{{ t('index.buying-chanel') }}
+            </h2>
+          </router-link>
         </div>
       </div>
-      <div class="flex items-center gap-3">
-        <div class="hover:bg-gray-200 p-2 rounded-full cursor-pointer">
+      <div class="flex items-center gap-3 dark:text-gray-200">
+        <div class="hover:bg-gray-200 hover:text-gray-800 p-2 rounded-full cursor-pointer">
           <IApplication />
         </div>
-        <div class="hover:bg-gray-200 p-1.5 rounded-full cursor-pointer">
+        <div class="hover:bg-gray-200 hover:text-gray-800 p-1.5 rounded-full cursor-pointer">
           <IFacebook />
         </div>
-        <div class="hover:bg-gray-200 p-1.5 rounded-full cursor-pointer">
+        <div class="hover:bg-gray-200 hover:text-gray-800 p-1.5 rounded-full cursor-pointer">
           <IInstagram />
         </div>
-        <div class="hover:bg-gray-200 p-1.5 rounded-full cursor-pointer">
+        <div class="hover:bg-gray-200 hover:text-gray-800 p-1.5 rounded-full cursor-pointer">
           <a class="icon-btn" :title="t('button.toggle_langs')" @click="toggleLocales">
             <carbon-language />
           </a>
         </div>
-        <Cswitch/>
+        <Cswitch />
       </div>
     </div>
     <main class="index-banner flex justify-around flex-wrap pt-15">
@@ -210,7 +210,7 @@ const toggleLocales = () => {
 </template>
 
 <style scoped>
-h2{
+.index-header h2{
   padding: 0.25rem 1rem;
   border-radius: 1rem;
   background: #ebecff;

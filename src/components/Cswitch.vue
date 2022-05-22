@@ -4,9 +4,9 @@ import { isDark, toggleDark } from '~/composables'
 </script>
 
 <template>
-    <div class="switch_container" @click="toggleDark()">
-        <input type="checkbox" class="text-[#7a7a7a] checked:text-red-500">
-    </div>
+  <div class="switch_container" @click="toggleDark()">
+    <input type="checkbox" class="text-[#7a7a7a] checked:text-red-500">
+  </div>
 </template>
 
 <style scoped>

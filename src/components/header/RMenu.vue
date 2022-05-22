@@ -24,19 +24,16 @@ const signOut = async() => {
         <a href="#" class="menu-link">
           {{ t('menu.notifications') }}
         </a>
-        <ul class="menu-child">
-          <li class="menu-child-item has-child p-10 grid justify-center">
+        <ul class="menu-child w-70 max-w-70">
+          <li class="menu-child-item has-child p-3 grid justify-center">
             <img src="/img/home/notify_notfound.png" alt="no_notifications" class="w-25 h-25">
             <p class="text-xs text-opacity-60 text-gray-500">
               {{ t('menu.notifications-warn') }}
             </p>
           </li>
-          <li class="menu-child-item flex justify-center text-white rounded-b-md">
-            <a href="/buyer/register" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">
-              {{ t('menu.register') }}
-            </a>
-            <a href="/buyer/login" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200">
-              {{ t('menu.login') }}
+          <li class="menu-child-item text-white text-center rounded-b-md">
+            <a href="/buyer/notifications" class="menu-child-link rounded-b-md bg-gray-100 hover:bg-gray-200 min-w-full">
+              {{ t('menu.notifications-go') }}
             </a>
           </li>
         </ul>
@@ -54,7 +51,7 @@ const signOut = async() => {
           </li>
           <li class="menu-child-item">
             <a href="/buyer/checkout" class="menu-child-link">
-              {{ t('header.checkout') }} <ICheckout />
+              {{ t('header.checkout') }} <IBOrder />
             </a>
           </li>
           <li class="menu-child-item">

@@ -72,7 +72,7 @@ const handleOrder = async() => {
   <div class="container flex justify-center items-center lg:w-xs text-white dark:text-black">
     <div>
       <router-link to="/buyer/filter">
-        <ICompare class="hover:text-[#adff2f] dark:text-[#adff2f]" />
+        <IBCompare class="hover:text-[#adff2f] dark:text-[#adff2f]" />
       </router-link>
     </div>
     <div>
@@ -82,7 +82,7 @@ const handleOrder = async() => {
     </div>
     <div class="flex items-end hover:text-[#adff2f] dark:text-[#adff2f] relative" @click="openNav">
       <span class="total-notifications absolute -top-2 left-5 bg-green-500 w-5 h-5 text-white rounded-full flex justify-center items-center pr-0.5 text-xs font-medium">{{ cart.result.length }}</span>
-      <ICart />
+      <IBCart />
       <h1 class="font-semibold ml-3">
         ${{ sumPrice(cart.result, cart.payget.price, cart.payget.quantity) }}
       </h1>

@@ -66,15 +66,16 @@ ccategory:
 menu:
   admin: Admin
   about-page: About Page
-  cart-page: Cart Page
-  checkout-page: Checkout Page
-  compare-page: Compare Page
-  login-page: Login Page
-  account-page: Account Page
-  wishlist-page: Wishlist Page
+  b-cart-page: Cart Page
+  b-order-page: Order Page
+  b-filter-page: Filter Page
+  b-login-page: Login Page
+  b-account-page: Account Page
+  b-wishlist-page: Wishlist Page
   become-seller: Become Seller
-  notifications: notifications
-  notifications-warn: Login to see your notifications
+  notifications: Notifications
+  notifications-warn: No have recent notifications
+  notifications-go: Open notifications center
   register: Register
   login: Login
   s-dashboard: Dashboard

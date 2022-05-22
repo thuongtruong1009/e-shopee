@@ -91,7 +91,7 @@ const handleDelete = async() => {
       <div v-for="(location, i) in user.address" :key="i" class="bg-white rounded-xl p-2">
         <p class="flex justify-between">
           <span>{{ location.full_name }}</span>
-          <input type="radio" name="radio_delete" class="accent-red-500" @click="optionAddress = location.id">
+          <input type="radio" name="radio_delete" class="w-4 h-4 accent-blue-500 border-gray-300 focus:(ring-transparent ring-2) dark:focus:ring-blue-600 dark:(ring-offset-gray-800 bg-gray-700 border-gray-600)" @click="optionAddress = location.id">
         </p>
         <p>
           {{ t('account.address-phone') }} {{ i+1 }}: <span>{{ location.phone }}</span>

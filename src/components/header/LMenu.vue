@@ -15,34 +15,38 @@ const { t } = useI18n()
       </div>
       <ul class="dropdown__list">
         <li class="dropdown__item">
-          <a href="/about"><span class="dropdown__text">{{ t('menu.about-page') }} <IAbout /></span></a>
+          <a href="/about">
+            <span class="dropdown__text">{{ t('menu.about-page') }} <IAbout /></span>
+          </a>
         </li>
         <li class="dropdown__item">
           <router-link to="/buyer/cart">
-            <span class="dropdown__text">{{ t('menu.cart-page') }} <ICart /></span>
+            <span class="dropdown__text">{{ t('menu.b-cart-page') }} <ICart /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
-          <router-link to="/buyer/checkout">
-            <span class="dropdown__text">{{ t('menu.checkout-page') }} <ICheckout /></span>
+          <router-link to="/buyer/account/orders">
+            <span class="dropdown__text">{{ t('menu.b-order-page') }} <IBOrder /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
-          <span class="dropdown__text">{{ t('menu.compare-page') }} <ICompare /></span>
+          <router-link to="/buyer/filter">
+            <span class="dropdown__text">{{ t('menu.b-filter-page') }} <IBFilter /></span>
+          </router-link>
         </li>
         <li class="dropdown__item">
           <router-link to="/buyer/login">
-            <span class="dropdown__text">{{ t('menu.login-page') }} <ILogin /></span>
+            <span class="dropdown__text">{{ t('menu.b-login-page') }} <ILogin /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
           <router-link to="/buyer/account/dashboard">
-            <span class="dropdown__text">{{ t('menu.account-page') }} <IAccount /></span>
+            <span class="dropdown__text">{{ t('menu.b-account-page') }} <IAccount /></span>
           </router-link>
         </li>
         <li class="dropdown__item">
           <router-link to="/buyer/wishlist">
-            <span class="dropdown__text">{{ t('menu.wishlist-page') }} <IWishList /></span>
+            <span class="dropdown__text">{{ t('menu.b-wishlist-page') }} <IWishList /></span>
           </router-link>
         </li>
       </ul>

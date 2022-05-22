@@ -261,13 +261,13 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
 
 <template>
   <div class="hint-today-container max-w-349 my-10">
-    <div class="flex justify-start rounded-lg border-1 border-[#e9e9e9] bg-light-100">
+    <div class="flex justify-start rounded-lg border-1 border-[#e9e9e9] bg-light-100 dark:(bg-blue-gray-800 border-transparent)">
       <h2 class="text-red-500 border-b-4 border-b-solid border-b-red-500 text-lg rounded-l-lg text-left inline-block py-2 px-10 uppercase font-medium">
         {{ t('ctoday.hint') }}
       </h2>
     </div>
     <div class="flex flex-wrap gap-3 py-3">
-      <div v-for="(hint, i) in hintListComputed" :key="i" class="w-47 rounded-md bg-light-100 shadow-sm shadow-gray-400/50 border-1 border-solid border-transparent hover:border-red-500 cursor-pointer relative" @click="openProduct">
+      <div v-for="(hint, i) in hintListComputed" :key="i" class="w-47 flex flex-col rounded-md bg-light-100 text-gray-900 dark:(bg-blue-gray-800 text-gray-300) shadow-sm shadow-gray-400/50 border-1 border-solid border-transparent hover:border-red-500 cursor-pointer relative" @click="openProduct">
         <img v-if="hint.extra === true" src="/img/today/extra.png" alt="extra" class="absolute top-0 left-0 w-full">
         <!-- <div class="discount-label absolute top-0 right-0 w-20">
           <p>ok</p>
@@ -296,7 +296,7 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
       </div>
     </div>
     <div class="flex justify-center">
-      <p v-if="hintListInit < hintList.length" class="bg-white border-1 border-solid border-gray-200 py-2 px-10 rounded-md cursor-pointer hover:bg-[#F5F5F5] hover:border-gray-300" @click="hintListInit += stepVisible">
+      <p v-if="hintListInit < hintList.length" class="bg-white dark:(bg-blue-gray-800 hover:bg-blue-gray-700 text-gray-300 border-transparent) border-1 border-solid border-gray-200 py-2 px-10 rounded-md cursor-pointer hover:(bg-[#F5F5F5] border-gray-300)" @click="hintListInit += stepVisible">
         {{ t('ctoday.see-more') }}
       </p>
     </div>
@@ -305,9 +305,6 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
 
 <style scoped>
 .hint-today-container > div:nth-child(2) > div{
-    color: #000000;
-    display: flex;
-    flex-direction: column;
     font-size: 14px;
     line-height: 16.8px;
     padding: 10px;
