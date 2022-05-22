@@ -158,8 +158,12 @@ $(document).ready(() => {
             <p>{{ resumeAddress.address }}, {{ resumeAddress.city }}, {{ resumeAddress.state }}</p>
           </div>
         </div>
-        <div class="col-span-2 flex justify-between items-start">
-          <img v-for="(banner, i) in seller.payget.banners" :key="i" :src="`${VITE_BASE_DOMAIN}/storage/app/public/${banner.id}`" alt="">
+        <div class="col-span-2 flex flex-wrap justify-between items-start">
+          <div v-for="(banner, i) in seller.payget.banners" :key="i">
+            <a :href="banner.hyper_link" target="_blank" rel="noopener noreferrer">
+              <img :src="`https://tp-o.tk/resources/images/${banner.id}`" alt="shop_banner_img" class="max-h-20 rounded-md">
+            </a>
+          </div>
         </div>
       </div>
     </div>

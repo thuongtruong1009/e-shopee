@@ -315,9 +315,8 @@ cart:
   cart: Cart
   preview: Preview
   name: Name
-  quantity: Quantily
-  price: Price
-  delete: Delete
+  quantity: Quantity
+  category: Category
   action: Action
   update: Update
   promo-code: Have A Promo Code

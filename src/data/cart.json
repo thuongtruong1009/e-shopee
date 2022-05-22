@@ -1,0 +1,88 @@
+{
+    "status": true,
+    "data": {
+        "current_page": 1,
+        "data": [
+            {
+                "quantity": 1,
+                "user_id": 1,
+                "shop_id": 1,
+                "product_id": 1,
+                "product_model_id": 1,
+                "price": 500,
+                "final_price": 500,
+                "product": {
+                    "id": 1,
+                    "name": "Samsung Galaxy A53 5G | A52s 5G (8GB+128GB\/256GB) with 1 Year Warranty by Samsung",
+                    "description": "",
+                    "weight": "500",
+                    "sold": 0,
+                    "images": [
+                        "93bc5fa42886e635fd9f103d03c9c31d",
+                        "6085df7be931e1ef9d79ce125cacdb8b"
+                    ],
+                    "videos": [],
+                    "variations": [
+                        {
+                            "name": "Colour",
+                            "options": [
+                                "Awesome Black",
+                                "Awesome White"
+                            ]
+                        },
+                        {
+                            "name": "Model",
+                            "options": [
+                                "A52s 8GB+128GB",
+                                "A53 8GB+128GB"
+                            ]
+                        }
+                    ],
+                    "created_at": "2022-05-19 15:07:43",
+                    "shop_id": 1,
+                    "brand_id": 1,
+                    "status_id": 1
+                },
+                "product_model": {
+                    "id": 1,
+                    "sku": "",
+                    "price": "500",
+                    "stock": 10,
+                    "variation_index": [
+                        0,
+                        0
+                    ],
+                    "is_default": false,
+                    "product_id": 1
+                }
+            }
+        ],
+        "first_page_url": "http:\/\/tp-o.tk\/api\/v2\/cart?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http:\/\/tp-o.tk\/api\/v2\/cart?page=1",
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http:\/\/tp-o.tk\/api\/v2\/cart?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "next_page_url": null,
+        "path": "http:\/\/tp-o.tk\/api\/v2\/cart",
+        "per_page": "10",
+        "prev_page_url": null,
+        "to": 1,
+        "total": 1
+    }
+}
