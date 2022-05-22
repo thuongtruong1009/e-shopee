@@ -127,22 +127,19 @@ const handleOrder = async() => {
               </div>
             </td>
             <td class="p-2">
-              <!-- <input v-model="item.quantity" type="number" min="1" max="3" step="1" class="dark:bg-transparent" @change="payload.quantity = item.quantity"> -->
               <div class="flex items-center gap-1.5">
                 <div class="uppercase flex items-center rounded-md border-1 border-solid border-gray-300 dark:border-gray-500 text-xs">
                   <p class="p-1.25 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none': item.quantity<2}" @click="payload.quantity = item.quantity--">
                     <IBMinus />
                   </p>
-                  <p class="border-l-1 border-l-solid border-l-gray-300 border-r-1 border-r-solid border-r-gray-300 font-medium px-3 py-1.25 text-black dark:(text-gray-200 border-gray-500)">
-                    {{ item.quantity }}
-                  </p>
-                  <p class="p-1.25 cursor-pointer hover:bg-[#FAFAFA]" @click="payload.quantity = item.quantity++">
+                  <input v-model="item.quantity" type="number" min="1" max="50" step="1" class="dark:bg-transparent appearance-none text-center  pointer-events-none border-l-1 border-l-solid border-l-gray-300 border-r-1 border-r-solid border-r-gray-300 font-medium py-1.25 text-black dark:(text-gray-200 border-gray-500)" @change="payload.quantity = item.quantity">
+                  <p class="p-1.25 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none': item.quantity>=item.product_model.stock}" @click="payload.quantity = item.quantity++">
                     <IBPlus />
                   </p>
                 </div>
                 <span class="text-xs">x</span>
                 <span class="whish-list-price font-semibold">
-                  ${{ item.price }}
+                  ${{ item.product_model.price }}
                 </span>
               </div>
             </td>
@@ -512,18 +509,11 @@ C216.3,217.7,200.8,213.7,178.1,211.7z"
 </template>
 
 <style scoped>
-input[type="number"]{
-    border: 1px solid rgb(210, 210, 210);
-    border-radius: 0.25rem;
-    width: 50%;
-    padding: 0.25rem;
-    transition: 0.2s linear;
-    margin-top: 0.25rem;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
 }
-input[type="number"]:focus{
-    box-shadow: 1px 1px 3px rgb(59, 175, 252);
-}
-
 .wrapper {
   margin: auto;
   width: 43.75rem;
