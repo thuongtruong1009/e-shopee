@@ -29,8 +29,8 @@ const productResponseData = ref([])
 const productPrice = ref()
 const productStock = ref()
 const modelID = ref()
-// const shopPublic = ref()
-// const shopAvatar = ref()
+const shopPublic = ref()
+const shopAvatar = ref()
 
 onMounted(async() => {
   if (!localStorage.getItem('token')) { router.push({ path: '/buyer/login' }) }
@@ -296,7 +296,7 @@ const handleOrder = () => {
       <img alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
       <div class="min-w-85">
         <p class="font-medium text-md">
-          ABCXYZ
+          {{shopPublic}}
         </p>
         <p class="text-gray-500 text-xs">
           Online 13 hours ago
