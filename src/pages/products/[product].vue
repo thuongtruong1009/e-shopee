@@ -29,8 +29,8 @@ const productResponseData = ref([])
 const productPrice = ref()
 const productStock = ref()
 const modelID = ref()
-const shopPublic = ref()
-const shopAvatar = ref()
+// const shopPublic = ref()
+// const shopAvatar = ref()
 
 onMounted(async() => {
   if (!localStorage.getItem('token')) { router.push({ path: '/buyer/login' }) }
@@ -256,7 +256,7 @@ const handleOrder = () => {
             <p class="border-l-1 border-l-solid border-l-gray-300 border-r-1 border-r-solid border-r-gray-300 font-medium px-5 py-1">
               {{ payloadCart.quantity }}
             </p>
-            <p class="px-2 cursor-pointer hover:bg-[#FAFAFA]" @click="payloadCart.quantity++">
+            <p class="px-2 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none': payloadCart.quantity >= productStock}" @click="payloadCart.quantity++">
               <IBPlus />
             </p>
           </div>
@@ -296,7 +296,7 @@ const handleOrder = () => {
       <img alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
       <div class="min-w-85">
         <p class="font-medium text-md">
-          {{shopPublic}}
+          ABCXYZ
         </p>
         <p class="text-gray-500 text-xs">
           Online 13 hours ago
