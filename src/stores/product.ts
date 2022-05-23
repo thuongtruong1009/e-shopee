@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { acceptHMRUpdate, defineStore } from 'pinia'
 import { reactive, ref } from 'vue'
 
 export const useProduct = defineStore('product', () => {

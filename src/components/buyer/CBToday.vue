@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import {useProduct} from '~/stores/product'
+import { useProduct } from '~/stores/product'
 
 const router = useRouter()
 const product = useProduct()
@@ -259,7 +259,7 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
 // ------------------------------------
 const onDetails = (product_id) => {
   product.productRequestID = product_id
-  router.push(`/buyer/products/${encodeURIComponent(product_id)}`)
+  router.push(`/products/${encodeURIComponent(product_id)}`)
 }
 </script>
 

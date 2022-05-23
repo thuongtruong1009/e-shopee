@@ -7,7 +7,9 @@ meta:
 import { useRouter } from 'vue-router'
 import { useLoading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
+import { useProduct } from '~/stores/product'
 import { handleError } from '~/helpers/error'
+import { productStatus } from '~/utils/status'
 import ShopRequest from '~/services/shop-request'
 import ProductRequest from '~/services/product-request'
 import AccountRequest from '~/services/account-request'
@@ -21,31 +23,68 @@ useHead({
 const loading = useLoading()
 const router = useRouter()
 const useToast = toast()
+const product = useProduct()
 
-const payload = reactive({
-  slug: 'id_01',
-  product_id: '01',
-})
-
-onBeforeMount(() => {
+onMounted(() => {
   if (!localStorage.getItem('token'))
     router.push({ path: '/buyer/login' })
 })
 
-watchOnce(async() => {
+const productResponseData = ref([])
+const productPrice = ref()
+const productStock = ref()
+const modelID = ref()
+const shopPublic = ref()
+const shopAvatar = ref()
+
+watchEffect(async() => {
   loading.isLoading = true
-  await ProductRequest.getProductsById(payload.product_id).then((res) => {
-  }).catch((error) => {
-    return handleError(error)
-  })
-
-  await ShopRequest.getShopsProducts(payload.slug).then((res) => {
-  }).catch((error) => {
-    return handleError(error)
-  })
+  const { data: productData } = await ProductRequest.getProductsById(product.productRequestID)
   loading.isLoading = false
-})
+  productResponseData.value = productData
 
+  // const { data: shopData } = await ShopRequest.getShopsById(productResponseData.value.shop_id)
+  // shopPublic.value = shopData
+  // shopAvatar.value = `https://tp-o.tk/resources/images/${shopData.avatar_image}`
+
+  // get price min-max
+  const valuesPrice = productResponseData.value.models.map(i => i.price)
+  const maxPrice = Math.max(...valuesPrice)
+  const minPrice = Math.min(...valuesPrice)
+  if (maxPrice === minPrice)
+    productPrice.value = maxPrice
+  else
+    productPrice.value = `${minPrice} - ${maxPrice}`
+
+  // get stock min-max
+  const valuesStock = productResponseData.value.models.map(i => i.stock)
+  const maxStock = Math.max(...valuesStock)
+  const minStock = Math.min(...valuesStock)
+  productStock.value = `${minStock} - ${maxStock}`
+})
+function getModelStock(array, option) {
+  array.map((element) => {
+    if (JSON.stringify(element.variation_index) === JSON.stringify(option)) {
+      productStock.value = element.stock
+      productPrice.value = element.price
+      modelID.value = element.id
+    }
+    return ''
+  })
+}
+
+// --------------------------------------
+const payload = reactive({
+  slug: 'id_01',
+  product_id: '01',
+})
+//   await ShopRequest.getShopsProducts(payload.slug).then((res) => {
+//   }).catch((error) => {
+//     return handleError(error)
+//   })
+//   loading.isLoading = false
+// })
+// ---------------------------------------
 const payloadCart = reactive({
   product_model_id: 1,
   quantity: 1,
@@ -95,7 +134,7 @@ const handleOrder = () => {
       </div>
       <div class="pr-5 grid content-between min-h-112">
         <h2 class="break-words text-xl font-medium">
-          🔥HÀNG SIÊU CẤP🔥Dép bánh mỳ nam nữ đúc nguyên khối cute siêu nhẹ và êm chân {{ payloadOrder.address_id }}
+          🔥{{ productResponseData.name }}
         </h2>
         <div class="flex divide-1 divide-solid divide-x divide-gray-300">
           <div class="flex items-center gap-2 pr-3">
@@ -118,7 +157,7 @@ const handleOrder = () => {
           </div>
           <div class="flex item gap-2 px-3">
             <p class="font-medium">
-              100
+              {{ productResponseData.sold }}
             </p>
             <p class="text-gray-500">
               Solded
@@ -127,26 +166,27 @@ const handleOrder = () => {
         </div>
         <div class="py-3 px-5 bg-[#FAFAFA] dark:bg-gray-700 rounded-lg flex items-center gap-5">
           <div class="old-price flex items-start text-gray-500 line-through">
-            <p>₫</p>
+            <p>$</p>
             <h2 class="font-medium text-sm">
               178.000
             </h2>
           </div>
           <div class="current-price flex text-[#EE4D2D]">
-            <p>₫</p>
+            <p>$</p>
             <h2 class="font-medium text-3xl">
-              89.000
+              {{ productPrice }}
             </h2>
           </div>
           <div class="bg-[#EE4D2D] rounded-sm px-1">
             <p class="text-white font-medium text-xs">
-              50% decrease
+              {{ productStatus(productResponseData.status_id) }}
             </p>
           </div>
         </div>
         <div class="infor">
-          <label>Deal sốc</label>
-          <p class="text-[#EE4D2D] bg-[#FFEEE8] px-1 text-sm">
+          <label>Weight</label>
+          <p>{{ productResponseData.weight }}gram</p>
+          <p class="text-[#EE4D2D] bg-[#FFEEE8] px-1 text-sm ml-5">
             Mua Kèm Deal Sốc
           </p>
         </div>
@@ -163,7 +203,17 @@ const handleOrder = () => {
             </select>
           </div>
         </div>
-        <div class="infor">
+
+        <div v-for="(variation, index) in productResponseData.variations" :key="index" class="infor">
+          <label>{{ variation.name }}</label>
+          <div class="uppercase flex gap-2">
+            <p v-for="(option, i) in variation.options" :key="i" class="box-type" @click="getModelStock(productResponseData.models, [index, i])">
+              {{ option }}
+            </p>
+          </div>
+        </div>
+
+        <!-- <div class="infor">
           <label>Colors</label>
           <div class="uppercase flex gap-2">
             <p class="box-type">
@@ -176,8 +226,8 @@ const handleOrder = () => {
               Pink
             </p>
           </div>
-        </div>
-        <div class="infor">
+        </div> -->
+        <!-- <div class="infor">
           <label>Sizes</label>
           <div class="uppercase flex gap-2 text-sm">
             <p class="box-type">
@@ -196,7 +246,7 @@ const handleOrder = () => {
               42-43
             </p>
           </div>
-        </div>
+        </div> -->
         <div class="infor">
           <label>Quantities</label>
           <div class="uppercase flex items-center rounded-md border-1 border-solid border-gray-300 text-sm">
@@ -211,7 +261,7 @@ const handleOrder = () => {
             </p>
           </div>
           <p class="lowercase text-gray-500">
-            14984 available products
+            {{ productStock }} available products
           </p>
         </div>
         <div class="flex gap-3">
@@ -243,10 +293,10 @@ const handleOrder = () => {
 
   <div class="shop-product-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2 divide-x divide-1 divide-solid divide-gray-300 flex flex-wrap">
     <div class="flex">
-      <img src="https://cf.shopee.vn/file/7ebd612d6fddcf7f4114bf2d97da382a_tn" alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
+      <img alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
       <div class="min-w-85">
         <p class="font-medium text-md">
-          deplenamcaocap
+          ABCXYZ
         </p>
         <p class="text-gray-500 text-xs">
           Online 13 hours ago
@@ -269,7 +319,7 @@ const handleOrder = () => {
         </div>
         <div class="flex gap-2 min-w-27">
           <p>Productions</p>
-          <span>43</span>
+          <span>100</span>
         </div>
       </div>
       <div>
