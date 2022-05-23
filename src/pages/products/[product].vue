@@ -25,28 +25,28 @@ const router = useRouter()
 const useToast = toast()
 const product = useProduct()
 
-onMounted(() => {
-  if (!localStorage.getItem('token'))
-    router.push({ path: '/buyer/login' })
-})
-
 const productResponseData = ref([])
 const productPrice = ref()
 const productStock = ref()
 const modelID = ref()
-const shopPublic = ref()
-const shopAvatar = ref()
+// const shopPublic = ref()
+// const shopAvatar = ref()
+
+onMounted(async() => {
+  if (!localStorage.getItem('token')) { router.push({ path: '/buyer/login' }) }
+  else {
+    loading.isLoading = true
+    const { data: productData } = await ProductRequest.getProductsById(product.productRequestID)
+    loading.isLoading = false
+    productResponseData.value = productData
+
+    // const { data: shopData } = await ShopRequest.getShopsById(product.shopRequestID)
+    // shopPublic.value = shopData
+    // shopAvatar.value = `https://tp-o.tk/resources/images/${shopData.avatar_image}`
+  }
+})
 
 watchEffect(async() => {
-  loading.isLoading = true
-  const { data: productData } = await ProductRequest.getProductsById(product.productRequestID)
-  loading.isLoading = false
-  productResponseData.value = productData
-
-  // const { data: shopData } = await ShopRequest.getShopsById(productResponseData.value.shop_id)
-  // shopPublic.value = shopData
-  // shopAvatar.value = `https://tp-o.tk/resources/images/${shopData.avatar_image}`
-
   // get price min-max
   const valuesPrice = productResponseData.value.models.map(i => i.price)
   const maxPrice = Math.max(...valuesPrice)

@@ -37,7 +37,7 @@ watchEffect(() => {
         <span class="opacity-75">{{ t('intro.aka') }}:</span>
         <ul>
           <li v-for="otherCategory in useCategory.otherCategories" :key="otherCategory">
-            <router-link :to="`/hi/${otherCategory}`" replace>
+            <router-link :to="`/buyer/categories/${otherCategory}`" replace>
               {{ otherCategory }}
             </router-link>
           </li>

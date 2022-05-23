@@ -11,6 +11,11 @@ export const useProduct = defineStore('product', () => {
     1: '',
     2: '',
   })
-  const productRequestID = ref('')
-  return { category, level1, level2, level3, choicedList, productRequestID }
+  const productRequestID = ref(1)
+  const shopRequestID = ref(1)
+
+  return { category, level1, level2, level3, choicedList, productRequestID, shopRequestID }
 })
+
+if (import.meta.hot)
+  import.meta.hot.accept(acceptHMRUpdate(useProduct, import.meta.hot))
