@@ -28,9 +28,9 @@ const resumeAddress = ref([])
 watch(async() => {
   loading.isLoading = true
   const { data: shopData } = await ShopRequest.getShops()
+  loading.isLoading = false
   seller.payget = shopData[0]
   seller.statics = shopData[0].statistic
-  loading.isLoading = false
 
   const { data: addressData } = await AccountRequest.getAddress()
   resumeAddress.value = addressData.filter(e => Object.keys(addressData.id === 0))[0]
@@ -43,13 +43,13 @@ const payload = reactive({
   avatar_image: 'demo-avatar-02',
   cover_image: 'demo-shop-cover-01',
   banners: [
-    // {
-    //   image: {
-    //     id: '',
-    //     hyper_link: 'https://www.w3schools.com/w3css/img_lights.jpg',
-    //   },
-    // video: 'https://www.youtube.com/watch?v=JmwDuKzbkNA',
-    // },
+    {
+      image: {
+        id: '',
+        hyper_link: 'https://www.w3schools.com/w3css/img_lights.jpg',
+      },
+      video: 'https://www.youtube.com/watch?v=JmwDuKzbkNA',
+    },
   ],
 })
 const handleUpdate = async() => {
@@ -63,63 +63,49 @@ const handleUpdate = async() => {
 }
 
 const totalFile = ref(0)
-const data = reactive({
-  images: [
-    // {
-    //   ratio: 0,
-    //   is_demo: true,
-    //   file: '',
-    // },
-  ],
-})
-
 $(document).ready(() => {
   const files = document.querySelector('#fileInput')
   files.addEventListener('change', (e) => {
     // const files = $(this)[0].files
-
-    // const files = e.target.files
-    // const formData = new FormData()
-    // formData.append('images[0]ratio', 0)
-    // formData.append('images[]', files[0])
-    // formData.append('images[]', files[0])
-    // formData.append('is_demo', true)
-
-    // formData.append('images', JSON.stringify([{ ratio: 0, file: files }]))
+    const files = e.target.files
+    const formData = new FormData()
+    formData.append('image', files[0])
+    formData.append('ratio', 1)
 
     // console.log(formData)
-    // ResourceRequest.createResourcesImages(formData).then((res) => {
-    // }).catch((error) => {
-    //   return handleError(error)
-    // })
+    ResourceRequest.createResourcesImages(formData).then((res) => {
+      payload.banners.image.id = res.data.id
+    }).catch((error) => {
+      return handleError(error.image.toString())
+    })
 
-    // uploadFile(files, 0)
+    uploadFile(files, 0)
   })
-  // function uploadFile(files, index) {
-  //   totalFile.value = files.length // count total file
-  //   const length = files.length
-  //   if (index === length)
-  //     return
-  //   const file = files[index]
-  //   const fileReader = new FileReader()
-  //   fileReader.onload = function() {
-  //     const str = '<div>'
-  //               + '<img class="img-thumbnail js-file-image w-30 max-h-30 rounded-md">'
-  //               + '<span class="js-file-name"></span><br>'
-  //               + '<span class="js-file-size"></span> (Byte)<br>'
-  //               + '</div>'
-  //     $('.js-file-list').append(str)
-  //     const imageSrc = event.target.result
-  //     const fileName = file.name
-  //     const fileSize = file.size
-  //     $('.js-file-name').last().text(fileName)
-  //     $('.js-file-size').last().text(fileSize)
-  //     $('.js-file-image').last().attr('src', imageSrc)
+  function uploadFile(files, index) {
+    totalFile.value = files.length // count total file
+    const length = files.length
+    if (index === length)
+      return
+    const file = files[index]
+    const fileReader = new FileReader()
+    fileReader.onload = function() {
+      const str = '<div>'
+                + '<img class="img-thumbnail js-file-image w-30 max-h-30 rounded-md">'
+                + '<span class="js-file-name"></span><br>'
+                + '<span class="js-file-size"></span> (Byte)<br>'
+                + '</div>'
+      $('.js-file-list').append(str)
+      const imageSrc = event.target.result
+      const fileName = file.name
+      const fileSize = file.size
+      $('.js-file-name').last().text(fileName)
+      $('.js-file-size').last().text(fileSize)
+      $('.js-file-image').last().attr('src', imageSrc)
 
-  //     uploadFile(files, index + 1)
-  //   }
-  //   fileReader.readAsDataURL(file)
-  // }
+      uploadFile(files, index + 1)
+    }
+    fileReader.readAsDataURL(file)
+  }
 })
 
 </script>
@@ -172,8 +158,12 @@ $(document).ready(() => {
             <p>{{ resumeAddress.address }}, {{ resumeAddress.city }}, {{ resumeAddress.state }}</p>
           </div>
         </div>
-        <div class="col-span-2 flex justify-between items-start">
-          <img v-for="(banner, i) in seller.payget.banners" :key="i" :src="`https://tp-o.tk/api/v2/resources/images/${banner}`" alt="">
+        <div class="col-span-2 flex flex-wrap justify-between items-start">
+          <div v-for="(banner, i) in seller.payget.banners" :key="i">
+            <a :href="banner.hyper_link" target="_blank" rel="noopener noreferrer">
+              <img :src="`https://tp-o.tk/resources/images/${banner.id}`" alt="shop_banner_img" class="max-h-20 rounded-md">
+            </a>
+          </div>
         </div>
       </div>
     </div>

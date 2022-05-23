@@ -60,10 +60,7 @@ const handleDelete = async(id) => {
 // --------------------------------------------
 const payloadOrder = reactive({
   address_id: '',
-  orders: [{
-    product_model_id: '',
-    quantity: '',
-  }],
+  orders: [],
 })
 onMounted(async() => {
   const { data: addressData } = await AccountRequest.getAddress()
@@ -85,67 +82,90 @@ const handleOrder = async() => {
 
 <template>
   <div class="cart-container text-center">
-    <table class="table w-full shadow-md shadow-300 bg-[#ffffff99] dark:bg-gray-800">
-      <thead class="bg-[#F33535] text-white">
-        <tr>
-          <th>
-            👁 {{ t('cart.preview') }}
-          </th>
-          <th>
-            🏷 {{ t('cart.name') }}
-          </th>
-          <th>
-            ⏳ {{ t('cart.quantity') }}
-          </th>
-          <th>
-            📈 {{ t('cart.price') }}
-          </th>
-          <th>
-            🛒 {{ t('cart.delete') }}
-          </th>
-          <th>
-            🚀 {{ t('cart.action') }}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(item, index) in cart.result" :key="index" class="odd:bg-light-50 dark:odd:bg-[#121212] py-2">
-          <td>
-            <img src="/img/product/shoes/8.webp" alt="img_preview" class="max-w-40 max-h-40 rounded-md">
-          </td>
-          <td>
-            <span class="whish-title font-semibold">{{ item.product.name }}</span><br>
-            <div class="flex justify-center gap-5 text-xs">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-xl">
+      <div class="p-4 bg-[#FFF3ED] dark:bg-blue-gray-800">
+        <div class="relative mt-1">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" /></svg>
+          </div>
+          <input id="table-search" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for items">
+        </div>
+      </div>
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 capitalize">
+          <tr>
+            <th class="p-2 text-center">
+              👁 {{ t('cart.preview') }}
+            </th>
+            <th class="p-2">
+              🏷 {{ t('cart.name') }}
+            </th>
+            <th class="p-2">
+              ⏳ {{ t('cart.category') }}
+            </th>
+            <th class="p-2">
+              📈 {{ t('cart.price') }}
+            </th>
+            <th class="p-2">
+              ✒ {{ t('cart.quantity') }}
+            </th>
+            <th class="p-2">
+              💰 {{ t('cart.subtotal') }}
+            </th>
+            <th class="p-2 text-center">
+              🛒 {{ t('cart.action') }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in cart.result" :key="index" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <td class="p-2">
+              <div class="flex items-center">
+                <img src="/img/product/shoes/8.webp" alt="img_preview" class="max-w-40 max-h-40 rounded-md">
+              </div>
+            </td>
+            <th class="p-2 font-medium text-gray-900 dark:text-white max-w-80">
+              <span class="whish-title font-semibold">{{ item.product.name }}</span>
+            </th>
+            <td class="p-2 text-xs text-gray-500">
               <div v-for="(desc, i) in item.product.variations" :key="i">
                 <p><span class="text-red-400">{{ desc.name }}:</span> <span>{{ desc.options.toString() }}</span></p>
               </div>
-            </div>
-          </td>
-          <td>
-            <div class="count flex justify-center">
-              <input v-model="item.quantity" type="number" min="1" max="3" step="1" class="dark:bg-black" @change="payload.quantity = item.quantity">
-            </div>
-          </td>
-          <td>
-            x
-            <span class="whish-list-price font-semibold">
-              ${{ item.price }}
-            </span>
-          </td>
-          <td>
-            <a href="#" @click="handleDelete(item.product_model_id)"><span class="trash flex justify-center"><ITrash /></span></a>
-          </td>
-          <td>
-            <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-1 font-semibold" @click="handleUpdate(item.product_model_id)">{{ t('cart.update') }}</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            </td>
+            <th class="p-2 font-medium text-gray-900 dark:text-white max-w-80">
+              <span class="whish-list-price font-semibold">
+                ${{ item.product_model.price }}
+              </span>
+            </th>
+            <td class="p-2">
+              <div class="uppercase flex items-center rounded-md border-1 border-solid border-gray-300 dark:border-gray-500 text-xs w-min">
+                <p class="p-1.25 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none': item.quantity<2}" @click="payload.quantity = item.quantity--">
+                  <IBMinus />
+                </p>
+                <input v-model="item.quantity" type="number" min="1" max="50" step="1" class="dark:bg-transparent appearance-none text-center  pointer-events-none border-l-1 border-l-solid border-l-gray-300 border-r-1 border-r-solid border-r-gray-300 font-medium py-1.25 text-black dark:(text-gray-200 border-gray-500)" @change="payload.quantity = item.quantity">
+                <p class="p-1.25 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none': item.quantity>=item.product_model.stock}" @click="payload.quantity = item.quantity++">
+                  <IBPlus />
+                </p>
+              </div>
+            </td>
+            <th class="p-2 font-medium text-red-500 dark:text-white max-w-80">
+              <span class="whish-title font-semibold">= ${{ item.price }}</span>
+            </th>
+            <td class="p-2">
+              <div class="flex justify-between items-center">
+                <a href="#" @click="handleDelete(item.product_model_id)"><span class="trash flex justify-center"><ITrash /></span></a>
+                <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-1 font-semibold" @click="handleUpdate(item.product_model_id)">{{ t('cart.update') }}</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="checkout-bot flex flex-col p-5">
       <div class="wrapper flex justify-between relative">
         <div class="h-min w-[40%]">
-          <div class="subtotal">
+          <div class="subtotal w-full">
             <ul>
               <li class="totalRow">
                 <!-- <span class="label">{{ t('cart.subtotal') }}</span><span class="value">$35.00</span> -->
@@ -497,29 +517,11 @@ C216.3,217.7,200.8,213.7,178.1,211.7z"
 </template>
 
 <style scoped>
-input[type="number"]{
-    border: 1px solid rgb(210, 210, 210);
-    border-radius: 0.25rem;
-    width: 50%;
-    padding: 0.25rem;
-    transition: 0.2s linear;
-    margin-top: 0.25rem;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
 }
-input[type="number"]:focus{
-    box-shadow: 1px 1px 3px rgb(59, 175, 252);
-}
-table {
-  border-collapse: collapse;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-th{
-  padding: 0.5em 0;
-}
-td:not(:last-child){
-  border-bottom: 1px solid rgb(212, 212, 212);
-}
-/* *******************CHECKOUT BOT CONTAINER ******************/
 .wrapper {
   margin: auto;
   width: 43.75rem;
@@ -529,13 +531,6 @@ td:not(:last-child){
   height: 22.75rem;
   border-radius: 8px;
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-}
-.subtotal {
-  width: 100%;
-  /* border: 2px dashed #efefef;
-  border-top: none;
-  border-left: none;
-  border-bottom-right-radius: 0.5rem; */
 }
 .subtotal .totalRow {
   padding: 0.25em 0.5rem;

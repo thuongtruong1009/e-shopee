@@ -98,7 +98,6 @@ declare module 'vue' {
     IChat: typeof import('./components/icons/IChat.vue')['default']
     ICheck: typeof import('./components/icons/ICheck.vue')['default']
     ICompany: typeof import('./components/icons/about/ICompany.vue')['default']
-    ICompare: typeof import('./components/icons/header/IBCompare.vue')['default']
     IContact: typeof import('./components/icons/IContact.vue')['default']
     ICross: typeof import('./components/icons/ICross.vue')['default']
     IDollar: typeof import('./components/icons/header/IDollar.vue')['default']

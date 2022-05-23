@@ -2,7 +2,7 @@ import AxiosInstance from './axios-instance'
 
 class ProductRequest {
   getProductsById(id) {
-    const url = `/products/product/${id}`
+    const url = `/products/${id}`
     return AxiosInstance.get(url)
   }
 

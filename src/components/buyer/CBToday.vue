@@ -1,12 +1,10 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { useProduct } from '~/stores/product'
+
 const router = useRouter()
-
+const product = useProduct()
 const { t } = useI18n()
-
-const openProduct = () => {
-  router.push('/buyer/product')
-}
 
 const hintList = reactive([{
   img: '/img/today/1.jfif',
@@ -257,6 +255,12 @@ const hintList = reactive([{
 const hintListInit = ref(14)
 const stepVisible = ref(7)
 const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
+
+// ------------------------------------
+const onDetails = () => {
+  // product.productRequestID = product_id
+  router.push(`/products/${encodeURIComponent(product.productRequestID)}`)
+}
 </script>
 
 <template>
@@ -267,7 +271,7 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
       </h2>
     </div>
     <div class="flex flex-wrap gap-3 py-3">
-      <div v-for="(hint, i) in hintListComputed" :key="i" class="w-47 flex flex-col rounded-md bg-light-100 text-gray-900 dark:(bg-blue-gray-800 text-gray-300) shadow-sm shadow-gray-400/50 border-1 border-solid border-transparent hover:border-red-500 cursor-pointer relative" @click="openProduct">
+      <div v-for="(hint, i) in hintListComputed" :key="i" class="w-47 flex flex-col rounded-md bg-light-100 text-gray-900 dark:(bg-blue-gray-800 text-gray-300) shadow-sm shadow-gray-400/50 border-1 border-solid border-transparent hover:border-red-500 cursor-pointer relative" @click="onDetails()">
         <img v-if="hint.extra === true" src="/img/today/extra.png" alt="extra" class="absolute top-0 left-0 w-full">
         <!-- <div class="discount-label absolute top-0 right-0 w-20">
           <p>ok</p>
