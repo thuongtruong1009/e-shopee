@@ -8,7 +8,7 @@ import { useLoading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
 import { useUser } from '~/stores/user'
 import { useOrder } from '~/stores/order'
-import { orderStatus } from '~/utils/orderStatus'
+import { orderStatus } from '~/utils/status'
 import OrderRequest from '~/services/order-request'
 import { handleDate } from '~/utils/date'
 

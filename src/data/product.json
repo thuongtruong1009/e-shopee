@@ -1,0 +1,93 @@
+{
+    "status": true,
+    "data": {
+        "id": 1,
+        "name": "Samsung Galaxy A53 5G | A52s 5G (8GB+128GB\/256GB) with 1 Year Warranty by Samsung",
+        "description": "",
+        "weight": "500",
+        "sold": 0,
+        "images": [
+            "93bc5fa42886e635fd9f103d03c9c31d",
+            "6085df7be931e1ef9d79ce125cacdb8b"
+        ],
+        "videos": [],
+        "variations": [
+            {
+                "name": "Colour",
+                "options": [
+                    "Awesome Black",
+                    "Awesome White"
+                ]
+            },
+            {
+                "name": "Model",
+                "options": [
+                    "A52s 8GB+128GB",
+                    "A53 8GB+128GB"
+                ]
+            }
+        ],
+        "created_at": "2022-05-19 15:07:43",
+        "shop_id": 1,
+        "brand_id": 1,
+        "status_id": 1,
+        "attributes": [],
+        "models": [
+            {
+                "id": 2,
+                "sku": "",
+                "price": "500",
+                "stock": 5,
+                "variation_index": [
+                    0,
+                    1
+                ],
+                "is_default": false,
+                "product_id": 1
+            },
+            {
+                "id": 3,
+                "sku": "",
+                "price": "500",
+                "stock": 5,
+                "variation_index": [
+                    1,
+                    0
+                ],
+                "is_default": false,
+                "product_id": 1
+            },
+            {
+                "id": 4,
+                "sku": "",
+                "price": "500",
+                "stock": 50,
+                "variation_index": [
+                    1,
+                    1
+                ],
+                "is_default": false,
+                "product_id": 1
+            },
+            {
+                "id": 1,
+                "sku": "",
+                "price": "500",
+                "stock": 5,
+                "variation_index": [
+                    0,
+                    0
+                ],
+                "is_default": false,
+                "product_id": 1
+            }
+        ],
+        "wholesale_prices": [
+            {
+                "min": 5,
+                "max": 10,
+                "price": "450"
+            }
+        ]
+    }
+}

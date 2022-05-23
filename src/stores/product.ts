@@ -11,5 +11,6 @@ export const useProduct = defineStore('product', () => {
     1: '',
     2: '',
   })
-  return { category, level1, level2, level3, choicedList }
+  const productRequestID = ref('')
+  return { category, level1, level2, level3, choicedList, productRequestID }
 })

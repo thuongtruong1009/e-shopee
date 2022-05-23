@@ -6,7 +6,7 @@ const router = useRouter()
 const useCategory = category()
 const { t } = useI18n()
 useHead({
-  title: `buyer | ${props.category}category`,
+  title: `buyer | ${props.category} category`,
 })
 
 onMounted(() => {

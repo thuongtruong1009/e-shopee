@@ -12,3 +12,13 @@ export const orderStatus = (status: number) => {
       return 'Cancelled'
   }
 }
+export const productStatus = (status: number) => {
+  switch (status) {
+    case 1:
+      return 'Published'
+    case 2:
+      return 'Delisted'
+    case 3:
+      return 'Deleted'
+  }
+}
