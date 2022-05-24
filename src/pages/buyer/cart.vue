@@ -129,7 +129,6 @@ const handleOrder = async() => {
             </th>
             <td class="p-2 text-xs text-gray-500">
               <div v-for="(desc, i) in item.product.variations" :key="i">
-                <!-- <p><span class="text-red-400">{{ desc.name }}:</span> <span>{{ desc.options.toString() }}</span></p> -->
                 <p v-if="i === item.product_model.variation_index[0]">
                   {{ desc.options[item.product_model.variation_index[1]] }}
                 </p>

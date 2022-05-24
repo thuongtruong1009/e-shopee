@@ -44,6 +44,17 @@ onMounted(async() => {
     // shopAvatar.value = `https://tp-o.tk/resources/images/${shopData.avatar_image}`
   }
 })
+
+watchOnce(async() => {
+  loading.isLoading = true
+  await ShopRequest.getShopsById(product.shopRequestID).then((res) => {
+    loading.isLoading = false
+    seller.payget = res.data[0]
+    seller.statics = res.data[0].statistic
+  }).catch((error) => {
+    return handleError(error)
+  })
+})
 // ---------------------------------------
 const payloadCart = reactive({
   product_model_id: '',

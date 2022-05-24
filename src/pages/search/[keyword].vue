@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { category } from '~/stores/category'
+import { keyword } from '~/stores/keyword'
 
-const props = defineProps<{ category: string }>()
+const props = defineProps<{ keyword: string }>()
 const router = useRouter()
-const useCategory = category()
+const useKeyword = keyword()
 const { t } = useI18n()
 useHead({
-  title: `buyer | ${props.category} category`,
+  title: `search | ${props.keyword}`,
 })
 
 onMounted(() => {
@@ -15,7 +15,7 @@ onMounted(() => {
 })
 
 watchEffect(() => {
-  useCategory.setNewName(props.category)
+  useKeyword.setNewKeyword(props.keyword)
 })
 </script>
 
@@ -25,20 +25,20 @@ watchEffect(() => {
       <carbon-pedestrian class="inline-block" />
     </p>
     <p>
-      {{ t('intro.hi', { name: props.category }) }}
+      {{ t('intro.hi', { name: props.keyword }) }}
     </p>
 
     <p class="text-sm opacity-50">
       <em>{{ t('intro.dynamic-route') }}</em>
     </p>
 
-    <template v-if="useCategory.otherCategories.length">
+    <template v-if="useKeyword.otherKeyword.length">
       <p class="text-sm mt-4">
         <span class="opacity-75">{{ t('intro.aka') }}:</span>
         <ul>
-          <li v-for="otherCategory in useCategory.otherCategories" :key="otherCategory">
-            <router-link :to="`/buyer/categories/${otherCategory}`" replace>
-              {{ otherCategory }}
+          <li v-for="otherKeyword in useKeyword.otherKeyword" :key="otherKeyword">
+            <router-link :to="`/keyword/${otherKeyword}`" replace>
+              {{ otherKeyword }}
             </router-link>
           </li>
         </ul>

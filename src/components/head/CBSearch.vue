@@ -1,15 +1,15 @@
 <script setup>
-import { category } from '~/stores/category'
+import { keyword } from '~/stores/keyword'
 const { t } = useI18n()
 
-const useCategory = category()
-const name = ref(useCategory.savedCategory)
+const useKeyword = keyword()
+const key = ref(useKeyword.savedKeyword)
 
 const router = useRouter()
 const go = () => {
-  if (name.value)
-    router.push(`/buyer/categories/${encodeURIComponent(name.value)}`)
-  name.value = ''
+  if (key.value)
+    router.push(`/search/${encodeURIComponent(key.value)}`)
+  key.value = ''
 }
 </script>
 
@@ -19,8 +19,8 @@ const go = () => {
       <CBMenuCategories />
     </div>
     <div class="search-container w-md <lg:w-xl flex justify-center items-center overflow-hidden">
-      <input v-model="name" type="text" :placeholder="t('header.placeholder search')" :aria-label="t('header.placeholder search')" class="outline-none w-full h-full text-md px-5" @keydown.enter="go">
-      <button class="text-white flex items-center bg-black hover:bg-opacity-70 rounded-r-3xl h-full px-4" :disabled="!name" @click="go">
+      <input v-model="key" type="text" :placeholder="t('header.placeholder search')" :aria-label="t('header.placeholder search')" class="outline-none w-full h-full text-md px-5" @keydown.enter="go">
+      <button class="text-white flex items-center bg-black hover:bg-opacity-70 rounded-r-3xl h-full px-4" :disabled="!key" @click="go">
         <IFind />
       </button>
     </div>
