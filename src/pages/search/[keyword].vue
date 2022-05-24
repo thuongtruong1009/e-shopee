@@ -5,6 +5,7 @@ meta:
 
 <script setup lang="ts">
 import { keyword } from '~/stores/keyword'
+import ProductRequest from '~/services/product-request'
 
 const props = defineProps<{ keyword: string }>()
 const router = useRouter()
@@ -14,10 +15,25 @@ const { t } = useI18n()
 useHead({
   title: `search | ${props.keyword}`,
 })
-
-onMounted(() => {
-  if (!localStorage.getItem('token'))
+// ------------- get result of search product -----------
+const payload = reactive({
+  limit: 10,
+  keyword: props.keyword,
+  order_by: 2,
+  filter: {
+    category_ids: [
+      1,
+    ],
+  },
+})
+onMounted(async() => {
+  if (!localStorage.getItem('token')) {
     router.push({ path: '/buyer/login' })
+  }
+  else {
+    const { data: searchData } = await ProductRequest.searchProducts({ params: { limit: payload.limit, keyword: payload.keyword, order_by: payload.order_by, filter: payload.filter } })
+    console.log(searchData)
+  }
 })
 // get props keyword from store after search
 watchEffect(() => {
