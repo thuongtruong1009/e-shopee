@@ -2,32 +2,32 @@ import AxiosInstance from './axios-instance'
 
 class PasswordRequest {
   updatePasswordUser(data) {
-    const url = '/password'
+    const url = '/user/password'
     return AxiosInstance.put(url, data)
   }
 
   fogotPasswordUser(data) {
-    const url = '/password/forgot'
+    const url = '/user/password/forgot'
     return AxiosInstance.post(url, data)
   }
 
   resetPasswordUser(data) {
-    const url = '/password/reset'
+    const url = '/user/password/reset'
     return AxiosInstance.post(url, data)
   }
 
   updatePasswordAdmin(data) {
-    const url = '/password/admin'
+    const url = '/admin/password'
     return AxiosInstance.put(url, data)
   }
 
   forgotPasswordAdmin(data) {
-    const url = '/password/admin/forgot'
+    const url = '/admin/password/forgot'
     return AxiosInstance.post(url, data)
   }
 
   resetPasswordAdmin(data) {
-    const url = '/password/admin/reset'
+    const url = '/admin/password/reset'
     return AxiosInstance.post(url, data)
   }
 }

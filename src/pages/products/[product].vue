@@ -28,7 +28,6 @@ const product = useProduct()
 const productResponseData = ref([])
 const productPrice = ref()
 const productStock = ref()
-const modelID = ref()
 // const shopPublic = ref()
 // const shopAvatar = ref()
 
@@ -45,7 +44,16 @@ onMounted(async() => {
     // shopAvatar.value = `https://tp-o.tk/resources/images/${shopData.avatar_image}`
   }
 })
-
+// ---------------------------------------
+const payloadCart = reactive({
+  product_model_id: '',
+  quantity: 1,
+})
+const handleAdd = async() => {
+  await CartRequest.addCart(payloadCart)
+  useToast.updateToast('success', 'You cart items has been updated!', true)
+}
+// ------------------------------------------
 watchEffect(async() => {
   // get price min-max
   const valuesPrice = productResponseData.value.models.map(i => i.price)
@@ -67,7 +75,7 @@ function getModelStock(array, option) {
     if (JSON.stringify(element.variation_index) === JSON.stringify(option)) {
       productStock.value = element.stock
       productPrice.value = element.price
-      modelID.value = element.id
+      payloadCart.product_model_id = element.id
     }
     return ''
   })
@@ -84,15 +92,6 @@ const payload = reactive({
 //   })
 //   loading.isLoading = false
 // })
-// ---------------------------------------
-const payloadCart = reactive({
-  product_model_id: 1,
-  quantity: 1,
-})
-const handleAdd = async() => {
-  await CartRequest.addCart(payloadCart)
-  useToast.updateToast('success', 'You cart items has been updated!', true)
-}
 // --------------------------------------------
 const payloadOrder = reactive({
   address_id: '',

@@ -6,8 +6,8 @@ class ProductRequest {
     return AxiosInstance.get(url)
   }
 
-  updateProducts(id, data) {
-    const url = `/products/${id}`
+  updateProductsById(id, data) {
+    const url = `/shop/products/${id}`
     return AxiosInstance.put(url, data)
   }
 
@@ -16,13 +16,8 @@ class ProductRequest {
     return AxiosInstance.delete(url)
   }
 
-  recoveryProductsById(id) {
-    const url = `/products/${id}`
-    return AxiosInstance.post(url)
-  }
-
   createProducts(data) {
-    const url = '/products'
+    const url = '/shop/products'
     return AxiosInstance.post(url, data)
   }
 
@@ -46,43 +41,59 @@ class ProductRequest {
     return AxiosInstance.post(url, data)
   }
 
-  createCategories(data) {
-    const url = '/products/categories'
-    return AxiosInstance.post(url, data)
-  }
-
-  updateCategories(data) {
-    const url = '/products/categories'
-    return AxiosInstance.put(url, data)
-  }
-
-  deleteCategories(data) {
-    const url = '/products/categories'
-    return AxiosInstance.delete(url, data)
-  }
-
-  getAllCategoriesAttributes(data) {
-    const url = '/products/categories/attributes'
+  getAllCategoriesAttributesSeller(data) {
+    const url = '/shop/products/categories/attributes'
     return AxiosInstance.get(url, data)
   }
 
-  createCategoriesAttributes(data) {
-    const url = '/products/categories/attributes'
+  // -----------admin---------------
+  recoveryProductsByIdAdmin(id) {
+    const url = `/admin/products/${id}/recovery`
+    return AxiosInstance.post(url)
+  }
+
+  createCategoriesAdmin(data) {
+    const url = '/admin/products/categories'
     return AxiosInstance.post(url, data)
   }
 
-  updateCategoriesAttributes(data) {
-    const url = '/products/categories/attributes'
+  updateCategoriesAdmin(data) {
+    const url = '/admin/products/categories'
     return AxiosInstance.post(url, data)
   }
 
-  deleteCategoriesAttributes(data) {
-    const url = '/products/categories/attributes'
+  deleteCategoriesAdmin(data) {
+    const url = '/admin/products/categories'
     return AxiosInstance.post(url, data)
   }
 
-  searchCategoriesAttributes(input) {
-    const url = `/products/categories/attributes/${input}`
+  bindAttributesToCategoriesAdmin(id, data) {
+    const url = `/admin/products/categories/${id}/attributes`
+    return AxiosInstance.get(url, data)
+  }
+
+  getAllCategoriesAttributesAdmin(data) {
+    const url = '/admin/products/categories/attributes'
+    return AxiosInstance.get(url, data)
+  }
+
+  createCategoriesAttributesAdmin(data) {
+    const url = '/admin/products/categories/attributes'
+    return AxiosInstance.post(url, data)
+  }
+
+  updateCategoriesAttributesAdmin(id, data) {
+    const url = `/admin/products/categories/attributes${id}`
+    return AxiosInstance.put(url, data)
+  }
+
+  deleteCategoriesAttributesAdmin(id, data) {
+    const url = `/admin/products/categories/attributes${id}`
+    return AxiosInstance.post(url, data)
+  }
+
+  searchCategoriesAttributesAdmin(input) {
+    const url = `/admin/products/categories/attributes/${input}`
     return AxiosInstance.get(url)
   }
 }
