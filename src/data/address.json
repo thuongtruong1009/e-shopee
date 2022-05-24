@@ -1,0 +1,42 @@
+{
+    "status": true,
+    "data": [
+        {
+            "id": 1,
+            "full_name": "User 01",
+            "phone": "0338620777",
+            "state": "Dong Nai",
+            "city": "Bien Hoa",
+            "town": "Long Binh Tan",
+            "address": "Address 01 of User 01",
+            "is_home": true,
+            "types": [
+                {
+                    "name": "Default address"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "full_name": "User 01",
+            "phone": "11111111111",
+            "state": "fefwfefef",
+            "city": "dewdewd",
+            "town": "dwdwe",
+            "address": "dqdwdwqdqwwqdqw",
+            "is_home": false,
+            "types": []
+        },
+        {
+            "id": 5,
+            "full_name": "Thuong Truong",
+            "phone": "9099999999",
+            "state": "Thu Duc",
+            "city": "Ho Chi Minh city",
+            "town": "Linh Trung",
+            "address": "dedewdde",
+            "is_home": null,
+            "types": []
+        }
+    ]
+}

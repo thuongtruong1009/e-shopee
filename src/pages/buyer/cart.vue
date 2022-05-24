@@ -40,7 +40,7 @@ watchEffect(async() => {
   loading.isLoading = false
   cart.result = cartData.data
   cart.payget = cartData.data[0]
-  cart.product = cartData.data[0].product
+  // cart.product = cartData.data[0].product
 })
 
 const payload = reactive({
@@ -136,7 +136,7 @@ const handleOrder = async() => {
             </td>
             <th class="p-2 font-medium text-gray-900 dark:text-white max-w-80">
               <span class="whish-list-price font-semibold">
-                ${{ item.product_model.price }}
+                ${{ item.product_model.total_price }}
               </span>
             </th>
             <td class="p-2">
