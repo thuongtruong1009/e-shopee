@@ -259,7 +259,7 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
 // ------------------------------------
 const onDetails = () => {
   // product.productRequestID = product_id
-  router.push(`/products/${encodeURIComponent(product.productRequestID)}`)
+  router.push(`/product/${encodeURIComponent(product.productRequestID)}`)
 }
 </script>
 

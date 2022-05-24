@@ -6,10 +6,23 @@ meta:
 <script setup>
 import { useRouter } from 'vue-router'
 import { next, prev } from '~/utils/scrollX'
+import { shop } from '~/stores/shop'
+
+const props = defineProps({ shop: String })
 const router = useRouter()
+const useShop = shop()
 
 useHead({
-  title: 'seller | shop',
+  title: `shop | ${props.shop}`,
+})
+
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
+// get shop infor by shop_id
+watchEffect(() => {
+  useShop.setNewShop(props.shop)
 })
 
 const { t } = useI18n()
@@ -372,7 +385,7 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
     </div>
     <div class="h-min bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-300 py-3 px-5">
       <div class="text-lg uppercase font-medium text-gray-500">
-        <h2>{{ t('shop.shop-information') }}</h2>
+        <h2>{{ t('shop.shop-information') }} [shop-props: {{ props.shop }}]</h2>
       </div>
       <div class="grid grid-cols-2 text-sm gap-5">
         <div class="flex items-center">

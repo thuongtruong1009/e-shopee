@@ -127,7 +127,10 @@ const handleOrder = () => {
     router.push({ path: '/buyer/account/address' })
   }
 }
-
+// ----------------------------------
+const onvisitShop = () => {
+  router.push(`/shop/${encodeURIComponent(product.productRequestID)}`)
+}
 </script>
 
 <template>
@@ -304,21 +307,21 @@ const handleOrder = () => {
 
   <div class="shop-product-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2 divide-x divide-1 divide-solid divide-gray-300 flex flex-wrap">
     <div class="flex">
-      <img :src="`https://tp-o.tk/resouce/images${seller.payget.avatar_image}`" alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
+      <img :src="`https://tp-o.tk/resources/images/${seller.payget.avatar_image}`" alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
       <div class="min-w-85">
         <p class="font-medium text-md">
           {{ seller.payget.name }}
         </p>
         <p class="text-gray-500 text-xs">
-          {{ t('product.online') }}
+          {{ t('product.online') }} 1 minutes ago
         </p>
         <div class="flex gap-2 text-sm mt-2">
           <button class="px-3 py-0.5 rounded-md bg-[#FFEEE8] hover:bg-[#FFF5F1] border-1 border-solid border-[#EE4D2D] text-[#EE4D2D] capitalize flex items-center gap-1">
             <IChat />{{ t('product.chat-now') }}
           </button>
-          <a href="/seller/shop/public"><button class="px-3 py-1 rounded-md hover:bg-[#FAFAFA] border-2 border-solid border-gray-300 text-[#EE4D2D] capitalize flex items-center gap-1">
+          <button class="px-3 py-1 rounded-md hover:bg-[#FAFAFA] border-2 border-solid border-gray-300 text-[#EE4D2D] capitalize flex items-center gap-1" @click="onvisitShop">
             <IShop />{{ t('product.visit-shop') }}
-          </button></a>
+          </button>
         </div>
       </div>
     </div>
