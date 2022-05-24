@@ -12,7 +12,7 @@ useHead({
 })
 const { t } = useI18n()
 const product = useProduct()
-const numberWord = ref('')
+// const productName = ref('')
 
 watch(async() => {
   const { data } = await ProductRequest.getCategoriesChildrenById(0)
@@ -53,9 +53,9 @@ const getLevel3 = async(id) => {
       <div class="pt-8 mb-4 flex items-center">
         <label for="add-product-name">{{ t('category.product-name') }}: </label>
         <div class="w-[85%] ml-5 border-1 border-red-500 border-solid flex items-center py-1 rounded-md divide-x divide-solid divide-3 divide-gray-300">
-          <input id="add-product-name" v-model="numberWord" type="text" name="add-product-name" class="dark:bg-blue-gray-800 w-full outline-none px-2" placeholder="Input..." pattern="[A-Za-z0-9]{120}" required>
+          <input id="add-product-name" v-model="product.productName" type="text" name="add-product-name" class="dark:bg-blue-gray-800 w-full outline-none px-2" placeholder="Input..." pattern="[A-Za-z0-9]{120}" required>
           <p class="flex justify-around opacity-60 text-xs px-2">
-            {{ numberWord.length }}/120
+            {{ product.productName.length }}/80
           </p>
         </div>
       </div>

@@ -25,7 +25,7 @@ onBeforeMount(() => {
 const inputSearch = ref('')
 const handleSearch = async(e) => {
   e.preventDefault()
-  const { data: searchData } = await ProductRequest.searchCategoriesAttributes(inputSearch.value)
+  const { data: searchData } = await ProductRequest.searchCategoriesAttributesAdmin(inputSearch.value)
   admin.attributesSearch = searchData
   inputSearch.value = ''
 }
@@ -38,7 +38,7 @@ const createItem = reactive({
 
 })
 const handleCreate = async() => {
-  await ProductRequest.createCategoriesAttributes(createItem)
+  await ProductRequest.createCategoriesAttributesAdmin(createItem)
   useToast.updateToast('success', 'Category attributes has been created!', true)
   createItem.create[0].name = ''
   createItem.create[0].units[0] = ''
@@ -59,7 +59,7 @@ const handleUpdate = async(id, name, units0, units1) => {
   updateItem.update[0].name = name
   updateItem.update[0].units[0] = units0
   updateItem.update[0].units[1] = units1
-  await ProductRequest.updateCategoriesAttributes(updateItem)
+  await ProductRequest.updateCategoriesAttributesAdmin(updateItem)
   useToast.updateToast('success', 'Category attributes has been updated!', true)
 }
 
@@ -70,7 +70,7 @@ const deleteItem = reactive({
 })
 const handleDelete = async(id) => {
   deleteItem.delete[0].id = id
-  await ProductRequest.deleteCategoriesAttributes(deleteItem)
+  await ProductRequest.deleteCategoriesAttributesAdmin(deleteItem)
   useToast.updateToast('success', 'Category attributes has been deleted!', true)
 }
 // ----------------------------------------------------

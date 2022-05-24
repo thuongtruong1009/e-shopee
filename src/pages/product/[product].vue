@@ -8,7 +8,9 @@ import { useRouter } from 'vue-router'
 import { useLoading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
 import { useProduct } from '~/stores/product'
+import { useSeller } from '~/stores/seller'
 import { handleError } from '~/helpers/error'
+import { handleDate } from '~/utils/date'
 import { productStatus } from '~/utils/status'
 import ShopRequest from '~/services/shop-request'
 import ProductRequest from '~/services/product-request'
@@ -20,15 +22,16 @@ import provinceNames from '~/shared/provinces'
 useHead({
   title: 'buyer | product details',
 })
+const { t } = useI18n()
 const loading = useLoading()
 const router = useRouter()
 const useToast = toast()
 const product = useProduct()
+const seller = useSeller()
 
 const productResponseData = ref([])
 const productPrice = ref()
 const productStock = ref()
-const modelID = ref()
 // const shopPublic = ref()
 // const shopAvatar = ref()
 
@@ -46,6 +49,23 @@ onMounted(async() => {
   }
 })
 
+watchOnce(async() => {
+  loading.isLoading = true
+  const { data: shopdata } = await ShopRequest.getShopsById(product.shopRequestID)
+  loading.isLoading = false
+  seller.payget = shopdata
+  seller.statics = shopdata.statistic
+})
+// ---------------------------------------
+const payloadCart = reactive({
+  product_model_id: '',
+  quantity: 1,
+})
+const handleAdd = async() => {
+  await CartRequest.addCart(payloadCart)
+  useToast.updateToast('success', 'You cart items has been updated!', true)
+}
+// ------------------------------------------
 watchEffect(async() => {
   // get price min-max
   const valuesPrice = productResponseData.value.models.map(i => i.price)
@@ -67,7 +87,7 @@ function getModelStock(array, option) {
     if (JSON.stringify(element.variation_index) === JSON.stringify(option)) {
       productStock.value = element.stock
       productPrice.value = element.price
-      modelID.value = element.id
+      payloadCart.product_model_id = element.id
     }
     return ''
   })
@@ -84,15 +104,6 @@ const payload = reactive({
 //   })
 //   loading.isLoading = false
 // })
-// ---------------------------------------
-const payloadCart = reactive({
-  product_model_id: 1,
-  quantity: 1,
-})
-const handleAdd = async() => {
-  await CartRequest.addCart(payloadCart)
-  useToast.updateToast('success', 'You cart items has been updated!', true)
-}
 // --------------------------------------------
 const payloadOrder = reactive({
   address_id: '',
@@ -116,7 +127,10 @@ const handleOrder = () => {
     router.push({ path: '/buyer/account/address' })
   }
 }
-
+// ----------------------------------
+const onvisitShop = () => {
+  router.push(`/shop/${encodeURIComponent(product.productRequestID)}`)
+}
 </script>
 
 <template>
@@ -152,7 +166,7 @@ const handleOrder = () => {
               1
             </p>
             <p class="text-gray-500">
-              Evaluate
+              {{ t('product.evaluate') }}
             </p>
           </div>
           <div class="flex item gap-2 px-3">
@@ -160,7 +174,7 @@ const handleOrder = () => {
               {{ productResponseData.sold }}
             </p>
             <p class="text-gray-500">
-              Solded
+              {{ t('product.solded') }}
             </p>
           </div>
         </div>
@@ -168,7 +182,7 @@ const handleOrder = () => {
           <div class="old-price flex items-start text-gray-500 line-through">
             <p>$</p>
             <h2 class="font-medium text-sm">
-              178.000
+              78.000
             </h2>
           </div>
           <div class="current-price flex text-[#EE4D2D]">
@@ -184,16 +198,16 @@ const handleOrder = () => {
           </div>
         </div>
         <div class="infor">
-          <label>Weight</label>
+          <label>{{ t('product.weight') }}</label>
           <p>{{ productResponseData.weight }}gram</p>
           <p class="text-[#EE4D2D] bg-[#FFEEE8] px-1 text-sm ml-5">
-            Mua Kèm Deal Sốc
+            {{ t('product.buy-with-deal') }}
           </p>
         </div>
         <div class="infor">
           <label>Shipping</label>
           <p class="text-sm flex gap-2 items-center">
-            <IBShipping /> Vận chuyển tới
+            <IBShipping /> {{ t('product.transport') }}
           </p>
           <div>
             <select name="province" class="cursor-pointer dark:bg-gray-700 rounded-md pl-2 appearance-none pl-2 border-1 border-dashed border-gray-300">
@@ -248,7 +262,7 @@ const handleOrder = () => {
           </div>
         </div> -->
         <div class="infor">
-          <label>Quantities</label>
+          <label>{{ t('product.quantities') }}</label>
           <div class="uppercase flex items-center rounded-md border-1 border-solid border-gray-300 text-sm">
             <p class="px-2 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none': payloadCart.quantity<2}" @click="payloadCart.quantity--">
               <IBMinus />
@@ -261,7 +275,7 @@ const handleOrder = () => {
             </p>
           </div>
           <p class="lowercase text-gray-500">
-            {{ productStock }} available products
+            {{ productStock }} {{ t('product.available-products') }}
           </p>
         </div>
         <div class="flex gap-3">
@@ -293,52 +307,52 @@ const handleOrder = () => {
 
   <div class="shop-product-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2 divide-x divide-1 divide-solid divide-gray-300 flex flex-wrap">
     <div class="flex">
-      <img alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
+      <img :src="`https://tp-o.tk/resources/images/${seller.payget.avatar_image}`" alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
       <div class="min-w-85">
         <p class="font-medium text-md">
-          ABCXYZ
+          {{ seller.payget.name }}
         </p>
         <p class="text-gray-500 text-xs">
-          Online 13 hours ago
+          {{ t('product.online') }} 1 minutes ago
         </p>
         <div class="flex gap-2 text-sm mt-2">
           <button class="px-3 py-0.5 rounded-md bg-[#FFEEE8] hover:bg-[#FFF5F1] border-1 border-solid border-[#EE4D2D] text-[#EE4D2D] capitalize flex items-center gap-1">
-            <IChat />Chat now
+            <IChat />{{ t('product.chat-now') }}
           </button>
-          <a href="/seller/shop/public"><button class="px-3 py-1 rounded-md hover:bg-[#FAFAFA] border-2 border-solid border-gray-300 text-[#EE4D2D] capitalize flex items-center gap-1">
-            <IShop />Visit shop
-          </button></a>
+          <button class="px-3 py-1 rounded-md hover:bg-[#FAFAFA] border-2 border-solid border-gray-300 text-[#EE4D2D] capitalize flex items-center gap-1" @click="onvisitShop">
+            <IShop />{{ t('product.visit-shop') }}
+          </button>
         </div>
       </div>
     </div>
     <div class="flex justify-around items-center w-3/5 text-sm text-gray-400">
       <div>
-        <div class="flex gap-2 min-w-27">
-          <p>Evalute</p>
-          <span>171</span>
+        <div class="flex gap-2 min-w-27 capitalize">
+          <p>{{ t('product.evaluate') }}</p>
+          <span>{{ seller.statics.average_raiting }}%</span>
         </div>
-        <div class="flex gap-2 min-w-27">
-          <p>Productions</p>
-          <span>100</span>
-        </div>
-      </div>
-      <div>
-        <div class="flex gap-2 min-w-27">
-          <p>Response ratio</p>
-          <span>11%</span>
-        </div>
-        <div class="flex gap-2 min-w-27">
-          <p>Response time</p>
-          <span>in some hours</span>
+        <div class="flex gap-2 min-w-27 capitalize">
+          <p>{{ t('product.productions') }}</p>
+          <span>{{ seller.statics.product_count }}</span>
         </div>
       </div>
       <div>
         <div class="flex gap-2 min-w-27">
-          <p>Joined</p>
-          <span>13 months ago</span>
+          <p>{{ t('product.response-ratio') }}</p>
+          <span>{{ seller.statics.nonfulfilment_rate }}%</span>
+        </div>
+        <div class="flex gap-2 min-w-27">
+          <p>{{ t('product.response-time') }}</p>
+          <span>{{ t('product.in-some-hours') }}</span>
+        </div>
+      </div>
+      <div>
+        <div class="flex gap-2 min-w-27">
+          <p>{{ t('shop.joined') }}</p>
+          <span>{{ handleDate(seller.payget.created_at) }}</span>
         </div>
         <div class="flex gap-2 whitespace-nowrap">
-          <p>Follower</p>
+          <p>{{ t('product.follower') }}</p>
           <span>9.4k</span>
         </div>
       </div>
@@ -348,33 +362,33 @@ const handleOrder = () => {
   <div class="product-details max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2">
     <div class="bg-[#FAFAFA] dark:bg-gray-700 p-3 rounded-lg">
       <h2 class="uppercase text-xl">
-        Product describes
+        {{ t('product.product-describes') }}
       </h2>
     </div>
     <div>
-      <label>Category</label>
+      <label>{{ t('product.category') }}</label>
       <p class="text-[#0055BD] cursor-pointer">
         e-shopee > men's shoes > sandal > other
       </p>
     </div>
     <div>
-      <label>Organization</label>
-      <p>Updating...</p>
+      <label>{{ t('product.organization') }}</label>
+      <p>{{ t('product.updating') }}...</p>
     </div>
     <div>
-      <label>Origin</label>
+      <label>{{ t('product.origin') }}</label>
       <p>VietNam</p>
     </div>
     <div>
-      <label>Address</label>
-      <p>Updating...</p>
+      <label>{{ t('product.address') }}</label>
+      <p>{{ t('product.updating') }}...</p>
     </div>
     <div>
-      <label>Warehouse</label>
+      <label>{{ t('product.warehouse') }}</label>
       <p>14984</p>
     </div>
     <div>
-      <label>Ship from</label>
+      <label>{{ t('product.ship-from') }}</label>
       <p>Huyện Tân Kỳ, Nghệ An</p>
     </div>
     <div>
@@ -400,7 +414,7 @@ const handleOrder = () => {
 
   <div class="product-evalutions max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2">
     <div class="text-xl uppercase">
-      <h2>Product evalutions</h2>
+      <h2>{{ t('product.product-evalutions') }}</h2>
     </div>
     <div class="divide-y divide-1 divide-solid divide-gray-200">
       <div v-for="i in 3" :key="i" class="flex justify-between items-start py-3">

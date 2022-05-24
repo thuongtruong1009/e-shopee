@@ -8,7 +8,6 @@ import { useRouter } from 'vue-router'
 import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
 import { useLoading } from '~/stores/loading'
-import { sumPrice } from '~/utils/sumPrice'
 import CartRequest from '~/services/cart-request'
 import AccountRequest from '~/services/account-request'
 import OrderRequest from '~/services/order-request'
@@ -40,7 +39,7 @@ watchEffect(async() => {
   loading.isLoading = false
   cart.result = cartData.data
   cart.payget = cartData.data[0]
-  cart.product = cartData.data[0].product
+  // cart.product = cartData.data[0].product
 })
 
 const payload = reactive({
@@ -129,7 +128,9 @@ const handleOrder = async() => {
             </th>
             <td class="p-2 text-xs text-gray-500">
               <div v-for="(desc, i) in item.product.variations" :key="i">
-                <p><span class="text-red-400">{{ desc.name }}:</span> <span>{{ desc.options.toString() }}</span></p>
+                <p v-if="i === item.product_model.variation_index[0]">
+                  {{ desc.options[item.product_model.variation_index[1]] }}
+                </p>
               </div>
             </td>
             <th class="p-2 font-medium text-gray-900 dark:text-white max-w-80">
@@ -149,7 +150,7 @@ const handleOrder = async() => {
               </div>
             </td>
             <th class="p-2 font-medium text-red-500 dark:text-white max-w-80">
-              <span class="whish-title font-semibold">= ${{ item.price }}</span>
+              <span class="whish-title font-semibold">= ${{ item.total_price }}</span>
             </th>
             <td class="p-2">
               <div class="flex justify-between items-center">
@@ -182,7 +183,7 @@ const handleOrder = async() => {
                 <span />
               </li>
               <li class="totalRow final">
-                <span class="label">{{ t('cart.total') }}</span><span class="value">${{ sumPrice(cart.result, cart.payget.price, cart.payget.quantity) }}</span>
+                <span class="label">{{ t('cart.total') }}</span><span class="value">${{ cart.result.reduce((accum,item) => accum + item.total_price, 0) }}</span>
               </li>
             </ul>
           </div>

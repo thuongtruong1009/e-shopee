@@ -30,7 +30,7 @@ const discountList = ref([1])
 const payload = reactive({
   brand_id: '',
   is_published: true,
-  name: '',
+  name: product.productName,
   description: '',
   weight: '',
   images: '',

@@ -1,14 +1,29 @@
 <route lang="yaml">
 meta:
-  layout: buyer/LBFilter
+  layout: LFilter
 </route>
 
-<script setup>
-useHead({
-  title: 'buyer | filter',
-})
+<script setup lang="ts">
+import { keyword } from '~/stores/keyword'
+
+const props = defineProps<{ keyword: string }>()
+const router = useRouter()
+const useKeyword = keyword()
 const { t } = useI18n()
 
+useHead({
+  title: `search | ${props.keyword}`,
+})
+
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
+// get props keyword from store after search
+watchEffect(() => {
+  useKeyword.setNewKeyword(props.keyword)
+})
+// ------------------------------------------------------------------
 const priceValue = ref(200)
 const priceMin = ref(200)
 const priceMax = ref(1000)
@@ -186,6 +201,14 @@ const products = reactive([{
 }])
 </script>
 
+<!-- <template>
+  <div>
+    <p>
+      {{ t('intro.hi', { name: props.keyword }) }}
+    </p>
+  </div>
+</template> -->
+
 <template>
   <div class="filter-container bg-white grid grid-cols-4 py-20 px-10 gap-3 dark:bg-black">
     <aside class="left-sidebar theme1 text-left col-span-1 px-2">
@@ -230,14 +253,14 @@ const products = reactive([{
 
       <div class="search-filter">
         <h4 class="title">
-          {{ t('wishlist.filter-by') }}
+          {{ t('search.filter-by') }}
         </h4>
       </div>
 
       <div>
         <form action="#">
           <h4 class="sub-title">
-            {{ t('wishlist.categories') }}
+            {{ t('search.categories') }}
           </h4>
           <div class="filter-check-box">
             <input id="20820" type="checkbox" class="accent-pink-500">
@@ -253,7 +276,7 @@ const products = reactive([{
           </div>
 
           <h4 class="sub-title">
-            {{ t('wishlist.price') }}
+            {{ t('search.price') }}
           </h4>
           <div class="filter-check-box">
             $0 - ${{ priceValue }}
@@ -266,7 +289,7 @@ const products = reactive([{
           </div>
 
           <h4 class="sub-title">
-            {{ t('wishlist.color') }}
+            {{ t('search.color') }}
           </h4>
           <div class="pt-2">
             <label class="checkbox-container" for="20826">grey (4)
@@ -288,7 +311,7 @@ const products = reactive([{
           </div>
 
           <h4 class="sub-title">
-            {{ t('wishlist.brand') }}
+            {{ t('search.brand') }}
           </h4>
           <div class="filter-check-box">
             <input id="20824" type="checkbox" class="accent-pink-500">
@@ -303,7 +326,7 @@ const products = reactive([{
 
       <div class="search-filter">
         <h4 class="title">
-          {{ t('wishlist.tags') }}
+          {{ t('search.tags') }}
         </h4>
       </div>
       <ul class="product-tag flex justify-start items-center mb-10 mt-5 flex-wrap ">
@@ -327,25 +350,25 @@ const products = reactive([{
           <li class="nav-item ml-3 mr-7 text-lg hover:text-red-500 cursor-pointer" :style="[regime === 'flow' ? {color:'red'} : {color:'gray'}]" @click="onChangeRegime('flow')">
             <i class="fa fa-list" />
           </li>
-          <li><span class="total-products text-sm">{{ t('wishlist.there-are') }} {{ totalProducts }} {{ t('wishlist.products') }}.</span></li>
+          <li><span class="total-products text-sm">{{ t('search.there-are') }} {{ totalProducts }} {{ t('search.products') }}.</span></li>
         </ul>
         <div>
-          <span class="text-sm mr-3">{{ t('wishlist.sort-by') }}: </span>
-          <select id="sort_by" name="sort_by" class="outline-none rounded-xl px-3 py-0.5 cursor-pointer text-sm">
-            <option value="relevance">
-              {{ t('wishlist.relevance') }}
+          <span class="text-sm mr-3">{{ t('search.sort-by') }}: </span>
+          <select id="sort_by" name="sort_by" class="px-3 py-0.5 cursor-pointer text-sm text-gray-900 bg-blue-100 rounded-lg border border-gray-300 focus:(ring-blue-500 border-blue-500) dark:(bg-gray-700 placeholder-gray-400 text-white) dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option value="" disabled selected hidden>
+              {{ t('search.relevance') }}
             </option>
-            <option value="name_a_to_z">
-              {{ t('wishlist.name') }}, A to Z
+            <option value="name_a_to_z" class="bg-white dark:bg-transparent">
+              {{ t('search.name') }}, {{ t('search.a-z') }}
             </option>
-            <option value="name_z_to_a">
-              {{ t('wishlist.name') }}, Z to A
+            <option value="name_z_to_a" class="bg-white dark:bg-transparent">
+              {{ t('search.name') }}, {{ t('search.z-a') }}
             </option>
-            <option value="price_low_to_high">
-              {{ t('wishlist.price') }}, low to high
+            <option value="price_low_to_high" class="bg-white dark:bg-transparent">
+              {{ t('search.price') }}, {{ t('search.low-high') }}
             </option>
-            <option value="price_high_to_low">
-              {{ t('wishlist.price') }}, high to low
+            <option value="price_high_to_low" class="bg-white dark:bg-transparent">
+              {{ t('search.price') }}, {{ t('search.high-low') }}
             </option>
           </select>
         </div>
@@ -355,7 +378,7 @@ const products = reactive([{
           <div v-for="(prod, i) in products" :key="i" class="card duration-200 ease-linear relative rounded-lg w-60 hover:shadow-md hover:shadow-gray-400/50 pb-0">
             <div class="card-type flex justify-between absolute w-full p-2">
               <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
-              <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">new</span>
+              <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('search.new') }}</span>
             </div>
             <div class="card-img max-w-full max-h-7/12">
               <a href="single-product.html">
@@ -385,7 +408,7 @@ const products = reactive([{
             <div class="relative">
               <div class="card-type flex justify-between absolute w-full p-5">
                 <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
-                <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">new</span>
+                <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('search.new') }}</span>
               </div>
               <div class="card-img max-w-full max-h-7/12">
                 <a href="single-product.html">
@@ -416,11 +439,11 @@ const products = reactive([{
                 </p>
               </div>
               <div class="product-quantity">
-                <p>{{ t('wishlist.availability') }}: <span class="text-[#10A391]">{{ prod.quantity }} In Stock</span></p>
+                <p>{{ t('search.availability') }}: <span class="text-[#10A391]">{{ prod.quantity }} In Stock</span></p>
               </div>
               <div class="py-5 flex justify-start">
                 <h3 class="uppercase py-2.5 px-10 rounded-md bg-black text-white font-medium text-sm cursor-pointer hover:bg-[#F33535] duration-200" @click="onOpenPopup">
-                  {{ t('wishlist.add-to-cart') }}
+                  {{ t('search.add-to-cart') }}
                 </h3>
               </div>
               <div v-if="isPopup === true" class="popup-modal fixed w-screen h-screen top-0 left-0 flex justify-center items-center ease-linear">
@@ -428,7 +451,7 @@ const products = reactive([{
                   <div class="text-white flex justify-center items-center bg-black rounded-t-lg gap-2 relative py-2">
                     <ICheck />
                     <h5 class="text-lg" style="font-family: 'Gilroy-Medium'">
-                      {{ t('wishlist.add-success-message') }}
+                      {{ t('search.add-success-message') }}
                     </h5>
                     <span class="cursor-pointer text-4xl absolute right-3 -top-1" @click="onClosePopup">&times;</span>
                   </div>
@@ -440,32 +463,32 @@ const products = reactive([{
                           New Balance Running Arishi trainers in triple
                         </h6>
                         <p>$29.00</p>
-                        <p>{{ t('wishlist.dimension') }}: <span class="text-sm font-normal">40x60cm</span></p>
-                        <p>{{ t('wishlist.quantity') }}: 1</p>
+                        <p>{{ t('search.dimension') }}: <span class="text-sm font-normal">40x60cm</span></p>
+                        <p>{{ t('search.quantity') }}: 1</p>
                       </div>
                     </div>
                     <div class="col-span-4 px-10 text-sm font-semibold">
                       <p class="py-0.5 font-normal">
-                        {{ t('wishlist.there-is') }} 1 {{ t('wishlist.item-in-your-cart') }}.
+                        {{ t('search.there-is') }} 1 {{ t('search.item-in-your-cart') }}.
                       </p>
                       <p class="py-0.5">
-                        {{ t('wishlist.total-products') }}: <span class="font-normal">$123.72</span>
+                        {{ t('search.total-products') }}: <span class="font-normal">$123.72</span>
                       </p>
                       <p class="py-0.5">
-                        {{ t('wishlist.total-shipping') }}: <span class="font-normal">$7.00</span>
+                        {{ t('search.total-shipping') }}: <span class="font-normal">$7.00</span>
                       </p>
                       <p class="py-0.5">
-                        {{ t('wishlist.taxes') }} <span class="font-normal">$0.00</span>
+                        {{ t('search.taxes') }} <span class="font-normal">$0.00</span>
                       </p>
                       <p class="py-0.5">
-                        {{ t('wishlist.total') }}: <span class="font-normal">$130.72 (tax excl.)</span>
+                        {{ t('search.total') }}: <span class="font-normal">$130.72 (tax excl.)</span>
                       </p>
                       <div class="uppercase flex text-white font-medium text-sm py-5">
                         <h6 class="bg-black rounded-md py-2 px-6 mr-2 hover:bg-red-500 cursor-pointer duration-200">
-                          {{ t('wishlist.continue-shopping') }}
+                          {{ t('search.continue-shopping') }}
                         </h6>
                         <h6 class="bg-black rounded-md py-2 px-6 hover:bg-red-500 cursor-pointer duration-200 flex gap-2 items-center">
-                          <ICheck />{{ t('wishlist.proceed-checkout') }}
+                          <ICheck />{{ t('search.proceed-checkout') }}
                         </h6>
                       </div>
                     </div>

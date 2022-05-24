@@ -12,6 +12,7 @@
 
 - [Official demo link](https://e-shopee.vercel.app)
 - [Dev beta link](https://www.shopest.tk)
+- [API documents](https://tpo-project.github.io/e-commerce-api/#/) - [Backend repo](https://github.com/tpo-project/e-commerce-api)
 
 <table>
   <tr>

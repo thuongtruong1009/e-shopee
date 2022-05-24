@@ -204,7 +204,7 @@ const toggleLocales = () => {
       </div>
     </section>
     <footer class="text-center text-gray-400 py-3">
-      <p>{{ t('index.copyright') }} @2022 e-shopee. {{ t('index.all-rights-reserved') }}.</p>
+      <p>{{ t('index.copyright') }} @{{ new Date().getFullYear() }} e-shopee. {{ t('index.all-rights-reserved') }}.</p>
     </footer>
   </div>
 </template>

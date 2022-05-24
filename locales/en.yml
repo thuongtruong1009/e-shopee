@@ -5,13 +5,6 @@ button:
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
-intro:
-  desc: Opinionated Vite Starter Template
-  dynamic-route: Demo of dynamic route
-  hi: The result for, {name}!
-  aka: Also known as
-  whats-your-name: What's your name?
-not-found: Not found
 ctrending:
   search: search trending for us
   see-more: See more
@@ -145,39 +138,6 @@ service:
   payment-secure-desc: Easy and convenient.
   chat-title: Live chat
   chat-desc: Share exchange with seller
-index:
-  admin-chanel: Admin chanel
-  seller-chanel: Seller chanel
-  buying-chanel: Buying chanel
-  exploring: Exploring
-  banner-desc: The top world's leading shopping app
-  download-now: Download the app now
-  service-title: Shopping anytime, anywhere
-  service-desc: Enjoy attractive promotions, super savings from the most prestigious stores
-  transfer-support: Transfer Support
-  transfer-desc: Your order status is always updated in detail since you place your order
-  customer-support: Customer support
-  customer-desc: Customer Care Department is always ready to support you 24/7
-  today-suggestion: Today's Suggestions
-  today-suggestion-desc: Choose the right products for you in Today's Suggestions
-  safe-payment: Safe payment method
-  safe-payment-desc: Easy and convenient payment. Pay on Delivery or Prepay by Credit/Debit Card
-  chat: Chat
-  chat-feature: feature
-  chat-desc: Chat directly with the seller for more product advice. You can also negotiate the desired price with the Seller through the "Chat" section
-  guarantee-privacy: Guarantee Privacy
-  commit: Shopee commits that the amount you pay will be transferred to the seller after you receive the goods. We always protect you
-  advertisement-1-desc: The place to own all the products you love
-  advertisement-2-title: Buy and sell online
-  advertisement-2-desc: Enjoy shopping and doing business with prestige
-  advertisement-3-title: gifts for new customers
-  advertisement-3-desc: Exclusive and attractive gifts for new customers at e-shopee
-  customer-opinion-title: What do users say about e-shopee
-  opinion-1: I always look forward to e-shopee to hunt for deals and always get surprisingly good deals. Not to mention every deal hunting is fun, the last deal hunt is the most fun in my 2 years of e-shopee addiction
-  opinion-2: Every time I go to e-shopee, I have great results, dozens of items keep picking up until I receive the goods, I don't even know when I ordered this or that. So addicted to e-shopee
-  joined-at: Joined at
-  copyright: Copyright
-  all-rights-reserved: All rights reserved
 auth:
   a-banner: Professional admin
   a-desc: Manage your shop more effectively and visualization on e-shopee with Admin channel
@@ -208,6 +168,7 @@ auth:
 account:
   dashboard: Dashboard
   hello: Hello
+  joined-at: Joined at
   not-you: If not you
   logout: Logout
   dashboard-desc: From your account dashboard. you can easily check {symbol} view your recent orders, manage your shipping and billing addresses and edit your password and account details
@@ -328,6 +289,62 @@ cart:
   total: Total
   view-cart: view cart
   free-ship: Free Shipping on All Orders Over
+product:
+  evaluate: Evaluate
+  solded: Solded
+  weight: Weight
+  buy-with-deal: Buy with sale deal
+  transport: Transport to
+  quantities: Quantities
+  available-products: available products
+  online: Online
+  chat-now: Chat now
+  visit-shop: Visit shop
+  productions: Productions
+  response-ratio: Response ratio
+  response-time: Response time
+  in-some-hours: in some hours
+  joined: Joined
+  follower: Follower
+  product-describes: Product describes
+  category: Category
+  organization: Organization
+  updating: Updating
+  origin: Origin
+  address: Address
+  warehouse: Warehouse
+  ship-from: Ship from
+  product-evalutions: Product evalutions
+search:
+  filter-by: Filter By
+  categories: Categories
+  price: Price
+  color: Color
+  brand: Brand
+  tags: Product Tags
+  there-are: There are
+  products: products
+  sort-by: Sort by
+  relevance: Relevance
+  a-z: A to Z
+  z-a: Z to A
+  low-high: low to high
+  high-low: high to low
+  new: new
+  name: Name
+  availability: Availability
+  add-to-cart: Add to cart
+  add-success-message: Product successfully added to your shopping cart
+  dimension: Dimension
+  quantity: Quantity
+  total-products: Total products
+  total-shipping: Total shipping
+  taxes: Taxes
+  total: Total
+  continue-shopping: continue shopping
+  proceed-checkout: proceed to checkout
+  there-is: There is
+  item-in-your-cart: item in your cart
 checkout:
   personal-information: Personal Information
   order-as-guest: Order as a guest
@@ -374,6 +391,39 @@ checkout:
   secure-policy: Security Policy (commit by Reassurance)
   delivery-policy: Delivery Policy (commit by Reassurance)
   return-policy: Return Policy (commit by Reassurance)
+index:
+  admin-chanel: Admin chanel
+  seller-chanel: Seller chanel
+  buying-chanel: Buying chanel
+  exploring: Exploring
+  banner-desc: The top world's leading shopping app
+  download-now: Download the app now
+  service-title: Shopping anytime, anywhere
+  service-desc: Enjoy attractive promotions, super savings from the most prestigious stores
+  transfer-support: Transfer Support
+  transfer-desc: Your order status is always updated in detail since you place your order
+  customer-support: Customer support
+  customer-desc: Customer Care Department is always ready to support you 24/7
+  today-suggestion: Today's Suggestions
+  today-suggestion-desc: Choose the right products for you in Today's Suggestions
+  safe-payment: Safe payment method
+  safe-payment-desc: Easy and convenient payment. Pay on Delivery or Prepay by Credit/Debit Card
+  chat: Chat
+  chat-feature: feature
+  chat-desc: Chat directly with the seller for more product advice. You can also negotiate the desired price with the Seller through the "Chat" section
+  guarantee-privacy: Guarantee Privacy
+  commit: Shopee commits that the amount you pay will be transferred to the seller after you receive the goods. We always protect you
+  advertisement-1-desc: The place to own all the products you love
+  advertisement-2-title: Buy and sell online
+  advertisement-2-desc: Enjoy shopping and doing business with prestige
+  advertisement-3-title: gifts for new customers
+  advertisement-3-desc: Exclusive and attractive gifts for new customers at e-shopee
+  customer-opinion-title: What do users say about e-shopee
+  opinion-1: I always look forward to e-shopee to hunt for deals and always get surprisingly good deals. Not to mention every deal hunting is fun, the last deal hunt is the most fun in my 2 years of e-shopee addiction
+  opinion-2: Every time I go to e-shopee, I have great results, dozens of items keep picking up until I receive the goods, I don't even know when I ordered this or that. So addicted to e-shopee
+  joined-at: Joined at
+  copyright: Copyright
+  all-rights-reserved: All rights reserved
 contact:
   contact-us: Contact Us
   tell-us-desc: Tell us about your issue so we can help you more quickly
@@ -395,31 +445,6 @@ sitemap:
   sitemap: sitemap
 favourite:
   add-to-cart: Add to cart
-wishlist:
-  filter-by: Filter By
-  categories: Categories
-  price: Price
-  color: Color
-  brand: Brand
-  tags: Product Tags
-  there-are: There are
-  products: products
-  sort-by: Sort by
-  relevance: Relevance
-  name: Name
-  availability: Availability
-  add-to-cart: Add to cart
-  add-success-message: Product successfully added to your shopping cart
-  dimension: Dimension
-  quantity: Quantity
-  total-products: Total products
-  total-shipping: Total shipping
-  taxes: Taxes
-  total: Total
-  continue-shopping: continue shopping
-  proceed-checkout: proceed to checkout
-  there-is: There is
-  item-in-your-cart: item in your cart
 about:
   about-us: About Us
   welcome: Welcome to

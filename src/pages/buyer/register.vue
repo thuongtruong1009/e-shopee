@@ -29,11 +29,11 @@ const payload = reactive({
 
 const handleSubmit = async(e) => {
   e.preventDefault()
-  useLoading.isLoading = true
+  loading.isLoading = true
   await AuthRequest.registerUser(payload)
     .then((res) => {
       router.push({ path: '/buyer/login' })
-      useLoading.isLoading = false
+      loading.isLoading = false
       useToast.updateToast('success', `Hi, ${payload.username}. Check verification email sent in your mailbox!`, true)
     })
     .catch((error) => {
