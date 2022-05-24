@@ -1,0 +1,17 @@
+{
+    "data": {
+        "id": 1,
+        "username": "user01",
+        "email": "user01@gmail.com",
+        "email_verified_at": "2022-05-19T15:07:42.000000Z",
+        "created_at": "2022-05-19 15:07:43",
+        "profile": {
+            "display_name": "dewwedwdede",
+            "avatar_image": "80acc44fb33c446f51532141f923770f",
+            "phone": "12345678911",
+            "gender": 2,
+            "date_of_birth": "12\/22\/2022",
+            "user_id": 1
+        }
+    }
+}

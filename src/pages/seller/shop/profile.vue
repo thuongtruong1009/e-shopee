@@ -25,12 +25,12 @@ const seller = useSeller()
 const useToast = toast()
 
 const resumeAddress = ref([])
-watch(async() => {
+watchOnce(async() => {
   loading.isLoading = true
   const { data: shopData } = await ShopRequest.getShops()
   loading.isLoading = false
-  seller.payget = shopData[0]
-  seller.statics = shopData[0].statistic
+  seller.payget = shopData
+  seller.statics = shopData.statistic
 
   const { data: addressData } = await AccountRequest.getAddress()
   resumeAddress.value = addressData.filter(e => Object.keys(addressData.id === 0))[0]

@@ -8,7 +8,6 @@ import { useRouter } from 'vue-router'
 import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
 import { useLoading } from '~/stores/loading'
-import { sumPrice } from '~/utils/sumPrice'
 import CartRequest from '~/services/cart-request'
 import AccountRequest from '~/services/account-request'
 import OrderRequest from '~/services/order-request'
@@ -136,7 +135,7 @@ const handleOrder = async() => {
             </td>
             <th class="p-2 font-medium text-gray-900 dark:text-white max-w-80">
               <span class="whish-list-price font-semibold">
-                ${{ item.product_model.total_price }}
+                ${{ item.product_model.price }}
               </span>
             </th>
             <td class="p-2">
@@ -151,7 +150,7 @@ const handleOrder = async() => {
               </div>
             </td>
             <th class="p-2 font-medium text-red-500 dark:text-white max-w-80">
-              <span class="whish-title font-semibold">= ${{ item.price }}</span>
+              <span class="whish-title font-semibold">= ${{ item.total_price }}</span>
             </th>
             <td class="p-2">
               <div class="flex justify-between items-center">
@@ -184,7 +183,7 @@ const handleOrder = async() => {
                 <span />
               </li>
               <li class="totalRow final">
-                <span class="label">{{ t('cart.total') }}</span><span class="value">${{ sumPrice(cart.result, cart.payget.price, cart.payget.quantity) }}</span>
+                <span class="label">{{ t('cart.total') }}</span><span class="value">${{ cart.result.reduce((accum,item) => accum + item.total_price, 0) }}</span>
               </li>
             </ul>
           </div>

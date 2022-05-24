@@ -1,6 +1,11 @@
 import AxiosInstance from './axios-instance'
 
 class ProductRequest {
+  searchProducts(data) {
+    const url = '/products/search'
+    return AxiosInstance.get(url, data)
+  }
+
   getProductsById(id) {
     const url = `/products/${id}`
     return AxiosInstance.get(url)
@@ -12,7 +17,7 @@ class ProductRequest {
   }
 
   deleteProductsById(id) {
-    const url = `/products/${id}`
+    const url = `/shop/products/${id}`
     return AxiosInstance.delete(url)
   }
 

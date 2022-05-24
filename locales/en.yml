@@ -168,6 +168,7 @@ auth:
 account:
   dashboard: Dashboard
   hello: Hello
+  joined-at: Joined at
   not-you: If not you
   logout: Logout
   dashboard-desc: From your account dashboard. you can easily check {symbol} view your recent orders, manage your shipping and billing addresses and edit your password and account details

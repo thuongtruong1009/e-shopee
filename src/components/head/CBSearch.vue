@@ -1,14 +1,18 @@
 <script setup>
 import { keyword } from '~/stores/keyword'
+import ProductRequest from '~/services/account-request'
 const { t } = useI18n()
 
 const useKeyword = keyword()
 const key = ref(useKeyword.savedKeyword)
 
 const router = useRouter()
-const go = () => {
-  if (key.value)
+const go = async() => {
+  if (key.value) {
     router.push(`/search/${encodeURIComponent(key.value)}`)
+    const { data: searchData } = await ProductRequest.searchProducts(key.value)
+    console.log(searchData)
+  }
   key.value = ''
 }
 </script>

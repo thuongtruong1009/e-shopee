@@ -2,6 +2,8 @@ import { acceptHMRUpdate, defineStore } from 'pinia'
 import { reactive, ref } from 'vue'
 
 export const useProduct = defineStore('product', () => {
+  // create new product in seller page
+  const productName = ref<string>('')
   const category = ref<any>([])
   const level1 = ref<any>([])
   const level2 = ref<any>([])
@@ -11,10 +13,11 @@ export const useProduct = defineStore('product', () => {
     1: '',
     2: '',
   })
+  // search public product
   const productRequestID = ref(1)
   const shopRequestID = ref(1)
 
-  return { category, level1, level2, level3, choicedList, productRequestID, shopRequestID }
+  return { productName, category, level1, level2, level3, choicedList, productRequestID, shopRequestID }
 })
 
 if (import.meta.hot)

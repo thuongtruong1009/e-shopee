@@ -12,22 +12,22 @@ class ShopRequest {
   }
 
   getShops() {
-    const url = '/shops'
+    const url = '/shop'
     return AxiosInstance.get(url)
   }
 
   createShops(data) {
-    const url = '/shops'
+    const url = '/shop'
     return AxiosInstance.post(url, data)
   }
 
   updateShops(data) {
-    const url = '/shops'
+    const url = '/shop'
     return AxiosInstance.put(url, data)
   }
 
   getShopsProducts() {
-    const url = '/shops/products'
+    const url = '/shop/products'
     return AxiosInstance.get(url)
   }
 }

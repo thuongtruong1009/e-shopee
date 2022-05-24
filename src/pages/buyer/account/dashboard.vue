@@ -7,6 +7,7 @@ meta:
 import { useRouter } from 'vue-router'
 import { toast } from '~/stores/toast'
 import { useUser } from '~/stores/user'
+import { handleDate } from '~/utils/date'
 import AuthRequest from '~/services/auth-request'
 import AccountRequest from '~/services/account-request'
 
@@ -81,14 +82,32 @@ const signOut = async() => {
         </h3>
       </div>
     </div>
-    <div class="welcome py-5">
+
+    <div class="flex justify-between items-center m-2">
+      <div class="flex items-center gap-3">
+        <img v-if="user.profile.avatar_image" :src="`https://tp-o.tk/resources/images/${user.profile.avatar_image}`" alt="avatar_img" class="rounded-full w-15 h-15 border-2 border-red-400 p-0.5">
+        <img v-else class="w-15 h-15 rounded-full" src="/public/img/avatar_sample.png" alt="avatar_sample">
+
+        <div class="my-1 dark:text-white">
+          <div class="flex">
+            <p>{{ t('account.hello') }},</p>
+            <p class="font-medium text-red-400">
+              @Jese Leos
+            </p>
+          </div>
+          <div class="text-xs text-gray-500 dark:text-gray-400">
+            {{ t('account.joined-at') }} {{ handleDate(user.payget.created_at) }}
+          </div>
+        </div>
+      </div>
       <p>
-        {{ t('account.hello') }}, <strong>@{{ user.payget.username }}</strong><span class="text-xs ml-5">({{ t('account.not-you') }} !<a
+        <span class="text-xs ml-5">({{ t('account.not-you') }} !<a
           class="logout text-red-400 cursor-pointer capitalize" @click="signOut"
         > {{ t('account.logout') }}</a>)</span>
       </p>
     </div>
-    <p class="text-sm text-gray-400">
+
+    <p class="text-xs text-gray-400 m-2">
       {{ t('account.dashboard-desc', {symbol: '&amp;'}) }}.
     </p>
 
