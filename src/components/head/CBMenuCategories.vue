@@ -1,110 +1,60 @@
 <script setup>
+import ProductRequest from '~/services/product-request'
+import { useProduct } from '~/stores/product'
+
 const { t } = useI18n()
-const lists = reactive([
-  {
-    'men fashion': [{
-      shirt: 'articles',
-      trousers: '1',
-      pant: {
-        title: 'JSON:API paints my bikeshed!',
-        body: 'The shortest article. Ever.',
-        created: '2015-05-22T14:56:29.000Z',
-        updated: '2015-05-22T14:56:28.000Z',
-      },
-      shoes: {
-        author: {
-          data: {
-            id: '42', type: 'people',
-          },
-        },
-      },
-      habiliment: '',
-    }],
-    'hot accessory': [
-      {
-        'watch': '',
-        'hand bag': {
-          'no-rope': '',
-          'two-rope': '',
-        },
-        'leather wallet': {
-          girl: '',
-          women: 80,
-          housewife: '',
-        },
-      },
-    ],
-    'glasses': [
-      {
-        men: 'people',
-        women: '42',
-        mordern: {
-          white: '',
-          black: '',
-          pink: '',
-        },
-      },
-    ],
-    'iphone': '',
-    'ipad': '',
-    'laptop': '',
-    'cosmetics': '',
-    'mother and baby': '',
-    'footwear': '',
-    'watch': '',
-    'jewelry': '',
-    'electronic device': '',
-    'bike': '',
-  },
-])
+const product = useProduct()
+
+watch(async() => {
+  const { data } = await ProductRequest.getCategoriesChildrenById(0)
+  product.category = data
+})
+
+const getLevel1 = async(id) => {
+  const { data } = await ProductRequest.getCategoriesChildrenById(id)
+  product.level1 = data
+  product.choicedList[0] = product.level1.parent
+}
+
+const getLevel2 = async(id) => {
+  const { data } = await ProductRequest.getCategoriesChildrenById(id)
+  product.level2 = data
+  product.choicedList[1] = product.level2.parent
+}
+
+const getLevel3 = async(id) => {
+  const { data } = await ProductRequest.getCategoriesChildrenById(id)
+  product.level3 = data
+  product.choicedList[2] = product.level3.parent
+}
+
 const isAppearMenu = ref(false)
 const onAppearMenu = () => {
   isAppearMenu.value = !isAppearMenu.value
+  if (!isAppearMenu.value) {
+    product.level1 = ''
+    product.level2 = ''
+    product.level3 = ''
+  }
 }
 </script>
 
 <template>
   <div class="menu-item-container">
-    <div class="menu-item relative" @click="onAppearMenu">
-      <!-- <i class="fas fa-list-ul" /> -->
-      <p href="#" class="menu-link text-sm text-gray-500 duration-200 py-1.5 px-5 flex items-end gap-1.5 cursor-pointer">
-        {{ t('header.categories') }} <IBCaretDown />
+    <div class="menu-item relative">
+      <p href="#" class="menu-link text-sm text-gray-500 duration-200 py-1.5 pl-5 pr-4 flex items-end gap-1.5 cursor-pointer" @click="onAppearMenu">
+        <i class="fas fa-list-ul mb-0.5" /> {{ t('header.categories') }} <IBCaretDown />
       </p>
-      <Transition duration="550" name="nested">
-        <ul v-if="isAppearMenu === true" class="menu-child absolute z-90 mt-3 bg-white rounded-md divide-1 divide-y divide-solid divide-gray-200 shadow-md shadow-gray-500/50 bg-[#fbeee6]">
-          <li v-for="(item, i) in Object.keys(lists[0])" :key="i" class="relative">
-            <a :href="`/buyer/categories/${item}`" class="flex justify-between items-center p-2 text-gray-500 hover:text-orange-600 whitespace-nowrap">
-              {{ item }} <ICaretRight class="caret_sign" />
-            </a>
-            <ul class="menu-child-1 absolute bg-white left-40 top-0 rounded-md">
-              <li>
-                <a :href="`/buyer/categories/${lists[0][String(item)]}`" class="flex justify-between items-center p-6 text-[#918eae]">
-                  {{ lists[0][String(item)] }}
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+      <Transition duration="500" name="nested">
+        <div v-if="isAppearMenu === true" class="menu-child absolute z-90 mt-3 rounded-xl">
+          <CSChooseCategory class="w-max" :level0="product.category.children" :level1="product.level1.children" :level2="product.level2.children" :level3="product.level3.children" @get-level1="getLevel1" @get-level2="getLevel2" @get-level3="getLevel3" />
+        </div>
       </Transition>
     </div>
   </div>
 </template>
 
 <style scoped>
-.menu-child-1{
-    width: fit-content;
-    display: none;
-}
-.caret_sign{
-    opacity: 0;
-    transition: 0.3s;
-}
-.menu-item > ul > li:hover .menu-child-1{
-    display: block;
-}
-.menu-item > ul > li:hover .caret_sign{
-    opacity: 1;
-}
 .nested-enter-active,
 .nested-leave-active {
     transition: all 0.3s ease-in-out;

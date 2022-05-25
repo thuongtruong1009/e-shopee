@@ -72,7 +72,7 @@ const onSignUp = () => {
       <Transition name="slide-fade">
         <div v-if="isClicking === true" class="user_forms-reset">
           <h2 class="forms_title text-[#E14641] text-4xl font-semibold">
-            New password
+            {{ t('auth.b-new-password') }}
           </h2>
           <form class="forms_form" method="post" action="">
             <fieldset class="forms_fieldset border-solid border-2 border-gray-400 my-10 rounded-md">

@@ -1,11 +1,18 @@
 <script setup>
 const images = reactive([
-  '/img/swipper/slide1.webp',
-  '/img/swipper/slide2.webp',
+  // '/img/swipper/slide1.webp',
+  // '/img/swipper/slide2.webp',
+  'https://honglinhhatinh.com/wp-content/uploads/2021/04/banner-quang-cao-cua-lazada.jpg',
+  'https://chuyenstandee.com/wp-content/uploads/2021/03/thiet-ke-banner-2-1-1.jpg',
+  'https://inanaz.com.vn/wp-content/uploads/2020/02/mau-banner-quang-cao-dep-3.jpg',
+  'https://inanaz.com.vn/wp-content/uploads/2020/02/mau-banner-quang-cao-dep-14.jpg',
+  'https://inanaz.com.vn/wp-content/uploads/2020/02/mau-banner-quang-cao-dep-8.jpg',
+  'https://induongquang.com/data/upload/banner-shoppe.jpg',
   'https://www.duchuymobile.com/images/promo/34/iphone-giam-gia.jpg',
   'https://static.ladipage.net/5bf3dc7edc60303c34e4991f/thumb-20211219233256.jpg',
   'https://binhminhdigital.com/StoreData/images/PageData/top-5-tai-nghe-chup-tai-sony-tot-trong-tam-gia-1-trieu-Binhminhdigital.jpg',
   'https://shanshe.vn/wp-content/uploads/2021/09/kem-duong-da-viet-nam-chat-luong-cao-4.jpg',
+  'https://image-us.eva.vn/upload/1-2019/images/2019-01-17/tet-khong-tang-gia-lai-con-giam-den-95---chi-co-the-la-tet-sieu-sale-shopee-1-1547691411-87-width660height408.jpg',
   'https://i.ytimg.com/vi/DJsi7z4w-zM/maxresdefault.jpg',
   'https://hoaanhdao.vn/2018_img/files/hoang/0R4A1919.jpg',
 ])

@@ -205,7 +205,7 @@ const onvisitShop = () => {
           </p>
         </div>
         <div class="infor">
-          <label>Shipping</label>
+          <label>{{ t('product.shipping') }}</label>
           <p class="text-sm flex gap-2 items-center">
             <IBShipping /> {{ t('product.transport') }}
           </p>
@@ -280,10 +280,10 @@ const onvisitShop = () => {
         </div>
         <div class="flex gap-3">
           <button class="px-5 py-3 rounded-md bg-[#FFEEE8] hover:bg-[#FFF5F1] border-1 border-solid border-[#EE4D2D] text-[#EE4D2D] capitalize flex items-center gap-1" @click="handleAdd">
-            <ICart class="max-h-6" />Thêm vào giỏ hàng
+            <ICart class="max-h-6" />{{ t('product.add-to-cart') }}
           </button>
           <button class="px-5 py-3 rounded-md bg-[#EE4D2D] hover:bg-[#F05D40] border-1 border-solid border-[#EE4D2D] text-white capitalize" @click="handleOrder">
-            Mua Ngay
+            {{ t('product.order-now') }}
           </button>
         </div>
       </div>
@@ -291,15 +291,15 @@ const onvisitShop = () => {
     <div class="flex flex-wrap gap-10 py-5">
       <div class="min-w-112 flex justify-center items-center gap-2 cursor-pointer">
         <IBLove />
-        <p>Total liked: (934)</p>
+        <p>{{ t('product.total-liked') }}: (934)</p>
       </div>
       <div class="flex justify-center items-center gap-5">
         <div class="flex items-center gap-1">
           <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/pdp/83e10a1f95cb083579c089448ef8dd3b.png" alt="insurance_icon" class="max-w-4 max-h-4">
-          <p>e-shopee insurance</p>
+          <p>e-shopee {{ t('product.insurance') }}</p>
         </div>
         <div class="capitalize text-gray-500 text-sm">
-          <p>3 ngày trả hàng / hoàn tiền</p>
+          <p>3 {{ t('product.return-refund') }}</p>
         </div>
       </div>
     </div>
@@ -313,7 +313,7 @@ const onvisitShop = () => {
           {{ seller.payget.name }}
         </p>
         <p class="text-gray-500 text-xs">
-          {{ t('product.online') }} 1 minutes ago
+          {{ t('product.online') }} 1 minutes {{ t('product.ago') }}
         </p>
         <div class="flex gap-2 text-sm mt-2">
           <button class="px-3 py-0.5 rounded-md bg-[#FFEEE8] hover:bg-[#FFF5F1] border-1 border-solid border-[#EE4D2D] text-[#EE4D2D] capitalize flex items-center gap-1">
@@ -329,7 +329,7 @@ const onvisitShop = () => {
       <div>
         <div class="flex gap-2 min-w-27 capitalize">
           <p>{{ t('product.evaluate') }}</p>
-          <span>{{ seller.statics.average_raiting }}%</span>
+          <span>{{ seller.statics.average_raiting }}</span>
         </div>
         <div class="flex gap-2 min-w-27 capitalize">
           <p>{{ t('product.productions') }}</p>

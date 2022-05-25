@@ -1,6 +1,8 @@
 <script setup>
 import { next, prev } from '~/utils/scrollX'
 
+const { t } = useI18n()
+
 const onPrev = () => prev('top_products_list')
 const onNext = () => next('top_products_list')
 
@@ -111,22 +113,22 @@ const topList = reactive([{
   <div class="top_products_container relative m-8 p-1 rounded-lg border-1 border-[#e9e9e9] shadow-md shadow-gray-300/50">
     <div class="text-red-500 p-5 border-b-1 border-b-[#e9e9e9] flex justify-between bg-[#F5F5F5] rounded-lg">
       <h1 class="uppercase font-medium text-lg">
-        TOP POPULAR SEARCH PRODUCTS
+        {{ t('cpopular.label') }}
       </h1>
       <p>
-        See all >
+        {{ t('cpopular.see-all') }} >
       </p>
     </div>
     <div id="top_products_list" class="flex overflow-x-scroll gap-3 p-2">
-      <div v-for="(top, i) in topList" :key="i" class="max-w-50 min-w-50 w-50 rounded-md bg-blue-50">
+      <div v-for="(top, i) in topList" :key="i" class="max-w-50 min-w-50 w-50 rounded-md bg-[#31C48D] text-white">
         <div class="relative">
           <img src="/img/top-products/top_label.png" alt="top_label_img" class="absolute top-0 left-0 max-w-8 max-h-10">
           <img :src="top.img" :alt="`${top.img}_img`">
-          <p class="p-1 rounded-t-xl bg-[#BDBDBD] absolute bottom-0 left-0 w-full text-center text-sm text-white">
-            Solded {{ top.quantity }}k+ / month
+          <p class="p-1 rounded-t-xl bg-[#E74694] absolute bottom-0 left-0 w-full text-center text-xs">
+            {{ t('cpopular.solded') }} {{ top.quantity }}k+ / {{ t('cpopular.month') }}
           </p>
         </div>
-        <div class="text-left text-lg pt-2">
+        <div class="text-sm text-center p-1.5 rounded-b-xl font-medium">
           <h6>{{ top.name }}</h6>
         </div>
       </div>

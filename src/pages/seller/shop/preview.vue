@@ -27,13 +27,10 @@ const onNext = () => next('shop_demo_product')
 
 watchOnce(async() => {
   loading.isLoading = true
-  await ShopRequest.getShops().then((res) => {
-    seller.payget = res.data[0]
-    seller.statics = res.data[0].statistic
-    loading.isLoading = false
-  }).catch((error) => {
-    return handleError(error)
-  })
+  const { data: shopData } = await ShopRequest.getShops()
+  seller.payget = shopData
+  seller.statics = shopData.statistic
+  loading.isLoading = false
 })
 const activeTime = ref('minutes')
 

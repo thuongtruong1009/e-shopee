@@ -41,6 +41,7 @@ declare module 'vue' {
     CLoading: typeof import('./components/CLoading.vue')['default']
     CMap: typeof import('./components/CMap.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
+    CPagination: typeof import('./components/CPagination.vue')['default']
     CProgress: typeof import('./components/CProgress.vue')['default']
     CSChooseCategory: typeof import('./components/seller/CSChooseCategory.vue')['default']
     CSFooter: typeof import('./components/seller/CSFooter.vue')['default']

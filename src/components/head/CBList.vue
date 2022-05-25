@@ -5,12 +5,14 @@ import OrderRequest from '~/services/order-request'
 import AccountRequest from '~/services/account-request'
 import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
+import { useUser } from '~/stores/user'
 import { removeItemByIndex } from '~/utils/arrayHandle'
 
 const { t } = useI18n()
 const useToast = toast()
 const cart = useCart()
 const router = useRouter()
+const user = useUser()
 
 const isBlurBgModal = ref(false)
 const openNav = () => {
@@ -49,9 +51,12 @@ const payloadOrder = reactive({
     quantity: '',
   }],
 })
+const avatarID = ref('')
 onMounted(async() => {
   const { data: addressData } = await AccountRequest.getAddress()
   payloadOrder.address_id = addressData.filter(e => Object.keys(addressData.id === 0))[0].id
+  const { data: userData } = await AccountRequest.getProfile()
+  avatarID.value = userData.profile.avatar_image
 })
 
 const handleOrder = async() => {
@@ -70,11 +75,6 @@ const handleOrder = async() => {
 <template>
   <div class="container flex justify-center items-center lg:w-xs text-white dark:text-black">
     <div>
-      <router-link to="/buyer/filter">
-        <IBCompare class="hover:text-[#adff2f] dark:text-[#adff2f]" />
-      </router-link>
-    </div>
-    <div>
       <router-link to="/buyer/favourite">
         <IHeart class="hover:text-[#adff2f] dark:text-[#adff2f]" />
       </router-link>
@@ -85,6 +85,12 @@ const handleOrder = async() => {
       <h1 class="font-semibold ml-3">
         ${{ cart.result.reduce((accum,item) => accum + item.total_price, 0) }}
       </h1>
+    </div>
+    <div>
+      <router-link to="/buyer/account/dashboard">
+        <img v-if="avatarID" :src="`https://tp-o.tk/resources/images/${avatarID}`" alt="avatar_img" class="rounded-full w-12 h-12 border-2 border-blue-500" style="object-fit: cover;">
+        <img v-else class="w-12 h-12 rounded-full" src="/img/avatar_sample.png" alt="avatar_sample">
+      </router-link>
     </div>
     <div v-if="isBlurBgModal" class="blur-bg w-screen h-screen absolute top-0 -left-10 bg-black bg-opacity-30 z-1" @click="closeNav" />
     <div id="mySidenav" class="sidenav w-0 h-screen fixed top-12 right-0 bg-white duration-500 z-2 overflow-x-hidden text-left text-black dark:(text-gray-200 bg-black) divide-light-700 divide-y border-1 border-dotted border-gray-700 shadow-2xl shadow-gray-500">

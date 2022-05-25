@@ -10,6 +10,7 @@ import { useUser } from '~/stores/user'
 import { handleDate } from '~/utils/date'
 import AuthRequest from '~/services/auth-request'
 import AccountRequest from '~/services/account-request'
+import ResourceRequest from '~/services/resource-request'
 
 useHead({
   title: 'buyer | dashboard',
@@ -20,18 +21,30 @@ const router = useRouter()
 const useToast = toast()
 const user = useUser()
 
+onMounted(() => {
+  if (!localStorage.getItem('token'))
+    router.push({ path: '/buyer/login' })
+})
+
+$(document).ready(() => {
+  const files = document.querySelector('#user_avatar_file')
+  files.addEventListener('change', (e) => {
+    const files = e.target.files
+    const formData = new FormData()
+    formData.append('image', files[0])
+    formData.append('ratio', 0)
+
+    const { data: avatarData } = ResourceRequest.createResourcesImages(formData)
+    user.avatarID = res.data.id
+  })
+})
 const payload = reactive({
   username: '',
   display_name: '',
   phone: '',
   gender: '',
   date_of_birth: '',
-  avatar_image: 'demo-avatar-01',
-})
-
-onMounted(() => {
-  if (!localStorage.getItem('token'))
-    router.push({ path: '/buyer/login' })
+  avatar_image: user.avatarID,
 })
 watch(async() => {
   const { data: userData } = await AccountRequest.getProfile()
@@ -85,14 +98,14 @@ const signOut = async() => {
 
     <div class="flex justify-between items-center m-2">
       <div class="flex items-center gap-3">
-        <img v-if="user.profile.avatar_image" :src="`https://tp-o.tk/resources/images/${user.profile.avatar_image}`" alt="avatar_img" class="rounded-full w-15 h-15 border-2 border-red-400 p-0.5">
-        <img v-else class="w-15 h-15 rounded-full" src="/public/img/avatar_sample.png" alt="avatar_sample">
+        <img v-if="user.profile.avatar_image" :src="`https://tp-o.tk/resources/images/${user.profile.avatar_image}`" alt="avatar_img" class="rounded-full w-15 h-15 border-2 border-blue-400 p-0.25" style="object-fit: cover;">
+        <img v-else class="w-15 h-15 rounded-full" src="/img/avatar_sample.png" alt="avatar_sample">
 
         <div class="my-1 dark:text-white">
           <div class="flex">
             <p>{{ t('account.hello') }},</p>
             <p class="font-medium text-red-400">
-              @Jese Leos
+              @{{ payload.display_name }}
             </p>
           </div>
           <div class="text-xs text-gray-500 dark:text-gray-400">
@@ -128,7 +141,8 @@ const signOut = async() => {
         <input v-model="user.payget.email" placeholder="Date of birth" disabled>
       </div>
       <div>
-        <input v-model="payload.avatar_image" placeholder="Avatar link url" type="text" required disabled>
+        <!-- <input v-model="payload.avatar_image" placeholder="Avatar link url" type="text" required disabled> -->
+        <input id="user_avatar_file" type="file" accept=".png, .jpg, .jpeg">
       </div>
       <div class="pt-5 flex justify-end">
         <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
