@@ -60,7 +60,7 @@ const getLevel3 = async(id) => {
         </div>
       </div>
       <div class="bg-[#FAFAFA] dark:bg-blue-gray-800 p-5 rounded-md">
-        <div class="grid grid-cols-3 gap-2 justify-start items-center">
+        <div class="grid grid-cols-3 gap-2 justify-start items-center mb-2">
           <div class="flex items-center border-1 border-solid border-gray-400 rounded-2xl py-1 px-2 bg-[#FAFAFA] dark:bg-blue-gray-700">
             <ISearch />
             <input id="" type="text" name="add-product-search" class="dark:bg-blue-gray-700 ml-2 w-[85%]" placeholder="Product type name...">
