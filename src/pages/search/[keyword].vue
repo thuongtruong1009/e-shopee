@@ -517,7 +517,7 @@ const products = reactive([{
           </div>
         </div>
       </Transition>
-      <CPagination @on-prev="payload.page -= 1" @on-next="payload.page += 1" />
+      <CPagination :index="payload.page" @on-prev="payload.page--" @on-next="payload.page++" />
     </div>
   </div>
 </template>

@@ -7,10 +7,16 @@ meta:
 import { useRouter } from 'vue-router'
 import { next, prev } from '~/utils/scrollX'
 import { shop } from '~/stores/shop'
+import { useSeller } from '~/stores/seller'
+import { useLoading } from '~/stores/loading'
+import { handleDate } from '~/utils/date'
+import ShopRequest from '~/services/shop-request'
 
 const props = defineProps({ shop: String })
 const router = useRouter()
 const useShop = shop()
+const loading = useLoading()
+const seller = useSeller()
 
 useHead({
   title: `shop | ${props.shop}`,
@@ -20,12 +26,20 @@ onMounted(() => {
   if (!localStorage.getItem('token'))
     router.push({ path: '/buyer/login' })
 })
-// get shop infor by shop_id
+// get shop infor after search
 watchEffect(() => {
   useShop.setNewShop(props.shop)
 })
 
 const { t } = useI18n()
+
+watchOnce(async() => {
+  loading.isLoading = true
+  const { data: shopdata } = await ShopRequest.getShopsById(props.shop)
+  loading.isLoading = false
+  seller.payget = shopdata
+  seller.statics = shopdata.statistic
+})
 
 const onPrev = () => prev('shop_demo_product')
 const onNext = () => next('shop_demo_product')
@@ -334,12 +348,13 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
   <div class="shop_view_container grid justify-center max-w-250 px-2 gap-5">
     <div class="h-min bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-300 p-3 grid grid-cols-2 justify-between mt-5 border-t-1 border-t-[#e9e9e9]">
       <div class="p-3">
-        <div class="flex justify-evenly gap-3 bg-[#644B4A] rounded-md p-3 text-gray-200 w-4/5">
-          <img src="https://cf.shopee.vn/file/56dd7c9788031f9b16fd990b11ccc62c_tn" alt="shop_avatar" class="rounded-full border-4 border-[#A29392] w-25 h-25">
+        <div class="flex justify-evenly gap-3 rounded-md p-3 text-gray-200 w-4/5" :style="`background-image: url(https://tp-o.tk/resources/images/${seller.payget.cover_image})`" :class="{'bg-[#644B4A]': !seller.payget.cover_image}">
+          <img v-if="seller.payget.avatar_image" :src="`https://tp-o.tk/resources/images/${seller.payget.avatar_image}`" alt="shop_avatar" class="rounded-full border-4 border-[#A29392] w-25 h-25 object-cover">
+          <img v-else src="https://cf.shopee.vn/file/56dd7c9788031f9b16fd990b11ccc62c_tn" alt="shop_avatar" class="rounded-full border-4 border-[#A29392] w-25 h-25">
           <div class="grid place-content-between">
             <div>
               <h2 class="text-xl text-white font-medium">
-                Shopcuayen.depxinh
+                {{ seller.payget.name }}
               </h2>
               <p class="text-xs opacity-80 font-light">
                 {{ t('shop.online') }} 39 <span v-if="activeTime === 'days'">{{ t('shop.days') }}</span><span v-if="activeTime === 'hours'">{{ t('shop.hours') }}</span><span v-if="activeTime === 'minutes'">{{ t('shop.minutes') }}</span> {{ t('shop.ago') }}
@@ -359,11 +374,11 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
       <div class="shop_view_summary flex flex-wrap text-sm h-min m-auto font-medium">
         <div>
           <ISShop />
-          <p>{{ t('shop.products') }}: <span>57</span></p>
+          <p>{{ t('shop.products') }}: <span>{{ seller.statics.product_count }}</span></p>
         </div>
         <div>
           <ISNote />
-          <p>{{ t('shop.cancel-ratio') }}: <span>11%</span></p>
+          <p>{{ t('shop.cancel-ratio') }}: <span>{{ seller.statics.nonfulfilment_rate }}%</span></p>
         </div>
         <div>
           <ISFollowing />
@@ -375,17 +390,17 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
         </div>
         <div>
           <ISJoined />
-          <p>{{ t('shop.joined') }}: <span>31 months ago</span></p>
+          <p>{{ t('shop.joined') }}: <span>{{ handleDate(seller.payget.created_at) }}</span></p>
         </div>
         <div>
           <ISEvaluate />
-          <p>{{ t('shop.rating') }}: <span>5.0 (8 votes)</span></p>
+          <p>{{ t('shop.rating') }}: <span>{{ seller.statics.average_raiting }}% (8 votes)</span></p>
         </div>
       </div>
     </div>
     <div class="h-min bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-300 py-3 px-5">
       <div class="text-lg uppercase font-medium text-gray-500">
-        <h2>{{ t('shop.shop-information') }} [shop-props: {{ props.shop }}]</h2>
+        <h2>{{ t('shop.shop-information') }} [ID: {{ props.shop }}]</h2>
       </div>
       <div class="grid grid-cols-2 text-sm gap-5">
         <div class="flex items-center">
@@ -402,10 +417,7 @@ const hintListComputed = computed(() => hintList.slice(0, hintListInit.value))
           </div>
         </div>
         <div class="grid justify-center place-content-start gap-2">
-          <p>
-            Lớn lên mới biết cuộc sống không màu hồng, bên cạnh màu hồng còn có nhiều màu khác nữa. Nhưng vì mình mê màu hồng quá nên mình đặt tên shop là A Pink, và mẫu nào mình bán cũng có màu hồng :) Cùng mình săn lùng những item màu hồng xinh xỉu giá hạt dẻ mà chất lượng sẽ không làm bạn thất vọng nha.
-          </p>
-          <p>Nếu hôm nào bạn cảm thấy cuộc đời không màu hồng...thì cũng không sao cả, A Pink vẫn luôn có sẵn cả những màu khác nha :)</p>
+          <p>{{ seller.payget.description }}</p>
         </div>
       </div>
     </div>

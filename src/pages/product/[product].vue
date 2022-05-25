@@ -329,7 +329,7 @@ const onvisitShop = () => {
       <div>
         <div class="flex gap-2 min-w-27 capitalize">
           <p>{{ t('product.evaluate') }}</p>
-          <span>{{ seller.statics.average_raiting }}%</span>
+          <span>{{ seller.statics.average_raiting }}</span>
         </div>
         <div class="flex gap-2 min-w-27 capitalize">
           <p>{{ t('product.productions') }}</p>

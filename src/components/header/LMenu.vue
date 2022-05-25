@@ -107,7 +107,7 @@ transform: rotate(180deg);
   }
   .dropdown:hover .dropdown__list {
     display: block;
-    animation: drop-animate 0.3s linear;
+    animation: drop-animate 0.3s ease-in-out;
     transform-origin: top;
   }
   .dropdown__text{
@@ -118,10 +118,10 @@ transform: rotate(180deg);
   @keyframes drop-animate{
     0%{
       opacity: 0;
-      transform: scaleY(0);
+      transform: scaleY(0) skew(20deg);
     }100%{
       opacity: 1;
-      transform: scaleY(1);
+      transform: scaleY(1) skew(0);
     }
   }
   .dropdown__select,
