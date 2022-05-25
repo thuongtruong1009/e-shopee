@@ -5,6 +5,8 @@ button:
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
+cloading:
+  loading: Loading data
 ctrending:
   search: search trending for us
   see-more: See more
@@ -56,6 +58,16 @@ ccategory:
   laundry-home-care: Laundry & Home Care
   take-care-of-the-pet: Take care of the pet
   vouchers-services: Vouchers & Services
+cpopular:
+  label: TOP POPULAR SEARCH PRODUCTS
+  see-all: See all
+  solded: Solded
+  month: month
+cflashsale:
+  label: FLASH SALES
+  see-all: See all
+  decrease: DECREASE
+  solded: Solded
 menu:
   admin: Admin
   about-page: About Page
@@ -71,6 +83,7 @@ menu:
   notifications-go: Open notifications center
   register: Register
   login: Login
+  s-home: home
   s-dashboard: Dashboard
   s-all-orders: All orders
   s-order-canceled: Order canceled
@@ -165,7 +178,10 @@ auth:
   b-reset-invite: Check the confirmation code sent from your registered email
   b-reset: Reset
   b-reset-form-button: Reset password
+  b-reset-banner: Password support center
+  b-new-password: New password
 account:
+  account-banner: My Account
   dashboard: Dashboard
   hello: Hello
   joined-at: Joined at
@@ -273,6 +289,7 @@ category:
   selected: Selected
   next: Next
 cart:
+  title: Your cart items
   cart: Cart
   preview: Preview
   name: Name
@@ -294,10 +311,17 @@ product:
   solded: Solded
   weight: Weight
   buy-with-deal: Buy with sale deal
+  shipping: Shipping
   transport: Transport to
   quantities: Quantities
   available-products: available products
+  add-to-cart: Add to cart
+  order-now: Order now
+  total-liked: Total liked
+  insurance: insurance
+  return-refund: days to return and refund
   online: Online
+  ago: ago
   chat-now: Chat now
   visit-shop: Visit shop
   productions: Productions
@@ -445,6 +469,7 @@ sitemap:
   sitemap: sitemap
 favourite:
   add-to-cart: Add to cart
+  favourite-banner: Favourite page
 about:
   about-us: About Us
   welcome: Welcome to

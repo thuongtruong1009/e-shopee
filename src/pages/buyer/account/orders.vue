@@ -53,10 +53,10 @@ watch(async() => {
           <tr>
             <th>{{ t('account.order-no') }}</th>
             <th>{{ t('account.order-name') }}</th>
-            <th>{{t('account.order-date')}}</th>
-            <th>{{t('account.order-status')}}</th>
-            <th>{{t('account.order-total')}}</th>
-            <th>{{t('account.order-action')}}</th>
+            <th>{{ t('account.order-date') }}</th>
+            <th>{{ t('account.order-status') }}</th>
+            <th>{{ t('account.order-total') }}</th>
+            <th>{{ t('account.order-action') }}</th>
           </tr>
         </thead>
 

@@ -26,7 +26,7 @@ const colorsTab = reactive(['linear-gradient(to right, #d6b59d,#fd8c70)', 'linea
     <div class="seller-header-right flex justify-around items-center w-79 cursor-pointer">
       <router-link to="/buyer/home">
         <h2 class="hover:underline text-sm font-medium flex items-center gap-2">
-          <IHome />Trang chủ Shopee
+          <IHome />e-shopee {{ t('menu.s-home') }}
         </h2>
       </router-link>
       <span class="opacity-20">|</span>

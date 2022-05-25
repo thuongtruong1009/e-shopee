@@ -1,3 +1,7 @@
+<script setup>
+const { t } = useI18n()
+</script>
+
 <template>
   <main class="text-gray-700 dark:text-gray-200">
     <CBHeaderTop />
@@ -6,7 +10,7 @@
       <div class="capitalize text-3xl font-semibold pt-15 pb-5 flex justify-center items-center">
         <IAccount />
         <h1>
-          My Account
+          {{ t('account.account-banner') }}
         </h1>
       </div>
 

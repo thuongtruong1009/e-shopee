@@ -154,10 +154,10 @@ const saleRatio = computed(() => progressRatio)
   <div class="top_products_container relative m-8 p-1 rounded-lg border-1 border-[#e9e9e9] shadow-md shadow-gray-300/50">
     <div class="text-red-500 p-5 border-b-1 border-b-[#e9e9e9] flex justify-between bg-[#F5F5F5] dark:(bg-blue-gray-800 border-b-[#888]) rounded-lg">
       <h1 class="uppercase font-semibold text-xl flex items-center gaáp">
-        <IBFlash />FLASH SALES
+        <IBFlash />{{ t('cflashsale.label') }}
       </h1>
       <p>
-        See all >
+        {{ t('cflashsale.see-all') }} >
       </p>
     </div>
     <div id="flash_sales_list" class="flex overflow-x-scroll gap-3 p-2">
@@ -168,8 +168,8 @@ const saleRatio = computed(() => progressRatio)
             <p class="text-red-500">
               30%
             </p>
-            <p class="text-white" style="font-size:0.6em;">
-              DECREASE
+            <p class="text-white uppercase" style="font-size:0.6em;">
+              {{ t('cflashsale.decrease') }}
             </p>
           </div>
 
@@ -187,8 +187,8 @@ const saleRatio = computed(() => progressRatio)
             <div class="bg-[#F6442E] shadow-sm dark:(shadow-gray-600) text-xs font-medium text-white text-center pb-0.5 leading-none rounded-l-full" :style="`width: ${saleRatio(top.solded, top.quantity)}%`">
               &nbsp;
             </div>
-            <p class="absolute top-0 left-1/3 w-auto h-full text-xs text-white">
-              Solded {{ top.solded }}
+            <p class="absolute top-0 left-1/3 w-auto h-full text-xs text-white capitalize">
+              {{ t('cflashsale.solded') }} {{ top.solded }}
             </p>
           </div>
         </div>

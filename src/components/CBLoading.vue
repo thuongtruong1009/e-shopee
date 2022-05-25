@@ -1,8 +1,12 @@
+<script setup>
+const { t } = useI18n()
+</script>
+
 <template>
   <div class="loading_container">
     <div class="mb-5 flex justify-center items-center gap-5">
       <h1 class="text-2xl animate-pulse duration-500 text-gray-500 ">
-        Loading your data...
+        {{ t('cloading.loading') }}...
       </h1>
       <div class="wrapper">
         <div class="spinner spinner5" />
