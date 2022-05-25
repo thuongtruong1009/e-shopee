@@ -18,6 +18,7 @@ useHead({
 // ------------- get result of search product -----------
 const payload = reactive({
   limit: 10,
+  page: 1,
   keyword: props.keyword,
   order_by: 2,
   filter: {
@@ -31,7 +32,7 @@ onMounted(async() => {
     router.push({ path: '/buyer/login' })
   }
   else {
-    const { data: searchData } = await ProductRequest.searchProducts({ params: { limit: payload.limit, keyword: payload.keyword, order_by: payload.order_by, filter: payload.filter } })
+    const { data: searchData } = await ProductRequest.searchProducts({ params: { limit: payload.limit, page: payload.page, keyword: payload.keyword, order_by: payload.order_by, filter: payload.filter } })
     console.log(searchData)
   }
 })
@@ -516,6 +517,7 @@ const products = reactive([{
           </div>
         </div>
       </Transition>
+      <CPagination @on-prev="payload.page -= 1" @on-next="payload.page += 1" />
     </div>
   </div>
 </template>

@@ -1,3 +1,6 @@
+pagination:
+  previous: Previous
+  next: Next
 button:
   about: About
   back: Back
