@@ -5,11 +5,13 @@ meta:
 
 <script setup lang="ts">
 import { keyword } from '~/stores/keyword'
+import { useProduct } from '~/stores/product'
 import ProductRequest from '~/services/product-request'
 
 const props = defineProps<{ keyword: string }>()
 const router = useRouter()
 const useKeyword = keyword()
+const product = useProduct()
 const { t } = useI18n()
 
 useHead({
@@ -33,20 +35,26 @@ onMounted(async() => {
   }
   else {
     const { data: searchData } = await ProductRequest.searchProducts({ params: { limit: payload.limit, page: payload.page, keyword: payload.keyword, order_by: payload.order_by, filter: payload.filter } })
-    console.log(searchData)
+    useKeyword.resultProduct = searchData.data
+    // console.log(useKeyword.resultProduct)
   }
 })
 // get props keyword from store after search
 watchEffect(() => {
   useKeyword.setNewKeyword(props.keyword)
 })
+
+function onvisitProduct(prod_id: number, shop_id: number) {
+  product.shopRequestID = shop_id
+  product.productRequestID = prod_id
+  router.push(`/product/${encodeURIComponent(prod_id)}`)
+}
 // ------------------------------------------------------------------
 const priceValue = ref(200)
 const priceMin = ref(200)
 const priceMax = ref(1000)
 
 const tags = reactive(['shopping', 'new_products', 'accessories', 'sales'])
-const totalProducts = ref(13)
 const regime = ref('grid')
 const onChangeRegime = (type) => {
   regime.value = String(type)
@@ -218,14 +226,6 @@ const products = reactive([{
 }])
 </script>
 
-<!-- <template>
-  <div>
-    <p>
-      {{ t('intro.hi', { name: props.keyword }) }}
-    </p>
-  </div>
-</template> -->
-
 <template>
   <div class="filter-container bg-white grid grid-cols-4 py-20 px-10 gap-3 dark:bg-black">
     <aside class="left-sidebar theme1 text-left col-span-1 px-2">
@@ -367,7 +367,7 @@ const products = reactive([{
           <li class="nav-item ml-3 mr-7 text-lg hover:text-red-500 cursor-pointer" :style="[regime === 'flow' ? {color:'red'} : {color:'gray'}]" @click="onChangeRegime('flow')">
             <i class="fa fa-list" />
           </li>
-          <li><span class="total-products text-sm">{{ t('search.there-are') }} {{ totalProducts }} {{ t('search.products') }}.</span></li>
+          <li><span class="total-products text-sm">{{ t('search.there-are') }} {{ useKeyword.resultProduct.length }} {{ t('search.products') }}.</span></li>
         </ul>
         <div>
           <span class="text-sm mr-3">{{ t('search.sort-by') }}: </span>
@@ -392,30 +392,8 @@ const products = reactive([{
       </div>
       <Transition name="slide-fade">
         <div v-if="regime === 'grid'" class="grid-products-list flex flex-wrap gap-5 py-10">
-          <div v-for="(prod, i) in products" :key="i" class="card duration-200 ease-linear relative rounded-lg w-60 hover:shadow-md hover:shadow-gray-400/50 pb-0">
-            <div class="card-type flex justify-between absolute w-full p-2">
-              <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
-              <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('search.new') }}</span>
-            </div>
-            <div class="card-img max-w-full max-h-7/12">
-              <a href="single-product.html">
-                <img class="first-img rounded-t-lg" :src="prod.img" alt="thumbnail">
-              </a>
-            </div>
-            <div class="product-description text-left p-2">
-              <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]">
-                {{ prod.desc }}
-              </p>
-              <div class="star-rating flex justify-start">
-                <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
-              </div>
-              <div class="flex items-center justify-between">
-                <h6 class="card-price font-bold tracking-tighter">
-                  ${{ prod.price }}
-                </h6>
-                <ICart class="cart w-9 h-9 p-2 rounded-full bg-gray-100 cursor-pointer duration-200 ease-linear text-gray-500 hover:bg-[#FF9900] hover:text-white" />
-              </div>
-            </div>
+          <div v-for="(prod, index) in useKeyword.resultProduct" :key="index" class="card duration-200 ease-linear relative rounded-lg w-60  shadow-md hover:shadow-gray-400/50 pb-0" @click="onvisitProduct(prod.id, prod.shop_id)">
+            <CProductCard :card="prod" />
           </div>
         </div>
       </Transition>

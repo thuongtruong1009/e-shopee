@@ -1,63 +1,486 @@
-button:
+pagination:
+  previous: Trước
+  next: Kế tiếp
+button: 
   about: Về
-  back: Quay lại
-  go: Đi
-  home: Khởi đầu
+  back: Mặt sau
+  go: ĐI
+  home: Nhà
   toggle_dark: Chuyển đổi chế độ tối
   toggle_langs: Thay đổi ngôn ngữ
-intro:
-  desc: Ý kiến cá nhân Vite Template để bắt đầu
-  dynamic-route: Bản giới thiệu về dynamic route
-  hi: Hi, {name}!
-  aka: Được gọi là
-  whats-your-name: Tên bạn là gì?
-not-found: Không tìm thấy
-header:
-  home: Trang chủ
-  shop: Cửa hàng
-  pages: Giao diện
-  blog: Bài viết
-  contact: Liên hệ
-  setting: Cài đặt
-  vnd: Đồng
-  usd: Đô la
-  euro: Ơ rô
-  my ccount: Tài khoản
-  checkout: Kiểm tra
+cloading: 
+  loading: Tải dữ liệu
+ctrending: 
+  search: Xu hướng tìm kiếm cho chúng tôi
+  see-more: Xem thêm
+  products: Mỹ phẩm
+ctoday: 
+  hint: Gợi ý hôm nay
+  sold: Bán
+  see-more: Xem thêm
+  decrease: GIẢM BỚT
+cmonthsale: 
+  download: Tải xuống ứng dụng E-Shopee để nhận quà ngay từ chúng tôi
+  get-gift: Nhận quà tặng và giao dịch độc quyền ngay bây giờ
+carrival: 
+  our-products: Sản phẩm của chúng tôi
+  add-our-product: Thêm sản phẩm của chúng tôi để xếp hàng hàng tuần
+  new: Mới
+caccount:  
+  dashboard: bảng điều khiển
+  orders: Đơn đặt hàng
   download: Tải xuống
-  sign out: Thoát
-  menu product items: Danh sách sản phẩm
-  placeholder search: Tìm kiếm theo từ khóa...
-footer:
-  commit: Chúng tôi cam kết dịch vụ tốt nhất cho bạn. Kết nối ngay để nhận nhiều ưu đãi.
+  payment-method: Phương thức thanh toán
+  credit-card: Thẻ tín dụng
+  address: Địa chỉ nhà
+  Logout: Đăng xuất
+ccategory: 
+  men-fashion: Thời trang nam
+  women-fashion: Thời trang của phụ nữ
+  phones-accessories: Điện thoại & Phụ kiện
+  mother-baby: Mẹ và em bé
+  electronic-device: Thiết bị điện tử
+  home-life: Cuộc sống gia đình
+  computers-laptops: Máy tính & máy tính xách tay
+  beauty: Sắc đẹp
+  camera-camcorder: Máy quay máy ảnh
+  health: Sức khỏe
+  watch: Sự canh gác
+  women-shoes: giày nữ
+  men-shoes: Giày nam
+  women-purse-bags: Túi ví phụ nữ
+  household-electrical-appliances: Thiết bị điện gia đình
+  women-accessories-jewelry: Phụ kiện & Trang sức của phụ nữ
+  sports-travel: Thể thao & Du lịch
+  online-store: Cửa hàng trực tuyến
+  cars-motorcycles-bicycles: Ô tô & xe máy & xe đạp
+  online-bookstore: Hiệu sách trực tuyến
+  men-backpacks-wallets: Ba lô và ví của nam giới
+  child-fashion: Thời trang trẻ em
+  toy: Đồ chơi
+  laundry-home-care: Giặt ủi & Chăm sóc tại nhà
+  take-care-of-the-pet: Chăm sóc thú cưng
+  vouchers-services: Chứng từ & Dịch vụ
+cpopular: 
+  label: Sản phẩm tìm kiếm phổ biến hàng đầu
+  see-all: Nhìn thấy tất cả
+  solded: Bán
+  month: tháng
+cflashsale: 
+  label: BÁN HÀNG FLASH
+  see-all: Nhìn thấy tất cả
+  decrease: GIẢM BỚT
+  solded: Bán
+menu: 
+  admin: Quản trị viên
+  about-page: Về trang
+  b-cart-page: Trang giỏ hàng
+  b-order-page: Trang đặt hàng
+  b-filter-page: Trang lọc
+  b-login-page: Trang đăng nhập
+  b-account-page: Trang tài khoản
+  b-wishlist-page: Trang mong muốn
+  become-seller: Trở thành người bán
+  notifications: Thông báo
+  notifications-warn: Không có thông báo gần đây
+  notifications-go: Trung tâm thông báo mở
+  register: Đăng ký
+  login: Đăng nhập
+  s-home: Trang Chủ
+  s-dashboard: bảng điều khiển
+  s-all-orders: Tất cả các đơn đặt hàng
+  s-order-canceled: Lệnh hủy
+  s-all-products: Tất cả sản phẩm
+  s-add-products: Thêm sản phẩm
+  s-shop-preview: Xem trước cửa hàng
+  s-shop-edit-profile: Cửa hàng Chỉnh sửa Hồ sơ
+  s-shop-new-register: Mua đăng ký mới
+  s-admin-channel: Kênh quản trị viên
+  s-sign-out: Đăng xuất
+  s-seller: Người bán
+header: 
+  home: Nhà
+  shop: Cửa hàng
+  pages: Trang
+  blog: Blog
+  contact: Tiếp xúc
+  setting: Thiết lập
+  vnd: Vnd
+  rub: Chà
+  pound: Pao
+  usd: đô la Mỹ
+  euro: Euro
+  jp: JP
+  rup: Rupee
+  rmb: RMB
+  my ccount: Tài khoản của tôi
+  checkout: Thủ tục thanh toán
+  download: Tải xuống
+  login: Đăng nhập
+  sign out: Đăng xuất
+  categories: Thể loại
+  placeholder search: Nhập khóa tìm kiếm của bạn ...
+footer: 
+  commit: Chúng tôi luôn cam kết phục vụ bạn với các dịch vụ tốt nhất. Kết nối để nhận thêm ưu đãi ngay lập tức.
   help: CẦN GIÚP ĐỠ?
   copyright: Bản quyền
-  all rights reserved: Tất cả được bảo tồn
+  all rights reserved: Đã đăng ký Bản quyền
   information: THÔNG TIN
   delivery: Vận chuyển
   about us: Về chúng tôi
-  secure payment: Phương thức bảo mật
-  contact us: Liên hệ
-  sitemap: Bản đồ
+  secure payment: Thanh toán an toàn
+  contact us: Liên hệ chúng tôi
+  sitemap: SITEMAP
   stores: Cửa hàng
-  link: LIÊN KẾT
-  legal notice: Giấy phép
-  prices drop: Giảm giá
-  new products: Sản phẩm mới
-  best sales: Doanh số
+  link: Liên kết
+  privacy policy: Chính sách bảo mật
+  term of service: Hạn của dịch vụ
+  service requirement: Yêu cầu dịch vụ
+  best sales: Hang ban tôt nhât
   login: Đăng nhập
-  my account: Tài khoản
-  newsletter: TIN TỨC
-  subscribe: Có thể hủy đăng kí bất cứ lúc nào. Hãy liên hệ chúng tôi hợp pháp.
-  sign up today: hãy là người đầu tiên. Nhận thông báo ngay hôm nay!
-  sign up: Đăng kí
-service:
-  free shipping: Miễn phí vận chuyển
-  freeship: Những đơn trên
-  free return: Đổi trả
-  return periods: Đổi trả trong vòng 9 ngày
-  support: Hỗ trợ
-  contact time: Contact us 24 hours a day
-  payment secure: Thanh toán bảo mật
-  payment safe: Thanh toán an toàn cho bạn.
-
+  my account: Tài khoản của tôi
+  newsletter: Bản tin
+  subscribe: Bạn có thể hủy đăng ký bất cứ lúc nào. Đối với mục đích đó, vui lòng tìm thông tin liên lạc của chúng tôi trong thông báo pháp lý.
+  sign up today: Hãy là người đầu tiên biết. Đăng ký nhận bản tin ngay hôm nay!
+  sign up: Đăng ký
+service: 
+  shipping-title: Hỗ trợ vận chuyển
+  shipping-desc: Luôn cập nhật trạng thái
+  return-title: Trả lại miễn phí
+  return-desc: Miễn phí trong vòng 9 ngày
+  contact-title: Ủng hộ
+  contact-desc: Sẵn sàng liên hệ với bất kỳ khi nào
+  payment-secure-title: Thanh toán an toàn
+  payment-secure-desc: Dễ dàng và thuận tiện.
+  chat-title: Trò chuyện trực tiếp
+  chat-desc: Chia sẻ trao đổi với người bán
+auth: 
+  a-banner: Quản trị viên chuyên nghiệp
+  a-desc: Quản lý cửa hàng của bạn hiệu quả hơn và trực quan hóa trên e-shopee với kênh quản trị
+  a-title: Đăng nhập vào kênh quản trị
+  a-remember: Nhớ tôi
+  a-login: Đăng nhập
+  b-register-title: Tạo tài khoản
+  b-register-desc: Tham gia với chúng tôi và bắt đầu mua sắm theo phong cách của bạn
+  b-register-btn: Tạo tài khoản
+  b-register-refer: Đăng nhập
+  b-register-already-account: Đã có tài khoản
+  b-login-welcome: Chào mừng trở lại
+  b-login-desc: Trải nghiệm nhiều ưu đãi và dịch vụ hấp dẫn
+  b-oauth: hoặc sử dụng email để đăng nhập
+  b-not-account: Không có tài khoản
+  b-login-forgot: Quên mật khẩu
+  b-login-btn: ĐĂNG NHẬP
+  b-forgot-title: Bạn quên mật khẩu của bạn
+  b-forgot-invite: Thật dễ dàng để đặt lại một mật khẩu mới trong snap
+  b-forgot: Quên
+  b-forgot-form-title: Quên mật khẩu
+  b-forgot-form-desc: Vui lòng nhập tên người dùng hoặc địa chỉ email của bạn. Bạn sẽ nhận được một liên kết để tạo mật khẩu mới qua email
+  b-forgot-form-button: lấy mật khẩu mới
+  b-reset-title: Đặt lại mật khẩu mới của bạn
+  b-reset-invite: Kiểm tra mã xác nhận được gửi từ email đã đăng ký của bạn
+  b-reset: Cài lại
+  b-reset-form-button: Đặt lại mật khẩu
+  b-reset-banner: Trung tâm hỗ trợ mật khẩu
+  b-new-password: Mật khẩu mới
+account: 
+  account-banner: Tài khoản của tôi
+  dashboard: bảng điều khiển
+  hello: Xin chào
+  joined-at: Tham gia tại
+  not-you: Nếu không bạn
+  logout: Đăng xuất
+  dashboard-desc: Từ bảng điều khiển tài khoản của bạn. Bạn có thể dễ dàng kiểm tra {symbol} Xem các đơn đặt hàng gần đây của mình, quản lý địa chỉ vận chuyển và thanh toán của bạn và chỉnh sửa mật khẩu và chi tiết tài khoản của bạn
+  order-title: Danh sách đơn đặt hàng của bạn
+  order-no: Không
+  order-name: Tên
+  order-date: Ngày tháng
+  order-status: Tình trạng
+  order-total: Toàn bộ
+  order-action: Hoạt động
+  save-changes: Lưu thay đổi
+  payment-method: Phương thức thanh toán
+  payment-owner: Tài khoản chủ sở hữu
+  payment-identification: mã số
+  payment-id: ID thanh toán
+  payment-bank: tên ngân hàng
+  payment-branch: chi nhánh ngân hàng
+  payment-account: Số tài khoản
+  not-payment: Bạn chưa lưu phương thức thanh toán của mình
+  digits: chữ số
+  payment-update: Cập nhật thanh toán
+  payment-create: Tạo thanh toán
+  credit-card: Thẻ tín dụng
+  card-number: Số thẻ
+  address-register: Đăng ký địa chỉ
+  zip-postal: Zip Bưu điện
+  postal-zip-code: Mã zip bưu điện
+  card-expiry: Ngày hết hạn
+  card-name: Tên chủ thẻ
+  card-cvv: CVV
+  card-address: Địa chỉ đăng kí
+  card-upadte: Thẻ cập nhật
+  card-create: Tạo thẻ
+  have-card: Bạn có 1 phương thức thanh toán
+  not-card: Bạn chưa lưu phương thức thanh toán của mình
+  address-billing: Địa chỉ thanh toán
+  address-owner: Họ và tên
+  address-phone: Số điện thoại
+  address: Địa chỉ nhà
+  address-location: Địa điểm
+  address-state: Trạng thái
+  address-city: Thành phố
+  address-town: Thành phố
+  is-home: Là nhà
+  is-pickup-address: Là địa chỉ đón
+  is-default-address: Là địa chỉ mặc định
+  is-return-address: Là địa chỉ trả lại
+  false: SAI
+  true: THÀNH THẬT
+  address-update: Địa chỉ cập nhật
+  address-create: Tạo địa chỉ
+shop: 
+  online: Trực tuyến
+  ago: trước kia
+  days: ngày
+  hours: giờ
+  minutes: phút
+  follow: Theo dõi
+  chat: Trò chuyện
+  products: Các sản phẩm
+  cancel-ratio: Hủy tỷ lệ
+  following: Tiếp theo
+  follower: Người theo dõi
+  joined: Tham gia
+  rating: Xếp hạng
+  shop-information: Cửa hàng thông tin
+  sort-by: Sắp xếp theo
+  popular: Phổ biến
+  latest: Muộn nhất
+  price: Giá
+  default: mặc định
+  low-to-high: thấp đến cao
+  high-to-low: cao đến thấp
+  address: Địa chỉ nhà
+  manage-shipping: Quản lý địa chỉ giao hàng và giao hàng của bạn
+  add-new-address: thêm địa chỉ mới
+  name: Tên
+  phone-number: Số điện thoại
+  edit: Biên tập
+  default-address: Địa chỉ mặc định
+  profile-information: Thông tin cá nhân
+  view-update-shop: Xem trạng thái cửa hàng và cập nhật hồ sơ cửa hàng của bạn
+  join-at: Tham gia tại
+  id: TÔI
+  edit-cover-photo: Chỉnh sửa ảnh bìa
+  response-rate: Tỷ lệ phản hồi
+  response-time: Thời gian đáp ứng
+  within-a-few-hours: Trong vòng vài giờ
+  shop-reviews: Đánh giá cửa hàng
+  unsuccessful-rate: Tỷ lệ không thành công
+  shop-id: Cửa hàng ID
+  shop-name: Tên cửa hàng
+  some-preview: Một số hình ảnh hoặc video xem trước
+  add-photos-videos: Thêm ảnh hoặc video
+  shop-description: Mô tả cửa hàng
+category: 
+  title: Thêm 1 sản phẩm mới
+  desc: Vui lòng chọn danh mục phù hợp cho sản phẩm của bạn
+  product-name: Tên sản phẩm
+  tutorial1: Chọn đúng danh mục
+  tutorial2: Bấm vào đây để tìm hiểu thêm
+  selected: Đã chọn
+  next: Kế tiếp
+cart: 
+  title: Các mặt hàng giỏ hàng của bạn
+  cart: Xe đẩy
+  preview: Xem trước
+  name: Tên
+  variations: Tùy chọn
+  price: Giá
+  quantity: Định lượng
+  action: Hoạt động
+  update: Cập nhật
+  promo-code: Có mã khuyến mãi
+  checkout: Thủ tục thanh toán
+  subtotal: Tổng phụ
+  shipping: Đang chuyển hàng
+  tax: Thuế
+  total: Toàn bộ
+  view-cart: Xem giỏ hàng
+  free-ship: Miễn phí vận chuyển trên tất cả các đơn đặt hàng
+product: 
+  evaluate: Thúc giục
+  solded: Bán
+  weight: Cân nặng
+  buy-with-deal: Mua với thỏa thuận bán hàng
+  shipping: Đang chuyển hàng
+  transport: Vận chuyển đến
+  quantities: Số lượng
+  available-products: Sản phẩm có sẵn
+  add-to-cart: Thêm vào giỏ hàng
+  order-now: Đặt hàng ngay bây giờ
+  total-liked: Tổng số thích
+  insurance: tiền bảo hiểm
+  return-refund: ngày để trở lại và hoàn lại tiền
+  online: Trực tuyến
+  ago: trước kia
+  chat-now: Nói chuyện ngay
+  visit-shop: Ghé thăm cửa hàng
+  productions: Sản xuất
+  response-ratio: Tỷ lệ đáp ứng
+  response-time: Thời gian đáp ứng
+  in-some-hours: trong một số giờ
+  joined: Tham gia
+  follower: Người theo dõi
+  product-describes: Sản phẩm mô tả
+  category: Danh mục
+  organization: Cơ quan
+  updating: Cập nhật
+  origin: Nguồn gốc
+  address: Địa chỉ nhà
+  warehouse: Kho
+  ship-from: Chuyển từ
+  product-evalutions: Đánh giá sản phẩm
+search: 
+  filter-by: Lọc bởi
+  categories: Thể loại
+  price: Giá
+  color: Màu sắc
+  brand: Nhãn hiệu
+  tags: Thẻ sản phẩm
+  there-are: Có
+  products: Mỹ phẩm
+  sort-by: Sắp xếp theo
+  relevance: Sự liên quan
+  a-z: Từ A đến Z
+  z-a: Z đến a
+  low-high: thấp đến cao
+  high-low: cao đến thấp
+  new: Mới
+  name: Tên
+  availability: khả dụng
+  add-to-cart: Thêm vào giỏ hàng
+  add-success-message: Sản phẩm được thêm thành công vào giỏ hàng của bạn
+  dimension: Kích thước
+  quantity: Định lượng
+  total-products: Tổng sản phẩm
+  total-shipping: Tổng số vận chuyển
+  taxes: Thuế
+  total: Toàn bộ
+  continue-shopping: Tiếp tục mua sắm
+  proceed-checkout: tiến hành kiểm tra
+  there-is: Có
+  item-in-your-cart: Mục trong giỏ hàng của bạn
+checkout: 
+  personal-information: Thông tin cá nhân
+  order-as-guest: Đặt hàng với tư cách là khách
+  login: Đăng nhập
+  pronoun: Đại từ
+  mr: Ông
+  mrs: Bà
+  name: Tên
+  email: E-mail
+  password: Mật khẩu
+  show: thể hiện
+  birthdate: Ngày sinh
+  receive offers: Nhận ưu đãi từ các đối tác của chúng tôi
+  signup-newsletter: Đăng ký nhận bản tin của chúng tôi
+  continue: Còn nữa
+  address: Địa chỉ nhà
+  address-desc: Địa chỉ được chọn sẽ giúp chúng tôi giao hàng cho bạn dễ dàng hơn và nhanh hơn
+  city: Thành phố
+  zip: Mã zip/bưu chính
+  country: Quốc gia
+  vietnam: Việt Nam
+  russia: Nga
+  england: nước Anh
+  united-states: Hoa Kỳ
+  japan: Nhật Bản
+  france: Pháp
+  india: Ấn Độ
+  china: Trung Quốc
+  not-have-country: Đừng tìm đất nước của tôi
+  phone: Điện thoại
+  shipping-method: Phương pháp vận chuyển
+  delivery-next-day: giao hàng vào ngày tiếp theo
+  note-field: Nếu bạn muốn thêm một ghi chú về đơn đặt hàng của bạn, vui lòng viết nó vào trường bên dưới
+  payment: Sự chi trả
+  pay-by-check: Thanh toán bằng tín dụng/thẻ ghi nợ/thẻ chính
+  pay-by-wire: Thanh toán bằng dây ngân hàng
+  pay-by-cash: Thanh toán bằng tiền mặt khi giao hàng
+  pay-by-momo: Trả tiền bằng momo
+  item: mục
+  shipping: Đang chuyển hàng
+  total: Toàn bộ
+  taxes: Thuế
+  process-checkout: Tiến hành kiểm tra
+  secure-policy: Chính sách bảo mật (cam kết bằng cách trấn an)
+  delivery-policy: Chính sách giao hàng (cam kết bằng cách trấn an)
+  return-policy: Chính sách trả lại (cam kết bằng cách trấn an)
+index: 
+  admin-chanel: Quản trị viên Chanel
+  seller-chanel: Người bán Chanel
+  buying-chanel: Mua Chanel
+  exploring: Khám phá
+  banner-desc: Ứng dụng mua sắm hàng đầu thế giới hàng đầu
+  download-now: Tải xuống ứng dụng ngay bây giờ
+  service-title: Mua sắm mọi lúc, mọi nơi
+  service-desc: Tận hưởng các chương trình khuyến mãi hấp dẫn, siêu tiết kiệm từ các cửa hàng uy tín nhất
+  transfer-support: Hỗ trợ chuyển giao
+  transfer-desc: Trạng thái đặt hàng của bạn luôn được cập nhật chi tiết vì bạn đặt hàng
+  customer-support: Hỗ trợ khách hàng
+  customer-desc: Bộ phận chăm sóc khách hàng luôn sẵn sàng hỗ trợ bạn 24/7
+  today-suggestion: Đề xuất hôm nay
+  today-suggestion-desc: Chọn các sản phẩm phù hợp cho bạn trong các đề xuất ngày hôm nay
+  safe-payment: Phương thức thanh toán an toàn
+  safe-payment-desc: Thanh toán dễ dàng và thuận tiện. Thanh toán khi giao hàng hoặc trả trước bằng thẻ tín dụng/thẻ ghi nợ
+  chat: Trò chuyện
+  chat-feature: tính năng
+  chat-desc: Trò chuyện trực tiếp với người bán để có thêm lời khuyên sản phẩm. Bạn cũng có thể thương lượng giá mong muốn với người bán thông qua phần "trò chuyện"
+  guarantee-privacy: Đảm bảo quyền riêng tư
+  commit: Shopee cam kết rằng số tiền bạn trả sẽ được chuyển cho người bán sau khi bạn nhận được hàng hóa. Chúng tôi luôn bảo vệ bạn
+  advertisement-1-desc: Nơi để sở hữu tất cả các sản phẩm bạn yêu thích
+  advertisement-2-title: Mua và bán trực tuyến
+  advertisement-2-desc: Thích mua sắm và kinh doanh với uy tín
+  advertisement-3-title: Quà tặng cho khách hàng mới
+  advertisement-3-desc: Quà tặng độc quyền và hấp dẫn cho khách hàng mới tại E-Shopee
+  customer-opinion-title: Người dùng nói gì về e-shopee
+  opinion-1: Tôi luôn mong chờ E-Shopee để săn lùng các giao dịch và luôn nhận được những giao dịch tốt đáng ngạc nhiên. Không đề cập đến mọi thỏa thuận săn bắn là niềm vui, cuộc săn thỏa thuận cuối cùng là niềm vui nhất trong 2 năm nghiện e-shopee của tôi
+  opinion-2: Mỗi lần tôi đến E-Shopee, tôi có kết quả tuyệt vời, hàng chục vật phẩm tiếp tục nhận cho đến khi tôi nhận được hàng hóa, tôi thậm chí không biết khi tôi đặt hàng này hay điều đó. Vì vậy, nghiện e-shopee
+  joined-at: Tham gia tại
+  copyright: Bản quyền
+  all-rights-reserved: Đã đăng ký Bản quyền
+contact: 
+  contact-us: Liên hệ chúng tôi
+  tell-us-desc: Hãy cho chúng tôi biết về vấn đề của bạn để chúng tôi có thể giúp bạn nhanh hơn
+  tell-us-support: Chúng tôi luôn sẵn sàng hỗ trợ cho các câu hỏi của bạn 24/7
+  address: Địa chỉ nhà
+  sub-adddress: Quater 6, Linh lợn phường, Quận Thu Duc, Thành phố Hồ Chí Minh
+  country: Việt Nam
+  phone: Điện thoại
+  mobile: Di động
+  hotline: Đường dây nóng
+  email: E-mail
+  tell-us-your-message: Cho chúng tôi biết tin nhắn của bạn
+  your-name: Tên của bạn
+  your-email: Email của bạn
+  subject: Môn học
+  note: Tin nhắn của bạn
+  submit: Nộp
+sitemap: 
+  sitemap: SITEMAP
+favourite: 
+  add-to-cart: Thêm vào giỏ hàng
+  favourite-banner: Trang yêu thích
+about: 
+  about-us: Về chúng tôi
+  welcome: Chào mừng bạn đến
+  desc-one: E-Shopee là nền tảng thương mại điện tử lớn nhất ở Đông Nam Á và Đài Loan. Nó là một nền tảng phù hợp với khu vực, giúp mua sắm trực tuyến trở nên dễ dàng, an toàn và nhanh chóng thông qua việc thanh toán mạnh mẽ và hỗ trợ hậu cần. Shopee được hỗ trợ mạnh mẽ bởi SEA (trước đây gọi là Garena), nhà cung cấp nền tảng Internet lớn nhất Đông Nam Á.
+  desc-two: Shopee có thể được tải xuống miễn phí trên App Store và Google Play tại Singapore, Malaysia, Thái Lan, Đài Loan, Indonesia, Việt Nam và Philippines. Để biết thêm thông tin, vui lòng truy cập https://shopee.vn
+  our-purpose: Mục đích của chúng tôi
+  purpose-desc: Nhóm Shopee tin vào sức mạnh biến đổi của công nghệ và muốn thay đổi thế giới tốt hơn bằng cách cung cấp một nền tảng để kết nối người mua và người bán trong một cộng đồng. Khi mua sắm trên thiết bị di động trở thành tiêu chuẩn mới, Shopee nhằm mục đích liên tục nâng cao nền tảng của mình để mang lại trải nghiệm mua sắm liền mạch và thú vị cho tất cả người dùng và là nền tảng thương mại điện tử của khu vực.
+  our-team: Đội ngũ của chúng tôi
+  team-desc: Nhóm Shopee tin vào sức mạnh biến đổi của công nghệ và muốn thay đổi thế giới tốt hơn bằng cách cung cấp một nền tảng để kết nối người mua và người bán trong một cộng đồng. Khi mua sắm trên thiết bị di động trở thành tiêu chuẩn mới, Shopee nhằm mục đích liên tục nâng cao nền tảng của mình để mang lại trải nghiệm mua sắm liền mạch và thú vị cho tất cả người dùng và là nền tảng thương mại điện tử của khu vực.
+  testimonial: Chứng thực
+  testimonial-desc: Nhóm Shopee tin vào sức mạnh biến đổi của công nghệ và muốn thay đổi thế giới tốt hơn bằng cách cung cấp một nền tảng để kết nối người mua và người bán trong một cộng đồng. Khi mua sắm trên thiết bị di động trở thành tiêu chuẩn mới, Shopee nhằm mục đích liên tục nâng cao nền tảng của mình để mang lại trải nghiệm mua sắm liền mạch và thú vị cho tất cả người dùng và là nền tảng thương mại điện tử của khu vực.

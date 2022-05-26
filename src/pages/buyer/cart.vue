@@ -9,6 +9,7 @@ import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
 import { useLoading } from '~/stores/loading'
 import CartRequest from '~/services/cart-request'
+import { floorNumber } from '~/utils/floorNumber'
 import AccountRequest from '~/services/account-request'
 import OrderRequest from '~/services/order-request'
 import { handleError } from '~/helpers/error'
@@ -33,7 +34,7 @@ const payget = reactive({
   limit: 10,
   page: 1,
 })
-watchEffect(async() => {
+onMounted(async() => {
   loading.isLoading = true
   const { data: cartData } = await CartRequest.getCart({ params: { limit: payget.limit, page: payget.page } })
   loading.isLoading = false
@@ -100,7 +101,7 @@ const handleOrder = async() => {
               🏷 {{ t('cart.name') }}
             </th>
             <th class="p-2">
-              ⏳ {{ t('cart.category') }}
+              ⏳ {{ t('cart.variations') }}
             </th>
             <th class="p-2">
               📈 {{ t('cart.price') }}
@@ -120,6 +121,7 @@ const handleOrder = async() => {
           <tr v-for="(item, index) in cart.result" :key="index" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
             <td class="p-2">
               <div class="flex items-center">
+                <!-- <img v-if="item.product.images[0]" :src="`https://tp-o.tk/resources/images/${item.product.images[0]}`" alt="img_preview" class="max-w-40 max-h-40 rounded-md"> -->
                 <img src="/img/product/shoes/8.webp" alt="img_preview" class="max-w-40 max-h-40 rounded-md">
               </div>
             </td>
@@ -140,11 +142,12 @@ const handleOrder = async() => {
             </th>
             <td class="p-2">
               <div class="uppercase flex items-center rounded-md border-1 border-solid border-gray-300 dark:border-gray-500 text-xs w-min">
-                <p class="p-1.25 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none': item.quantity<2}" @click="payload.quantity = item.quantity--">
+                <p class="p-1.25 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none': item.quantity<2}" @click="payload.quantity = --item.quantity">
                   <IBMinus />
                 </p>
+
                 <input v-model="item.quantity" type="number" min="1" max="50" step="1" class="dark:bg-transparent appearance-none text-center  pointer-events-none border-l-1 border-l-solid border-l-gray-300 border-r-1 border-r-solid border-r-gray-300 font-medium py-1.25 text-black dark:(text-gray-200 border-gray-500)" @change="payload.quantity = item.quantity">
-                <p class="p-1.25 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none': item.quantity>=item.product_model.stock}" @click="payload.quantity = item.quantity++">
+                <p class="p-1.25 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none': item.quantity>=item.product_model.stock}" @click="payload.quantity = ++item.quantity">
                   <IBPlus />
                 </p>
               </div>
@@ -183,7 +186,7 @@ const handleOrder = async() => {
                 <span />
               </li>
               <li class="totalRow final">
-                <span class="label">{{ t('cart.total') }}</span><span class="value">${{ cart.result.reduce((accum,item) => accum + item.total_price, 0) }}</span>
+                <span class="label">{{ t('cart.total') }}</span><span class="value">${{ floorNumber(cart.result.reduce((accum,item) => accum + item.total_price, 0)) }}</span>
               </li>
             </ul>
           </div>

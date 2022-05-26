@@ -42,6 +42,7 @@ declare module 'vue' {
     CMap: typeof import('./components/CMap.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
     CPagination: typeof import('./components/CPagination.vue')['default']
+    CProductCard: typeof import('./components/CProductCard.vue')['default']
     CProgress: typeof import('./components/CProgress.vue')['default']
     CSChooseCategory: typeof import('./components/seller/CSChooseCategory.vue')['default']
     CSFooter: typeof import('./components/seller/CSFooter.vue')['default']

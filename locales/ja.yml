@@ -1,13 +1,486 @@
-button:
-  about: これは？
+pagination: 
+  previous: 前
+  next: 次
+button: 
+  about: 約
   back: 戻る
-  go: 進む
-  home: ホーム
-  toggle_dark: ダークモード切り替え
-  toggle_langs: 言語切り替え
-intro:
-  desc: 固執された Vite スターターテンプレート
-  dynamic-route: 動的ルートのデモ
-  hi: こんにちは、{name}!
-  whats-your-name: 君の名は。
-not-found: 見つかりませんでした
+  go: 行く
+  home: 家
+  toggle_dark: ダークモードを切り替えます
+  toggle_langs: 言語を変更します
+cloading: 
+  loading: データのロード
+ctrending: 
+  search: トレンドを検索してください
+  see-more: 続きを見る
+  products: 製品
+ctoday: 
+  hint: 今日のヒント
+  sold: 売られた
+  see-more: 続きを見る
+  decrease: 下降
+cmonthsale: 
+  download: e-shopee アプリをダウンロードして、すぐに私たちからギフトを受け取ります
+  get-gift: 今すぐギフトと排他的な取引を入手してください
+carrival: 
+  our-products: 当社の製品
+  add-our-product: 毎週のラインナップに製品を追加します
+  new: 新着
+caccount:  
+  dashboard: ダッシュボード
+  orders: 注文
+  download: ダウンロード
+  payment-method: 支払方法
+  credit-card: クレジットカード
+  address: 住所
+  Logout: ログアウト
+ccategory: 
+  men-fashion: 男性のファッション
+  women-fashion: 女性のファッション
+  phones-accessories: 電話とアクセサリー
+  mother-baby: 母と赤ちゃん
+  electronic-device: 電子機器
+  home-life: 家庭生活
+  computers-laptops: コンピューターとラップトップ
+  beauty: 美しさ
+  camera-camcorder: カメラカムコーダー
+  health: 健康
+  watch: 時計
+  women-shoes: 女性の靴
+  men-shoes: メンズシューズ
+  women-purse-bags: 女性の財布バッグ
+  household-electrical-appliances: 家庭用電化製品
+  women-accessories-jewelry: 女性のアクセサリーとジュエリー
+  sports-travel: スポーツと旅行
+  online-store: オンラインストア
+  cars-motorcycles-bicycles: 車とオートバイと自転車
+  online-bookstore: オンライン書店
+  men-backpacks-wallets: メンズバックパックと財布
+  child-fashion: 子供のファッション
+  toy: おもちゃ
+  laundry-home-care: ランドリーとホームケア
+  take-care-of-the-pet: ペットの世話をしてください
+  vouchers-services: バウチャーとサービス
+cpopular: 
+  label: トップの人気のある検索製品
+  see-all: すべてを見る
+  solded: 売られた
+  month: 月
+cflashsale: 
+  label: フラッシュ販売
+  see-all: すべてを見る
+  decrease: 下降
+  solded: 売られた
+menu: 
+  admin: 管理者
+  about-page: ページについて
+  b-cart-page: カートページ
+  b-order-page: 注文ページ
+  b-filter-page: フィルターページ
+  b-login-page: ログインページ
+  b-account-page: アカウントページ
+  b-wishlist-page: ウィッシュリストページ
+  become-seller: 売り手になります
+  notifications: 通知
+  notifications-warn: 最近の通知はありません
+  notifications-go: オープン通知センター
+  register: 登録
+  login: ログイン
+  s-home: 家
+  s-dashboard: ダッシュボード
+  s-all-orders: すべての注文
+  s-order-canceled: 注文キャンセル
+  s-all-products: すべての製品
+  s-add-products: 製品を追加します
+  s-shop-preview: ショッププレビュー
+  s-shop-edit-profile: ショップ編集プロファイル
+  s-shop-new-register: 新しいレジスタを買います
+  s-admin-channel: 管理チャネル
+  s-sign-out: サインアウト
+  s-seller: 売り手
+header: 
+  home: 家
+  shop: 店
+  pages: ページ
+  blog: ブログ
+  contact: コンタクト
+  setting: 設定
+  vnd: vnd
+  rub: こする
+  pound: ポンド
+  usd: 米ドル
+  euro: ユーロ
+  jp: JP
+  rup: ルピー
+  rmb: 人民元
+  my ccount: マイアカウント
+  checkout: チェックアウト
+  download: ダウンロード
+  login: ログイン
+  sign out: サインアウト
+  categories: カテゴリ
+  placeholder search: 検索キーを入力してください...
+footer: 
+  commit: 私たちは常にあなたに最高のサービスを提供することを約束しています。接続して、すぐにより多くのオファーを受信します。
+  help: 助けが必要？
+  copyright: 著作権
+  all rights reserved: 全著作権所有
+  information: 情報
+  delivery: 配達
+  about us: 私たちに関しては
+  secure payment: 安全なお支払い
+  contact us: お問い合わせ
+  sitemap: サイトマップ
+  stores: 店舗
+  link: リンク
+  privacy policy: プライバシーポリシー
+  term of service: サービス期間
+  service requirement: サービス要件
+  best sales: 最高の販売
+  login: ログイン
+  my account: マイアカウント
+  newsletter: ニュースレター
+  subscribe: いつでも登録解除できます。その目的のために、法的通知で連絡先情報を見つけてください。
+  sign up today: 最初に知っている。今日ニュースレターにサインアップしてください！
+  sign up: サインアップ
+service: 
+  shipping-title: 配送サポート
+  shipping-desc: 常にステータスを更新します
+  return-title: 無料返品
+  return-desc: 9日以内に無料
+  contact-title: サポート
+  contact-desc: いつでも連絡する準備ができています
+  payment-secure-title: 支払い安全
+  payment-secure-desc: 簡単で便利です。
+  chat-title: ライブチャット
+  chat-desc: 売り手と交換を共有します
+auth: 
+  a-banner: プロの管理者
+  a-desc: あなたのショップをより効果的に管理し、管理チャネルを使用してE-Shopeeで視覚化
+  a-title: 管理チャネルにログインします
+  a-remember: 私を覚えてますか
+  a-login: ログイン
+  b-register-title: アカウントを作成する
+  b-register-desc: 私たちに参加して、あなたのスタイルで買い物を始めてください
+  b-register-btn: アカウントを作成する
+  b-register-refer: ログイン
+  b-register-already-account: すでにアカウントを持っています
+  b-login-welcome: お帰りなさい
+  b-login-desc: 多くの魅力的なオファーやサービスを体験してください
+  b-oauth: または、ログインに電子メールを使用します
+  b-not-account: アカウントを持っていない
+  b-login-forgot: パスワードをお忘れですか
+  b-login-btn: サインイン
+  b-forgot-title: パスワードを忘れました
+  b-forgot-invite: 新しいパスワードをスナップでリセットするのは簡単です
+  b-forgot: 忘れた
+  b-forgot-form-title: パスワードをお忘れですか
+  b-forgot-form-desc: ユーザー名またはメールアドレスを入力してください。電子メールで新しいパスワードを作成するためのリンクを受け取ります
+  b-forgot-form-button: 新しいパスワードを取得します
+  b-reset-title: 新しいパスワードをリセットします
+  b-reset-invite: 登録された電子メールから送信された確認コードを確認してください
+  b-reset: リセット
+  b-reset-form-button: パスワードを再設定する
+  b-reset-banner: パスワードサポートセンター
+  b-new-password: 新しいパスワード
+account: 
+  account-banner: マイアカウント
+  dashboard: ダッシュボード
+  hello: こんにちは
+  joined-at: 参加しました
+  not-you: そうでなければ
+  logout: ログアウト
+  dashboard-desc: アカウントダッシュボードから。 {symbol}最近の注文を簡単に確認し、送料と請求アドレスを管理し、パスワードとアカウントの詳細を編集できます
+  order-title: 注文リスト
+  order-no: いいえ
+  order-name: 名前
+  order-date: 日にち
+  order-status: 状態
+  order-total: 合計
+  order-action: アクション
+  save-changes: 変更内容を保存
+  payment-method: 支払方法
+  payment-owner: 所有者アカウント
+  payment-identification: 識別番号
+  payment-id: 支払いID
+  payment-bank: 銀行名
+  payment-branch: 銀行支店
+  payment-account: 口座番号
+  not-payment: まだ支払い方法を保存していません
+  digits: 数字
+  payment-update: 支払いを更新します
+  payment-create: 支払いを作成します
+  credit-card: クレジットカード
+  card-number: カード番号
+  address-register: アドレス登録
+  zip-postal: ジップ郵便
+  postal-zip-code: 郵便番号
+  card-expiry: 有効期限
+  card-name: クレジットカード名義人氏名
+  card-cvv: CVV
+  card-address: 登録アドレス
+  card-upadte: カードを更新する
+  card-create: カードを作成します
+  have-card: 1つの支払い方法があります
+  not-card: まだ支払い方法を保存していません
+  address-billing: 請求先住所
+  address-owner: フルネーム
+  address-phone: 電話番号
+  address: 住所
+  address-location: 位置
+  address-state: 州
+  address-city: 街
+  address-town: 町
+  is-home: 家にいる
+  is-pickup-address: ピックアップアドレスです
+  is-default-address: デフォルトアドレスです
+  is-return-address: 返品アドレスです
+  false: 偽
+  true: 本当です
+  address-update: アドレスを更新します
+  address-create: アドレスを作成します
+shop: 
+  online: オンライン
+  ago: 前
+  days: 日々
+  hours: 時間
+  minutes: 分
+  follow: 従う
+  chat: チャット
+  products: 製品
+  cancel-ratio: キャンセル比
+  following: 続く
+  follower: フォロワー
+  joined: 参加
+  rating: 評価
+  shop-information: ショップ情報
+  sort-by: 並び替え
+  popular: 人気
+  latest: 最新
+  price: 価格
+  default: デフォルト
+  low-to-high: 低から高
+  high-to-low: 高から低い
+  address: 住所
+  manage-shipping: 送料と配送先住所を管理します
+  add-new-address: 新しいアドレスを追加
+  name: 名前
+  phone-number: 電話番号
+  edit: 編集
+  default-address: デフォルトの住所
+  profile-information: プロフィール情報
+  view-update-shop: ショップのステータスを表示し、ショッププロフィールを更新します
+  join-at: で参加します
+  id: ID
+  edit-cover-photo: カバー写真を編集します
+  response-rate: 回答率
+  response-time: 反応時間
+  within-a-few-hours: 数時間以内
+  shop-reviews: ショップレビュー
+  unsuccessful-rate: 失敗したレート
+  shop-id: ショップID
+  shop-name: ショップ名
+  some-preview: いくつかのプレビュー写真やビデオ
+  add-photos-videos: 写真やビデオを追加します
+  shop-description: ショップの説明
+category: 
+  title: 1つの新製品を追加します
+  desc: 製品に適したカテゴリを選択してください
+  product-name: 商品名
+  tutorial1: 正しいカテゴリを選択します
+  tutorial2: ここをクリックして調べてください
+  selected: 選択しました
+  next: 次
+cart: 
+  title: あなたのカートアイテム
+  cart: カート
+  preview: プレビュー
+  name: 名前
+  variations: バリエーション
+  price: 価格
+  quantity: 量
+  action: アクション
+  update: アップデート
+  promo-code: プロモーションコードがあります
+  checkout: チェックアウト
+  subtotal: 小計
+  shipping: 運送
+  tax: 税
+  total: 合計
+  view-cart: かごの中身を見る
+  free-ship: すべての注文で送料無料
+product: 
+  evaluate: 評価
+  solded: 売られた
+  weight: 重さ
+  buy-with-deal: 販売取引で購入します
+  shipping: 運送
+  transport: への輸送
+  quantities: 量
+  available-products: 利用可能な製品
+  add-to-cart: カートに追加
+  order-now: 今すぐ注文
+  total-liked: 合計が好きです
+  insurance: 保険
+  return-refund: 返品と返金の日
+  online: オンライン
+  ago: 前
+  chat-now: 今チャットしてください
+  visit-shop: ショップにアクセスしてください
+  productions: プロダクション
+  response-ratio: 応答率
+  response-time: 反応時間
+  in-some-hours: 数時間で
+  joined: 参加
+  follower: フォロワー
+  product-describes: 製品は説明しています
+  category: カテゴリー
+  organization: 組織
+  updating: 更新
+  origin: 元
+  address: 住所
+  warehouse: 倉庫
+  ship-from: 発送元
+  product-evalutions: 製品評価
+search: 
+  filter-by: ろ過します
+  categories: カテゴリ
+  price: 価格
+  color: 色
+  brand: ブランド
+  tags: 製品タグ
+  there-are: がある
+  products: 製品
+  sort-by: 並び替え
+  relevance: 関連性
+  a-z: aからz
+  z-a: zからa
+  low-high: 低から高
+  high-low: 高から低い
+  new: 新着
+  name: 名前
+  availability: 可用性
+  add-to-cart: カートに追加
+  add-success-message: 製品はショッピングカートに正常に追加されました
+  dimension: 寸法
+  quantity: 量
+  total-products: 総製品
+  total-shipping: 総配送
+  taxes: 税金
+  total: 合計
+  continue-shopping: ショッピングを続ける
+  proceed-checkout: チェックアウトに進む
+  there-is: がある
+  item-in-your-cart: カートのアイテム
+checkout: 
+  personal-information: 個人情報
+  order-as-guest: ゲストとして注文してください
+  login: ログイン
+  pronoun: 代名詞
+  mr: 氏
+  mrs: 夫人
+  name: 名前
+  email: Eメール
+  password: パスワード
+  show: 公演
+  birthdate: 生年月日
+  receive offers: パートナーからオファーを受け取ります
+  signup-newsletter: ニュースレターにサインアップしてください
+  continue: 継続する
+  address: 住所
+  address-desc: 選択されたアドレスは、私たちがあなたのためにもっと巧妙かつより速く配達するのに役立ちます
+  city: 街
+  zip: zip/郵便番号
+  country: 国
+  vietnam: ベトナム
+  russia: ロシア
+  england: イングランド
+  united-states: アメリカ
+  japan: 日本
+  france: フランス
+  india: インド
+  china: 中国
+  not-have-country: 私の国を見つけないでください
+  phone: 電話
+  shipping-method: 配送方法
+  delivery-next-day: 翌日配達
+  note-field: ご注文についてメモを追加したい場合は、以下のフィールドに書いてください
+  payment: 支払い
+  pay-by-check: クレジット/ビザデビット/マスターカードで支払う
+  pay-by-wire: 銀行のワイヤーで支払う
+  pay-by-cash: 納税を行う現金で支払う
+  pay-by-momo: モモによる支払い
+  item: アイテム
+  shipping: 運送
+  total: 合計
+  taxes: 税金
+  process-checkout: チェックアウトに進む
+  secure-policy: セキュリティポリシー（安心によるコミット）
+  delivery-policy: 配信ポリシー（安心によるコミット）
+  return-policy: 返品ポリシー（安心によるコミット）
+index: 
+  admin-chanel: 管理シャネル
+  seller-chanel: 売り手のシャネル
+  buying-chanel: シャネルを買う
+  exploring: 探索
+  banner-desc: トップワールドをリードするショッピングアプリ
+  download-now: 今すぐアプリをダウンロードしてください
+  service-title: いつでもどこでも買い物
+  service-desc: 魅力的なプロモーション、最も権威ある店からの超節約をお楽しみください
+  transfer-support: 転送サポート
+  transfer-desc: ご注文を行うため、注文ステータスは常に詳細に更新されます
+  customer-support: 顧客サポート
+  customer-desc: カスタマーケア部門はいつでも24時間年中無休であなたをサポートする準備ができています
+  today-suggestion: 今日の提案
+  today-suggestion-desc: 今日の提案であなたに適した製品を選択してください
+  safe-payment: 安全な支払い方法
+  safe-payment-desc: 簡単で便利な支払い。クレジット/デビットカードによる配達または前払いを支払うか
+  chat: チャット
+  chat-feature: 特徴
+  chat-desc: より多くの製品アドバイスについては、売り手と直接チャットします。また、「チャット」セクションを通じて売り手と目的の価格を交渉することもできます
+  guarantee-privacy: プライバシーを保証します
+  commit: Shopeeは、あなたが商品を受け取った後、あなたが支払う金額が売り手に譲渡されることをコミットします。私たちはいつもあなたを守ります
+  advertisement-1-desc: あなたが愛するすべての製品を所有する場所
+  advertisement-2-title: オンラインで売買します
+  advertisement-2-desc: ショッピングを楽しんだり、プレステージでビジネスをしたりしてください
+  advertisement-3-title: 新しい顧客へのギフト
+  advertisement-3-desc: e-shopeeの新規顧客への排他的で魅力的な贈り物
+  customer-opinion-title: ユーザーはe-shopeeについて何と言っていますか
+  opinion-1: 私はいつもe-shopeeが取引を狩り、常に驚くほど良い取引を得ることを楽しみにしています。すべての取引狩りは楽しいことは言うまでもありません、最後の取引ハントは私の2年間のe-shopee中毒で最も楽しいです
+  opinion-2: e-shopeeに行くたびに、私は素晴らしい結果が得られ、数十のアイテムが商品を受け取るまで拾い続けます。 E-Shopeeに夢中になっています
+  joined-at: 参加しました
+  copyright: 著作権
+  all-rights-reserved: 全著作権所有
+contact: 
+  contact-us: お問い合わせ
+  tell-us-desc: 私たちがあなたをより迅速に助けることができるようにあなたの問題について教えてください
+  tell-us-support: 私たちは常にあなたの質問を24時間年中無休でサポートする準備ができています
+  address: 住所
+  sub-adddress: クエーター6、リン・トゥルン病棟、トゥ・ドゥック地区、ホーチミン市
+  country: ベトナム
+  phone: 電話
+  mobile: モバイル
+  hotline: ホットライン
+  email: Eメール
+  tell-us-your-message: あなたのメッセージを教えてください
+  your-name: あなたの名前
+  your-email: あなたのメール
+  subject: 主題
+  note: あなたのメッセージ
+  submit: 送信
+sitemap: 
+  sitemap: サイトマップ
+favourite: 
+  add-to-cart: カートに追加
+  favourite-banner: 好きなページ
+about: 
+  about-us: 私たちに関しては
+  welcome: ようこそ
+  desc-one: E-Shopeeは、東南アジアと台湾で最大のeコマースプラットフォームです。これは、この地域に合わせて調整されたプラットフォームであり、オンラインショッピングを簡単に、安全で、強力な支払いと物流サポートを迅速にしています。 Shopeeは、東南アジア最大のインターネットプラットフォームプロバイダーであるSea（以前はGarenaとして知られていました）に強くサポートされています。
+  desc-two: Shopeeは、シンガポール、マレーシア、タイ、台湾、インドネシア、ベトナム、フィリピンのApp StoreとGoogle Playで無料でダウンロードできます。詳細については、https：//shopee.vnをご覧ください
+  our-purpose: 私たちの目的
+  purpose-desc: Shopeeチームは、テクノロジーの変革力を信じており、1つのコミュニティで買い手と売り手を接続するためのプラットフォームを提供することにより、世界をより良く変えたいと考えています。モバイルデバイスでの買い物が新しい標準になると、Shopeeは、すべてのユーザーにシームレスで楽しいショッピングエクスペリエンスを提供し、地域のeコマースプラットフォームになるためにプラットフォームを継続的に強化することを目指しています。
+  our-team: 私たちのチーム
+  team-desc: Shopeeチームは、テクノロジーの変革力を信じており、1つのコミュニティで買い手と売り手を接続するためのプラットフォームを提供することにより、世界をより良く変えたいと考えています。モバイルデバイスでの買い物が新しい標準になると、Shopeeは、すべてのユーザーにシームレスで楽しいショッピングエクスペリエンスを提供し、地域のeコマースプラットフォームになるためにプラットフォームを継続的に強化することを目指しています。
+  testimonial: 証言
+  testimonial-desc: Shopeeチームは、テクノロジーの変革力を信じており、1つのコミュニティで買い手と売り手を接続するためのプラットフォームを提供することにより、世界をより良く変えたいと考えています。モバイルデバイスでの買い物が新しい標準になると、Shopeeは、すべてのユーザーにシームレスで楽しいショッピングエクスペリエンスを提供し、地域のeコマースプラットフォームになるためにプラットフォームを継続的に強化することを目指しています。

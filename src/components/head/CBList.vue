@@ -6,6 +6,7 @@ import AccountRequest from '~/services/account-request'
 import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
 import { useUser } from '~/stores/user'
+import { floorNumber } from '~/utils/floorNumber'
 import { removeItemByIndex } from '~/utils/arrayHandle'
 
 const { t } = useI18n()
@@ -83,7 +84,7 @@ const handleOrder = async() => {
       <span class="total-notifications absolute -top-2 left-5 bg-green-500 w-5 h-5 text-white rounded-full flex justify-center items-center pr-0.5 text-xs font-medium">{{ cart.result.length }}</span>
       <IBCart />
       <h1 class="font-semibold ml-3">
-        ${{ cart.result.reduce((accum,item) => accum + item.total_price, 0) }}
+        ${{ floorNumber(cart.result.reduce((accum,item) => accum + item.total_price, 0)) }}
       </h1>
     </div>
     <div>
@@ -118,7 +119,7 @@ const handleOrder = async() => {
       </ul>
       <div class="flex flex-wrap justify-between p-5">
         <strong>{{ t('cart.subtotal') }} :</strong>
-        <span class="amount font-semibold">${{ cart.result.reduce((accum,item) => accum + item.total_price, 0) }}</span>
+        <span class="amount font-semibold">${{ floorNumber(cart.result.reduce((accum,item) => accum + item.total_price, 0)) }}</span>
       </div>
       <div class="flex justify-around items-center p-5">
         <router-link to="/buyer/cart">

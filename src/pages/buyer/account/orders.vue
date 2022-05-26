@@ -31,7 +31,7 @@ const payload = reactive({
 })
 watch(async() => {
   loading.isLoading = true
-  const { data: orderData } = await OrderRequest.getOrders({ params: { limit: payload.limit, status_id: payload.status_id } })
+  const { data: orderData } = await OrderRequest.getOrders({ params: { limit: payload.limit} })
   loading.isLoading = false
   user.order = orderData
   order.payget = orderData.data

@@ -1,0 +1,486 @@
+pagination: 
+  previous: पहले का
+  next: अगला
+button: 
+  about: लगभग
+  back: वापस
+  go: जाओ
+  home: घर
+  toggle_dark: टॉगल डार्क मोड
+  toggle_langs: भाषा बदलें
+cloading: 
+  loading: डेटा लोड हो रहा है
+ctrending: 
+  search: हमारे लिए ट्रेंडिंग ट्रेंडिंग
+  see-more: और देखें
+  products: उत्पादों
+ctoday: 
+  hint: आज संकेत
+  sold: बेगाना
+  see-more: और देखें
+  decrease: कमी
+cmonthsale: 
+  download: ई-शॉपी ऐप डाउनलोड करें ताकि हम से तुरंत उपहार प्राप्त करें
+  get-gift: अब उपहार और अनन्य सौदे प्राप्त करें
+carrival: 
+  our-products: हमारे उत्पाद
+  add-our-product: हमारे उत्पादों को साप्ताहिक लाइन अप में जोड़ें
+  new: नवीन व
+caccount:  
+  dashboard: धूर्तता
+  orders: आदेश
+  download: डाउनलोड
+  payment-method: भुगतान का तरीका
+  credit-card: क्रेडिट कार्ड
+  address: पता
+  Logout: लॉग आउट
+ccategory: 
+  men-fashion: पुरुषों का पहनावा
+  women-fashion: औरतों का फ़ैशन
+  phones-accessories: फोन और सहायक उपकरण
+  mother-baby: माँ और बच्चा
+  electronic-device: इलेक्ट्रॉनिक उपकरण
+  home-life: घरेलू जीवन
+  computers-laptops: कंप्यूटर और लैपटॉप
+  beauty: सुंदरता
+  camera-camcorder: कैमरा कैमकॉर्डर
+  health: स्वास्थ्य
+  watch: घड़ी
+  women-shoes: महिलाओं के जूते
+  men-shoes: पुरुषों के जूते
+  women-purse-bags: महिलाओं के पर्स बैग
+  household-electrical-appliances: घरेलू विद्युत उपकरण
+  women-accessories-jewelry: महिलाओं के सामान और गहने
+  sports-travel: खेल और यात्रा
+  online-store: ऑनलाइन स्टोर
+  cars-motorcycles-bicycles: कार और मोटरसाइकिल और साइकिल
+  online-bookstore: ऑनलाइन बुकस्टोर
+  men-backpacks-wallets: पुरुषों के बैकपैक और वॉलेट्स
+  child-fashion: चाइल्ड फैशन
+  toy: खिलौने
+  laundry-home-care: कपड़े धोने और घर की देखभाल
+  take-care-of-the-pet: पालतू जानवरों का ख्याल रखना
+  vouchers-services: वाउचर और सेवाएँ
+cpopular: 
+  label: शीर्ष लोकप्रिय खोज उत्पाद
+  see-all: सभी देखें
+  solded: बेगाना
+  month: महीना
+cflashsale: 
+  label: फ्लैश बिक्री
+  see-all: सभी देखें
+  decrease: कमी
+  solded: बेगाना
+menu: 
+  admin: व्यवस्थापक
+  about-page: पृष्ठ के बारे में
+  b-cart-page: कार्ट पेज
+  b-order-page: आदेश पृष्ठ
+  b-filter-page: फ़िल्टर पृष्ठ
+  b-login-page: लोग इन वाला पन्ना
+  b-account-page: खाता पृष्ठ
+  b-wishlist-page: विशलिस्ट पेज
+  become-seller: विक्रेता बनो
+  notifications: अधिसूचना
+  notifications-warn: हाल ही में सूचनाएं नहीं हैं
+  notifications-go: खुली सूचना केंद्र
+  register: पंजीकरण करवाना
+  login: लॉग इन करें
+  s-home: घर
+  s-dashboard: धूर्तता
+  s-all-orders: सभी आदेश
+  s-order-canceled: आदेश रद्द किया गया
+  s-all-products: सभी प्रोडक्ट
+  s-add-products: उत्पाद जोड़ें
+  s-shop-preview: दुकान पूर्वावलोकन
+  s-shop-edit-profile: दुकान संपादित करें प्रोफ़ाइल
+  s-shop-new-register: दुकान नया रजिस्टर
+  s-admin-channel: व्यवस्थापक चैनल
+  s-sign-out: साइन आउट
+  s-seller: विक्रेता
+header: 
+  home: घर
+  shop: दुकान
+  pages: पृष्ठों
+  blog: ब्लॉग
+  contact: संपर्क करना
+  setting: सेटिंग
+  vnd: VND
+  rub: रगड़ना
+  pound: पाउंड
+  usd: USD
+  euro: यूरो
+  jp: जेपी
+  rup: रुपया
+  rmb: आरएमबी
+  my ccount: मेरा खाता
+  checkout: चेक आउट
+  download: डाउनलोड
+  login: लॉग इन करें
+  sign out: साइन आउट
+  categories: श्रेणियाँ
+  placeholder search: अपनी खोज कुंजी दर्ज करें ...
+footer: 
+  commit: हम हमेशा आपको सर्वोत्तम सेवाओं के साथ सेवा करने के लिए प्रतिबद्ध हैं। तुरंत अधिक ऑफ़र प्राप्त करने के लिए कनेक्ट करें।
+  help: मदद की ज़रूरत है?
+  copyright: कॉपीराइट
+  all rights reserved: सर्वाधिकार सुरक्षित
+  information: जानकारी
+  delivery: वितरण
+  about us: हमारे बारे में
+  secure payment: सुरक्षित भुगतान
+  contact us: संपर्क करें
+  sitemap: साइट मैप
+  stores: स्टोर
+  link: लिंक
+  privacy policy: गोपनीयता नीति
+  term of service: सेवा की अवधि
+  service requirement: सेवा आवश्यकता
+  best sales: सबसे अच्छी बिक्री
+  login: लॉग इन करें
+  my account: मेरा खाता
+  newsletter: न्यूजलैटर
+  subscribe: आप किसी भी समय सदस्यता समाप्त कर सकते हैं। उस उद्देश्य के लिए, कृपया कानूनी नोटिस में हमारी संपर्क जानकारी खोजें।
+  sign up today: सबसे पहले जानो। आज समाचार पत्र के लिए साइन अप करें!
+  sign up: साइन अप करें
+service: 
+  shipping-title: शिपिंग समर्थन
+  shipping-desc: हमेशा स्थिति अपडेट करें
+  return-title: निशुल्क मुनाफ़ा
+  return-desc: 9 दिनों के भीतर मुफ्त
+  contact-title: सहायता
+  contact-desc: किसी भी तरह से संपर्क करने के लिए तैयार है
+  payment-secure-title: भुगतान सुरक्षित
+  payment-secure-desc: आसान और सुविधाजनक।
+  chat-title: सीधी बातचीत
+  chat-desc: विक्रेता के साथ शेयर विनिमय
+auth: 
+  a-banner: पेशेवर व्यवस्थापक
+  a-desc: अपनी दुकान को अधिक प्रभावी ढंग से प्रबंधित करें और व्यवस्थापक चैनल के साथ ई-शोपी पर विज़ुअलाइज़ेशन करें
+  a-title: व्यवस्थापक चैनल में लॉगिन करें
+  a-remember: पहचाना की नहीं
+  a-login: लॉग इन करें
+  b-register-title: खाता बनाएं
+  b-register-desc: हमसे जुड़ें और अपनी शैली में खरीदारी शुरू करें
+  b-register-btn: खाता बनाएं
+  b-register-refer: लॉग इन करें
+  b-register-already-account: पहले से ही खाता है
+  b-login-welcome: वापसी पर स्वागत है
+  b-login-desc: कई आकर्षक ऑफ़र और सेवाओं का अनुभव करें
+  b-oauth: या लॉगिन के लिए ईमेल का उपयोग करें
+  b-not-account: खाता नहीं है
+  b-login-forgot: पासवर्ड भूल गए
+  b-login-btn: साइन इन करें
+  b-forgot-title: आप पासवर्ड भूल गए
+  b-forgot-invite: एक स्नैप में एक नया पासवर्ड रीसेट करना आसान है
+  b-forgot: भूला
+  b-forgot-form-title: पासवर्ड भूल गए
+  b-forgot-form-desc: कृपया अपना नाम या ईमेल पता दर्ज करें। आपको ईमेल के माध्यम से एक नया पासवर्ड बनाने के लिए एक लिंक प्राप्त होगा
+  b-forgot-form-button: नया पासवर्ड प्राप्त करें
+  b-reset-title: अपना नया पासवर्ड रीसेट करें
+  b-reset-invite: अपने पंजीकृत ईमेल से भेजे गए पुष्टिकरण कोड की जाँच करें
+  b-reset: रीसेट
+  b-reset-form-button: पासवर्ड रीसेट
+  b-reset-banner: पासवर्ड समर्थन केंद्र
+  b-new-password: नया पासवर्ड
+account: 
+  account-banner: मेरा खाता
+  dashboard: धूर्तता
+  hello: नमस्ते
+  joined-at: में शामिल हो गया
+  not-you: अगर तुम नहीं
+  logout: लॉग आउट
+  dashboard-desc: अपने खाते डैशबोर्ड से। आप आसानी से {symbol} अपने हाल के आदेशों को देख सकते हैं, अपने शिपिंग और बिलिंग पते का प्रबंधन कर सकते हैं और अपना पासवर्ड और खाता विवरण संपादित कर सकते हैं
+  order-title: आपके आदेश सूचीबद्ध हैं
+  order-no: नहीं
+  order-name: नाम
+  order-date: दिनांक
+  order-status: स्थिति
+  order-total: कुल
+  order-action: गतिविधि
+  save-changes: परिवर्तनों को सुरक्षित करें
+  payment-method: भुगतान का तरीका
+  payment-owner: स्वामी खाता
+  payment-identification: पहचान संख्या
+  payment-id: भुगतान आईडी
+  payment-bank: बैंक का नाम
+  payment-branch: बैंक शाखा
+  payment-account: खाता संख्या
+  not-payment: आपने अभी तक अपनी भुगतान विधि नहीं सहेजा है
+  digits: अंक
+  payment-update: अद्यतन भुगतान
+  payment-create: भुगतान करें
+  credit-card: क्रेडिट कार्ड
+  card-number: कार्ड संख्या
+  address-register: पता रजिस्टर
+  zip-postal: ज़िप डाक
+  postal-zip-code: डाक का / ज़िप कोड
+  card-expiry: समाप्ति तिथि
+  card-name: कार्डधारक का नाम
+  card-cvv: सीवीवी
+  card-address: पंजीकरण पता
+  card-upadte: अद्यतन कार्ड
+  card-create: कार्ड बनाएँ
+  have-card: आपके पास 1 भुगतान विधि है
+  not-card: आपने अभी तक अपनी भुगतान विधि नहीं सहेजा है
+  address-billing: बिल भेजने का पता
+  address-owner: पूरा नाम
+  address-phone: फ़ोन नंबर
+  address: पता
+  address-location: जगह
+  address-state: राज्य
+  address-city: शहर
+  address-town: कस्बा
+  is-home: घर है
+  is-pickup-address: पिकअप पता है
+  is-default-address: डिफ़ॉल्ट पता है
+  is-return-address: वापसी का पता है
+  false: झूठा
+  true: सच
+  address-update: अद्यतन पता
+  address-create: पता बनाएं
+shop: 
+  online: ऑनलाइन
+  ago: पहले
+  days: दिन
+  hours: घंटे
+  minutes: मिनट
+  follow: अनुसरण
+  chat: बात करना
+  products: उत्पादों
+  cancel-ratio: अनुपात रद्द करें
+  following: अगले
+  follower: अनुगामी
+  joined: में शामिल हो गए
+  rating: रेटिंग
+  shop-information: दुकान की सूचना
+  sort-by: इसके अनुसार क्रमबद्ध करें
+  popular: लोकप्रिय
+  latest: नवीनतम
+  price: कीमत
+  default: चूक
+  low-to-high: नीचे से ऊपर तक
+  high-to-low: उच्चे से नीचा
+  address: पता
+  manage-shipping: अपने शिपिंग और डिलीवरी पते का प्रबंधन करें
+  add-new-address: नया पता जोड़ें
+  name: नाम
+  phone-number: फ़ोन नंबर
+  edit: संपादन करना
+  default-address: डिफ़ॉल्ट पता
+  profile-information: प्रोफ़ाइल जानकारी
+  view-update-shop: दुकान की स्थिति देखें और अपनी दुकान प्रोफ़ाइल को अपडेट करें
+  join-at: जुड़ना
+  id: पहचान
+  edit-cover-photo: कवर फोटो संपादित करें
+  response-rate: प्रतिक्रिया की दर
+  response-time: जवाब देने का समय
+  within-a-few-hours: कुछ घंटों के भीतर
+  shop-reviews: दुकान की समीक्षा
+  unsuccessful-rate: असफल दर
+  shop-id: दुकानदार
+  shop-name: दुकान का नाम
+  some-preview: कुछ पूर्वावलोकन चित्र या वीडियो
+  add-photos-videos: फ़ोटो या वीडियो जोड़ें
+  shop-description: दुकान विवरण
+category: 
+  title: 1 नया उत्पाद जोड़ें
+  desc: कृपया अपने उत्पाद के लिए उपयुक्त श्रेणी का चयन करें
+  product-name: प्रोडक्ट का नाम
+  tutorial1: सही श्रेणी चुनें
+  tutorial2: पता लगाने के लिए यहां क्लिक करें
+  selected: चुन लिया
+  next: अगला
+cart: 
+  title: आपकी गाड़ी आइटम
+  cart: कार्ट
+  preview: पूर्वावलोकन
+  name: नाम
+  variations: श्रेणी
+  price: कीमत
+  quantity: विविधताओं
+  action: गतिविधि
+  update: अपडेट करना
+  promo-code: क्या प्रोमो कोड है
+  checkout: चेक आउट
+  subtotal: उप-योग
+  shipping: शिपिंग
+  tax: कर
+  total: कुल
+  view-cart: टोकरी देखें
+  free-ship: सभी आदेशों पर मुफ्त शिपिंग
+product: 
+  evaluate: मूल्यांकन करना
+  solded: बेगाना
+  weight: वज़न
+  buy-with-deal: बिक्री सौदे के साथ खरीदें
+  shipping: शिपिंग
+  transport: परिवहन करना
+  quantities: मात्रा
+  available-products: उपलब्ध उत्पाद
+  add-to-cart: कार्ट में जोड़ें
+  order-now: अब ऑर्डर दें
+  total-liked: कुल पसंद किया गया
+  insurance: बीमा
+  return-refund: लौटने और वापसी करने के लिए दिन
+  online: ऑनलाइन
+  ago: पहले
+  chat-now: अब बात करो
+  visit-shop: यात्रा दुकान
+  productions: प्रस्तुतियों
+  response-ratio: प्रतिक्रिया अनुपात
+  response-time: जवाब देने का समय
+  in-some-hours: कुछ घंटों में
+  joined: में शामिल हो गए
+  follower: अनुगामी
+  product-describes: उत्पाद का वर्णन करता है
+  category: श्रेणी
+  organization: संगठन
+  updating: अद्यतन करने
+  origin: मूल
+  address: पता
+  warehouse: गोदाम
+  ship-from: भेजने का स्थान
+  product-evalutions: उत्पाद मूल्यांकन
+search: 
+  filter-by: के द्वारा छनित
+  categories: श्रेणियाँ
+  price: कीमत
+  color: रंग
+  brand: ब्रैंड
+  tags: उत्पाद टैग
+  there-are: वहाँ हैं
+  products: उत्पादों
+  sort-by: इसके अनुसार क्रमबद्ध करें
+  relevance: प्रासंगिकता
+  a-z: A से Z
+  z-a: Z to a
+  low-high: नीचे से ऊपर तक
+  high-low: उच्चे से नीचा
+  new: नवीन व
+  name: नाम
+  availability: उपलब्धता
+  add-to-cart: कार्ट में जोड़ें
+  add-success-message: उत्पाद सफलतापूर्वक आपकी शॉपिंग कार्ट में जोड़ा गया
+  dimension: आयाम
+  quantity: मात्रा
+  total-products: कुल उत्पाद
+  total-shipping: कुल शिपिंग
+  taxes: करों
+  total: कुल
+  continue-shopping: खरीदारी जारी रखें
+  proceed-checkout: चेक आउट करने के लिए आगे बढ़ें
+  there-is: वहाँ है
+  item-in-your-cart: आपकी गाड़ी में आइटम
+checkout: 
+  personal-information: व्यक्तिगत जानकारी
+  order-as-guest: एक अतिथि के रूप में आदेश
+  login: लॉग इन करें
+  pronoun: सवर्नाम
+  mr: श्री
+  mrs: श्रीमती
+  name: नाम
+  email: ईमेल
+  password: पासवर्ड
+  show: प्रदर्शन
+  birthdate: जन्म तिथि
+  receive offers: हमारे भागीदारों से ऑफ़र प्राप्त करें
+  signup-newsletter: हमारे न्यूज़लेटर के लिए साइन अप करें
+  continue: जारी रखें
+  address: पता
+  address-desc: चयनित पता हमें आपके लिए अधिक आसान और तेजी से डिलीवरी करने में मदद करेगा
+  city: शहर
+  zip: ज़िप / पोस्टल कोड
+  country: देश
+  vietnam: वियतनाम
+  russia: रूस
+  england: इंगलैंड
+  united-states: संयुक्त राज्य अमेरिका
+  japan: जापान
+  france: फ्रांस
+  india: भारत
+  china: चीन
+  not-have-country: मेरे देश को खोजने के लिए नहीं
+  phone: फ़ोन
+  shipping-method: शिपिंग का तरीका
+  delivery-next-day: अगले दिन डिलीवरी
+  note-field: यदि आप अपने आदेश के बारे में एक नोट जोड़ना चाहते हैं, तो कृपया इसे नीचे दिए गए फ़ील्ड में लिखें
+  payment: भुगतान
+  pay-by-check: क्रेडिट/वीजा डेबिट/मास्टर कार्ड द्वारा भुगतान करें
+  pay-by-wire: बैंक तार द्वारा भुगतान
+  pay-by-cash: डिलीवरी पर नकद भुगतान करें
+  pay-by-momo: मोमो द्वारा भुगतान करें
+  item: वस्तु
+  shipping: शिपिंग
+  total: कुल
+  taxes: करों
+  process-checkout: चेक आउट करने के लिए आगे बढ़ें
+  secure-policy: सुरक्षा नीति (आश्वासन द्वारा प्रतिबद्ध)
+  delivery-policy: वितरण नीति (आश्वासन द्वारा प्रतिबद्ध)
+  return-policy: वापसी नीति (आश्वासन द्वारा प्रतिबद्ध)
+index: 
+  admin-chanel: व्यवस्थापक चैनल
+  seller-chanel: विक्रेता चैनल
+  buying-chanel: चैनल खरीदना
+  exploring: तलाश
+  banner-desc: शीर्ष दुनिया का प्रमुख शॉपिंग ऐप
+  download-now: अब ऐप डाउनलोड करें
+  service-title: कभी भी, कहीं भी खरीदारी
+  service-desc: आकर्षक प्रचार का आनंद लें, सबसे प्रतिष्ठित दुकानों से सुपर बचत
+  transfer-support: अंतरण समर्थन
+  transfer-desc: आपके ऑर्डर की स्थिति हमेशा विस्तार से अपडेट की जाती है क्योंकि आप अपना ऑर्डर देते हैं
+  customer-support: ग्राहक सहेयता
+  customer-desc: ग्राहक देखभाल विभाग हमेशा 24/7 का समर्थन करने के लिए तैयार रहता है
+  today-suggestion: आज के सुझाव
+  today-suggestion-desc: आज के सुझावों में आपके लिए सही उत्पाद चुनें
+  safe-payment: सुरक्षित भुगतान पद्धति
+  safe-payment-desc: आसान और सुविधाजनक भुगतान। क्रेडिट/डेबिट कार्ड द्वारा डिलीवरी या प्रीपे पर भुगतान करें
+  chat: बात करना
+  chat-feature: विशेषता
+  chat-desc: अधिक उत्पाद सलाह के लिए विक्रेता के साथ सीधे चैट करें। आप "चैट" अनुभाग के माध्यम से विक्रेता के साथ वांछित मूल्य पर भी बातचीत कर सकते हैं
+  guarantee-privacy: गारंटी गोपनीयता
+  commit: दुकानदार यह बताता है कि आपके द्वारा भुगतान की जाने वाली राशि विक्रेता को सामान प्राप्त करने के बाद स्थानांतरित कर दी जाएगी। हम हमेशा आपकी रक्षा करते हैं
+  advertisement-1-desc: उन सभी उत्पादों के लिए जगह जो आप प्यार करते हैं
+  advertisement-2-title: ऑनलाइन खरीदें और बेचें
+  advertisement-2-desc: खरीदारी का आनंद लें और प्रतिष्ठा के साथ व्यापार कर रहे हैं
+  advertisement-3-title: नए ग्राहकों के लिए उपहार
+  advertisement-3-desc: ई-शोपी में नए ग्राहकों के लिए अनन्य और आकर्षक उपहार
+  customer-opinion-title: उपयोगकर्ता ई-शोपी के बारे में क्या कहते हैं
+  opinion-1: मैं हमेशा सौदों के लिए शिकार करने के लिए ई-शोपी के लिए तत्पर हूं और हमेशा आश्चर्यजनक रूप से अच्छे सौदे प्राप्त करते हैं। हर सौदे का उल्लेख नहीं करने के लिए शिकार मजेदार है, अंतिम सौदा शिकार मेरे 2 साल के ई-शॉपी की लत में सबसे मजेदार है
+  opinion-2: हर बार जब मैं ई-शोपी में जाता हूं, तो मेरे पास महान परिणाम होते हैं, दर्जनों आइटम तब तक उठाते रहते हैं जब तक मुझे सामान नहीं मिलता है, मुझे यह भी नहीं पता कि मैंने यह या उस का आदेश कब दिया। तो ई-शोपी के आदी हैं
+  joined-at: में शामिल हो गया
+  copyright: कॉपीराइट
+  all-rights-reserved: सर्वाधिकार सुरक्षित
+contact: 
+  contact-us: संपर्क करें
+  tell-us-desc: हमें अपने मुद्दे के बारे में बताएं ताकि हम आपकी अधिक तेज़ी से मदद कर सकें
+  tell-us-support: हम हमेशा आपके सवालों के लिए 24/7 का समर्थन करने के लिए तैयार हैं
+  address: पता
+  sub-adddress: क्वाटर 6, लिनह ट्रुंग वार्ड, थू ड्यूक डिस्ट्रिक्ट, हो ची मिन्ह सिटी
+  country: वियतनाम
+  phone: फ़ोन
+  mobile: मोबाइल
+  hotline: हॉटलाइन
+  email: ईमेल
+  tell-us-your-message: हमें अपना संदेश बताएं
+  your-name: तुम्हारा नाम
+  your-email: तुम्हारा ईमेल
+  subject: विषय
+  note: आपका संदेश
+  submit: प्रस्तुत
+sitemap: 
+  sitemap: साइट मैप
+favourite: 
+  add-to-cart: कार्ट में जोड़ें
+  favourite-banner: पसंदीदा पृष्ठ
+about: 
+  about-us: हमारे बारे में
+  welcome: आपका स्वागत है
+  desc-one: ई-शोपी दक्षिण पूर्व एशिया और ताइवान में सबसे बड़ा ईकॉमर्स प्लेटफॉर्म है। यह इस क्षेत्र के लिए एक मंच है, जो अपने मजबूत भुगतान और लॉजिस्टिक समर्थन के माध्यम से ऑनलाइन शॉपिंग को आसान, सुरक्षित और तेज बनाता है। Shopee को SEA (पूर्व में Garena के नाम से जाना जाता है), दक्षिण पूर्व एशिया के सबसे बड़े इंटरनेट प्लेटफॉर्म प्रदाता द्वारा दृढ़ता से समर्थित है।
+  desc-two: Shopee को सिंगापुर, मलेशिया, थाईलैंड, ताइवान, इंडोनेशिया, वियतनाम और फिलीपींस में ऐप स्टोर और Google Play पर मुफ्त में डाउनलोड किया जा सकता है। अधिक जानकारी के लिए, कृपया https://shopee.vn पर जाएं
+  our-purpose: हमारा उद्देश्य
+  purpose-desc: शोपी टीम प्रौद्योगिकी की परिवर्तनकारी शक्ति में विश्वास करती है और एक समुदाय में खरीदारों और विक्रेताओं को जोड़ने के लिए एक मंच प्रदान करके दुनिया को बेहतर तरीके से बदलना चाहती है। जैसा कि मोबाइल उपकरणों पर खरीदारी नया आदर्श बन जाती है, शॉप का उद्देश्य सभी उपयोगकर्ताओं के लिए एक सहज और सुखद खरीदारी अनुभव प्रदान करने और पसंद के क्षेत्र के ई-कॉमर्स प्लेटफॉर्म होने के लिए अपने मंच को लगातार बढ़ाना है।
+  our-team: हमारी टीम
+  team-desc: शोपी टीम प्रौद्योगिकी की परिवर्तनकारी शक्ति में विश्वास करती है और एक समुदाय में खरीदारों और विक्रेताओं को जोड़ने के लिए एक मंच प्रदान करके दुनिया को बेहतर तरीके से बदलना चाहती है। जैसा कि मोबाइल उपकरणों पर खरीदारी नया आदर्श बन जाती है, शॉप का उद्देश्य सभी उपयोगकर्ताओं के लिए एक सहज और सुखद खरीदारी अनुभव प्रदान करने और पसंद के क्षेत्र के ई-कॉमर्स प्लेटफॉर्म होने के लिए अपने मंच को लगातार बढ़ाना है।
+  testimonial: गुणों का वर्ण-पत्र
+  testimonial-desc: शोपी टीम प्रौद्योगिकी की परिवर्तनकारी शक्ति में विश्वास करती है और एक समुदाय में खरीदारों और विक्रेताओं को जोड़ने के लिए एक मंच प्रदान करके दुनिया को बेहतर तरीके से बदलना चाहती है। जैसा कि मोबाइल उपकरणों पर खरीदारी नया आदर्श बन जाती है, शॉप का उद्देश्य सभी उपयोगकर्ताओं के लिए एक सहज और सुखद खरीदारी अनुभव प्रदान करने और पसंद के क्षेत्र के ई-कॉमर्स प्लेटफॉर्म होने के लिए अपने मंच को लगातार बढ़ाना है।

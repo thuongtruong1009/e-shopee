@@ -1,0 +1,598 @@
+{
+    "status": true,
+    "data": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 6,
+                "name": "KEF Lsx P1 Desk Pad",
+                "description": "\u2022 1\/4\" screw mounting for use with LSX\\n\u2022 Aluminium construction for rigidity and stability\\n\u2022 100 upwards tilt\\n\u2022 Available finished: Black \/ Silver",
+                "weight": "1000",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-5f463dba65c0185d9dae94c0d019c902",
+                    "demo-6c5485a694fff40b1e55265f68f6d9ba"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Colour",
+                        "options": [
+                            "Black",
+                            "Silver"
+                        ]
+                    }
+                ],
+                "created_at": "2022-05-25 18:17:38",
+                "shop_id": 5,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 15,
+                        "sku": "",
+                        "price": "2599",
+                        "stock": 50,
+                        "variation_index": [
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 6
+                    },
+                    {
+                        "id": 16,
+                        "sku": "",
+                        "price": "2599",
+                        "stock": 50,
+                        "variation_index": [
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 6
+                    }
+                ]
+            },
+            {
+                "id": 20,
+                "name": "novita Instant Hot Water Dispenser W18 (Tankless) - The Simplest + Free Gift",
+                "description": "\u26a0\ufe0fPRE-ORDER\\nWHITE - DEL FROM 1 JUN ONWARDS\\nBLACK - DEL FROM 15 JUN ONWARDS\\n\u2b50 FREE GIFT PROMOTION:\\n\u2705 novita Nano Copper Ions Surgical Respirator R2 (100pcs in a box) (U P. $80)\\n\ud83d\udccc Include Standard Installation: * Order will be delivered first, and followed by installation appointment from novita directly\\nDecked in Glaze Black and Alpine White to build character in your living space, W18, The Simplest redefines old rules to give you extra time, additional space, quality water and more savings. Driven by HydroNano\u2122 Ultra Filtration System, it provides instant access to unrivalled fresh, pristine and great tasting purified water all day long. Made in Korea and impresses with its 155 mm slimline and tankless design, this direct pipe-in instant hot water dispenser is your trusty companion to vastly enhance your daily routine and well-being today, everyday!\\n\ud83d\udd36 FEATURES:\\n\u2705 DISPENSE HOT\/ ROOM TEMPERATURE WATER WITHIN 1 SECOND!\\n\u2705 SLIM + COMPACT DESIGN AT JUST 115MM WIDTH!\\n\u2705 ZERO WATER WASTAGE (NO WATER DISCHARGE DURING WATER DISPENSING)\\n\u2705 TURN KNOB CONTROL\\n\u2705 SMART FILTER REPLACEMENT INDICATOR ALERTS YOU 14-DAYS BEFORE FILTER IS DUE\\n\u2705 ENERGY SAVING MODE:\\n\u2022 When left idle for 10 minutes, unit automatically switches to energy-saving mode which uses almost 0 watts!\\n\u2705 CHILD LOCK PROTECTION:\\n\u2022 Guards against curious kids from accidental burn or scalding during hot water dispensing\\n\u2705 EFFORTLESS EzTwist\u00ae DIY FILTER REPLACEMENT\\n\u2022 Simply replace the EzTwist filter set with a twist to remove them!\\n\u2705 REMOVABLE MAGNETIC DRIP TRAY\\n\u2705 1.7 METRES LONG POWER CORD\\n\ud83d\udd36 4-STAGE HYDRONANO\u2122 ULTRA FILTRATION SYSTEM:\\n\u2705 SEDIMENT FILTER:\\n\u2022 Filters suspended particles, rust and sediments from the source water\\n\u2705 SILVER NANO CARBON BLOCK FILTER:\\n\u2022 Impregnated with silver ions for extra bacteria resistance to deodorize & remove chlorine, VOCs, dissolved organic & inorganic impurities while improving colour for fresh and great tasting drinking water.\\n\u2705 ACTIVATED CARBON FIBRE FILTER:\\n\u2022 Enhances absorption capacity to achieve high performance of chlorine & unpleasant odours removal, reduction of VOCs & chemical residuals while greatly improving the taste of the water\\n\u2705 ADVANCED ULTRA HOLLOW MEMBRANE FILTER:\\n\u2022 Tested for proven efficiency by Korea Testing & Research Institute (KTR)\\n\u2022 Effectively removes up to 99.9% of E.Coli, S.Aureus bacteria & suspended colloids up to 0.1 micron while keeping essential minerals intact",
+                "weight": "6000",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-1262c1f2fad4e312ae89e7e4f8913b5b",
+                    "demo-77e5aff4eff9e51ec08c69f192678e14"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "W18 Colour",
+                        "options": [
+                            "Alpine White",
+                            "Glaze Black"
+                        ]
+                    },
+                    {
+                        "name": "Filter Type",
+                        "options": [
+                            "HydroNano\u2122"
+                        ]
+                    }
+                ],
+                "created_at": "2022-05-25 18:17:38",
+                "shop_id": 12,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 47,
+                        "sku": "",
+                        "price": "1689",
+                        "stock": 50,
+                        "variation_index": [
+                            0,
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 20
+                    },
+                    {
+                        "id": 48,
+                        "sku": "",
+                        "price": "1789",
+                        "stock": 50,
+                        "variation_index": [
+                            1,
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 20
+                    }
+                ]
+            },
+            {
+                "id": 19,
+                "name": "Mysleep Hotel Grade 10\"inch \/ 10\"inch-26cm Imported Knitted Spring and Pocketed Spring Mattress | FREE&Next Day Delivery",
+                "description": "Is your current mattress affecting your Quality of Sleep? \ud83e\udd71\ud83d\ude2a\ud83d\ude34\\n\ud83e\uddd0 Are you looking for an affordable High-Quality Premium Hotel Grade Mattress? Good news!\\n\ud83e\udd73 We have sold and delivered over 1000 pcs of Mattress monthly to Our Happy Customers. Hit us up and we will recommend the most suitable mattress for your requirements.\\n\u2705 \ud835\uddd9\ud835\udde5\ud835\uddd8\ud835\uddd8 \ud835\udfee\ud835\ude05 \ud835\udde0\ud835\ude06\ud835\ude00\ud835\uddf9\ud835\uddf2\ud835\uddf2\ud835\uddfd \ud835\udfed\ud835\udfec\ud835\udfec% \ud835\udde6\ud835\ude06\ud835\uddfb\ud835\ude01\ud835\uddf5\ud835\uddf2\ud835\ude01\ud835\uddf6\ud835\uddf0 \ud835\udddf\ud835\uddee\ud835\ude01\ud835\uddf2\ud835\ude05 \ud835\udde3\ud835\uddf6\ud835\uddf9\ud835\uddf9\ud835\uddfc\ud835\ude04 (\ud835\uddea\ud835\uddfc\ud835\uddff\ud835\ude01\ud835\uddf5 $\ud835\udff4\ud835\udfec) \ud835\ude04\ud835\uddf6\ud835\ude01\ud835\uddf5 \ud835\uddee \ud835\uddfa\ud835\uddf6\ud835\uddfb. \ud835\ude00\ud835\uddfd\ud835\uddf2\ud835\uddfb\ud835\uddf1\ud835\uddf6\ud835\uddfb\ud835\uddf4 \ud835\uddfc\ud835\uddf3 $\ud835\udff2\ud835\udfec\ud835\udfec\\n\u2705 \ud835\uddd9\ud835\udde5\ud835\uddd8\ud835\uddd8 \ud835\uddd7\ud835\uddf2\ud835\uddf9\ud835\uddf6\ud835\ude03\ud835\uddf2\ud835\uddff\ud835\ude06\\nVisit us at any of our outlets islandwide and test our mattress today:\\n\ud83d\udccd \ud835\udddd\ud835\ude02\ud835\uddff\ud835\uddfc\ud835\uddfb\ud835\uddf4 \ud835\udde2\ud835\ude02\ud835\ude01\ud835\uddf9\ud835\uddf2\ud835\ude01 (The Furniture Mall)\\nLocation: 10 Toh Guan Road, #01-29 The Furniture Mall S(608838)\\n\u2705 PK - 8250 4068 (English & Malay)\\n\u2705 Annie - 8269 7642 (Chinese & Malay)\\n\u23f0 Mon-Sat (From 11.30am-8pm) | Sun&PH (From 11.30am-7pm)\\n------\\n\ud83d\udccd \ud835\udde8\ud835\uddef\ud835\uddf6 \ud835\udde2\ud835\ude02\ud835\ude01\ud835\uddf9\ud835\uddf2\ud835\ude01 (\ud835\udde2\ud835\ude05\ud835\uddf9\ud835\uddf2\ud835\ude06 \ud835\uddd5\ud835\uddf6\ud835\ude07\ud835\udddb\ud835\ude02\ud835\uddef)\\nLocation: 71 Ubi Road 1, #10-39 Oxley BizHub S(408732)\\n\u2705 Samantha - 9001 9891 (Chinese & English)\\n\u2705 Kelvin - 8750 0475 (English & Chinese)\\n\u23f0 Mon-Sat (From 11am-8pm) | Sun&PH (From 11am-6pm)\\n--------\\n\ud83d\udccd \ud835\udde6\ud835\uddf2\ud835\uddfa\ud835\uddef\ud835\uddee\ud835\ude04\ud835\uddee\ud835\uddfb\ud835\uddf4 \ud835\udde2\ud835\ude02\ud835\ude01\ud835\uddf9\ud835\uddf2\ud835\ude01 \/ \ud835\uddea\ud835\uddee\ud835\uddff\ud835\uddf2\ud835\uddf5\ud835\uddfc\ud835\ude02\ud835\ude00\ud835\uddf2 (\ud835\udde1\ud835\uddfc\ud835\uddff\ud835\ude01\ud835\uddf5 \ud835\udddf\ud835\uddf6\ud835\uddfb\ud835\uddf8 \ud835\uddd5\ud835\ude02\ud835\uddf6\ud835\uddf9\ud835\uddf1\ud835\uddf6\ud835\uddfb\ud835\uddf4)\\nLocation: 10 Admiralty Street, #05-89 North Link Building S(757695)\\n\u2705 Agnes - 8398 3878 (Chinese & Malay)\\n\u2705 Joey - 8816 8562 (English & Malay)\\n\u23f0 Mon-Sat (From 9am-6pm) | Sun&PH (From 11am-6pm)\\n--------\\n*Policy*\\n1. You are required to inspect the Product for any defects when you take delivery of it.\\n2. Except as otherwise expressly provided herein, we shall not accept the return of a Product that has been delivered\\nunless it is with our prior written consent and agreement. Only a return authorised by us will be accepted and\\nour acceptance of any return of a Product shall be subject to such terms and conditions as we may prescribe at our sole and absolute discretion.\\n3. Cost of transportation to and from the dealer is to be bear by the purchaser of this invoice & the transportation and\\nservice charge will be from $70 onwards. Except as otherwise expressly provided herein, we shall not accept the return of a Product that has been delivered unless it is with our prior written consent and agreement. Only a return authorized\\nby us will be accepted and our acceptance of any return of a Product shall be subject to such terms and conditions as\\nwe may prescribe at our sole and absolute discretion.\\n(Warranty covered on spring unit only)\\n\u2013 This mattress has been manufactured under strict quality control and is guaranteed against any defects as a result of normal use within 10 years for Bonnell Spring and 12 years for Pocketed Spring from the date of purchase.\\n\u2013 The material covering this mattress is not covered by this guarantee and damage caused by accident, misuse or\\ntampered is also not covered by this warranty.",
+                "weight": "15000",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-7a63c042a894d3d27724d5901d75befb",
+                    "demo-713b8696e36d70a5e243b4cbb9830db6"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Hotel Series",
+                        "options": [
+                            "Single 10\" Spring",
+                            "S.Single 10\" Spring"
+                        ]
+                    }
+                ],
+                "created_at": "2022-05-25 18:17:38",
+                "shop_id": 11,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 45,
+                        "sku": "",
+                        "price": "1089",
+                        "stock": 50,
+                        "variation_index": [
+                            0,
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 19
+                    },
+                    {
+                        "id": 46,
+                        "sku": "",
+                        "price": "1189",
+                        "stock": 50,
+                        "variation_index": [
+                            1,
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 19
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "name": "Samsung A13 | A12 A127 1 year Samsung warranty",
+                "description": "Samsung A12 (A127) Key Specs:\\nDisplay: 6.5-inch\\nFront Camera:8MP\\nRAM:4GB\\nStorage:128GB\\nBattery Capacity:5000mAh\\nFor more details, please check at https:\/\/www.samsung.com\/sg\/smartphones\/galaxy-a\/galaxy-a12-black-128gb-sm-a127fzkhxsp\/#benefits\\nSamsung A13 Key Specs:\\nDisplay: 6.6-inch\\nFront Camera: 8MP\\nRear Camera: 50MP + 5MP + 2MP + 2MP\\nRAM: 4GB\\nStorage: 128GB\\nBattery Capacity: 5000mAh\\nFor more details, please check at https:\/\/www.samsung.com\/sg\/smartphones\/galaxy-a\/galaxy-a13-light-blue-128gb-sm-a135flbhxsp\/\\n-All products are 100% authentic.\\n-Local Singapore set.\\n-All products are sourced from authorised dealers,official stores and telcos (M1,Singtel,Starhub & etc).\\n-Some products are unsealed to check for manufacturer defect.\\n-All products warranty based on manufactured date.\\n-Some products might less than 1 year warranty due to activation policy from dealers or telcos.\\n-If you wish to purchase Samsung Care+,please request by leave a message when placing order.\\n-Telcos receipt or official dealers receipt will be provided if available.\\n-Store soft copy receipt can be issue upon request.\\n-For products that comes with manufacturer warranty,buyer must contact manufacturer or visit manufacturer\u2019s service center for repair\/exchange or any technical support.\\n-All products sold are not exchangeable and not refundable.",
+                "weight": "700",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-5b6aa99b33de3fb0492ca32aae1e8e16",
+                    "demo-f8271c808c2d51c8183b0854526c179f"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Model",
+                        "options": [
+                            "A12 Cosmic Black",
+                            "A12 Cosmic Blue"
+                        ]
+                    }
+                ],
+                "created_at": "2022-05-25 18:17:38",
+                "shop_id": 7,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 27,
+                        "sku": "",
+                        "price": "500",
+                        "stock": 50,
+                        "variation_index": [
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 10
+                    },
+                    {
+                        "id": 28,
+                        "sku": "",
+                        "price": "499",
+                        "stock": 50,
+                        "variation_index": [
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 10
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "[\u2705SG Ready Stock] \ud83d\udd25 60\/80\/100x40\/50cm Nordic Study Table Laptop Home Office Desks Computer Modern Writing Table",
+                "description": "60\/80x40cm Nordic Study Table Laptop Home Office Desks Computer Modern Writing Table\\n\u2605\u2605 \ud835\uddea\ud835\uddd4\ud835\udde5\ud835\udde0 \ud835\udde5\ud835\uddd8\ud835\udde0\ud835\udddc\ud835\udde1\ud835\uddd7\ud835\uddd8\ud835\udde5 \u2605\u2605\\n\ud83d\udca2 1 Table = 1 Order Only \ud83d\ude0a\\n\ud83d\udca2 2 Table  = Need 2 Orders \ud83d\ude0a\\n\ud83d\udca2 Please don\u2019t combine with other products \ud83d\ude0a\\n** Please take note before place order **\\n***** Please Separate The Order *****\\nIf You Need To Buy More Than One Item, Please Purchase One Item Each Order TQ\\n1 Table = 1 Order Only\\n1 Item = 1 Order\\n10 Table = Need 10 Order",
+                "weight": "7000",
+                "avg_rating": "4",
+                "sold": 2,
+                "images": [
+                    "demo-6462d797d526c25510abe38442fc21d2",
+                    "demo-eaa6b336a5cb84383b6f991f32b89256"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Size",
+                        "options": [
+                            "60x40cm Curve White",
+                            "60x40cm Curve Maple"
+                        ]
+                    }
+                ],
+                "created_at": "2022-05-25 18:17:38",
+                "shop_id": 4,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 13,
+                        "sku": "",
+                        "price": "299",
+                        "stock": 50,
+                        "variation_index": [
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 5
+                    },
+                    {
+                        "id": 14,
+                        "sku": "",
+                        "price": "299",
+                        "stock": 50,
+                        "variation_index": [
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 5
+                    }
+                ]
+            },
+            {
+                "id": 1,
+                "name": "Samsung Galaxy A53 5G | A52s 5G (8GB+128GB\/256GB) with 1 Year Warranty by Samsung",
+                "description": "Samsung A52s 5G Key Specs:\\nDisplay : 6.5 inches (Super AMOLED,120Hz)\\nCPU : Octa-core (4x2.4 GHz Kryo 670 & 4x1.9 GHz Kryo 670)\\nMain Camera : 64MP + 12MP + 5MP + 5MP\\nSelfie Camera : 32MP\\nRAM : 8GB\\nStorage : 128GB\/256GB\\nBattery Capacity : 4500 mAh (Fast Charging 25W)\\n\\nFor more details, please check at :\\nhttps:\/\/www.samsung.com\/sg\/smartphones\/galaxy-a\/galaxy-a52s-5g-awesomemint-256gb-sm-a528blgixsp\/\\n\\nSamsung A53 5G Key Specs :\\nDisplay : 6.5 inches (Super AMOLED,120Hz)\\nCPU : Octa-core (2x2.4 GHz Cortex-A78 & 6x2.0 GHz Cortex-A55)\\nMain Camera : 64MP + 12MP + 5MP + 5MP\\nSelfie Camera : 32MP\\nRAM : 8GB\\nStorage : 128GB\/256GB\\nBattery Capacity : 5000 mAh (Fast Charging 25W)\\n\\nFor more details,please check at\\nhttps:\/\/www.samsung.com\/sg\/smartphones\/galaxy-a\/galaxy-a53-5g-awesome-blue-128gb-sm-a536elbgxsp\/\\n\\n-All products are 100% authentic.\\n-Local Singapore set.\\n-All products are sourced from authorised dealers,official stores and telcos (M1,Singtel,Starhub & etc).\\n-Some products are unsealed to check for manufacturer defect.\\n-All products warranty based on manufactured date.\\n-Some products might less than 1 year warranty due to activation policy from dealers or telcos.\\n-If you wish to purchase Samsung Care+,please request by leave a message when placing order.\\n-Telcos receipt or official dealers receipt will be provided if available.\\n-Store soft copy receipt can be issue upon request.\\n-For products that comes with manufacturer warranty,buyer must contact manufacturer or visit manufacturer\u2019s service center for repair\/exchange or any technical support.\\n-All products sold are not exchangeable and not refundable.",
+                "weight": "500",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-93bc5fa42886e635fd9f103d03c9c31d",
+                    "demo-6085df7be931e1ef9d79ce125cacdb8b"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Colour",
+                        "options": [
+                            "Awesome Black",
+                            "Awesome White"
+                        ]
+                    },
+                    {
+                        "name": "Model",
+                        "options": [
+                            "A52s 8GB+128GB",
+                            "A53 8GB+128GB"
+                        ]
+                    }
+                ],
+                "created_at": "2022-05-25 18:17:38",
+                "shop_id": 1,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 2,
+                        "sku": "",
+                        "price": "296",
+                        "stock": 5,
+                        "variation_index": [
+                            0,
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 1
+                    },
+                    {
+                        "id": 3,
+                        "sku": "",
+                        "price": "406",
+                        "stock": 5,
+                        "variation_index": [
+                            1,
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 1
+                    },
+                    {
+                        "id": 5,
+                        "sku": "",
+                        "price": "24.9",
+                        "stock": 50,
+                        "variation_index": [
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 1
+                    },
+                    {
+                        "id": 6,
+                        "sku": "",
+                        "price": "24.9",
+                        "stock": 50,
+                        "variation_index": [
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 1
+                    },
+                    {
+                        "id": 1,
+                        "sku": "",
+                        "price": "516",
+                        "stock": 4,
+                        "variation_index": [
+                            0,
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 1
+                    },
+                    {
+                        "id": 4,
+                        "sku": "",
+                        "price": "515",
+                        "stock": 49,
+                        "variation_index": [
+                            1,
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 1
+                    }
+                ]
+            },
+            {
+                "id": 32,
+                "name": "novita 15\u201d Undersink Filtration System W61 \u2013 The Home \u2022 Hi-Flow + Free Gift",
+                "description": "\u26a0\ufe0fPRE-ORDER - DEL FROM END MAY ONWARDS\\n\u2b50 FREE GIFT PROMOTION:\\n\u2705 novita Nano Copper Ions Surgical Respirator R2 (100pcs in a box) (U P.$80)\\n\ud83d\udccc Include Standard Installation: * Order will be delivered first, and followed by installation appointment from novita directly\\nDriven by high capacity HydroNano\u2122 Ultra filtration system, it filters up to 0.1 micron and eliminates 99.9% of chlorine and bacteria such as E.Coli. Supporting up to 35,000 litres of fast flow dispensing up to 8.0 Litres\/Min, it provides unrivalled fresh, pristine and great tasting purified water, all while enhancing the flavour, fragrance and natural colours of your dishes and beverages! Better yet, this plug-free unit connects directly to the water source and tucked neatly in the sink cabinet to keep counter space clutter-free. Comes with a dedicated LED faucet with its ring light doubling up as a filter lifespan indicator to prompt for timely replacement.\\n\ud83d\udd36 FEATURES:\\n\u2705 LED WATER FAUCET INCLUDED:\\n\u2022 FAUCET COLOURS: Cool Black \/ Glazed White \/ Polished Chrome (Silver)\\n\u2705 HIGH FILTRATION CAPACITY: 15,000 LITRES\\n\u2705 99% REMOVAL OF BACTERIA & CHLORINE\\n\u2705 EFFORTLESS DIY FILTER REPLACEMENT\\n\u2022 Simply replace the EzTwist filter set with a twist to remove them!\\n\u2705 UP TO 95% SAVINGS\\n\u2705 EXCESS SPACE IN THE KITCHEN\\n\u2705 ADVANCED ULTRA HOLLOW MEMBRANE\\n\u2705 OPERATIONAL EASE, NO ELECTRICITY REQUIRED\\n\u2705 LED FAUCET RING LIGHT THAT DOUBLES UP AS FILTER LIFESPAN INDICATOR FOR TIMELY FILTER REPLACEMENT\\n\ud83d\udd36 3-STAGE HYDRONANO\u2122 (PURIFIED WATER) ULTRA FILTRATION SYSTEM:\\n\u2705 SEDIMENT FILTER:\\n\u2022 Filters suspended fine particles, rust and sediments from source water\\n\u2705 CARBON FIBRE FILTER:\\n\u2022 Enhances absorption capacity to achieve high performance of chlorine and unpleasant odours removal, reduction of VOCs & chemical residuals while greatly improving the taste of water\\n\u2705 ADVANCED ULTRA HOLLOW MEMBRANE FILTER:\\n\u2022 Removes 99.9% of bacteria such as E.Coli and suspended colloids up to 0.1 microns while keeping essential minerals intact",
+                "weight": "7000",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-aafb1de67533e10559507a5cb5b818d9",
+                    "demo-f5c2a0f343333c3826e6b799afe97a82"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Faucet Colour",
+                        "options": [
+                            "Cool Black"
+                        ]
+                    }
+                ],
+                "created_at": "2022-05-25 18:17:38",
+                "shop_id": 12,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 60,
+                        "sku": "",
+                        "price": "222",
+                        "stock": 50,
+                        "variation_index": [
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 32
+                    }
+                ]
+            },
+            {
+                "id": 18,
+                "name": "Mysleep & Promatt Mattress Collection | All Size Available",
+                "description": "Is your current mattress affecting your Quality of Sleep? \ud83e\udd71\ud83d\ude2a\ud83d\ude34\\n\ud83e\uddd0 Are you looking for an affordable High-Quality Premium Hotel Grade Mattress? Good news!\\n\ud83e\udd73 We have sold and delivered over 1000 pcs of Mattress monthly to Our Happy Customers. Hit us up and we will recommend the most suitable mattress for your requirements.\\n\u2705 \ud835\uddd9\ud835\udde5\ud835\uddd8\ud835\uddd8 \ud835\udfee\ud835\ude05 \ud835\udde0\ud835\ude06\ud835\ude00\ud835\uddf9\ud835\uddf2\ud835\uddf2\ud835\uddfd \ud835\udfed\ud835\udfec\ud835\udfec% \ud835\udde6\ud835\ude06\ud835\uddfb\ud835\ude01\ud835\uddf5\ud835\uddf2\ud835\ude01\ud835\uddf6\ud835\uddf0 \ud835\udddf\ud835\uddee\ud835\ude01\ud835\uddf2\ud835\ude05 \ud835\udde3\ud835\uddf6\ud835\uddf9\ud835\uddf9\ud835\uddfc\ud835\ude04 (\ud835\uddea\ud835\uddfc\ud835\uddff\ud835\ude01\ud835\uddf5 $\ud835\udff4\ud835\udfec) \ud835\ude04\ud835\uddf6\ud835\ude01\ud835\uddf5 \ud835\uddee \ud835\uddfa\ud835\uddf6\ud835\uddfb. \ud835\ude00\ud835\uddfd\ud835\uddf2\ud835\uddfb\ud835\uddf1\ud835\uddf6\ud835\uddfb\ud835\uddf4 \ud835\uddfc\ud835\uddf3 $\ud835\udff2\ud835\udfec\ud835\udfec\\n\u2705 \ud835\uddd9\ud835\udde5\ud835\uddd8\ud835\uddd8 \ud835\uddd7\ud835\uddf2\ud835\uddf9\ud835\uddf6\ud835\ude03\ud835\uddf2\ud835\uddff\ud835\ude06\\nVisit us at any of our outlets islandwide and test our mattress today:\\n\ud83d\udccd \ud835\udddd\ud835\ude02\ud835\uddff\ud835\uddfc\ud835\uddfb\ud835\uddf4 \ud835\udde2\ud835\ude02\ud835\ude01\ud835\uddf9\ud835\uddf2\ud835\ude01 (The Furniture Mall)\\nLocation: 10 Toh Guan Road, #01-29 The Furniture Mall S(608838)\\n\u2705 PK - 8250 4068 (English & Malay)\\n\u2705 Annie - 8269 7642 (Chinese & Malay)\\n\u23f0 Mon-Sat (From 11.30am-8pm) | Sun&PH (From 11.30am-7pm)\\n-------\\n\ud83d\udccd \ud835\udde8\ud835\uddef\ud835\uddf6 \ud835\udde2\ud835\ude02\ud835\ude01\ud835\uddf9\ud835\uddf2\ud835\ude01 (\ud835\udde2\ud835\ude05\ud835\uddf9\ud835\uddf2\ud835\ude06 \ud835\uddd5\ud835\uddf6\ud835\ude07\ud835\udddb\ud835\ude02\ud835\uddef)\\nLocation: 71 Ubi Road 1, #10-39 Oxley BizHub S(408732)\\n\u2705 Samantha - 9001 9891 (Chinese & English)\\n\u2705 Kelvin - 8750 0475 (English & Chinese)\\n\u23f0 Mon-Sat (From 11am-8pm) | Sun&PH (From 11am-6pm)\\n--------\\n\ud83d\udccd \ud835\udde6\ud835\uddf2\ud835\uddfa\ud835\uddef\ud835\uddee\ud835\ude04\ud835\uddee\ud835\uddfb\ud835\uddf4 \ud835\udde2\ud835\ude02\ud835\ude01\ud835\uddf9\ud835\uddf2\ud835\ude01 \/ \ud835\uddea\ud835\uddee\ud835\uddff\ud835\uddf2\ud835\uddf5\ud835\uddfc\ud835\ude02\ud835\ude00\ud835\uddf2 (\ud835\udde1\ud835\uddfc\ud835\uddff\ud835\ude01\ud835\uddf5 \ud835\udddf\ud835\uddf6\ud835\uddfb\ud835\uddf8 \ud835\uddd5\ud835\ude02\ud835\uddf6\ud835\uddf9\ud835\uddf1\ud835\uddf6\ud835\uddfb\ud835\uddf4)\\nLocation: 10 Admiralty Street, #05-89 North Link Building S(757695)\\n\u2705 Agnes - 8398 3878 (Chinese & Malay)\\n\u2705 Joey - 8816 8562 (English & Malay)\\n\u23f0 Mon-Sat (From 9am-6pm) | Sun&PH (From 11am-6pm)\\n--------\\n*Policy*\\n1. You are required to inspect the Product for any defects when you take delivery of it.\\n2. Except as otherwise expressly provided herein, we shall not accept the return of a Product that has been delivered\\nunless it is with our prior written consent and agreement. Only a return authorised by us will be accepted and\\nour acceptance of any return of a Product shall be subject to such terms and conditions as we may prescribe at our sole and absolute discretion.\\n3. Cost of transportation to and from the dealer is to be bear by the purchaser of this invoice & the transportation and\\nservice charge will be from $70 onwards. Except as otherwise expressly provided herein, we shall not accept the return of a Product that has been delivered unless it is with our prior written consent and agreement. Only a return authorized\\nby us will be accepted and our acceptance of any return of a Product shall be subject to such terms and conditions as\\nwe may prescribe at our sole and absolute discretion.\\n(Warranty covered on spring unit only)\\n\u2013 This mattress has been manufactured under strict quality control and is guaranteed against any defects as a result of normal use within 10 years for Bonnell Spring and 12 years for Pocketed Spring from the date of purchase.\\n\u2013 The material covering this mattress is not covered by this guarantee and damage caused by accident, misuse or\\ntampered is also not covered by this warranty.",
+                "weight": "10000",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-6ec5424e52f82e42036ccf5ab5159374",
+                    "demo-f064e526fa596512fe7707021b4fc8fd"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "PROMAT&MYSLE",
+                        "options": [
+                            "Single 4\"Foam",
+                            "Single 6\"Foam"
+                        ]
+                    }
+                ],
+                "created_at": "2022-05-25 18:17:38",
+                "shop_id": 11,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 43,
+                        "sku": "",
+                        "price": "200",
+                        "stock": 50,
+                        "variation_index": [
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 18
+                    },
+                    {
+                        "id": 44,
+                        "sku": "",
+                        "price": "240",
+                        "stock": 50,
+                        "variation_index": [
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 18
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "name": "Local SG 2.4GH silent Wireless Mouse wireless Gaming Mouse mice Rechargeable mouse Gaming Mice Silent LED Wireless Mouse",
+                "description": "2.4GHz Wireless Gaming Mouse Optical Rechargeable Gaming Mice Silent LED Backlit Ergonomics E-Sport Wireless Mouse\\nSpecifications:\\nBrand: FREE WOLF\\nModel: X8\\nColor: Black, White, Gray, Star Black\\nWireless distance: 10 meters\\nKey life: 20 million times\\nPower: Built-in Rechargeable 600mAh lithium battery\\nResponse speed: 150PS\\nWireless technology: 2.4GHz\\nVoltage and current: 3,7V-18MA\\nCharacteristics of light effect: Phantom seven color breathing\\nNumber of keys: 6 keys\\nOptical resolution: 1800DPI\\nDPI switching: 800\/1600\/2400 3 modes\\nErgonomics: support\\nSystem requirements: Windows10 Windows XP, Vista, Win 7, Win 8, ME,2000 and Mac OS...or latest\\nProduct size: approx.138X80X38mm\\nProduct weight: approx.120g\\nLocal SG 2.4GHz silent Wireless Mouse wireless Gaming Mouse mice Rechargeable mouse Gaming Mice Silent LED Wireless Mouse\\naccessories mice wireless mouse wireless gaming mice computer mouse ergonomic mouse wireless bluetooth wireless gaming mouse wireless mouse silent rechargable blue tooth mouse",
+                "weight": "120",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-613ab8657862f6d133e450288c9d1ad5",
+                    "demo-146c64c60f2bbe68a4bfa93a1f590545"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Colour",
+                        "options": [
+                            "Black",
+                            "White"
+                        ]
+                    },
+                    {
+                        "name": "Quantity",
+                        "options": [
+                            "1 Pack",
+                            "2 Packs"
+                        ]
+                    }
+                ],
+                "created_at": "2022-05-25 18:17:38",
+                "shop_id": 6,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 25,
+                        "sku": "",
+                        "price": "215",
+                        "stock": 50,
+                        "variation_index": [
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 9
+                    },
+                    {
+                        "id": 26,
+                        "sku": "",
+                        "price": "200",
+                        "stock": 50,
+                        "variation_index": [
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 9
+                    }
+                ]
+            },
+            {
+                "id": 28,
+                "name": "2022 Korean style ins canvas bag female students Multi color single shoulder bag Backpack",
+                "description": "Material: canvas\\nColor: showed as picture\\nStyle: Casual\\nWeight: 230G\\nSize: 38*34*5cm\\nKorean fashion\\n\ud83d\udce6Package Includes: shoulder bag *1\\n\ud83d\udc95Notes:\ud83d\udc95\\n\ud83d\ude0a1. Due to the light and screen setting difference, the item's color may be slightly different from the pictures.\\n\ud83d\ude0a2. Please allow slight dimension difference due to different manual measurement.\\n\ud83d\ude0a3. If the color of your order is not in stock, we will randomly send you other colors.\\n\ud83d\ude4fThank you very much for coming to our store. \ud83d\ude0bIf you are not satisfied with this item \ud83d\ude80Please go to my store",
+                "weight": "100",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-4da8de1a8d116c0a56df88ff82839ca7",
+                    "demo-5109ab4cafc532591504fed2a8b83759"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Colour",
+                        "options": [
+                            "White"
+                        ]
+                    }
+                ],
+                "created_at": "2022-05-25 18:17:38",
+                "shop_id": 9,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 56,
+                        "sku": "",
+                        "price": "121",
+                        "stock": 50,
+                        "variation_index": [
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 28
+                    }
+                ]
+            }
+        ],
+        "first_page_url": "http:\/\/tp-o.tk\/api\/v2\/products\/search?page=1",
+        "from": 1,
+        "last_page": 4,
+        "last_page_url": "http:\/\/tp-o.tk\/api\/v2\/products\/search?page=4",
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http:\/\/tp-o.tk\/api\/v2\/products\/search?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": "http:\/\/tp-o.tk\/api\/v2\/products\/search?page=2",
+                "label": "2",
+                "active": false
+            },
+            {
+                "url": "http:\/\/tp-o.tk\/api\/v2\/products\/search?page=3",
+                "label": "3",
+                "active": false
+            },
+            {
+                "url": "http:\/\/tp-o.tk\/api\/v2\/products\/search?page=4",
+                "label": "4",
+                "active": false
+            },
+            {
+                "url": "http:\/\/tp-o.tk\/api\/v2\/products\/search?page=2",
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "next_page_url": "http:\/\/tp-o.tk\/api\/v2\/products\/search?page=2",
+        "path": "http:\/\/tp-o.tk\/api\/v2\/products\/search",
+        "per_page": "10",
+        "prev_page_url": null,
+        "to": 10,
+        "total": 31
+    }
+}
