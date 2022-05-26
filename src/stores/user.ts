@@ -8,6 +8,5 @@ export const useUser = defineStore('user', () => {
   const payment = ref<any>([])
   const address = ref<any>([])
   const order = ref<any>([])
-  const avatarID = ref<string>()
-  return { payget, profile, credit, payment, address, order, avatarID }
+  return { payget, profile, credit, payment, address, order }
 })

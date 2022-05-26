@@ -5,11 +5,13 @@ meta:
 
 <script setup lang="ts">
 import { keyword } from '~/stores/keyword'
+import { useProduct } from '~/stores/product'
 import ProductRequest from '~/services/product-request'
 
 const props = defineProps<{ keyword: string }>()
 const router = useRouter()
 const useKeyword = keyword()
+const product = useProduct()
 const { t } = useI18n()
 
 useHead({
@@ -41,6 +43,12 @@ onMounted(async() => {
 watchEffect(() => {
   useKeyword.setNewKeyword(props.keyword)
 })
+
+function onvisitProduct(prod_id: number, shop_id: number) {
+  product.shopRequestID = shop_id
+  product.productRequestID = prod_id
+  router.push(`/product/${encodeURIComponent(prod_id)}`)
+}
 // ------------------------------------------------------------------
 const priceValue = ref(200)
 const priceMin = ref(200)
@@ -384,7 +392,7 @@ const products = reactive([{
       </div>
       <Transition name="slide-fade">
         <div v-if="regime === 'grid'" class="grid-products-list flex flex-wrap gap-5 py-10">
-          <div v-for="(prod, index) in useKeyword.resultProduct" :key="index" class="card duration-200 ease-linear relative rounded-lg w-60  shadow-md hover:shadow-gray-400/50 pb-0" @click="router.push(`/product/${encodeURIComponent(prod.id)}`)">
+          <div v-for="(prod, index) in useKeyword.resultProduct" :key="index" class="card duration-200 ease-linear relative rounded-lg w-60  shadow-md hover:shadow-gray-400/50 pb-0" @click="onvisitProduct(prod.id, prod.shop_id)">
             <CProductCard :card="prod" />
           </div>
         </div>

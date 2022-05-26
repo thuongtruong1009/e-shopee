@@ -32,6 +32,7 @@ const seller = useSeller()
 const productResponseData = ref([])
 const productPrice = ref()
 const productStock = ref()
+const productImg = ref('')
 
 onMounted(async() => {
   if (!localStorage.getItem('token')) { router.push({ path: '/buyer/login' }) }
@@ -40,6 +41,7 @@ onMounted(async() => {
     const { data: productData } = await ProductRequest.getProductsById(product.productRequestID)
     loading.isLoading = false
     productResponseData.value = productData
+    productImg.value = productData.images[0]
   }
 })
 
@@ -123,7 +125,7 @@ const handleOrder = () => {
 }
 // ----------------------------------
 const onvisitShop = () => {
-  router.push(`/shop/${encodeURIComponent(seller.payget.id)}`)
+  router.push(`/shop/${encodeURIComponent(productResponseData.value.shop_id)}`)
 }
 </script>
 
@@ -131,7 +133,7 @@ const onvisitShop = () => {
   <div class="product-summary-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-3 mx-2">
     <div class="main-content flex gap-10">
       <div>
-        <img src="https://cf.shopee.vn/file/f0ef79bb6556880ebb85baab0e64c8d6" alt="product_img" class="max-w-112 max-h-112 rounded-lg shadow-lg shadow-gray-300">
+        <img :src="`https://tp-o.tk/resources/images/${productImg}`" alt="product_img" class="max-w-112 max-h-112 rounded-lg shadow-lg shadow-gray-300">
         <div class="grid grid-cols-5 max-w-112 mt-3 gap-2">
           <img src="https://cf.shopee.vn/file/12ae221177dcb74dc4b1701afc06b298_tn" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">
           <img src="https://cf.shopee.vn/file/5413e844e5893181b0f33a191af65cd0_tn" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">

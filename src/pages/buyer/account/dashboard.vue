@@ -25,7 +25,13 @@ onMounted(() => {
   if (!localStorage.getItem('token'))
     router.push({ path: '/buyer/login' })
 })
-
+const payload = reactive({
+  display_name: '',
+  phone: '',
+  gender: '',
+  date_of_birth: '',
+  avatar_image: '',
+})
 $(document).ready(() => {
   const files = document.querySelector('#user_avatar_file')
   files.addEventListener('change', (e) => {
@@ -34,18 +40,14 @@ $(document).ready(() => {
     formData.append('image', files[0])
     formData.append('ratio', 0)
 
-    const { data: avatarData } = ResourceRequest.createResourcesImages(formData)
-    user.avatarID = res.data.id
+    ResourceRequest.createResourcesImages(formData).then((res) => {
+      payload.avatar_image = res.data.id
+    }).catch((error) => {
+      return handleError(error)
+    })
   })
 })
-const payload = reactive({
-  username: '',
-  display_name: '',
-  phone: '',
-  gender: '',
-  date_of_birth: '',
-  avatar_image: user.avatarID,
-})
+
 watch(async() => {
   const { data: userData } = await AccountRequest.getProfile()
   user.payget = userData
