@@ -1,14 +1,510 @@
+pagination:
+  previous: 上一个
+  next: 下一个
 button:
   about: 关于
-  back: 返回
-  go: 确定
-  home: 首页
-  toggle_dark: 切换深色模式
-  toggle_langs: 切换语言
-intro:
-  desc: 固执己见的 Vite 项目模板
-  dynamic-route: 动态路由演示
-  hi: 你好，{name}
-  aka: 也叫
-  whats-your-name: 输入你的名字
-not-found: 未找到页面
+  back: 背部
+  go: 去
+  home: 家
+  toggle_dark: 切换暗模式
+  toggle_langs: 更改语言
+cloading:
+  loading: 加载数据
+ctrending:
+  search: 为我们搜索趋势
+  see-more: 查看更多
+  products: 产品
+ctoday:
+  hint: 今天提示
+  sold: 已售出
+  see-more: 查看更多
+  decrease: 减少
+cmonthsale:
+  download: 下载e-shopee应用程序即可立即收到我们的礼物
+  get-gift: 立即获取礼物和独家优惠
+carrival:
+  our-products: 我们的产品
+  add-our-product: 将我们的产品添加到每周系列
+  new: 新
+caccount: 
+  dashboard: 仪表板
+  orders: 订单
+  download: 下载
+  payment-method: 付款方式
+  credit-card: 信用卡
+  address: 地址
+  Logout: 注销
+category:
+  men-fashion: 男士时尚
+  women-fashion: 女性时尚
+  phones-accessories: 手机和配件
+  mother-baby: 母婴
+  electronic-device: 电子设备
+  home-life: 家庭与生活
+  computers-laptops: 电脑和笔记本电脑
+  beauty: 美女
+  camera-camcorder: 摄像机摄像机
+  health: 健康
+  watch: 看
+  women-shoes: 女鞋
+  men-shoes: 男鞋
+  women-purse-bags: 女士钱包包
+  household-electrical-appliances: 家用电器
+  women-accessories-jewelry: 女士配饰和珠宝
+  sports-travel: 运动与旅行
+  online-store: 在线商店
+  cars-motorcycles-bicycles: 汽车、摩托车和自行车
+  online-bookstore: 网上书店
+  men-backpacks-wallets: 男士背包和钱包
+  child-fashion: 儿童时尚
+  toy: 玩具
+  laundry-home-care: 洗衣和家庭护理
+  take-care-of-the-pet: 照顾宠物
+  vouchers-services: 优惠券和服务
+cpopular:
+  label: 热门搜索产品
+  see-all: 查看全部
+  solded: 已售出
+  month: 月
+cflashsale:
+  label: 闪购
+  see-all: 查看全部
+  decrease: 减少
+  solded: 已售出
+menu:
+  admin: 管理员
+  about-page: 关于页面
+  b-cart-page: 购物车页面
+  b-order-page: 订单页面
+  b-filter-page: 过滤页面
+  b-login-page: 登录页面
+  b-account-page: 账户页面
+  b-wishlist-page: 愿望清单页面
+  become-seller: 成为卖家
+  notifications: 通知
+  notifications-warn: 没有最近的通知
+  notifications-go: 打开通知中心
+  register: 注册
+  login: 登录
+  s-home: 家
+  s-dashboard: 仪表板
+  s-all-orders: 所有订单
+  s-order-canceled: 订单取消
+  s-all-products: 所有产品
+  s-add-products: 添加产品
+  s-shop-preview: 商店预览
+  s-shop-edit-profile: 店铺编辑资料
+  s-shop-new-register: 购买新的寄存器
+  s-admin-channel: 管理员通道
+  s-sign-out: 退出
+  s-seller: 卖家
+header:
+  home: 家
+  shop: 店铺
+  pages: 页面
+  blog: 博客
+  contact: 联系方式
+  setting: 设置
+  vnd: 越南盾
+  rub: 擦
+  pound: 磅
+  usd: 美元
+  euro: 欧元
+  jp: JP
+  rup: 卢比
+  rmb: 人民币
+  my ccount: 我的帐户
+  checkout: 结帐
+  download: 下载
+  login: 登录
+  sign out: 退出
+  categories: 类别
+  placeholder search: 输入您的搜索关键字...
+footer:
+  commit: 我们始终致力于为您提供最好的服务。 连接以立即接收更多优惠。
+  help: 需要帮助吗？
+  copyright: 版权
+  all rights reserved: 保留所有权利
+  information: 信息
+  delivery: 关于我们
+  about us: 安全支付
+  secure payment: 联系我们
+  contact us: 联系我们
+  sitemap: 站点地图
+  stores: 商店
+  link: 链接
+  privacy policy: 隐私政策
+  term of service: 服务期限
+  service requirement: 服务要求
+  best sales: 最佳销售
+  login: 登录
+  my account: 我的帐户
+  newsletter: 时事通讯
+  subscribe: 您可以随时取消订阅。 为此，请在法律声明中找到我们的联系信息。
+  sign up today: 成为第一个知道的人。 立即订阅时事通讯！
+  sign up: 报名
+service:
+  shipping-title: 运输支持
+  shipping-desc: 总是更新状态
+  return-title: 免费退货
+  return-desc: 9天内免费
+  contact-title: 支持
+  contact-desc: 随时准备联系
+  payment-secure-title: 付款安全
+  payment-secure-desc: 简单方便。
+  chat-title: 实时聊天
+  chat-desc: 与卖家分享交流
+auth:
+  a-banner: 专业管理员
+  a-desc: 通过管理员渠道更有效地管理您的商店并在 e-shopee 上进行可视化
+  a-title: 登录管理员频道
+  a-remember: 记住我
+  a-login: 登录
+  b-register-title: 创建帐户
+  b-register-desc: 加入我们，开始以您的风格购物
+  b-register-btn: 创建帐户
+  b-register-refer: 登录
+  b-register-already-account: 已经有账号
+  b-login-welcome: 欢迎回来
+  b-login-desc: 体验许多有吸引力的优惠和服务
+  b-oauth: 或使用电子邮件登录
+  b-not-account: 没有帐户
+  b-login-forgot: 忘记密码
+  b-login-btn: 登录
+  b-forgot-title: 你忘记了密码
+  b-forgot-invite: 轻松重置新密码
+  b-forgot: a-banner：专业管理员
+  a-desc：通过管理员渠道更有效地管理您的商店并在 e-shopee 上进行可视化
+  a-title：登录管理员频道
+  a-remember：记住我
+  a-login: 登录
+  b-register-title：创建帐户
+  b-register-desc：加入我们，开始以您的风格购物
+  b-register-btn: 创建账户
+  b-register-refer: 登录
+  b-register-already-account: 已经有账号
+  b-login-welcome：欢迎回来
+  b-login-desc：体验许多有吸引力的优惠和服务
+  b-oauth：或使用电子邮件登录
+  b-not-account：没有帐户
+  b-login-forgot: 忘记密码
+  b-login-btn: 登录
+  b-forgot-title：你忘记了密码
+  b-forgot-invite：轻松重置新密码
+  b-忘记：忘记了
+  b-forgot-form-title: 忘记密码
+  b-forgot-form-desc：请输入您的用户名或电子邮件地址。您将通过电子邮件收到创建新密码的链接
+  b-forgot-form-button：获取新密码
+  b-reset-title：重置新密码
+  b-reset-invite：查看您注册邮箱发送的确认码
+  b-reset：重置
+  b-forgot-form-title: 忘记密码
+  b-forgot-form-desc: 请输入您的用户名或电子邮件地址。您将通过电子邮件收到创建新密码的链接
+  b-forgot-form-button: 获取新密码
+  b-reset-title: 重置新密码
+  b-reset-invite: 查看您注册邮箱发送的确认码
+  b-reset: 重置
+  b-reset-form-button: 重置密码
+  b-reset-banner: 密码支持中心
+  b-new-password: 新密码
+account:
+  account-banner: 我的帐户
+  dashboard: 仪表板
+  hello: 你好
+  joined-at: 加入时间
+  not-you: 如果不是你
+  logout: 注销
+  dashboard-desc: 来自您的帐户仪表板。您可以轻松检查 {symbol} 查看您最近的订单、管理您的送货和账单地址以及编辑您的密码和帐户详细信息
+  order-title: 您的订单列表
+  order-no: 没有
+  order-name: 名称
+  order-date: 日期
+  order-status: 状态
+  order-total: 总计
+  order-action: 动作
+  save-changes: 保存更改
+  payment-method: 付款方式
+  payment-owner: 所有者帐户
+  payment-identification: 识别号
+  payment-id: 付款ID
+  payment-bank: 银行名称
+  payment-branch: 银行分行
+  payment-account: 账号
+  not-payment: 您尚未保存付款方式
+  digits: 数字
+  payment-update: 更新付款
+  payment-create: 创建付款
+  credit-card: 信用卡
+  card-number: 卡号
+  address-register: 地址寄存器
+  zip-postal: 邮政邮局
+  postal-zip-code: 邮政邮编
+  card-expiry: 到期日
+  card-name: 持卡人姓名
+  card-cvv: Cvv
+  card-address: 注册地址
+  card-upadte: 更新卡
+  card-create: 创建卡片
+  have-card: 您有 1 种付款方式
+  not-card: 您尚未保存付款方式
+  address-billing: 帐单地址
+  address-owner: 全名
+  address-phone: 电话号码
+  address: 地址
+  address-location: 位置
+  address-state: 状态
+  address-city: 城市
+  address-town: 城镇
+  is-home: 是家
+  is-pickup-address: 是取货地址
+  is-default-address: 是默认地址
+  is-return-address: 是返回地址
+  false: 假
+  true: 真
+  address-update: 更新地址
+  address-create: 创建地址
+shop:
+  online: 在线
+  ago: 以前
+  days: 天
+  hours: 小时
+  minutes: 分钟
+  follow: 关注
+  chat: 聊天
+  products: 产品
+  cancel-ratio: 取消比率
+  following: 关注
+  follower: 追随者
+  joined: 已加入
+  rating: 评级
+  shop-information: 店铺信息
+  sort-by: 排序依据
+  popular: 流行
+  latest: 最新
+  price: 价格
+  default: 默认
+  low-to-high: 从低到高
+  high-to-low: 从高到低
+  address: 地址
+  manage-shipping: 管理您的送货和送货地址
+  add-new-address: 添加新地址
+  name: 姓名
+  phone-number: 电话号码
+  edit: 编辑
+  default-address: 默认地址
+  profile-information: 个人资料信息
+  view-update-shop: 查看商店状态并更新您的商店资料
+  join-at: 加入
+  id: 身份证
+  edit-cover-photo: 编辑封面照片
+  response-rate: 响应率
+  response-time: 响应时间
+  within-a-few-hours: 几小时内
+  shop-reviews: 商店评论
+  unsuccessful-rate: 不成功率
+  shop-id: 店铺编号
+  shop-name: 店铺名称
+  some-preview: 一些预览图片或视频
+  add-photos-videos: 添加照片或视频
+  shop-description: 店铺描述
+category:
+  title: 添加 1 个新产品
+  desc: 请为您的产品选择合适的类别
+  product-name: 产品名称
+  tutorial1: 选择正确的类别
+  tutorial2: 点此查看
+  selected: 已选中
+  next: 下一个
+cart:
+  title: 您的购物车物品
+  cart: 购物车
+  preview: 预览
+  name: 姓名
+  category: 类别
+  price: 价格
+  quantity: 数量
+  action: 行动
+  update: 更新
+  promo-code: 有促销代码
+  checkout: 结帐
+  subtotal: 小计
+  shipping: 运费
+  tax: 税
+  total: 总计
+  view-cart: 查看购物车
+  free-ship: 所有订单满免费送货
+product:
+  evaluate: 评估
+  solded: 已售出
+  weight: 重量
+  buy-with-deal: 以销售方式购买
+  shipping: 运费
+  transport: 运输到
+  quantities: 数量
+  available-products: 可用产品
+  add-to-cart: 加入购物车
+  order-now: 立即订购
+  total-liked: 总喜欢
+  insurance: 保险
+  return-refund: 退货和退款天数
+  online: 在线
+  ago: 以前
+  chat-now: 现在聊天
+  visit-shop: 参观商店
+  productions: 制作
+  response-ratio: 响应比
+  response-time: 响应时间
+  in-some-hours: 在几个小时内
+  joined: 已加入
+  follower: 追随者
+  product-describes: 产品描述
+  category: 类别
+  organization: 组织
+  updating: 更新
+  origin: 原产地
+  address: 地址
+  warehouse: 仓库
+  ship-from: 发货地
+  product-evalutions: 产品评估
+search:
+  filter-by: 筛选依据
+  categories: 类别
+  price: 价格
+  color: 颜色
+  brand: 品牌
+  tags: 产品标签
+  there-are: 有
+  products: 产品
+  sort-by: 排序依据
+  relevance: 相关性
+  a-z: 从 A 到 Z
+  z-a: Z 到 A
+  low-high: 从低到高
+  high-low: 从高到低
+  new: 新
+  name: 姓名
+  availability: 可用性
+  add-to-cart: 加入购物车
+  add-success-message: 产品已成功添加到您的购物车
+  dimension: 维度
+  quantity: 数量
+  total-products: 总产品
+  total-shipping: 总运费
+  taxes: 税收
+  total: 总计
+  continue-shopping: 继续购物
+  proceed-checkout: 进行结帐
+  there-is: 有
+  item-in-your-cart: 购物车中的物品
+checkout:
+  personal-information: 个人信息
+  order-as-guest: 以客人身份订购
+  login: 登录
+  pronoun: 代词
+  mr: 先生
+  mrs: 夫人
+  name: 姓名
+  email: 电子邮件
+  password: 密码
+  show: 显示
+  birthdate: 生日
+  receive offers: 接收来自我们合作伙伴的报价
+  signup-newsletter: 注册我们的时事通讯
+  continue: 继续
+  address: 地址
+  address-desc: 选择的地址将帮助我们更方便快捷地为您送货
+  city: 城市
+  zip: 邮编/邮政编码
+  country: 国家
+  vietnam: 越南
+  russia: 俄罗斯
+  england: 英格兰
+  united-states: 美国
+  japan: 日本
+  france: 法国
+  india: 印度
+  china: 中国
+  not-have-country: 不要找到我的国家
+  phone: 电话
+  shipping-method: 运输方式
+  delivery-next-day: 次日交货
+  note-field: 如果您想为您的订单添加备注，请在下面的字段中填写
+  payment: 付款
+  pay-by-check: 信用卡/Visa借记卡/万事达卡付款
+  pay-by-wire: 银行电汇支付
+  pay-by-cash: 货到付款
+  pay-by-momo: 陌陌付费
+  item: 项目
+  shipping: 运费
+  total: 总计
+  taxes: 税收
+  process-checkout: 继续结帐
+  secure-policy: 安全策略 (commit by Reassurance)
+  delivery-policy: 交付政策 (commit by Reassurance)
+  return-policy: 退货政策 (commit by Reassurance)
+index:
+  admin-chanel: 管理员通道
+  seller-chanel: 卖家香奈儿
+  buying-chanel: 购买香奈儿
+  exploring: 探索
+  banner-desc: 世界顶级购物应用
+  download-now: 立即下载应用程序
+  service-title: 随时随地购物
+  service-desc: 享受有吸引力的促销活动，从最负盛名的商店享受超级优惠
+  transfer-support: 转移支持
+  transfer-desc: 您的订单状态自您下订单以来始终会详细更新
+  customer-support: 客户支持
+  customer-desc: 客户服务部门随时准备为您提供 24/7 的支持
+  today-suggestion: 今天的建议
+  today-suggestion-desc: 在今日建议中选择适合您的产品
+  safe-payment: 安全支付方式
+  safe-payment-desc: 轻松便捷的支付方式。货到付款或信用卡/借记卡预付款
+  chat: 聊天
+  chat-feature: 功能
+  chat-desc: 直接与卖家聊天以获得更多产品建议。您还可以通过“聊天”部分与卖家协商所需的价格
+  guarantee-privacy: 保证隐私
+  commit: 虾皮承诺在您收到货后将您支付的金额转给卖家。我们永远保护你
+  advertisement-1-desc: 拥有您喜爱的所有产品的地方
+  advertisement-2-title: 在线买卖
+  advertisement-2-desc: 享受购物和做生意的威望
+  advertisement-3-title: 给新客户的礼物
+  advertisement-3-desc: 在 e-shopee 为新客户提供独家且有吸引力的礼物
+  customer-opinion-title: 用户对 e-shopee 的评价
+  opinion-1: 我一直期待 e-shopee 寻找优惠，并且总是能得到惊人的优惠。且不说每一次的交易都很有趣，最后一次的交易是我 2 年网店成瘾中最有趣的
+  opinion-2: 每次去e-shopee都收获很大，几十件货一直在提货，直到收到货，都不知道什么时候订的这个或那个。如此沉迷于e-shopee
+  joined-at: 加入时间
+  copyright: 版权
+  all-rights-reserved: 保留所有权利
+contact:
+  contact-us: 联系我们
+  tell-us-desc: 告诉我们您的问题，以便我们更快地为您提供帮助
+  tell-us-support: 我们随时准备支持您的问题 24/7 
+  address: 地址
+  sub-adddress: Quater 6, Linh Trung ward, Thu Duc 区, 胡志明市
+  country: 越南
+  phone: 电话
+  mobile: 手机
+  hotline: 热线
+  email: 电子邮件
+  tell-us-your-message: 告诉我们您的消息
+  your-name: 你的名字
+  your-email: 你的邮箱
+  subject: 主题
+  note: 您的留言
+  submit: 提交
+sitemap:
+  sitemap: 站点地图
+favourite:
+  add-to-cart: 加入购物车
+  favourite-banner: 收藏页面
+about:
+  about-us: 关于我们
+  welcome: 欢迎来到
+  desc-one: e-shopee是东南亚和台湾地区最大的电子商务平台。这是一个为该地区量身定制的平台，通过其强大的支付和后勤支持，使在线购物变得简单、安全、快捷。 Shopee得到东南亚最大的互联网平台提供商Sea（前身为Garena）的大力支持。
+  desc-two: Shopee 可以在新加坡、马来西亚、泰国、台湾、印度尼西亚、越南和菲律宾的 App Store 和 Google Play 上免费下载。欲了解更多信息，请访问 https://shopee.vn
+  our-purpose: 我们的目的
+  purpose-desc: Shopee 团队相信技术的变革力量，并希望通过提供一个平台在一个社区中连接买家和卖家，让世界变得更美好。随着移动设备购物成为新常态，Shopee 旨在不断增强其平台，为所有用户提供无缝和愉快的购物体验，并成为该地区首选的电子商务平台。
+  our-team: 我们的团队
+  team-desc: Shopee 团队相信技术的变革力量，并希望通过提供一个平台在一个社区中连接买家和卖家，让世界变得更美好。随着移动设备购物成为新常态，Shopee 旨在不断增强其平台，为所有用户提供无缝和愉快的购物体验，并成为该地区首选的电子商务平台。
+  testimonial: 见证
+  testimonial-desc: Shopee 团队相信技术的变革力量，并希望通过提供一个平台在一个社区中连接买家和卖家，让世界变得更美好。随着移动设备购物成为新常态，Shopee 旨在不断增强其平台，为所有用户提供无缝和愉快的购物体验，并成为该地区首选的电子商务平台。
