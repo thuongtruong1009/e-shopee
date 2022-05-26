@@ -31,10 +31,10 @@ const payload = reactive({
   password: '',
 })
 
-const handleSubmit = async(e) => {
+const handleSubmit = (e) => {
   e.preventDefault()
   loading.isLoading = true
-  await AuthRequest.loginUser(payload).then((res) => {
+  AuthRequest.loginUser(payload).then((res) => {
     localStorage.setItem('token', res.token)
     localStorage.setItem('user', JSON.stringify(res))
     router.push({ path: '/buyer/home' })

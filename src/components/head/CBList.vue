@@ -104,9 +104,14 @@ const handleOrder = async() => {
       <ul class="minicart-product-list divide-light-700 divide-y max-h-1/2 overflow-y-scroll">
         <li v-for="(item, index) in cart.result" :key="index" class="flex justify-between items-start p-5 inline-block">
           <div class="flex">
-            <a><img
-              src="/img/product/1.png" alt="cart_product_img" class="max-w-25 max-h-25 border-light-600 border-solid border-1 rounded-md mr-3"
-            ></a>
+            <a>
+              <!-- <img
+                src="/img/product/1.png" alt="cart_product_img" class="max-w-25 max-h-25 border-light-600 border-solid border-1 rounded-md mr-3"
+              > -->
+              <img
+                :src="`https://tp-o.tk/resources/images/${item.product.images[0]}`" alt="cart_product_img" class="max-w-25 max-h-25 border-light-600 border-solid border-1 rounded-md mr-3"
+              >
+            </a>
             <div>
               <h5 class="title text-[#E14641] cursor-pointer">
                 {{ item.product.name }}
