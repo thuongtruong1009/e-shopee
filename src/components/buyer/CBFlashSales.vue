@@ -2,6 +2,8 @@
 import progressRatio from '~/utils/progress'
 import { next, prev } from '~/utils/scrollX'
 
+const { t } = useI18n()
+
 const onPrev = () => prev('flash_sales_list')
 const onNext = () => next('flash_sales_list')
 
