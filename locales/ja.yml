@@ -296,7 +296,7 @@ cart:
   cart: カート
   preview: プレビュー
   name: 名前
-  category: カテゴリー
+  variations: バリエーション
   price: 価格
   quantity: 量
   action: アクション

@@ -296,7 +296,7 @@ cart:
   cart: Cart
   preview: Preview
   name: Name
-  category: Category
+  variations: Variations
   price: Price
   quantity: Quantity
   action: Action

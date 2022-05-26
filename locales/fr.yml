@@ -296,7 +296,7 @@ cart:
   cart: Chariot
   preview: Aperçu
   name: Nom
-  category: Catégorie
+  variations: variantes
   price: Prix
   quantity: Quantité
   action: Action

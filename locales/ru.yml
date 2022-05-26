@@ -296,7 +296,7 @@ cart:
   cart: Тележка
   preview: Предварительный просмотр
   name: Имя
-  category: Категория
+  variations: вариации
   price: Цена
   quantity: Количество
   action: Действие

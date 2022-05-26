@@ -296,9 +296,9 @@ cart:
   cart: कार्ट
   preview: पूर्वावलोकन
   name: नाम
-  category: श्रेणी
+  variations: श्रेणी
   price: कीमत
-  quantity: मात्रा
+  quantity: विविधताओं
   action: गतिविधि
   update: अपडेट करना
   promo-code: क्या प्रोमो कोड है

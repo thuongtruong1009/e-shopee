@@ -296,7 +296,7 @@ cart:
   cart: Wagen
   preview: Vorschau
   name: Name
-  category: Kategorie
+  variations: Variationen
   price: Preis
   quantity: Menge
   action: Handlung

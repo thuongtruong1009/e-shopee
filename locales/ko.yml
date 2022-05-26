@@ -296,7 +296,7 @@ cart:
   cart: 카트
   preview: 시사
   name: 이름
-  category: 범주
+  variations: 변형
   price: 가격
   quantity: 수량
   action: 행동

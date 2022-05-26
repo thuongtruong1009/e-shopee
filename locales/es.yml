@@ -296,7 +296,7 @@ cart:
   cart: Carro
   preview: Avance
   name: Nombre
-  category: Categoría
+  variations: variaciones
   price: Precio
   quantity: Cantidad
   action: Acción

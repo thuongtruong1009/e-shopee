@@ -296,7 +296,7 @@ cart:
   cart: Carrello
   preview: Anteprima
   name: Nome
-  category: Categoria
+  variations: variazioni
   price: Prezzo
   quantity: Quantità
   action: Azione
