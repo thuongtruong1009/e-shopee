@@ -1,13 +1,486 @@
-button:
-  about: О шаблоне
+pagination:
+  previous: Предыдущий
+  next: Следующий
+button: 
+  about: О
   back: Назад
-  go: Перейти
-  home: Главная
-  toggle_dark: Включить темный режим
-  toggle_langs: Сменить язык
-intro:
-  desc: Самостоятельный начальный шаблон Vite
-  dynamic-route: Демо динамического маршрута
-  hi: Привет, {name}!
-  whats-your-name: Как тебя зовут?
-not-found: Не найден
+  go: ИДТИ
+  home: Дом
+  toggle_dark: Переключить темный режим
+  toggle_langs: Изменить языки
+cloading: 
+  loading: Загрузка данных
+ctrending: 
+  search: Поиск в тренде для нас
+  see-more: Узнать больше
+  products: товары
+ctoday: 
+  hint: Намек сегодня
+  sold: Продан
+  see-more: Узнать больше
+  decrease: СНИЖАТЬСЯ
+cmonthsale: 
+  download: Загрузите приложение для электронного Shopee, чтобы немедленно получить от нас подарки
+  get-gift: Получите подарки и эксклюзивные предложения сейчас
+carrival: 
+  our-products: Наши продукты
+  add-our-product: Добавить наши продукты в еженедельную линию
+  new: новый
+caccount:  
+  dashboard: Панель приборов
+  orders: Приказ
+  download: Скачать
+  payment-method: Способ оплаты
+  credit-card: Кредитная карта
+  address: Адрес
+  Logout: Выйти
+ccategory: 
+  men-fashion: Мужская мода
+  women-fashion: Женская мода
+  phones-accessories: Телефоны и аксессуары
+  mother-baby: Мать и ребенок
+  electronic-device: Электрическое устройство
+  home-life: Семейная жизнь
+  computers-laptops: Компьютеры и ноутбуки
+  beauty: Красота
+  camera-camcorder: Камера камера
+  health: Здоровье
+  watch: Смотреть
+  women-shoes: ботинки женские
+  men-shoes: Туфли мужские
+  women-purse-bags: Женские сумки кошелька
+  household-electrical-appliances: Домашние электрические приборы
+  women-accessories-jewelry: Женские аксессуары и украшения
+  sports-travel: Спорт и путешествия
+  online-store: Интернет-магазин
+  cars-motorcycles-bicycles: Автомобили, мотоциклы и велосипеды
+  online-bookstore: Онлайн -книжный магазин
+  men-backpacks-wallets: Мужские рюкзаки и кошельки
+  child-fashion: Детская мода
+  toy: Игрушка
+  laundry-home-care: Прачечная и уход на дому
+  take-care-of-the-pet: Позаботиться о питомце
+  vouchers-services: Ваучеры и услуги
+cpopular: 
+  label: Лучшие популярные поисковые продукты
+  see-all: Увидеть все
+  solded: Продан
+  month: месяц
+cflashsale: 
+  label: Flash Sales
+  see-all: Увидеть все
+  decrease: СНИЖАТЬСЯ
+  solded: Продан
+menu: 
+  admin: Администратор
+  about-page: О странице
+  b-cart-page: CART Page
+  b-order-page: Страница заказа
+  b-filter-page: Фильтруя страница
+  b-login-page: Страница авторизации
+  b-account-page: Страница учетной записи
+  b-wishlist-page: Страница списка желаний
+  become-seller: Стать продавцом
+  notifications: Уведомления
+  notifications-warn: Нет недавних уведомлений
+  notifications-go: Открытые уведомления Центр
+  register: регистр
+  login: Авторизоваться
+  s-home: дом
+  s-dashboard: Панель приборов
+  s-all-orders: Все заказы
+  s-order-canceled: Заказ отменен
+  s-all-products: Все продукты
+  s-add-products: Добавить продукты
+  s-shop-preview: Предварительный просмотр магазина
+  s-shop-edit-profile: Магазин редактировать профиль
+  s-shop-new-register: Магазин Новый регистр
+  s-admin-channel: Административный канал
+  s-sign-out: выход
+  s-seller: Продавец
+header: 
+  home: Дом
+  shop: Магазин
+  pages: Страницы
+  blog: Блог
+  contact: Контакт
+  setting: Параметр
+  vnd: Вн
+  rub: НАТИРАТЬ
+  pound: Фунт
+  usd: доллар США
+  euro: Евро
+  jp: JP
+  rup: Рупия
+  rmb: Rmb
+  my ccount: Мой счет
+  checkout: Проверить
+  download: Скачать
+  login: Авторизоваться
+  sign out: выход
+  categories: Категории
+  placeholder search: Введите ключ поиска ...
+footer: 
+  commit: Мы всегда стремимся служить вам лучшими услугами. Подключитесь к получению дополнительных предложений сразу.
+  help: НУЖНА ПОМОЩЬ?
+  copyright: Авторские права
+  all rights reserved: Все права защищены
+  information: ИНФОРМАЦИЯ
+  delivery: Доставка
+  about us: О нас
+  secure payment: Безопасный способ оплаты
+  contact us: Связаться с нами
+  sitemap: Sitemap
+  stores: магазины
+  link: Ссылки
+  privacy policy: Политика конфиденциальности
+  term of service: Срок службы
+  service requirement: Требование к обслуживанию
+  best sales: Лучшие продажи
+  login: Авторизоваться
+  my account: Мой счет
+  newsletter: НОВОСТНАЯ РАССЫЛКА
+  subscribe: Вы можете отказаться от подписки в любой момент. Для этого, пожалуйста, найдите нашу контактную информацию в юридическом уведомлении.
+  sign up today: Узнай первым. Зарегистрируйтесь на информационный бюллетень сегодня!
+  sign up: Зарегистрироваться
+service: 
+  shipping-title: Поддержка доставки
+  shipping-desc: Всегда обновлять статус
+  return-title: Бесплатные возвраты
+  return-desc: Бесплатно в течение 9 дней
+  contact-title: Поддерживать
+  contact-desc: Готовы в любое время
+  payment-secure-title: Оплата безопасна
+  payment-secure-desc: Легко и удобно.
+  chat-title: Живой чат
+  chat-desc: Обмен акциями с продавцом
+auth: 
+  a-banner: Профессиональный администратор
+  a-desc: Управляйте своим магазином более эффективно и визуализацией на электронном магазине с помощью Admin Channel
+  a-title: Войти в канал администратора
+  a-remember: Запомни меня
+  a-login: Авторизоваться
+  b-register-title: Зарегистрироваться
+  b-register-desc: Присоединяйтесь к нам и начните делать покупки в своем стиле
+  b-register-btn: Зарегистрироваться
+  b-register-refer: Авторизоваться
+  b-register-already-account: Уже есть аккаунт
+  b-login-welcome: С возвращением
+  b-login-desc: Испытать много привлекательных предложений и услуг
+  b-oauth: или используйте электронную почту для входа в систему
+  b-not-account: Нет аккаунта
+  b-login-forgot: Забыли пароль
+  b-login-btn: ВОЙТИ
+  b-forgot-title: Вы забыли пароль
+  b-forgot-invite: Легко сбросить новый пароль в щелчке
+  b-forgot: Забыл
+  b-forgot-form-title: Забыли пароль
+  b-forgot-form-desc: Пожалуйста, введите свое имя пользователя или адрес электронной почты. Вы получите ссылку для создания нового пароля по электронной почте
+  b-forgot-form-button: Получить новый пароль
+  b-reset-title: Сбросить свой новый пароль
+  b-reset-invite: Проверьте код подтверждения, отправленный с вашего зарегистрированного письма
+  b-reset: Перезагрузить
+  b-reset-form-button: Сброс пароля
+  b-reset-banner: Центр поддержки паролей
+  b-new-password: Новый пароль
+account: 
+  account-banner: Мой счет
+  dashboard: Панель приборов
+  hello: Привет
+  joined-at: Присоединился к
+  not-you: Если бы не ты
+  logout: Выйти
+  dashboard-desc: С панели панели учетной записи. Вы можете легко проверить {symbol} Просмотреть свои последние заказы, управлять своими адресами доставки и выставления счетов и отредактировать свой пароль и данные учетной записи
+  order-title: Ваши заказы перечисляют
+  order-no: Нет
+  order-name: Имя
+  order-date: Дата
+  order-status: Статус
+  order-total: Общее
+  order-action: Действие
+  save-changes: Сохранить изменения
+  payment-method: Способ оплаты
+  payment-owner: Учетная запись владельца
+  payment-identification: Идентификационный номер
+  payment-id: Идентификатор оплаты
+  payment-bank: название банка
+  payment-branch: филиал банка
+  payment-account: Номер счета
+  not-payment: Вы еще не сохранили свой способ оплаты
+  digits: цифры
+  payment-update: Обновить оплату
+  payment-create: Создать оплату
+  credit-card: Кредитная карта
+  card-number: Номер карты
+  address-register: Адрес регистр
+  zip-postal: Zip Postal
+  postal-zip-code: Почтовый почтовый индекс
+  card-expiry: Срок действия
+  card-name: Имя владельца карты
+  card-cvv: CVV
+  card-address: Регистрационный адрес
+  card-upadte: Обновление карты
+  card-create: Создать карту
+  have-card: У вас есть 1 способ оплаты
+  not-card: Вы еще не сохранили свой способ оплаты
+  address-billing: Адрес для выставления счета
+  address-owner: ФИО
+  address-phone: Телефонный номер
+  address: Адрес
+  address-location: Место нахождения
+  address-state: Состояние
+  address-city: Город
+  address-town: Городок
+  is-home: Дома
+  is-pickup-address: Это адрес пикапа
+  is-default-address: Это адрес по умолчанию
+  is-return-address: Это обратный адрес
+  false: ЛОЖНЫЙ
+  true: ПРАВДА
+  address-update: Обновление адреса
+  address-create: Создать адрес
+shop: 
+  online: В сети
+  ago: тому назад
+  days: дни
+  hours: часы
+  minutes: минуты
+  follow: Следовать
+  chat: Чат
+  products: Товары
+  cancel-ratio: Соотношение отмены
+  following: Следующий
+  follower: Последователь
+  joined: Присоединился
+  rating: Рейтинг
+  shop-information: Информация о магазине
+  sort-by: Сортировать по
+  popular: Популярный
+  latest: Самый последний
+  price: Цена
+  default: По умолчанию
+  low-to-high: снизу вверх
+  high-to-low: высокий до низкого уровня
+  address: Адрес
+  manage-shipping: Управляйте своим адресом доставки и доставки
+  add-new-address: Добавьте новый адрес
+  name: Имя
+  phone-number: Телефонный номер
+  edit: Редактировать
+  default-address: Адрес по умолчанию
+  profile-information: Информация профиля
+  view-update-shop: Посмотреть статус магазина и обновить профиль своего магазина
+  join-at: Присоединиться к
+  id: Я БЫ
+  edit-cover-photo: Редактировать фото обложки
+  response-rate: Скорость отклика
+  response-time: Время отклика
+  within-a-few-hours: В течение нескольких часов
+  shop-reviews: Обзоры магазинов
+  unsuccessful-rate: Безуспешная скорость
+  shop-id: Магазин идентификатор
+  shop-name: Название магазина
+  some-preview: Некоторые предварительные изображения или видео
+  add-photos-videos: Добавить фотографии или видео
+  shop-description: Магазин Описание
+category: 
+  title: Добавить 1 новый продукт
+  desc: Пожалуйста, выберите соответствующую категорию для вашего продукта
+  product-name: Наименование товара
+  tutorial1: Выберите правильную категорию
+  tutorial2: нажмите сюда, чтобы узнать больше
+  selected: Выбранный
+  next: Следующий
+cart: 
+  title: Ваши корзины
+  cart: Тележка
+  preview: Предварительный просмотр
+  name: Имя
+  category: Категория
+  price: Цена
+  quantity: Количество
+  action: Действие
+  update: Обновлять
+  promo-code: Есть промо код
+  checkout: Проверить
+  subtotal: Промежуточный итог
+  shipping: Перевозки
+  tax: Налога
+  total: Общее
+  view-cart: Посмотреть корзину
+  free-ship: Бесплатная доставка на все заказы за
+product: 
+  evaluate: Оценивать
+  solded: Продан
+  weight: Масса
+  buy-with-deal: Купить с продажей сделка
+  shipping: Перевозки
+  transport: Транспорт в
+  quantities: Количества
+  available-products: Доступные продукты
+  add-to-cart: Добавить в корзину
+  order-now: Заказать сейчас
+  total-liked: Всего понравилось
+  insurance: страхование
+  return-refund: Дни, чтобы вернуться и вернуть деньги
+  online: В сети
+  ago: тому назад
+  chat-now: Теперь говорите
+  visit-shop: Посетите магазин
+  productions: Производство
+  response-ratio: Коэффициент ответа
+  response-time: Время отклика
+  in-some-hours: Через несколько часов
+  joined: Присоединился
+  follower: Последователь
+  product-describes: Продукт описывает
+  category: Категория
+  organization: Организация
+  updating: Обновление
+  origin: Источник
+  address: Адрес
+  warehouse: Склад
+  ship-from: Доставить из
+  product-evalutions: Оценки продукта
+search: 
+  filter-by: Сортировать по
+  categories: Категории
+  price: Цена
+  color: Цвет
+  brand: Бренд
+  tags: Теги продукта
+  there-are: Есть
+  products: товары
+  sort-by: Сортировать по
+  relevance: Актуальность
+  a-z: А до z
+  z-a: Z до
+  low-high: снизу вверх
+  high-low: высокий до низкого уровня
+  new: новый
+  name: Имя
+  availability: Доступность
+  add-to-cart: Добавить в корзину
+  add-success-message: Продукт успешно добавлен в корзину для покупок
+  dimension: Измерение
+  quantity: Количество
+  total-products: Общая продукция
+  total-shipping: Общая доставка
+  taxes: Налоги
+  total: Общее
+  continue-shopping: продолжить покупки
+  proceed-checkout: перейти к оформлению заказа
+  there-is: Там есть
+  item-in-your-cart: предмет в вашей тележке
+checkout: 
+  personal-information: Персональная информация
+  order-as-guest: Заказ в качестве гостя
+  login: Авторизоваться
+  pronoun: Местоимение
+  mr: Мистер
+  mrs: Г-жа
+  name: Имя
+  email: Эл. адрес
+  password: Пароль
+  show: шоу
+  birthdate: День рождения
+  receive offers: Получить предложения от наших партнеров
+  signup-newsletter: Подпишитесь на нашу рассылку
+  continue: Продолжать
+  address: Адрес
+  address-desc: Выбранный адрес поможет нам поставить для вас более Eastier и быстрее
+  city: Город
+  zip: Zip/почтовый код
+  country: Страна
+  vietnam: Вьетнам
+  russia: Россия
+  england: Англия
+  united-states: Соединенные Штаты
+  japan: Япония
+  france: Франция
+  india: Индия
+  china: Китай
+  not-have-country: Не находить мою страну
+  phone: Телефон
+  shipping-method: Способ доставки
+  delivery-next-day: Доставка на следующий день
+  note-field: Если вы хотите добавить заметку о вашем заказе, напишите ее в поле ниже
+  payment: Оплата
+  pay-by-check: Оплата по кредиту/виза дебет/главная карта
+  pay-by-wire: Оплачивать банковский провод
+  pay-by-cash: Оплатить наличными при доставке
+  pay-by-momo: Платить от Момо
+  item: вещь
+  shipping: Перевозки
+  total: Общее
+  taxes: Налоги
+  process-checkout: Перейти к оформлению заказа
+  secure-policy: Политика безопасности (приверженность подтверждением)
+  delivery-policy: Политика доставки (совершение заверия)
+  return-policy: Политика возврата (совершение заверия)
+index: 
+  admin-chanel: Админ Шанель
+  seller-chanel: Продавец Шанель
+  buying-chanel: Покупка Шанель
+  exploring: Изучение
+  banner-desc: Ведущее ведущее в мире приложение для покупок
+  download-now: Загрузите приложение сейчас
+  service-title: Шоппинг в любое время, где угодно
+  service-desc: Наслаждайтесь привлекательными рекламными акциями, супер сбережениями из самых престижных магазинов
+  transfer-support: Поддержка передачи
+  transfer-desc: Статус вашего заказа всегда подробно обновляется с тех пор, как вы размещаете свой заказ
+  customer-support: Служба поддержки
+  customer-desc: Отдел обслуживания клиентов всегда готов поддержать вас 24/7
+  today-suggestion: Сегодняшние предложения
+  today-suggestion-desc: Выберите правильные продукты для вас в сегодняшних предложениях
+  safe-payment: Безопасный способ оплаты
+  safe-payment-desc: Легкая и удобная оплата. Оплата за доставку или предоплату кредитной/дебетовой картой
+  chat: Чат
+  chat-feature: характерная черта
+  chat-desc: Общайтесь напрямую с продавцом для получения дополнительной информации о продукте. Вы также можете договориться о желаемой цене с продавцом через раздел «Чат»
+  guarantee-privacy: Гарантия конфиденциальности
+  commit: Shopee обязуется, что сумма, которую вы платите, будет передана продавцу после получения товара. Мы всегда защищаем вас
+  advertisement-1-desc: Место для владения всеми продуктами, которые вы любите
+  advertisement-2-title: Купить и продавать онлайн
+  advertisement-2-desc: Наслаждайтесь покупками и ведением бизнеса с престижем
+  advertisement-3-title: Подарки для новых клиентов
+  advertisement-3-desc: Эксклюзивные и привлекательные подарки для новых клиентов в E-Shopee
+  customer-opinion-title: Что пользователи говорят об э-магазине
+  opinion-1: Я всегда с нетерпением жду возможности E-Shopee охотиться за сделками и всегда получать удивительно хорошие сделки. Не говоря уже о охоте на сделки, охота, последняя охота на сделок-самая веселая за 2 года зависимости от электронной съемки
+  opinion-2: Каждый раз, когда я хожу в электронную пейзаж, у меня есть отличные результаты, десятки предметов продолжают собирать, пока я не получу товары, я даже не знаю, когда я заказал то или иное. Так зависит от электронного магазина
+  joined-at: Присоединился к
+  copyright: Авторские права
+  all-rights-reserved: Все права защищены
+contact: 
+  contact-us: Связаться с нами
+  tell-us-desc: Расскажите нам о вашей проблеме, чтобы мы могли помочь вам быстрее
+  tell-us-support: Мы всегда готовы поддержать ваши вопросы 24/7
+  address: Адрес
+  sub-adddress: Quater 6, Linh Trung Ward, Thu Duc District, Ho Chi Minh City
+  country: Вьетнам
+  phone: Телефон
+  mobile: Мобильный
+  hotline: Горячая линия
+  email: Эл. адрес
+  tell-us-your-message: Расскажите нам свое сообщение
+  your-name: Твое имя
+  your-email: Ваш адрес электронной почты
+  subject: Тема
+  note: Твое сообщение
+  submit: Представлять на рассмотрение
+sitemap: 
+  sitemap: Sitemap
+favourite: 
+  add-to-cart: Добавить в корзину
+  favourite-banner: Любимая страница
+about: 
+  about-us: О нас
+  welcome: Добро пожаловать в
+  desc-one: E-Shopee является крупнейшей платформой электронной коммерции в Юго-Восточной Азии и Тайване. Это платформа, адаптированная для региона, что делает онлайн -покупки легкими, безопасными и быстрыми благодаря своей сильной платежной и материально -технической поддержке. Shopee решительно поддерживается Sea (ранее известным как Garena), крупнейшим поставщиком интернет -платформы в Юго -Восточной Азии.
+  desc-two: Shopee можно бесплатно скачать в App Store и Google Play в Сингапуре, Малайзии, Таиланде, Тайване, Индонезии, Вьетнаме и на Филиппинах. Для получения дополнительной информации, пожалуйста, посетите https://shopee.vn
+  our-purpose: Наша цель
+  purpose-desc: Команда Shopee верит в преобразующую силу технологий и хочет изменить мир к лучшему, предоставляя платформу для подключения покупателей и продавцов в одном сообществе. По мере того, как покупки на мобильных устройствах становятся новой нормой, Shopee стремится постоянно улучшать свою платформу для предоставления бесшовного и приятного опыта покупок для всех пользователей и быть выбранной платформой электронной коммерции региона.
+  our-team: Наша команда
+  team-desc: Команда Shopee верит в преобразующую силу технологий и хочет изменить мир к лучшему, предоставляя платформу для подключения покупателей и продавцов в одном сообществе. По мере того, как покупки на мобильных устройствах становятся новой нормой, Shopee стремится постоянно улучшать свою платформу для предоставления бесшовного и приятного опыта покупок для всех пользователей и быть выбранной платформой электронной коммерции региона.
+  testimonial: Отзыв
+  testimonial-desc: Команда Shopee верит в преобразующую силу технологий и хочет изменить мир к лучшему, предоставляя платформу для подключения покупателей и продавцов в одном сообществе. По мере того, как покупки на мобильных устройствах становятся новой нормой, Shopee стремится постоянно улучшать свою платформу для предоставления бесшовного и приятного опыта покупок для всех пользователей и быть выбранной платформой электронной коммерции региона.
