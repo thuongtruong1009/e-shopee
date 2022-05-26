@@ -22,7 +22,7 @@ const useToast = toast()
 const user = useUser()
 
 const resumeAddress = ref([])
-watch(async() => {
+onMounted(async() => {
   loading.isLoading = true
   const { data: addressData } = await AccountRequest.getAddress()
   resumeAddress.value = addressData.filter(e => Object.keys(addressData.id === 0))[0]
@@ -32,19 +32,16 @@ watch(async() => {
 const payload = reactive({
   name: 'dededdede',
   slug: 'Shop-03',
-  address: '',
+  address: resumeAddress.value,
   phone: '',
 })
 
 const handleCreate = async() => {
   loading.isLoading = true
-  await ShopRequest.createShops(payload).then((res) => {
-    // router.push('/seller/home')
-    loading.isLoading = false
-    useToast.updateToast('success', 'Your shop information has been created successfull!', true)
-  }).catch((error) => {
-    return handleError(error)
-  })
+  await ShopRequest.createShops(payload)
+  // router.push('/seller/home')
+  loading.isLoading = false
+  useToast.updateToast('success', 'Your shop information is ready!', true)
 }
 </script>
 

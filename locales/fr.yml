@@ -1,14 +1,486 @@
-button:
-  about: À propos de
-  back: Retour
-  go: Essayer
-  home: Accueil
-  toggle_dark: Basculer en mode sombre
-  toggle_langs: Changer de langue
-intro:
-  desc: Exemple d'application Vite
-  dynamic-route: Démo de route dynamique
-  hi: Salut, {name}!
-  aka: Aussi connu sous le nom de
-  whats-your-name: Comment t'appelles-tu ?
-not-found: Page non trouvée
+pagination: 
+  previous: Précédent
+  next: Suivant
+button: 
+  about: Sur
+  back: Arrière
+  go: ALLER
+  home: Domicile
+  toggle_dark: Basquer le mode sombre
+  toggle_langs: Changer les langues
+cloading: 
+  loading: Chargement des données
+ctrending: 
+  search: Rechercher les tendances pour nous
+  see-more: Voir plus
+  products: des produits
+ctoday: 
+  hint: Indice aujourd'hui
+  sold: Vendu
+  see-more: Voir plus
+  decrease: DIMINUER
+cmonthsale: 
+  download: Téléchargez l'application e-shopee pour recevoir immédiatement des cadeaux de nous
+  get-gift: Obtenez des cadeaux et des offres exclusives maintenant
+carrival: 
+  our-products: Nos produits
+  add-our-product: Ajoutez nos produits à la gamme hebdomadaire
+  new: Nouveau
+caccount:  
+  dashboard: Tableau de bord
+  orders: Ordres
+  download: Télécharger
+  payment-method: Mode de paiement
+  credit-card: Carte de crédit
+  address: Adresse
+  Logout: Se déconnecter
+ccategory: 
+  men-fashion: La mode masculine
+  women-fashion: La mode des femmes
+  phones-accessories: Téléphones et accessoires
+  mother-baby: Mère et bébé
+  electronic-device: Appareil électronique
+  home-life: Accueil et vie
+  computers-laptops: Ordinateurs et ordinateurs portables
+  beauty: Beauté
+  camera-camcorder: Caméscope de la caméra
+  health: Santé
+  watch: Regarder
+  women-shoes: Chaussures de femme
+  men-shoes: Chaussures pour hommes
+  women-purse-bags: Sacs de sac à main pour femmes
+  household-electrical-appliances: Appareils électriques ménagers
+  women-accessories-jewelry: Accessoires et bijoux pour femmes
+  sports-travel: Sports et voyages
+  online-store: Boutique en ligne
+  cars-motorcycles-bicycles: Voitures et motos et vélos
+  online-bookstore: Librairie en ligne
+  men-backpacks-wallets: Sac à dos masculin et portefeuille
+  child-fashion: Mode enfant
+  toy: Jouet
+  laundry-home-care: Buanderie et soins à domicile
+  take-care-of-the-pet: Prendre soin de l'animal
+  vouchers-services: Bons et services
+cpopular: 
+  label: Meilleurs produits de recherche populaires
+  see-all: Voir tout
+  solded: Vendu
+  month: mois
+cflashsale: 
+  label: VENTES FLASH
+  see-all: Voir tout
+  decrease: DIMINUER
+  solded: Vendu
+menu: 
+  admin: Administrer
+  about-page: À propos de la page
+  b-cart-page: Page
+  b-order-page: Page de commande
+  b-filter-page: Page de filtre
+  b-login-page: Page de connexion
+  b-account-page: Page de compte
+  b-wishlist-page: Page de liste de souhaits
+  become-seller: Devenir vendeur
+  notifications: Notifications
+  notifications-warn: Pas de notifications récentes
+  notifications-go: Centre de notifications ouvertes
+  register: S'inscrire
+  login: Connexion
+  s-home: domicile
+  s-dashboard: Tableau de bord
+  s-all-orders: Tous les ordres
+  s-order-canceled: Commande annulée
+  s-all-products: Tous les produits
+  s-add-products: Ajouter des produits
+  s-shop-preview: Aperçu
+  s-shop-edit-profile: Profil de modification de l'atelier
+  s-shop-new-register: Acheter un nouveau registre
+  s-admin-channel: Canal d'administration
+  s-sign-out: Déconnexion
+  s-seller: Vendeur
+header: 
+  home: Domicile
+  shop: Boutique
+  pages: Pages
+  blog: Blog
+  contact: Contacter
+  setting: Paramètre
+  vnd: Vnd
+  rub: FROTTER
+  pound: Broyer
+  usd: USD
+  euro: euro
+  jp: JP
+  rup: Roupie
+  rmb: RMB
+  my ccount: Mon compte
+  checkout: Vérifier
+  download: Télécharger
+  login: Connexion
+  sign out: Déconnexion
+  categories: Catégories
+  placeholder search: Entrez votre clé de recherche ...
+footer: 
+  commit: Nous nous engageons toujours à vous servir avec les meilleurs services. Connectez-vous pour recevoir plus d'offres immédiatement.
+  help: BESOIN D'AIDE?
+  copyright: droits d'auteur
+  all rights reserved: Tous les droits sont réservés
+  information: INFORMATION
+  delivery: Livraison
+  about us: À propos de nous
+  secure payment: Paiement sécurisé
+  contact us: Nous contacter
+  sitemap: Sitemap
+  stores: Magasins
+  link: LIENS
+  privacy policy: Politique de confidentialité
+  term of service: Termes du contrat de service
+  service requirement: Exigence de service
+  best sales: Meilleures ventes
+  login: Connexion
+  my account: Mon compte
+  newsletter: BULLETIN
+  subscribe: Vous pouvez vous désinscrire à tout moment. À cette fin, veuillez trouver nos coordonnées dans l'avis juridique.
+  sign up today: Soyez le premier à savoir. Inscrivez-vous à la newsletter aujourd'hui!
+  sign up: S'inscrire
+service: 
+  shipping-title: Assistance maritime
+  shipping-desc: Mettez toujours à jour l'état
+  return-title: Retours sans frais
+  return-desc: Gratuit dans les 9 jours
+  contact-title: Soutien
+  contact-desc: Prêt à contacter tout moment
+  payment-secure-title: Paiement sécurisé
+  payment-secure-desc: Facile et pratique.
+  chat-title: Chat en direct
+  chat-desc: Exchange de partage avec le vendeur
+auth: 
+  a-banner: Administrateur professionnel
+  a-desc: Gérez votre magasin plus efficacement et visualisation sur E-Shopee avec canal d'administration
+  a-title: Connectez-vous sur canal d'administration
+  a-remember: Souviens-toi de moi
+  a-login: Connexion
+  b-register-title: Créer un compte
+  b-register-desc: Rejoignez-nous et commencez à magasiner dans votre style
+  b-register-btn: Créer un compte
+  b-register-refer: Connexion
+  b-register-already-account: Avoir déjà un compte
+  b-login-welcome: Content de te revoir
+  b-login-desc: Découvrez de nombreuses offres et services attrayants
+  b-oauth: ou utilisez un e-mail pour la connexion
+  b-not-account: Je n'ai pas de compte
+  b-login-forgot: Mot de passe oublié
+  b-login-btn: S'IDENTIFIER
+  b-forgot-title: Vous avez oublié votre mot de passe
+  b-forgot-invite: Il est facile de réinitialiser un nouveau mot de passe dans un instantané
+  b-forgot: Oublié
+  b-forgot-form-title: Mot de passe oublié
+  b-forgot-form-desc: Veuillez saisir votre identifiant ou adresse mail. Vous aurez reçu un lien pour créer un nouveau mot de passe par e-mail
+  b-forgot-form-button: Obtenir un nouveau mot de passe
+  b-reset-title: Réinitialisez votre nouveau mot de passe
+  b-reset-invite: Vérifiez le code de confirmation envoyé à partir de votre e-mail enregistré
+  b-reset: Réinitialiser
+  b-reset-form-button: Réinitialiser le mot de passe
+  b-reset-banner: Centre d'assistance par mot de passe
+  b-new-password: Nouveau mot de passe
+account: 
+  account-banner: Mon compte
+  dashboard: Tableau de bord
+  hello: Bonjour
+  joined-at: Joint à
+  not-you: Sinon toi
+  logout: Se déconnecter
+  dashboard-desc: À partir de votre tableau de bord de compte. Vous pouvez facilement vérifier {symbol} Afficher vos commandes récentes, gérer vos adresses d'expédition et de facturation et modifier vos détails de mot de passe et de compte
+  order-title: Vos listes de commandes
+  order-no: Non
+  order-name: Nom
+  order-date: Date
+  order-status: Statut
+  order-total: Total
+  order-action: Action
+  save-changes: Sauvegarder les modifications
+  payment-method: Mode de paiement
+  payment-owner: Compte propriétaire
+  payment-identification: Numéro d'identification
+  payment-id: ID de paiement
+  payment-bank: Nom de banque
+  payment-branch: Succursale de la banque
+  payment-account: Numéro de compte
+  not-payment: Vous n'avez pas encore enregistré votre mode de paiement
+  digits: chiffres
+  payment-update: Mettre à jour le paiement
+  payment-create: Créer un paiement
+  credit-card: Carte de crédit
+  card-number: Numéro de carte
+  address-register: Registre d'adresses
+  zip-postal: Zip postal
+  postal-zip-code: Code postal postal
+  card-expiry: Date d'expiration
+  card-name: Nom du titulaire
+  card-cvv: CVC
+  card-address: Adresse d'enregistrement
+  card-upadte: Carte de mise à jour
+  card-create: Créer une carte
+  have-card: Vous avez 1 mode de paiement
+  not-card: Vous n'avez pas encore enregistré votre mode de paiement
+  address-billing: adresse de facturation
+  address-owner: Nom complet
+  address-phone: Numéro de téléphone
+  address: Adresse
+  address-location: Emplacement
+  address-state: État
+  address-city: Ville
+  address-town: Ville
+  is-home: Est la maison
+  is-pickup-address: Est l'adresse de ramassage
+  is-default-address: Est l'adresse par défaut
+  is-return-address: Est l'adresse de retour
+  false: FAUX
+  true: vrai
+  address-update: Adresse de mise à jour
+  address-create: Créer l'adresse
+shop: 
+  online: En ligne
+  ago: depuis
+  days: jours
+  hours: les heures
+  minutes: minutes
+  follow: Suivre
+  chat: Discuter
+  products: Des produits
+  cancel-ratio: Ratio d'annulation
+  following: Suivant
+  follower: Disciple
+  joined: Joint
+  rating: Évaluation
+  shop-information: Informations sur les magasins
+  sort-by: Trier par
+  popular: Populaire
+  latest: Dernier
+  price: Prix
+  default: défaut
+  low-to-high: de bas en haut
+  high-to-low: haut en bas
+  address: Adresse
+  manage-shipping: Gérez votre adresse d'expédition et de livraison
+  add-new-address: Ajouter une nouvelle adresse
+  name: Nom
+  phone-number: Numéro de téléphone
+  edit: Modifier
+  default-address: Adresse par défaut
+  profile-information: Informations sur le profil
+  view-update-shop: Afficher le statut de la boutique et mettre à jour le profil de votre boutique
+  join-at: Se joindre à
+  id: IDENTIFIANT
+  edit-cover-photo: Modifier la photo de couverture
+  response-rate: Taux de réponse
+  response-time: Temps de réponse
+  within-a-few-hours: En quelques heures
+  shop-reviews: Avis sur les magasins
+  unsuccessful-rate: Taux infructueux
+  shop-id: Carte d'identité
+  shop-name: Nom de la boutique
+  some-preview: Quelques photos ou vidéo d'aperçu
+  add-photos-videos: Ajouter des photos ou des vidéos
+  shop-description: Description de l'atelier
+category: 
+  title: Ajouter 1 nouveau produit
+  desc: Veuillez sélectionner la catégorie appropriée pour votre produit
+  product-name: Nom de produit
+  tutorial1: Choisissez la bonne catégorie
+  tutorial2: Cliquez ici pour en savoir plus
+  selected: Choisi
+  next: Suivant
+cart: 
+  title: Vos articles de panier
+  cart: Chariot
+  preview: Aperçu
+  name: Nom
+  category: Catégorie
+  price: Prix
+  quantity: Quantité
+  action: Action
+  update: Mise à jour
+  promo-code: Avez vous un code de réduction
+  checkout: Vérifier
+  subtotal: Total
+  shipping: Expédition
+  tax: Impôt
+  total: Total
+  view-cart: Voir le chariot
+  free-ship: Livraison gratuite sur toutes les commandes
+product: 
+  evaluate: Évaluer
+  solded: Vendu
+  weight: Masse
+  buy-with-deal: Acheter avec une offre de vente
+  shipping: Expédition
+  transport: Transport vers
+  quantities: Quantités
+  available-products: produits disponibles
+  add-to-cart: Ajouter au panier
+  order-now: Commandez maintenant
+  total-liked: Total aimé
+  insurance: Assurance
+  return-refund: jours pour revenir et rembourser
+  online: En ligne
+  ago: depuis
+  chat-now: Discuter maintenant
+  visit-shop: Visiter la boutique
+  productions: Production
+  response-ratio: Rapport de réponse
+  response-time: Temps de réponse
+  in-some-hours: dans quelques heures
+  joined: Joint
+  follower: Disciple
+  product-describes: Le produit décrit
+  category: Catégorie
+  organization: Organisme
+  updating: Mise à jour
+  origin: Origine
+  address: Adresse
+  warehouse: Entrepôt
+  ship-from: Expédier de
+  product-evalutions: Évaluations de produits
+search: 
+  filter-by: Filtrer par
+  categories: Catégories
+  price: Prix
+  color: Couleur
+  brand: Marque
+  tags: Tags de produit
+  there-are: Il y a
+  products: des produits
+  sort-by: Trier par
+  relevance: Pertinence
+  a-z: De A à Z
+  z-a: Z à un
+  low-high: de bas en haut
+  high-low: haut en bas
+  new: Nouveau
+  name: Nom
+  availability: Disponibilité
+  add-to-cart: Ajouter au panier
+  add-success-message: Produit avec succès à votre panier
+  dimension: Dimension
+  quantity: Quantité
+  total-products: Produits totaux
+  total-shipping: Expédition totale
+  taxes: Taxes
+  total: Total
+  continue-shopping: Continuer vos achats
+  proceed-checkout: Passer à la caisse
+  there-is: Il y a
+  item-in-your-cart: Article dans votre panier
+checkout: 
+  personal-information: Renseignements personnels
+  order-as-guest: Commandez en tant qu'invité
+  login: Connexion
+  pronoun: Pronom
+  mr: M
+  mrs: Mme
+  name: Nom
+  email: E-mail
+  password: Mot de passe
+  show: Afficher
+  birthdate: Date de naissance
+  receive offers: Recevoir des offres de nos partenaires
+  signup-newsletter: Inscrivez-vous à notre newsletter
+  continue: Continuez
+  address: Adresse
+  address-desc: L'adresse sélectionnée sera d'aider à livrer pour vous plus EASLIFFR ET plus rapide
+  city: Ville
+  zip: Zip / code postal
+  country: Pays
+  vietnam: Vietnam
+  russia: Russie
+  england: Angleterre
+  united-states: États-Unis
+  japan: Japon
+  france: France
+  india: Inde
+  china: Chine
+  not-have-country: Ne pas trouver mon pays
+  phone: Téléphoner
+  shipping-method: Mode de livraison
+  delivery-next-day: Livraison le lendemain
+  note-field: Si vous souhaitez ajouter une note sur votre commande, veuillez l'écrire dans le domaine ci-dessous
+  payment: Paiement
+  pay-by-check: Payer par carte de crédit / visa / carte maître
+  pay-by-wire: Payer par bancaire
+  pay-by-cash: Payer en espèces à la livraison
+  pay-by-momo: Payer par momo
+  item: Objet
+  shipping: Expédition
+  total: Total
+  taxes: Taxes
+  process-checkout: Passer à la caisse
+  secure-policy: Politique de sécurité (commit par rassurance)
+  delivery-policy: Politique de livraison (commit par rassurance)
+  return-policy: Politique de retour (commit par rassurance)
+index: 
+  admin-chanel: Admin Chanel
+  seller-chanel: Vendeur Chanel
+  buying-chanel: Acheter Chanel
+  exploring: Explorant
+  banner-desc: La meilleure application de shopping du meilleur monde
+  download-now: Téléchargez l'application maintenant
+  service-title: Faire du shopping à tout moment, n'importe où
+  service-desc: Profitez de promotions attrayantes, super économies des magasins les plus prestigieux
+  transfer-support: Transfert support
+  transfer-desc: Le statut de votre commande est toujours mis à jour en détail puisque vous passez votre commande
+  customer-support: Service client
+  customer-desc: Le département du service client est toujours prêt à vous soutenir 24/7
+  today-suggestion: Suggestions d'aujourd'hui
+  today-suggestion-desc: Choisissez les bons produits pour vous dans les suggestions d'aujourd'hui
+  safe-payment: Méthode de paiement sûr
+  safe-payment-desc: Paiement facile et pratique. Payez à la livraison ou à la carte de crédit par crédit / débit
+  chat: Discuter
+  chat-feature: fonctionnalité
+  chat-desc: Discutez directement avec le vendeur pour plus de conseils sur les produits. Vous pouvez également négocier le prix souhaité avec le vendeur via la section "CHAT"
+  guarantee-privacy: Garantir la confidentialité
+  commit: Le shopee engage que le montant que vous payez sera transféré au vendeur après avoir reçu les marchandises. Nous vous protégeons toujours
+  advertisement-1-desc: L'endroit pour posséder tous les produits que vous aimez
+  advertisement-2-title: Acheter et vendre en ligne
+  advertisement-2-desc: Profitez de faire du shopping et de faire des affaires avec du prestige
+  advertisement-3-title: Cadeaux pour les nouveaux clients
+  advertisement-3-desc: Cadeaux exclusifs et attrayants pour les nouveaux clients à E-Shopee
+  customer-opinion-title: Que disent les utilisateurs sur e-shopee
+  opinion-1: J'ai toujours hâte de faire l'e-shoope de rechercher des offres et d'obtenir toujours des offres étonnamment bonnes. Sans oublier que chaque présentation de la chasse est amusante, la dernière chasse de transactions est la plus amusante de mes 2 années de dépendance à l'e-shope
+  opinion-2: Chaque fois que je vais à E-Shopee, j'ai d'excellents résultats, des dizaines d'articles continuent de reprendre jusqu'à ce que je reçois les marchandises, je ne sais même pas quand j'ai commandé ceci ou cela. Tellement accro à l'e-shopee
+  joined-at: Joint à
+  copyright: droits d'auteur
+  all-rights-reserved: Tous les droits sont réservés
+contact: 
+  contact-us: Nous contacter
+  tell-us-desc: Parlez-nous de votre problème afin que nous puissions vous aider plus rapidement
+  tell-us-support: Nous sommes toujours prêts à soutenir vos questions 24/7
+  address: Adresse
+  sub-adddress: Quater 6, Linh Trung Ward, Thu Duc District, Ho Chi Minh Ville
+  country: Vietnam
+  phone: Téléphoner
+  mobile: Portable
+  hotline: Hotline
+  email: E-mail
+  tell-us-your-message: Dites-nous votre message
+  your-name: Votre nom
+  your-email: Votre e-mail
+  subject: Matière
+  note: Votre message
+  submit: Soumettre
+sitemap: 
+  sitemap: sitemap
+favourite: 
+  add-to-cart: Ajouter au panier
+  favourite-banner: Page préférée
+about: 
+  about-us: À propos de nous
+  welcome: Bienvenue à
+  desc-one: E-Shopee est la plus grande plate-forme de commerce électronique d'Asie du Sud-Est et de Taïwan. Il s'agit d'une plate-forme adaptée à la région, ce qui rend les achats en ligne faciles, sécurisés et rapides grâce à son paiement solide et son soutien logistique. Les acheteurs sont fortement soutenus par SEA (anciennement connu sous le nom de Garena), le plus grand fournisseur de plate-forme Internet d'Asie du Sud-Est.
+  desc-two: Les acheteurs peuvent être téléchargés gratuitement sur l'App Store et Google Play à Singapour, en Malaisie, en Thaïlande, à Taïwan, en Indonésie, au Vietnam et aux Philippines. Pour plus d'informations, veuillez visiter https://shopee.vn
+  our-purpose: Notre but
+  purpose-desc: L'équipe des acheteurs croit au pouvoir transformateur de la technologie et veut changer le monde pour le mieux en fournissant une plate-forme pour connecter les acheteurs et les vendeurs dans une communauté. Alors que les achats sur les appareils mobiles deviennent la nouvelle norme, Shopee vise à améliorer en permanence sa plate-forme pour offrir une expérience de magasinage transparente et agréable pour tous les utilisateurs et être la plate-forme de commerce électronique de la région.
+  our-team: Notre équipe
+  team-desc: L'équipe des acheteurs croit au pouvoir transformateur de la technologie et veut changer le monde pour le mieux en fournissant une plate-forme pour connecter les acheteurs et les vendeurs dans une communauté. Alors que les achats sur les appareils mobiles deviennent la nouvelle norme, Shopee vise à améliorer en permanence sa plate-forme pour offrir une expérience de magasinage transparente et agréable pour tous les utilisateurs et être la plate-forme de commerce électronique de la région.
+  testimonial: Témoignage
+  testimonial-desc: L'équipe des acheteurs croit au pouvoir transformateur de la technologie et veut changer le monde pour le mieux en fournissant une plate-forme pour connecter les acheteurs et les vendeurs dans une communauté. Alors que les achats sur les appareils mobiles deviennent la nouvelle norme, Shopee vise à améliorer en permanence sa plate-forme pour offrir une expérience de magasinage transparente et agréable pour tous les utilisateurs et être la plate-forme de commerce électronique de la région.

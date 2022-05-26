@@ -129,7 +129,7 @@ const handleOrder = () => {
 }
 // ----------------------------------
 const onvisitShop = () => {
-  router.push(`/shop/${encodeURIComponent(product.productRequestID)}`)
+  router.push(`/shop/${encodeURIComponent(seller.payget.id)}`)
 }
 </script>
 
@@ -307,7 +307,8 @@ const onvisitShop = () => {
 
   <div class="shop-product-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2 divide-x divide-1 divide-solid divide-gray-300 flex flex-wrap">
     <div class="flex">
-      <img :src="`https://tp-o.tk/resources/images/${seller.payget.avatar_image}`" alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
+      <img v-if="seller.payget.avatar_image" :src="`https://tp-o.tk/resources/images/${seller.payget.avatar_image}`" alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4 object-cover">
+      <img v-else src="https://cf.shopee.vn/file/7ebd612d6fddcf7f4114bf2d97da382a_tn" alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
       <div class="min-w-85">
         <p class="font-medium text-md">
           {{ seller.payget.name }}
