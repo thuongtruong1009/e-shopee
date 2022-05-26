@@ -23,10 +23,14 @@ export const keyword = defineStore('keyword', () => {
     savedKeyword.value = name
   }
 
+  // product data after search
+  const resultProduct = ref('')
+
   return {
     setNewKeyword,
     otherKeyword,
     savedKeyword,
+    resultProduct,
   }
 })
 

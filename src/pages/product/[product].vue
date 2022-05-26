@@ -32,8 +32,6 @@ const seller = useSeller()
 const productResponseData = ref([])
 const productPrice = ref()
 const productStock = ref()
-// const shopPublic = ref()
-// const shopAvatar = ref()
 
 onMounted(async() => {
   if (!localStorage.getItem('token')) { router.push({ path: '/buyer/login' }) }
@@ -42,10 +40,6 @@ onMounted(async() => {
     const { data: productData } = await ProductRequest.getProductsById(product.productRequestID)
     loading.isLoading = false
     productResponseData.value = productData
-
-    // const { data: shopData } = await ShopRequest.getShopsById(product.shopRequestID)
-    // shopPublic.value = shopData
-    // shopAvatar.value = `https://tp-o.tk/resources/images/${shopData.avatar_image}`
   }
 })
 

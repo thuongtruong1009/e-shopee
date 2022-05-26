@@ -9,6 +9,7 @@ import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
 import { useLoading } from '~/stores/loading'
 import CartRequest from '~/services/cart-request'
+import { floorNumber } from '~/utils/floorNumber'
 import AccountRequest from '~/services/account-request'
 import OrderRequest from '~/services/order-request'
 import { handleError } from '~/helpers/error'
@@ -120,6 +121,7 @@ const handleOrder = async() => {
           <tr v-for="(item, index) in cart.result" :key="index" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
             <td class="p-2">
               <div class="flex items-center">
+                <!-- <img v-if="item.product.images[0]" :src="`https://tp-o.tk/resources/images/${item.product.images[0]}`" alt="img_preview" class="max-w-40 max-h-40 rounded-md"> -->
                 <img src="/img/product/shoes/8.webp" alt="img_preview" class="max-w-40 max-h-40 rounded-md">
               </div>
             </td>
@@ -184,7 +186,7 @@ const handleOrder = async() => {
                 <span />
               </li>
               <li class="totalRow final">
-                <span class="label">{{ t('cart.total') }}</span><span class="value">${{ cart.result.reduce((accum,item) => accum + item.total_price, 0) }}</span>
+                <span class="label">{{ t('cart.total') }}</span><span class="value">${{ floorNumber(cart.result.reduce((accum,item) => accum + item.total_price, 0)) }}</span>
               </li>
             </ul>
           </div>
