@@ -1,14 +1,486 @@
+pagination:
+  previous: 이전의
+  next: 다음
 button:
-  about: 소개
-  back: 뒤로가기
-  go: 이동
-  home: 홈
-  toggle_dark: 다크모드 토글
-  toggle_langs: 언어 변경
-intro:
-  desc: Vite 애플리케이션 템플릿
-  dynamic-route: 다이나믹 라우트 데모
-  hi: 안녕, {name}!
-  whats-your-name: 이름이 뭐예요?
-not-found: 찾을 수 없습니다
-
+  about: 에 대한
+  back: 뒤
+  go: 가다
+  home: 집
+  toggle_dark: 어두운 모드를 전환합니다
+  toggle_langs: 언어를 변경하십시오
+cloading: 
+  loading: 데이터로드
+ctrending: 
+  search: 우리를위한 추세를 검색합니다
+  see-more: 더보기
+  products: 제품
+ctoday: 
+  hint: 오늘 힌트
+  sold: 매각
+  see-more: 더보기
+  decrease: 감소하다
+cmonthsale: 
+  download: 우리로부터 선물을 즉시 받으려면 e-shopee 앱을 다운로드하십시오
+  get-gift: 지금 선물과 독점 거래를 받으십시오
+carrival: 
+  our-products: 우리 제품
+  add-our-product: 우리 제품을 매주 라인업에 추가하십시오
+  new: 새로운
+caccount:  
+  dashboard: 계기반
+  orders: 명령
+  download: 다운로드
+  payment-method: 지불 방법
+  credit-card: 신용 카드
+  address: 주소
+  Logout: 로그 아웃
+ccategory: 
+  men-fashion: 남자 패션
+  women-fashion: 여성 패션
+  phones-accessories: 전화 및 액세서리
+  mother-baby: 어머니와 아기
+  electronic-device: 전자 기기
+  home-life: 가정과 생활
+  computers-laptops: 컴퓨터 및 노트북
+  beauty: 아름다움
+  camera-camcorder: 카메라 캠코더
+  health: 건강
+  watch: 보다
+  women-shoes: 여성화
+  men-shoes: 남자 신발
+  women-purse-bags: 여성 지갑 가방
+  household-electrical-appliances: 가정 전기 가전 제품
+  women-accessories-jewelry: 여성용 액세서리 및 보석
+  sports-travel: 스포츠 및 여행
+  online-store: 온라인 매장
+  cars-motorcycles-bicycles: 자동차 및 오토바이 및 자전거
+  online-bookstore: 온라인 서점
+  men-backpacks-wallets: 남자 배낭과 지갑
+  child-fashion: 어린이 패션
+  toy: 장난감
+  laundry-home-care: 세탁 및 가정 간호
+  take-care-of-the-pet: 애완 동물을 돌보다
+  vouchers-services: 바우처 및 서비스
+cpopular: 
+  label: 최고의 인기있는 검색 제품
+  see-all: 모두보기
+  solded: 매각
+  month: 월
+cflashsale: 
+  label: 플래시 판매
+  see-all: 모두보기
+  decrease: 감소하다
+  solded: 매각
+menu: 
+  admin: 관리자
+  about-page: 페이지 정보
+  b-cart-page: 카트 페이지
+  b-order-page: 주문 페이지
+  b-filter-page: 필터 페이지
+  b-login-page: 로그인 페이지
+  b-account-page: 계정 페이지
+  b-wishlist-page: 위시리스트 페이지
+  become-seller: 판매자가 되십시오
+  notifications: 알림
+  notifications-warn: 최근 알림이 없습니다
+  notifications-go: 오픈 알림 센터
+  register: 등록하다
+  login: 로그인
+  s-home: 집
+  s-dashboard: 계기반
+  s-all-orders: 모든 주문
+  s-order-canceled: 주문 취소
+  s-all-products: 모든 제품
+  s-add-products: 제품 추가
+  s-shop-preview: 쇼핑 미리보기
+  s-shop-edit-profile: 편집 프로필을 쇼핑하십시오
+  s-shop-new-register: 새로운 레지스터 쇼핑
+  s-admin-channel: 관리자 채널
+  s-sign-out: 로그 아웃하십시오
+  s-seller: 파는 사람
+header: 
+  home: 집
+  shop: 가게
+  pages: 페이지
+  blog: 블로그
+  contact: 연락하다
+  setting: 환경
+  vnd: VND
+  rub: 장애
+  pound: 파운드
+  usd: USD
+  euro: 유로
+  jp: JP
+  rup: 루피
+  rmb: RMB
+  my ccount: 내 계정
+  checkout: 점검
+  download: 다운로드
+  login: 로그인
+  sign out: 로그 아웃하십시오
+  categories: 카테고리
+  placeholder search: 검색 키를 입력하십시오 ...
+footer: 
+  commit: 우리는 항상 최고의 서비스를 제공하기 위해 최선을 다하고 있습니다. 더 많은 제안을 즉시 받으려면 연결하십시오.
+  help: 도움이 필요하다?
+  copyright: 저작권
+  all rights reserved: 판권 소유
+  information: 정보
+  delivery: 배달
+  about us: 우리에 대해
+  secure payment: 보안 결제
+  contact us: 문의하기
+  sitemap: 사이트 맵
+  stores: 백화점
+  link: 연결
+  privacy policy: 개인 정보 정책
+  term of service: 서비스 기간
+  service requirement: 서비스 요구 사항
+  best sales: 최고의 판매
+  login: 로그인
+  my account: 내 계정
+  newsletter: 뉴스 레터
+  subscribe: 언제라도 구독을 취소 할 수 있습니다. 이 목적을 위해 법적 통지로 연락처 정보를 찾으십시오.
+  sign up today: 먼저 아는 사람이 되십시오. 오늘 뉴스 레터에 가입하십시오!
+  sign up: 가입하기
+service: 
+  shipping-title: 배송 지원
+  shipping-desc: 항상 상태를 업데이트하십시오
+  return-title: 무료 반품
+  return-desc: 9 일 이내에 무료
+  contact-title: 지원하다
+  contact-desc: 누구나 연락 할 준비가되었습니다
+  payment-secure-title: 지불 보안
+  payment-secure-desc: 쉽고 편리합니다.
+  chat-title: 라이브 채팅
+  chat-desc: 판매자와 공유하십시오
+auth: 
+  a-banner: 전문가
+  a-desc: 상점을보다 효과적으로 관리하고 관리자 채널을 사용하여 e-shopee에서 시각화
+  a-title: 관리자 채널에 로그인하십시오
+  a-remember: 날 기억해
+  a-login: 로그인
+  b-register-title: 계정을 만듭니다
+  b-register-desc: 우리와 함께 그리고 당신의 스타일로 쇼핑을 시작하십시오
+  b-register-btn: 계정을 만듭니다
+  b-register-refer: 로그인
+  b-register-already-account: 이미 계정이 있습니다
+  b-login-welcome: 다시 오신 것을 환영합니다
+  b-login-desc: 많은 매력적인 제안과 서비스를 경험합니다
+  b-oauth: 또는 로그인에 이메일을 사용하십시오
+  b-not-account: 계정이 없습니다
+  b-login-forgot: 비밀번호를 잊으 셨나요
+  b-login-btn: 로그인
+  b-forgot-title: 비밀번호를 잊었습니다
+  b-forgot-invite: 새 비밀번호를 스냅으로 재설정하기 쉽습니다.
+  b-forgot: 잊어버렸다
+  b-forgot-form-title: 비밀번호를 잊으 셨나요
+  b-forgot-form-desc: 사용자 이름 또는 이메일 주소를 입력하십시오. 이메일을 통해 새 비밀번호를 만들 수있는 링크를 받았습니다.
+  b-forgot-form-button: 새 비밀번호를 얻으십시오
+  b-reset-title: 새 비밀번호를 재설정하십시오
+  b-reset-invite: 등록 된 이메일에서 보낸 확인 코드를 확인하십시오
+  b-reset: 초기화
+  b-reset-form-button: 암호를 재설정
+  b-reset-banner: 비밀번호 지원 센터
+  b-new-password: 새 비밀번호
+account: 
+  account-banner: 내 계정
+  dashboard: 계기반
+  hello: 여보세요
+  joined-at: 에 합류했습니다
+  not-you: 당신이 아니라면
+  logout: 로그 아웃
+  dashboard-desc: 계정 대시 보드에서. {symbol} 최근 주문보기, 배송 및 청구 주소를 관리하고 비밀번호 및 계정 세부 정보 편집을 쉽게 확인할 수 있습니다.
+  order-title: 주문 목록
+  order-no: 아니요
+  order-name: 이름
+  order-date: 날짜
+  order-status: 상태
+  order-total: 총
+  order-action: 행동
+  save-changes: 변경 사항을 저장하다
+  payment-method: 지불 방법
+  payment-owner: 소유자 계정
+  payment-identification: 식별 번호
+  payment-id: 지불 ID
+  payment-bank: 은행 이름
+  payment-branch: 은행 지점
+  payment-account: 계좌 번호
+  not-payment: 아직 지불 방법을 저장하지 않았습니다
+  digits: 숫자
+  payment-update: 결제 업데이트
+  payment-create: 지불을 만듭니다
+  credit-card: 신용 카드
+  card-number: 카드 번호
+  address-register: 주소 레지스터
+  zip-postal: 우편 우편
+  postal-zip-code: 우편 우편 번호
+  card-expiry: 만료일
+  card-name: 카드 소지자 이름
+  card-cvv: CVV
+  card-address: 등록 주소
+  card-upadte: 업데이트 카드
+  card-create: 카드를 만듭니다
+  have-card: 지불 방법 1 개가 있습니다
+  not-card: 아직 지불 방법을 저장하지 않았습니다
+  address-billing: 청구 지 주소
+  address-owner: 전체 이름
+  address-phone: 전화 번호
+  address: 주소
+  address-location: 위치
+  address-state: 상태
+  address-city: 도시
+  address-town: 도시
+  is-home: 집입니다
+  is-pickup-address: 픽업 주소입니다
+  is-default-address: 기본 주소입니다
+  is-return-address: 반환 주소입니다
+  false: 거짓
+  true: 진실
+  address-update: 업데이트 주소
+  address-create: 주소를 만듭니다
+shop: 
+  online: 온라인
+  ago: ~ 전에
+  days: 날
+  hours: 시간
+  minutes: 분
+  follow: 따르다
+  chat: 채팅
+  products: 제품
+  cancel-ratio: 취소 비율
+  following: 수행원
+  follower: 수행원
+  joined: 가입
+  rating: 평가
+  shop-information: 쇼핑 정보
+  sort-by: 정렬 기준
+  popular: 인기 있는
+  latest: 최신
+  price: 가격
+  default: 기본
+  low-to-high: 낮음에서 높음
+  high-to-low: 높거나 낮은
+  address: 주소
+  manage-shipping: 배송 및 배송 주소를 관리하십시오
+  add-new-address: 새 주소를 추가하십시오
+  name: 이름
+  phone-number: 전화 번호
+  edit: 편집하다
+  default-address: 기본 주소
+  profile-information: 프로필 정보
+  view-update-shop: 상점 상태를보고 상점 프로필을 업데이트하십시오
+  join-at: 가입하십시오
+  id: ID
+  edit-cover-photo: 표지 사진 편집
+  response-rate: 응답 속도
+  response-time: 응답 시간
+  within-a-few-hours: 몇 시간 안에
+  shop-reviews: 쇼핑 리뷰
+  unsuccessful-rate: 실패한 비율
+  shop-id: 상점 ID
+  shop-name: 상점 이름
+  some-preview: 일부 미리보기 사진 또는 비디오
+  add-photos-videos: 사진이나 비디오를 추가하십시오
+  shop-description: 상점 설명
+category: 
+  title: 신제품 1 개를 추가하십시오
+  desc: 제품에 적합한 범주를 선택하십시오
+  product-name: 상품명
+  tutorial1: 올바른 범주를 선택하십시오
+  tutorial2: 알아 보려면 여기를 클릭하십시오
+  selected: 선택된
+  next: 다음
+cart: 
+  title: 카트 항목
+  cart: 카트
+  preview: 시사
+  name: 이름
+  category: 범주
+  price: 가격
+  quantity: 수량
+  action: 행동
+  update: 업데이트
+  promo-code: 프로모션 코드가 있습니다
+  checkout: 점검
+  subtotal: 소계
+  shipping: 배송
+  tax: 세
+  total: 총
+  view-cart: 장바구니보기
+  free-ship: 모든 주문에 대한 무료 배송
+product: 
+  evaluate: 평가하다
+  solded: 매각
+  weight: 무게
+  buy-with-deal: 판매 거래로 구매하십시오
+  shipping: 배송
+  transport: 운송
+  quantities: 수량
+  available-products: 사용 가능한 제품
+  add-to-cart: 카트에 추가하십시오
+  order-now: 지금 주문하세요
+  total-liked: 총 좋아요
+  insurance: 보험
+  return-refund: 반품 및 환불 일
+  online: 온라인
+  ago: ~ 전에
+  chat-now: 지금 채팅
+  visit-shop: 가게를 방문하십시오
+  productions: 생산
+  response-ratio: 응답 비율
+  response-time: 응답 시간
+  in-some-hours: 몇 시간 후에
+  joined: 가입
+  follower: 수행원
+  product-describes: 제품을 설명합니다
+  category: 범주
+  organization: 조직
+  updating: 업데이트
+  origin: 기원
+  address: 주소
+  warehouse: 창고
+  ship-from: 에서 배송하다
+  product-evalutions: 제품 평가
+search: 
+  filter-by: 필터
+  categories: 카테고리
+  price: 가격
+  color: 색깔
+  brand: 상표
+  tags: 제품 태그
+  there-are: 거기 있습니다
+  products: 제품
+  sort-by: 정렬 기준
+  relevance: 관련성
+  a-z: a ~ z
+  z-a: z에서 a
+  low-high: 낮음에서 높음
+  high-low: 높거나 낮은
+  new: 새로운
+  name: 이름
+  availability: 유효성
+  add-to-cart: 카트에 추가하십시오
+  add-success-message: 제품이 장바구니에 성공적으로 추가되었습니다
+  dimension: 치수
+  quantity: 수량
+  total-products: 총 제품
+  total-shipping: 총 배송
+  taxes: 구실
+  total: 총
+  continue-shopping: 쇼핑을 계속
+  proceed-checkout: 체크 아웃으로 진행하십시오
+  there-is: 거기 있습니다
+  item-in-your-cart: 카트에 항목
+checkout: 
+  personal-information: 개인 정보
+  order-as-guest: 손님으로 주문하십시오
+  login: 로그인
+  pronoun: 대명사
+  mr: 씨
+  mrs: 부인
+  name: 이름
+  email: 이메일
+  password: 비밀번호
+  show: 보여주다
+  birthdate: 생일
+  receive offers: 파트너로부터 제안을받습니다
+  signup-newsletter: 뉴스 레터에 가입하십시오
+  continue: 계속하다
+  address: 주소
+  address-desc: 선택된 주소는 우리가 더 쉬운 더 빠르고 더 빠른 배송에 도움이 될 것입니다.
+  city: 도시
+  zip: 지퍼/우편 번호
+  country: 국가
+  vietnam: 베트남
+  russia: 러시아
+  england: 영국
+  united-states: 연합 국가
+  japan: 일본
+  france: 프랑스
+  india: 인도
+  china: 중국
+  not-have-country: 내 나라를 찾지 마십시오
+  phone: 핸드폰
+  shipping-method: 배송 방법
+  delivery-next-day: 다음 날 배달
+  note-field: 주문에 대한 메모를 추가하려면 아래 필드에 작성하십시오.
+  payment: 지불
+  pay-by-check: 신용/비자 직불/마스터 카드로 지불합니다
+  pay-by-wire: 은행 와이어로 지불하십시오
+  pay-by-cash: 배송시 현금으로 지불하십시오
+  pay-by-momo: Momo에 의해 지불하십시오
+  item: 안건
+  shipping: 배송
+  total: 총
+  taxes: 구실
+  process-checkout: 체크 아웃으로 진행하십시오
+  secure-policy: 보안 정책 (안심으로 커밋)
+  delivery-policy: 배달 정책 (안심으로 커밋)
+  return-policy: 반품 정책 (안심으로 커밋)
+index: 
+  admin-chanel: 관리자 샤넬
+  seller-chanel: 판매자 샤넬
+  buying-chanel: 샤넬 구매
+  exploring: 탐험
+  banner-desc: 세계 최고의 쇼핑 앱
+  download-now: 지금 앱을 다운로드하십시오
+  service-title: 언제 어디서나 쇼핑
+  service-desc: 매력적인 프로모션, 가장 유명한 매장에서 슈퍼 절약을 즐기십시오.
+  transfer-support: 전송 지원
+  transfer-desc: 주문을 주문하기 때문에 주문 상태가 항상 상세하게 업데이트됩니다.
+  customer-support: 고객 지원
+  customer-desc: 고객 관리 부서는 항상 24/7을 지원할 준비가되었습니다.
+  today-suggestion: 오늘의 제안
+  today-suggestion-desc: 오늘의 제안에서 귀하에게 적합한 제품을 선택하십시오.
+  safe-payment: 안전한 지불 방법
+  safe-payment-desc: 쉽고 편리한 지불. 신용/직불 카드로 배송 또는 선불 결제
+  chat: 채팅
+  chat-feature: 특징
+  chat-desc: 더 많은 제품 조언을 얻으려면 판매자와 직접 채팅하십시오. "채팅"섹션을 통해 판매자와 원하는 가격을 협상 할 수도 있습니다.
+  guarantee-privacy: 개인 정보를 보장하십시오
+  commit: Shopee는 상품을받은 후 지불 금액이 판매자에게 양도 될 것이라고 위원합니다. 우리는 항상 당신을 보호합니다
+  advertisement-1-desc: 당신이 좋아하는 모든 제품을 소유 할 수있는 곳
+  advertisement-2-title: 온라인으로 사고 판매하십시오
+  advertisement-2-desc: Prestige와 함께 쇼핑과 사업을 즐기십시오
+  advertisement-3-title: 신규 고객을위한 선물
+  advertisement-3-desc: E-Shopee의 새로운 고객을위한 독점적이고 매력적인 선물
+  customer-opinion-title: 사용자는 e-shopee에 대해 무엇을 말합니까?
+  opinion-1: 나는 항상 e-shopee가 거래를 사냥하고 항상 놀랍게도 좋은 거래를 기대합니다. 모든 거래 사냥은 재미 있다고 말할 것도없이 마지막 거래 사냥은 2 년 동안의 전자-쇼피 중독에서 가장 재미 있습니다.
+  opinion-2: e-shopee에 갈 때마다 좋은 결과를 얻었습니다. 상품을받을 때까지 수십 가지 품목이 계속 집어 들었습니다. 나는 이것을 주문했는지 또는 그 이유조차 모릅니다. 그래서 e-shopee에 중독되었습니다
+  joined-at: 에 합류했습니다
+  copyright: 저작권
+  all-rights-reserved: 판권 소유
+contact: 
+  contact-us: 문의하기
+  tell-us-desc: 귀하의 문제에 대해 알려 주시면 더 빨리 도와 드릴 수 있습니다.
+  tell-us-support: 우리는 항상 24/7의 질문을 지원할 준비가되었습니다
+  address: 주소
+  sub-adddress: Quater 6, Linh Trung Ward, Thu Duc District, Ho Chi Minh City
+  country: 베트남
+  phone: 핸드폰
+  mobile: 이동하는
+  hotline: 핫라인
+  email: 이메일
+  tell-us-your-message: 메시지를 알려주세요
+  your-name: 당신의 이름
+  your-email: 귀하의 이메일
+  subject: 주제
+  note: 당신의 메시지
+  submit: 제출하다
+sitemap: 
+  sitemap: 사이트 맵
+favourite: 
+  add-to-cart: 카트에 추가하십시오
+  favourite-banner: 좋아하는 페이지
+about: 
+  about-us: 우리에 대해
+  welcome: 에 오신 것을 환영합니다
+  desc-one: E-Shopee는 동남아시아와 대만에서 가장 큰 전자 상거래 플랫폼입니다. 이 지역은이 지역에 맞게 조정 된 플랫폼으로, 온라인 쇼핑을 쉽고 안전하며 강력한 지불 및 물류 지원을 통해 빠르게 만들 수 있습니다. Shopee는 동남아시아 최대의 인터넷 플랫폼 제공 업체 인 SEA (이전에 Garena로 알려진)에 의해 강력하게 지원됩니다.
+  desc-two: Shopee는 싱가포르, 말레이시아, 태국, 대만, 인도네시아, 베트남 및 필리핀에서 앱 스토어 및 Google Play에서 무료로 다운로드 할 수 있습니다. 자세한 내용은 https://shopee.vn을 방문하십시오
+  our-purpose: 우리의 목적
+  purpose-desc: Shopee 팀은 기술의 혁신적인 힘을 믿고 구매자와 판매자를 하나의 커뮤니티에 연결할 수있는 플랫폼을 제공함으로써 더 나은 세상을 변화시키기를 원합니다. 모바일 장치에서의 쇼핑이 새로운 표준이되면서 Shopee는 모든 사용자에게 완벽하고 즐거운 쇼핑 경험을 제공하고 지역의 전자 상거래 플랫폼이 될 수있는 플랫폼을 지속적으로 향상시키는 것을 목표로합니다.
+  our-team: 우리 팀
+  team-desc: Shopee 팀은 기술의 혁신적인 힘을 믿고 구매자와 판매자를 하나의 커뮤니티에 연결할 수있는 플랫폼을 제공함으로써 더 나은 세상을 변화시키기를 원합니다. 모바일 장치에서의 쇼핑이 새로운 표준이되면서 Shopee는 모든 사용자에게 완벽하고 즐거운 쇼핑 경험을 제공하고 지역의 전자 상거래 플랫폼이 될 수있는 플랫폼을 지속적으로 향상시키는 것을 목표로합니다.
+  testimonial: 증명서
+  testimonial-desc: Shopee 팀은 기술의 혁신적인 힘을 믿고 구매자와 판매자를 하나의 커뮤니티에 연결할 수있는 플랫폼을 제공함으로써 더 나은 세상을 변화시키기를 원합니다. 모바일 장치에서의 쇼핑이 새로운 표준이되면서 Shopee는 모든 사용자에게 완벽하고 즐거운 쇼핑 경험을 제공하고 지역의 전자 상거래 플랫폼이 될 수있는 플랫폼을 지속적으로 향상시키는 것을 목표로합니다.
