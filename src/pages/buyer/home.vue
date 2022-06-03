@@ -22,19 +22,19 @@ onMounted(() => {
     <CBSwipper />
     <CBCategory />
     <CBBanner />
-    <CBFlashSales />
+    <!-- <CBFlashSales />
     <CBDemo1 />
     <CBOurProducts />
     <CBTrending />
     <CBTopProducts />
     <CBMonthSale />
     <CBDealArrivals />
-    <CBDemo3 />
+    <CBDemo3 /> -->
     <div class="flex justify-center">
       <CBToday />
     </div>
     <!-- <CSlick /> -->
-    <CBDemo2 />
-    <CBService />
+    <!-- <CBDemo2 />
+    <CBService /> -->
   </div>
 </template>

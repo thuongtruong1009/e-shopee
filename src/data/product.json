@@ -2,41 +2,58 @@
     "status": true,
     "data": {
         "id": 1,
-        "name": "Samsung Galaxy A53 5G | A52s 5G (8GB+128GB\/256GB) with 1 Year Warranty by Samsung",
-        "description": "",
+        "name": "\u3010SG\u3011 PBT Dye Sublimation Keycap Set (108 Keys) - OEM Profile",
+        "description": "Local SG Seller \u2013 Fast Delivery \u2013 Buy with Confidence!\\nNote: Keycaps only, keyboard not included.\\nTransform your bland and boring keyboard into an Instagram-worthy one! These keycap sets are truly special. Guaranteed to bring your keyboard and setup to life with its vibrant color scheme and radiant colors.\\n\u3010COMPATIBILITY\u3011\\nFits most mechanical keyboards and optical keyboards that use Cherry MX switches or Cherry-like switches such as Gateron, Kailh, Outemu, and more.\\n\u3010PBT Dye-Sub\u3011\\nThis set of keycaps is made of high-quality PBT materials, and the thickness is about 1.5 mm, which is very durable. In addition, dye-sublimation technology is used to print fonts and exquisite patterns on the keycaps. These fonts and patterns are very clear and not easy to fall off.\\n\u3010OEM PROFILE\u3011\\nThe most popular OEM profile keycaps have sculpted shapes that conform to your fingertips to increase comfort during typing or gaming.\\n\u3010Keyboard Layout\u3011\\nCompatible with 61\/87\/104 keys standard US\/ANSI mechanical keyboard whose spacebar is 6.25u (around 11.7cm), and 1.25u bottom modifier keys. This keycap set is not compatible with 64\/68\/71\/72\/82\/84 keys mechanical keyboard layout. This is also not compatible with non-standard bottom row layouts such as Razer Huntsman Elite (6.0u spacebar) or Corsair K70\/Logitech G710+ (6.5u spacebar).\\n\u3010Specification\u3011\\nMaterial: PBT\\nThickness: ~1.5 mm\\nLegend: Dye Sublimation\\nBacklit: No\\nLayout: US\/ANSI 108 keys\\nProfile: OEM Profile\\nSakura - 113 keys (OEM Profile)\\nChinese Ink - 113 keys (OEM Profile)\\nTang Dynasty - 113 keys (OEM Profile)\\nFamicom - 108 keys (OEM Profile)\\nNintendo (NES) - 108 keys (OEM Profile)\\nMatcha - 108 keys (OEM Profile)\\nPirate - 108 keys (OEM Profile)\\nHana - 108 keys (OEM Profile)",
         "weight": "500",
+        "avg_rating": "0",
         "sold": 0,
         "images": [
-            "93bc5fa42886e635fd9f103d03c9c31d",
-            "6085df7be931e1ef9d79ce125cacdb8b"
+            "demo-31bdac4679edf9ebf483e86461c024ad",
+            "demo-ecf68a0e351256c3589211483005f9ac"
         ],
         "videos": [],
         "variations": [
             {
-                "name": "Colour",
+                "name": "Theme",
                 "options": [
-                    "Awesome Black",
-                    "Awesome White"
-                ]
-            },
-            {
-                "name": "Model",
-                "options": [
-                    "A52s 8GB+128GB",
-                    "A53 8GB+128GB"
+                    "Matcha",
+                    "Hana"
                 ]
             }
         ],
-        "created_at": "2022-05-19 15:07:43",
-        "shop_id": 1,
+        "created_at": "2022-05-26 07:41:05",
+        "shop_id": 3,
         "brand_id": 1,
         "status_id": 1,
-        "attributes": [],
+        "attributes": [
+            {
+                "name": "Connection Type",
+                "value": "Type-C",
+                "unit": null
+            },
+            {
+                "name": "Gaming Focused",
+                "value": "Yes",
+                "unit": null
+            }
+        ],
         "models": [
             {
-                "id": 2,
+                "id": 57,
                 "sku": "",
-                "price": "500",
+                "price": "516",
+                "stock": 5,
+                "variation_index": [
+                    0,
+                    0
+                ],
+                "is_default": false,
+                "product_id": 1
+            },
+            {
+                "id": 58,
+                "sku": "",
+                "price": "296",
                 "stock": 5,
                 "variation_index": [
                     0,
@@ -46,9 +63,9 @@
                 "product_id": 1
             },
             {
-                "id": 3,
+                "id": 59,
                 "sku": "",
-                "price": "500",
+                "price": "406",
                 "stock": 5,
                 "variation_index": [
                     1,
@@ -58,9 +75,9 @@
                 "product_id": 1
             },
             {
-                "id": 4,
+                "id": 60,
                 "sku": "",
-                "price": "500",
+                "price": "515",
                 "stock": 50,
                 "variation_index": [
                     1,
@@ -70,12 +87,22 @@
                 "product_id": 1
             },
             {
+                "id": 2,
+                "sku": "",
+                "price": "24.9",
+                "stock": 49,
+                "variation_index": [
+                    1
+                ],
+                "is_default": false,
+                "product_id": 1
+            },
+            {
                 "id": 1,
                 "sku": "",
-                "price": "500",
-                "stock": 5,
+                "price": "24.9",
+                "stock": 43,
                 "variation_index": [
-                    0,
                     0
                 ],
                 "is_default": false,
@@ -86,7 +113,7 @@
             {
                 "min": 5,
                 "max": 10,
-                "price": "450"
+                "price": "23"
             }
         ]
     }

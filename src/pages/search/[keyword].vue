@@ -358,7 +358,7 @@ const products = reactive([{
       </div>
     </aside>
     <!-- ************************************ -->
-    <div class="grid-products-filter col-span-3">
+    <div :key="Math.random()" class="grid-products-filter col-span-3">
       <div class="flex justify-between items-center bg-gray-100 rounded-lg py-2 px-5">
         <ul id="pills-tab" class="nav-pills flex items-center">
           <li class="nav-item text-lg hover:text-red-500 cursor-pointer" :style="[regime === 'grid' ? {color:'red'} : {color:'gray'}]" @click="onChangeRegime('grid')">

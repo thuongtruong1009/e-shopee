@@ -5,5 +5,6 @@ export const useCart = defineStore('cart', () => {
   const result = ref<any>([])
   const payget = ref<any>([])
   const product = ref<any>([])
-  return { result, payget, product }
+  const payload = ref<any>([])
+  return { result, payget, product, payload }
 })

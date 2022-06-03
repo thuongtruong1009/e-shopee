@@ -42,6 +42,8 @@ onMounted(async() => {
     loading.isLoading = false
     productResponseData.value = productData
     productImg.value = productData.images[0]
+
+    const { data: reviewData } = await getReviewsProductsById(product.productRequestID, { params: { limit: 10 } })
   }
 })
 
@@ -94,10 +96,7 @@ const payload = reactive({
   slug: 'id_01',
   product_id: '01',
 })
-//   await ShopRequest.getShopsProducts(payload.slug).then((res) => {
-//   }).catch((error) => {
-//     return handleError(error)
-//   })
+//   await ShopRequest.getShopsProducts(payload.slug)
 //   loading.isLoading = false
 // })
 // --------------------------------------------
