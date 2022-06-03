@@ -42,11 +42,20 @@ onMounted(async() => {
   cart.payget = cartData.data[0]
   // cart.product = cartData.data[0].product
 })
-
+// ---------------------------------------------
 const payload = reactive({
   product_model_id: '',
   quantity: '',
 })
+const decreaseQuantity = (quantity) => {
+  payload.quantity = --quantity
+}
+const changeQuantity = (quantity) => {
+  payload.quantity = quantity
+}
+const increaseQuantity = (quantity) => {
+  payload.quantity = ++quantity
+}
 const handleUpdate = async(id) => {
   payload.product_model_id = id
   await CartRequest.updateCart(payload)
@@ -118,10 +127,12 @@ const handleOrder = async() => {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in cart.result" :key="index" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <CCartItem v-for="(item, index) in cart.result" :key="index" :item="item" @decrease-quantity="decreaseQuantity" @change-quantity="changeQuantity" @increase-quantity="increaseQuantity" @update-item="handleUpdate" @remove-item="handleDelete" />
+          <!-- <tr v-for="(item, index) in cart.result" :key="index" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
             <td class="p-2">
               <div class="flex items-center">
-                <!-- <img v-if="item.product.images[0]" :src="`https://tp-o.tk/resources/images/${item.product.images[0]}`" alt="img_preview" class="max-w-40 max-h-40 rounded-md"> -->
+                <img v-if="item.product.images[0]" :src="`https://tp-o.tk/resources/images/${item.product.images[0]}`" alt="img_preview" class="max-w-40 max-h-40 rounded-md">
+
                 <img src="/img/product/shoes/8.webp" alt="img_preview" class="max-w-40 max-h-40 rounded-md">
               </div>
             </td>
@@ -161,7 +172,7 @@ const handleOrder = async() => {
                 <a href="#" class="btn bg-black dark:bg-[#0F766E] focus:ring focus:ring-violet-300 px-4 py-1 font-semibold" @click="handleUpdate(item.product_model_id)">{{ t('cart.update') }}</a>
               </div>
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>

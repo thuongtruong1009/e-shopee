@@ -1,6 +1,5 @@
 <template>
   <main class="text-center text-gray-700 dark:text-gray-200 overflow-hidden dark:bg-black min-h-screen">
-    <CBHeaderTop />
     <router-view />
   </main>
 </template>
