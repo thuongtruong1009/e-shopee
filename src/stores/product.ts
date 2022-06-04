@@ -1,5 +1,5 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { reactive, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 
 export const useProduct = defineStore('product', () => {
   // create new product in seller page
@@ -14,8 +14,8 @@ export const useProduct = defineStore('product', () => {
     2: '',
   })
   // search public product
-  const productRequestID = ref(1)
-  const shopRequestID = ref(1)
+  const productRequestID = ref()
+  const shopRequestID = ref()
 
   return { productName, category, level1, level2, level3, choicedList, productRequestID, shopRequestID }
 })

@@ -6,10 +6,12 @@ const useKeyword = keyword()
 const key = ref(useKeyword.savedKeyword)
 
 const router = useRouter()
-const go = () => {
-  if (key.value)
-    router.push(`/search/${encodeURIComponent(key.value)}`)
-  key.value = ''
+const go = async() => {
+  if (key.value) {
+    await router.push(`/search/${encodeURIComponent(key.value)}`)
+    await location.reload()
+    key.value = ''
+  }
 }
 </script>
 

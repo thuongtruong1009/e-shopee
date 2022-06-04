@@ -38,9 +38,9 @@ window.addEventListener('scroll', scrollFunction)
     </div>
   </Transition>
   <CToast />
-  <router-view />
-  <CLoading v-if="loading.isLoading === true" />
-  <!-- <router-view v-slot="{ Component, route }">
+  <!-- <router-view />
+  <CLoading v-if="loading.isLoading === true" /> -->
+  <router-view v-slot="{ Component, route }">
     <transition :name="route.meta.transition || 'fade'" mode="out-in">
       <keep-alive>
         <suspense>
@@ -51,12 +51,12 @@ window.addEventListener('scroll', scrollFunction)
             />
           </template>
           <template #fallback>
-            <CLoading />
+            <CLoading v-if="loading.isLoading === true" />
           </template>
         </suspense>
       </keep-alive>
     </transition>
-  </router-view> -->
+  </router-view>
 </template>
 
 <style scoped>

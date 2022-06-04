@@ -8,7 +8,7 @@ class OrderRequest {
 
   createOrders(data) {
     const url = '/user/orders'
-    AxiosInstance.post(url, data)
+    return AxiosInstance.post(url, data)
   }
 
   getOrdersById(id) {

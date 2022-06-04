@@ -6,6 +6,11 @@ class ProductRequest {
     return AxiosInstance.get(url, data)
   }
 
+  getReviewsProductsById(id, data) {
+    const url = `/products/${id}/reviews`
+    return AxiosInstance.get(url, data)
+  }
+
   getProductsById(id) {
     const url = `/products/${id}`
     return AxiosInstance.get(url)
