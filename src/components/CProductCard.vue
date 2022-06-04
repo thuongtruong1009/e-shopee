@@ -3,10 +3,12 @@ import { useRouter } from 'vue-router'
 import { useLoading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
 import { useSeller } from '~/stores/seller'
+import { useProduct } from '~/stores/product'
 import { handleError } from '~/helpers/error'
 import { handleDate } from '~/utils/date'
 import { productStatus } from '~/utils/status'
-import { sliceText } from '~/utils/sliceText'
+import { sliceText } from '~/utils/textHandle'
+import { getResources} from '~/utils/resources'
 
 import ShopRequest from '~/services/shop-request'
 import ProductRequest from '~/services/product-request'
@@ -17,6 +19,7 @@ import OrderRequest from '~/services/order-request'
 const { t } = useI18n()
 const router = useRouter()
 const useToast = toast()
+const product = useProduct()
 
 const props = defineProps({
   card: Object,
@@ -46,6 +49,13 @@ watchEffect(async() => {
     productStock.value = `${minStock} - ${maxStock}`
 })
 
+// ------------------- VISIST PRODUCT DETAIL --------------
+const onVisitProduct = (prod_id, shop_id) => {
+  product.productRequestID = prod_id
+  product.shopRequestID = shop_id
+  router.push(`/product/${encodeURIComponent(prod_id)}`)
+}
+
 </script>
 
 <template>
@@ -53,13 +63,13 @@ watchEffect(async() => {
     <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
     <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('search.new') }}</span>
   </div>
-  <div class="split third rounded-lg shadow-md">
+  <div class="split third rounded-lg shadow-md" @click="onVisitProduct(props.card.id, props.card.shop_id)">
     <div class="cover">
-      <img class="first-img rounded-t-lg w-full max-h-80" :src="`https://tp-o.tk/resources/images/${props.card.images[0]}_tn`" alt="thumbnail">
+      <img class="first-img rounded-t-lg w-full max-h-80" :src="`${getResources(props.card.images[0])}_tn`" alt="thumbnail">
     </div>
   </div>
   <div class="product-description text-left p-2">
-    <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600] text-sm">
+    <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600] text-sm" @click="onVisitProduct(props.card.id, props.card.shop_id)">
       {{ sliceText(props.card.name) }}...
     </p>
     <div class="flex items-center justify-between my-2">

@@ -12,6 +12,8 @@ import { useSeller } from '~/stores/seller'
 import { handleError } from '~/helpers/error'
 import { handleDate } from '~/utils/date'
 import { productStatus } from '~/utils/status'
+import { getResources } from '~/utils/resources'
+import { splitText } from '~/utils/textHandle'
 import ShopRequest from '~/services/shop-request'
 import ProductRequest from '~/services/product-request'
 import AccountRequest from '~/services/account-request'
@@ -41,7 +43,7 @@ onMounted(async() => {
     const { data: productData } = await ProductRequest.getProductsById(product.productRequestID)
     loading.isLoading = false
     productResponseData.value = productData
-    productImg.value = productData.images[0]
+    productImg.value = productData.images
 
     const { data: reviewData } = await getReviewsProductsById(product.productRequestID, { params: { limit: 10 } })
   }
@@ -132,13 +134,14 @@ const onvisitShop = () => {
   <div class="product-summary-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-3 mx-2">
     <div class="main-content flex gap-10">
       <div>
-        <img :src="`https://tp-o.tk/resources/images/${productImg}`" alt="product_img" class="max-w-112 max-h-112 rounded-lg shadow-lg shadow-gray-300">
+        <img :src="getResources(productImg[0])" alt="product_img" class="max-w-112 max-h-112 rounded-lg shadow-lg shadow-gray-300">
         <div class="grid grid-cols-5 max-w-112 mt-3 gap-2">
-          <img src="https://cf.shopee.vn/file/12ae221177dcb74dc4b1701afc06b298_tn" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">
+          <img :src="getResources(productImg[1])" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">
+          <!-- <img src="https://cf.shopee.vn/file/12ae221177dcb74dc4b1701afc06b298_tn" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">
           <img src="https://cf.shopee.vn/file/5413e844e5893181b0f33a191af65cd0_tn" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">
           <img src="https://cf.shopee.vn/file/7ed7a314372976ba07c7cc4f083bbf68_tn" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">
           <img src="https://cf.shopee.vn/file/f0ef79bb6556880ebb85baab0e64c8d6" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D]">
-          <img src="https://cf.shopee.vn/file/963e9b04751b757bb2a4ead4d1a2f1e9_tn" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">
+          <img src="https://cf.shopee.vn/file/963e9b04751b757bb2a4ead4d1a2f1e9_tn" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer"> -->
         </div>
       </div>
       <div class="pr-5 grid content-between min-h-112">
@@ -222,40 +225,6 @@ const onvisitShop = () => {
           </div>
         </div>
 
-        <!-- <div class="infor">
-          <label>Colors</label>
-          <div class="uppercase flex gap-2">
-            <p class="box-type">
-              White
-            </p>
-            <p class="box-type">
-              Black
-            </p>
-            <p class="box-type">
-              Pink
-            </p>
-          </div>
-        </div> -->
-        <!-- <div class="infor">
-          <label>Sizes</label>
-          <div class="uppercase flex gap-2 text-sm">
-            <p class="box-type">
-              35-36
-            </p>
-            <p class="box-type">
-              37-38
-            </p>
-            <p class="box-type">
-              39-40
-            </p>
-            <p class="box-type">
-              41-42
-            </p>
-            <p class="box-type">
-              42-43
-            </p>
-          </div>
-        </div> -->
         <div class="infor">
           <label>{{ t('product.quantities') }}</label>
           <div class="uppercase flex items-center rounded-md border-1 border-solid border-gray-300 text-sm">
@@ -388,7 +357,11 @@ const onvisitShop = () => {
       <p>Huyện Tân Kỳ, Nghệ An</p>
     </div>
     <div>
-      <p>🔥Thanh toán khi nhận hàng liên hệ trước với shop nếu muốn xem hàng trước khi thanh toán</p>
+      <p v-for="(desc, i) in productResponseData.description?.split('\\n')" :key="i">
+        {{ desc }}
+      </p>
+
+      <!-- <p>🔥Thanh toán khi nhận hàng liên hệ trước với shop nếu muốn xem hàng trước khi thanh toán</p>
       <p>Hotline: 0842610686</p>
       <p>🔥 Đổi trả miễn phí trong 15 ngày lỗi do nhà sản xuất</p>
       <p>🔥Bảo Hành: 6 tháng</p>
@@ -401,7 +374,7 @@ const onvisitShop = () => {
       <p>🔥Shop chuyên sỉ và lẻ toàn quốc với giá tốt nhất đến tay khách hàng</p>
       <p>🍀 Zalo; 0879614176</p>
       <p>🍀 Số Lượng Có Hạn , Nhanh Tay Đặt Hàng Nhé</p>
-      <p>🍀 Cảm Ơn Khách Hàng Luôn Tin Tưởng Và Ủng Hộ Shop ☘️</p>
+      <p>🍀 Cảm Ơn Khách Hàng Luôn Tin Tưởng Và Ủng Hộ Shop ☘️</p> -->
       <p>
         <span v-for="i in 20" :key="i" class="mr-3 text-[#0055BD] cursor-pointer">#dép nam</span>
       </p>

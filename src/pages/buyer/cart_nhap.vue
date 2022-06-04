@@ -470,7 +470,7 @@ input[type=number]::-webkit-outer-spin-button{
   background: white;
   overflow: hidden;
   height: 22.75rem;
-  border-radius: 8px;
+  border-radius: 1rem;
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
 }
 .subtotal .totalRow {

@@ -1,6 +1,7 @@
 <script setup>
 import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
+import { getResources } from '~/utils/resources'
 import CartRequest from '~/services/cart-request'
 
 const { t } = useI18n()
@@ -16,6 +17,7 @@ defineEmits(['decrease-quantity', 'change-quantity', 'remove-item'])
 const handleUpdate = async() => {
   await CartRequest.updateCart(cart.payload[0])
   useToast.updateToast('success', 'You cart items has been updated!', true)
+  await location.reload()
 }
 const decrease = async(model_id, model_quantity) => {
   await cart.payload.push({
@@ -38,7 +40,7 @@ const increase = async(model_id, model_quantity) => {
   <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
     <td class="p-2">
       <div class="flex items-center">
-        <img v-if="item.product.images[0]" :src="`https://tp-o.tk/resources/images/${item.product.images[0]}`" alt="img_preview" class="max-w-35 max-h-35 rounded-md">
+        <img v-if="item.product.images[0]" :src="getResources(item.product.images[0])" alt="img_preview" class="max-w-35 max-h-35 rounded-md">
         <img v-else src="/img/product/shoes/8.webp" alt="img_preview" class="max-w-40 max-h-40 rounded-md">
       </div>
     </td>

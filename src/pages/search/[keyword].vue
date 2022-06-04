@@ -5,13 +5,11 @@ meta:
 
 <script setup lang="ts">
 import { keyword } from '~/stores/keyword'
-import { useProduct } from '~/stores/product'
 import ProductRequest from '~/services/product-request'
 
 const props = defineProps<{ keyword: string }>()
 const router = useRouter()
 const useKeyword = keyword()
-const product = useProduct()
 const { t } = useI18n()
 
 useHead({
@@ -36,7 +34,6 @@ onMounted(async() => {
   else {
     const { data: searchData } = await ProductRequest.searchProducts({ params: { limit: payload.limit, page: payload.page, keyword: payload.keyword, order_by: payload.order_by, filter: payload.filter } })
     useKeyword.resultProduct = searchData.data
-    // console.log(useKeyword.resultProduct)
   }
 })
 // get props keyword from store after search
@@ -44,11 +41,6 @@ watchEffect(() => {
   useKeyword.setNewKeyword(props.keyword)
 })
 
-function onvisitProduct(prod_id: number, shop_id: number) {
-  product.shopRequestID = shop_id
-  product.productRequestID = prod_id
-  router.push(`/product/${encodeURIComponent(prod_id)}`)
-}
 // ------------------------------------------------------------------
 const priceValue = ref(200)
 const priceMin = ref(200)
@@ -358,7 +350,7 @@ const products = reactive([{
       </div>
     </aside>
     <!-- ************************************ -->
-    <div :key="Math.random()" class="grid-products-filter col-span-3">
+    <div class="grid-products-filter col-span-3">
       <div class="flex justify-between items-center bg-gray-100 rounded-lg py-2 px-5">
         <ul id="pills-tab" class="nav-pills flex items-center">
           <li class="nav-item text-lg hover:text-red-500 cursor-pointer" :style="[regime === 'grid' ? {color:'red'} : {color:'gray'}]" @click="onChangeRegime('grid')">
@@ -392,7 +384,7 @@ const products = reactive([{
       </div>
       <Transition name="slide-fade">
         <div v-if="regime === 'grid'" class="grid-products-list flex flex-wrap gap-5 py-10">
-          <div v-for="(prod, index) in useKeyword.resultProduct" :key="index" class="card duration-200 ease-linear relative rounded-lg w-60  shadow-md hover:shadow-gray-400/50 pb-0" @click="onvisitProduct(prod.id, prod.shop_id)">
+          <div v-for="(prod, index) in useKeyword.resultProduct" :key="index" class="card duration-200 ease-linear relative rounded-lg w-60  shadow-md hover:shadow-gray-400/50 pb-0">
             <CProductCard :card="prod" />
           </div>
         </div>
