@@ -13,7 +13,7 @@ import { handleError } from '~/helpers/error'
 import { handleDate } from '~/utils/date'
 import { productStatus } from '~/utils/status'
 import { getResources } from '~/utils/resources'
-import { splitText } from '~/utils/textHandle'
+
 import ShopRequest from '~/services/shop-request'
 import ProductRequest from '~/services/product-request'
 import AccountRequest from '~/services/account-request'

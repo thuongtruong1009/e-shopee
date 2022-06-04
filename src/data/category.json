@@ -1,0 +1,1422 @@
+{
+    "status": true,
+    "data": [
+        {
+            "id": 1,
+            "name": "Clothes",
+            "number_of_items": 0,
+            "number_of_children": 7,
+            "cover_image": null,
+            "parent_id": null,
+            "children": [
+                {
+                    "id": 2,
+                    "name": "Jean",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 1,
+                    "children": []
+                },
+                {
+                    "id": 7,
+                    "name": "Sweaters & Cardigans",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 1,
+                    "children": []
+                },
+                {
+                    "id": 13,
+                    "name": "Pants",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 1,
+                    "children": []
+                },
+                {
+                    "id": 14,
+                    "name": "Shorts",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 1,
+                    "children": []
+                },
+                {
+                    "id": 3,
+                    "name": "Hoodies & Sweatshirts",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 1,
+                    "children": [
+                        {
+                            "id": 4,
+                            "name": "Hoodies",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 3,
+                            "children": []
+                        },
+                        {
+                            "id": 5,
+                            "name": "Sweatshirts",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 3,
+                            "children": []
+                        },
+                        {
+                            "id": 6,
+                            "name": "Other",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 3,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "name": "Suits",
+                    "number_of_items": 0,
+                    "number_of_children": 4,
+                    "cover_image": null,
+                    "parent_id": 1,
+                    "children": [
+                        {
+                            "id": 9,
+                            "name": "Suit Sets",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 8,
+                            "children": []
+                        },
+                        {
+                            "id": 10,
+                            "name": "Suit Jackets & Blazers",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 8,
+                            "children": []
+                        },
+                        {
+                            "id": 11,
+                            "name": "Suit Paints",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 8,
+                            "children": []
+                        },
+                        {
+                            "id": 12,
+                            "name": "Suit Vests & Waistcoats",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 8,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 15,
+                    "name": "Innerwear & Underwear",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 1,
+                    "children": [
+                        {
+                            "id": 16,
+                            "name": "Underwear",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 15,
+                            "children": []
+                        },
+                        {
+                            "id": 17,
+                            "name": "Undershirts",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 15,
+                            "children": []
+                        },
+                        {
+                            "id": 18,
+                            "name": "Thermal Innerwear",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 15,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "name": "Beauty",
+            "number_of_items": 0,
+            "number_of_children": 7,
+            "cover_image": null,
+            "parent_id": null,
+            "children": [
+                {
+                    "id": 33,
+                    "name": "Perfumes & Fragrance",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 19,
+                    "children": []
+                },
+                {
+                    "id": 20,
+                    "name": "Hand, Foot & Nail Care",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 19,
+                    "children": [
+                        {
+                            "id": 21,
+                            "name": "Hand Care",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 20,
+                            "children": []
+                        },
+                        {
+                            "id": 22,
+                            "name": "Foot Care",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 20,
+                            "children": []
+                        },
+                        {
+                            "id": 23,
+                            "name": "Nail Care",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 20,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 24,
+                    "name": "Hair Care",
+                    "number_of_items": 0,
+                    "number_of_children": 4,
+                    "cover_image": null,
+                    "parent_id": 19,
+                    "children": [
+                        {
+                            "id": 25,
+                            "name": "Shampoo",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 24,
+                            "children": []
+                        },
+                        {
+                            "id": 26,
+                            "name": "Hair Color",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 24,
+                            "children": []
+                        },
+                        {
+                            "id": 27,
+                            "name": "Hair Treatment",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 24,
+                            "children": []
+                        },
+                        {
+                            "id": 28,
+                            "name": "Hair Styling",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 24,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 29,
+                    "name": "Men's Care",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 19,
+                    "children": [
+                        {
+                            "id": 30,
+                            "name": "Bath & Body Care",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 29,
+                            "children": []
+                        },
+                        {
+                            "id": 31,
+                            "name": "Skincare",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 29,
+                            "children": []
+                        },
+                        {
+                            "id": 32,
+                            "name": "Hair Care",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 29,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 34,
+                    "name": "Makeup",
+                    "number_of_items": 0,
+                    "number_of_children": 5,
+                    "cover_image": null,
+                    "parent_id": 19,
+                    "children": [
+                        {
+                            "id": 35,
+                            "name": "Other",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 34,
+                            "children": []
+                        },
+                        {
+                            "id": 36,
+                            "name": "Face",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 34,
+                            "children": []
+                        },
+                        {
+                            "id": 37,
+                            "name": "Eyes",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 34,
+                            "children": []
+                        },
+                        {
+                            "id": 38,
+                            "name": "Lips",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 34,
+                            "children": []
+                        },
+                        {
+                            "id": 39,
+                            "name": "Makeup Removers",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 34,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 40,
+                    "name": "Beauty Tools",
+                    "number_of_items": 0,
+                    "number_of_children": 2,
+                    "cover_image": null,
+                    "parent_id": 19,
+                    "children": [
+                        {
+                            "id": 41,
+                            "name": "Makeup Accessories",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 40,
+                            "children": []
+                        },
+                        {
+                            "id": 42,
+                            "name": "Hair Removal Tools",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 40,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 43,
+                    "name": "Skincare",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 19,
+                    "children": [
+                        {
+                            "id": 44,
+                            "name": "Facial Cleanser",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 43,
+                            "children": []
+                        },
+                        {
+                            "id": 45,
+                            "name": "Toner",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 43,
+                            "children": []
+                        },
+                        {
+                            "id": 46,
+                            "name": "Facial Oil",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 43,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "name": "Health",
+            "number_of_items": 0,
+            "number_of_children": 4,
+            "cover_image": null,
+            "parent_id": null,
+            "children": [
+                {
+                    "id": 59,
+                    "name": "Other",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 47,
+                    "children": []
+                },
+                {
+                    "id": 48,
+                    "name": "Food Supplement",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 47,
+                    "children": [
+                        {
+                            "id": 49,
+                            "name": "Weight Management",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 48,
+                            "children": []
+                        },
+                        {
+                            "id": 50,
+                            "name": "Beauty Supplement",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 48,
+                            "children": []
+                        },
+                        {
+                            "id": 51,
+                            "name": "Fitness",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 48,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 52,
+                    "name": "Medical Supplies",
+                    "number_of_items": 0,
+                    "number_of_children": 2,
+                    "cover_image": null,
+                    "parent_id": 47,
+                    "children": [
+                        {
+                            "id": 53,
+                            "name": "Health Monitors & Tests",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 52,
+                            "children": []
+                        },
+                        {
+                            "id": 54,
+                            "name": "Scale & Body Fat Analyzers",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 52,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 55,
+                    "name": "Personal Care",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 47,
+                    "children": [
+                        {
+                            "id": 56,
+                            "name": "Eye Care",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 55,
+                            "children": []
+                        },
+                        {
+                            "id": 57,
+                            "name": "Ear Care",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 55,
+                            "children": []
+                        },
+                        {
+                            "id": 58,
+                            "name": "Oral Care",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 55,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 60,
+            "name": "Home Appliances",
+            "number_of_items": 0,
+            "number_of_children": 4,
+            "cover_image": null,
+            "parent_id": null,
+            "children": [
+                {
+                    "id": 70,
+                    "name": "Batteries",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 60,
+                    "children": []
+                },
+                {
+                    "id": 71,
+                    "name": "Remote Controls",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 60,
+                    "children": []
+                },
+                {
+                    "id": 61,
+                    "name": "TVs & Accessories",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 60,
+                    "children": [
+                        {
+                            "id": 62,
+                            "name": "TVs",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 61,
+                            "children": []
+                        },
+                        {
+                            "id": 63,
+                            "name": "TV Antennas",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 61,
+                            "children": []
+                        },
+                        {
+                            "id": 64,
+                            "name": "TV Brackets",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 61,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 65,
+                    "name": "Kitchen Appliances",
+                    "number_of_items": 0,
+                    "number_of_children": 4,
+                    "cover_image": null,
+                    "parent_id": 60,
+                    "children": [
+                        {
+                            "id": 66,
+                            "name": "Kettles",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 65,
+                            "children": []
+                        },
+                        {
+                            "id": 67,
+                            "name": "Wine Fridges",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 65,
+                            "children": []
+                        },
+                        {
+                            "id": 68,
+                            "name": "Coffee Machine & Accessories",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 65,
+                            "children": []
+                        },
+                        {
+                            "id": 69,
+                            "name": "Mixers",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 65,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 72,
+            "name": "Mobile & Gadgets",
+            "number_of_items": 0,
+            "number_of_children": 5,
+            "cover_image": null,
+            "parent_id": null,
+            "children": [
+                {
+                    "id": 73,
+                    "name": "Sim Cards",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 72,
+                    "children": []
+                },
+                {
+                    "id": 74,
+                    "name": "Tablets",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 72,
+                    "children": []
+                },
+                {
+                    "id": 75,
+                    "name": "Mobiles Phones",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 72,
+                    "children": []
+                },
+                {
+                    "id": 76,
+                    "name": "Wearable Devices",
+                    "number_of_items": 0,
+                    "number_of_children": 2,
+                    "cover_image": null,
+                    "parent_id": 72,
+                    "children": [
+                        {
+                            "id": 77,
+                            "name": "VR Devices",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 76,
+                            "children": []
+                        },
+                        {
+                            "id": 78,
+                            "name": "GPS Trackers",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 76,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 79,
+                    "name": "Accessories",
+                    "number_of_items": 0,
+                    "number_of_children": 5,
+                    "cover_image": null,
+                    "parent_id": 72,
+                    "children": [
+                        {
+                            "id": 80,
+                            "name": "Mobile Flashes & Selfie Lights",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 79,
+                            "children": []
+                        },
+                        {
+                            "id": 81,
+                            "name": "USB & Mobile Fans",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 79,
+                            "children": []
+                        },
+                        {
+                            "id": 82,
+                            "name": "Phone Grips",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 79,
+                            "children": []
+                        },
+                        {
+                            "id": 83,
+                            "name": "Memory Card",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 79,
+                            "children": []
+                        },
+                        {
+                            "id": 84,
+                            "name": "Screen Protector",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 79,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 85,
+            "name": "Audio",
+            "number_of_items": 0,
+            "number_of_children": 5,
+            "cover_image": null,
+            "parent_id": null,
+            "children": [
+                {
+                    "id": 86,
+                    "name": "EarPhones, Headphones & Headsets",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 85,
+                    "children": []
+                },
+                {
+                    "id": 92,
+                    "name": "Microphone",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 85,
+                    "children": []
+                },
+                {
+                    "id": 93,
+                    "name": "Amplifiers & Mixers",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 85,
+                    "children": []
+                },
+                {
+                    "id": 87,
+                    "name": "Media Player",
+                    "number_of_items": 0,
+                    "number_of_children": 4,
+                    "cover_image": null,
+                    "parent_id": 85,
+                    "children": [
+                        {
+                            "id": 88,
+                            "name": "MP3 & MP4 Players",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 87,
+                            "children": []
+                        },
+                        {
+                            "id": 89,
+                            "name": "CD, DVD, & Blu-ray Players",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 87,
+                            "children": []
+                        },
+                        {
+                            "id": 90,
+                            "name": "Voice Recorders",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 87,
+                            "children": []
+                        },
+                        {
+                            "id": 91,
+                            "name": "Radio & Cassette Players",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 87,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 94,
+                    "name": "Home Audio & Speakers",
+                    "number_of_items": 0,
+                    "number_of_children": 2,
+                    "cover_image": null,
+                    "parent_id": 85,
+                    "children": [
+                        {
+                            "id": 95,
+                            "name": "Speakers",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 94,
+                            "children": []
+                        },
+                        {
+                            "id": 96,
+                            "name": "AV Receivers",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 94,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 97,
+            "name": "Pets",
+            "number_of_items": 0,
+            "number_of_children": 3,
+            "cover_image": null,
+            "parent_id": null,
+            "children": [
+                {
+                    "id": 98,
+                    "name": "Pet Food",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 97,
+                    "children": [
+                        {
+                            "id": 99,
+                            "name": "Dog Food",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 98,
+                            "children": []
+                        },
+                        {
+                            "id": 100,
+                            "name": "Cat Food",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 98,
+                            "children": []
+                        },
+                        {
+                            "id": 101,
+                            "name": "Bird feed",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 98,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 102,
+                    "name": "Pet Accessories",
+                    "number_of_items": 0,
+                    "number_of_children": 2,
+                    "cover_image": null,
+                    "parent_id": 97,
+                    "children": [
+                        {
+                            "id": 103,
+                            "name": "Bowls & Feeders",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 102,
+                            "children": []
+                        },
+                        {
+                            "id": 104,
+                            "name": "Leashes, Collars & Harnesses",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 102,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 105,
+                    "name": "Pet Clothing & Accessories",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 97,
+                    "children": [
+                        {
+                            "id": 106,
+                            "name": "Pet Clothing",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 105,
+                            "children": []
+                        },
+                        {
+                            "id": 107,
+                            "name": "Boots, Socks & Paw Protectors",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 105,
+                            "children": []
+                        },
+                        {
+                            "id": 108,
+                            "name": "Hats",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 105,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 109,
+            "name": "Gaming & Consoles",
+            "number_of_items": 0,
+            "number_of_children": 3,
+            "cover_image": null,
+            "parent_id": null,
+            "children": [
+                {
+                    "id": 114,
+                    "name": "Console Accessories",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 109,
+                    "children": []
+                },
+                {
+                    "id": 110,
+                    "name": "Console Machines",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 109,
+                    "children": [
+                        {
+                            "id": 111,
+                            "name": "Playstation",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 110,
+                            "children": []
+                        },
+                        {
+                            "id": 112,
+                            "name": "Xbox",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 110,
+                            "children": []
+                        },
+                        {
+                            "id": 113,
+                            "name": "Nintendo DS",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 110,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 115,
+                    "name": "Video Games",
+                    "number_of_items": 0,
+                    "number_of_children": 4,
+                    "cover_image": null,
+                    "parent_id": 109,
+                    "children": [
+                        {
+                            "id": 116,
+                            "name": "Playstation",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 115,
+                            "children": []
+                        },
+                        {
+                            "id": 117,
+                            "name": "Xbox",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 115,
+                            "children": []
+                        },
+                        {
+                            "id": 118,
+                            "name": "Nintendo DS",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 115,
+                            "children": []
+                        },
+                        {
+                            "id": 119,
+                            "name": "PC Game",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 115,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "name": "Stationery",
+            "number_of_items": 0,
+            "number_of_children": 3,
+            "cover_image": null,
+            "parent_id": null,
+            "children": [
+                {
+                    "id": 121,
+                    "name": "Writing & Correction",
+                    "number_of_items": 0,
+                    "number_of_children": 4,
+                    "cover_image": null,
+                    "parent_id": 120,
+                    "children": [
+                        {
+                            "id": 122,
+                            "name": "Pens & Inks",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 121,
+                            "children": []
+                        },
+                        {
+                            "id": 123,
+                            "name": "Pencils",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 121,
+                            "children": []
+                        },
+                        {
+                            "id": 124,
+                            "name": "Eraser & Correction Supplies",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 121,
+                            "children": []
+                        },
+                        {
+                            "id": 125,
+                            "name": "Highlighters",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 121,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 126,
+                    "name": "School & Office Equipment",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 120,
+                    "children": [
+                        {
+                            "id": 127,
+                            "name": "Calculator",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 126,
+                            "children": []
+                        },
+                        {
+                            "id": 128,
+                            "name": "Clips, Pins & Tasks",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 126,
+                            "children": []
+                        },
+                        {
+                            "id": 129,
+                            "name": "Rulers, Protractors & Stencils",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 126,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 130,
+                    "name": "Notebooks & Papers",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 120,
+                    "children": [
+                        {
+                            "id": 131,
+                            "name": "Bookmarks",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 130,
+                            "children": []
+                        },
+                        {
+                            "id": 132,
+                            "name": "Printing & Photocopy Paper",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 130,
+                            "children": []
+                        },
+                        {
+                            "id": 133,
+                            "name": "Memo & Sticky Notes",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 130,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 134,
+            "name": "Computers & Accessories",
+            "number_of_items": 0,
+            "number_of_children": 6,
+            "cover_image": null,
+            "parent_id": null,
+            "children": [
+                {
+                    "id": 139,
+                    "name": "Monitors",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 134,
+                    "children": []
+                },
+                {
+                    "id": 153,
+                    "name": "Laptops",
+                    "number_of_items": 0,
+                    "number_of_children": 0,
+                    "cover_image": null,
+                    "parent_id": 134,
+                    "children": []
+                },
+                {
+                    "id": 135,
+                    "name": "Desktop Computers",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 134,
+                    "children": [
+                        {
+                            "id": 136,
+                            "name": "Desktop PC",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 135,
+                            "children": []
+                        },
+                        {
+                            "id": 137,
+                            "name": "Mini PC",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 135,
+                            "children": []
+                        },
+                        {
+                            "id": 138,
+                            "name": "Server PC",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 135,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 140,
+                    "name": "Desktop & Laptop Components",
+                    "number_of_items": 0,
+                    "number_of_children": 5,
+                    "cover_image": null,
+                    "parent_id": 134,
+                    "children": [
+                        {
+                            "id": 141,
+                            "name": "Fans & Heatsinks",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 140,
+                            "children": []
+                        },
+                        {
+                            "id": 142,
+                            "name": "Processors",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 140,
+                            "children": []
+                        },
+                        {
+                            "id": 143,
+                            "name": "Graphics Cards",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 140,
+                            "children": []
+                        },
+                        {
+                            "id": 144,
+                            "name": "RAM",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 140,
+                            "children": []
+                        },
+                        {
+                            "id": 145,
+                            "name": "PC Cases",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 140,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 146,
+                    "name": "Data Storage",
+                    "number_of_items": 0,
+                    "number_of_children": 3,
+                    "cover_image": null,
+                    "parent_id": 134,
+                    "children": [
+                        {
+                            "id": 147,
+                            "name": "Hard Drives",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 146,
+                            "children": []
+                        },
+                        {
+                            "id": 148,
+                            "name": "SSD",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 146,
+                            "children": []
+                        },
+                        {
+                            "id": 149,
+                            "name": "Hard Disk Casing & Docking",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 146,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 150,
+                    "name": "Keyboards & Mice",
+                    "number_of_items": 0,
+                    "number_of_children": 2,
+                    "cover_image": null,
+                    "parent_id": 134,
+                    "children": [
+                        {
+                            "id": 151,
+                            "name": "Mice",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 150,
+                            "children": []
+                        },
+                        {
+                            "id": 152,
+                            "name": "Keyboards",
+                            "number_of_items": 0,
+                            "number_of_children": 0,
+                            "cover_image": null,
+                            "parent_id": 150,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

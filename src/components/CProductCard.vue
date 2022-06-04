@@ -8,7 +8,7 @@ import { handleError } from '~/helpers/error'
 import { handleDate } from '~/utils/date'
 import { productStatus } from '~/utils/status'
 import { sliceText } from '~/utils/textHandle'
-import { getResources} from '~/utils/resources'
+import { getResources } from '~/utils/resources'
 
 import ShopRequest from '~/services/shop-request'
 import ProductRequest from '~/services/product-request'
