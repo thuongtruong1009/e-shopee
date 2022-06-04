@@ -82,13 +82,24 @@ watchEffect(async() => {
   const minStock = Math.min(...valuesStock)
   productStock.value = `${minStock} - ${maxStock}`
 })
-function getModelStock(array, option) {
+function getModelStock(array, outer, inner) {
   array.map((element) => {
-    if (JSON.stringify(element.variation_index) === JSON.stringify(option)) {
-      productStock.value = element.stock
-      productPrice.value = element.price
-      payloadCart.product_model_id = element.id
+    if (element.variation_index.length === 2) {
+      if (JSON.stringify(element.variation_index) === JSON.stringify([outer, inner])) {
+        productStock.value = element.stock
+        productPrice.value = element.price
+        payloadCart.product_model_id = element.id
+      }
     }
+    if (element.variation_index.length === 1) {
+      const option = [element.variation_index[0], element.variation_index[0]]
+      if (JSON.stringify(option) === JSON.stringify([outer, inner])) {
+        productStock.value = element.stock
+        productPrice.value = element.price
+        payloadCart.product_model_id = element.id
+      }
+    }
+
     return ''
   })
 }
@@ -219,7 +230,7 @@ const onvisitShop = () => {
         <div v-for="(variation, index) in productResponseData.variations" :key="index" class="infor">
           <label>{{ variation.name }}</label>
           <div class="uppercase flex gap-2">
-            <p v-for="(option, i) in variation.options" :key="i" class="box-type" @click="getModelStock(productResponseData.models, [index, i])">
+            <p v-for="(option, i) in variation.options" :key="i" class="box-type" @click="getModelStock(productResponseData.models, index, i)">
               {{ option }}
             </p>
           </div>
