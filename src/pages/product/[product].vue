@@ -14,7 +14,6 @@ import { handleDate } from '~/utils/date'
 import { productStatus } from '~/utils/status'
 import { equalArray } from '~/utils/arrayHandle'
 import { getResources } from '~/utils/resources'
-
 import ShopRequest from '~/services/shop-request'
 import ProductRequest from '~/services/product-request'
 import AccountRequest from '~/services/account-request'
@@ -90,7 +89,7 @@ function getModelStock(array, outer, inner) {
   array.map((element) => {
     isChoossen.value = [outer, inner]
     if (element.variation_index.length === 2) {
-      if (JSON.stringify(element.variation_index) === JSON.stringify([outer, inner])) {
+      if (equalArray(element.variation_index, [outer, inner])) {
         productStock.value = element.stock
         productPrice.value = element.price
         payloadCart.product_model_id = element.id
@@ -98,13 +97,12 @@ function getModelStock(array, outer, inner) {
     }
     if (element.variation_index.length === 1) {
       const option = [element.variation_index[0], element.variation_index[0]]
-      if (JSON.stringify(option) === JSON.stringify([outer, inner])) {
+      if (equalArray(option, [outer, inner])) {
         productStock.value = element.stock
         productPrice.value = element.price
         payloadCart.product_model_id = element.id
       }
     }
-
     return ''
   })
 }
