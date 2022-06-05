@@ -4,6 +4,7 @@ meta:
 </route>
 
 <script setup>
+import { useRouter } from 'vue-router'
 import { useLoading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
 import { useUser } from '~/stores/user'
@@ -19,6 +20,7 @@ const { t } = useI18n()
 const loading = useLoading()
 const user = useUser()
 const order = useOrder()
+const router = useRouter()
 
 onMounted(() => {
   if (!localStorage.getItem('token'))
@@ -36,6 +38,10 @@ watch(async() => {
   user.order = orderData
   order.payget = orderData.data
 })
+const trackOrder = (order_id) => {
+  order.savedOrder = order_id
+  router.push(`/buyer/order/id=${encodeURIComponent(order_id)}`)
+}
 </script>
 
 <template>
@@ -65,11 +71,15 @@ watch(async() => {
           <tr v-for="(item, index) in order.payget" :key="index">
             <td>{{ index+1 }}</td>
             <td>{{ item.name }}</td>
-            <td>{{ item.created_at }}</td>
+            <td>{{ handleDate(item.created_at) }}</td>
             <td>{{ orderStatus(item.status_id) }}</td>
             <td>{{ item.quantity }}</td>
             <td>${{ item.total }}</td>
-            <td><a :href="item" class="hover:opacity-50">Download</a></td>
+            <td>
+              <button type="button" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:(bg-gradient-to-l from-teal-200 to-lime-200) focus:(ring-2 focus:ring-lime-200) dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-1.75 text-center mr-2 mb-2" @click="trackOrder(item.id)">
+                Track
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
