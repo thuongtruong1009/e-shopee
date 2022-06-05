@@ -1,356 +1,294 @@
 {
     "status": true,
-    "data": {
-        "current_page": 1,
-        "data": [
-            {
-                "quantity": 4,
-                "user_id": 1,
-                "shop_id": 1,
-                "product_id": 1,
-                "product_model_id": 1,
-                "total_price": 2000,
-                "final_total_price": 2000,
-                "shop": {
-                    "id": 1,
-                    "name": "Shop odede"
-                },
-                "product": {
-                    "id": 1,
-                    "name": "Samsung Galaxy A53 5G | A52s 5G (8GB+128GB\/256GB) with 1 Year Warranty by Samsung",
-                    "description": "",
-                    "weight": "500",
-                    "sold": 0,
-                    "images": [
-                        "93bc5fa42886e635fd9f103d03c9c31d",
-                        "6085df7be931e1ef9d79ce125cacdb8b"
-                    ],
-                    "videos": [],
-                    "variations": [
-                        {
-                            "name": "Colour",
-                            "options": [
-                                "Awesome Black",
-                                "Awesome White"
-                            ]
-                        },
-                        {
-                            "name": "Model",
-                            "options": [
-                                "A52s 8GB+128GB",
-                                "A53 8GB+128GB"
-                            ]
-                        }
-                    ],
-                    "created_at": "2022-05-19 15:07:43",
-                    "shop_id": 1,
-                    "brand_id": 1,
-                    "status_id": 1,
-                    "models": [
-                        {
-                            "id": 2,
-                            "sku": "",
-                            "price": "500",
-                            "stock": 5,
-                            "variation_index": [
-                                0,
-                                1
-                            ],
-                            "is_default": false,
-                            "product_id": 1
-                        },
-                        {
-                            "id": 3,
-                            "sku": "",
-                            "price": "500",
-                            "stock": 5,
-                            "variation_index": [
-                                1,
-                                0
-                            ],
-                            "is_default": false,
-                            "product_id": 1
-                        },
-                        {
-                            "id": 4,
-                            "sku": "",
-                            "price": "500",
-                            "stock": 50,
-                            "variation_index": [
-                                1,
-                                1
-                            ],
-                            "is_default": false,
-                            "product_id": 1
-                        },
-                        {
-                            "id": 1,
-                            "sku": "",
-                            "price": "500",
-                            "stock": 5,
-                            "variation_index": [
-                                0,
-                                0
-                            ],
-                            "is_default": false,
-                            "product_id": 1
-                        }
-                    ]
-                },
-                "product_model": {
-                    "id": 1,
-                    "sku": "",
-                    "price": "500",
-                    "stock": 5,
-                    "variation_index": [
-                        0,
-                        0
-                    ],
-                    "is_default": false,
-                    "product_id": 1
-                }
+    "data": [
+        {
+            "quantity": 1,
+            "user_id": 2,
+            "shop_id": 1,
+            "product_id": 1,
+            "product_model_id": 2,
+            "total_price": 296,
+            "final_total_price": 296,
+            "shop": {
+                "id": 1,
+                "name": "Shop of User 01"
             },
-            {
-                "quantity": 4,
-                "user_id": 1,
+            "product": {
+                "id": 1,
+                "name": "Samsung Galaxy A53 5G | A52s 5G (8GB+128GB\/256GB) with 1 Year Warranty by Samsung",
+                "description": "Samsung A52s 5G Key Specs:\\nDisplay : 6.5 inches (Super AMOLED,120Hz)\\nCPU : Octa-core (4x2.4 GHz Kryo 670 & 4x1.9 GHz Kryo 670)\\nMain Camera : 64MP + 12MP + 5MP + 5MP\\nSelfie Camera : 32MP\\nRAM : 8GB\\nStorage : 128GB\/256GB\\nBattery Capacity : 4500 mAh (Fast Charging 25W)\\n\\nFor more details, please check at :\\nhttps:\/\/www.samsung.com\/sg\/smartphones\/galaxy-a\/galaxy-a52s-5g-awesomemint-256gb-sm-a528blgixsp\/\\n\\nSamsung A53 5G Key Specs :\\nDisplay : 6.5 inches (Super AMOLED,120Hz)\\nCPU : Octa-core (2x2.4 GHz Cortex-A78 & 6x2.0 GHz Cortex-A55)\\nMain Camera : 64MP + 12MP + 5MP + 5MP\\nSelfie Camera : 32MP\\nRAM : 8GB\\nStorage : 128GB\/256GB\\nBattery Capacity : 5000 mAh (Fast Charging 25W)\\n\\nFor more details,please check at\\nhttps:\/\/www.samsung.com\/sg\/smartphones\/galaxy-a\/galaxy-a53-5g-awesome-blue-128gb-sm-a536elbgxsp\/\\n\\n-All products are 100% authentic.\\n-Local Singapore set.\\n-All products are sourced from authorised dealers,official stores and telcos (M1,Singtel,Starhub & etc).\\n-Some products are unsealed to check for manufacturer defect.\\n-All products warranty based on manufactured date.\\n-Some products might less than 1 year warranty due to activation policy from dealers or telcos.\\n-If you wish to purchase Samsung Care+,please request by leave a message when placing order.\\n-Telcos receipt or official dealers receipt will be provided if available.\\n-Store soft copy receipt can be issue upon request.\\n-For products that comes with manufacturer warranty,buyer must contact manufacturer or visit manufacturer\u2019s service center for repair\/exchange or any technical support.\\n-All products sold are not exchangeable and not refundable.",
+                "weight": "500",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-93bc5fa42886e635fd9f103d03c9c31d",
+                    "demo-6085df7be931e1ef9d79ce125cacdb8b"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Colour",
+                        "options": [
+                            "Awesome Black",
+                            "Awesome White"
+                        ]
+                    },
+                    {
+                        "name": "Model",
+                        "options": [
+                            "A52s 8GB+128GB",
+                            "A53 8GB+128GB"
+                        ]
+                    }
+                ],
+                "created_at": "2022-06-04 07:14:57",
                 "shop_id": 1,
-                "product_id": 1,
-                "product_model_id": 2,
-                "total_price": 2000,
-                "final_total_price": 2000,
-                "shop": {
-                    "id": 1,
-                    "name": "Shop odede"
-                },
-                "product": {
-                    "id": 1,
-                    "name": "Samsung Galaxy A53 5G | A52s 5G (8GB+128GB\/256GB) with 1 Year Warranty by Samsung",
-                    "description": "",
-                    "weight": "500",
-                    "sold": 0,
-                    "images": [
-                        "93bc5fa42886e635fd9f103d03c9c31d",
-                        "6085df7be931e1ef9d79ce125cacdb8b"
-                    ],
-                    "videos": [],
-                    "variations": [
-                        {
-                            "name": "Colour",
-                            "options": [
-                                "Awesome Black",
-                                "Awesome White"
-                            ]
-                        },
-                        {
-                            "name": "Model",
-                            "options": [
-                                "A52s 8GB+128GB",
-                                "A53 8GB+128GB"
-                            ]
-                        }
-                    ],
-                    "created_at": "2022-05-19 15:07:43",
-                    "shop_id": 1,
-                    "brand_id": 1,
-                    "status_id": 1,
-                    "models": [
-                        {
-                            "id": 2,
-                            "sku": "",
-                            "price": "500",
-                            "stock": 5,
-                            "variation_index": [
-                                0,
-                                1
-                            ],
-                            "is_default": false,
-                            "product_id": 1
-                        },
-                        {
-                            "id": 3,
-                            "sku": "",
-                            "price": "500",
-                            "stock": 5,
-                            "variation_index": [
-                                1,
-                                0
-                            ],
-                            "is_default": false,
-                            "product_id": 1
-                        },
-                        {
-                            "id": 4,
-                            "sku": "",
-                            "price": "500",
-                            "stock": 50,
-                            "variation_index": [
-                                1,
-                                1
-                            ],
-                            "is_default": false,
-                            "product_id": 1
-                        },
-                        {
-                            "id": 1,
-                            "sku": "",
-                            "price": "500",
-                            "stock": 5,
-                            "variation_index": [
-                                0,
-                                0
-                            ],
-                            "is_default": false,
-                            "product_id": 1
-                        }
-                    ]
-                },
-                "product_model": {
-                    "id": 2,
-                    "sku": "",
-                    "price": "500",
-                    "stock": 5,
-                    "variation_index": [
-                        0,
-                        1
-                    ],
-                    "is_default": false,
-                    "product_id": 1
-                }
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 1,
+                        "sku": "",
+                        "price": "516",
+                        "stock": 5,
+                        "variation_index": [
+                            0,
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 1
+                    },
+                    {
+                        "id": 2,
+                        "sku": "",
+                        "price": "296",
+                        "stock": 5,
+                        "variation_index": [
+                            0,
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 1
+                    },
+                    {
+                        "id": 3,
+                        "sku": "",
+                        "price": "406",
+                        "stock": 5,
+                        "variation_index": [
+                            1,
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 1
+                    },
+                    {
+                        "id": 4,
+                        "sku": "",
+                        "price": "515",
+                        "stock": 50,
+                        "variation_index": [
+                            1,
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 1
+                    }
+                ]
             },
-            {
-                "quantity": 1,
-                "user_id": 1,
-                "shop_id": 1,
-                "product_id": 1,
-                "product_model_id": 3,
-                "total_price": 500,
-                "final_total_price": 500,
-                "shop": {
-                    "id": 1,
-                    "name": "Shop odede"
-                },
-                "product": {
-                    "id": 1,
-                    "name": "Samsung Galaxy A53 5G | A52s 5G (8GB+128GB\/256GB) with 1 Year Warranty by Samsung",
-                    "description": "",
-                    "weight": "500",
-                    "sold": 0,
-                    "images": [
-                        "93bc5fa42886e635fd9f103d03c9c31d",
-                        "6085df7be931e1ef9d79ce125cacdb8b"
-                    ],
-                    "videos": [],
-                    "variations": [
-                        {
-                            "name": "Colour",
-                            "options": [
-                                "Awesome Black",
-                                "Awesome White"
-                            ]
-                        },
-                        {
-                            "name": "Model",
-                            "options": [
-                                "A52s 8GB+128GB",
-                                "A53 8GB+128GB"
-                            ]
-                        }
-                    ],
-                    "created_at": "2022-05-19 15:07:43",
-                    "shop_id": 1,
-                    "brand_id": 1,
-                    "status_id": 1,
-                    "models": [
-                        {
-                            "id": 2,
-                            "sku": "",
-                            "price": "500",
-                            "stock": 5,
-                            "variation_index": [
-                                0,
-                                1
-                            ],
-                            "is_default": false,
-                            "product_id": 1
-                        },
-                        {
-                            "id": 3,
-                            "sku": "",
-                            "price": "500",
-                            "stock": 5,
-                            "variation_index": [
-                                1,
-                                0
-                            ],
-                            "is_default": false,
-                            "product_id": 1
-                        },
-                        {
-                            "id": 4,
-                            "sku": "",
-                            "price": "500",
-                            "stock": 50,
-                            "variation_index": [
-                                1,
-                                1
-                            ],
-                            "is_default": false,
-                            "product_id": 1
-                        },
-                        {
-                            "id": 1,
-                            "sku": "",
-                            "price": "500",
-                            "stock": 5,
-                            "variation_index": [
-                                0,
-                                0
-                            ],
-                            "is_default": false,
-                            "product_id": 1
-                        }
-                    ]
-                },
-                "product_model": {
-                    "id": 3,
-                    "sku": "",
-                    "price": "500",
-                    "stock": 5,
-                    "variation_index": [
-                        1,
-                        0
-                    ],
-                    "is_default": false,
-                    "product_id": 1
-                }
+            "product_model": {
+                "id": 2,
+                "sku": "",
+                "price": "296",
+                "stock": 5,
+                "variation_index": [
+                    0,
+                    1
+                ],
+                "is_default": false,
+                "product_id": 1
             }
-        ],
-        "first_page_url": "http:\/\/tp-o.tk\/api\/v2\/user\/cart?page=1",
-        "from": 1,
-        "last_page": 1,
-        "last_page_url": "http:\/\/tp-o.tk\/api\/v2\/user\/cart?page=1",
-        "links": [
-            {
-                "url": null,
-                "label": "&laquo; Previous",
-                "active": false
+        },
+        {
+            "quantity": 2,
+            "user_id": 2,
+            "shop_id": 3,
+            "product_id": 3,
+            "product_model_id": 8,
+            "total_price": 119.8,
+            "final_total_price": 119.8,
+            "shop": {
+                "id": 3,
+                "name": "Blinkfyre"
             },
-            {
-                "url": "http:\/\/tp-o.tk\/api\/v2\/user\/cart?page=1",
-                "label": "1",
-                "active": true
+            "product": {
+                "id": 3,
+                "name": "\u3010SG\u3011 Gateron KS-9 Mechanical Keyboard Switch",
+                "description": "Local SG Seller \u2013 Fast Delivery \u2013 Buy with Confidence!\\nNote: Not compatible with Outemu hot-swap PCB (e.g. Tecware Phantom RGB), as it has a narrower socket that only accept Outemu switches.\\nMinimum order 30 pcs, can mix and match.\\nContact us if you would like to have switch tester kit with 9 type of Gateron switches.\\n\u3010Gateron White Switch\u3011\\nType: Linear\\nActuation Force: 35 gf\\nActuation Distance: 2.0 mm\\nTravel Distance: 4.0 mm\\nDescription: The white switch has the lightest actuation force amongst the linear switches. The smooth nature of the Gateron allows it to be triggered with very light force, making it effortless to type.\\n\u3010Gateron Red Switch\u3011\\nType: Linear\\nActuation Force: 45 gf\\nActuation Distance: 2.0 mm\\nTravel Distance: 4.0 mm\\nDescription: Gateron red is the most commonly used Gateron switch because it is a linear switch, making the typing sound quieter. The pressure is more moderate, light, and prolonged periods of typing will not feel tired.\\n\u3010Gateron Yellow Switch\u3011\\nType: Linear\\nActuation Force: 50 gf\\nActuation Distance: 2.0 mm\\nTravel Distance: 4.0 mm\\nDescription: The design of the Gateron yellow switch is the same as the red switch, but the departure strength is 5g bigger, which seems small but does offer a difference in feeling. The feedback of the yellow switch is more rigid, but it doesn\u2019t need heavy force to be triggered.\\n\u3010Gateron Black Switch\u3011\\nType: Linear\\nActuation Force: 60 gf\\nActuation Distance: 2.0 mm\\nTravel Distance: 4.0 mm\\nDescription: The black switch is a linear switch with the greatest strength amongst standard mass-produced switches. Those who like mechanical keyboards with a stronger trigger force will likely prefer the Gateron black switch.\\n\u3010Gateron Brown Switch\u3011\\nType: Tactile\\nActuation Force: 55 gf\\nActuation Distance: 2.0 mm\\nTravel Distance: 4.0 mm\\nDescription: Gateron brown switch has the characteristics of both the red and blue switches. The vertical press still feels smooth, but also has the feeling of a bump. The sound is relatively quiet and will not disturb the surrounding environment.\\n\u3010Gateron Blue Switch\u3011\\nType: Clicky\\nActuation Force: 60 gf\\nActuation Distance: 2.3 mm\\nTravel Distance: 4.0 mm\\nDescription: Gateron Blue has a unique clicky touch feel and a louder sound. It still has the characteristics of the Gateron Switch and is smooth with tactile feedback. This structure can let you type for a long period and not get tired. It\u2019s ideal for games and typing.\\n\u3010Gateron Green Switch\u3011\\nType: Clicky\\nActuation Force: 80 gf\\nActuation Distance: 2.3 mm\\nTravel Distance: 4.0 mm\\nDescription: Gateron Green switch is seen by many as an upgraded version of Gateron Blue switch. 80g of press force is 20g higher than the Blue switch. The green switch has stronger feedback and a harder rebound.",
+                "weight": "50",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-4cc279abec8e74f480bc3968989be311"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Switch Type",
+                        "options": [
+                            "Gateron White",
+                            "Gateron Red"
+                        ]
+                    }
+                ],
+                "created_at": "2022-06-04 07:14:57",
+                "shop_id": 3,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 7,
+                        "sku": "",
+                        "price": "59.9",
+                        "stock": 50,
+                        "variation_index": [
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 3
+                    },
+                    {
+                        "id": 8,
+                        "sku": "",
+                        "price": "59.9",
+                        "stock": 50,
+                        "variation_index": [
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 3
+                    }
+                ]
             },
-            {
-                "url": null,
-                "label": "Next &raquo;",
-                "active": false
+            "product_model": {
+                "id": 8,
+                "sku": "",
+                "price": "59.9",
+                "stock": 50,
+                "variation_index": [
+                    1
+                ],
+                "is_default": false,
+                "product_id": 3
             }
-        ],
-        "next_page_url": null,
-        "path": "http:\/\/tp-o.tk\/api\/v2\/user\/cart",
-        "per_page": "10",
-        "prev_page_url": null,
-        "to": 3,
-        "total": 3
-    }
+        },
+        {
+            "quantity": 3,
+            "user_id": 2,
+            "shop_id": 6,
+            "product_id": 8,
+            "product_model_id": 19,
+            "total_price": 21,
+            "final_total_price": 21,
+            "shop": {
+                "id": 6,
+                "name": "BAGSWORLDSG"
+            },
+            "product": {
+                "id": 8,
+                "name": "SG M330 ultra silent Black wireless gaming working work ergonomic mouse mice accessories",
+                "description": "Meet M330 Silent Plus\\nGet all your work done without missing a beat or disturbing people around you. Silent Mice have the same click feel without the click noise\u2014over 90 percent noise reduction.* Say hello to the silent one in the room and goodbye to your last annoying click. Your family and friends will thank you\\nM330 Black wireless gaming working work ergonomic mouse mice accessories\\naccessories mice wireless mouse wireless gaming mice computer mouse ergonomic mouse wireless bluetooth wireless gaming mouse wireless mouse",
+                "weight": "700",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-7c311a63d50279bbce830f1eb219d501",
+                    "demo-b8183953f66801b0b6fd0ffdddf07872"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Colour",
+                        "options": [
+                            "Black M330",
+                            "White M330"
+                        ]
+                    },
+                    {
+                        "name": "Quantity",
+                        "options": [
+                            "1 Pack",
+                            "2 Packs"
+                        ]
+                    }
+                ],
+                "created_at": "2022-06-04 07:14:57",
+                "shop_id": 6,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 17,
+                        "sku": "",
+                        "price": "8",
+                        "stock": 50,
+                        "variation_index": [
+                            0,
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 8
+                    },
+                    {
+                        "id": 18,
+                        "sku": "",
+                        "price": "16",
+                        "stock": 50,
+                        "variation_index": [
+                            0,
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 8
+                    },
+                    {
+                        "id": 19,
+                        "sku": "",
+                        "price": "7",
+                        "stock": 50,
+                        "variation_index": [
+                            1,
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 8
+                    },
+                    {
+                        "id": 20,
+                        "sku": "",
+                        "price": "14",
+                        "stock": 50,
+                        "variation_index": [
+                            1,
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 8
+                    }
+                ]
+            },
+            "product_model": {
+                "id": 19,
+                "sku": "",
+                "price": "7",
+                "stock": 50,
+                "variation_index": [
+                    1,
+                    0
+                ],
+                "is_default": false,
+                "product_id": 8
+            }
+        }
+    ]
 }

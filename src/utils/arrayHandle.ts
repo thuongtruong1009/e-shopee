@@ -5,5 +5,6 @@ const removeItemByIndex = (array: Array<any>, item: any, length: number) => {
 
   return array
 }
+const equalArray = (array1: Array<number>, array2: Array<number>) => JSON.stringify(array1) === JSON.stringify(array2)
 
-export { removeItemByIndex }
+export { removeItemByIndex, equalArray }

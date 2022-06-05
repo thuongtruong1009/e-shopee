@@ -48,7 +48,7 @@ const priceMax = ref(1000)
 
 const tags = reactive(['shopping', 'new_products', 'accessories', 'sales'])
 const regime = ref('grid')
-const onChangeRegime = (type) => {
+const onChangeRegime = (type: any) => {
   regime.value = String(type)
 }
 

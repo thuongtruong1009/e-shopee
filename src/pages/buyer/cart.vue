@@ -39,7 +39,6 @@ onMounted(async() => {
   const { data: cartData } = await CartRequest.getCart({ params: { limit: payget.limit, page: payget.page } })
   loading.isLoading = false
   cart.result = cartData.data
-  cart.payget = cartData.data[0]
 })
 // ---------------------------------------------
 

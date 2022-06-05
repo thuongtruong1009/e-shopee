@@ -31,7 +31,7 @@ const payload = reactive({
 })
 watch(async() => {
   loading.isLoading = true
-  const { data: orderData } = await OrderRequest.getOrders({ params: { limit: payload.limit} })
+  const { data: orderData } = await OrderRequest.getOrders({ params: { limit: payload.limit } })
   loading.isLoading = false
   user.order = orderData
   order.payget = orderData.data
@@ -55,6 +55,7 @@ watch(async() => {
             <th>{{ t('account.order-name') }}</th>
             <th>{{ t('account.order-date') }}</th>
             <th>{{ t('account.order-status') }}</th>
+            <th>Quantity</th>
             <th>{{ t('account.order-total') }}</th>
             <th>{{ t('account.order-action') }}</th>
           </tr>
@@ -68,6 +69,7 @@ watch(async() => {
             <td>{{ orderStatus(item.status_id) }}</td>
             <td>{{ item.quantity }}</td>
             <td>${{ item.total }}</td>
+            <td><a :href="item" class="hover:opacity-50">Download</a></td>
           </tr>
         </tbody>
       </table>
@@ -79,8 +81,8 @@ watch(async() => {
 thead > tr, tbody > tr:not(:last-child){
   border-bottom: 1px solid #e9e9e9;
 }
-th:not(:last-child), td:not(:last-child){
+th, td{
   border-right: 1px solid #e9e9e9;
-  padding: 0.75rem 0;
+  padding: 0.75rem;
 }
 </style>

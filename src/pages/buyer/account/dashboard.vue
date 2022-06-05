@@ -147,7 +147,7 @@ const signOut = async() => {
         <input id="user_avatar_file" type="file" accept=".png, .jpg, .jpeg">
       </div>
       <div class="pt-5 flex justify-end">
-        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
+        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" :disabled="!payload.avatar_image" :class="{'pointer-events-none':!payload.avatar_image}" @click="handleUpdate">
           <ISave />{{ t('account.save-changes') }}
         </button>
       </div>

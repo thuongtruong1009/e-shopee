@@ -6,7 +6,7 @@ const { t } = useI18n()
 const product = useProduct()
 
 watch(async() => {
-  const { data } = await ProductRequest.getCategoriesChildrenById(0)
+  const { data } = await ProductRequest.getCategoriesChildrenById()
   product.category = data
 })
 

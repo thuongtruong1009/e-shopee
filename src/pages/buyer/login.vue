@@ -31,6 +31,12 @@ const payload = reactive({
   password: '',
 })
 
+const isEntrance = ref(false)
+watchEffect(() => {
+  if (payload.usernameOrEmail.length > 0 && payload.password.length > 0)
+    isEntrance.value = true
+})
+
 const handleSubmit = (e) => {
   e.preventDefault()
   loading.isLoading = true
@@ -64,7 +70,7 @@ const handleSubmit = (e) => {
       </div>
       <span class="form__span mt-4">{{ t('auth.b-oauth') }}</span>
       <input v-model="payload.usernameOrEmail" class="form__input" name="usernameOrEmail" type="text" placeholder="Email" required>
-      <input v-model="payload.password" class="form__input" name="password" type="password" placeholder="Password" autocomplete="true" required>
+      <input v-model="payload.password" class="form__input" name="password" type="password" placeholder="Password" autocomplete="true" required @keydown.enter="handleSubmit">
       <div class="text-xs text-gray-500/50 flex justify-between w-full">
         <a href="/buyer/register">
           {{ t('auth.b-not-account') }}?
@@ -73,7 +79,7 @@ const handleSubmit = (e) => {
           {{ t('auth.b-login-forgot') }}?
         </a>
       </div>
-      <button type="submit" class="form__button flex justify-center items-center gap-2 font-semibold uppercase mt-5" @click="handleSubmit">
+      <button type="submit" class="form__button flex justify-center items-center gap-2 font-semibold uppercase mt-5" :class="{'pointer-events-none':!isEntrance}" :disabled="!isEntrance" @click="handleSubmit">
         <IBUnlock />{{ t('auth.b-login-btn') }}
       </button>
     </form>

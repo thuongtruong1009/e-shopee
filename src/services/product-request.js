@@ -41,8 +41,8 @@ class ProductRequest {
     return AxiosInstance.get(url)
   }
 
-  getCategoriesChildrenById(id) {
-    const url = `/products/categories/${id}/children`
+  getCategoriesChildrenById() {
+    const url = '/products/categories/tree'
     return AxiosInstance.get(url)
   }
 

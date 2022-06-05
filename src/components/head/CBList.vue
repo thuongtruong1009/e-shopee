@@ -35,9 +35,7 @@ const cartPayload = reactive({
 })
 watchEffect(async() => {
   const { data: cartData } = await CartRequest.getCart({ params: { limit: cartPayload.limit, page: cartPayload.page } })
-  cart.result = cartData.data
-  cart.payget = cartData.data[0]
-  cart.product = cartData.data[0].product
+  cart.result = cartData
 })
 const handleDelete = async(id) => {
   removeItemByIndex(cart.result, id, 1)
