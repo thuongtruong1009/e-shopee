@@ -12,6 +12,7 @@ import { useSeller } from '~/stores/seller'
 import { handleError } from '~/helpers/error'
 import { handleDate } from '~/utils/date'
 import { productStatus } from '~/utils/status'
+import { equalArray } from '~/utils/arrayHandle'
 import { getResources } from '~/utils/resources'
 
 import ShopRequest from '~/services/shop-request'
@@ -35,6 +36,7 @@ const productResponseData = ref([])
 const productPrice = ref()
 const productStock = ref()
 const productImg = ref('')
+const productReview = ref([])
 
 onMounted(async() => {
   if (!localStorage.getItem('token')) { router.push({ path: '/buyer/login' }) }
@@ -45,7 +47,8 @@ onMounted(async() => {
     productResponseData.value = productData
     productImg.value = productData.images
 
-    const { data: reviewData } = await getReviewsProductsById(product.productRequestID, { params: { limit: 10 } })
+    const { data: reviewData } = await ProductRequest.getReviewsProductsById(product.productRequestID, { params: { limit: 10 } })
+    productReview.value = reviewData
   }
 })
 
@@ -66,6 +69,7 @@ const handleAdd = async() => {
   useToast.updateToast('success', 'You cart items has been updated!', true)
 }
 // ------------------------------------------
+const isChoossen = ref()
 watchEffect(async() => {
   // get price min-max
   const valuesPrice = productResponseData.value.models.map(i => i.price)
@@ -84,6 +88,7 @@ watchEffect(async() => {
 })
 function getModelStock(array, outer, inner) {
   array.map((element) => {
+    isChoossen.value = [outer, inner]
     if (element.variation_index.length === 2) {
       if (JSON.stringify(element.variation_index) === JSON.stringify([outer, inner])) {
         productStock.value = element.stock
@@ -230,7 +235,7 @@ const onvisitShop = () => {
         <div v-for="(variation, index) in productResponseData.variations" :key="index" class="infor">
           <label>{{ variation.name }}</label>
           <div class="uppercase flex gap-2">
-            <p v-for="(option, i) in variation.options" :key="i" class="box-type" @click="getModelStock(productResponseData.models, index, i)">
+            <p v-for="(option, i) in variation.options" :key="i" class="box-type" :class="{active:equalArray(isChoossen, [index, i])}" @click="getModelStock(productResponseData.models, index, i)">
               {{ option }}
             </p>
           </div>
@@ -443,7 +448,8 @@ const onvisitShop = () => {
   border-radius: 0.3rem;
   padding: 0 0.5rem;
 }
-.infor .box-type:hover{
+.infor .box-type:hover,
+.infor .box-type.active{
   color: #EE4D2D;
   border-color: #EE4D2D;
   background: #FFF5F1;
