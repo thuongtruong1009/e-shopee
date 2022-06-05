@@ -195,7 +195,6 @@ account:
   order-no: No
   order-name: Name
   order-date: Date
-  order-status: Status
   order-total: Total
   order-action: Action
   save-changes: Save changes

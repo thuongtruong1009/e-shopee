@@ -15,9 +15,9 @@ export const useOrder = defineStore('order', () => {
     savedOrder.value = order_id
   }
 
-  // order data after search
-  const resultOrder = ref([])
-  return { payget, savedOrder, previousOrder, usedOrder, setNewOrder, resultOrder }
+  const orderVariation = ref([])
+  const orderAddress = ref('')
+  return { payget, savedOrder, previousOrder, usedOrder, setNewOrder, orderVariation, orderAddress }
 })
 if (import.meta.hot)
   import.meta.hot.accept(acceptHMRUpdate(useOrder, import.meta.hot))

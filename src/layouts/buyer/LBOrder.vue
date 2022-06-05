@@ -1,5 +1,5 @@
 <template>
-  <main class="text-center text-gray-700 dark:(text-gray-200 bg-$dark-bg) overflow-x-hidden">
+  <main class="text-gray-700 dark:(text-gray-200 bg-$dark-bg) overflow-x-hidden">
     <CBHeaderTop />
     <CBHead />
     <router-view />

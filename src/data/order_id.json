@@ -1,4 +1,6 @@
- {
+{
+  "status": true,
+  "data": {
     "id": 4,
     "name": "M220 Silent Wireless Mouse 1600DPI Optical Tracking accessories mice wireless mouse wireless gaming mice computer mouse",
     "variations": [
@@ -18,7 +20,7 @@
     "product": {
       "id": 25,
       "name": "M220 Silent Wireless Mouse 1600DPI Optical Tracking accessories mice wireless mouse wireless gaming mice computer mouse",
-      "description": "M220 Silent Wireless Mouse 1600DPI Optical Tracking accessories mice wireless mouse wireless gaming mice computer mouse wireless bluetooth wireless gaming mouse wireless mouse silent blue tooth mouse\\nSpecification\\nModel: M220\\nType：wireless mouse\\nColor：black / red / blue\\nWireless transmission frequency:：2.4GHz\\nNumber of buttons：3\\nInterface：USB\\nResolution：1600DPI\\nOperating distance：10 m\\nBattery type：AA\\nErgonomics：Yes\\nApplicable system：Windows 10 or Higher version / Windows 8 / Windows RT / Windows 7 / Mac OS X 10.5 or Higher version / Chrome OS / Linus Kernel 2.6+2\\nMouse size：99 * 60 * 39 mm\\nWeight of mouse (including battery) ：85g\\naccessories mice wireless mouse wireless gaming mice computer mouse ergonomic mouse wireless bluetooth wireless gaming mouse wireless mouse silent blue tooth mouse",
+      "description": "M220 Silent Wireless Mouse 1600DPI Optical Tracking accessories mice wireless mouse wireless gaming mice computer mouse wireless bluetooth wireless gaming mouse wireless mouse silent blue tooth mouse\\nSpecification\\nModel: M220\\nType\uff1awireless mouse\\nColor\uff1ablack \/ red \/ blue\\nWireless transmission frequency:\uff1a2.4GHz\\nNumber of buttons\uff1a3\\nInterface\uff1aUSB\\nResolution\uff1a1600DPI\\nOperating distance\uff1a10 m\\nBattery type\uff1aAA\\nErgonomics\uff1aYes\\nApplicable system\uff1aWindows 10 or Higher version \/ Windows 8 \/ Windows RT \/ Windows 7 \/ Mac OS X 10.5 or Higher version \/ Chrome OS \/ Linus Kernel 2.6+2\\nMouse size\uff1a99 * 60 * 39 mm\\nWeight of mouse (including battery) \uff1a85g\\naccessories mice wireless mouse wireless gaming mice computer mouse ergonomic mouse wireless bluetooth wireless gaming mouse wireless mouse silent blue tooth mouse",
       "weight": "5000",
       "avg_rating": "0",
       "sold": 0,
@@ -59,3 +61,4 @@
       }
     ]
   }
+}

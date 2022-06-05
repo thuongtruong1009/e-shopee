@@ -9,9 +9,7 @@ import { useLoading } from '~/stores/loading'
 import { toast } from '~/stores/toast'
 import { useUser } from '~/stores/user'
 import { useOrder } from '~/stores/order'
-import { orderStatus } from '~/utils/status'
 import OrderRequest from '~/services/order-request'
-import { handleDate } from '~/utils/date'
 
 useHead({
   title: 'buyer | orders',
@@ -59,9 +57,6 @@ const trackOrder = (order_id) => {
           <tr>
             <th>{{ t('account.order-no') }}</th>
             <th>{{ t('account.order-name') }}</th>
-            <th>{{ t('account.order-date') }}</th>
-            <th>{{ t('account.order-status') }}</th>
-            <th>Quantity</th>
             <th>{{ t('account.order-total') }}</th>
             <th>{{ t('account.order-action') }}</th>
           </tr>
@@ -71,13 +66,12 @@ const trackOrder = (order_id) => {
           <tr v-for="(item, index) in order.payget" :key="index">
             <td>{{ index+1 }}</td>
             <td>{{ item.name }}</td>
-            <td>{{ handleDate(item.created_at) }}</td>
-            <td>{{ orderStatus(item.status_id) }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>${{ item.total }}</td>
+            <td class="text-red-500 font-medium">
+              ${{ item.total }}
+            </td>
             <td>
-              <button type="button" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:(bg-gradient-to-l from-teal-200 to-lime-200) focus:(ring-2 focus:ring-lime-200) dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-1.75 text-center mr-2 mb-2" @click="trackOrder(item.id)">
-                Track
+              <button type="button" class="text-gray-700 bg-gradient-to-r from-teal-200 to-lime-200 hover:(bg-gradient-to-l from-teal-200 to-lime-200) focus:(ring-2 focus:ring-lime-200) dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-1.75 text-center mr-2 mb-2 flex items-center gap-1" @click="trackOrder(item.id)">
+                <IBTrackOrder /> Track
               </button>
             </td>
           </tr>
