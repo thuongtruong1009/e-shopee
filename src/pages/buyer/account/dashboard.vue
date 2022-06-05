@@ -62,16 +62,16 @@ watch(async() => {
 
 const genderType = reactive([
   {
+    id: 0,
+    type: 'Others',
+  },
+  {
     id: 1,
     type: 'Male',
   },
   {
     id: 2,
     type: 'Female',
-  },
-  {
-    id: 3,
-    type: 'Others',
   }])
 const handleUpdate = async() => {
   await AccountRequest.updateProfile(payload)
@@ -131,7 +131,7 @@ const signOut = async() => {
         <input v-model="payload.display_name" placeholder="Full name" type="text" required>
       </div>
       <div>
-        <input v-model="payload.phone" placeholder="Phone name" type="text">
+        <input v-model="payload.phone" placeholder="Phone number (10digits)" type="number" min="0000000000" max="9999999999">
         <select v-model="payload.gender" class="cursor-pointer">
           <option v-for="(gender, i) in genderType" :key="i" :value="gender.id">
             {{ gender.type }}
@@ -140,14 +140,13 @@ const signOut = async() => {
       </div>
       <div>
         <input v-model="payload.date_of_birth" placeholder="Date of birth (MM/DD/YYYY)" type="text" required>
-        <input v-model="user.payget.email" placeholder="Date of birth" disabled>
+        <input v-model="user.payget.email" placeholder="Email address" disabled>
       </div>
       <div>
-        <!-- <input v-model="payload.avatar_image" placeholder="Avatar link url" type="text" required disabled> -->
         <input id="user_avatar_file" type="file" accept=".png, .jpg, .jpeg">
       </div>
       <div class="pt-5 flex justify-end">
-        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" :disabled="!payload.avatar_image" :class="{'pointer-events-none':!payload.avatar_image}" @click="handleUpdate">
+        <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
           <ISave />{{ t('account.save-changes') }}
         </button>
       </div>

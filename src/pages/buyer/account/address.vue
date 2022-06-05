@@ -81,8 +81,8 @@ const handleDelete = async() => {
       </div>
       <div class="flex items-center gap-5">
         <div class="text-blue-500 cursor-pointer" @click="isCreating = !isCreating">
-          <IBCreate v-if="!isCreating" />
-          <IEdit v-if="isCreating" />
+          <IBCreate v-if="isCreating" />
+          <IEdit v-if="!isCreating" />
         </div>
         <IBDelete class="text-red-400 cursor-pointer" @click="handleDelete" />
       </div>
@@ -176,10 +176,10 @@ const handleDelete = async() => {
       </div>
 
       <div class="pt-5 flex gap-5 justify-end">
-        <button v-if="!isCreating" type="submit" class="btn bg-black duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
+        <button v-if="isCreating" type="submit" class="btn bg-black duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
           <ISave />{{ t('account.address-update') }}
         </button>
-        <button v-if="isCreating" type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
+        <button v-if="!isCreating" type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleCreate">
           <ISave />{{ t('account.address-create') }}
         </button>
       </div>
