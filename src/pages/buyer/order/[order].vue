@@ -11,7 +11,6 @@ import { handleDate } from '~/utils/date'
 import { useProduct } from '~/stores/product'
 import { getResources } from '~/utils/resources'
 import OrderRequest from '~/services/order-request'
-import IBOrderArrowRight from '~/components/icons/account/IBOrderArrowRight.vue'
 
 const router = useRouter()
 const order = useOrder()
@@ -43,11 +42,11 @@ const orderImg = ref('')
 onMounted(async() => {
   loading.isLoading = true
   const { data: orderData } = await OrderRequest.getOrdersById(order.savedOrder)
-  loading.isLoading = false
   payget.value = orderData
   order.orderVariation = orderData.product.variations[0]
   order.orderAddress = orderData.received_address
   orderImg.value = getResources(orderData.product.images[0])
+  loading.isLoading = false
 })
 watchEffect(() => {
   order.setNewOrder(order.savedOrder)

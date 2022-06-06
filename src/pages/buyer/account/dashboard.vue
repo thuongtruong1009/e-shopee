@@ -143,7 +143,9 @@ const signOut = async() => {
         <input v-model="user.payget.email" placeholder="Email address" disabled>
       </div>
       <div>
-        <input id="user_avatar_file" type="file" accept=".png, .jpg, .jpeg">
+        <input
+          id="user_avatar_file" type="file" accept=".png, .jpg, .jpeg" class="block w-full text-sm text-slate-500 file:(mr-4 py-2 px-4 rounded-full border-0 text-sm font-semibold bg-violet-50 text-violet-700) hover:file:bg-violet-100"
+        >
       </div>
       <div class="pt-5 flex justify-end">
         <button type="submit" class="btn bg-black hover:bg-[#F33535] duration-200 flex items-center gap-1 shadow-md shadow-gray-300 font-medium" @click="handleUpdate">
