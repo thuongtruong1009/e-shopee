@@ -20,6 +20,7 @@ declare module 'vue' {
     CBDemo1: typeof import('./components/buyer/CBDemo1.vue')['default']
     CBDemo2: typeof import('./components/buyer/CBDemo2.vue')['default']
     CBDemo3: typeof import('./components/buyer/CBDemo3.vue')['default']
+    CBFeature: typeof import('./components/buyer/CBFeature.vue')['default']
     CBFlashSales: typeof import('./components/buyer/CBFlashSales.vue')['default']
     CBFooter: typeof import('./components/buyer/CBFooter.vue')['default']
     CBHead: typeof import('./components/buyer/CBHead.vue')['default']

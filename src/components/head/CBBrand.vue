@@ -9,5 +9,6 @@
 svg {
     fill: white;
     width: 9rem;
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2));
 }
 </style>

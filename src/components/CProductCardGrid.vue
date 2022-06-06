@@ -23,6 +23,7 @@ const product = useProduct()
 
 const props = defineProps({
   card: Object,
+  mode: String,
 })
 
 const productPrice = ref()
@@ -59,11 +60,21 @@ const onVisitProduct = (prod_id, shop_id) => {
 </script>
 
 <template>
-  <div class="card-type flex justify-between absolute w-full p-2">
+  <img v-if="props.mode === 'feature'" src="/img/today/extra.png" alt="extra" class="absolute top-0 left-0 w-full z-1">
+  <img v-if="props.mode === 'feature'" src="/img/today/discount.svg" alt="discount" class="absolute -top-2 -right-6 w-21 z-1">
+  <div v-if="props.mode === 'feature'" class="absolute top-1 -right-4 w-20 text-xs z-1">
+    <p class="text-red-500">
+      30%
+    </p>
+    <p class="text-white" style="font-size:0.55em;">
+      {{ t('ctoday.decrease') }}
+    </p>
+  </div>
+  <div v-if="props.mode === 'discount'" class="card-type flex justify-between absolute w-full p-2 z-1">
     <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
     <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('search.new') }}</span>
   </div>
-  <div class="split third rounded-lg shadow-md" @click="onVisitProduct(props.card.id, props.card.shop_id)">
+  <div class="split third rounded-lg shadow-md z-0" @click="onVisitProduct(props.card.id, props.card.shop_id)">
     <div class="cover">
       <img class="first-img rounded-t-lg w-full max-h-80" :src="`${getResources(props.card.images[0])}_tn`" alt="product_img">
     </div>

@@ -7,8 +7,6 @@ meta:
 import { keyword } from '~/stores/keyword'
 import { useLoading } from '~/stores/loading'
 import ProductRequest from '~/services/product-request'
-import RProductSearch from '~/components/rendering/RProductSearch.vue'
-import RProductCardGrid from '~/components/rendering/RProductCardGrid.vue'
 
 const props = defineProps<{ keyword: string }>()
 const router = useRouter()
@@ -45,11 +43,6 @@ watch(async() => {
 watchEffect(() => {
   useKeyword.setNewKeyword(props.keyword)
 })
-const orderType = reactive([
-  {
-    1: true,
-    1: false,
-  }])
 
 // ------------------------------------------------------------------
 const priceValue = ref(200)
@@ -194,7 +187,7 @@ const onChangeRegime = (type: any) => {
         </a>
       </div>
     </aside>
-    <!-- ************************************ -->
+    <!-- ------------------------------------ -->
     <div class="grid-products-filter col-span-3">
       <div class="flex justify-between items-center bg-gray-100 dark:bg-gray-700 rounded-lg py-2 px-5">
         <ul id="pills-tab" class="nav-pills flex items-center">
@@ -234,7 +227,7 @@ const onChangeRegime = (type: any) => {
           </div>
           <div v-else v-cloak class="grid-products-list flex flex-wrap gap-5 py-10">
             <div v-for="(prod, index) in useKeyword.resultProduct" :key="index" class="card duration-200 ease-linear relative rounded-lg w-60  shadow-md dark:bg-gray-700 hover:shadow-gray-400/50 pb-0">
-              <CProductCardGrid :card="prod" />
+              <CProductCardGrid :card="prod" mode="discount" />
             </div>
           </div>
         </div>
