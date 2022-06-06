@@ -38,7 +38,7 @@ watch(async() => {
 })
 const trackOrder = (order_id) => {
   order.savedOrder = order_id
-  router.push(`/buyer/order/id=${encodeURIComponent(order_id)}`)
+  router.push(`/buyer/order/${encodeURIComponent(order_id)}`)
 }
 </script>
 

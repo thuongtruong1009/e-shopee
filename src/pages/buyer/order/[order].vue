@@ -6,6 +6,7 @@ meta:
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { useOrder } from '~/stores/order'
+import { useLoading} from '~/stores/loading'
 import { handleDate } from '~/utils/date'
 import { useProduct } from '~/stores/product'
 import { getResources } from '~/utils/resources'
@@ -15,6 +16,7 @@ import IBOrderArrowRight from '~/components/icons/account/IBOrderArrowRight.vue'
 const router = useRouter()
 const order = useOrder()
 const product = useProduct()
+const loading = useLoading()
 const { t } = useI18n()
 useHead({
   title: `order | ${order.savedOrder}`,
@@ -33,13 +35,15 @@ const statusPercent = (status_id: number) => {
     case 5:
       return 99
     default:
-      return 0
+      return 10
   }
 }
 const payget = ref([])
 const orderImg = ref('')
 onMounted(async() => {
+  loading.isLoading = true
   const { data: orderData } = await OrderRequest.getOrdersById(order.savedOrder)
+  loading.isLoading = false
   payget.value = orderData
   order.orderVariation = orderData.product.variations[0]
   order.orderAddress = orderData.received_address

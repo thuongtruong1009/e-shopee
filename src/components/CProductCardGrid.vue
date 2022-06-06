@@ -65,7 +65,7 @@ const onVisitProduct = (prod_id, shop_id) => {
   </div>
   <div class="split third rounded-lg shadow-md" @click="onVisitProduct(props.card.id, props.card.shop_id)">
     <div class="cover">
-      <img class="first-img rounded-t-lg w-full max-h-80" :src="`${getResources(props.card.images[0])}_tn`" alt="thumbnail">
+      <img class="first-img rounded-t-lg w-full max-h-80" :src="`${getResources(props.card.images[0])}_tn`" alt="product_img">
     </div>
   </div>
   <div class="product-description text-left p-2">
