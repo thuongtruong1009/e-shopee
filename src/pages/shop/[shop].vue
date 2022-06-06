@@ -10,7 +10,7 @@ import { shop } from '~/stores/shop'
 import { useSeller } from '~/stores/seller'
 import { useLoading } from '~/stores/loading'
 import { handleDate } from '~/utils/date'
-import { getResource } from '~/utils/resource'
+import { getResources } from '~/utils/resource'
 import ShopRequest from '~/services/shop-request'
 
 const props = defineProps({ shop: String })
@@ -49,8 +49,8 @@ const activeTime = ref('minutes')
   <div class="shop_view_container grid justify-center max-w-250 px-2 gap-5">
     <div class="h-min bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-300 p-3 grid grid-cols-2 justify-between mt-5 border-t-1 border-t-[#e9e9e9]">
       <div class="p-3">
-        <div class="flex justify-evenly gap-3 rounded-lg p-3 text-gray-200 w-4/5" :style="`background-image: url(${getResource(seller.payget.cover_image)})`" :class="{'bg-[#644B4A]': !seller.payget.cover_image}">
-          <img v-if="seller.payget.avatar_image" :src="getResource(seller.payget.avatar_image)" alt="shop_avatar" class="rounded-full border-4 border-[#A29392] w-25 h-25 object-cover">
+        <div class="flex justify-evenly gap-3 rounded-lg p-3 text-gray-200 w-4/5" :style="`background-image: url(${getResources(seller.payget.cover_image)})`" :class="{'bg-[#644B4A]': !seller.payget.cover_image}">
+          <img v-if="seller.payget.avatar_image" :src="getResources(seller.payget.avatar_image)" alt="shop_avatar" class="rounded-full border-4 border-[#A29392] w-25 h-25 object-cover">
           <img v-else src="https://cf.shopee.vn/file/56dd7c9788031f9b16fd990b11ccc62c_tn" alt="shop_avatar" class="rounded-full border-4 border-[#A29392] w-25 h-25">
           <div class="grid place-content-between">
             <div>
