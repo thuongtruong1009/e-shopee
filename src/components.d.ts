@@ -11,7 +11,6 @@ declare module 'vue' {
     CarbonLanguage: typeof import('~icons/carbon/language')['default']
     CarbonMoon: typeof import('~icons/carbon/moon')['default']
     CarbonSun: typeof import('~icons/carbon/sun')['default']
-    CarbonWarning: typeof import('~icons/carbon/warning')['default']
     CASellerList: typeof import('./components/admin/CASellerList.vue')['default']
     CBAccount: typeof import('./components/buyer/CBAccount.vue')['default']
     CBBanner: typeof import('./components/buyer/CBBanner.vue')['default']
@@ -178,7 +177,6 @@ declare module 'vue' {
     README: typeof import('./components/README.md')['default']
     RMenu: typeof import('./components/header/RMenu.vue')['default']
     RProductCardGrid: typeof import('./components/rendering/RProductCardGrid.vue')['default']
-    RProductSearch: typeof import('./components/rendering/RProductSearch.vue')['default']
     SHead: typeof import('./components/seller/SHead.vue')['default']
     SLMenu: typeof import('./components/seller/SLMenu.vue')['default']
   }

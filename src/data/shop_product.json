@@ -1,0 +1,172 @@
+{
+    "status": true,
+    "data": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 5,
+                "name": "[\u2705SG Ready Stock] \ud83d\udd25 60\/80\/100x40\/50cm Nordic Study Table Laptop Home Office Desks Computer Modern Writing Table",
+                "description": "60\/80x40cm Nordic Study Table Laptop Home Office Desks Computer Modern Writing Table\\n\u2605\u2605 \ud835\uddea\ud835\uddd4\ud835\udde5\ud835\udde0 \ud835\udde5\ud835\uddd8\ud835\udde0\ud835\udddc\ud835\udde1\ud835\uddd7\ud835\uddd8\ud835\udde5 \u2605\u2605\\n\ud83d\udca2 1 Table = 1 Order Only \ud83d\ude0a\\n\ud83d\udca2 2 Table  = Need 2 Orders \ud83d\ude0a\\n\ud83d\udca2 Please don\u2019t combine with other products \ud83d\ude0a\\n** Please take note before place order **\\n***** Please Separate The Order *****\\nIf You Need To Buy More Than One Item, Please Purchase One Item Each Order TQ\\n1 Table = 1 Order Only\\n1 Item = 1 Order\\n10 Table = Need 10 Order",
+                "weight": "7000",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-6462d797d526c25510abe38442fc21d2",
+                    "demo-eaa6b336a5cb84383b6f991f32b89256"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Size",
+                        "options": [
+                            "60x40cm Curve White",
+                            "60x40cm Curve Maple"
+                        ]
+                    }
+                ],
+                "created_at": "2022-06-04 07:14:57",
+                "shop_id": 4,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 11,
+                        "sku": "",
+                        "price": "299",
+                        "stock": 50,
+                        "variation_index": [
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 5
+                    },
+                    {
+                        "id": 12,
+                        "sku": "",
+                        "price": "299",
+                        "stock": 50,
+                        "variation_index": [
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 5
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "[\u2705SG Ready Stock] \ud83d\udd25 Premium Foldable Baby High Chair\/ Feeding Chair\/ Low Chair\/ Adjustable Infant Toddlers Dining Seat",
+                "description": "Feature\\n1) Washable Food Tray Only\\n2) Washable PU Leather Seat Cover Only\\n3) Chair Colour ( Pink \/ Blue \/ Grey ) + Food Tray + Seat Cover + Wheel\\n4) Foldable for Space Saving\\n\ud83c\udf1fProduct Highlights\ud83c\udf1f\\n\ud83c\udd93\ud83c\udd93 Washable PU Leather Seat Cover\\n\ud83c\udd93\ud83c\udd93 Washable Dining Food Tray\\n\ud83c\udd93\ud83c\udd93 Multi-range Adjustment\\n\u2705 Adjustable Height\\n\u2705 Lightweight, Foldable & Portable\\n\u2705 Adjustable Safety belt included\\n\u2705 Suitable age start from 6 month to 5 years\\n\u2705 Sustain for baby weight up to 25kg\\n\u2705 Multipurpose adjustable dining chair\\n\u2705 Light weight for easy carrying\\n\u2705 Premium Material Surface - Easy to wipe clean\\n#haby #highchair # multifunction #foodtray #adjustable #safety #Premium #Baby #Singapore #Local",
+                "weight": "2500",
+                "avg_rating": "4",
+                "sold": 2,
+                "images": [
+                    "demo-5d428c67197abda913f95b5e29da189f"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Colour",
+                        "options": [
+                            "Blue",
+                            "Pink"
+                        ]
+                    }
+                ],
+                "created_at": "2022-06-04 07:14:57",
+                "shop_id": 4,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 9,
+                        "sku": "",
+                        "price": "22.9",
+                        "stock": 50,
+                        "variation_index": [
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 4
+                    },
+                    {
+                        "id": 10,
+                        "sku": "",
+                        "price": "22.9",
+                        "stock": 50,
+                        "variation_index": [
+                            1
+                        ],
+                        "is_default": false,
+                        "product_id": 4
+                    }
+                ]
+            },
+            {
+                "id": 23,
+                "name": "[\u2705SG Ready Stock] \ud83d\udd25 30L\/70L Storage Box with Wheels \/ Storage Organizer Stackable",
+                "description": "\ud83d\udd25 30L\/70L Storage Box with Wheels \/ Storage Organizer Stackable",
+                "weight": "5000",
+                "avg_rating": "0",
+                "sold": 0,
+                "images": [
+                    "demo-6b56925e442e74911e9f32ba8aff4934",
+                    "demo-5ddd4032f8277d4dbce1ac20b904f6b7"
+                ],
+                "videos": [],
+                "variations": [
+                    {
+                        "name": "Size",
+                        "options": [
+                            "30L"
+                        ]
+                    }
+                ],
+                "created_at": "2022-06-04 07:14:57",
+                "shop_id": 4,
+                "brand_id": 1,
+                "status_id": 1,
+                "models": [
+                    {
+                        "id": 53,
+                        "sku": "",
+                        "price": "90",
+                        "stock": 50,
+                        "variation_index": [
+                            0
+                        ],
+                        "is_default": false,
+                        "product_id": 23
+                    }
+                ]
+            }
+        ],
+        "first_page_url": "http:\/\/tp-o.tk\/api\/v2\/shops\/4\/products?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http:\/\/tp-o.tk\/api\/v2\/shops\/4\/products?page=1",
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http:\/\/tp-o.tk\/api\/v2\/shops\/4\/products?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "next_page_url": null,
+        "path": "http:\/\/tp-o.tk\/api\/v2\/shops\/4\/products",
+        "per_page": "15",
+        "prev_page_url": null,
+        "to": 3,
+        "total": 3
+    }
+}

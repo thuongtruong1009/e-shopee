@@ -6,9 +6,9 @@ class ShopRequest {
     return AxiosInstance.get(url)
   }
 
-  getShopsProductsById(id_or_slug) {
+  getProductsOfShopId(id_or_slug, data) {
     const url = `/shops/${id_or_slug}/products`
-    return AxiosInstance.get(url)
+    return AxiosInstance.get(url, data)
   }
 
   getShops() {
