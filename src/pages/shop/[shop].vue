@@ -10,7 +10,7 @@ import { shop } from '~/stores/shop'
 import { useSeller } from '~/stores/seller'
 import { useLoading } from '~/stores/loading'
 import { handleDate } from '~/utils/date'
-import { getResources } from '~/utils/resource'
+import { getResources } from '~/utils/resources'
 import ShopRequest from '~/services/shop-request'
 
 const props = defineProps({ shop: String })
@@ -33,9 +33,9 @@ const { t } = useI18n()
 watchOnce(async() => {
   loading.isLoading = true
   const { data: shopdata } = await ShopRequest.getShopsById(props.shop)
-  loading.isLoading = false
   seller.payget = shopdata
   seller.statics = shopdata.statistic
+  loading.isLoading = false
 
   const { data: productData } = await ShopRequest.getProductsOfShopId(props.shop, { params: { limit: 15, page: 1 } })
   useShop.publicProducts = productData.data
@@ -47,7 +47,7 @@ const activeTime = ref('minutes')
 
 <template>
   <div class="shop_view_container grid justify-center max-w-250 px-2 gap-5">
-    <div class="h-min bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-300 p-3 grid grid-cols-2 justify-between mt-5 border-t-1 border-t-[#e9e9e9]">
+    <div class="h-min bg-white dark:bg-gray-800 rounded-xl shadow-md shadow-gray-300 p-3 grid grid-cols-2 justify-between mt-5 border-t-1 border-t-[#e9e9e9]">
       <div class="p-3">
         <div class="flex justify-evenly gap-3 rounded-lg p-3 text-gray-200 w-4/5" :style="`background-image: url(${getResources(seller.payget.cover_image)})`" :class="{'bg-[#644B4A]': !seller.payget.cover_image}">
           <img v-if="seller.payget.avatar_image" :src="getResources(seller.payget.avatar_image)" alt="shop_avatar" class="rounded-full border-4 border-[#A29392] w-25 h-25 object-cover">
@@ -98,28 +98,39 @@ const activeTime = ref('minutes')
           <p>{{ t('shop.rating') }}: <span>{{ seller.statics.average_raiting }}% (8 votes)</span></p>
         </div>
       </div>
+      <div v-if="seller.payget.description" class="col-span-2">
+        <p class="flex items-center gap-2">
+          <ISDescription /> Descriptions:
+        </p>
+        <p>{{ seller.payget.description }}</p>
+      </div>
     </div>
 
-    <div class="h-min bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-300 p-3">
-      <div class="shop_view_action bg-[#EDEDED] flex items-center gap-3 p-2 text-md rounded-lg">
+    <div class="h-min bg-white dark:bg-gray-800 rounded-xl shadow-md shadow-gray-300 p-3">
+      <div class="shop_view_action bg-[#EDEDED] dark:bg-gray-700 flex items-center gap-3 p-2 text-md rounded-lg">
         <div>
           <p>{{ t('shop.sort-by') }}</p>
         </div>
-        <div class="bg-white cursor-pointer rounded-md py-1 px-3 capitalize">
+        <div class="bg-white dark:bg-gray-600 cursor-pointer rounded-md py-1 px-3 capitalize">
           <p>{{ t('shop.popular') }}</p>
         </div>
-        <div class="bg-white cursor-pointer rounded-md py-1 px-3 capitalize">
+        <div class="bg-white dark:bg-gray-600 cursor-pointer rounded-md py-1 px-3 capitalize">
           <p>{{ t('shop.latest') }}</p>
         </div>
-        <select class="rounded-md py-1 px-3 cursor-pointer">
+        <select class="rounded-md py-1 px-3 cursor-pointer dark:bg-gray-600">
           <option>{{ t('shop.price') }}: {{ t('shop.default') }}</option>
           <option>{{ t('shop.price') }}: {{ t('shop.low-to-high') }}</option>
           <option>{{ t('shop.price') }}: {{ t('shop.high-to-low') }}</option>
         </select>
       </div>
-      <div class="shop_view_content flex justify-center flex-wrap gap-3 py-3">
-        <div v-for="(prod, index) in useShop.publicProducts" :key="index" class="card duration-200 ease-linear relative rounded-lg w-60  shadow-md hover:shadow-gray-400/50 pb-0">
-          <CProductCardGrid :card="prod" />
+      <div>
+        <div v-if="loading.isLoading" class="shop_view_content flex justify-center flex-wrap gap-3 py-3">
+          <RProductCard v-for="i in 6" :key="i" />
+        </div>
+        <div v-else class="shop_view_content flex justify-center flex-wrap gap-3 py-3">
+          <div v-for="(prod, index) in useShop.publicProducts" :key="index" class="card duration-200 ease-linear relative rounded-lg w-60  shadow-md dark:(bg-gray-700) hover:shadow-gray-400/50 pb-0">
+            <CProductCardGrid :card="prod" />
+          </div>
         </div>
       </div>
     </div>

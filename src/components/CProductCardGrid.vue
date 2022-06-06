@@ -69,7 +69,7 @@ const onVisitProduct = (prod_id, shop_id) => {
     </div>
   </div>
   <div class="product-description text-left p-2">
-    <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600] text-sm" @click="onVisitProduct(props.card.id, props.card.shop_id)">
+    <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600] dark:text-gray-300 text-sm" @click="onVisitProduct(props.card.id, props.card.shop_id)">
       {{ sliceText(props.card.name) }}...
     </p>
     <div class="flex items-center justify-between my-2">
@@ -84,7 +84,7 @@ const onVisitProduct = (prod_id, shop_id) => {
       <div class="star-rating flex justify-start">
         <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
       </div>
-      <h6 class="text-xs">
+      <h6 class="text-xs dark:text-gray-300">
         Solded {{ props.card.sold }}
       </h6>
     </div>
