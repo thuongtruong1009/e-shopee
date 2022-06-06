@@ -1,0 +1,64 @@
+{
+  "status": true,
+  "data": {
+    "id": 4,
+    "name": "M220 Silent Wireless Mouse 1600DPI Optical Tracking accessories mice wireless mouse wireless gaming mice computer mouse",
+    "variations": [
+      "Black M220"
+    ],
+    "quantity": 3,
+    "total": "369",
+    "grand_total": "369",
+    "created_at": "2022-06-05 06:57:47",
+    "user_id": 21,
+    "product_id": 25,
+    "product_model_id": 55,
+    "received_address_id": 22,
+    "pickup_address_id": null,
+    "status_id": 1,
+    "shop_id": 6,
+    "product": {
+      "id": 25,
+      "name": "M220 Silent Wireless Mouse 1600DPI Optical Tracking accessories mice wireless mouse wireless gaming mice computer mouse",
+      "description": "M220 Silent Wireless Mouse 1600DPI Optical Tracking accessories mice wireless mouse wireless gaming mice computer mouse wireless bluetooth wireless gaming mouse wireless mouse silent blue tooth mouse\\nSpecification\\nModel: M220\\nType\uff1awireless mouse\\nColor\uff1ablack \/ red \/ blue\\nWireless transmission frequency:\uff1a2.4GHz\\nNumber of buttons\uff1a3\\nInterface\uff1aUSB\\nResolution\uff1a1600DPI\\nOperating distance\uff1a10 m\\nBattery type\uff1aAA\\nErgonomics\uff1aYes\\nApplicable system\uff1aWindows 10 or Higher version \/ Windows 8 \/ Windows RT \/ Windows 7 \/ Mac OS X 10.5 or Higher version \/ Chrome OS \/ Linus Kernel 2.6+2\\nMouse size\uff1a99 * 60 * 39 mm\\nWeight of mouse (including battery) \uff1a85g\\naccessories mice wireless mouse wireless gaming mice computer mouse ergonomic mouse wireless bluetooth wireless gaming mouse wireless mouse silent blue tooth mouse",
+      "weight": "5000",
+      "avg_rating": "0",
+      "sold": 0,
+      "images": [
+        "demo-dd787648e6a85debc81100ab1d12d724",
+        "demo-57e75a92ec7668c4fee7fc1314bbf69e"
+      ],
+      "videos": [],
+      "variations": [
+        {
+          "name": "Color",
+          "options": [
+            "Black M220"
+          ]
+        }
+      ],
+      "created_at": "2022-06-04 07:14:57",
+      "shop_id": 6,
+      "brand_id": 1,
+      "status_id": 1
+    },
+    "received_address": {
+      "id": 22,
+      "full_name": "Tran Nguyen Thuong Truong",
+      "phone": "12345678911",
+      "state": "HoChiMinh",
+      "city": "Thu Duc",
+      "town": "Linh Trung",
+      "address": "International University",
+      "is_home": null
+    },
+    "pickup_address": null,
+    "progresses": [
+      {
+        "note": "",
+        "created_at": "2022-06-05 06:57:47",
+        "status_id": 1
+      }
+    ]
+  }
+}

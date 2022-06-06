@@ -47,13 +47,13 @@ watch(async() => {
 const handleCreate = async(e) => {
   e.preventDefault()
   await AccountRequest.createCreditCard(payload)
-  useToast.updateToast('sucess', 'your card has been created successfully!', true)
+  useToast.updateToast('success', 'A new card has been created successfully!', true)
 }
 // ----------------------------------
 const handleUpdate = async(e) => {
   e.preventDefault()
   await AccountRequest.updateCreditCardById(user.credit.id, payload)
-  useToast.updateToast('updated', 'Your card has been successfully!', true)
+  useToast.updateToast('success', 'Your card has been updated!', true)
 }
 // ------------------------------
 const handleDelete = async(e) => {

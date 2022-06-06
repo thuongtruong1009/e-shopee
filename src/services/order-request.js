@@ -12,7 +12,7 @@ class OrderRequest {
   }
 
   getOrdersById(id) {
-    const url = `/user/orders${id}`
+    const url = `/user/orders/${id}`
     return AxiosInstance.get(url)
   }
 

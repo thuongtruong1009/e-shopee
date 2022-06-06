@@ -6,6 +6,7 @@ const useKeyword = keyword()
 const key = ref(useKeyword.savedKeyword)
 
 const router = useRouter()
+
 const go = async() => {
   if (key.value) {
     await router.push(`/search/${encodeURIComponent(key.value)}`)
@@ -13,6 +14,7 @@ const go = async() => {
     key.value = ''
   }
 }
+
 </script>
 
 <template>
