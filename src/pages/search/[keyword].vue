@@ -220,6 +220,7 @@ const onChangeRegime = (type: any) => {
           </select>
         </div>
       </div>
+
       <Transition name="slide-fade">
         <div v-if="regime === 'grid'">
           <div v-if="loading.isLoading" class="grid-products-list flex flex-wrap gap-5 py-10">
@@ -237,7 +238,14 @@ const onChangeRegime = (type: any) => {
           <CProductCardFlow v-for="(prod, index) in useKeyword.resultProduct" :key="index" class="card duration-200 ease-linear rounded-xl w-full shadow-md hover:(shadow-lg shadow-gray-400/50) pb-0 flex border-t-1 border-t-[#e9e9e9]" :card="prod" />
         </div>
       </Transition>
-      <CPagination :index="payload.page" @on-prev="--payload.page" @on-next="++payload.page" />
+      <div v-if="useKeyword.resultProduct.length===0" class="grid justify-center gap-5">
+        <PNotFound class="w-70 justify-self-center" />
+        <div class="flex gap-5 text-gray-500 dark:text-gray-300">
+          <p class="bg-[#e9e9e9] dark:(bg-gray-700 shadow-gray-700) rounded-full shadow-md shadow-gray-300 w-7 h-7 p-1 cursor-pointer" @click="router.back()"><svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg></p>
+          <p>not have product at here</p>
+        </div>
+      </div>
+      <CPagination v-else :index="payload.page" @on-prev="--payload.page" @on-next="++payload.page" />
     </div>
   </div>
 </template>

@@ -224,7 +224,10 @@ const onvisitShop = () => {
             <IBShipping /> {{ t('product.transport') }}
           </p>
           <div>
-            <select name="province" class="cursor-pointer dark:bg-gray-700 rounded-md pl-2 appearance-none pl-2 border-1 border-dashed border-gray-300">
+            <select name="province" class="cursor-pointer dark:bg-gray-700 rounded-md px-2 appearance-none border-1 border-dashed border-gray-300">
+              <option value="" selected hidden disabled>
+                Choose province
+              </option>
               <option v-for="(province, i) in provinceNames" :key="i" :value="province" class="mt-5 bg-[#FFF5F1] dark:bg-gray-700">
                 {{ province }}
               </option>
