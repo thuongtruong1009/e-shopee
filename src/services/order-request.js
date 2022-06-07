@@ -26,6 +26,12 @@ class OrderRequest {
     return AxiosInstance.get(url, data)
   }
 
+  createOrdersReviews(data) {
+    const url = '/user/reviews'
+    return AxiosInstance.post(url, data)
+  }
+  // ------------ Seller -----------------
+
   markOrdersReadySeller(id, data) {
     const url = `/shop/orders/${id}/ready`
     return AxiosInstance.post(url, data)
@@ -35,6 +41,7 @@ class OrderRequest {
     const url = `/shop/orders/${id}/cancel`
     return AxiosInstance.post(url, data)
   }
+  // ------------------ Admin -------------
 
   markOrdersCancelAdmin(id, data) {
     const url = `/admin/orders/${id}/cancel`

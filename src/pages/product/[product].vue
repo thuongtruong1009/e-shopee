@@ -438,7 +438,7 @@ const onvisitShop = () => {
                 <IBLike /> 11
               </p>
               <p class="flex items-center gap-1.5 cursor-pointer">
-                <IBChat /> Comment
+                <IComment /> Comment
               </p>
             </div>
           </div>
