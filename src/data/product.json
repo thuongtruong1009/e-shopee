@@ -28,7 +28,7 @@
         "attributes": [
             {
                 "name": "Connection Type",
-                "value": "Type-C",
+                "S": "Type-C",
                 "unit": null
             },
             {

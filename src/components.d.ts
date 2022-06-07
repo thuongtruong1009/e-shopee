@@ -71,6 +71,7 @@ declare module 'vue' {
     IBCreate: typeof import('./components/icons/account/IBCreate.vue')['default']
     IBDashboard: typeof import('./components/icons/account/IBDashboard.vue')['default']
     IBDelete: typeof import('./components/icons/account/IBDelete.vue')['default']
+    IBDescription: typeof import('./components/icons/product/IBDescription.vue')['default']
     IBDownload: typeof import('./components/icons/account/IBDownload.vue')['default']
     IBEmail: typeof import('./components/icons/auth/IBEmail.vue')['default']
     IBEye: typeof import('./components/icons/account/IBEye.vue')['default']
