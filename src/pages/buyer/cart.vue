@@ -34,7 +34,7 @@ const payget = reactive({
   limit: 10,
   page: 1,
 })
-onMounted(async() => {
+watchEffect(async() => {
   loading.isLoading = true
   const { data: cartData } = await CartRequest.getCart({ params: { limit: payget.limit, page: payget.page } })
   loading.isLoading = false
@@ -52,6 +52,7 @@ const payload = reactive(
 const handleDelete = async(id) => {
   removeItemByIndex(cart.result, id, 1)
   await CartRequest.deleteCart(id)
+  await location.reload()
   useToast.updateToast('success', 'You has been delete one cart items!', true)
 }
 // --------------------------------------------

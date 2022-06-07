@@ -30,11 +30,14 @@ onMounted(() => {
     <CBMonthSale />
     <CBDealArrivals />
     <CBDemo3 /> -->
-    <div class="flex justify-center">
+    <!-- <div class="flex justify-center">
       <CBToday />
+    </div> -->
+    <div class="flex justify-center">
+      <CBFeature />
     </div>
     <!-- <CSlick /> -->
-    <!-- <CBDemo2 />
-    <CBService /> -->
+    <CBDemo2 />
+    <CBService />
   </div>
 </template>

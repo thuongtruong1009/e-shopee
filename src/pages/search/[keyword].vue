@@ -7,8 +7,6 @@ meta:
 import { keyword } from '~/stores/keyword'
 import { useLoading } from '~/stores/loading'
 import ProductRequest from '~/services/product-request'
-import RProductSearch from '~/components/rendering/RProductSearch.vue'
-import RProductCardGrid from '~/components/rendering/RProductCardGrid.vue'
 
 const props = defineProps<{ keyword: string }>()
 const router = useRouter()
@@ -24,23 +22,22 @@ const payload = reactive({
   limit: 12,
   page: 1,
   keyword: props.keyword,
-  order_by: 2,
+  order_by: 1,
   filter: {
     category_ids: [
       1,
     ],
   },
 })
-onMounted(async() => {
-  if (!localStorage.getItem('token')) {
+onMounted(() => {
+  if (!localStorage.getItem('token'))
     router.push({ path: '/buyer/login' })
-  }
-  else {
-    loading.isLoading = true
-    const { data: searchData } = await ProductRequest.searchProducts({ params: { limit: payload.limit, page: payload.page, keyword: payload.keyword, order_by: payload.order_by, filter: payload.filter } })
-    useKeyword.resultProduct = searchData.data
-    loading.isLoading = false
-  }
+})
+watch(async() => {
+  loading.isLoading = true
+  const { data: searchData } = await ProductRequest.searchProducts({ params: { limit: payload.limit, page: payload.page, keyword: payload.keyword, order_by: payload.order_by, filter: payload.filter } })
+  useKeyword.resultProduct = searchData.data
+  loading.isLoading = false
 })
 // get props keyword from store after search
 watchEffect(() => {
@@ -60,7 +57,7 @@ const onChangeRegime = (type: any) => {
 </script>
 
 <template>
-  <div class="filter-container bg-white grid grid-cols-4 py-20 px-10 gap-3 dark:bg-black">
+  <div class="filter-container bg-white grid grid-cols-4 py-20 px-10 gap-3 dark:bg-gray-800">
     <aside class="left-sidebar theme1 text-left col-span-1 px-2">
       <div class="search-filter">
         <h4 class="title">
@@ -190,9 +187,9 @@ const onChangeRegime = (type: any) => {
         </a>
       </div>
     </aside>
-    <!-- ************************************ -->
+    <!-- ------------------------------------ -->
     <div class="grid-products-filter col-span-3">
-      <div class="flex justify-between items-center bg-gray-100 rounded-lg py-2 px-5">
+      <div class="flex justify-between items-center bg-gray-100 dark:bg-gray-700 rounded-lg py-2 px-5">
         <ul id="pills-tab" class="nav-pills flex items-center">
           <li class="nav-item text-lg hover:text-red-500 cursor-pointer" :style="[regime === 'grid' ? {color:'red'} : {color:'gray'}]" @click="onChangeRegime('grid')">
             <i class="fa fa-th" />
@@ -203,34 +200,35 @@ const onChangeRegime = (type: any) => {
           <li><span class="total-products text-sm">{{ t('search.there-are') }} {{ useKeyword.resultProduct.length }} {{ t('search.products') }}.</span></li>
         </ul>
         <div>
-          <span class="text-sm mr-3">{{ t('search.sort-by') }}: </span>
-          <select id="sort_by" name="sort_by" class="px-3 py-0.5 cursor-pointer text-sm text-gray-900 bg-blue-100 rounded-lg border border-gray-300 focus:(ring-blue-500 border-blue-500) dark:(bg-gray-700 placeholder-gray-400 text-white) dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <span class="text-sm mr-3" for="sort_by">{{ t('search.sort-by') }}: </span>
+          <select id="sort_by" v-model="payload.order_by" name="sort_by" class="px-3 py-0.5 cursor-pointer text-sm text-gray-900 bg-blue-100 rounded-lg border border-gray-300 focus:(ring-blue-500 border-blue-500) dark:(bg-gray-700 placeholder-gray-400 text-white) dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option value="" disabled selected hidden>
               {{ t('search.relevance') }}
             </option>
-            <option value="name_a_to_z" class="bg-white dark:bg-transparent">
+            <option value="name_a_to_z" class="bg-white dark:bg-transparent hidden">
               {{ t('search.name') }}, {{ t('search.a-z') }}
             </option>
-            <option value="name_z_to_a" class="bg-white dark:bg-transparent">
-              {{ t('search.name') }}, {{ t('search.z-a') }}
+            <option :value="1" class="bg-white dark:bg-transparent">
+              {{ t('search.name') }} newest
             </option>
-            <option value="price_low_to_high" class="bg-white dark:bg-transparent">
-              {{ t('search.price') }}, {{ t('search.low-high') }}
-            </option>
-            <option value="price_high_to_low" class="bg-white dark:bg-transparent">
+            <option :value="2" class="bg-white dark:bg-transparent">
               {{ t('search.price') }}, {{ t('search.high-low') }}
+            </option>
+            <option :value="3" class="bg-white dark:bg-transparent">
+              {{ t('search.price') }}, {{ t('search.low-high') }}
             </option>
           </select>
         </div>
       </div>
+
       <Transition name="slide-fade">
         <div v-if="regime === 'grid'">
           <div v-if="loading.isLoading" class="grid-products-list flex flex-wrap gap-5 py-10">
             <RProductCardGrid v-for="index in 12" :key="index" />
           </div>
           <div v-else v-cloak class="grid-products-list flex flex-wrap gap-5 py-10">
-            <div v-for="(prod, index) in useKeyword.resultProduct" :key="index" class="card duration-200 ease-linear relative rounded-lg w-60  shadow-md hover:shadow-gray-400/50 pb-0">
-              <CProductCardGrid :card="prod" />
+            <div v-for="(prod, index) in useKeyword.resultProduct" :key="index" class="card duration-200 ease-linear relative rounded-lg w-60  shadow-md dark:bg-gray-700 hover:shadow-gray-400/50 pb-0">
+              <CProductCardGrid :card="prod" mode="discount" />
             </div>
           </div>
         </div>
@@ -240,7 +238,14 @@ const onChangeRegime = (type: any) => {
           <CProductCardFlow v-for="(prod, index) in useKeyword.resultProduct" :key="index" class="card duration-200 ease-linear rounded-xl w-full shadow-md hover:(shadow-lg shadow-gray-400/50) pb-0 flex border-t-1 border-t-[#e9e9e9]" :card="prod" />
         </div>
       </Transition>
-      <CPagination :index="payload.page" @on-prev="payload.page--" @on-next="payload.page++" />
+      <div v-if="useKeyword.resultProduct.length===0" class="grid justify-center gap-5">
+        <PNotFound class="w-70 justify-self-center" />
+        <div class="flex gap-5 text-gray-500 dark:text-gray-300">
+          <p class="bg-[#e9e9e9] dark:(bg-gray-700 shadow-gray-700) rounded-full shadow-md shadow-gray-300 w-7 h-7 p-1 cursor-pointer" @click="router.back()"><svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg></p>
+          <p>not have product at here</p>
+        </div>
+      </div>
+      <CPagination v-else :index="payload.page" @on-prev="--payload.page" @on-next="++payload.page" />
     </div>
   </div>
 </template>

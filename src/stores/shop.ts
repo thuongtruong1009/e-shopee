@@ -23,10 +23,13 @@ export const shop = defineStore('shop', () => {
     savedShop.value = name
   }
 
+  const publicProducts = ref<any>([])
+
   return {
     setNewShop,
     otherShop,
     savedShop,
+    publicProducts,
   }
 })
 

@@ -6,7 +6,7 @@ const { t } = useI18n()
 <template>
   <div class="footer flex dark:text-$dark-text">
     <div class="left md:(w-1/3 p-16 bg-gray-100) text-left dark:bg-black <md:(w-1/2 p-7 bg-light-200)">
-      <IBrand class="py-4" />
+      <IBrand class="py-4" style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2));" />
       <p class="py-4">
         {{ t('footer.commit') }}
       </p>

@@ -77,8 +77,11 @@ const onClosePopup = () => {
         <span class="bg-green-600 text-white font-bold capitalize text-xs rounded p-0.75">-10%</span>
         <span class="bg-orange-400 text-white font-bold capitalize text-xs rounded p-0.75">{{ t('search.new') }}</span>
       </div>
-      <div class="card-img max-w-full max-h-7/12" @click="onVisitProduct(props.card.id, props.card.shop_id)">
-        <img class="first-img rounded-xl w-full" :src="`${getResources(props.card.images[0])}_tn`" alt="product_img">
+      <div class="split third rounded-lg shadow-md card-img max-w-80 min-w-80 max-h-80 p-1" @click="onVisitProduct(props.card.id, props.card.shop_id)">
+        <div class="cover">
+          <img class="first-img rounded-xl w-full" :src="`${getResources(props.card.images[0])}_tn`" alt="product_img">
+        </div>
+        <!-- <img class="first-img rounded-xl w-full" :src="`${getResources(props.card.images[0])}_tn`" alt="product_img"> -->
       </div>
       <!-- <div class="split third rounded-lg shadow-md" @click="onVisitProduct(props.card.id, props.card.shop_id)">
     <div class="cover">
@@ -86,21 +89,23 @@ const onClosePopup = () => {
     </div>
   </div> -->
     </div>
-    <div class="product-description text-left p-2">
+    <div class="product-description text-left p-2 w-full">
       <div class="px-2">
         <p class="card-title cursor-pointer duration-200 ease-linear hover:text-[#FF6600]" @click="onVisitProduct(props.card.id, props.card.shop_id)">
           {{ props.card.name }}
         </p>
-        <div class="star-rating flex justify-start py-2">
-          <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
-        </div>
-        <div class="flex items-center justify-start">
-          <h6 class="card-price font-bold tracking-tighter mr-2 black text[#9B9B9B] text-decoration line-through">
-            $999
-          </h6>
-          <h6 class="font-bold tracking-tighter text-red-500">
-            {{ productPrice }}
-          </h6>
+        <div class="flex justify-between">
+          <div class="flex items-center justify-start">
+            <h6 class="card-price font-bold tracking-tighter mr-2 black text[#9B9B9B] text-decoration line-through">
+              $999
+            </h6>
+            <h6 class="font-bold tracking-tighter text-red-500">
+              {{ productPrice }}
+            </h6>
+          </div>
+          <div class="star-rating flex justify-start py-2">
+            <img v-for="i in 5" :key="i" src="https://img.icons8.com/fluency/48/ffffff/star.png" class="max-w-4 max-h-4">
+          </div>
         </div>
       </div>
 
@@ -115,13 +120,13 @@ const onClosePopup = () => {
       </div>
 
       <div class="py-5 flex justify-start">
-        <h3 class="uppercase py-2.5 px-10 rounded-md bg-black text-white font-medium text-sm cursor-pointer hover:bg-[#F33535] duration-200" @click="onOpenPopup">
+        <h3 class="uppercase py-2.5 px-10 rounded-md bg-black text-white font-medium text-sm cursor-pointer hover:bg-[#F33535] dark:bg-[#F33535] duration-200" @click="onOpenPopup">
           {{ t('search.add-to-cart') }}
         </h3>
       </div>
 
       <div v-if="isPopup === true" class="popup-modal z-3 fixed w-screen h-screen top-0 left-0 flex justify-center items-center ease-linear">
-        <div class="bg-white w-284 z-20 rounded-lg" @click="onClosePopup">
+        <div class="bg-white dark:bg-gray-800 w-284 z-20 rounded-lg" @click="onClosePopup">
           <div class="text-white flex justify-center items-center bg-black rounded-t-lg gap-2 relative py-2">
             <ICheck />
             <h5 class="text-lg" style="font-family: 'Gilroy-Medium'">
@@ -182,7 +187,7 @@ const onClosePopup = () => {
 }
 .split.third img {
     width: 100%;
-    height: auto;
+    height: 100%;
     -webkit-transition: -webkit-transform 0.8s ease;
             transition: -webkit-transform 0.8s ease;
             transition: transform 0.8s ease;

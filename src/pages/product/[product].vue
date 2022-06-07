@@ -42,9 +42,9 @@ onMounted(async() => {
   else {
     loading.isLoading = true
     const { data: productData } = await ProductRequest.getProductsById(product.productRequestID)
-    loading.isLoading = false
     productResponseData.value = productData
     productImg.value = productData.images
+    loading.isLoading = false
 
     const { data: reviewData } = await ProductRequest.getReviewsProductsById(product.productRequestID, { params: { limit: 10 } })
     productReview.value = reviewData
@@ -59,6 +59,7 @@ watchOnce(async() => {
   seller.statics = shopdata.statistic
 })
 // ---------------------------------------
+const isAdd = ref(false)
 const payloadCart = reactive({
   product_model_id: '',
   quantity: 1,
@@ -66,6 +67,7 @@ const payloadCart = reactive({
 const handleAdd = async() => {
   await CartRequest.addCart(payloadCart)
   useToast.updateToast('success', 'You cart items has been updated!', true)
+  isAdd.value = true
 }
 // ------------------------------------------
 const isChoossen = ref()
@@ -145,12 +147,12 @@ const onvisitShop = () => {
 </script>
 
 <template>
-  <div class="product-summary-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-3 mx-2">
-    <div class="main-content flex gap-10">
+  <div class="product-summary-container max-w-300 bg-white dark:bg-gray-800 rounded-xl shadow-md shadow-gray-400/50 p-3 mx-2">
+    <div v-cloak class="main-content flex gap-10">
       <div>
-        <img :src="getResources(productImg[0])" alt="product_img" class="max-w-112 max-h-112 rounded-lg shadow-lg shadow-gray-300">
+        <img :src="getResources(productImg[0])" alt="product_img" class="max-w-112 max-h-112 rounded-2xl shadow-lg shadow-gray-400/50 dark:shadow-gray-700">
         <div class="grid grid-cols-5 max-w-112 mt-3 gap-2">
-          <img :src="getResources(productImg[1])" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">
+          <img v-for="(img, i) in productImg" :key="i" :src="getResources(img)" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">
           <!-- <img src="https://cf.shopee.vn/file/12ae221177dcb74dc4b1701afc06b298_tn" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">
           <img src="https://cf.shopee.vn/file/5413e844e5893181b0f33a191af65cd0_tn" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">
           <img src="https://cf.shopee.vn/file/7ed7a314372976ba07c7cc4f083bbf68_tn" alt="product_preview_img" class="rounded-md border-2 border-solid hover:border-[#EE4D2D] cursor-pointer">
@@ -222,7 +224,10 @@ const onvisitShop = () => {
             <IBShipping /> {{ t('product.transport') }}
           </p>
           <div>
-            <select name="province" class="cursor-pointer dark:bg-gray-700 rounded-md pl-2 appearance-none pl-2 border-1 border-dashed border-gray-300">
+            <select name="province" class="cursor-pointer dark:bg-gray-700 rounded-md px-2 appearance-none border-1 border-dashed border-gray-300">
+              <option value="" selected hidden disabled>
+                Choose province
+              </option>
               <option v-for="(province, i) in provinceNames" :key="i" :value="province" class="mt-5 bg-[#FFF5F1] dark:bg-gray-700">
                 {{ province }}
               </option>
@@ -242,7 +247,7 @@ const onvisitShop = () => {
         <div class="infor">
           <label>{{ t('product.quantities') }}</label>
           <div class="uppercase flex items-center rounded-md border-1 border-solid border-gray-300 text-sm">
-            <p class="px-2 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none': payloadCart.quantity<2}" @click="payloadCart.quantity--">
+            <p class="px-2 cursor-pointer hover:bg-[#FAFAFA]" :class="{'pointer-events-none opacity-50': payloadCart.quantity<2}" @click="payloadCart.quantity--">
               <IBMinus />
             </p>
             <p class="border-l-1 border-l-solid border-l-gray-300 border-r-1 border-r-solid border-r-gray-300 font-medium px-5 py-1">
@@ -262,6 +267,9 @@ const onvisitShop = () => {
           </button>
           <button class="px-5 py-3 rounded-md bg-[#EE4D2D] hover:bg-[#F05D40] border-1 border-solid border-[#EE4D2D] text-white capitalize" @click="handleOrder">
             {{ t('product.order-now') }}
+          </button>
+          <button v-if="isAdd" class="px-5 py-3 rounded-md bg-[#FFEEE8] hover:bg-[#FFF5F1] border-1 border-solid border-[#EE4D2D] text-[#EE4D2D] capitalize flex items-center gap-1" @click="router.push('/buyer/cart')">
+            <ICart class="max-h-6" />View cart
           </button>
         </div>
       </div>
@@ -283,7 +291,7 @@ const onvisitShop = () => {
     </div>
   </div>
 
-  <div class="shop-product-container max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2 divide-x divide-1 divide-solid divide-gray-300 flex flex-wrap">
+  <div class="shop-product-container max-w-300 bg-white dark:bg-gray-800 rounded-xl shadow-md shadow-gray-400/50 p-5 mx-2 divide-x divide-1 divide-solid divide-gray-300 flex flex-wrap">
     <div class="flex">
       <img v-if="seller.payget.avatar_image" :src="`https://tp-o.tk/resources/images/${seller.payget.avatar_image}`" alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4 object-cover">
       <img v-else src="https://cf.shopee.vn/file/7ebd612d6fddcf7f4114bf2d97da382a_tn" alt="shop_avatar" class="max-w-19 max-h-19 rounded-full shadow-md shadow-gray-200 mr-4">
@@ -338,21 +346,30 @@ const onvisitShop = () => {
     </div>
   </div>
 
-  <div class="product-details max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2">
-    <div class="bg-[#FAFAFA] dark:bg-gray-700 p-3 rounded-lg">
-      <h2 class="uppercase text-xl">
+  <div class="product-details max-w-300 bg-white dark:bg-gray-800 rounded-xl shadow-md shadow-gray-400/50 p-5 mx-2">
+    <div class="bg-[#FAFAFA] dark:bg-gray-700 p-3 rounded-xl flex items-center gap-2 uppercase text-xl font-medium">
+      <IBDescription />
+      <h2>
         {{ t('product.product-describes') }}
       </h2>
     </div>
     <div>
       <label>{{ t('product.category') }}</label>
-      <p class="text-[#0055BD] cursor-pointer">
-        e-shopee > men's shoes > sandal > other
-      </p>
+      <div class="text-[#0055BD] cursor-pointer font-medium flex">
+        e-shopee >
+        <div v-if="productResponseData.attributes" class="flex gap-7">
+          <p v-for="(attr, i) in productResponseData.attributes" :key="i">
+            {{ attr.name }} > {{ attr.value }}
+          </p>
+        </div>
+        <p v-else>
+          updating...
+        </p>
+      </div>
     </div>
     <div>
       <label>{{ t('product.organization') }}</label>
-      <p>{{ t('product.updating') }}...</p>
+      <p>Trung tâm hàng nội địa xuất khẩu Quảng Châu</p>
     </div>
     <div>
       <label>{{ t('product.origin') }}</label>
@@ -372,7 +389,7 @@ const onvisitShop = () => {
     </div>
     <div>
       <p v-for="(desc, i) in productResponseData.description?.split('\\n')" :key="i">
-        {{ desc }}
+        &bull; {{ desc }}
       </p>
 
       <!-- <p>🔥Thanh toán khi nhận hàng liên hệ trước với shop nếu muốn xem hàng trước khi thanh toán</p>
@@ -395,29 +412,35 @@ const onvisitShop = () => {
     </div>
   </div>
 
-  <div class="product-evalutions max-w-300 bg-white dark:bg-gray-800 rounded-lg shadow-md shadow-gray-400/50 p-5 mx-2">
-    <div class="text-xl uppercase">
+  <div class="product-evalutions max-w-300 bg-white dark:bg-gray-800 rounded-xl shadow-md shadow-gray-400/50 p-5 mx-2">
+    <div class="text-xl uppercase flex items-center gap-2 uppercase text-xl font-medium">
+      <IBDescription />
       <h2>{{ t('product.product-evalutions') }}</h2>
     </div>
     <div class="divide-y divide-1 divide-solid divide-gray-200">
-      <div v-for="i in 3" :key="i" class="flex justify-between items-start py-3">
+      <div v-for="i in 2" :key="i" class="flex justify-between items-start py-3">
         <div class="flex">
           <div class="px-3">
             <img src="https://cf.shopee.vn/file/3922ddaf7b5dde58c3193c6689e7aaca_tn" alt="customer_avatar_img" class="max-w-10 max-h-10 rounded-full">
           </div>
-          <div class="customer-cmt">
-            <p class="customer-username text-xs text-gray-600">
+          <div class="customer-cmt text-sm text-gray-600 dark:text-gray-300">
+            <p class="customer-username text-xs">
               yen050619
             </p>
             <p class="flex gap-0.25">
               <IStars v-for="i in 5" :key="i" />
             </p>
-            <p class="text-gray-500 text-sm">
+            <p>
               Very good! I like it.
             </p>
-            <p class="flex items-center gap-2 text-sm cursor-pointer text-gray-500">
-              <IBLike /> 11
-            </p>
+            <div class="flex items-center gap-5">
+              <p class="flex items-center gap-1.5 cursor-pointer">
+                <IBLike /> 11
+              </p>
+              <p class="flex items-center gap-1.5 cursor-pointer">
+                <IBChat /> Comment
+              </p>
+            </div>
           </div>
         </div>
         <div class="cursor-pointer hover:opacity-60">

@@ -6,6 +6,7 @@ import AccountRequest from '~/services/account-request'
 import { useCart } from '~/stores/cart'
 import { toast } from '~/stores/toast'
 import { useUser } from '~/stores/user'
+import { getResources } from '~/utils/resources'
 import { floorNumber } from '~/utils/floorNumber'
 import { removeItemByIndex } from '~/utils/arrayHandle'
 
@@ -75,10 +76,10 @@ const handleOrder = async() => {
   <div class="container flex justify-center items-center lg:w-xs text-white dark:text-black">
     <div>
       <router-link to="/buyer/favourite">
-        <IHeart class="hover:text-[#adff2f] dark:text-[#adff2f]" />
+        <IHeart class="hover:text-[#adff2f] dark:text-[#adff2f]" style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2));" />
       </router-link>
     </div>
-    <div class="flex items-end hover:text-[#adff2f] dark:text-[#adff2f] relative" @click="openNav">
+    <div class="flex items-end hover:text-[#adff2f] dark:text-[#adff2f] relative" style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2));" @click="openNav">
       <span class="total-notifications absolute -top-2 left-5 bg-green-500 w-5 h-5 text-white rounded-full flex justify-center items-center pr-0.5 text-xs font-medium">{{ cart.result.length }}</span>
       <IBCart />
       <h1 class="font-semibold ml-3">
@@ -87,8 +88,8 @@ const handleOrder = async() => {
     </div>
     <div>
       <router-link to="/buyer/account/dashboard">
-        <img v-if="avatarID" :src="`https://tp-o.tk/resources/images/${avatarID}`" alt="avatar_img" class="rounded-full w-12 h-12 border-2 border-blue-500" style="object-fit: cover;">
-        <img v-else class="w-12 h-12 rounded-full" src="/img/avatar_sample.png" alt="avatar_sample">
+        <img v-if="avatarID" :src="getResources(avatarID)" alt="avatar_img" class="rounded-full w-12 min-w-12 max-w-12 h-12 min-h-12 max-h-12 border-2 border-blue-500" style="object-fit: cover;filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2));">
+        <img v-else class="w-12 min-w-12 max-w-12 h-12 min-h-12 max-h-12 rounded-full shadow-lg shadow-gray-500/50" src="/img/avatar_sample.png" alt="avatar_sample">
       </router-link>
     </div>
     <div v-if="isBlurBgModal" class="blur-bg w-screen h-screen absolute top-0 -left-10 bg-black bg-opacity-30 z-1" @click="closeNav" />
@@ -107,7 +108,7 @@ const handleOrder = async() => {
                 src="/img/product/1.png" alt="cart_product_img" class="max-w-25 max-h-25 border-light-600 border-solid border-1 rounded-md mr-3"
               > -->
               <img
-                :src="`https://tp-o.tk/resources/images/${item.product.images[0]}`" alt="cart_product_img" class="max-w-25 max-h-25 border-light-600 border-solid border-1 rounded-md mr-3"
+                :src="getResources(item.product.images[0])" alt="cart_product_img" class="max-w-25 max-h-25 border-light-600 border-solid border-1 rounded-md mr-3"
               >
             </a>
             <div>
