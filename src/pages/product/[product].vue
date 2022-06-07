@@ -47,7 +47,7 @@ onMounted(async() => {
     loading.isLoading = false
 
     const { data: reviewData } = await ProductRequest.getReviewsProductsById(product.productRequestID, { params: { limit: 10 } })
-    productReview.value = reviewData
+    productReview.value = reviewData.data
   }
 })
 
@@ -357,7 +357,7 @@ const onvisitShop = () => {
       <label>{{ t('product.category') }}</label>
       <div class="text-[#0055BD] cursor-pointer font-medium flex">
         e-shopee >
-        <div v-if="productResponseData.attributes" class="flex gap-7">
+        <div v-if="productResponseData.attributes.length !== 0" class="flex gap-7">
           <p v-for="(attr, i) in productResponseData.attributes" :key="i">
             {{ attr.name }} > {{ attr.value }}
           </p>
@@ -418,7 +418,7 @@ const onvisitShop = () => {
       <h2>{{ t('product.product-evalutions') }}</h2>
     </div>
     <div class="divide-y divide-1 divide-solid divide-gray-200">
-      <div v-for="i in 2" :key="i" class="flex justify-between items-start py-3">
+      <div v-for="(cmt, index) in productReview" :key="index" class="flex justify-between items-start py-3">
         <div class="flex">
           <div class="px-3">
             <img src="https://cf.shopee.vn/file/3922ddaf7b5dde58c3193c6689e7aaca_tn" alt="customer_avatar_img" class="max-w-10 max-h-10 rounded-full">
@@ -428,22 +428,25 @@ const onvisitShop = () => {
               yen050619
             </p>
             <p class="flex gap-0.25">
-              <IStars v-for="i in 5" :key="i" />
+              <IStars v-for="i in cmt.rating" :key="i" />
             </p>
             <p>
-              Very good! I like it.
+              {{ cmt.comment }}
             </p>
             <div class="flex items-center gap-5">
               <p class="flex items-center gap-1.5 cursor-pointer">
                 <IBLike /> 11
               </p>
               <p class="flex items-center gap-1.5 cursor-pointer">
-                <IBChat /> Comment
+                <IComment /> Comment
               </p>
             </div>
           </div>
         </div>
-        <div class="cursor-pointer hover:opacity-60">
+        <div class="cursor-pointer hover:opacity-60 flex items-center gap-5">
+          <p class="text-sm">
+            {{ handleDate(cmt.create_at) }}
+          </p>
           <IBThreeDot />
         </div>
       </div>

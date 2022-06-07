@@ -22,7 +22,7 @@ const appearMenu = () => {
 <template>
   <div class="menu-item-container">
     <div class="menu-item relative">
-      <p href="#" class="menu-link text-sm text-gray-500 duration-200 py-1.5 pl-5 pr-4 flex items-end gap-1.5 cursor-pointer" @mouseover="appearMenu" @click="appearMenu">
+      <p href="#" class="menu-link text-sm text-gray-500 duration-200 py-1.5 pl-5 pr-4 flex items-end gap-1.5 cursor-pointer" @click="appearMenu">
         <i class="fas fa-list-ul mb-0.5" /> {{ t('header.categories') }} <IBCaretDown />
       </p>
       <Transition duration="500" name="nested">
